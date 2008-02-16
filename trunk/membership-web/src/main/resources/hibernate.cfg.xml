@@ -6,13 +6,12 @@
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
 
-       <!--
-        <mapping class="com.mycompany.model.Inventory"/>
-        <mapping class="com.mycompany.model.Member"/>
-        <mapping class="com.mycompany.model.MemberAddress"/>
-        <mapping class="com.mycompany.model.MemberLegal"/>
-        <mapping class="com.mycompany.model.Nation"/>
-        <mapping class="com.mycompany.model.ParameterTable"/>  -->
+        <mapping class="com.ussa.model.Inventory"/>
+        <mapping class="com.ussa.model.Member"/>
+        <mapping class="com.ussa.model.MemberAddress"/>
+        <mapping class="com.ussa.model.MemberLegal"/>
+        <mapping class="com.ussa.model.Nation"/>
+        <mapping class="com.ussa.model.ParameterTable"/>
 
     </session-factory>
 </hibernate-configuration>
