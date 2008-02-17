@@ -5,7 +5,7 @@
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
-                <prop key="org.springframework.dao.DataAccessException">        
+                <prop key="org.springframework.dao.DataAccessException">
                     dataAccessFailure
                 </prop>
             </props>
@@ -57,7 +57,16 @@
         <property name="templateName" value="accountCreated.vm"/>
     </bean>
 
-    <!-- Add additional controller beans here -->
+    <!-- Add additional USSA controller beans here -->
+
+	<bean id="ContactController" class="com.ussa.spring.controller.ContactController"/>
+	<bean id="MedicalController" class="com.ussa.spring.controller.MedicalController"/>
+	<bean id="MedicalWaiverController" class="com.ussa.spring.controller.MedicalWaiverController"/>
+	<bean id="MembershipInformationController" class="com.ussa.spring.controller.MembershipInformationController"/>
+	<bean id="MembershipInformationShoppingController" class="com.ussa.spring.controller.MembershipInformationShoppingController"/>
+	<bean id="MembershipInformationSummaryController" class="com.ussa.spring.controller.MembershipInformationSummaryController"/>
+	<bean id="ReleaseWaiverController" class="com.ussa.spring.controller.ReleaseWaiverController"/>
+	<bean id="VerificationController" class="com.ussa.spring.controller.VerificationController"/>
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="2097152"/>
@@ -77,6 +86,19 @@
                 /admin/users.html=userController
                 /mainMenu.html=filenameController
                 /passwordHint.html=passwordHintController
+
+                <!-- USSA Membership mappings -->
+
+                /Contact.html=ContactController
+                /Medical.html=MedicalController
+                /MedicalWaiver.html=MedicalWaiverController
+                /MembershipInformation.html=MembershipInformationController
+                /MembershipInformationShopping.html=MembershipInformationShoppingController
+                /MembershipInformationSummary.html=MembershipInformationSummaryController
+                /ReleaseWaiver.html=ReleaseWaiverController
+                /Verification.html=VerificationController
+
+
             </value>
         </property>
         <property name="order" value="0"/>
