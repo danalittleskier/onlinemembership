@@ -3,11 +3,13 @@ package com.ussa.model;
 import java.io.*;
 import javax.persistence.*;
 
+import org.appfuse.model.BaseObject;
+
 
 @Entity
 @Table (name="MEMBER")
 
-public class Member implements Serializable {
+public class Member extends BaseObject implements Serializable {
 
 
     //Member table fields
@@ -235,6 +237,27 @@ public class Member implements Serializable {
     public void setGENDER(String gender)
     {
         GENDER = gender;
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        // TODO Auto-generated method stub
+        return false;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        // TODO Auto-generated method stub
+        return 0;
+    }
+
+    @Override
+    public String toString()
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 
 

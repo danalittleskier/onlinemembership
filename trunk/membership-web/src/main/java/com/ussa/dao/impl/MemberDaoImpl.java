@@ -12,4 +12,8 @@ public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements 
         super(Member.class);
     }
 
+    public List<Member> findByLastName(String lastName) {
+        return getHibernateTemplate().find("from Member where FIRST_NAME=?", lastName);
+
+    }
 }

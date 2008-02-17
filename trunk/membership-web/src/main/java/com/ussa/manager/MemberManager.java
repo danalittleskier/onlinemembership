@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface MemberManager extends GenericManager<Member, Long>
 {
+    public List<Member> findByLastName(String lastName);
 
 }
 

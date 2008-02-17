@@ -76,6 +76,14 @@
                 /admin/*=ROLE_ADMIN
                 /passwordHint.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
                 /signup.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
+                /contact.html*=ROLE_ANONYMOUS
+                /medical.html*=ROLE_ANONYMOUS
+                /medicalWaiver.html*=ROLE_ANONYMOUS
+                /membershipInformation.html*=ROLE_ANONYMOUS
+                /membershipInformationShopping.html*=ROLE_ANONYMOUS
+                /membershipInformationSummary.html*=ROLE_ANONYMOUS
+                /releaseWaiver.html*=ROLE_ANONYMOUS
+                /verification.html*=ROLE_ANONYMOUS
                 /a4j.res/*.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER <!-- APF-737, OK to remove if not using JSF -->
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>
@@ -125,7 +133,7 @@
     <bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.ShaPasswordEncoder"/>
     -->
 
-    <!-- Uncomment to disabling password encryption -->    
+    <!-- Uncomment to disabling password encryption -->
     <!-- <bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.PlaintextPasswordEncoder"/> -->
 
     <!-- This bean is optional; it isn't used by any other bean as it only listens and logs -->

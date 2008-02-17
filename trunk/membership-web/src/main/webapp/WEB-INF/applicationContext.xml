@@ -9,6 +9,10 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+    <!-- test dao -->
+
+     <!-- test dao -->
+
 
     <!-- Add new Managers here -->
 

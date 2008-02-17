@@ -90,4 +90,30 @@
             <value description="role_id">1</value>
         </row>
     </table>
+    <table name="MEMBER">
+    	<column>USSA_ID</column>
+        <column>FIRST_NAME</column>
+        <column>LAST_NAME</column>
+        <column>BIRTHDATE</column>
+        <column>EMAIL</column>
+        <column>STATE_CODE</column>
+        <column>CLUB_NAME</column>
+        <column>NATION_CODE</column>
+        <column>EXPIRE_SEASON</column>
+        <column>LIFETIME_MEMBER</column>
+        <column>GENDER</column>
+        <row>
+            <value description="USSA_ID">1</value>
+            <value description="FIRST_NAME">2</value>
+            <value description="LAST_NAME">2</value>
+            <value description="BIRTHDATE">2</value>
+            <value description="EMAIL">2</value>
+            <value description="STATE_CODE">2</value>
+            <value description="CLUB_NAME">2</value>
+            <value description="NATION_CODE">2</value>
+            <value description="EXPIRE_SEASON">2</value>
+            <value description="LIFETIME_MEMBER">2</value>
+            <value description="GENDER">2</value>
+        </row>
+    </table>
 </dataset>
