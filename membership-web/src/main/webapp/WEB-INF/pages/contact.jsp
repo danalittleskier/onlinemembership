@@ -1,1 +1,1 @@
-contact.jsp
+contact
