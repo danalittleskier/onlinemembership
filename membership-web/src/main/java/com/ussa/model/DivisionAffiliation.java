@@ -22,6 +22,7 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     /**
      * @return the sTATE_CODE
      */
+    @Id
     @Column(name = "STATE_CODE", nullable = false, length=2, unique=false)
     public String getSTATE_CODE()
     {
