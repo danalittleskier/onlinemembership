@@ -2,6 +2,7 @@ package com.ussa.model;
 
 import java.io.*;
 import javax.persistence.*;
+
 import org.appfuse.model.BaseObject;
 
 @Entity
@@ -20,6 +21,7 @@ public class MemberClub extends BaseObject implements Serializable
     /**
      * @return the iND_USSA_ID
      */
+    @Column(name = "IND_USSA_ID", nullable = false, length=5, unique=false)
     public String getIND_USSA_ID()
     {
         return IND_USSA_ID;
@@ -34,6 +36,7 @@ public class MemberClub extends BaseObject implements Serializable
     /**
      * @return the cLUB_USSA_ID
      */
+    @Column(name = "CLUB_USSA_ID", nullable = false, length=5, unique=false)
     public String getCLUB_USSA_ID()
     {
         return CLUB_USSA_ID;

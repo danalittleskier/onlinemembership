@@ -24,6 +24,7 @@ public class Member extends BaseObject implements Serializable {
     private String EXPIRE_SEASON;
     private String LIFETIME_MEMBER;
     private String GENDER;
+    private String ETHNICITY;
 
 
 
@@ -258,6 +259,23 @@ public class Member extends BaseObject implements Serializable {
     {
         // TODO Auto-generated method stub
         return null;
+    }
+
+    /**
+     * @return the eTHNICITY
+     */
+    @Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
+    public String getETHNICITY()
+    {
+        return ETHNICITY;
+    }
+
+    /**
+     * @param ethnicity the eTHNICITY to set
+     */
+    public void setETHNICITY(String ethnicity)
+    {
+        ETHNICITY = ethnicity;
     }
 
 

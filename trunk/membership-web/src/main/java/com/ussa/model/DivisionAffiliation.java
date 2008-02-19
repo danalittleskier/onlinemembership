@@ -2,6 +2,7 @@ package com.ussa.model;
 
 import java.io.*;
 import javax.persistence.*;
+
 import org.appfuse.model.BaseObject;
 
 @Entity
@@ -21,6 +22,7 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     /**
      * @return the sTATE_CODE
      */
+    @Column(name = "STATE_CODE", nullable = false, length=2, unique=false)
     public String getSTATE_CODE()
     {
         return STATE_CODE;
@@ -35,6 +37,7 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     /**
      * @return the zIP_CODE
      */
+    @Column(name = "ZIP_CODE", nullable = true, length=10, unique=false)
     public String getZIP_CODE()
     {
         return ZIP_CODE;
@@ -49,6 +52,7 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     /**
      * @return the dIVISION_CODE
      */
+    @Column(name = "DIVISION_CODE", nullable = false, length=1, unique=false)
     public String getDIVISION_CODE()
     {
         return DIVISION_CODE;
