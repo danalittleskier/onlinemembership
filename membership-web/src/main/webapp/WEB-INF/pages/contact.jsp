@@ -20,6 +20,11 @@
 
 	    <tr><td>&nbsp;</td><td colspan="2">&nbsp;</td></tr>
 	    <tr>
+         <td>is a member - need to pass in info</td>
+         <td></td>
+       </tr>
+       <tr>
+	    <tr>
 	      <td class="label" colspan="1">USSA Member #:</td>
 	      <td colspan="2">
 	        <form:input path="FIRST_NAME" size="30" maxlength="30"/>
