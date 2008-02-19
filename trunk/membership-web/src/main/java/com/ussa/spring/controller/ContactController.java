@@ -55,7 +55,6 @@ public class ContactController extends AbstractSimpleFormController
 
 
 
-
          return obj;
             }
 
