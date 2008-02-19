@@ -10,6 +10,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.validation.BindException;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.ussa.spring.controller.AbstractSimpleFormController;
 
 import com.ussa.dao.MemberDao;
@@ -51,7 +52,6 @@ public class ContactController extends AbstractSimpleFormController
             throws Exception
             {
                 Member obj = new Member();
-                Long ussaId = ServletRequestUtils.getLongParameter(request, "ussaId", 0);
 
 
 
