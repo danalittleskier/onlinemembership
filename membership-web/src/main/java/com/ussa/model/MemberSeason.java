@@ -25,6 +25,7 @@ public class MemberSeason extends BaseObject implements Serializable
     /**
      * @return the uSSA_ID
      */
+
     public String getUSSA_ID()
     {
         return USSA_ID;
