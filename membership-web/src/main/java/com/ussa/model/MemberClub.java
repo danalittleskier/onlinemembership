@@ -12,8 +12,8 @@ public class MemberClub extends BaseObject implements Serializable
 {
 
   //Member Club table fields
-    private String IND_USSA_ID;
-    private String CLUB_USSA_ID;
+    private String indUssaId;
+    private String clubUssaId;
 
     public MemberClub() {
     }
@@ -24,14 +24,14 @@ public class MemberClub extends BaseObject implements Serializable
     @Column(name = "IND_USSA_ID", nullable = false, length=5, unique=false)
     public String getIND_USSA_ID()
     {
-        return IND_USSA_ID;
+        return indUssaId;
     }
     /**
      * @param ind_ussa_id the iND_USSA_ID to set
      */
     public void setIND_USSA_ID(String ind_ussa_id)
     {
-        IND_USSA_ID = ind_ussa_id;
+        indUssaId = ind_ussa_id;
     }
     /**
      * @return the cLUB_USSA_ID
@@ -39,14 +39,14 @@ public class MemberClub extends BaseObject implements Serializable
     @Column(name = "CLUB_USSA_ID", nullable = false, length=5, unique=false)
     public String getCLUB_USSA_ID()
     {
-        return CLUB_USSA_ID;
+        return clubUssaId;
     }
     /**
      * @param club_ussa_id the cLUB_USSA_ID to set
      */
     public void setCLUB_USSA_ID(String club_ussa_id)
     {
-        CLUB_USSA_ID = club_ussa_id;
+        clubUssaId = club_ussa_id;
     }
     @Override
     public boolean equals(Object o)

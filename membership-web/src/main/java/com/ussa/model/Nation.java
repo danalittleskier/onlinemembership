@@ -11,7 +11,7 @@ public class Nation implements Serializable {
 
     //Member table fields
 
-    private String NATION_CODE;
+    private String nationCode;
 
     public Nation() {
     }
@@ -23,7 +23,7 @@ public class Nation implements Serializable {
     @Column(name = "NATION_CODE", nullable = false, length=20, unique=false)
     public String getNATION_CODE()
     {
-        return NATION_CODE;
+        return nationCode;
     }
 
     /**
@@ -31,7 +31,7 @@ public class Nation implements Serializable {
      */
     public void setNATION_CODE(String nation_code)
     {
-        NATION_CODE = nation_code;
+        nationCode = nation_code;
     }
 
 

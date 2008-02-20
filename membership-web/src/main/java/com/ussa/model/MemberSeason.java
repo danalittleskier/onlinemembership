@@ -12,10 +12,10 @@ import org.appfuse.model.BaseObject;
 public class MemberSeason extends BaseObject implements Serializable
 {
   //Member Season table fields
-    private String USSA_ID;
-    private String SEASON;
-    private String APP_PROCESS_DATE;
-    private String APP_RECEIVE_DATE;
+    private String ussaId;
+    private String season;
+    private String appProcessDate;
+    private String appReceiveDate;
 
     public MemberSeason() {
     }
@@ -28,7 +28,7 @@ public class MemberSeason extends BaseObject implements Serializable
 
     public String getUSSA_ID()
     {
-        return USSA_ID;
+        return ussaId;
     }
 
 
@@ -38,7 +38,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public void setUSSA_ID(String ussa_id)
     {
-        USSA_ID = ussa_id;
+        ussaId = ussa_id;
     }
 
 
@@ -48,7 +48,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public String getSEASON()
     {
-        return SEASON;
+        return season;
     }
 
 
@@ -58,7 +58,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public void setSEASON(String season)
     {
-        SEASON = season;
+        season = season;
     }
 
 
@@ -68,7 +68,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public String getAPP_PROCESS_DATE()
     {
-        return APP_PROCESS_DATE;
+        return appProcessDate;
     }
 
 
@@ -78,7 +78,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public void setAPP_PROCESS_DATE(String app_process_date)
     {
-        APP_PROCESS_DATE = app_process_date;
+        appProcessDate = app_process_date;
     }
 
 
@@ -88,7 +88,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public String getAPP_RECEIVE_DATE()
     {
-        return APP_RECEIVE_DATE;
+        return appReceiveDate;
     }
 
 
@@ -98,7 +98,7 @@ public class MemberSeason extends BaseObject implements Serializable
      */
     public void setAPP_RECEIVE_DATE(String app_receive_date)
     {
-        APP_RECEIVE_DATE = app_receive_date;
+        appReceiveDate = app_receive_date;
     }
 
 

@@ -13,12 +13,12 @@ public class MemberTransaction extends BaseObject implements Serializable
 {
 
   //Member Transaction table fields
-    private String USSA_ID;
-    private String SEASON;
-    private String INV_ID;
-    private String QTY;
-    private String AMOUNT;
-    private String PURCHASE_DATE;
+    private String ussaId;
+    private String season;
+    private String invId;
+    private String qty;
+    private String amount;
+    private String purchaseDate;
 
 
     public MemberTransaction() {
@@ -29,7 +29,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getUSSA_ID()
     {
-        return USSA_ID;
+        return ussaId;
     }
 
 
@@ -39,7 +39,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setUSSA_ID(String ussa_id)
     {
-        USSA_ID = ussa_id;
+        ussaId = ussa_id;
     }
 
 
@@ -49,7 +49,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getSEASON()
     {
-        return SEASON;
+        return season;
     }
 
 
@@ -59,7 +59,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setSEASON(String season)
     {
-        SEASON = season;
+        season = season;
     }
 
 
@@ -69,7 +69,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getINV_ID()
     {
-        return INV_ID;
+        return invId;
     }
 
 
@@ -79,7 +79,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setINV_ID(String inv_id)
     {
-        INV_ID = inv_id;
+        invId = inv_id;
     }
 
 
@@ -89,7 +89,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getQTY()
     {
-        return QTY;
+        return qty;
     }
 
 
@@ -99,7 +99,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setQTY(String qty)
     {
-        QTY = qty;
+        qty = qty;
     }
 
 
@@ -109,7 +109,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getAMOUNT()
     {
-        return AMOUNT;
+        return amount;
     }
 
 
@@ -119,7 +119,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setAMOUNT(String amount)
     {
-        AMOUNT = amount;
+        amount = amount;
     }
 
 
@@ -129,7 +129,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public String getPURCHASE_DATE()
     {
-        return PURCHASE_DATE;
+        return purchaseDate;
     }
 
 
@@ -139,7 +139,7 @@ public class MemberTransaction extends BaseObject implements Serializable
      */
     public void setPURCHASE_DATE(String purchase_date)
     {
-        PURCHASE_DATE = purchase_date;
+        purchaseDate = purchase_date;
     }
 
 

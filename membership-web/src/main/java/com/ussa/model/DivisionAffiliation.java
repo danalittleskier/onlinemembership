@@ -12,9 +12,9 @@ public class DivisionAffiliation extends BaseObject implements Serializable
 {
 
     //Division Affiliation table fields
-    private String STATE_CODE;
-    private String ZIP_CODE;
-    private String DIVISION_CODE;
+    private String stateCode;
+    private String zipCode;
+    private String divisionCode;
 
     public DivisionAffiliation() {
     }
@@ -26,14 +26,14 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     @Column(name = "STATE_CODE", nullable = false, length=2, unique=false)
     public String getSTATE_CODE()
     {
-        return STATE_CODE;
+        return stateCode;
     }
     /**
      * @param state_code the sTATE_CODE to set
      */
     public void setSTATE_CODE(String state_code)
     {
-        STATE_CODE = state_code;
+        stateCode = state_code;
     }
     /**
      * @return the zIP_CODE
@@ -41,14 +41,14 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     @Column(name = "ZIP_CODE", nullable = true, length=10, unique=false)
     public String getZIP_CODE()
     {
-        return ZIP_CODE;
+        return zipCode;
     }
     /**
      * @param zip_code the zIP_CODE to set
      */
     public void setZIP_CODE(String zip_code)
     {
-        ZIP_CODE = zip_code;
+        zipCode = zip_code;
     }
     /**
      * @return the dIVISION_CODE
@@ -56,14 +56,14 @@ public class DivisionAffiliation extends BaseObject implements Serializable
     @Column(name = "DIVISION_CODE", nullable = false, length=1, unique=false)
     public String getDIVISION_CODE()
     {
-        return DIVISION_CODE;
+        return divisionCode;
     }
     /**
      * @param division_code the dIVISION_CODE to set
      */
     public void setDIVISION_CODE(String division_code)
     {
-        DIVISION_CODE = division_code;
+        divisionCode = division_code;
     }
     @Override
     public boolean equals(Object o)

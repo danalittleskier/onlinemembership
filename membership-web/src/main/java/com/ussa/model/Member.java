@@ -13,18 +13,18 @@ public class Member extends BaseObject implements Serializable {
 
 
     //Member table fields
-    private int M_USSA_ID;
-    private String FIRST_NAME;
-    private String LAST_NAME;
-    private String BIRTHDATE;
-    private String EMAIL;
-    private String STATE_CODE;
-    private String CLUB_NAME;
-    private String NATION_CODE;
-    private String EXPIRE_SEASON;
-    private String LIFETIME_MEMBER;
-    private String GENDER;
-    private String ETHNICITY;
+    private int mUssaId;
+    private String firstName;
+    private String lastName;
+    private String birthDate;
+    private String email;
+    private String stateCode;
+    private String clubName;
+    private String nationCode;
+    private String expireSeason;
+    private String lifetimeMember;
+    private String gender;
+    private String etnicity;
 
 
 
@@ -38,7 +38,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "USSA_ID", nullable = false, length=5, unique=false)
     public int getM_USSA_ID()
     {
-        return M_USSA_ID;
+        return mUssaId;
     }
 
 
@@ -47,7 +47,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setM_USSA_ID(int m_ussa_id)
     {
-        M_USSA_ID = m_ussa_id;
+        mUssaId = m_ussa_id;
     }
 
 
@@ -57,7 +57,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "FIRST_NAME", nullable = true, length=30, unique=false)
     public String getFIRST_NAME()
     {
-        return FIRST_NAME;
+        return firstName;
     }
 
 
@@ -66,7 +66,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setFIRST_NAME(String first_name)
     {
-        FIRST_NAME = first_name;
+        firstName = first_name;
     }
 
 
@@ -76,7 +76,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "LAST_NAME", nullable = true, length=30, unique=false)
     public String getLAST_NAME()
     {
-        return LAST_NAME;
+        return lastName;
     }
 
 
@@ -85,7 +85,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setLAST_NAME(String last_name)
     {
-        LAST_NAME = last_name;
+        lastName = last_name;
     }
 
 
@@ -95,7 +95,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "BIRTHDATE", nullable = true, length=8, unique=false)
     public String getBIRTHDATE()
     {
-        return BIRTHDATE;
+        return birthDate;
     }
 
 
@@ -104,7 +104,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setBIRTHDATE(String birthdate)
     {
-        BIRTHDATE = birthdate;
+        birthDate = birthdate;
     }
 
 
@@ -114,7 +114,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "EMAIL", nullable = true, length=60, unique=false)
     public String getEMAIL()
     {
-        return EMAIL;
+        return email;
     }
 
 
@@ -123,7 +123,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setEMAIL(String email)
     {
-        EMAIL = email;
+        email = email;
     }
 
 
@@ -133,7 +133,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "STATE_CODE", nullable = true, length=2, unique=false)
     public String getSTATE_CODE()
     {
-        return STATE_CODE;
+        return stateCode;
     }
 
 
@@ -142,7 +142,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setSTATE_CODE(String state_code)
     {
-        STATE_CODE = state_code;
+        stateCode = state_code;
     }
 
 
@@ -152,7 +152,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "CLUB_NAME", nullable = true, length=50, unique=false)
     public String getCLUB_NAME()
     {
-        return CLUB_NAME;
+        return clubName;
     }
 
 
@@ -161,7 +161,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setCLUB_NAME(String club_name)
     {
-        CLUB_NAME = club_name;
+        clubName = club_name;
     }
 
 
@@ -171,7 +171,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "NATION_CODE", nullable = true, length=3, unique=false)
     public String getNATION_CODE()
     {
-        return NATION_CODE;
+        return nationCode;
     }
 
 
@@ -180,7 +180,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setNATION_CODE(String nation_code)
     {
-        NATION_CODE = nation_code;
+        nationCode = nation_code;
     }
 
 
@@ -190,7 +190,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "EXPIRE_SEASON", nullable = true, length=4, unique=false)
     public String getEXPIRE_SEASON()
     {
-        return EXPIRE_SEASON;
+        return expireSeason;
     }
 
 
@@ -199,7 +199,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setEXPIRE_SEASON(String expire_season)
     {
-        EXPIRE_SEASON = expire_season;
+        expireSeason = expire_season;
     }
 
 
@@ -209,7 +209,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "LIFETIME_MEMBER", nullable = true, length=1, unique=false)
     public String getLIFETIME_MEMBER()
     {
-        return LIFETIME_MEMBER;
+        return lifetimeMember;
     }
 
 
@@ -218,7 +218,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setLIFETIME_MEMBER(String lifetime_member)
     {
-        LIFETIME_MEMBER = lifetime_member;
+        lifetimeMember = lifetime_member;
     }
 
 
@@ -228,7 +228,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "GENDER", nullable = true, length=1, unique=false)
     public String getGENDER()
     {
-        return GENDER;
+        return gender;
     }
 
 
@@ -237,7 +237,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setGENDER(String gender)
     {
-        GENDER = gender;
+        gender = gender;
     }
 
     @Override
@@ -267,7 +267,7 @@ public class Member extends BaseObject implements Serializable {
     @Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
     public String getETHNICITY()
     {
-        return ETHNICITY;
+        return etnicity;
     }
 
     /**
@@ -275,7 +275,7 @@ public class Member extends BaseObject implements Serializable {
      */
     public void setETHNICITY(String ethnicity)
     {
-        ETHNICITY = ethnicity;
+        etnicity = ethnicity;
     }
 
 

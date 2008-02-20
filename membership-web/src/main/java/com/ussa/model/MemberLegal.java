@@ -12,11 +12,11 @@ public class MemberLegal implements Serializable {
 
     // Memberhship Legal
 
-    private int ML_USSA_ID;
-    private String SEASON;
-    private String INSURANCE_COMPANY;
-    private String INSURANCE_POLICY;
-    private String INSURANCE_PHONE;
+    private int mlUssaId;
+    private String season;
+    private String insuranceCompany;
+    private String insurancePolicy;
+    private String insurancePhone;
 
 
     public MemberLegal() {
@@ -30,7 +30,7 @@ public class MemberLegal implements Serializable {
     @Column(name = "USSA_ID", nullable = false, length=5, unique=false)
     public int getML_USSA_ID()
     {
-        return ML_USSA_ID;
+        return mlUssaId;
     }
 
 
@@ -39,7 +39,7 @@ public class MemberLegal implements Serializable {
      */
     public void setML_USSA_ID(int ml_ussa_id)
     {
-        ML_USSA_ID = ml_ussa_id;
+        mlUssaId = ml_ussa_id;
     }
 
 
@@ -49,7 +49,7 @@ public class MemberLegal implements Serializable {
     @Column(name = "SEASON", nullable = true, length=4, unique=false)
     public String getSEASON()
     {
-        return SEASON;
+        return season;
     }
 
 
@@ -58,7 +58,7 @@ public class MemberLegal implements Serializable {
      */
     public void setSEASON(String season)
     {
-        SEASON = season;
+        season = season;
     }
 
 
@@ -68,7 +68,7 @@ public class MemberLegal implements Serializable {
     @Column(name = "INSURANCE_COMPANY", nullable = true, length=50, unique=false)
     public String getINSURANCE_COMPANY()
     {
-        return INSURANCE_COMPANY;
+        return insuranceCompany;
     }
 
 
@@ -77,7 +77,7 @@ public class MemberLegal implements Serializable {
      */
     public void setINSURANCE_COMPANY(String insurance_company)
     {
-        INSURANCE_COMPANY = insurance_company;
+        insuranceCompany = insurance_company;
     }
 
 
@@ -87,7 +87,7 @@ public class MemberLegal implements Serializable {
     @Column(name = "INSURANCE_POLICY", nullable = true, length=20, unique=false)
     public String getINSURANCE_POLICY()
     {
-        return INSURANCE_POLICY;
+        return insurancePolicy;
     }
 
 
@@ -96,7 +96,7 @@ public class MemberLegal implements Serializable {
      */
     public void setINSURANCE_POLICY(String insurance_policy)
     {
-        INSURANCE_POLICY = insurance_policy;
+        insurancePolicy = insurance_policy;
     }
 
 
@@ -106,7 +106,7 @@ public class MemberLegal implements Serializable {
     @Column(name = "INSURANCE_PHONE", nullable = true, length=15, unique=false)
     public String getINSURANCE_PHONE()
     {
-        return INSURANCE_PHONE;
+        return insurancePhone;
     }
 
 
@@ -115,7 +115,7 @@ public class MemberLegal implements Serializable {
      */
     public void setINSURANCE_PHONE(String insurance_phone)
     {
-        INSURANCE_PHONE = insurance_phone;
+        insurancePhone = insurance_phone;
     }
 
 
