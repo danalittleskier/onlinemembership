@@ -11,8 +11,8 @@ public class ParameterTable implements Serializable {
 
     //Member table fields
 
-    private String PARAMETER_CODE;
-    private String PARAMETER_TABLE;
+    private String parameterCode;
+    private String parameterTable;
 
     /**
      * @return the pARAMETER_CODE
@@ -21,7 +21,7 @@ public class ParameterTable implements Serializable {
     @Column(name = "PARAMETER_CODE", nullable = false, length=20, unique=false)
     public String getPARAMETER_CODE()
     {
-        return PARAMETER_CODE;
+        return parameterCode;
     }
 
     /**
@@ -29,7 +29,7 @@ public class ParameterTable implements Serializable {
      */
     public void setPARAMETER_CODE(String parameter_code)
     {
-        PARAMETER_CODE = parameter_code;
+        parameterCode = parameter_code;
     }
 
     /**
@@ -38,7 +38,7 @@ public class ParameterTable implements Serializable {
     @Column(name = "PARAMETER_TABLE", nullable = true, length=20, unique=false)
     public String getPARAMETER_TABLE()
     {
-        return PARAMETER_TABLE;
+        return parameterTable;
     }
 
     /**
@@ -46,7 +46,7 @@ public class ParameterTable implements Serializable {
      */
     public void setPARAMETER_TABLE(String parameter_table)
     {
-        PARAMETER_TABLE = parameter_table;
+        parameterTable = parameter_table;
     }
 
     public ParameterTable() {
