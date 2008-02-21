@@ -5,16 +5,18 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.springframework.web.bind.ServletRequestUtils;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.validation.BindException;
+import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.ussa.spring.controller.AbstractSimpleFormController;
-
+import com.ussa.beans.AccountBean;
+import com.ussa.dao.AddressDao;
 import com.ussa.dao.MemberDao;
 import com.ussa.manager.MemberManager;
+import com.ussa.model.Address;
 import com.ussa.model.Member;
 
 public class ContactController extends AbstractSimpleFormController
@@ -23,12 +25,14 @@ public class ContactController extends AbstractSimpleFormController
     /** Logger for this class and subclasses */
     protected final Log log = LogFactory.getLog(getClass());
 
-    private MemberDao memberDao;
     private MemberManager memberManager;
+    private MemberDao memberDao;
+    private AddressDao addressDao;
+
     public ContactController()
     {
         setCommandName("member");
-        setCommandClass(Member.class);
+        setCommandClass(AccountBean.class);
     }
     protected Map referenceData(HttpServletRequest request) throws Exception
     {
@@ -42,7 +46,7 @@ public class ContactController extends AbstractSimpleFormController
             BindException errors) throws Exception
     {
         ModelAndView result = null;
-        Member obj = (Member) command;
+        AccountBean obj = (AccountBean) command;
         result = new ModelAndView(getSuccessView());
         return result;
     }
@@ -50,41 +54,45 @@ public class ContactController extends AbstractSimpleFormController
 
     protected Object formBackingObject(HttpServletRequest request)
             throws Exception
+    {
+        AccountBean obj = new AccountBean();
+        Long id = ServletRequestUtils.getLongParameter(request, "id", 0);
+        System.out.println("id["+id+"]");
+        Member member = new Member();
+        Address address = new Address();
+
+        if (id != 0)
+        { //Get member and address if they exist
+            member = memberDao.get(id);
+
+            if (member == null)
             {
-                Member obj = new Member();
-
-
-
-         return obj;
+                member = new Member();
             }
 
-    /**
-     * @return the memberDao
-     */
-    public MemberDao getMemberDao()
-    {
-        return memberDao;
+            address = addressDao.get(id);
+            if (address == null)
+            {
+                address = new Address();
+            }
+        }
+
+        obj.setAddress(address);
+        obj.setMember(member);
+        return obj;
     }
-    /**
-     * @param memberDao the memberDao to set
-     */
+
+    public void setMemberManager(MemberManager memberManager)
+    {
+        this.memberManager = memberManager;
+    }
     public void setMemberDao(MemberDao memberDao)
     {
         this.memberDao = memberDao;
     }
-    /**
-     * @return the memberManager
-     */
-    public MemberManager getMemberManager()
+    public void setAddressDao(AddressDao addressDao)
     {
-        return memberManager;
-    }
-    /**
-     * @param memberManager the memberManager to set
-     */
-    public void setMemberManager(MemberManager memberManager)
-    {
-        this.memberManager = memberManager;
+        this.addressDao = addressDao;
     }
 
 }

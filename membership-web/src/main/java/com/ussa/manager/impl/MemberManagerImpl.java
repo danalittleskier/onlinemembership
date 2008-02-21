@@ -13,11 +13,15 @@ public class MemberManagerImpl extends GenericManagerImpl<Member, Long> implemen
         super(memberDao);
         this.memberDao = memberDao;
     }
-
+/*
     public List<Member> findByLastName(String lastName) {
         return memberDao.findByLastName(lastName);
     }
 
+    public Member findByUssaId(Integer ussaId) {
+        return memberDao.findByUssaId(ussaId);
+    }
+*/
 }
 
 

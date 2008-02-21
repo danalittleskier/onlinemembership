@@ -8,6 +8,11 @@
 
 <p><fmt:message key="mainMenu.message"/></p>
 
+    <br/><a href="${ctx}/contact.html?id=158">Georgee</a><br/>
+    <a href="${ctx}/contact.html?id=183">Gloria</a><br/>
+    <a href="${ctx}/contact.html">Blank</a><br/>
+
+
 <div class="separator"></div>
 
 <ul class="glassList">

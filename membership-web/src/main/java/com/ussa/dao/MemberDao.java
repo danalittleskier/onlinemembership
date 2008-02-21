@@ -7,6 +7,8 @@ import com.ussa.model.Member;
 
 public interface MemberDao extends GenericDao<Member, Long>
 {
-    public List<Member> findByLastName(String lastName);
+    //public List<Member> findByLastName(String lastName);
+
+   // public Member findByUssaId(Integer ussaId);
 
 }

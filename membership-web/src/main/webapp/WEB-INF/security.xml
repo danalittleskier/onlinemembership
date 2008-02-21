@@ -76,7 +76,7 @@
                 /admin/*=ROLE_ADMIN
                 /passwordHint.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
                 /signup.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
-                /contact.html*=ROLE_ANONYMOUS
+                /contact.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
                 /medical.html*=ROLE_ANONYMOUS
                 /medicalWaiver.html*=ROLE_ANONYMOUS
                 /membershipInformation.html*=ROLE_ANONYMOUS
