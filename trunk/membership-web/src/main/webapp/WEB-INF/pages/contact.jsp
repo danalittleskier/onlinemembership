@@ -27,15 +27,36 @@
 	    <tr>
 	      <td class="label" colspan="1">USSA Member #:</td>
 	      <td colspan="2">
-	        <form:input path="FIRST_NAME" size="30" maxlength="30"/>
+	        <form:input path="member.id" size="30" maxlength="30"/>
 	      </td>
 	    </tr>
 	    <tr>
 	      <td class="label" colspan="1">First Name:</td>
 	      <td colspan="2">
-	        <form:input path="FIRST_NAME" size="30" maxlength="30"/>
+	        <form:input path="member.firstName" size="30" maxlength="30"/>
 	      </td>
 	    </tr>
+	    <tr>
+	      <td class="label" colspan="1">Last Name:</td>
+	      <td colspan="2">
+	        <form:input path="member.lastName" size="30" maxlength="30"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td class="label" colspan="1">City:</td>
+	      <td colspan="2">
+	        <form:input path="address.city" size="30" maxlength="30"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td class="label" colspan="1">Zip:</td>
+	      <td colspan="2">
+	        <form:input path="address.postalCode" size="30" maxlength="30"/>
+	      </td>
+	    </tr>
+
+
+	    <%--
 	    <tr><td>&nbsp;</td><td colspan="2">&nbsp;</td></tr>
 	    <tr>
 	      <td class="label" colspan="1">MI:</td>
@@ -139,7 +160,7 @@
 	        <form:input path="EMAIL" size="30" maxlength="30"/>
 	      </td>
 	    </tr>
-
+--%>
        <tr>
          <td><br/></td>
          <td><br/></td>

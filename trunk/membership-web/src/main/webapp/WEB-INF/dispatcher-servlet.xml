@@ -2,6 +2,35 @@
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
+    <!--  URL Handlers -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                /admin/activeUsers.html=filenameController
+                /admin/flushCache.html=filenameController
+                /admin/reload.html=reloadController
+                /admin/users.html=userController
+                /mainMenu.html=filenameController
+                /passwordHint.html=passwordHintController
+
+                <!-- USSA Membership mappings -->
+
+                /contact.html=contactController
+                /Medical.html=MedicalController
+                /MedicalWaiver.html=MedicalWaiverController
+                /MembershipInformation.html=MembershipInformationController
+                /MembershipInformationShopping.html=MembershipInformationShoppingController
+                /MembershipInformationSummary.html=MembershipInformationSummaryController
+                /ReleaseWaiver.html=ReleaseWaiverController
+                /Verification.html=VerificationController
+
+
+            </value>
+        </property>
+        <property name="order" value="0"/>
+    </bean>
+
+    <!--  Exception Resolver -->
     <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
         <property name="exceptionMappings">
             <props>
@@ -59,7 +88,13 @@
 
     <!-- Add additional USSA controller beans here -->
 
-	<bean id="ContactController" class="com.ussa.spring.controller.ContactController"/>
+	<bean id="contactController" class="com.ussa.spring.controller.ContactController">
+       <property name="formView" value="contact"/>
+       <property name="successView" value="redirect:mainMenu.html"/>
+	   <property name="addressDao" ref="addressDao"/>
+	   <property name="memberDao" ref="memberDao"/>
+	   <property name="memberManager" ref="memberManager"/>
+	</bean>
 	<bean id="MedicalController" class="com.ussa.spring.controller.MedicalController"/>
 	<bean id="MedicalWaiverController" class="com.ussa.spring.controller.MedicalWaiverController"/>
 	<bean id="MembershipInformationController" class="com.ussa.spring.controller.MembershipInformationController"/>
@@ -75,33 +110,6 @@
     <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
         <property name="basename" value="ApplicationResources"/>
         <property name="useCodeAsDefaultMessage" value="true"/>
-    </bean>
-
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <value>
-                /admin/activeUsers.html=filenameController
-                /admin/flushCache.html=filenameController
-                /admin/reload.html=reloadController
-                /admin/users.html=userController
-                /mainMenu.html=filenameController
-                /passwordHint.html=passwordHintController
-
-                <!-- USSA Membership mappings -->
-
-                /Contact.html=ContactController
-                /Medical.html=MedicalController
-                /MedicalWaiver.html=MedicalWaiverController
-                /MembershipInformation.html=MembershipInformationController
-                /MembershipInformationShopping.html=MembershipInformationShoppingController
-                /MembershipInformationSummary.html=MembershipInformationSummaryController
-                /ReleaseWaiver.html=ReleaseWaiverController
-                /Verification.html=VerificationController
-
-
-            </value>
-        </property>
-        <property name="order" value="0"/>
     </bean>
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">

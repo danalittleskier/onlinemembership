@@ -5,17 +5,15 @@
 
     <!-- Add new DAOs here -->
 
+    <bean id="addressDao" class="com.ussa.dao.impl.AddressDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
     <bean id="memberDao" class="com.ussa.dao.impl.MemberDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <!-- test dao -->
-
-     <!-- test dao -->
-
 
     <!-- Add new Managers here -->
-
 	<bean id="memberManager" class="com.ussa.manager.impl.MemberManagerImpl">
 	    <constructor-arg ref="memberDao"/>
 	</bean>
