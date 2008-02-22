@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 import com.ussa.model.Address;
 import com.ussa.model.Member;
-import com.ussa.model.MemberAddress;
 
 public class AccountBean
 {

@@ -14,7 +14,7 @@
       <constant>
         <constant-name>currency</constant-name>
         <constant-value>^\d{1,3}(,?\d{1,3})*\.?(\d{1,2})?$</constant-value>
-      </constant> 
+      </constant>
    </global>
    <formset>
         <form name="fileUpload">
@@ -147,6 +147,14 @@
 
                   <arg0 key="user.passwordHint"/>
               </field>
+      </form>
+      <form name="contactInfo">
+	      <field property="member.firstName" depends="required">
+	        <arg0 key="registration.firstName" />
+	      </field>
+	      <field property="member.lastName" depends="required">
+	        <arg0 key="registration.firstName" />
+	      </field>
       </form>
   </formset>
 </form-validation>

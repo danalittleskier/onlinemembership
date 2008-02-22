@@ -11,7 +11,8 @@
     <br/><a href="${ctx}/contact.html?id=158">Georgee</a><br/>
     <a href="${ctx}/contact.html?id=183">Gloria</a><br/>
     <a href="${ctx}/contact.html">Blank</a><br/>
-
+<br/><a href="${ctx}/registration.html?id=158">Registration: Georgee</a>
+<br/><a href="${ctx}/registration.html">Registration: New Member</a>
 
 <div class="separator"></div>
 
