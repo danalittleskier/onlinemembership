@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow
+                          http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+    <start-state idref="findContactInfo"/>
+    <action-state id="findContactInfo">
+      <entry-actions>
+        <action bean="accountBean" method="setupForm"/>
+      </entry-actions>
+      <action bean="registrationAction"/>
+      <transition on="renew" to="contactInfo" /> <!-- could do different paths if wanted for renew vs register -->
+      <transition on="register" to="contactInfo" />
+    </action-state>
+
+	<view-state id="contactInfo" view="contactInfo">
+      <transition on="submit" to="medical">
+        <action bean="accountBean" method="bindAndValidate">
+          <attribute name="validator" value="validatorContactInfo"/>
+        </action>
+      </transition>
+	</view-state>
+
+	<view-state id="medical" view="medical">
+		<transition on="submit" to="medicalWaiver"/>
+	</view-state>
+
+	<view-state id="medicalWaiver" view="medicalWaiver">
+		<transition on="submit" to="completion"/>
+	</view-state>
+
+	<end-state id="completion" view="mainMenu"/>
+
+    <import resource="registration-beans.xml" />
+</flow>
