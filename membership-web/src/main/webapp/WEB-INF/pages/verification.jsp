@@ -59,7 +59,7 @@ a img {
 	</table>
 	<body id=""/>
 
-
+ <div class="greydientLeft" style="width: 442px; height: 410px">
 
   <form>
 	<table border="0" width="100%" id="table1">
@@ -245,7 +245,7 @@ a img {
 		</tr>
 	</table></div>
   <div class="greydientRight" style="width: 347px; height: 316px">
-    <table border="0" width="100%" id="table2">
+    <table border="1" width="100%" id="table2">
 		<tr>
 			<td colspan="2">
 			<p align="center"><b><font size="2">Membership / Items</font></b></td>

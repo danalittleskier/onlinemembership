@@ -47,7 +47,6 @@ a img {
 </style>
 </head>
 <body>
-<form:form commandName="accountBean" name="accountBean">
 <div class="pageFrame">
   <div class="pageHeader"><p align="left"><font size="3">Medical Insurance
 	Waiver</font></div>
@@ -57,23 +56,24 @@ a img {
 
   <div class="greydientLeft" style="width: 442px; height: 212px">
 
+<form>
 
 	<table border="0" width="100%" id="table1">
 		<tr>
-			<td><font size="2">This statement</font></td>
+			<td><font size="2">This statement </font></td>
 		</tr>
-        <tr>
-	        <td><form:checkbox path="waiverAgree"/><label><fmt:message key='registration.waiverAgree'/></label></td>
-        </tr>
 		</table>
+
 
 
 	<p style="text-align: left">
 
 	<!-- added validation -->
 
-      	<p>&nbsp;</div>
+      	<p><input type="checkbox" name="C1" value="ON"> I agree to the terms
+		defined above</div>
 </div>
+<input type="checkbox" name="C1" value="ON">
 	<div class="section3">
 <p align="center">
 
@@ -82,15 +82,13 @@ a img {
              <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
              <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
 
-
-
                 </div>
 
 
 	<p>
 </p>
-</form:form>
 
+</form>
 </body>
 
-</html>
+</html></html>
