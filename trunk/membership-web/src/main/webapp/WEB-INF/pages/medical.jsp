@@ -112,9 +112,8 @@ a img {
 
 
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
-
+    		<input type="hidden" name="_eventId" value="submit">
+    		<input type="submit" value="next" />&nbsp;
 
                 </div>
 
