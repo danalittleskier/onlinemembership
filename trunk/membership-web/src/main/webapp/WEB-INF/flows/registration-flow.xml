@@ -16,20 +16,86 @@
     </action-state>
 
 	<view-state id="contactInfo" view="contactInfo">
-      <transition on="submit" to="medical">
+      <transition on="next" to="stateClub">
         <action bean="accountBean" method="bindAndValidate">
           <attribute name="validator" value="validatorContactInfo"/>
         </action>
       </transition>
 	</view-state>
 
+	<view-state id="stateClub" view="stateClub">
+        <transition on="back" to="contactInfo" />
+		<transition on="next" to="sportMembership"/>
+	</view-state>
+
+	<view-state id="sportMembership" view="sportMembership">
+        <transition on="back" to="stateClub" />
+		<transition on="next" to="extras"/>
+	</view-state>
+
+	<view-state id="extras" view="extras">
+        <transition on="back" to="sportMembership" />
+		<transition on="next" to="medical"/>
+	</view-state>
+
 	<view-state id="medical" view="medical">
-		<transition on="submit" to="medicalWaiver"/>
+        <transition on="back" to="extras" />
+		<transition on="next" to="medicalWaiver"/>
 	</view-state>
 
 	<view-state id="medicalWaiver" view="medicalWaiver">
-		<transition on="submit" to="completion"/>
+        <transition on="back" to="medical" />
+		<transition on="next" to="verification"/>
 	</view-state>
+
+	<view-state id="verification" view="verification">
+        <transition on="back" to="medicalWaiver" />
+		<transition on="next" to="riskAgreement"/>
+		<transition on="editContactInfo" to="editContactInfo"/>
+		<transition on="editExtras" to="editExtras"/>
+		<transition on="editMedical" to="editMedical"/>
+		<transition on="editSport" to="editSport"/>
+		<transition on="editClub" to="editClub"/>
+	</view-state>
+
+	<view-state id="editContactInfo" view="contactInfo">
+      <transition on="next" to="verification">
+        <action bean="accountBean" method="bindAndValidate">
+          <attribute name="validator" value="validatorContactInfo"/>
+        </action>
+      </transition>
+	</view-state>
+
+	<view-state id="editClub" view="stateClub">
+        <transition on="back" to="verification" />
+		<transition on="next" to="verification"/>
+	</view-state>
+
+	<view-state id="editSport" view="sportMembership">
+        <transition on="back" to="verification" />
+		<transition on="next" to="verification"/>
+	</view-state>
+
+	<view-state id="editExtras" view="extras">
+        <transition on="back" to="verification" />
+		<transition on="next" to="verification"/>
+	</view-state>
+
+	<view-state id="editMedical" view="medical">
+        <transition on="back" to="verification" />
+		<transition on="next" to="verification"/>
+	</view-state>
+
+	<view-state id="riskAgreement" view="riskAgreement">
+        <transition on="back" to="verification" />
+		<transition on="next" to="registrationComplete"/>
+	</view-state>
+
+	<view-state id="registrationComplete" view="registrationComplete">
+        <transition on="back" to="riskAgreement" />
+		<transition on="next" to="completion"/>
+	</view-state>
+
 
 	<end-state id="completion" view="mainMenu"/>
 

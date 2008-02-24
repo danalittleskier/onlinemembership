@@ -2,22 +2,22 @@
     <!ENTITY config SYSTEM "file:./config.xml">
     <!ENTITY login SYSTEM "file:./login.xml">
 ]>
-<project basedir="." default="run-all-tests">
+<project basedir="." default="run-all-tests"> 
     <!-- Use i18n bundle, 2nd one listed is the default -->
     <property file="\${basedir}/target/${webapp.name}/WEB-INF/classes/ApplicationResources_${user.language}.properties"/>
     <property file="\${basedir}/target/${webapp.name}/WEB-INF/classes/ApplicationResources.properties"/>
 
     <!-- runs all targets -->
-    <target name="run-all-tests"
+    <target name="run-all-tests" 
         depends="Login,Logout,PasswordHint,Signup,StaticPages,UserTests,FlushCache,FileUpload"
         description="Call and executes all test cases (targets)"/>
-
+    
     <!-- runs user-related tests -->
     <target name="UserTests" depends="EditUser,SearchUser,SaveUser,AddUser,ActiveUsers"
         description="Call and executes all user test cases (targets)">
         <echo>Successfully ran all User UI tests!</echo>
     </target>
-
+    
     <!-- Login to the application -->
     <target name="Login" description="Runs login test and verifies Main Menu's Title">
         <webtest name="login">
@@ -53,7 +53,7 @@
             </steps>
         </webtest>
     </target>
-
+    
     <target name="StaticPages" description="Ensures that StaticFilter is working">
         <webtest name="staticPages">
             &config;
@@ -73,12 +73,12 @@
             <steps>
                 &login;
                 <invoke description="click Edit Profile link" url="/userform.html"/>
-                <verifytitle description="we should see the user profile title"
+                <verifytitle description="we should see the user profile title" 
                     text=".*${userProfile.title}.*" regex="true"/>
             </steps>
         </webtest>
     </target>
-
+    
     <!-- Verify the user list screen displays without errors -->
     <target name="SearchUser" description="Tests search for and displaying all users">
         <webtest name="searchUser">
@@ -86,12 +86,12 @@
             <steps>
                 &login;
                 <invoke description="click View Users link" url="/admin/users.html"/>
-                <verifytitle description="we should see the user list title"
+                <verifytitle description="we should see the user list title" 
                     text=".*${userList.title}.*" regex="true"/>
             </steps>
         </webtest>
     </target>
-
+    
     <!-- Edit a user and then save -->
     <target name="SaveUser" description="Tests editing and saving a user">
         <webtest name="saveUser">
@@ -99,7 +99,7 @@
             <steps>
                 &login;
                 <invoke description="click Edit Profile link" url="/userform.html"/>
-                <verifytitle description="we should see the user profile title"
+                <verifytitle description="we should see the user profile title" 
                     text=".*${userProfile.title}.*" regex="true"/>
                 <setinputfield description="set address" name="address.address" value="2255 Lane Avenue"/>
                 <setinputfield description="set zipcode" name="address.postalCode" value="59826"/>
@@ -109,7 +109,7 @@
             </steps>
         </webtest>
     </target>
-
+    
     <!-- Add a new user after logging in -->
     <target name="AddUser" description="Adds a new user profile">
         <webtest name="addUser">
@@ -118,7 +118,7 @@
                 &login;
                 <invoke description="click Add Button" url="/userform.html?method=Add&amp;from=list"/>
                 <verifytitle description="view the user profile title" text=".*${userProfile.title}.*" regex="true"/>
-
+                    
                 <setinputfield description="set username" name="username" value="newuser"/>
                 <setinputfield description="set password" name="password" value="test"/>
                 <setinputfield description="set confirmPassword" name="confirmPassword" value="test"/>
@@ -137,7 +137,7 @@
                 <verifytitle description="view user list screen" text=".*${userList.title}.*" regex="true"/>
                 <verifytext description="verify success message" regex="true"
                     text='&lt;div class="message.*&gt;.*Test Name.*&lt;/div&gt;'/>
-
+                    
                 <!-- Delete user -->
                 <clickLink description="Click edit user link" label="newuser"/>
                 <prepareDialogResponse description="Confirm delete" dialogType="confirm" response="true"/>
@@ -149,7 +149,7 @@
             </steps>
         </webtest>
     </target>
-
+    
     <!-- Sign up a new user (no login) -->
     <target name="Signup" description="Signup a new user">
         <webtest name="signup">
@@ -157,7 +157,7 @@
             <steps>
                 <invoke description="click signup link" url="/signup.html"/>
                 <verifytitle description="view signup title" text=".*${signup.title}.*" regex="true"/>
-
+                
                 <setinputfield description="set username" name="username" value="signup-user"/>
                 <setinputfield description="set password" name="password" value="test"/>
                 <setinputfield description="set confirmPassword" name="confirmPassword" value="test"/>
@@ -185,12 +185,12 @@
             <steps>
                 &login;
                 <invoke description="get activeUsers URL" url="/admin/activeUsers.html"/>
-                <verifytitle description="we should see the activeUsers title"
+                <verifytitle description="we should see the activeUsers title" 
                     text=".*${activeUsers.title}.*" regex="true"/>
             </steps>
         </webtest>
     </target>
-
+    
     <!-- Flush OSCache -->
     <target name="FlushCache" description="opens JSP to Flush Page Cache">
         <webtest name="flushCache">
@@ -198,12 +198,12 @@
             <steps>
                 &login;
                 <invoke description="get flushCache URL" url="/admin/flushCache.html"/>
-                <verifytitle description="we should see the flush cache title"
+                <verifytitle description="we should see the flush cache title" 
                     text=".*${flushCache.title}.*" regex="true"/>
             </steps>
         </webtest>
     </target>
-
+    
     <!-- File Upload -->
     <target name="FileUpload" description="Tests uploading a file">
         <webtest name="fileUpload">
