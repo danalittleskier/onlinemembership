@@ -48,10 +48,8 @@ a img {
 </head>
 <body>
 <div class="pageFrame">
-  <div class="pageHeader"><p align="left"><font size="3">Medical Insurance</font></div>
-<p>  <font size="2">PRIMARY MEDICAL INSURANCE INFORMATION</font></p>
-
-<body id=""/>
+  <div class="pageHeader"><p align="left"><font size="3">Membership Information</font></div>
+	<body id=""/>
 
 
 
@@ -61,32 +59,10 @@ a img {
 
 	<table border="0" width="100%" id="table1">
 		<tr>
-			<td><font size="2">* Primary Medical Insurance Co.</font></td>
-			<td><input type="text" name="T1" size="20"></td>
+			<td><font size="2">Sport:</font></td>
 		</tr>
 		<tr>
-			<td><font size="2">* Policy Number</font></td>
-			<td><input type="text" name="T2" size="20"></td>
-		</tr>
-		<tr>
-			<td><font size="2">Phone Number</font></td>
-			<td><input type="text" name="T3" size="20"></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><font size="1">Image</font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td><font size="2">Membership:</font></td>
 		</tr>
 		</table>
 
@@ -96,16 +72,7 @@ a img {
 
 	<!-- added validation -->
 
-      	* Indicate required field<p>&nbsp;</div>
-  <div class="greydientRight" style="width: 347px; height: 316px">
-    <b>Medical Insurance</b><p>Members must have and maintain Medical/Accident
-	insurance for duration of membership year.&nbsp; Failure to provide accurate
-	information demonstration the existence of such insurance coverage for
-	Member will prevent processing of this application and cause termination of
-	membership and suspension of all rights to participate in U.S. Ski and
-	Snowboard Association activities, unless Member timely returns a fully
-	executed Medial Exception Agreement ( which can be obtained by contacting
-	Member Services at&nbsp; 435.647.2666 or via fax at 435.647.2052).&nbsp; </div>
+      	<p>&nbsp;</div>
 </div>
 	<div class="section3">
 <p align="center">
