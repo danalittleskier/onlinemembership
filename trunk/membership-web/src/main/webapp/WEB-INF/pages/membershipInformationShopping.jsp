@@ -49,7 +49,6 @@ a img {
 <body>
 <div class="pageFrame">
   <div class="pageHeader"><p align="left"><font size="3">Membership Information</font></div>
-<p>  <font size="2">PRIMARY MEDICAL INSURANCE INFORMATION</font></p>
 
 <body id=""/>
 
@@ -61,20 +60,20 @@ a img {
 
 	<table border="0" width="100%" id="table1">
 		<tr>
-			<td><font size="2">Sport</font></td>
-			<td><select size="1" name="D1"></select></td>
+			<td width="18%"><font size="2">Sport</font></td>
+			<td width="79%"><select size="1" name="D1"></select></td>
 		</tr>
 		<tr>
-			<td><font size="2">Membership</font></td>
-			<td><select size="1" name="D2"></select></td>
+			<td width="18%"><font size="2">Membership</font></td>
+			<td width="79%"><select size="1" name="D2"></select></td>
 		</tr>
 		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td width="18%">&nbsp;</td>
+			<td width="79%">&nbsp;</td>
 		</tr>
 		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td width="18%">&nbsp;</td>
+			<td width="79%">&nbsp;</td>
 		</tr>
 		<tr>
 			<td colspan="2"><input type="radio" value="V1" checked name="R1"><font size="2">Click
@@ -85,20 +84,17 @@ a img {
 			here to be placed on Mail Privacy Status.</font></td>
 		</tr>
 		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
+			<td width="18%">&nbsp;</td>
+			<td width="79%">&nbsp;</td>
 		</tr>
-		</table>
-
-
-
+	</table>
 	<p style="text-align: left">
 
 	<!-- added validation -->
 
       	* Indicate required field<p>&nbsp;</div>
   <div class="greydientRight" style="width: 347px; height: 316px">
-    <table border="0" width="100%" id="table2">
+    <table border="1" width="100%" id="table2">
 		<tr>
 			<td colspan="2">
 			<p align="center"><b><font size="2">Membership / Items</font></b></td>
@@ -150,8 +146,8 @@ a img {
 
 
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-    		<input type="hidden" name="_eventId" value="submit">
-    		<input type="submit" value="next" />&nbsp;
+             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
+             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
 
                 </div>
 

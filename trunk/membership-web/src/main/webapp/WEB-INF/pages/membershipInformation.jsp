@@ -55,7 +55,7 @@ a img {
 
 
 
-  <div class="greydientLeft" style="width: 672px; height: 270px">
+  <div class="" style="width: 672px; height: 270px">
 
 <form>
 
@@ -108,8 +108,8 @@ a img {
 
 
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-    		<input type="hidden" name="_eventId" value="submit">
-    		<input type="submit" value="next" />&nbsp;
+             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
+             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
 
                 </div>
 

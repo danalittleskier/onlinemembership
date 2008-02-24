@@ -49,20 +49,49 @@ a img {
 <body>
 <div class="pageFrame">
   <div class="pageHeader"><p align="left"><font size="3">Membership Information</font></div>
-	<body id=""/>
+<p>  &nbsp;</p>
+
+<body id=""/>
 
 
 
-  <div class="greydientLeft" style="width: 442px; height: 212px">
+  <div class="" style="width: 672px; height: 270px">
 
 <form>
 
-	<table border="0" width="100%" id="table1">
+	<table border="0" width="122%" id="table1">
 		<tr>
-			<td><font size="2">State:</font></td>
+			<td width="421"><font size="2">Are you a US Citizen?</font></td>
+			<td><select size="1" name="D2">
+			<option selected value="Yes">Yes</option>
+			<option>No</option>
+			</select></td>
 		</tr>
 		<tr>
-			<td><font size="2">Club:</font></td>
+			<td width="421"><font size="2">If no, select nation code</font></td>
+			<td><select size="1" name="D1"></select></td>
+		</tr>
+		<tr>
+			<td width="421">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="421">&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="421">If your state and club have not changed, click next</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td width="421">
+			<p align="center">State</td>
+			<td><select size="1" name="D3"></select></td>
+		</tr>
+		<tr>
+			<td width="421">
+			<p align="center">Club</td>
+			<td><select size="1" name="D4"></select></td>
 		</tr>
 		</table>
 
@@ -81,6 +110,7 @@ a img {
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
              <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
              <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+
                 </div>
 
 
