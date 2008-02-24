@@ -48,14 +48,7 @@ a img {
 </head>
 <body>
 <div class="pageFrame">
-  <div class="pageHeader"><p align="left"><font size="3">Verification</font><table border="0" width="50%" id="table3">
-	<tr>
-		<td><span style="font-weight: 400"><font size="2">Please verify that the
-		following information is correct. If you would like to change any of the
-		information, you may do so by typing in the editable fields.&nbsp; When
-		you have verified that the information is correct, click the &quot;next&quot;
-		button at the bottom of the page.</font></span></td>
-	</tr>
+  <div class="pageHeader"><p align="left"><font size="3">Membership Summary</font><table border="0" width="50%" id="table3">
 	</table>
 	<body id=""/>
 
@@ -66,7 +59,7 @@ a img {
 		<tr>
 			<td width="189"><b><font size="2">Personal Information</font></b></td>
 			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editContactInfo" value="<fmt:message key='button.edit'/>"></td>
+			<td><font size="2">edit image</font></td>
 		</tr>
 		<tr>
 			<td width="189">&nbsp;</td>
@@ -166,7 +159,7 @@ a img {
 		<tr>
 			<td width="189"><font size="2"><b>Primary Medical Insurance Company</b></font></td>
 			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editMedical" value="<fmt:message key='button.edit'/>"></td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td width="189">&nbsp;</td>
@@ -194,9 +187,9 @@ a img {
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td width="189"><font size="2"><b>Membership Sport</b></font></td>
+			<td width="189"><font size="2"><b>Membership</b></font></td>
 			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editSport" value="<fmt:message key='button.edit'/>"></td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
 			<td width="189">&nbsp;</td>
@@ -214,11 +207,6 @@ a img {
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td width="189"><font size="2"><b>Membership Club</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editClub" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
 			<td width="189"><font size="2">State</font></td>
 			<td><font size="2"><i>UT</i></font></td>
 			<td>&nbsp;</td>
@@ -226,16 +214,6 @@ a img {
 		<tr>
 			<td width="189"><font size="2">Club</font></td>
 			<td><font size="2"><i>Park City Club</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Extras</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editExtras" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">tshirts...</font></td>
-			<td><font size="2"><i>magazines....</i></font></td>
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
@@ -298,8 +276,7 @@ a img {
 
 
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.close'/>">
 
                 </div>
 

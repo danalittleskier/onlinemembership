@@ -39,13 +39,13 @@ public class RegistrationAction extends MultiAction implements Serializable
         HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
         AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
         String zId = context.getRequestParameters().get("id");
-        System.out.println("zId["+zId+"]");
+        //System.out.println("zId["+zId+"]");
         Long id = null;
         if (zId != null)
         {
             id = Long.parseLong(zId);
         }
-        System.out.println("id["+id+"]");
+        //System.out.println("id["+id+"]");
         Member member = new Member();
         Address address = new Address();
 
