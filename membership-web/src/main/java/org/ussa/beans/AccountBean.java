@@ -7,11 +7,20 @@ import org.ussa.model.Member;
 
 public class AccountBean
 {
+    // Option 1: use a string per line
+/*    private String ussaId;
+
+    private String lastName;
+
+    private String firstName;
+
+    private String company;*/
+
+    // Option 2: use objects
+
     private Member member;
 
     private Address address;
-
-    private Boolean waiverAgree = false;
 
     public Member getMember()
     {
@@ -31,16 +40,6 @@ public class AccountBean
     public void setAddress(Address address)
     {
         this.address = address;
-    }
-
-    public Boolean getWaiverAgree()
-    {
-        return waiverAgree;
-    }
-
-    public void setWaiverAgree(Boolean waiverAgree)
-    {
-        this.waiverAgree = waiverAgree;
     }
 
 

@@ -3,6 +3,9 @@
 <br/>
 
  <form:form commandName="accountBean" name="accountBean">
+    <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+    <input type="hidden" name="_eventId" value="submit">
+
    <table class="formtable">
 	<tbody>
 		<spring:bind path="member.*">
@@ -176,8 +179,8 @@
        <tr>
          <td><br/></td>
          <td>
-	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+
+	         <input type="submit" value="<fmt:message key='button.save' />" />&nbsp;
          <td>
        </tr>
     </tbody>
