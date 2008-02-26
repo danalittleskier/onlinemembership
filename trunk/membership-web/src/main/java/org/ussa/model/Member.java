@@ -1,6 +1,8 @@
 package org.ussa.model;
 
 import java.io.*;
+import java.util.Set;
+
 import javax.persistence.*;
 
 import org.appfuse.model.BaseObject;
@@ -19,8 +21,11 @@ public class Member extends BaseObject implements Serializable
 
     //Member table fields
     @Id
-    @Column(name = "USSA_ID")//, nullable = false, length=5, unique=false)
+    @Column(name = "USSA_ID", length=5)
     private Long id;
+
+    @Column(name = "MEMBER_TYPE", nullable = true, length=2, unique=false)
+    private String type;
 
     @Column(name = "FIRST_NAME", nullable = true, length=30, unique=false)
     private String firstName;
@@ -54,6 +59,12 @@ public class Member extends BaseObject implements Serializable
 
     @Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
     private String etnicity;
+
+    @ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+    private Set<Club> clubs;
+
+//    @OneToOne
+//    private Address permanentAddress;
 
 //    @OneToMany(mappedBy = "id", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 //    private Set<Address> addresses = null;
@@ -197,6 +208,16 @@ public class Member extends BaseObject implements Serializable
     public void setEtnicity(String etnicity)
     {
         this.etnicity = etnicity;
+    }
+
+    public Set<Club> getClubs()
+    {
+        return clubs;
+    }
+
+    public void setClubs(Set<Club> clubs)
+    {
+        this.clubs = clubs;
     }
 
 

@@ -12,10 +12,9 @@ import org.appfuse.model.BaseObject;
 public class Address extends BaseObject implements Serializable {
 
 
-    //MemberAddress table fields
+    //Combined key
     @Id
-    @Column(name = "USSA_ID")//, nullable = false, length=5, unique=false)
-    private Long id;
+    private AddressPk addressPk;
 
     @Column(name = "COMPANY", nullable = true, length=40, unique=false)
     private String company;
@@ -168,15 +167,14 @@ public class Address extends BaseObject implements Serializable {
         return null;
     }
 
-    public Long getId()
+    public AddressPk getAddressPk()
     {
-        return id;
+        return addressPk;
     }
 
-    public void setId(Long id)
+    public void setAddressPk(AddressPk addressPk)
     {
-        this.id = id;
+        this.addressPk = addressPk;
     }
-
 
 }
