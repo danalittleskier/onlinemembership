@@ -5,7 +5,9 @@
 
 	<bean id="registrationAction" class="org.ussa.spring.flows.registration.RegistrationAction">
 	   <property name="addressDao" ref="addressDao"/>
+	   <property name="clubDao" ref="clubDao"/>
 	   <property name="memberDao" ref="memberDao"/>
+	   <property name="stateDao" ref="stateDao"/>
 	   <property name="memberManager" ref="memberManager"/>
     </bean>
 
@@ -17,6 +19,7 @@
       <property name="validators">
         <map>
           <entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
+          <entry key="validatorStateClub" value-ref="validatorStateClub"/>
         </map>
       </property>
     </bean>
@@ -24,6 +27,9 @@
     <!-- Validators -->
     <bean id="validatorContactInfo" parent="validatorTemplate">
       <property name="formName" value="contactInfo" />
+    </bean>
+    <bean id="validatorStateClub" parent="validatorTemplate">
+      <property name="formName" value="stateClub" />
     </bean>
 
 </beans>

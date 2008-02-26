@@ -8,7 +8,13 @@
     <bean id="addressDao" class="org.ussa.dao.impl.AddressDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <bean id="clubDao" class="org.ussa.dao.impl.ClubDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
     <bean id="memberDao" class="org.ussa.dao.impl.MemberDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 

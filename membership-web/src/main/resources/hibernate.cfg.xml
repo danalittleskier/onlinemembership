@@ -6,7 +6,10 @@
         <mapping class="org.appfuse.model.User"/>
         <mapping class="org.appfuse.model.Role"/>
         <mapping class="org.ussa.model.Member"/>
+        <mapping class="org.ussa.model.Club"/>
         <mapping class="org.ussa.model.Address"/>
+        <mapping class="org.ussa.model.State"/>
+
 
 <!--
         <mapping class="org.ussa.model.Inventory"/>
