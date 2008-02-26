@@ -65,13 +65,12 @@ function changeState(index)
 
 <div class="pageFrame">
   <div class="pageHeader"><p align="left"><font size="3">Membership Information</font></div>
-<p>  &nbsp;</p>
-
-<body id=""/>
+	<body id=""/>
 
 
 
-<<<<<<< .mine
+  <div class="greydientLeft" style="width: 442px; height: 212px">
+
    <table class="formtable">
 	<tbody>
 		<spring:bind path="accountBean.*">
@@ -104,26 +103,8 @@ function changeState(index)
 	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
 	      </td>
 	    </tr>
-=======
-  <div class="" style="width: 672px; height: 270px">
-
-<form>
-
-	<table border="0" width="122%" id="table1">
->>>>>>> .r54
 		<tr>
-<<<<<<< .mine
-=======
-			<td width="421"><font size="2">Are you a US Citizen?</font></td>
-			<td><select size="1" name="D2">
-			<option selected value="Yes">Yes</option>
-			<option>No</option>
-			</select></td>
-		</tr>
-		<tr>
->>>>>>> .r54
-			<td width="421"><font size="2">If no, select nation code</font></td>
-			<td><select size="1" name="D1"></select></td>
+			<td><font size="2">Club:</font></td>
 	        <td colspan="2" align="left">
 	          <spring:bind path="accountBean.clubId">
 		    	<select name="clubId">
@@ -135,28 +116,6 @@ function changeState(index)
 		        </select>
 		      </spring:bind>
 		    </td>
-		</tr>
-		<tr>
-			<td width="421">&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="421">&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="421">If your state and club have not changed, click next</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="421">
-			<p align="center">State</td>
-			<td><select size="1" name="D3"></select></td>
-		</tr>
-		<tr>
-			<td width="421">
-			<p align="center">Club</td>
-			<td><select size="1" name="D4"></select></td>
 		</tr>
 		</table>
 
@@ -175,11 +134,7 @@ function changeState(index)
 	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
              <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
              <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
-<<<<<<< .mine
              <%-- <input type="hidden" name="_eventId_changeState">--%>
-=======
-
->>>>>>> .r54
                 </div>
 
 

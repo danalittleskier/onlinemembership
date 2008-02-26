@@ -1,6 +1,8 @@
 package org.ussa.dao;
 
-public interface InventoryDao
-{
+import org.appfuse.dao.GenericDao;
+import org.ussa.model.Inventory;
 
+public interface InventoryDao extends GenericDao<Inventory, String>
+{
 }
