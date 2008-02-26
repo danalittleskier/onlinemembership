@@ -16,16 +16,31 @@
     </action-state>
 
 	<view-state id="contactInfo" view="contactInfo">
-      <transition on="next" to="stateClub">
+      <transition on="next" to="findClubInfo">
         <action bean="accountBean" method="bindAndValidate">
           <attribute name="validator" value="validatorContactInfo"/>
         </action>
       </transition>
 	</view-state>
 
+    <action-state id="findClubInfo">
+      <entry-actions>
+        <action bean="accountBean" method="setupForm"/>
+      </entry-actions>
+      <action bean="registrationAction"/>
+      <transition on="*" to="stateClub" />
+    </action-state>
+
 	<view-state id="stateClub" view="stateClub">
         <transition on="back" to="contactInfo" />
-		<transition on="next" to="sportMembership"/>
+        <transition on="changeState" to="findClubInfo">
+          	<action bean="accountBean" method="bindAndValidate"/>
+        </transition>
+		<transition on="next" to="sportMembership">
+        	<action bean="accountBean" method="bindAndValidate">
+          		<attribute name="validator" value="validatorStateClub"/>
+        	</action>
+        </transition>
 	</view-state>
 
 	<view-state id="sportMembership" view="sportMembership">

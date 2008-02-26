@@ -5,7 +5,7 @@
  <form:form commandName="accountBean" name="accountBean">
    <table class="formtable">
 	<tbody>
-		<spring:bind path="member.*">
+		<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
 				<tr>
@@ -43,18 +43,37 @@
 	      </td>
 	    </tr>
 	    <tr>
-	      <td class="label" colspan="1">City:</td>
+	      <td class="label" colspan="1"><fmt:message key="user.address.address"/>:</td>
+	      <td colspan="2">
+	        <form:input path="address.deliveryAddress" size="30" maxlength="30"/>
+	      </td>
+	    </tr>
+	    <tr>
+	      <td class="label" colspan="1"><fmt:message key="user.address.city"/>:</td>
 	      <td colspan="2">
 	        <form:input path="address.city" size="30" maxlength="30"/>
 	      </td>
 	    </tr>
 	    <tr>
-	      <td class="label" colspan="1">Zip:</td>
+	      <td class="label" colspan="1"><fmt:message key="user.address.postalCode"/>:</td>
 	      <td colspan="2">
 	        <form:input path="address.postalCode" size="30" maxlength="30"/>
 	      </td>
 	    </tr>
-
+	    <tr>
+	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
+	      <td colspan="2" align="left">
+          <spring:bind path="accountBean.address.stateCode">
+	    	<select name="address.stateCode">
+	          <option value=""></option>
+	          <c:forEach var="o" items="${accountBean.usStates}">
+	            <option value="<c:out value='${o.id}'/>"
+	              <c:if test="${o.id == status.value}">selected</c:if>><c:out value='${o.id}'/></option>
+	          </c:forEach>
+	        </select>
+	      </spring:bind>
+	      </td>
+	    </tr>
 
 	    <%--
 	    <tr><td>&nbsp;</td><td colspan="2">&nbsp;</td></tr>

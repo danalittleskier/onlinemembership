@@ -156,6 +156,18 @@
 	      <field property="member.lastName" depends="required">
 	        <arg0 key="registration.firstName" />
 	      </field>
+	      <field property="address.stateCode" depends="required">
+	        <arg0 key="user.address.province" />
+	      </field>
+
+      </form>
+      <form name="stateClub">
+	      <field property="stateAffiliation" depends="required">
+	        <arg0 key="user.address.province" />
+	      </field>
+	      <field property="clubId" depends="required">
+	        <arg0 key="registration.club" />
+	      </field>
       </form>
   </formset>
 </form-validation>
