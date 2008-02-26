@@ -17,6 +17,7 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.manager.MemberManager;
 import org.ussa.model.Address;
+import org.ussa.model.AddressPk;
 import org.ussa.model.Member;
 
 public class ContactController extends AbstractSimpleFormController
@@ -70,7 +71,10 @@ public class ContactController extends AbstractSimpleFormController
                 member = new Member();
             }
 
-            address = addressDao.get(id);
+            AddressPk addressPk = new AddressPk();
+            addressPk.setType("P");
+            addressPk.setId(id);//new Long(6050553)); //Micahel Henderson, lucky john
+            address = addressDao.get(addressPk);
             if (address == null)
             {
                 address = new Address();
