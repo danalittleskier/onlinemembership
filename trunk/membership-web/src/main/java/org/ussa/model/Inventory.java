@@ -3,139 +3,110 @@ package org.ussa.model;
 import java.io.*;
 import javax.persistence.*;
 
+import org.appfuse.model.BaseObject;
 
 @Entity
-@Table (name="INVENTORY")
+@Table(name = "INVENTORY")
+public class Inventory extends BaseObject implements Serializable
+{
+    @Id
+    @Column(name = "INV_ID", length = 8)
+    private String id;
 
-public class Inventory implements Serializable {
-
-
-    //Member table fields
-    private int invId;
+    @Column(name = "RENEW_DESC", nullable = true, length = 50, unique = false)
     private String renewDesc;
+
+    @Column(name = "DESCRIPTION", nullable = true, length = 50, unique = false)
     private String description;
-    private String ageFrom;
-    private String ageTo;
+
+    @Column(name = "AGE_FROM", nullable = true, length = 5, unique = false)
+    private Long ageFrom;
+
+    @Column(name = "AGE_TO", nullable = true, length = 5, unique = false)
+    private Long ageTo;
+
+    @Column(name = "SPORT_CODE", nullable = true, length = 3, unique = false)
     private String sportCode;
 
-
-    public Inventory() {
-    }
-
-
-    /**
-     * @return the iNV_ID
-     */
-    @Id
-    @Column(name = "INV_ID", nullable = false, length=8, unique=false)
-    public int getINV_ID()
+    @Override
+    public boolean equals(Object o)
     {
-        return invId;
+        // TODO Auto-generated method stub
+        return false;
     }
 
-
-    /**
-     * @param inv_id the iNV_ID to set
-     */
-    public void setINV_ID(int inv_id)
+    @Override
+    public int hashCode()
     {
-        invId = inv_id;
+        // TODO Auto-generated method stub
+        return 0;
     }
 
+    @Override
+    public String toString()
+    {
+        // TODO Auto-generated method stub
+        return null;
+    }
 
-    /**
-     * @return the rENEW_DESC
-     */
-    @Column(name = "RENEW_DESC", nullable = true, length=50, unique=false)
-    public String getRENEW_DESC()
+    public String getId()
+    {
+        return id;
+    }
+
+    public void setId(String id)
+    {
+        this.id = id;
+    }
+
+    public String getRenewDesc()
     {
         return renewDesc;
     }
 
-
-    /**
-     * @param renew_desc the rENEW_DESC to set
-     */
-    public void setRENEW_DESC(String renew_desc)
+    public void setRenewDesc(String renewDesc)
     {
-        renewDesc = renew_desc;
+        this.renewDesc = renewDesc;
     }
 
-
-    /**
-     * @return the dESCRIPTION
-     */
-    @Column(name = "DESCRIPTION", nullable = true, length=50, unique=false)
-    public String getDESCRIPTION()
+    public String getDescription()
     {
         return description;
     }
 
-
-    /**
-     * @param description the dESCRIPTION to set
-     */
-    public void setDESCRIPTION(String description)
+    public void setDescription(String description)
     {
-        description = description;
+        this.description = description;
     }
 
-
-    /**
-     * @return the aGE_FROM
-     */
-    @Column(name = "AGE_FROM", nullable = true, length=5, unique=false)
-    public String getAGE_FROM()
+    public Long getAgeFrom()
     {
         return ageFrom;
     }
 
-
-    /**
-     * @param age_from the aGE_FROM to set
-     */
-    public void setAGE_FROM(String age_from)
+    public void setAgeFrom(Long ageFrom)
     {
-        ageFrom = age_from;
+        this.ageFrom = ageFrom;
     }
 
-
-    /**
-     * @return the aGE_TO
-     */
-    @Column(name = "AGE_TO", nullable = true, length=5, unique=false)
-    public String getAGE_TO()
+    public Long getAgeTo()
     {
         return ageTo;
     }
 
-
-    /**
-     * @param age_to the aGE_TO to set
-     */
-    public void setAGE_TO(String age_to)
+    public void setAgeTo(Long ageTo)
     {
-        ageTo = age_to;
+        this.ageTo = ageTo;
     }
 
-
-    /**
-     * @return the sPORT_CODE
-     */
-    @Column(name = "SPORT_CODE", nullable = true, length=3, unique=false)
-    public String getSPORT_CODE()
+    public String getSportCode()
     {
         return sportCode;
     }
 
-
-    /**
-     * @param sport_code the sPORT_CODE to set
-     */
-    public void setSPORT_CODE(String sport_code)
+    public void setSportCode(String sportCode)
     {
-        sportCode = sport_code;
+        this.sportCode = sportCode;
     }
-
 
 }
