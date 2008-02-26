@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+       default-lazy-init="true">
+
+    <!-- Add new DAOs here -->
+
+    <bean id="addressDao" class="org.ussa.dao.impl.AddressDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="clubDao" class="org.ussa.dao.impl.ClubDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="memberDao" class="org.ussa.dao.impl.MemberDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+
+    <!-- Add new Managers here -->
+	<bean id="memberManager" class="org.ussa.manager.impl.MemberManagerImpl">
+	    <constructor-arg ref="memberDao"/>
+	</bean>
+
+</beans>
