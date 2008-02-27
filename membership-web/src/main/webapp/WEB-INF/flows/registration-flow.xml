@@ -45,7 +45,7 @@
 
 	<view-state id="sportMembership" view="sportMembership">
         <transition on="back" to="stateClub" />
-		<transition on="next" to="extras"/>
+        <transition on="next" to="extras"/>
 	</view-state>
 
 	<view-state id="extras" view="extras">

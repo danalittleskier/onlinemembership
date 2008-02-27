@@ -9,6 +9,7 @@
 	   <property name="memberDao" ref="memberDao"/>
 	   <property name="stateDao" ref="stateDao"/>
 	   <property name="memberManager" ref="memberManager"/>
+	   <property name="inventoryDao" ref="inventoryDao"/>
     </bean>
 
     <!-- Form objects -->

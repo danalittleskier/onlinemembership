@@ -56,16 +56,53 @@ a img {
 
   <div class="greydientLeft" style="width: 442px; height: 212px">
 
-<form>
+ <form:form commandName="accountBean" name="accountBean">
+
+ <table class="formtable">
+	<tbody>
+		<spring:bind path="accountBean.*">
+			<c:if test="${not empty status.errorMessages}">
+				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
+				<tr>
+					<td colspan="3" class="formerrors">
+						<c:forEach var="errorMsg" items="${status.errorMessages}">
+							<c:out value="${errorMsg}" escapeXml="false" />
+						</c:forEach>
+					</td>
+				</tr>
+			</c:if>
+		</spring:bind>
+
 
 	<table border="0" width="100%" id="table1">
+	<tr>
+	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
+	      <td colspan="2" align="left">
+          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
+          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
+            <select name="stateAffiliation">
+            <!-- <select name="${status.expression}" value="${status.value[index]}">
+	    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
+	          <option value=""></option>
+	          <c:forEach var="o" items="${accountBean.membership}">
+	            <option value="<c:out value='${o.description}'/>"
+	              <c:if test="${o.ageFrom < 20}">selected</c:if>><c:out value='${o.description}'/></option>
+
+	          </c:forEach>
+	        </select>
+
+	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
+	      </td>
+	    </tr>
 		<tr>
 			<td width="18%"><font size="2">Sport</font></td>
 			<td width="79%"><select size="1" name="D1"></select></td>
 		</tr>
 		<tr>
-			<td width="18%"><font size="2">Membership</font></td>
-			<td width="79%"><select size="1" name="D2"></select></td>
+			<td><font size="2">Membership:</font></td>
+	        <td colspan="2" align="left">
+
+		    </td>
 		</tr>
 		<tr>
 			<td width="18%">&nbsp;</td>
@@ -155,7 +192,7 @@ a img {
 	<p>
 </p>
 
-</form>
+</form:form>
 </body>
 
-</html></html>
+</html>
