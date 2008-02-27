@@ -17,7 +17,9 @@
     <bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
-
+    <bean id="inventoryDao" class="org.ussa.dao.impl.InventoryDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
     <!-- Add new Managers here -->
 	<bean id="memberManager" class="org.ussa.manager.impl.MemberManagerImpl">

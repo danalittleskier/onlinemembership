@@ -16,12 +16,14 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.StateDao;
+import org.ussa.dao.InventoryDao;
 import org.ussa.manager.MemberManager;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
 import org.ussa.model.Member;
 import org.ussa.model.State;
+import org.ussa.model.Inventory;
 
 public class RegistrationAction extends MultiAction implements Serializable
 {
@@ -30,6 +32,7 @@ public class RegistrationAction extends MultiAction implements Serializable
     private AddressDao addressDao;
     private StateDao stateDao;
     private ClubDao clubDao;
+    private InventoryDao inventoryDao;
 
 
     public void setMemberManager(MemberManager memberManager)
@@ -58,10 +61,17 @@ public class RegistrationAction extends MultiAction implements Serializable
         //System.out.println("id["+id+"]");
         Member member = new Member();
         Address address = new Address();
+        Inventory inventory = new Inventory();
 
         List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
         obj.setUsStates(usStates);
-        //System.out.println("NumStates["+usStates.size()+"]");
+
+        List<Inventory> inv = inventoryDao.getAllMemberships_TypeOrdered();
+        obj.setMembership(inv);
+
+
+         System.out.println("brad["+inv.toString()+"]");
+        System.out.println("brad["+inventory.getDescription()+"]");
         //MutableAttributeMap requestScope = context.getRequestScope();
         //request.setAttribute("usStates", usStates);
 
@@ -85,6 +95,7 @@ public class RegistrationAction extends MultiAction implements Serializable
             }
             obj.setAddress(address);
             obj.setMember(member);
+            obj.setInventory(inventory);
             return result("renew");
         }
         else
@@ -92,6 +103,7 @@ public class RegistrationAction extends MultiAction implements Serializable
             //Member does not exist, do a register
             obj.setAddress(address);
             obj.setMember(member);
+            obj.setInventory(inventory);
             return result("register");
         }
     }
@@ -135,6 +147,7 @@ public class RegistrationAction extends MultiAction implements Serializable
         return result("form");
     }
 
+
     public void setStateDao(StateDao stateDao)
     {
         this.stateDao = stateDao;
@@ -142,6 +155,13 @@ public class RegistrationAction extends MultiAction implements Serializable
     public void setClubDao(ClubDao clubDao)
     {
         this.clubDao = clubDao;
+    }
+    /**
+     * @param inventoryDao the inventoryDao to set
+     */
+    public void setInventoryDao(InventoryDao inventoryDao)
+    {
+        this.inventoryDao = inventoryDao;
     }
 
 }

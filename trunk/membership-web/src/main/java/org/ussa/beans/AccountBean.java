@@ -7,6 +7,7 @@ import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Member;
 import org.ussa.model.State;
+import org.ussa.model.Inventory;
 
 public class AccountBean
 {
@@ -16,6 +17,8 @@ public class AccountBean
     private Address address;
 
     private Club club;
+
+    private Inventory inventory;
 
     //Helper data, not necessarailly persisited...
     private Boolean waiverAgree = false; //This one will go away
@@ -27,6 +30,26 @@ public class AccountBean
     List<State> usStates;
     List<Club>  clubsForState;
 
+    // inventory - memberships
+    List<Inventory> membership;
+
+
+
+    /**
+     * @return the memberships
+     */
+    public List<Inventory> getMembership()
+    {
+        return membership;
+    }
+
+    /**
+     * @param memberships the memberships to set
+     */
+    public void setMembership(List<Inventory> membership)
+    {
+        this.membership = membership;
+    }
 
     public Member getMember()
     {
@@ -106,6 +129,22 @@ public class AccountBean
     public void setClubId(Long clubId)
     {
         this.clubId = clubId;
+    }
+
+    /**
+     * @return the inventory
+     */
+    public Inventory getInventory()
+    {
+        return inventory;
+    }
+
+    /**
+     * @param inventory the inventory to set
+     */
+    public void setInventory(Inventory inventory)
+    {
+        this.inventory = inventory;
     }
 
 
