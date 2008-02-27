@@ -36,7 +36,7 @@
 			<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=1;sz=720x90;ord=123456789?" target="_blank">
 			<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=1;sz=720x90;ord=123456789?" width="720" height="90" border="0" alt=""></a>
 		</noscript>
-        <img src="/images/ussa-base/TV_TuneIn.jpg" border="0" ismap usemap="#topAdMap">
+        <img src="${ctx}/images/ussa/TV_TuneIn.jpg" border="0" ismap usemap="#topAdMap">
 </div>
 <map name="topAdMap">
 	<area shape="rect" coords="64,34,104,71" href="http://www.usskiteam.com/public/tv.php?&dId=6" target="_blank">
@@ -45,7 +45,7 @@
 
 <!------------------------------------------- Page Header ----------------------------------------------->
 <div class=page_header_wrapper>
-	<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="/images/ussa-base/ussa.png" style="border:none"></a></div>
+	<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="${ctx}/images/ussa/ussa.png" style="border:none"></a></div>
 	<div class=title>
 		<h1>United States Ski and Snowboard Association</h1>
 		An Olympic sports organization dedicated to fielding the <br> best
@@ -65,7 +65,7 @@
 					<td>
 						<input type="textbox" name="q" size="25" maxlength="255" value="Search" onfocus="javascript:this.select();"/>
 						<!--<input type="submit" name="btnG" value="USSA Search"/>-->
-						<a><img src="/images/ussa-base/magnifying_glass.png" onclick="javascript:document.googleMini.submit();" border="0"></a>
+						<a><img src="${ctx}/images/ussa/magnifying_glass.png" onclick="javascript:document.googleMini.submit();" border="0"></a>
 						<input type="hidden" name="site" value="USSA"/>
 						<input type="hidden" name="client" value="ussa"/>
 						<input type="hidden" name="proxystylesheet" value="ussa"/>
@@ -100,7 +100,7 @@
 
 	<!-- LEFT column -->
 	<div id="twocol-primary">
-		<p><form:form commandName="member" name="member">
+		<form:form commandName="member" name="member">
    <table class="formtable">
 	<tbody>
 		<spring:bind path="member.*">
@@ -208,8 +208,8 @@
 			<option>Black</option>
 			<option>Hispanic or Latiino</option>
 			<option>Asian</option>
-			<option>American Indian or Alaska Native</option>
-			<option>Native Hawaiian or Other Pacific Islander</option>
+			<option>American Indian</option>
+			<option>Native Hawaiian</option>
 			<option>Mixed Race</option>
 			<option>Prefer not to respond</option>
 			</select></td>
@@ -278,68 +278,13 @@
 			<td width="189">&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
-		</table></p>
+		</table>
 	</div>
 
 	<!-- RIGHT column -->
 	<div id="twocol-secondary">
 		<p>Secondary Content (RIGHT)</p>
-		<!-- BOX (START) -->
-		<div class="bl"><div class="br"><div class="tl"><div class="tr"><div class="border-left"></div>
-			<table border="0" width="100%" id="table2">
-		<tr>
-			<td>
-			<p align="center"><b><font size="2">Online Membership Registration</font></b></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-			<ul>
-				<li><font size="1">Memberships, FIS registrations and IPC
-				registrations are non-refundable</font></li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<ul>
-				<li><font size="1">Memberships expire annually on June 30.</font></li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<ul>
-				<li><font size="1">Registration must be submitted only by those
-				18 or older.</font></li>
-			</ul>
-			</td>
-		</tr>
-		<tr>
-			<td>
-			<ul>
-				<li><font size="1">Code of Conduct:</font></li>
-			</ul>
-			<p><font size="1">I understand</font></td>
-		</tr>
-		<tr>
-			<td height="22">&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>
-			&nbsp;</td>
-		</tr>
-	</table>
-		</div></div></div></div>
-		<!-- BOX (END) -->
+
 	</div>
 
 </div>
@@ -366,7 +311,7 @@
 		<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=2;sz=720x90;ord=123456789?" target="_blank">
 		<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=2;sz=720x90;ord=123456789?" width="720" height="90" border="0" alt=""></a>
 	</noscript>
-	<img src="/images/ussa-base/TV_TuneIn.jpg" ismap usemap="#bottomAdMap" border="0">
+	<img src="${ctx}/images/ussa/TV_TuneIn.jpg" ismap usemap="#bottomAdMap" border="0">
 
 	<div class=bottom_menu>
 		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">
@@ -384,7 +329,7 @@
 	</div>
 
     <div class=dotted_separator></div>
-    <img src="/images/ussa-base/combined_logos_color.gif" alt="" height="37" ismap usemap="#teamMap" border="0">
+    <img src="${ctx}/images/ussa/combined_logos_color.gif" alt="" height="37" ismap usemap="#teamMap" border="0">
     <!-- Image Maps -->
     <map name="bottomAdMap">
         <area shape="rect" coords="64,34,104,71" href="http://www.usskiteam.com/public/tv.php?&dId=6" target="_blank">
