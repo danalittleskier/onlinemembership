@@ -78,18 +78,15 @@ a img {
 	<tr>
 	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
 	      <td colspan="2" align="left">
-          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
-          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-            <select name="stateAffiliation">
-            <!-- <select name="${status.expression}" value="${status.value[index]}">
-	    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
+	      <spring:bind path="accountBean.membershipId">
+            <select name="membershipId">
 	          <option value=""></option>
-	          <c:forEach var="o" items="${accountBean.membership}">
+	          <c:forEach var="o" items="${accountBean.memberships}">
 	            <option value="<c:out value='${o.description}'/>"
 	              <c:if test="${o.ageFrom < 20}">selected</c:if>><c:out value='${o.description}'/></option>
-
 	          </c:forEach>
 	        </select>
+	      </spring:bind>
 
 	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
 	      </td>
