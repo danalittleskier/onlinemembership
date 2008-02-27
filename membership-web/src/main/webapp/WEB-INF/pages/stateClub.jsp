@@ -88,7 +88,8 @@ function changeState(index)
 	    <tr>
 	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
 	      <td colspan="2" align="left">
-          <spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
+          <spring:bind path="accountBean.stateAffiliation">
+          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
           <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
             <select name="stateAffiliation">
             <!-- <select name="${status.expression}" value="${status.value[index]}">

@@ -66,12 +66,12 @@ public class RegistrationAction extends MultiAction implements Serializable
         List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
         obj.setUsStates(usStates);
 
-        List<Inventory> inv = inventoryDao.getAllMemberships_TypeOrdered();
-        obj.setMembership(inv);
+        List<Inventory> memberships = inventoryDao.getAllMemberships_TypeOrdered();
+        obj.setMemberships(memberships);
 
 
-         System.out.println("brad["+inv.toString()+"]");
-        System.out.println("brad["+inventory.getDescription()+"]");
+        //System.out.println("brad["+memberships.toString()+"]");
+        //System.out.println("brad["+inventory.getDescription()+"]");
         //MutableAttributeMap requestScope = context.getRequestScope();
         //request.setAttribute("usStates", usStates);
 
@@ -147,7 +147,20 @@ public class RegistrationAction extends MultiAction implements Serializable
         return result("form");
     }
 
-
+    public Event findApplicableSportMemberships(RequestContext context) throws Exception
+    {
+        HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
+        AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
+        List<Inventory> memberships = new ArrayList<Inventory>();
+        //Here is where logic goes off of birthdate...
+        if (obj != null)
+        {
+            memberships = inventoryDao.getAllMemberships_TypeOrdered();
+        }
+        obj.setMemberships(memberships);
+        System.out.println("numMemberships["+memberships.size()+"]");
+        return result("form");
+    }
     public void setStateDao(StateDao stateDao)
     {
         this.stateDao = stateDao;

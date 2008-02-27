@@ -12,44 +12,23 @@ import org.ussa.model.Inventory;
 public class AccountBean
 {
     //Fields to save when done
-    private Member member;
+    private Member member; //Only save the member at the end...
 
+    //These objects will be added to the member and saved via "member.save();".  May need a transactionManager
     private Address address;
-
     private Club club;
-
     private Inventory inventory;
 
-    //Helper data, not necessarailly persisited...
+    //Helper fields for binding, not persisited...
     private Boolean waiverAgree = false; //This one will go away
-    private Long clubId = new Long(0);
+    private Long clubId;
+    private String membershipId;
     private String stateAffiliation;
-
 
     //Reference Data fields.  Do not save when done:
     List<State> usStates;
     List<Club>  clubsForState;
-
-    // inventory - memberships
-    List<Inventory> membership;
-
-
-
-    /**
-     * @return the memberships
-     */
-    public List<Inventory> getMembership()
-    {
-        return membership;
-    }
-
-    /**
-     * @param memberships the memberships to set
-     */
-    public void setMembership(List<Inventory> membership)
-    {
-        this.membership = membership;
-    }
+    List<Inventory> memberships;// inventory - memberships
 
     public Member getMember()
     {
@@ -145,6 +124,26 @@ public class AccountBean
     public void setInventory(Inventory inventory)
     {
         this.inventory = inventory;
+    }
+
+    public List<Inventory> getMemberships()
+    {
+        return memberships;
+    }
+
+    public void setMemberships(List<Inventory> memberships)
+    {
+        this.memberships = memberships;
+    }
+
+    public String getMembershipId()
+    {
+        return membershipId;
+    }
+
+    public void setMembershipId(String membershipId)
+    {
+        this.membershipId = membershipId;
     }
 
 
