@@ -1,6 +1,8 @@
 package org.ussa.model;
 
 import java.io.*;
+import java.math.BigDecimal;
+
 import javax.persistence.*;
 
 import org.appfuse.model.BaseObject;
@@ -12,9 +14,6 @@ public class Inventory extends BaseObject implements Serializable
     @Id
     @Column(name = "INV_ID", length = 8)
     private String id;
-
-    @Column(name = "AMOUNT", nullable = true, length = 5, unique = false)
-    private String amount;
 
     @Column(name = "DESCRIPTION", nullable = true, length = 50, unique = false)
     private String description;
@@ -33,6 +32,9 @@ public class Inventory extends BaseObject implements Serializable
 
     @Column(name = "ACTIVE", nullable = true, length = 1, unique = false)
     private String active;
+
+    @Column(name = "AMOUNT", nullable = true, length = 5, unique = false)
+    private BigDecimal amount;
 
     @Override
     public boolean equals(Object o)
@@ -71,18 +73,12 @@ public class Inventory extends BaseObject implements Serializable
         this.id = id;
     }
 
-    /**
-     * @return the amount
-     */
-    public String getAmount()
+    public BigDecimal getAmount()
     {
         return amount;
     }
 
-    /**
-     * @param amount the amount to set
-     */
-    public void setAmount(String amount)
+    public void setAmount(BigDecimal amount)
     {
         this.amount = amount;
     }

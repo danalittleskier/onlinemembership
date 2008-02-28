@@ -1,13 +1,16 @@
 package org.ussa.beans;
 
-import java.sql.Timestamp;
+import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.SortedSet;
 
 import org.ussa.model.Address;
 import org.ussa.model.Club;
+import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.State;
-import org.ussa.model.Inventory;
 
 public class AccountBean
 {
@@ -18,6 +21,7 @@ public class AccountBean
     private Address address;
     private Club club;
     private Inventory inventory;
+    private CartBean cartBean;
 
     //Helper fields for binding, not persisited...
     private Boolean waiverAgree = false; //This one will go away
@@ -30,7 +34,10 @@ public class AccountBean
     List<State> usStates;
     List<Club>  clubsForState;
     List<Inventory> memberships;// inventory - memberships
-    List<Inventory> sports;// inventory - sports
+    List<String> sports;// inventory - sports
+    Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
+    BigDecimal total = BigDecimal.ZERO;
+    String totalCost = "0";
 
     public Member getMember()
     {
@@ -158,14 +165,44 @@ public class AccountBean
         this.sportId = sportId;
     }
 
-    public List<Inventory> getSports()
+    public List<String> getSports()
     {
         return sports;
     }
 
-    public void setSports(List<Inventory> sports)
+    public void setSports(List<String> sports)
     {
         this.sports = sports;
+    }
+
+    public CartBean getCartBean()
+    {
+        return cartBean;
+    }
+
+    public void setCartBean(CartBean cartBean)
+    {
+        this.cartBean = cartBean;
+    }
+
+    public Set<LineItemBean> getShoppingCart()
+    {
+        return shoppingCart;
+    }
+
+    public void setShoppingCart(Set<LineItemBean> shoppingCart)
+    {
+        this.shoppingCart = shoppingCart;
+    }
+
+    public BigDecimal getTotal()
+    {
+        return total;
+    }
+
+    public void setTotal(BigDecimal total)
+    {
+        this.total = total;
     }
 
 

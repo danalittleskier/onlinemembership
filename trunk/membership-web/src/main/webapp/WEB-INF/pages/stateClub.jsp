@@ -103,6 +103,8 @@ function changeState(index)
 	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
 	      </td>
 	    </tr>
+  <c:choose>
+	  <c:when test="${fn:length(accountBean.clubsForState) != 0}">
 		<tr>
 			<td><font size="2">Club:</font></td>
 	        <td colspan="2" align="left">
@@ -117,6 +119,8 @@ function changeState(index)
 		      </spring:bind>
 		    </td>
 		</tr>
+      </c:when>
+    </c:choose>
 		</table>
 
 

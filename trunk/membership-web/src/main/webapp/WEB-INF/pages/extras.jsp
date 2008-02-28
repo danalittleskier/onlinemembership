@@ -195,6 +195,15 @@ a img {
 
 	</div>
   <div class="greydientRight" style="width: 347px; height: 316px">
+  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1">
+    <display:caption>Shopping Cart</display:caption>
+    <display:column property="description" title="Description" sortable="false" />
+    <display:column property="amount" title="Amount" sortable="false" />
+  </display:table>
+  <table border="0">
+  <tr><td colspan="2" align="right"><i>total</i> $${accountBean.total }</td></tr>
+  </table>
+  <%--
     <table border="1" width="100%" id="table2">
 		<tr>
 			<td colspan="2">
@@ -240,7 +249,7 @@ a img {
 			<td>
 			<p align="right"><b><font size="2">$100.00</font></b></td>
 		</tr>
-	</table>
+	</table> --%>
 	</div>
 </div>
 	<div class="section3">

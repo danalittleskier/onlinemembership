@@ -75,40 +75,44 @@ a img {
 
 
 	<table border="0" width="100%" id="table1">
-	<tr>
-	      <td class="label" colspan="1"><font size="2">Membership</font></td>
-	      <td colspan="2" align="left">
-	      <spring:bind path="accountBean.membershipId">
-            <select name="membershipId">
-	          <option value=""></option>
-	          <c:forEach var="o" items="${accountBean.memberships}">
-	            <option value="${o.id}"
-	              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}|id[${o.id }]|Code[${o.sportCode}]|From[${o.ageFrom}]|To[${o.ageTo}]</option>
-	          </c:forEach>
-	        </select>
-	      </spring:bind>
-	      </td>
-	    </tr>
 		<tr>
-			<td width="18%"><font size="2">Sport</font></td>
+			<td width="18%"><font size="2"><fmt:message key="registration.sport"/>:</font></td>
 			<td width="79%">
 		      <spring:bind path="accountBean.sportId">
 	            <select name="sportId">
 		          <option value=""></option>
 		          <c:forEach var="o" items="${accountBean.sports}">
+		            <option value="${o}"
+		              <c:if test="${o == status.value}">selected</c:if>>${o}</option>
+		          </c:forEach>
+		        </select>
+		      </spring:bind>
+		      <input type="submit" class="button" name="_eventId_change" value="Update">
+ <c:choose>
+	  <c:when test="${fn:length(accountBean.memberships) != 0}">
+	      <input type="submit" class="button" name="_eventId_add" value="Add">
+      </c:when>
+ </c:choose>
+            </td>
+		</tr>
+  <c:choose>
+	  <c:when test="${fn:length(accountBean.memberships) != 0}">
+		<tr>
+			<td><font size="2"><fmt:message key="registration.membership"/>:</font></td>
+	        <td colspan="2" align="left">
+		      <spring:bind path="accountBean.membershipId">
+	            <select name="membershipId">
+		          <option value=""></option>
+		          <c:forEach var="o" items="${accountBean.memberships}">
 		            <option value="${o.id}"
 		              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}|id[${o.id }]|Code[${o.sportCode}]|From[${o.ageFrom}]|To[${o.ageTo}]</option>
 		          </c:forEach>
 		        </select>
 		      </spring:bind>
-            </td>
-		</tr>
-		<tr>
-			<td><font size="2">Membership:</font></td>
-	        <td colspan="2" align="left">
-
 		    </td>
 		</tr>
+      </c:when>
+    </c:choose>
 		<tr>
 			<td width="18%">&nbsp;</td>
 			<td width="79%">&nbsp;</td>
@@ -136,6 +140,15 @@ a img {
 
       	* Indicate required field<p>&nbsp;</div>
   <div class="greydientRight" style="width: 347px; height: 316px">
+  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1">
+    <display:caption>Shopping Cart</display:caption>
+    <display:column property="description" title="Description" sortable="false" />
+    <display:column property="amount" title="Amount" sortable="false" />
+  </display:table>
+  <table border="0">
+  <tr><td colspan="2" align="right"><i>total</i> $${accountBean.total }</td></tr>
+  </table>
+  <%--
     <table border="1" width="100%" id="table2">
 		<tr>
 			<td colspan="2">
@@ -180,7 +193,7 @@ a img {
 			<td>
 			<p align="right"><b><font size="2">$100.00</font></b></td>
 		</tr>
-	</table>
+	</table>--%>
 	</div>
 </div>
 	<div class="section3">

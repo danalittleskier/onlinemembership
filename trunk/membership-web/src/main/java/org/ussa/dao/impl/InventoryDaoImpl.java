@@ -20,12 +20,15 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
         List<Inventory> objs = getHibernateTemplate().find(query.toString());
         return objs;
     }
-    public List<Inventory> getAllSportsCodes()
+    public List<String> getAllSportCodes()
     {
-        StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(i.active)='y' order by i.description asc");
-        List<Inventory> objs = getHibernateTemplate().find(query.toString());
+        //List<String> objs = new ArrayList<String>();
+        //objs.add("All");
+        StringBuilder query = new StringBuilder("select distinct i.sportCode from Inventory i where lower(i.active)='y' and i.sportCode is not null order by i.sportCode asc");
+        List<String> objs = getHibernateTemplate().find(query.toString());
         return objs;
     }
+
     public List<Inventory> getAllMembershipsByAge(Integer age)
     {
         StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' ");
@@ -34,22 +37,24 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
             query.append(" and (i.ageFrom <= '").append(age).append("' or i.ageFrom is null)");
             query.append(" and (i.ageTo   >= '").append(age).append("' or i.ageTo is null)");
         }
-        //System.out.println("query["+query.toString()+"]");
-        //List<Inventory> objs = new ArrayList<Inventory>();
         List<Inventory> objs = getHibernateTemplate().find(query.toString());
         return objs;
     }
-    public List<Inventory> getAllSportsCodesByAge(Integer age)
+    public List<Inventory> getAllMembershipsByCriteria(Integer age, String sportCode)
     {
-        StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(i.active)='y' ");
+        StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' ");
         if (age != null)
         {
             query.append(" and (i.ageFrom <= '").append(age).append("' or i.ageFrom is null)");
             query.append(" and (i.ageTo   >= '").append(age).append("' or i.ageTo is null)");
         }
-        //System.out.println("query["+query.toString()+"]");
-        //List<Inventory> objs = new ArrayList<Inventory>();
+        if (sportCode != null)
+        {
+            query.append(" and lower(i.sportCode)=lower('").append(sportCode).append("')");
+        }
+
         List<Inventory> objs = getHibernateTemplate().find(query.toString());
         return objs;
     }
+
 }
