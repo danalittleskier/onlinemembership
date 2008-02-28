@@ -153,6 +153,7 @@ public class RegistrationAction extends MultiAction implements Serializable
         //Here is where logic goes off of birthdate...
 
         Integer age = obj.getMember().getAge(); //For now hardcode age but need to compute off of birthdate.
+        System.out.println("AGE= " + age);
         if (obj != null)
         {
             //memberships = inventoryDao.getAllMembershipTypes();
