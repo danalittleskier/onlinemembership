@@ -1,12 +1,15 @@
 package org.ussa.spring.flows;
 
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.propertyeditors.CharacterEditor;
 import org.springframework.beans.propertyeditors.CustomBooleanEditor;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.validation.DataBinder;
@@ -15,6 +18,7 @@ import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.core.collection.AttributeMap;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
+import org.ussa.spring.util.CustomSqlDateEditor;
 
 
 public class FormActionTemplate extends FormAction
@@ -39,6 +43,10 @@ public class FormActionTemplate extends FormAction
         binder.registerCustomEditor(BigDecimal.class, new CustomNumberEditor(BigDecimal.class, true));
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
         binder.registerCustomEditor(Character.class, new CharacterEditor(true));
+          new CustomDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true); //TODO: pull from ApplicationResources.properties like in
+                                                                          //AbstractSimpleFormController
+        binder.registerCustomEditor(java.sql.Date.class, new CustomSqlDateEditor(new SimpleDateFormat(
+                "MM/dd/yyyy"), true));//TODO: pull from ApplicationResources.properties like in AbstractSimpleFormController
     }
 
     public Event bindAndValidate(RequestContext ctx) throws Exception
