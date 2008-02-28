@@ -2,6 +2,7 @@ package org.ussa.model;
 
 import java.io.*;
 import java.sql.Date;
+import java.util.Calendar;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -72,7 +73,20 @@ public class Member extends BaseObject implements Serializable
 
     public Integer getAge()
     {
-        return 50;
+        Integer age;
+        int acctYr=0;
+        Calendar today=Calendar.getInstance();
+        Calendar bDate=Calendar.getInstance();
+        Calendar memYear=Calendar.getInstance();
+        bDate.setTime(birthDate);
+        memYear.setTime(birthDate);
+        memYear.set(Calendar.YEAR, today.get(Calendar.YEAR));
+        if(memYear.after(today)){
+            acctYr--;
+        }
+        age = today.get(Calendar.YEAR)-bDate.get(Calendar.YEAR)+acctYr;
+
+        return age;
     }
     @Override
     public boolean equals(Object o)
