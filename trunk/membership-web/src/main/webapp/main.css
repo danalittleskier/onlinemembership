@@ -27,6 +27,10 @@ reside in the roots of these too directories (/images/ and /scripts/).
 
 /* General
 ---------------------------------------------------------------------- */
+body {
+	font-family:tahoma,arial,verdana,sans-serif;
+}
+.clear {clear:both;}
 
 /* Header
 ---------------------------------------------------------------------- */
@@ -34,6 +38,13 @@ reside in the roots of these too directories (/images/ and /scripts/).
 
 /* Content
 ---------------------------------------------------------------------- */
+#stg-pagetitle {
+	font:bold 18px arial,verdana,sans-serif;
+	width:100%;
+	border-bottom:1px solid #ccc;
+	padding-bottom:5px;
+	margin-bottom:15px;
+}
 #stg-content {
 	width:920px;
 	margin:0 auto;
@@ -41,12 +52,13 @@ reside in the roots of these too directories (/images/ and /scripts/).
   	height:auto !important;
 	height:400px;
 	background:#fff;
-	padding:20px;
+	padding:20px 20px 0 20px;
 }
 
 #stg-twocol-primary {
 	float:left;
-	width:510px;
+	width:490px;
+	margin-right:20px;
 }
 
 #stg-twocol-secondary {
@@ -56,10 +68,7 @@ reside in the roots of these too directories (/images/ and /scripts/).
 
 #stg-progress {
 	width:100%;
-	height:30px;
-	line-height:30px;
-	background:#000;
-	color:#fff;
+	height:53px;
 	text-align:center;
 	margin-bottom:20px;
 }
@@ -67,8 +76,15 @@ reside in the roots of these too directories (/images/ and /scripts/).
 /* Rounded corner box styles */
 .stg-bl {background: url(bl.gif) 0 100% no-repeat #e6e6e6; margin:20px 0;}
 .stg-br {background: url(br.gif) 100% 100% no-repeat;}
-.stg-tl {background: url(tl.gif) 0 0 no-repeat;}
-.stg-tr {background: url(tr.gif) 100% 0 no-repeat; padding:10px;}
+.stg-tl {background: url(/tl.gif) 0 0 no-repeat;}
+.stg-tr {background: url(tr.gif) 100% 0 no-repeat; padding:20px;}
+
+/* Callout styles */
+.stg-omr-header {
+	font:24px georgia,"times new roman",serif;
+}
+ul#stg-omr {margin:20px 20px 0 20px;}
+ul#stg-omr li{margin:0 0 7px 0;}
 
 
 
