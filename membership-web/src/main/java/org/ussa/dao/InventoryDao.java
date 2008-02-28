@@ -9,7 +9,7 @@ import org.ussa.model.Inventory;
 public interface InventoryDao extends GenericDao<Inventory, String>
 {
     public List<Inventory> getAllMembershipTypes();
-    public List<Inventory> getAllSportsCodes();
-    public List<Inventory> getAllSportsCodesByAge(Integer age);
+    public List<String> getAllSportCodes();
     public List<Inventory> getAllMembershipsByAge(Integer age);
+    public List<Inventory> getAllMembershipsByCriteria(Integer age, String sportCode);
 }

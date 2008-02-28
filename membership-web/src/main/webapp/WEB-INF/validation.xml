@@ -169,5 +169,13 @@
 	        <arg0 key="registration.club" />
 	      </field>
       </form>
+     <form name="sportMembership">
+	      <field property="membershipId" depends="required">
+	        <arg0 key="registration.membership" />
+	      </field>
+	       <field property="sportId" depends="required">
+	        <arg0 key="registration.sport" />
+	      </field>
+      </form>
   </formset>
 </form-validation>

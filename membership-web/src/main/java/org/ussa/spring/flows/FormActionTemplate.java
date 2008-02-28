@@ -64,4 +64,9 @@ public class FormActionTemplate extends FormAction
         }
         return super.bindAndValidate(ctx);
     }
+    public Event bind(RequestContext ctx) throws Exception
+    {
+        AttributeMap propMap = ctx.getAttributes();
+        return super.bind(ctx);
+    }
 }

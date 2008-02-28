@@ -53,8 +53,23 @@
 
 	<view-state id="sportMembership" view="sportMembership">
         <transition on="back" to="stateClub" />
+        <transition on="change" to="findApplicableSportMemberships">
+          	<action bean="accountBean" method="bind"/>
+        </transition>
+        <transition on="add" to="addSportMemberships">
+          	<action bean="accountBean" method="bindAndValidate">
+          	  <attribute name="validator" value="validatorSportMembership"/>
+          	</action>
+        </transition>
         <transition on="next" to="extras"/>
 	</view-state>
+    <action-state id="addSportMemberships">
+      <entry-actions>
+        <action bean="accountBean" method="setupForm"/>
+      </entry-actions>
+      <action bean="registrationAction"/>
+      <transition on="*" to="sportMembership" />
+    </action-state>
 
 	<view-state id="extras" view="extras">
         <transition on="back" to="sportMembership" />
