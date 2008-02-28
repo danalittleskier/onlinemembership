@@ -66,10 +66,6 @@ public class RegistrationAction extends MultiAction implements Serializable
         List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
         obj.setUsStates(usStates);
 
-        List<Inventory> memberships = inventoryDao.getAllMemberships_TypeOrdered();
-        obj.setMemberships(memberships);
-
-
         //System.out.println("brad["+memberships.toString()+"]");
         //System.out.println("brad["+inventory.getDescription()+"]");
         //MutableAttributeMap requestScope = context.getRequestScope();
@@ -114,6 +110,7 @@ public class RegistrationAction extends MultiAction implements Serializable
         AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
         List<Club> clubs = new ArrayList<Club>();
         String stateAffiliation = new String();
+        System.out.println("BirthDate["+obj.getMember().getBirthDate()+"]");
         System.out.println("Address's city["+obj.getAddress().getCity()+"]");
         System.out.println("Address's state["+obj.getAddress().getStateCode()+"]");
         System.out.println("StateAffiliation["+obj.getStateAffiliation()+"]");
@@ -152,13 +149,21 @@ public class RegistrationAction extends MultiAction implements Serializable
         HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
         AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
         List<Inventory> memberships = new ArrayList<Inventory>();
+        List<Inventory> sports = new ArrayList<Inventory>();
         //Here is where logic goes off of birthdate...
+
+        Integer age = obj.getMember().getAge(); //For now hardcode age but need to compute off of birthdate.
         if (obj != null)
         {
-            memberships = inventoryDao.getAllMemberships_TypeOrdered();
+            //memberships = inventoryDao.getAllMembershipTypes();
+            memberships = inventoryDao.getAllMembershipsByAge(age);
+            //sports = inventoryDao.getAllSportsCodes();
+            sports = inventoryDao.getAllSportsCodesByAge(age);
         }
         obj.setMemberships(memberships);
+        obj.setSports(sports);
         System.out.println("numMemberships["+memberships.size()+"]");
+        System.out.println("numSports["+sports.size()+"]");
         return result("form");
     }
     public void setStateDao(StateDao stateDao)

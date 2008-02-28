@@ -35,12 +35,12 @@ public abstract class AbstractSimpleFormController extends SimpleFormController
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
         binder.registerCustomEditor(Character.class, new CharacterEditor(true));
         binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
-//        binder.registerCustomEditor(java.sql.Date.class, new CustomSqlDateEditor(new SimpleDateFormat(
-//                getText("date.format")), true));
+        binder.registerCustomEditor(java.sql.Date.class, new CustomSqlDateEditor(new SimpleDateFormat(
+                getText("date.format")), true));
 //        binder.registerCustomEditor(java.sql.Timestamp.class, new CustomSqlTimestampEditor(new SimpleDateFormat(
 //                getText("dateTime.format")), true));
-//        binder.registerCustomEditor(Date.class,
-//                new CustomDateEditor(new SimpleDateFormat(getText("date.format")), true));
+        binder.registerCustomEditor(Date.class,
+                new CustomDateEditor(new SimpleDateFormat(getText("date.format")), true));
         initCustomBinder(request, binder);
     }
 

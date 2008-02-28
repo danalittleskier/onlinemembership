@@ -23,12 +23,14 @@ public class AccountBean
     private Boolean waiverAgree = false; //This one will go away
     private Long clubId;
     private String membershipId;
+    private String sportId;
     private String stateAffiliation;
 
     //Reference Data fields.  Do not save when done:
     List<State> usStates;
     List<Club>  clubsForState;
     List<Inventory> memberships;// inventory - memberships
+    List<Inventory> sports;// inventory - sports
 
     public Member getMember()
     {
@@ -144,6 +146,26 @@ public class AccountBean
     public void setMembershipId(String membershipId)
     {
         this.membershipId = membershipId;
+    }
+
+    public String getSportId()
+    {
+        return sportId;
+    }
+
+    public void setSportId(String sportId)
+    {
+        this.sportId = sportId;
+    }
+
+    public List<Inventory> getSports()
+    {
+        return sports;
+    }
+
+    public void setSports(List<Inventory> sports)
+    {
+        this.sports = sports;
     }
 
 

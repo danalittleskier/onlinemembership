@@ -10,14 +10,13 @@
 
         <link rel="stylesheet" type="text/css" media="all" href="<c:url value='/styles/${appConfig["csstheme"]}/theme.css'/>" />
         <link rel="stylesheet" type="text/css" media="print" href="<c:url value='/styles/${appConfig["csstheme"]}/print.css'/>" />
-        <link rel="stylesheet" type="text/css" media="print" href="<c:url value='/styles/${appConfig["csstheme"]}/calendar.css'/>" />
 
         <script type="text/javascript" src="<c:url value='/scripts/prototype.js'/>"></script>
         <script type="text/javascript" src="<c:url value='/scripts/scriptaculous.js'/>"></script>
         <script type="text/javascript" src="<c:url value='/scripts/global.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/scripts/calendar.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/scripts/calendar-setup.js'/>"></script>
-		<script type="text/javascript" src="<c:url value='/scripts/lang/calendar-en.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/scripts/calendar/calendar.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/scripts/calendar/calendar-setup.js'/>"></script>
+		<script type="text/javascript" src="<c:url value='/scripts/calendar/lang/calendar-en.js'/>"></script>
         <head/>
     <decorator:head/>
 <body>

@@ -1,6 +1,7 @@
 package org.ussa.model;
 
 import java.io.*;
+import java.sql.Date;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -34,7 +35,7 @@ public class Member extends BaseObject implements Serializable
     private String lastName;
 
     @Column(name = "BIRTHDATE", nullable = true, length=8, unique=false)
-    private String birthDate;
+    private Date birthDate;
 
     @Column(name = "EMAIL", nullable = true, length=60, unique=false)
     private String email;
@@ -69,6 +70,10 @@ public class Member extends BaseObject implements Serializable
 //    @OneToMany(mappedBy = "id", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 //    private Set<Address> addresses = null;
 
+    public Integer getAge()
+    {
+        return 50;
+    }
     @Override
     public boolean equals(Object o)
     {
@@ -118,16 +123,6 @@ public class Member extends BaseObject implements Serializable
     public void setLastName(String lastName)
     {
         this.lastName = lastName;
-    }
-
-    public String getBirthDate()
-    {
-        return birthDate;
-    }
-
-    public void setBirthDate(String birthDate)
-    {
-        this.birthDate = birthDate;
     }
 
     public String getEmail()
@@ -218,6 +213,26 @@ public class Member extends BaseObject implements Serializable
     public void setClubs(Set<Club> clubs)
     {
         this.clubs = clubs;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
+    public Date getBirthDate()
+    {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate)
+    {
+        this.birthDate = birthDate;
     }
 
 

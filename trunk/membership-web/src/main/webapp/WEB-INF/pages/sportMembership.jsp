@@ -76,24 +76,32 @@ a img {
 
 	<table border="0" width="100%" id="table1">
 	<tr>
-	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
+	      <td class="label" colspan="1"><font size="2">Membership</font></td>
 	      <td colspan="2" align="left">
 	      <spring:bind path="accountBean.membershipId">
             <select name="membershipId">
 	          <option value=""></option>
 	          <c:forEach var="o" items="${accountBean.memberships}">
-	            <option value="<c:out value='${o.description}'/>"
-	              <c:if test="${o.ageFrom < 20}">selected</c:if>><c:out value='${o.description}'/></option>
+	            <option value="${o.id}"
+	              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}|id[${o.id }]|Code[${o.sportCode}]|From[${o.ageFrom}]|To[${o.ageTo}]</option>
 	          </c:forEach>
 	        </select>
 	      </spring:bind>
-
-	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
 	      </td>
 	    </tr>
 		<tr>
 			<td width="18%"><font size="2">Sport</font></td>
-			<td width="79%"><select size="1" name="D1"></select></td>
+			<td width="79%">
+		      <spring:bind path="accountBean.sportId">
+	            <select name="sportId">
+		          <option value=""></option>
+		          <c:forEach var="o" items="${accountBean.sports}">
+		            <option value="${o.id}"
+		              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}|id[${o.id }]|Code[${o.sportCode}]|From[${o.ageFrom}]|To[${o.ageTo}]</option>
+		          </c:forEach>
+		        </select>
+		      </spring:bind>
+            </td>
 		</tr>
 		<tr>
 			<td><font size="2">Membership:</font></td>

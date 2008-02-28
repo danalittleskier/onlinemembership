@@ -88,16 +88,15 @@ function changeState(index)
 	    <tr>
 	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
 	      <td colspan="2" align="left">
-          <spring:bind path="accountBean.stateAffiliation">
-          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
+          <spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
           <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-            <select name="stateAffiliation">
+            <select name="stateAffiliation" onchange="javascript: accountBean.submit();">
             <!-- <select name="${status.expression}" value="${status.value[index]}">
 	    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
 	          <option value=""></option>
 	          <c:forEach var="o" items="${accountBean.usStates}">
-	            <option value="<c:out value='${o.id}'/>"
-	              <c:if test="${o.id == status.value}">selected</c:if>><c:out value='${o.id}'/></option>
+	            <option value="${o.id}"
+	              <c:if test="${o.id == status.value}">selected</c:if>>${o.id}</option>
 	          </c:forEach>
 	        </select>
 	      </spring:bind>
@@ -111,8 +110,8 @@ function changeState(index)
 		    	<select name="clubId">
 		          <option value=""></option>
 		          <c:forEach var="o" items="${accountBean.clubsForState}">
-		            <option value="<c:out value='${o.id}'/>"
-		              <c:if test="${o.id == status.value}">selected</c:if>><c:out value='${o.name}'/></option>
+		            <option value="${o.id}"
+		              <c:if test="${o.id == status.value}">selected</c:if>>${o.name}</option>
 		          </c:forEach>
 		        </select>
 		      </spring:bind>
