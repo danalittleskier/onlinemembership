@@ -16,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
 <link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="stg-forms.css">
 </head>
 
 <body>
@@ -74,6 +75,7 @@
 		</form>
 		</div>
 	</div>
+
 </div>
 </div>
 <!------------------------------------------- Navigation ----------------------------------------------->
@@ -91,91 +93,61 @@
 <!-------------------------------------------- Content ------------------------------------------------->
 <!-- Container -->
 <div id="stg-content">
-
+<%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
-	<div id="stg-progress">Progress Bar</div>
+
+  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
+  <div id="stg-pagetitle">Member Information</div>
 
 	<!-- LEFT column -->
 	<div id="stg-twocol-primary">
-		<%@ include file="/common/taglibs.jsp"%>
-<h2><b>CONTACT INFO</b></h2>
-<br/>
+		 <form:form commandName="accountBean" name="accountBean">
 
- <form:form commandName="accountBean" name="accountBean">
-   <table class="formtable">
-	<tbody>
 		<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
-				<tr>
-					<td colspan="3" class="formerrors">
 						<c:forEach var="errorMsg" items="${status.errorMessages}">
 							<c:out value="${errorMsg}" escapeXml="false" />
 						</c:forEach>
-					</td>
-				</tr>
 			</c:if>
 		</spring:bind>
+			<fieldset>
+				<legend>Personal Information</legend>
 
-	    <tr><td>&nbsp;</td><td colspan="2">&nbsp;</td></tr>
-	    <tr>
-	      <td class="label" colspan="1">USSA Member #:</td>
-	      <td colspan="2">
-	        <form:input path="member.id" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1"><fmt:message key="registration.firstName"/>:</td>
-	      <td colspan="2">
-	        <form:input path="member.firstName" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">MI:</td>
-	      <td colspan="2">
-	        <input type="text" name="T1" size="30">
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1"><fmt:message key="registration.lastName"/>:</td>
-	      <td colspan="2">
-	        <form:input path="member.lastName" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">Suffix:</td>
-	      <td colspan="2">
-	        <input type="text" name="T1" size="30">
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">Company:</td>
-	      <td colspan="2">
-	        <form:input path="address.company" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1"><fmt:message key="user.address.address"/>:</td>
-	      <td colspan="2">
-	        <form:input path="address.deliveryAddress" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	     <tr>
-	      <td class="label" colspan="1">Address 2:</td>
-	      <td colspan="2">
-	        <input type="text" name="T1" size="30">
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1"><fmt:message key="user.address.city"/>:</td>
-	      <td colspan="2">
-	        <form:input path="address.city" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	     <tr>
-	      <td class="label" colspan="1"><fmt:message key="user.address.province"/>:</td>
-	      <td colspan="2" align="left">
-          <spring:bind path="accountBean.address.stateCode">
+
+			<c:if test="${!empty accountBean.member.id }">
+			<label for="">USSA Member #</label>
+				<c:out value="${accountBean.member.id}" /><br />
+	  			 <!-- <tr>
+	      		<td class="label" colspan="1">USSA Member #:</td>
+	    		  <td colspan="2">
+	      		 <form:input path="member.id" size="30" maxlength="30"/>
+	      		</td>
+	    		</tr>    -->
+		</c:if>
+<br />
+				<label for="">First Name</label>
+				<form:input path="member.firstName" size="30" maxlength="30"/><br />
+				<label for="">MI</label>
+				<input name="" type="text" class="text" /><br />
+				<label for="">Last Name</label>
+				<form:input path="member.lastName" size="30" maxlength="30"/><br />
+				<label for="">Suffix</label>
+				<input name="" type="text" class="text" /><br />
+			</fieldset>
+			<fieldset>
+				<legend>Address & Phone</legend>
+				<label for="">Company</label>
+				<form:input path="address.company" size="30" maxlength="30"/><br />
+				<label for="">Address 1</label>
+				<form:input path="address.deliveryAddress" size="30" maxlength="30"/><br />
+				<label for="">Address 2</label>
+				<input name="" type="text" class="text" /><br />
+				<label for="">City</label>
+				<form:input path="address.city" size="30" maxlength="30"/><br />
+				<label for="">State</label>
+
+			<spring:bind path="accountBean.address.stateCode">
 	    	<select name="address.stateCode">
 	          <option value=""></option>
 	          <c:forEach var="o" items="${accountBean.usStates}">
@@ -183,82 +155,81 @@
 	              <c:if test="${o.id == status.value}">selected</c:if>><c:out value='${o.id}'/></option>
 	          </c:forEach>
 	        </select>
-	      </spring:bind>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1"><fmt:message key="user.address.postalCode"/>:</td>
-	      <td colspan="2">
-	        <form:input path="address.postalCode" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">Home Phone:</td>
-	      <td colspan="2">
-	        <form:input path="address.phoneHome" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">Other Phone:</td>
-	      <td colspan="2">
-	        <input type="text" name="T1" size="30">
-	      </td>
-	    </tr>
-	    <tr>
-	      <td class="label" colspan="1">Fax Phone:</td>
-	      <td colspan="2">
-	        <input type="text" name="T1" size="30">
-	      </td>
-	    </tr>
+	      </spring:bind><br />
 
-	      <tr>
-	      <td class="label" colspan="1">Birthdate:</td>
-	      <td colspan="2">
-	        <form:input path="member.birthDate" size="30" maxlength="30"/>
-	      </td>
-	    </tr>
+				<label for="">Zip</label>
+				<form:input path="address.postalCode" size="30" maxlength="30"/><br />
+				<label for="">Country</label>
+				<input name="" type="text" class="text" /><br />
+				<label for="">Home Phone</label>
+				<form:input path="address.phoneHome" size="30" maxlength="30"/><br />
+				<label for="">Other Phone</label>
+				<input name="" type="text" class="text" /><br />
+				<label for="">Fax</label>
+				<input name="" type="text" class="text" /><br />
+				</fieldset>
+
+				<c:if test="${empty accountBean.member.id }">
+				<fieldset>
+				<legend>Other Information</legend>
+				<label for="">Gender</label>
+				<form:input path="member.gender" size="30" maxlength="30"/><br />
+				<label for="">Etnicity</label>
+				<form:input path="member.etnicity" size="30" maxlength="30"/><br />
+				</fieldset>
+				</c:if>
+
+				<c:if test="${accountBean.member.age < 18 }">
+				<fieldset>
+				<legend>Parent Information</legend>
+				<label for="">Parent / Guardian 1</label>
+				<input name="" type="text" class="text" /><br /><br />
+				<label for="">Parent / Guardian 2</label>
+				<input name="" type="text" class="text" /><br /><br /><br />
+				</fieldset>
+				</c:if>
 
 
-       <tr>
-         <td><br/></td>
-         <td><br/></td>
-       </tr>
-       <tr>
-         <td align="left"></td>
-         <td><br/></td>
-       </tr>
-       <tr>
-         <td><br/></td>
-         <td><br/></td>
-       </tr>
-       <tr>
-         <td><br/></td>
-         <td>
-	         <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+			<fieldset class="buttons">
+				<label></label>
+				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
              <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
-         <td>
-       </tr>
-    </tbody>
-  </table>
- </form:form>
+			</fieldset>
+
+
+
+
+
+		</form:form>
 	</div>
+
+	<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
 		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<b>Online Membership Registration</b><p>Memberships, FIS
-			registrations an dIPC registrations are non- refundable.</p>
-			<p>&nbsp;</p>
-			<p>Memberships expire annually on June 30.</p>
-			<p>&nbsp;</p>
-			<p>Registration must by submitted only by those 18 &amp; older.</p>
-			<p>&nbsp;</p>
-			<p>Code of Conduct:</p>
-			<p>&nbsp;</p>
-			<p>&nbsp;&nbsp;&nbsp; I understand that by virture of my membership
-			in USSA, I must comply with USSA&#39;s code of Conduct.</div></div></div></div>
+			<p class="stg-omr-header">Online Membership Registration</p>
+			<ul id="stg-omr">
+				<li>Memberships, FIS registrations and IPC registrations are non-refundable</li>
+				<li>Memberships expire annually on June 30</li>
+				<li>Registration must be submitted only by those 18 &amp; older</li>
+				<li>Code of Conduct:<br />
+				I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.</li>
+
+              <li><strong>Beginning April 1 all registrations completed online
+                will apply to the next competition season. If you wish to register
+                for the current competition season from April 1 through June 30,
+                you may do so by mail or fax. Please contact USSA Member Services
+                for details at <a href="mailto:membership@ussa.org">membership@ussa.org</a>
+                or by phone at 435.647.2666.</strong></li>
+				<li>In order to complete renewal or registration, your primary medical insurance information will be required or you will be required to execute the Primary Medical Exception Agrement provided. You wil also be required to execute a release of liability.</li>
+				<li>A $25 late fee will be added to your total if renewing after Oct. 15 for USSA membership categories other than youth competitors, first time members and officials. your division and/or state may assess late fees in addition to those assessed by USSA.</li>
+				<li>If you are not a U.S.Citizen and wish to change your membership category you must renew by mail or fax.</li>
+				<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
+			</ul>
+		</div></div></div></div>
 		<!-- BOX (END) -->
 	</div>
-
+	<div class="clear"></div>
 </div>
 
 <!--------------------------------------------- Footer ------------------------------------------------->
@@ -304,5 +275,4 @@
 </body>
 
 </html>
-
 
