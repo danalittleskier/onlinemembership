@@ -1,6 +1,7 @@
 package org.ussa.spring.flows.registration;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.springframework.webflow.core.collection.MutableAttributeMap;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.CartBean;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.MemberDao;
@@ -149,17 +151,21 @@ public class RegistrationAction extends MultiAction implements Serializable
         HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
         AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
         List<Inventory> memberships = new ArrayList<Inventory>();
-        List<Inventory> sports = new ArrayList<Inventory>();
+        List<String> sports = new ArrayList<String>();
         //Here is where logic goes off of birthdate...
+        System.out.println("sportId["+obj.getSportId()+"]");
 
         Integer age = obj.getMember().getAge(); //For now hardcode age but need to compute off of birthdate.
-        System.out.println("AGE= " + age);
         if (obj != null)
         {
+            String sportCode=obj.getSportId();
             //memberships = inventoryDao.getAllMembershipTypes();
-            memberships = inventoryDao.getAllMembershipsByAge(age);
+            if (sportCode != null)
+            {
+                memberships = inventoryDao.getAllMembershipsByCriteria(age, sportCode);
+            }
             //sports = inventoryDao.getAllSportsCodes();
-            sports = inventoryDao.getAllSportsCodesByAge(age);
+            sports = inventoryDao.getAllSportCodes();
         }
         obj.setMemberships(memberships);
         obj.setSports(sports);
@@ -167,6 +173,49 @@ public class RegistrationAction extends MultiAction implements Serializable
         System.out.println("numSports["+sports.size()+"]");
         return result("form");
     }
+
+    public Event addSportMemberships(RequestContext context) throws Exception
+    {
+        HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
+        AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
+        CartBean cart = obj.getCartBean();
+        System.out.println("In addSportMembership!!!");
+        if (cart == null)
+        {
+            cart = new CartBean();
+        }
+        String membershipId = obj.getMembershipId();
+        Inventory membership = inventoryDao.get(membershipId);
+        cart.addMembership(membership);
+        if ((obj.getMemberships() != null) && (cart != null))
+        {
+            if (obj.getMemberships().size() > 0)
+            {
+
+                obj.setShoppingCart(cart.getShoppingCart());
+                BigDecimal total = BigDecimal.ZERO;
+//                if (obj.getCartBean().getTotal() != null)
+//                {
+//                    total = obj.getCartBean().getTotal();
+//                    System.out.println("shoppingCart total["+total+"]");
+//                }
+
+                //System.out.println("shoppingCart total["+obj.getCartBean().getTotal().toString()+"]");
+                //obj.setTotal(total);
+                //System.out.println("shoppingCart["+obj.getCartBean().getShoppingCart().size()+"]");
+                //System.out.println("shoppingCart["+obj.getCartBean().getTotal().intValue()+"]");
+
+            }
+        }
+        System.out.println("cart size["+cart.getMemberships().size()+"]");
+        obj.setCartBean(cart);
+        //Clear membership and sport for the next addition
+        obj.setSportId(null);
+        obj.setMembershipId(null);
+        obj.setMemberships(new ArrayList<Inventory>());
+        return result("form");
+    }
+
     public void setStateDao(StateDao stateDao)
     {
         this.stateDao = stateDao;
