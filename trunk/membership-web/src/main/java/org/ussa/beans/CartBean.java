@@ -95,7 +95,7 @@ public class CartBean
             }
             addLineItem(lineItem);
             Set<LineItemBean>hardCodedMagazines = getMagazines(); //TODO: DELETE
-            lineItems.addAll(hardCodedMagazines);//TODO: DELETE
+           // lineItems.addAll(hardCodedMagazines);//TODO: DELETE
             //lineItems.addAll(magazines); //Keep this
         }
         System.out.println("End: shoppingCart["+lineItems.size()+"], members["+memberships.size()+"], cost["+cost+"]");

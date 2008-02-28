@@ -111,6 +111,9 @@
 						</c:forEach>
 			</c:if>
 		</spring:bind>
+		<div id="hide" style="display:none">
+	      <input type="submit" class="button" id="update" name="_eventId_change" value="Update">
+	    </div>
 <fieldset>
 				<legend>Membership  Information</legend>
 
@@ -119,7 +122,7 @@
 			<td width="18%"><font size="2"><fmt:message key="registration.sport"/>:</font></td>
 			<td width="79%">
 		      <spring:bind path="accountBean.sportId">
-	            <select name="sportId">
+	            <select name="sportId" onchange="javascript: document.getElementById('update').click();">
 		          <option value=""></option>
 		          <c:forEach var="o" items="${accountBean.sports}">
 		            <option value="${o}"
@@ -127,7 +130,7 @@
 		          </c:forEach>
 		        </select>
 		      </spring:bind>
-		      <input type="submit" class="button" name="_eventId_change" value="Update">
+
  <c:choose>
 	  <c:when test="${fn:length(accountBean.memberships) != 0}">
 	      <input type="submit" class="button" name="_eventId_add" value="Add">

@@ -111,6 +111,9 @@
 						</c:forEach>
 			</c:if>
 		</spring:bind>
+		<div id="hide" style="display:none">
+	      <input type="submit" class="button" id="update" name="_eventId_changeState" value="Update">
+	    </div>
 
 <fieldset>
 				<legend>Membership  Information</legend>
@@ -120,7 +123,7 @@
 	      <td colspan="2" align="left">
           <spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
           <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-            <select name="stateAffiliation" onchange="javascript: accountBean.submit();">
+            <select name="stateAffiliation" onchange="javascript: document.getElementById('update').click();">
             <!-- <select name="${status.expression}" value="${status.value[index]}">
 	    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
 	          <option value=""></option>
@@ -130,11 +133,11 @@
 	          </c:forEach>
 	        </select>
 	      </spring:bind>
-	      <input type="submit" class="button" name="_eventId_changeState" value="Update">
+
 	      </td>
 	    </tr>
-  <c:choose>
-	  <c:when test="${fn:length(accountBean.clubsForState) != 0}">
+ <%-- <c:choose>
+	  <c:when test="${fn:length(accountBean.clubsForState) != 0}"> --%>
 		<tr>
 			<td><font size="2">Club:</font></td>
 	        <td colspan="2" align="left">
@@ -149,8 +152,8 @@
 		      </spring:bind>
 		    </td>
 		</tr>
-      </c:when>
-    </c:choose>
+      <%--</c:when>
+    </c:choose>--%>
 		</table>
 </fieldset>
 
