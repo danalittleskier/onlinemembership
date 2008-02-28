@@ -8,12 +8,138 @@
 
 <p><fmt:message key="mainMenu.message"/></p>
 
-    <br/><a href="${ctx}/contact.html?id=158">Georgee</a><br/>
-    <a href="${ctx}/contact.html?id=183">Gloria</a><br/>
-    <a href="${ctx}/contact.html">Blank</a><br/>
-<br/><a href="${ctx}/registration.html?id=158">Registration: Georgee</a>
-<br/><a href="${ctx}/registration.html?id=1323781">Registration: Harris</a>
-<br/><a href="${ctx}/registration.html">Registration: New Member</a>
+<b>Business Rules</b><br/>&nbsp;<table border="1" width="100%" id="table1">
+		<tr>
+			<td>1</td>
+			<td>Renew:&nbsp; Member mode - do not all renewal to edit membership</td>
+			<td width="550"><a href="${ctx}/registration.html?id=988162">988162</a></td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Register:&nbsp; Non-Member mode</td>
+			<td width="550"><a href="http://localhost:8080/registration.html">
+			New - Gender</a></td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Renew: Pull address info for member renew</td>
+			<td width="550"><a href="${ctx}/registration.html">988162</a></td>
+		</tr>
+		<tr>
+			<td>4</td>
+			<td>Register: show gender if new</td>
+			<td width="550"><a href="http://localhost:8080/registration.html">
+			New - Gender</a></td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td>Register: show ethnicity if new</td>
+			<td width="550"><a href="http://localhost:8080/registration.html">
+			New - Gender</a></td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td>Register: new member under 18</td>
+			<td width="550"><a href="${ctx}/registration.html?id=5139969">5139969</a></td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td>Renew - only pull clubs by state</td>
+			<td width="550"><a href="${ctx}/registration.html?id=5139969">5139969</a></td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+			<td width="550">&nbsp;</td>
+		</tr>
+	</table>
+
+
 
 <div class="separator"></div>
 
