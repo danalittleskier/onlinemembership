@@ -1,0 +1,22 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <mapping class="org.appfuse.model.User"/>
+        <mapping class="org.appfuse.model.Role"/>
+        <mapping class="org.ussa.model.Member"/>
+        <mapping class="org.ussa.model.Club"/>
+        <mapping class="org.ussa.model.Address"/>
+        <mapping class="org.ussa.model.State"/>
+        <mapping class="org.ussa.model.Inventory"/>
+
+
+<!--
+        <mapping class="org.ussa.model.MemberLegal"/>
+        <mapping class="org.ussa.model.Nation"/>
+        <mapping class="org.ussa.model.ParameterTable"/>
+        <mapping class="org.ussa.model.DivisionAffiliation"/>-->
+
+    </session-factory>
+</hibernate-configuration>
