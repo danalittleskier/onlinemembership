@@ -56,6 +56,7 @@ public class PaymentAction extends MultiAction implements Serializable {
         HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
         AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
 
+
         String fname = context.getRequestParameters().get("fname");
         String lname = context.getRequestParameters().get("lname");
         String address = context.getRequestParameters().get("address");
@@ -95,7 +96,7 @@ public class PaymentAction extends MultiAction implements Serializable {
             sb.append("x_method=CC&");
             sb.append("x_type=AUTH_CAPTURE&");
             //sb.append("x_amount=" + paymentBean.getAmount() + ".00&");
-            sb.append("x_amount=1.00&");
+            sb.append("x_amount="+amount+"&");
             sb.append("x_delim_data=TRUE&");
             sb.append("x_delim_char=|&");
             sb.append("x_relay_response=FALSE&");

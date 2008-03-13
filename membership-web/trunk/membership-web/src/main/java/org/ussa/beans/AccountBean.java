@@ -30,6 +30,7 @@ public class AccountBean
     private String sportId;
     private String stateAffiliation;
 
+
     //Reference Data fields.  Do not save when done:
     List<State> usStates;
     List<Club>  clubsForState;

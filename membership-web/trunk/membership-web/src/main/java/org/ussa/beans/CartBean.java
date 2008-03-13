@@ -94,9 +94,13 @@ public class CartBean
                 System.out.println("Add amount["+m.getAmount()+"] to cost["+cost+"]");
             }
             addLineItem(lineItem);
-            Set<LineItemBean>hardCodedMagazines = getMagazines(); //TODO: DELETE
-            lineItems.addAll(hardCodedMagazines);//TODO: DELETE
+
+            //***************add ski racing ***********************
+            //         Set<LineItemBean>hardCodedMagazines = getMagazines(); //TODO: DELETE
+            //         lineItems.addAll(hardCodedMagazines);//TODO: DELETE
             //lineItems.addAll(magazines); //Keep this
+
+          //***************add ski racing ***********************
         }
         System.out.println("End: shoppingCart["+lineItems.size()+"], members["+memberships.size()+"], cost["+cost+"]");
         if (cost == null)
@@ -104,7 +108,8 @@ public class CartBean
             cost = BigDecimal.ZERO;
         }
         setTotalCost(cost.toString());
-        System.out.println(getTotalCost());
+        totalCost = getTotalCost();
+        System.out.println("TOTAL: " + getTotalCost());
         return lineItems;
     }
 
