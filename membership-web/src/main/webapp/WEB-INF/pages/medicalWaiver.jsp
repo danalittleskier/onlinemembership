@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -120,8 +120,9 @@
 <fieldset class="buttons">
 				<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+			<input type="submit" class="button" name="_eventId_next" value="Continue">
+             <input type="submit" class="button" name="_eventId_back" value="Back">
+
   </fieldset>
 
 

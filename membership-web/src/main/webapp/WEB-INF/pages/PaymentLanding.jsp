@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
-<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="stg-forms.css">
 </head>
 
 <body>
@@ -48,13 +48,14 @@
 	<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="${ctx}/images/ussa/ussa.png" style="border:none"></a></div>
 	<div class=title>
 		<h1>United States Ski and Snowboard Association</h1>
-		An Olympic sports organization dedicated to fielding the <br> best skiing and snowboarding teams in the world
+		An Olympic sports organization dedicated to fielding the <br> best
+		skiing and snowboarding teams in the world
 	</div>
 	<div class=menu>
 		<div class=links>
-			<a href="http://www.usskiteam.com">US Ski Team &raquo;</a>&nbsp;&nbsp;
-			<a href="http://www.ussnowboarding.com">US Snowboarding &raquo;</a>&nbsp;&nbsp;
-			<a href="http://shop.usskiteam.com">Shop &raquo;</a>&nbsp;&nbsp;
+			<a href="http://www.usskiteam.com">US Ski Team »</a>&nbsp;&nbsp;
+			<a href="http://www.ussnowboarding.com">US Snowboarding »</a>&nbsp;&nbsp;
+			<a href="http://shop.usskiteam.com">Shop »</a>&nbsp;&nbsp;
 		</div>
 		<div class=search>
 		<!-- Search My Google Mini -->
@@ -83,7 +84,8 @@
 	<div class=topmenu>
 		<div class=left>
 			<ul id="nav">
-				<li><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a>
+				<li><a href="http://www.ussa.org" title="USSA home" accesskey="1">
+				USSA home</a>
 				<li><a href="#" title="contact us" accesskey="2">contact us</a></li>
 			</ul>
 		</div>
@@ -96,14 +98,14 @@
 <%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
 
-  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
-  <div id="stg-pagetitle">Member Information</div>
-  <p class="req-fields"><em>* Required Fields</em></p>
+  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_2.gif" width="917" height="53" /></div>
+  <div id="stg-pagetitle">Membership Payment</div>
+
 	<!-- LEFT column -->
 	<div id="stg-twocol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
-		<spring:bind path="accountBean.*">
+<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
 						<c:forEach var="errorMsg" items="${status.errorMessages}">
@@ -111,87 +113,69 @@
 						</c:forEach>
 			</c:if>
 		</spring:bind>
-		<div id="hide" style="display:none">
-	      <input type="submit" class="button" id="update" name="_eventId_changeState" value="Update">
-	    </div>
 
+<fieldset>
+				<legend>Membership Payment</legend>
 
-			<fieldset>
-				<legend>Citizenship</legend>
-				<label for="ethnicity">* Are you a US Citizen?</label>
-				<div class="radios">
-				<input name="citizen" id="citizen1" type="radio" value="yes" onclick="document.getElementById('nation-code').style.display = 'none'" /> <label for="citizen1" class="radio">Yes</label>
-				<input name="citizen" id="citizen2" type="radio" value="no" onclick="document.getElementById('nation-code').style.display = 'block'" /> <label for="citizen2" class="radio">No</label>
-				</div><br />
-				<div id="nation-code">
-				<label for="">* Select Nation Code:</label>
-				<select>
-					<option selected></option>
-					<option value="">[...Nation Code Data...]</option>
-				</select><br />
-				</div>
-			</fieldset>
+	<table border="0" width="100%" id="table1">
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>Credit Card Results</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		<tr>
+			<td>&nbsp;</td>
+			<td>&nbsp;</td>
+		</tr>
+		</table>
 
-			<fieldset>
-				<legend>State & Club</legend>
-				<label for="">* State:</label>
-		          <spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
-		          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-		            <select name="stateAffiliation" onchange="javascript: document.getElementById('update').click();">
-		            <!-- <select name="${status.expression}" value="${status.value[index]}">
-			    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
-			          <option value=""></option>
-			          <c:forEach var="o" items="${accountBean.usStates}">
-			            <option value="${o.id}"
-			              <c:if test="${o.id == status.value}">selected</c:if>>${o.id}</option>
-			          </c:forEach>
-			        </select>
-			      </spring:bind>
-				<br />
-				<label for="">* Club:</label>
-	          <spring:bind path="accountBean.clubId">
-		    	<select name="clubId">
-		          <option value=""></option>
-		          <c:forEach var="o" items="${accountBean.clubsForState}">
-		            <option value="${o.id}"
-		              <c:if test="${o.id == status.value}">selected</c:if>>${o.name}</option>
-		          </c:forEach>
-		        </select>
-		      </spring:bind><br />
-			</fieldset>
-
-			<fieldset>
-				<legend>Division</legend>
-				<label for="">* Division:</label>
-	          <c:out value="${accountBean.member.divisionCode}" /><br />
-			</fieldset>
-
-
+</fieldset>
 
 <fieldset class="buttons">
 				<label></label>
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
-             <input type="submit" class="btn-green" name="_eventId_back" value="Back">
-
-  </fieldset>
+				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">&nbsp;
 
 
+				</fieldset>
 
 </form:form>
 	</div>
 
-
-	<!-- RIGHT column -->
+<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
-
+		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+			<p class="stg-omr-header">Membership Payment</p>
+			<ul id="stg-omr">
+				<b>Membership Payment</b><p>&nbsp;
+		</div></div></div></div>
+		<!-- BOX (END) -->
 	</div>
 	<div class="clear"></div>
 </div>
 
 
-<!--------------------------------------------- Footer ------------------------------------------------->
+	<!--------------------------------------------- Footer ------------------------------------------------->
 <div class=bottom_wrapper>
 	<script language="Javascript1.1" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=2;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
 	<script>
@@ -209,12 +193,17 @@
 	<img src="${ctx}/images/ussa/TV_TuneIn.jpg" ismap usemap="#bottomAdMap" border="0">
 
 	<div class=bottom_menu>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">contact us</a>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/jobs.html">jobs</a>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/media.html">press/media center</a>
-		| &copy 2007 USSA - All rights reserved.
-		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/termsofuse.html">terms of use</a>
-		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/privacypolicy.html">privacy policy</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">
+		contact us</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/jobs.html">
+		jobs</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/media.html">
+		press/media center</a>
+		| © 2007 USSA - All rights reserved.
+		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/termsofuse.html">
+		terms of use</a>
+		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/privacypolicy.html">
+		privacy policy</a>
 		<a href="http://www.olyparks.com" target="_blank">utah olympic parks</a>
 	</div>
 

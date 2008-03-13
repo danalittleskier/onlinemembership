@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -98,7 +98,7 @@
 
   <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Member Information</div>
-
+  <p class="req-fields"><em>* Required Fields</em></p>
 	<!-- LEFT column -->
 	<div id="stg-twocol-primary">
 		 <form:form commandName="accountBean" name="accountBean">
@@ -127,7 +127,7 @@
 		</c:if>
 <br />
 				<label for="">First Name</label>
-				<form:input path="member.firstName" size="30" maxlength="30"/><br />
+				<form:input path="member.firstName" size="30" maxlength="30" /><br />
 				<label for="">MI</label>
 				<input name="" type="text" class="text" /><br />
 				<label for="">Last Name</label>
@@ -179,23 +179,44 @@
 				</fieldset>
 				</c:if>
 
+
 				<c:if test="${accountBean.member.age < 18 }">
 				<fieldset>
-				<legend>Parent Information</legend>
-				<label for="">Parent / Guardian 1</label>
-				<input name="" type="text" class="text" /><br /><br />
-				<label for="">Parent / Guardian 2</label>
-				<input name="" type="text" class="text" /><br /><br /><br />
-				</fieldset>
-				</c:if>
-
-
+				<legend>Parent/Guardian #1</legend>
+				<label for="">* First Name:</label>
+				<input name="" type="text"  /><br />
+				<label for="">* Last Name:</label>
+				<input name="" type="text"  /><br />
+				<label for="">* Relationship:</label>
+				<div class="radios">
+				<input name="relationship-1" id="relationship-1-1" type="radio" value="Mother" /> <label class="radio" for="relationship-1-1">Mother</label>
+				<input name="relationship-1" id="relationship-1-2" type="radio" value="Father" /> <label class="radio" for="relationship-1-2">Father</label>
+				<input name="relationship-1" id="relationship-1-3" type="radio" value="Guardian" /> <label class="radio" for="relationship-1-3">Guardian</label>
+				</div><br />
+				<label for="">* Email Address:</label>
+				<input name="" type="text"  /><br />
+			</fieldset>
+			<fieldset>
+				<legend>Parent/Guardian #2</legend>
+				<label for="firstName">First Name:</label>
+				<input name="firstName" id="firstName" type="text"  /><br />
+				<label for="">Last Name:</label>
+				<input name="" type="text"  /><br />
+				<label for="relationship">Relationship:</label>
+				<div class="radios">
+				<input name="relationship-2" id="relationship" type="radio" value="Mother" /> <label class="radio" for="relationship-2-1">Mother</label>
+				<input name="relationship-2" id="relationship" type="radio" value="Father" /> <label class="radio" for="relationship-2-2">Father</label>
+				<input name="relationship-2" id="relationship" type="radio" value="Guardian" /> <label class="radio" for="relationship-2-3">Guardian</label>
+				</div><br />
+				<label for="">Email Address:</label>
+				<input name="" type="text"  /><br />
+			</fieldset>
+			</c:if>
 			<fieldset class="buttons">
 				<label></label>
 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+             <input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 			</fieldset>
-
 
 
 

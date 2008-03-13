@@ -12,6 +12,15 @@
 	   <property name="inventoryDao" ref="inventoryDao"/>
     </bean>
 
+    <bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">
+	   <property name="addressDao" ref="addressDao"/>
+	   <property name="clubDao" ref="clubDao"/>
+	   <property name="memberDao" ref="memberDao"/>
+	   <property name="stateDao" ref="stateDao"/>
+	   <property name="memberManager" ref="memberManager"/>
+	   <property name="inventoryDao" ref="inventoryDao"/>
+    </bean>
+
     <!-- Form objects -->
     <bean id="accountBean" class="org.ussa.spring.flows.FormActionTemplate">
       <property name="formObjectName" value="accountBean"/>

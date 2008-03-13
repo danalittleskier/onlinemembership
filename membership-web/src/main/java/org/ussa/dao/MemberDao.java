@@ -11,4 +11,6 @@ public interface MemberDao extends GenericDao<Member, Long>
 
    // public Member findByUssaId(Integer ussaId);
 
+	//public List<Member> findMemberDivision(String divisionCode);
+
 }

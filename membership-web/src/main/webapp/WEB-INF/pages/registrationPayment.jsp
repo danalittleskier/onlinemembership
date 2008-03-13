@@ -48,13 +48,14 @@
 	<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="${ctx}/images/ussa/ussa.png" style="border:none"></a></div>
 	<div class=title>
 		<h1>United States Ski and Snowboard Association</h1>
-		An Olympic sports organization dedicated to fielding the <br> best skiing and snowboarding teams in the world
+		An Olympic sports organization dedicated to fielding the <br> best
+		skiing and snowboarding teams in the world
 	</div>
 	<div class=menu>
 		<div class=links>
-			<a href="http://www.usskiteam.com">US Ski Team &raquo;</a>&nbsp;&nbsp;
-			<a href="http://www.ussnowboarding.com">US Snowboarding &raquo;</a>&nbsp;&nbsp;
-			<a href="http://shop.usskiteam.com">Shop &raquo;</a>&nbsp;&nbsp;
+			<a href="http://www.usskiteam.com">US Ski Team »</a>&nbsp;&nbsp;
+			<a href="http://www.ussnowboarding.com">US Snowboarding »</a>&nbsp;&nbsp;
+			<a href="http://shop.usskiteam.com">Shop »</a>&nbsp;&nbsp;
 		</div>
 		<div class=search>
 		<!-- Search My Google Mini -->
@@ -83,7 +84,8 @@
 	<div class=topmenu>
 		<div class=left>
 			<ul id="nav">
-				<li><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a>
+				<li><a href="http://www.ussa.org" title="USSA home" accesskey="1">
+				USSA home</a>
 				<li><a href="#" title="contact us" accesskey="2">contact us</a></li>
 			</ul>
 		</div>
@@ -91,19 +93,23 @@
 </div>
 
 <!-------------------------------------------- Content ------------------------------------------------->
-<!-- Container -->
 <div id="stg-content">
 <%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
 
-  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
-  <div id="stg-pagetitle">Member Information</div>
-  <p class="req-fields"><em>* Required Fields</em></p>
-	<!-- LEFT column -->
-	<div id="stg-twocol-primary">
-<form:form commandName="accountBean" name="accountBean">
 
-		<spring:bind path="accountBean.*">
+<div id="stg-progress"><img src="${ctx}/images/ussa/progress_5.gif" width="917" height="53" /></div>
+  <div id="stg-pagetitle">Payment</div>
+  <p class="req-fields"><em>* Required Fields</em></p>
+
+<!--  ////////////////////////////////////////////////////////////////////////////////// -->
+
+
+<!-- LEFT column -->
+	<div id="stg-twocol-primary">
+		<form:form commandName="accountBean" name="accountBean">
+
+<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
 						<c:forEach var="errorMsg" items="${status.errorMessages}">
@@ -111,87 +117,86 @@
 						</c:forEach>
 			</c:if>
 		</spring:bind>
-		<div id="hide" style="display:none">
-	      <input type="submit" class="button" id="update" name="_eventId_changeState" value="Update">
-	    </div>
-
-
 			<fieldset>
-				<legend>Citizenship</legend>
-				<label for="ethnicity">* Are you a US Citizen?</label>
-				<div class="radios">
-				<input name="citizen" id="citizen1" type="radio" value="yes" onclick="document.getElementById('nation-code').style.display = 'none'" /> <label for="citizen1" class="radio">Yes</label>
-				<input name="citizen" id="citizen2" type="radio" value="no" onclick="document.getElementById('nation-code').style.display = 'block'" /> <label for="citizen2" class="radio">No</label>
-				</div><br />
-				<div id="nation-code">
-				<label for="">* Select Nation Code:</label>
-				<select>
+				<legend>Payment Information</legend>
+				<label for="">USSA Registration Fees:</label>
+				<span class="data-input"><strong><c:out value="${accountBean.cartBean.totalCost}" /></strong></span>
+				<input type="hidden" name="amount" value="<c:out value="${accountBean.cartBean.totalCost}" />">
+				<label for="">* Credit Card Type:</label>
+				<span class="multiselect-margin">
+				<select name="cardType">
 					<option selected></option>
-					<option value="">[...Nation Code Data...]</option>
+					<option>Visa</option>
+				<option>Amex</option>
+				<option>Discover</option>
+				<option>MasterCard</option>
 				</select><br />
-				</div>
+				</span>
+				<label for="">* Credit Card Number:</label>
+				<input name="ccnum" type="text"  /><br />
+				<label for="fname">* First Name:</label>
+				<input name="" type="text"  /><br />
+				<label for="lname">* Last Name:</label>
+				<input name="" type="text"  /><br />
+				<label for="">* Expiration Date:</label>
+				<span class="multiselect-margin">
+				<select name="month">
+					<option selected></option>
+					<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+				<option>7</option>
+				<option>8</option>
+				<option>9</option>
+				<option>10</option>
+				<option>11</option>
+				<option>12</option>
+				</select>
+				<select name="year">
+					<option selected></option>
+					<option>2007</option>
+			<option>2008</option>
+			<option>2009</option>
+			<option>2010</option>
+			<option>2011</option>
+			<option>2012</option>
+			<option>2013</option>
+			<option>2014</option>
+			<option>2015</option>
+				</select><br />
+				</span>
+				<span class="textfield-short">
+				<label for="">* Security Code:</label>
+				<input name="" type="text" /><br />
+				</span>
 			</fieldset>
-
-			<fieldset>
-				<legend>State & Club</legend>
-				<label for="">* State:</label>
-		          <spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"  -->
-		          <!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-		            <select name="stateAffiliation" onchange="javascript: document.getElementById('update').click();">
-		            <!-- <select name="${status.expression}" value="${status.value[index]}">
-			    	<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
-			          <option value=""></option>
-			          <c:forEach var="o" items="${accountBean.usStates}">
-			            <option value="${o.id}"
-			              <c:if test="${o.id == status.value}">selected</c:if>>${o.id}</option>
-			          </c:forEach>
-			        </select>
-			      </spring:bind>
-				<br />
-				<label for="">* Club:</label>
-	          <spring:bind path="accountBean.clubId">
-		    	<select name="clubId">
-		          <option value=""></option>
-		          <c:forEach var="o" items="${accountBean.clubsForState}">
-		            <option value="${o.id}"
-		              <c:if test="${o.id == status.value}">selected</c:if>>${o.name}</option>
-		          </c:forEach>
-		        </select>
-		      </spring:bind><br />
-			</fieldset>
-
-			<fieldset>
-				<legend>Division</legend>
-				<label for="">* Division:</label>
-	          <c:out value="${accountBean.member.divisionCode}" /><br />
-			</fieldset>
-
-
-
-<fieldset class="buttons">
+			<fieldset class="buttons">
 				<label></label>
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
              <input type="submit" class="btn-green" name="_eventId_back" value="Back">
 
-  </fieldset>
+			</fieldset>
 
 
-
-</form:form>
+		</form:form>
 	</div>
 
 
-	<!-- RIGHT column -->
+
+
+<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
-		<!-- BOX (START) -->
 
 	</div>
 	<div class="clear"></div>
 </div>
 
 
-<!--------------------------------------------- Footer ------------------------------------------------->
+	<!--------------------------------------------- Footer ------------------------------------------------->
 <div class=bottom_wrapper>
 	<script language="Javascript1.1" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=2;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
 	<script>
@@ -209,12 +214,17 @@
 	<img src="${ctx}/images/ussa/TV_TuneIn.jpg" ismap usemap="#bottomAdMap" border="0">
 
 	<div class=bottom_menu>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">contact us</a>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/jobs.html">jobs</a>
-		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/media.html">press/media center</a>
-		| &copy 2007 USSA - All rights reserved.
-		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/termsofuse.html">terms of use</a>
-		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/privacypolicy.html">privacy policy</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">
+		contact us</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/jobs.html">
+		jobs</a>
+		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/media.html">
+		press/media center</a>
+		| © 2007 USSA - All rights reserved.
+		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/termsofuse.html">
+		terms of use</a>
+		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/privacypolicy.html">
+		privacy policy</a>
 		<a href="http://www.olyparks.com" target="_blank">utah olympic parks</a>
 	</div>
 

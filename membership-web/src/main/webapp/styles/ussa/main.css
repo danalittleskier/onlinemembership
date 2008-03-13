@@ -27,9 +27,6 @@ reside in the roots of these too directories (/images/ and /scripts/).
 
 /* General
 ---------------------------------------------------------------------- */
-body {
-	font-family:tahoma,arial,verdana,sans-serif;
-}
 .clear {clear:both;}
 
 /* Header
@@ -76,15 +73,75 @@ body {
 /* Rounded corner box styles */
 .stg-bl {background: url(bl.gif) 0 100% no-repeat #e6e6e6; margin:20px 0;}
 .stg-br {background: url(br.gif) 100% 100% no-repeat;}
-.stg-tl {background: url(/tl.gif) 0 0 no-repeat;}
-.stg-tr {background: url(tr.gif) 100% 0 no-repeat; padding:20px;}
+.stg-tl {background: url(tl.gif) 0 0 no-repeat;}
+.stg-tr {background: url(tr.gif) 100% 0 no-repeat;}
+.stg-tr {padding:20px !important; padding:20px 20px 5px 20px;} /* IE 6 hack for bottom padding */
+* + html .stg-tr {padding:20px 20px 5px 20px !important;} /* IE hack for bottom padding */
+.stg-bl {line-height:150%;}
 
 /* Callout styles */
 .stg-omr-header {
 	font:24px georgia,"times new roman",serif;
+	margin:0 0 20px 0;
 }
 ul#stg-omr {margin:20px 20px 0 20px;}
 ul#stg-omr li{margin:0 0 7px 0;}
 
+/* Shopping cart styles */
+#cart {
+	width:100%;
+	background:#fff;
+	border-collapse:collapse;
+	border:1px solid #666;
+	margin:0;
+}
+#cart th {border-bottom:1px solid #666; font-weight:bold; padding:5px;}
+#cart tr.alt {background:#eee;}
+#cart td {padding:5px 10px;}
+#cart td.item, #cart th.item {
+	width:80%;
+}
+#cart td.price {text-align:right;}
+#cart td.indent {text-indent:20px;}
+#cart td.item-remove {white-space:nowrap; border-right:1px solid #666;}
+#cart td.item-remove a, #cart td.item-remove a:visited {color:#990000;}
 
+#carttotal {
+	width:100%;
+	border-collapse:collapse;
+	margin:10px 0 0 0;
+}
+#carttotal td {padding:5px 10px;}
+#carttotal td.total {
+	text-align:right;
+	border:0;
+	background:none;
+	font-weight:bold;
+	width:80%;
+	padding-right:10px;
+}
+#carttotal td.price {
+	text-align:right;
+	font-weight:bold;
+	background:#fff;
+	border:1px solid #666;
+}
 
+#stg-data-review {
+	width:100%;
+	background:#fff;
+	border-collapse:collapse;
+	margin:20px 0;
+}
+#stg-data-review th {
+	text-align:left;
+	border-bottom:1px solid #666;
+	font-size:14px;
+}
+#stg-data-review th.edit {text-align:right; font-weight:normal;}
+#stg-data-review td {
+	padding:7px 10px 0 0;
+}
+#stg-data-review .data-label {width:40%; text-align:right; white-space:nowrap;}
+#stg-data-review .data-text {}
+#stg-data-review .data-text-none {color:#999;}
