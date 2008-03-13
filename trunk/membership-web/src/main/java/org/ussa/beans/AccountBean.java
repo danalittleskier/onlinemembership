@@ -30,6 +30,7 @@ public class AccountBean
     private String sportId;
     private String stateAffiliation;
 
+
     //Reference Data fields.  Do not save when done:
     List<State> usStates;
     List<Club>  clubsForState;
@@ -38,8 +39,17 @@ public class AccountBean
     Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
     BigDecimal total = BigDecimal.ZERO;
     String totalCost = "0";
+    String paymentTransactionCode;
 
-    public Member getMember()
+    public String getPaymentTransactionCode() {
+		return paymentTransactionCode;
+	}
+
+	public void setPaymentTransactionCode(String paymentTransactionCode) {
+		this.paymentTransactionCode = paymentTransactionCode;
+	}
+
+	public Member getMember()
     {
         return member;
     }

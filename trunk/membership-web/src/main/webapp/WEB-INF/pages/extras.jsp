@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -254,29 +254,32 @@
  <fieldset class="buttons">
 				<label></label>
 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+             <input type="submit" class="btn-green" name="_eventId_back" value="Back">
+
 
 				</fieldset>
 
 </form:form>
 	</div>
 
-	<!-- RIGHT column -->
+<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
 		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<p class="stg-omr-header">Membership Cart</p>
-			    	* Indicate required field<p>&nbsp;</div>
+			<p class="stg-omr-header">Your Membership Fees</p>
 
-  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1">
-    <display:caption>Shopping Cart</display:caption>
-    <display:column property="description" title="Description" sortable="false" />
-    <display:column property="amount" title="Amount" sortable="false" />
+  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1" id="cart">
+    <display:column property="description" title="Description" sortable="false" class="item" />
+    <display:column property="amount" title="Amount" sortable="false" class="price" />
   </display:table>
-  <table border="0">
-  <tr><td colspan="2" align="right"><i>total</i> $${accountBean.total }</td></tr>
-  </table>
+
+			<table id="carttotal">
+			  <tr>
+				<td class="total">Total</td>
+				<td class="price"><c:out value="${accountBean.cartBean.totalCost}" /></td>
+			  </tr>
+			</table>
 		</div></div></div></div>
 		<!-- BOX (END) -->
 	</div>

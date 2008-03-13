@@ -62,6 +62,9 @@ public class Member extends BaseObject implements Serializable
     @Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
     private String etnicity;
 
+    @Column(name = "DIVISION_CODE", nullable = true, length=2, unique=false)
+    private String divisionCode;
+
     @ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
     private Set<Club> clubs;
 
@@ -248,6 +251,12 @@ public class Member extends BaseObject implements Serializable
     {
         this.birthDate = birthDate;
     }
+	public String getDivisionCode() {
+		return divisionCode;
+	}
+	public void setDivisionCode(String divisionCode) {
+		this.divisionCode = divisionCode;
+	}
 
 
 }

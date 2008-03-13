@@ -85,6 +85,7 @@
                 /membershipInformationSummary.html*=ROLE_ANONYMOUS
                 /releaseWaiver.html*=ROLE_ANONYMOUS
                 /verification.html*=ROLE_ANONYMOUS
+
                 /a4j.res/*.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER <!-- APF-737, OK to remove if not using JSF -->
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>

@@ -32,6 +32,7 @@
                 /Verification.html=VerificationController
 
 
+
             </value>
         </property>
         <property name="order" value="0"/>
@@ -114,6 +115,7 @@
 	<bean id="MembershipInformationSummaryController" class="org.ussa.spring.controller.MembershipInformationSummaryController"/>
 	<bean id="ReleaseWaiverController" class="org.ussa.spring.controller.ReleaseWaiverController"/>
 	<bean id="VerificationController" class="org.ussa.spring.controller.VerificationController"/>
+
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
         <property name="maxUploadSize" value="2097152"/>

@@ -5,13 +5,13 @@
 		{
 			color:#828284;
 		}
-
+		
 		.gray_i
 		{
 			font-style:italic;
 			color:#828284;
 		}
-
+		
 		.gray_b16
 		{
 			font-size:16px;
@@ -24,20 +24,20 @@
 		{
 			color:#034C83;
 		}
-
+	
 		.blue_b
 		{
 			color:#034C83;
 			font-weight:bold;
 		}
-
+		
 		.blue_b28
 		{
 			font-size:28px;
 			font-weight:bold;
 			color:#034C83;
 		}
-
+		
 		.blue_b40
 		{
 			font-size:40px;
@@ -46,30 +46,30 @@
 		}
 */
 
-
+		
 	/* black */
 /*
 		.black
 		{
 			color:black;
 		}
-
+		
 		.black_b11
 		{
 			font-size:11px;
 			font-weight:bold;
 			color:black;
 		}
-*/
+*/	
 	/* separators */
 		.dotted_separator
 		{
-			background-image: url(separator_bg.png);
+			background-image: url(/images/ussa-base/separator_bg.png);
 			height:20px;
 			background-position:10px 10px;
 			background-repeat:repeat-x;
 		}
-
+		
 		.red_separator
 		{
 			height:5px;
@@ -78,8 +78,8 @@
 			font-size:1px;
 			margin-top:10px;
 			margin-bottom:10px;
-		}
-
+		}		
+		
 		.blue_separator
 		{
 			height:5px;
@@ -89,7 +89,7 @@
 			margin-top:10px;
 			margin-bottom:10px;
 		}
-
+		
 		.darkyellow_separator
 		{
 			height:5px;
@@ -107,26 +107,26 @@
 		font-weight:bold;
 		color:#FCFDFF;
 	}
-
+	
 	.my_ussa_blue
 	{
 		font-size:14px;
 		font-weight:bold;
 		color:#004684;
 	}
-
-
+	
+	
 /* quick pics */
 
 	/* red */
-
+	
 		.quick_events_red
 		{
 			width:501px;
 			height:105px;
-  			background-image: url(quick_event_red.png);
+  			background-image: url(/images/ussa-base/quick_event_red.png);
 		}
-
+		
 		.quick_events_red .text
 		{
 			float:left;
@@ -139,7 +139,7 @@
 			color:#F6FFF8;
 			text-align:left
 		}
-
+		
 		.quick_events_red .pic
 		{
 			float:right;
@@ -149,16 +149,16 @@
 			width:148px;
   			text-align:left;
 		}
-
+		
 	/* black */
-
+	
 		.quick_events_black
 		{
 			width:501px;
 			height:105px;
-			background-image: url(quick_event_black.png);
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/quick_event_black.png);
 		}
-
+		
 		.quick_events_black .text
 		{
 			float:left;
@@ -171,12 +171,12 @@
 			color:#F6FFF8;
 			text-align:left
 		}
-
+		
 			.quick_events_black .text .link_gray
 			{
 				color:#BDBEC6;
 			}
-
+		
 		.quick_events_black .pic
 		{
 			float:right;
@@ -185,9 +185,9 @@
 			width:148px;
 			text-align:left;
 		}
+		
 
-
-
+		
 	/* names */
 
 		.quick_picname_red
@@ -195,9 +195,9 @@
 			margin:5px;
 			width:226px;
 			height:59px;
-			background-image: url(quick_picname_red.png);
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/quick_picname_red.png);
 		}
-
+		
 		.quick_picname_red .pic
 		{
 			float:left;
@@ -206,7 +206,7 @@
 			left:3px;
 			width:68px;
 		}
-
+		
 		.quick_picname_red .name
 		{
 			position:relative;
@@ -217,16 +217,16 @@
 			font-weight:bold;
 			color:#F6FFF8;
 		}
-
-
+		
+		
 		.quick_picname_darkyellow
 		{
 			margin:5px;
 			width:226px;
 			height:59px;
-			background-image: url(quick_picname_darkyellow.png);
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/quick_picname_darkyellow.png);
 		}
-
+		
 		.quick_picname_darkyellow .pic
 		{
 			float:left;
@@ -235,7 +235,7 @@
 			left:3px;
 			width:68px;
 		}
-
+		
 		.quick_picname_darkyellow .name
 		{
 			position:relative;
@@ -246,21 +246,21 @@
 			font-weight:bold;
 			color:#F6FFF8;
 		}
-
+	
 /* box1 - a simple box container */
 	.box_container1
 	{
 		margin:4px;
 		text-align:left;
 	}
-
+	
 		.box_container1 h1
 		{
 			font-size:28px;
 			font-weight:bold;
 			color:#034C83;
 		}
-
+		
 
 		.box_container1 h2
 		{
@@ -268,78 +268,78 @@
 			font-weight:bold;
 			color:#828284;
 		}
-
+	
 		.box_container1 h3
 		{
 			font-size:40px;
 			font-weight:bold;
 			color:#034C83;
 		}
-
+		
 		.box_container1 a
 		{
 			font-style:italic;
 			color:#807E7F;
 		}
-
+	
 		.box_container1 .header
 		{
 			height:33px;
 				padding-top:2px;
-
+				
 			padding-left:10px;
 			padding-right:10px;
-
-			background-image: url(box1_header_bg.png);
+			
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/box1_header_bg.png);
 			background-repeat:repeat-x;
 		}
-
+		
 		.box_container1 .content
 		{
 			padding:5px;
 			background-color:white;
 		}
-
+		
 /* box2 - a simple box container */
 	.box_container2
 	{
 		margin:4px;
 		text-align:left;
 	}
-
+	
 	.box_container2 h1
 	{
 		font-size:15px;
 		font-weight:bold;
 		color:white;
 	}
-
+	
 	.box_container2 h2
 	{
 		font-size:13px;
 		font-weight:bold;
 		color:#004988;
 	}
-
+	
 	.box_container2 a
 	{
 		font-style:italic;
 		/*color:#807E7F;*/
 	}
-
+	
 	.box_container2 select
 	{
 		width:250px;
 	}
-
+	
 		.box_container2 .header
 		{
 			height:27px;
-
-			background-image: url(box2_header_bg.png);
+			
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/box2_header_bg.png);
 			background-repeat:repeat-x;
 		}
-
+		
 			.box_container2 .header .title
 			{
 				height:23px;
@@ -347,40 +347,40 @@
 				padding-left:5px;
 				float:left;
 			}
-
+			
 			.box_container2 .header .right
 			{
 				height:27px;
 				width:70px;
-				background-image: url(box2_header_right.png);
+				background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/box2_header_right.png);
 				float:right;
 			}
-
+		
 		.box_container2 .content
 		{
 			background-color:white;
 			padding:5px;
 			color:#807E7F;
 		}
-
+		
 /* box container #3 */
 	.box_container3
 	{
-		background-image: url(box3_bg.png%27);
+		background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/%27data/box3_bg.png%27);
 		background-repeat:repeat-x;
 		background-color:white;
 		width:100%;
 		height:100%;
-
+		
 		text-align:left;
-
+		
 		/* default text configuration */
 		font-family:arial;
 		font-size:11px;
 		font-weight:normal;
 		color:#7B7D84;
 	}
-
+	
 		.box_container3 a
 		{
 			text-decoration:none;
@@ -388,7 +388,7 @@
 			font-weight:normal;
 			color:#C6A621;
 		}
-
+	
 		.box_container3 h1
 		{
 			font-family:arial;
@@ -396,7 +396,7 @@
 			color:black;
 			font-weight:bold;
 		}
-
+		
 		.box_container3 h2
 		{
 			font-family:arial;
@@ -404,7 +404,7 @@
 			color:#C6A200;
 			font-weight:bold;
 		}
-
+		
 		.box_container3 h4
 		{
 			font-family:arial;
@@ -414,7 +414,7 @@
 		}
 
 
-
+		
 /* container_white */
 
 	.container_white
@@ -422,68 +422,68 @@
 		text-align:left;
 		margin:4px;
 		padding:5px;
-
+		
 		background-color:white;
 	}
-
+	
 		.container_white a
 		{
 			font-style:italic;
 			color:#807E7F;
 		}
-
+		
 		.container_white h1
 		{
 			font-size:13px;
 			font-weight:bold;
 			color:#515256;
 		}
-
+	
 		.container_white h2
 		{
 			font-size:13px;
 			font-weight:bold;
 			color:#004988;
 		}
-
+		
 /* tabbar1 - a simple tabbar */
 
 	.tabbar1
 	{
                 margin-top:5px;
 		height:19px;
-		background-image: url(tabbar1_bg.png);
+		background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/tabbar1_bg.png);
 	}
-
+	
 		.tabbar1 .item
 		{
 			width:101px;
 			height:19px;
 				padding-top:3px;
 			float:left;
-
+			
 			text-align:center;
 			font-style:normal;
 			color:#014586;
 			cursor:pointer;
-
-			background-image: url(tabbar1_item.png);
+			
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/tabbar1_item.png);
 		}
-
+		
 		.tabbar1 .item_selected
 		{
 			width:101px;
 			height:19px;
 				padding-top:3px;
 			float:left;
-
+			
 			text-align:center;
 			font-style:normal;
 			color:#014586;
                         font-weight:bold;
 			cursor:pointer;
-
-			background-image: url(tabbar1_item_selected.png);
+			
+			background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/42QVV1GO/data/tabbar1_item_selected.png);
 		}
-
-
+		
+		

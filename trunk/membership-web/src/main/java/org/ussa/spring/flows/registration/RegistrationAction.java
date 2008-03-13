@@ -1,9 +1,15 @@
 package org.ussa.spring.flows.registration;
 
+import java.io.BufferedReader;
+import java.io.DataOutputStream;
+import java.io.InputStreamReader;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -26,6 +32,8 @@ import org.ussa.model.Club;
 import org.ussa.model.Member;
 import org.ussa.model.State;
 import org.ussa.model.Inventory;
+
+
 
 public class RegistrationAction extends MultiAction implements Serializable
 {
@@ -73,6 +81,7 @@ public class RegistrationAction extends MultiAction implements Serializable
         //MutableAttributeMap requestScope = context.getRequestScope();
         //request.setAttribute("usStates", usStates);
 
+
         if (id != null)
         {
             //Member exists, do a renew and pre-populate info
@@ -94,6 +103,7 @@ public class RegistrationAction extends MultiAction implements Serializable
             obj.setAddress(address);
             obj.setMember(member);
             obj.setInventory(inventory);
+            System.out.println("DIVISION= "+member.getDivisionCode());
             return result("renew");
         }
         else
@@ -116,6 +126,7 @@ public class RegistrationAction extends MultiAction implements Serializable
         System.out.println("Address's city["+obj.getAddress().getCity()+"]");
         System.out.println("Address's state["+obj.getAddress().getStateCode()+"]");
         System.out.println("StateAffiliation["+obj.getStateAffiliation()+"]");
+
 
         if (obj != null)
         {
@@ -216,6 +227,8 @@ public class RegistrationAction extends MultiAction implements Serializable
         return result("form");
     }
 
+
+
     public void setStateDao(StateDao stateDao)
     {
         this.stateDao = stateDao;
@@ -231,5 +244,9 @@ public class RegistrationAction extends MultiAction implements Serializable
     {
         this.inventoryDao = inventoryDao;
     }
+
+
+
+
 
 }

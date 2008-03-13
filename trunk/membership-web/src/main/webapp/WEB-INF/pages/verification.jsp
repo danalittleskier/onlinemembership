@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -99,9 +99,11 @@
   <div id="stg-progress"><img src="${ctx}/images/ussa/progress_3.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Verification</div>
 
-	<!-- LEFT column -->
+
+  <!-- LEFT column -->
 	<div id="stg-twocol-primary">
-		 <form:form commandName="accountBean" name="accountBean">
+
+	 <form:form commandName="accountBean" name="accountBean">
 
 		<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
@@ -111,223 +113,133 @@
 						</c:forEach>
 			</c:if>
 		</spring:bind>
-			<fieldset>
-				<legend>Verification</legend>
-<table border="0" width="100%" id="table1">
-		<tr>
-			<td width="189"><b><font size="2">Personal Information</font></b></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editContactInfo" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">USSA Member:</font></td>
-			<td><font size="2"><i>123456</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">First Name:</font></td>
-			<td><i><font size="2">Test</font></i></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">MI:</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Last Name:</font></td>
-			<td><i><font size="2">User</font></i></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Suffix:</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Address &amp; Phone</b></font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Company</font></td>
-			<td><font size="2"><i>Data</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Secondary</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Street</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189" height="21"><font size="2">City</font></td>
-			<td height="21">&nbsp;</td>
-			<td height="21">&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">State</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Zip</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Home Phone</font></td>
-			<td><font size="2"><i>801-555-1212</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Other Phone</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Fax Phone</font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Primary Medical Insurance Company</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editMedical" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Group Number</font></td>
-			<td><font size="2"><i>123445</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Policy Number</font></td>
-			<td><font size="2"><i>5465656656546</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Phone Number</font></td>
-			<td><font size="2"><i>801-555-1212</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Membership Sport</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editSport" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Sport</font></td>
-			<td><font size="2"><i>Cross Country Ski</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Membership</font></td>
-			<td><font size="2"><i>Alpine Coach</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Membership Club</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editClub" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">State</font></td>
-			<td><font size="2"><i>UT</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">Club</font></td>
-			<td><font size="2"><i>Park City Club</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2"><b>Extras</b></font></td>
-			<td>&nbsp;</td>
-			<td><input type="submit" class="button" name="_eventId_editExtras" value="<fmt:message key='button.edit'/>"></td>
-		</tr>
-		<tr>
-			<td width="189"><font size="2">tshirts...</font></td>
-			<td><font size="2"><i>magazines....</i></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="189">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-	</table>
+		<p>Please verify that the following information is correct. If you would like to change any of the information, you may do so by choosing "Edit" below. When you have verified that the information is correct, click "Continue".</p>
+			<table id="stg-data-review">
+			  <tr>
+				<th scope="col">Personal Information</th>
+				<th scope="col" class="edit"><a href="/index.htm">Edit</a></th>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">USSA Member #:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.member.id}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">First Name:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.member.firstName}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">MI:</td>
+				<td class="data-text" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Last Name:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.member.lastName}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Suffix:</td>
+				<td class="data-text-none" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Gender:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.member.gender}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Ethnicity:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.member.etnicity}" /></td>
+			  </tr>
+			</table>
+			<table id="stg-data-review">
+			  <tr>
+				<th scope="col">Address & Phone</th>
+				<th scope="col" class="edit"><a href="/index.htm">Edit</a></th>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Company:</td>
+				<td class="data-text" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Address:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.address.deliveryAddress}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">City:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.address.city}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">State:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.address.stateCode}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Zip:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.address.postalCode}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Home Phone:</td>
+				<td class="data-text" scope="row"><c:out value="${accountBean.address.phoneHome}" /></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Other Phone:</td>
+				<td class="data-text" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Fax:</td>
+				<td class="data-text-none" scope="row"></td>
+			  </tr>
+			</table>
+			<table id="stg-data-review">
+			  <tr>
+				<th scope="col">Primary Medical Insurance</th>
+				<th scope="col" class="edit"><a href="/medical.htm">Edit</a></th>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Insurance Company Name:</td>
+				<td class="data-text" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Policy Number:</td>
+				<td class="data-text" scope="row"></td>
+			  </tr>
+			  <tr>
+				<td class="data-label" scope="row">Phone Number:</td>
+				<td class="data-text-none" scope="row"></td>
+			  </tr>
+			</table>
 
 
-
-
-
-  </fieldset>
-
-	<fieldset class="buttons">
+  	<fieldset class="buttons">
 				<label></label>
 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
-			</fieldset>
+				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+             <input type="submit" class="btn-green" name="_eventId_back" value="Back">
+
+	</fieldset>
 
 </form:form>
 
-	</div>
+</div>
+
+
+
+
+
 
 	<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
 		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<p class="stg-omr-header">Membership Cart</p>
-			    	* Indicate required field<p>&nbsp;</div>
+			<p class="stg-omr-header">Your Membership Fees</p>
 
-  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1">
-    <display:caption>Shopping Cart</display:caption>
-    <display:column property="description" title="Description" sortable="false" />
-    <display:column property="amount" title="Amount" sortable="false" />
+  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1" id="cart">
+    <display:column property="description" title="Description" sortable="false" class="item" />
+    <display:column property="amount" title="Amount" sortable="false" class="price" />
   </display:table>
-  <table border="0">
-  <tr><td colspan="2" align="right"><i>total</i> $${accountBean.total }</td></tr>
-  </table>
+
+			<table id="carttotal">
+			  <tr>
+				<td class="total">Total</td>
+				<td class="price"><c:out value="${accountBean.cartBean.totalCost}" /></td>
+			  </tr>
+			</table>
 		</div></div></div></div>
 		<!-- BOX (END) -->
 	</div>

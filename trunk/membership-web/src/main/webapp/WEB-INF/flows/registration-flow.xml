@@ -78,7 +78,7 @@
 
 	<view-state id="medical" view="medical">
         <transition on="back" to="extras" />
-		<transition on="next" to="medicalWaiver"/>
+		<transition on="next" to="verification"/>
 	</view-state>
 
 	<view-state id="medicalWaiver" view="medicalWaiver">
@@ -87,7 +87,8 @@
 	</view-state>
 
 	<view-state id="verification" view="verification">
-        <transition on="back" to="medicalWaiver" />
+
+        <transition on="back" to="medical" />
 		<transition on="next" to="riskAgreement"/>
 		<transition on="editContactInfo" to="editContactInfo"/>
 		<transition on="editExtras" to="editExtras"/>
@@ -126,13 +127,26 @@
 
 	<view-state id="riskAgreement" view="riskAgreement">
         <transition on="back" to="verification" />
-		<transition on="next" to="registrationComplete"/>
+		<transition on="next" to="registrationPayment"/>
+	</view-state>
+
+<view-state id="registrationPayment" view="registrationPayment">
+        <transition on="back" to="verification" />
+		<transition on="next" to="processOrder"/>
 	</view-state>
 
 	<view-state id="registrationComplete" view="registrationComplete">
-        <transition on="back" to="riskAgreement" />
-		<transition on="next" to="completion"/>
+        <transition on="back" to="registrationPayment" />
+
 	</view-state>
+
+ <action-state id="processOrder">
+      <entry-actions>
+        <action bean="accountBean" method="setupForm"/>
+      </entry-actions>
+      <action bean="paymentAction"/>
+      <transition on="*" to="registrationComplete" />
+    </action-state>
 
 
 	<end-state id="completion" view="mainMenu"/>

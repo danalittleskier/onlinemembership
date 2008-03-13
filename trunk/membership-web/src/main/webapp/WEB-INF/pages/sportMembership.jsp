@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -98,10 +98,11 @@
 
   <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Member Information</div>
+<p class="req-fields"><em>* Required Fields</em></p>
 
 	<!-- LEFT column -->
 	<div id="stg-twocol-primary">
-<form:form commandName="accountBean" name="accountBean">
+		<form:form commandName="accountBean" name="accountBean">
 
 		<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
@@ -114,14 +115,11 @@
 		<div id="hide" style="display:none">
 	      <input type="submit" class="button" id="update" name="_eventId_change" value="Update">
 	    </div>
-<fieldset>
-				<legend>Membership  Information</legend>
 
-	<table border="0" width="100%" id="table1">
-		<tr>
-			<td width="18%"><font size="2"><fmt:message key="registration.sport"/>:</font></td>
-			<td width="79%">
-		      <spring:bind path="accountBean.sportId">
+      <fieldset>
+      <legend>Sport & Membership Type</legend>
+      <label for="">* Sport:</label>
+      <spring:bind path="accountBean.sportId">
 	            <select name="sportId" onchange="javascript: document.getElementById('update').click();">
 		          <option value=""></option>
 		          <c:forEach var="o" items="${accountBean.sports}">
@@ -130,89 +128,84 @@
 		          </c:forEach>
 		        </select>
 		      </spring:bind>
+      <br />
+      <label for="">* Membership:</label>
 
- <c:choose>
+      <c:choose>
 	  <c:when test="${fn:length(accountBean.memberships) != 0}">
-	      <input type="submit" class="button" name="_eventId_add" value="Add">
-      </c:when>
- </c:choose>
-            </td>
-		</tr>
-  <c:choose>
-	  <c:when test="${fn:length(accountBean.memberships) != 0}">
-		<tr>
-			<td><font size="2"><fmt:message key="registration.membership"/>:</font></td>
-	        <td colspan="2" align="left">
-		      <spring:bind path="accountBean.membershipId">
+      <spring:bind path="accountBean.membershipId">
 	            <select name="membershipId">
 		          <option value=""></option>
 		          <c:forEach var="o" items="${accountBean.memberships}">
 		            <option value="${o.id}"
-		              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}|id[${o.id }]|Code[${o.sportCode}]|From[${o.ageFrom}]|To[${o.ageTo}]</option>
+		              <c:if test="${o.id == status.value}">selected</c:if>>${o.description}</option>
 		          </c:forEach>
 		        </select>
 		      </spring:bind>
-		    </td>
-		</tr>
-      </c:when>
+		      </c:when>
     </c:choose>
-		<tr>
-			<td width="18%">&nbsp;</td>
-			<td width="79%">&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="18%">&nbsp;</td>
-			<td width="79%">&nbsp;</td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="radio" value="V1" checked name="R1"><font size="2">Click
-			here to subscribe to the email list</font></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="radio" name="R1" value="V2"><font size="2">Click
-			here to be placed on Mail Privacy Status.</font></td>
-		</tr>
-		<tr>
-			<td width="18%">&nbsp;</td>
-			<td width="79%">&nbsp;</td>
-		</tr>
-	</table>
-	<p style="text-align: left">
 
-  </fieldset>
 
-  <fieldset class="buttons">
+	   <c:choose>
+	  <c:when test="${fn:length(accountBean.memberships) != 0}">
+	      <input type="submit" class="btn-green-sm" name="_eventId_add" value="Add">
+      </c:when>
+ 	</c:choose>
+      <br />
+      </fieldset>
+      <fieldset>
+      <legend>Communication Options</legend>
+	  <table style="margin-left:165px;">
+	  	<tr>
+			<td valign="top" class="checkbox"><input name="division_email" type="checkbox" value="" /></td>
+			<td valign="top" width="100%"><label class="checkbox" style="text-align:left; width:auto;" >Subscribe to the email list of your division and/or state organization for important member communications.</label></td>
+		</tr>
+	  	<tr>
+			<td valign="top" class="checkbox"><input name="mail_privacy" type="checkbox" value="" /></td>
+			<td valign="top" width="100%"><label class="checkbox" style="text-align:left; width:auto;">Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.</label></td>
+		</tr>
+	  </table>
+	 </fieldset>
+			<fieldset class="buttons">
 				<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+             <input type="submit" class="btn-green" name="_eventId_back" value="Back">
+
   </fieldset>
-
-
-
-</form:form>
+		</form:form>
 	</div>
 
-	<!-- RIGHT column -->
+
+
+<!--  start  -->
+
+<!-- RIGHT column -->
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
 		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<p class="stg-omr-header">Membership Cart</p>
-			    	* Indicate required field<p>&nbsp;</div>
+			<p class="stg-omr-header">Your Membership Fees</p>
 
-  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1">
-    <display:caption>Shopping Cart</display:caption>
-    <display:column property="description" title="Description" sortable="false" />
-    <display:column property="amount" title="Amount" sortable="false" />
+  <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1" id="cart">
+    <display:column property="description" title="Description" sortable="false" class="item" />
+    <display:column property="amount" title="Amount" sortable="false" class="price" />
   </display:table>
-  <table border="0">
-  <tr><td colspan="2" align="right"><i>total</i> $${accountBean.total }</td></tr>
-  </table>
+
+			<table id="carttotal">
+			  <tr>
+				<td class="total">Total</td>
+				<td class="price"><c:out value="${accountBean.cartBean.totalCost}" /></td>
+			  </tr>
+			</table>
 		</div></div></div></div>
 		<!-- BOX (END) -->
 	</div>
 	<div class="clear"></div>
 </div>
+
+<!-- end -->
+
+
 
 <!--------------------------------------------- Footer ------------------------------------------------->
 <div class=bottom_wrapper>

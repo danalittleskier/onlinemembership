@@ -15,8 +15,8 @@
 <link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/ussa_home.css">
 <!-- STG Styles - MUST FOLLOW USSA STYLES -->
-<link rel="stylesheet" type="text/css" href="main.css">
-<link rel="stylesheet" type="text/css" href="stg-forms.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/main.css">
+<link rel="stylesheet" type="text/css" href="${ctx}/styles/ussa/stg-forms.css">
 </head>
 
 <body>
@@ -91,19 +91,18 @@
 </div>
 
 <!-------------------------------------------- Content ------------------------------------------------->
-<!-- Container -->
 <div id="stg-content">
 <%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
 
-  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
+
+<div id="stg-progress"><img src="${ctx}/images/ussa/progress_4.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Release Waiver</div>
 
-	<!-- LEFT column -->
-	<div id="stg-twocol-primary">
-<form:form commandName="accountBean" name="accountBean">
-
-		<spring:bind path="accountBean.*">
+	<!-- Content -->
+	<div id="stg-onecol-wide">
+	<form:form commandName="accountBean" name="accountBean">
+	<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
 						<c:forEach var="errorMsg" items="${status.errorMessages}">
@@ -112,31 +111,28 @@
 			</c:if>
 		</spring:bind>
 
-<fieldset>
-				<legend>Release Waiver</legend>
-
-</fieldset>
-
-<fieldset class="buttons">
+		<!-- BOX (START) -->
+		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+		<p>Waiver...</p>
+		</div></div></div></div>
+		<!-- BOX (END) -->
+			<p>
+			<form name="" action="" method="">
+				<fieldset class="buttons">
 				<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-             <input type="submit" class="button" name="_eventId_back" value="<fmt:message key='button.back'/>">
-             <input type="submit" class="button" name="_eventId_next" value="<fmt:message key='button.next'/>">
+			<input type="submit" class="brn-green" name="_eventId_next" value="Continue">
+             <input type="submit" class="btn-green" name="_eventId_back" value="Back">
+
   </fieldset>
-
-
-
-</form:form>
-	</div>
-
-
-	<!-- RIGHT column -->
-	<div id="stg-twocol-secondary">
-		<!-- BOX (START) -->
-
+			</form>
+			</p>
 	</div>
 	<div class="clear"></div>
+	</form:form>
 </div>
+
+
 
 
 <!--------------------------------------------- Footer ------------------------------------------------->
