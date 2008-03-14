@@ -95,6 +95,7 @@
 		<transition on="editMedical" to="editMedical"/>
 		<transition on="editSport" to="editSport"/>
 		<transition on="editClub" to="editClub"/>
+		<transition on="editMember" to="editMember"/>
 	</view-state>
 
 	<view-state id="editContactInfo" view="contactInfo">
@@ -121,6 +122,11 @@
 	</view-state>
 
 	<view-state id="editMedical" view="medical">
+        <transition on="back" to="verification" />
+		<transition on="next" to="verification"/>
+	</view-state>
+
+	<view-state id="editMember" view="sportMembership">
         <transition on="back" to="verification" />
 		<transition on="next" to="verification"/>
 	</view-state>
