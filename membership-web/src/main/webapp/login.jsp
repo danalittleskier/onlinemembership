@@ -1,13 +1,13 @@
 <%@ include file="/common/taglibs.jsp"%>
 
 <head>
-    <title><fmt:message key="login.title"/></title>
+    <title>Accounts Dashboard Page</title>
     <meta name="heading" content="<fmt:message key='login.heading'/>"/>
     <meta name="menu" content="Login"/>
     <link rel="stylesheet" type="text/css" media="all" href="<c:url value='/styles/${appConfig["csstheme"]}/layout-1col.css'/>" />
 </head>
 <body id="login"/>
-
+Accounts Dashboard Page - mockup <br />
 <form method="post" id="loginForm" action="<c:url value='/j_security_check'/>"
     onsubmit="saveUsername(this);return validateForm(this)">
 <fieldset style="padding-bottom: 0">
@@ -33,19 +33,10 @@
         <input type="password" class="text medium" name="j_password" id="j_password" tabindex="2" />
     </li>
 
-<c:if test="${appConfig['rememberMeEnabled']}">
-    <li>
-        <input type="checkbox" class="checkbox" name="rememberMe" id="rememberMe" tabindex="3"/>
-        <label for="rememberMe" class="choice"><fmt:message key="login.rememberMe"/></label>
-    </li>
-</c:if>
+
     <li>
         <input type="submit" class="button" name="login" value="<fmt:message key='button.login'/>" tabindex="4" />
-        <p>
-            <fmt:message key="login.signup">
-                <fmt:param><c:url value="/signup.html"/></fmt:param>
-            </fmt:message>
-        </p>
+
     </li>
 </ul>
 </fieldset>
@@ -53,4 +44,4 @@
 
 <%@ include file="/scripts/login.js"%>
 
-<p><fmt:message key="login.passwordHint"/></p>
+

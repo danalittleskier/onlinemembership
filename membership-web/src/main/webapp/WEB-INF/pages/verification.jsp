@@ -117,7 +117,8 @@
 			<table id="stg-data-review">
 			  <tr>
 				<th scope="col">Personal Information</th>
-				<th scope="col" class="edit"><a href="/index.htm">Edit</a></th>
+				<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
+
 			  </tr>
 			  <tr>
 				<td class="data-label" scope="row">USSA Member #:</td>
@@ -151,7 +152,7 @@
 			<table id="stg-data-review">
 			  <tr>
 				<th scope="col">Address & Phone</th>
-				<th scope="col" class="edit"><a href="/index.htm">Edit</a></th>
+
 			  </tr>
 			  <tr>
 				<td class="data-label" scope="row">Company:</td>
@@ -189,7 +190,8 @@
 			<table id="stg-data-review">
 			  <tr>
 				<th scope="col">Primary Medical Insurance</th>
-				<th scope="col" class="edit"><a href="/medical.htm">Edit</a></th>
+				<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editMedical" value="Edit"></th>
+
 			  </tr>
 			  <tr>
 				<td class="data-label" scope="row">Insurance Company Name:</td>
@@ -214,7 +216,7 @@
 
 	</fieldset>
 
-</form:form>
+
 
 </div>
 
@@ -227,7 +229,7 @@
 	<div id="stg-twocol-secondary">
 		<!-- BOX (START) -->
 		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<p class="stg-omr-header">Your Membership Fees</p>
+			<p class="stg-omr-header">Your Membership Fees - <input type="submit" class="btn-green" name="_eventId_editMember" value="<fmt:message key='button.edit'/>"></p>
 
   <display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1" id="cart">
     <display:column property="description" title="Description" sortable="false" class="item" />
@@ -244,6 +246,7 @@
 		<!-- BOX (END) -->
 	</div>
 	<div class="clear"></div>
+	</form:form>
 </div>
 
 <!--------------------------------------------- Footer ------------------------------------------------->
