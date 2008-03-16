@@ -1,0 +1,44 @@
+/* Forms - General
+---------------------------------------------------------------------- */
+form {width:100%;}
+
+fieldset {
+	border:1px solid #ccc; 
+	padding:10px;
+	margin-bottom:20px;
+}
+
+fieldset.buttons {border:none;margin-top:-15px;}
+
+legend {
+	font:18px tahoma,arial,verdana,sans-serif; 
+	margin-bottom:15px; 
+	padding:0 10px;
+	color:#000;
+}
+
+label {
+	text-align:right;
+	width:140px;
+	float:left;
+	margin-right:5px;
+	margin-top:1px; 
+	margin-bottom:5px;
+}
+input {
+	margin-bottom:5px;
+	border:1px solid #ccc;
+	border-style:inset; 
+	width:200px;
+}
+
+input.btn-green, input.btn-red {
+	padding:3px;
+	margin-right:5px;
+	color:#006600;
+	border-style:outset;
+	background:url(tile_button_green.gif) repeat-x bottom left;
+	font:14px tahoma,arial,verdana,sans-serif;
+	width:auto;
+}
+input.btn-red {color:#a91c1c; background:url(tile_button_red.gif) repeat-x bottom left;}
