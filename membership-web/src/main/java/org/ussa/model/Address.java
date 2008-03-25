@@ -1,7 +1,10 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 import org.appfuse.model.BaseObject;
 
@@ -21,6 +24,9 @@ public class Address extends BaseObject implements Serializable {
 
     @Column(name = "DELIVERY_ADDRESS", nullable = true, length=40, unique=false)
     private String deliveryAddress;
+
+    @Column(name = "SECONDARY_ADDRESS", nullable = true, length=40, unique=false)
+    private String secondaryAddress;
 
     @Column(name = "CITY", nullable = true, length=30, unique=false)
     private String city;
@@ -66,7 +72,15 @@ public class Address extends BaseObject implements Serializable {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public String getCity()
+	public String getSecondaryAddress() {
+		return secondaryAddress;
+	}
+
+	public void setSecondaryAddress(String secondaryAddress) {
+		this.secondaryAddress = secondaryAddress;
+	}
+
+	public String getCity()
     {
         return city;
     }
