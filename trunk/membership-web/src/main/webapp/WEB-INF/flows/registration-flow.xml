@@ -8,6 +8,7 @@
 	<start-state idref="findContactInfo"/>
 	<action-state id="findContactInfo">
 		<entry-actions>
+			<!-- setupForm in org.springframework.webflow.action.FormAction -->
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction"/>
