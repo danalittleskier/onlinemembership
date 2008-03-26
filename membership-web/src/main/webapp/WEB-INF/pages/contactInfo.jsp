@@ -14,14 +14,25 @@
 	<div id="stg-twocol-primary">
 		<form:form commandName="accountBean" name="accountBean">
 
-		<spring:bind path="accountBean.*">
-			<c:if test="${not empty status.errorMessages}">
-				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
-				<c:forEach var="errorMsg" items="${status.errorMessages}">
-					<c:out value="${errorMsg}" escapeXml="false" />
-				</c:forEach>
-			</c:if>
-		</spring:bind>
+			<spring:bind path="accountBean.*">
+				<c:if test="${not empty status.errorMessages}">
+					<div id="stg-twocol-primary">
+						<div class="stg-error-tl">
+							<p>Please correct the following</p>
+						</div>
+						<div class="stg-error-tr"/>
+						<div class="stg-error-content">
+							<ul>
+								<c:forEach var="errorMsg" items="${status.errorMessages}">
+									<li>
+										<strong><c:out value="${errorMsg}" escapeXml="false" /></strong>
+									</li>
+								</c:forEach>
+							</ul>
+						</div>
+					</div>
+				</c:if>
+			</spring:bind>
 			<fieldset>
 			<legend>Personal Information</legend>
 
@@ -31,11 +42,11 @@
 				<c:out value="${accountBean.member.id}" /><br />
 			</c:if>
 			<br />
-				<label for="">First Name</label>
+				<label for="">* First Name</label>
 				<form:input path="member.firstName" size="30" maxlength="30" /><br />
 				<label for="">MI</label>
 				<form:input path="member.middleName" size="30" maxlength="30" /><br />
-				<label for="">Last Name</label>
+				<label for="">* Last Name</label>
 				<form:input path="member.lastName" size="30" maxlength="30"/><br />
 				<label for="">Suffix</label>
 				<form:input path="member.suffixName" size="30" maxlength="30"/><br />
@@ -44,13 +55,13 @@
 				<legend>Address & Phone</legend>
 				<label for="">Company</label>
 				<form:input path="address.company" size="30" maxlength="30"/><br />
-				<label for="">Address 1</label>
+				<label for="">* Address 1</label>
 				<form:input path="address.deliveryAddress" size="30" maxlength="40"/><br />
 				<label for="">Address 2</label>
 				<form:input path="address.secondaryAddress" size="30" maxlength="40"/><br />
-				<label for="">City</label>
+				<label for="">* City</label>
 				<form:input path="address.city" size="30" maxlength="30"/><br />
-				<label for="">State</label>
+				<label for="">* State</label>
 
 				<spring:bind path="accountBean.address.stateCode">
 					<select name="address.stateCode">
@@ -64,28 +75,19 @@
 				</spring:bind>
 				<br/>
 
-				<label for="">Zip</label>
+				<label for="">* Zip/Potal Code</label>
 				<form:input path="address.postalCode" size="30" maxlength="30"/><br />
-				<label for="">Country</label>
+				<label for="">* Country</label>
 				<form:input path="address.country" size="30" maxlength="30"/><br />
-				<label for="">Home Phone</label>
+				<label for="">* Home/Primary Phone</label>
 				<form:input path="address.phoneHome" size="30" maxlength="30"/><br />
+				<label for="">Work Phone</label>
+				<form:input path="address.phoneWork" size="30" maxlength="30"/><br />
 				<label for="">Other Phone</label>
 				<form:input path="address.phoneOther" size="30" maxlength="30"/><br />
 				<label for="">Fax</label>
 				<form:input path="address.phoneFax" size="30" maxlength="30"/><br />
 				</fieldset>
-
-				<c:if test="${empty accountBean.member.id }">
-				<fieldset>
-				<legend>Other Information</legend>
-				<label for="">Gender</label>
-				<form:input path="member.gender" size="30" maxlength="30"/><br />
-				<label for="">Etnicity</label>
-				<form:input path="member.etnicity" size="30" maxlength="30"/><br />
-				</fieldset>
-				</c:if>
-
 
 			<c:if test="${accountBean.member.age < 18 && accountBean.member.age != 0}">
 			<fieldset>
