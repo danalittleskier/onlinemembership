@@ -71,10 +71,10 @@ reside in the roots of these too directories (/images/ and /scripts/).
 }
 
 /* Rounded corner box styles */
-.stg-bl {background: url(bl.gif) 0 100% no-repeat #e6e6e6; margin:20px 0;}
-.stg-br {background: url(br.gif) 100% 100% no-repeat;}
-.stg-tl {background: url(tl.gif) 0 0 no-repeat;}
-.stg-tr {background: url(tr.gif) 100% 0 no-repeat;}
+.stg-bl {background: url( ../images/bl.gif ) 0 100% no-repeat #e6e6e6; margin:20px 0;}
+.stg-br {background: url( ../images/br.gif ) 100% 100% no-repeat;}
+.stg-tl {background: url( ../images/tl.gif ) 0 0 no-repeat;}
+.stg-tr {background: url( ../images/tr.gif ) 100% 0 no-repeat;}
 .stg-tr {padding:20px !important; padding:20px 20px 5px 20px;} /* IE 6 hack for bottom padding */
 * + html .stg-tr {padding:20px 20px 5px 20px !important;} /* IE hack for bottom padding */
 .stg-bl {line-height:150%;}

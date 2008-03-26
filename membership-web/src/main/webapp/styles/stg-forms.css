@@ -64,7 +64,7 @@ input.btn-green, input.btn-green-sm, input.btn-red {
 	margin-right:5px;
 	color:#006600;
 	border:1px outset #ccc;
-	background:url(tile_button_green.gif) repeat-x bottom left;
+	background:url( ../images/tile_button_green.gif ) repeat-x bottom left;
 	font:14px tahoma,arial,verdana,sans-serif;
 	width:auto;
 	height:30px;
@@ -76,7 +76,7 @@ input.btn-green-sm {
 	width:auto;
 	height:21px;
 }
-input.btn-red {color:#a91c1c; background:url(tile_button_red.gif) repeat-x bottom left;}
+input.btn-red {color:#a91c1c; background:url( ../images/tile_button_red.gif ) repeat-x bottom left;}
 
 .data-input {
 	display:block;
