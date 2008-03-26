@@ -1,26 +1,14 @@
-<body>
-
-<!-------------------------------------------- Content ------------------------------------------------->
-<!-- Container -->
-<div id="stg-content">
 <%@ include file="/common/taglibs.jsp"%>
-	<!-- Progress bar -->
+<body>
+<!-- Progress bar -->
+<div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
+<div id="stg-pagetitle">Member Information</div>
 
-  <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-  <div id="stg-pagetitle">Member Information</div>
-
-	<!-- LEFT column -->
-	<div id="stg-twocol-primary">
+<!-- LEFT column -->
+<div id="stg-twocol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
-<spring:bind path="accountBean.*">
-			<c:if test="${not empty status.errorMessages}">
-				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
-						<c:forEach var="errorMsg" items="${status.errorMessages}">
-							<c:out value="${errorMsg}" escapeXml="false" />
-						</c:forEach>
-			</c:if>
-		</spring:bind>
+<%@ include file="/includes/messages.jsp"%>
 
 <fieldset>
 	<legend>Membership  Information</legend>
@@ -201,7 +189,5 @@
 	<!-- BOX (END) -->
 </div>
 <div class="clear"></div>
-</div>
 
 </body>
-
