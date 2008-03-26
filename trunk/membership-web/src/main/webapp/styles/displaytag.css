@@ -1,0 +1,430 @@
+table.default {
+ border: 1px solid #999999;
+ border-collapse:collapse;
+ font: 11px Verdana, sans-serif;
+ width:90%;
+ margin: 10px 0 10px 0 !important;
+}
+
+/* Begin implementation of styles for nested tables used in expand/collapse */
+table.default table td { border: none; }
+table.default table table td
+{
+ 	border: 1px solid #F6ECDB;/*#CCC2AF;/*DDDDDD;*/
+}
+/* End implementation of nested tables for expand/collapse */
+
+table.default caption {
+	padding: inherit;
+	margin: inherit;
+	font: bold 12px Verdana, sans-serif;;
+	letter-spacing: 1px;
+	text-align: left;
+
+}
+
+/* TH Elements */
+
+table.default th
+{
+	font: bold 10px Verdana, sans-serif;
+	color: white;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 3px 3px 3px 3px;
+	background: #CAC0AD;/*#004480;/*title bar background color*/
+    border: 1px solid #999999;
+	text-decoration:none;
+	border-collapse:collapse;
+
+}
+
+table.default th.superHeader {
+	background: #CAC0AD;/*#004480;Grey: #504c44;ALV BLUE:#004480;/*title bar background color*/
+	font: bold 14px Verdana, sans-serif;
+	color: white;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	text-align:left;
+	border: 1px solid #999999;
+	padding: 3px 3px 3px 3px;
+}
+
+table.default th.subTableHeader {
+	background: #CAC0AD;/*#004480;Grey: #504c44;ALV BLUE:#004480;/*title bar background color*/
+	font: bold 9px Verdana, sans-serif;
+	color: white;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	text-align:left;
+	border: 1px solid #999999;
+	padding: 3px 3px 3px 3px;
+}
+
+table.default th.actionheader
+{
+    color: white;
+	font: bold 10px Verdana, sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	padding: 3px 3px 3px 3px;
+    border: 1px solid #999999;
+   	background: #CAC0AD;/*#004480;/*title bar background color*/
+	text-decoration:none;
+	border-collapse:collapse;
+	text-align:left;
+
+}
+
+table.default th.left
+{
+	text-align:left;
+}
+
+table.default th.right
+{
+	text-align:left;
+}
+
+table.default th.center
+{
+	text-align:left;
+}
+
+
+table.default th.sorted {
+	background: #CAC0AD;/*#004480;/*title bar background color*/
+}
+
+table.default th a,table.default th a:visited {
+	text-decoration:none;
+	color: white;
+    font-size:10px;
+}
+
+table.default th a:hover {
+	text-decoration: none;
+	color: #000000;/*#BBBBBB;*/
+    font-size:10px;
+}
+
+table.default th.sorted a,th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+    font-size:10px;
+    color: white;
+}
+
+table.default th.sortable a {
+	background-image: url(../images/tables/arrow_off.png);
+	background-repeat: no-repeat;
+}
+
+table.default th.order1 a {
+	background-image: url(../images/tables/arrow_down.png);
+	background-repeat: no-repeat;
+}
+
+table.default th.order2 a {
+	background-image: url(../images/tables/arrow_up.png);
+	background-repeat: no-repeat;
+}
+
+table.default th.cart {
+	background-color: #981E32;
+}
+
+/* TD Elements */
+
+table.default td {
+ border: 1px solid #F6ECDB;/*CCC2AF;/*#DDDDDD;*/
+ padding: 3px 3px 3px 3px;
+ font: 11px Verdana, sans-serif;
+ vertical-align:top;
+}
+
+table.default td a, table.default{
+    font: 10px Verdana, sans-serif;
+	text-decoration:none;
+	font-size: 11px;
+}
+
+table.default td a:hover {
+	text-decoration: underline;
+	color: black;
+	font-size: 11px;
+}
+
+table.default td.action {
+ padding: 3px 3px 3px 3px;
+ text-align:left;
+}
+
+table.default td.action a {
+ padding: 3px 3px 3px 3px;
+}
+
+table.default td.action-75 {
+ padding: 3px 3px 3px 3px;
+ text-align:left;
+ width:75px;
+}
+
+table.default td.action-100 {
+ padding: 3px 3px 3px 3px;
+ text-align:left;
+ width:100px;
+}
+
+table.default td.action-150 {
+ padding: 3px 3px 3px 3px;
+ text-align:left;
+ width:150px;
+}
+
+table.default td.action-200 {
+ padding: 3px 3px 3px 3px;
+ text-align:left;
+ width:200px;
+}
+
+
+
+table.default td.center {
+ text-align:center;
+
+
+}
+table.default td.center-nowrap {
+ text-align:center;
+ white-space: nowrap;
+
+
+}
+
+table.default td.center-25 {
+ text-align:center;
+  width:25px;
+}
+
+table.default td.center-50 {
+ text-align:center;
+  width:50px;
+}
+
+table.default td.center-75 {
+ text-align:center;
+  width:75px;
+}
+
+table.default td.center-100 {
+ text-align:center;
+  width:100px;
+}
+
+table.default td.center-125 {
+ text-align:center;
+  width:125px;
+}
+
+table.default td.center-150 {
+ text-align:center;
+  width:150px;
+}
+
+table.default td.center-200 {
+ text-align:center;
+  width:200px;
+}
+
+table.default td.right {
+ text-align:right;
+}
+
+table.default td.right-50 {
+ text-align:right;
+  width:50px;
+}
+
+table.default td.right-75 {
+ text-align:right;
+  width:75px;
+}
+
+table.default td.right-100 {
+ text-align:right;
+  width:100px;
+}
+
+table.default td.right-125 {
+ text-align:right;
+  width:125px;
+}
+
+table.default td.right-150 {
+ text-align:right;
+  width:150px;
+}
+
+table.default td.right-200 {
+ text-align:right;
+  width:200px;
+}
+
+table.default td.left {
+ text-align:left;
+}
+
+table.default td.left-75{
+ text-align:left;
+  width:75px;
+}
+
+table.default td.left-100 {
+ text-align:left;
+  width:100px;
+}
+
+table.default td.left-150 {
+ text-align:left;
+  width:150px;
+}
+
+table.default td.left-200 {
+ text-align:left;
+  width:200px;
+}
+
+table.default td.left-75percent {
+ text-align:left;
+  width:75%;
+}
+table.default td.menubar a:hover {
+	text-decoration: none;
+	color: black;
+}
+div.exportlinks {
+    margin: -5px 0 10px 10px;
+    padding: 2px 4px 2px 0;
+    width: 100%;
+}
+
+div.exportlinks a {
+    text-decoration: none;
+}
+
+div.exportlinks span {
+    background-repeat: no-repeat;
+}
+
+span.csv {
+    background-image: url(../images/ico_file_csv.png);
+}
+
+span.excel {
+    background-image: url(../images/ico_file_excel.png);
+}
+
+span.pdf {
+    background-image: url(../images/ico_file_pdf.png);
+}
+
+span.xml {
+    background-image: url(../images/ico_file_xml.png);
+}
+
+span.export {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 4px 1px 20px;
+}
+
+span.pagebanner {
+    display: block;
+    margin: 10px 0 10px 0;
+    padding: 2px 4px 2px 0;
+}
+
+span.pagelinks {
+    display: block;
+    font-size: .95em;
+    margin-bottom: 5px;
+    margin-top: -18px;
+    padding: 2px 0 2px 0;
+    text-align: right;
+    width: 80%;
+}
+
+th.sorted a, th.sortable a {
+    background-position: right;
+    display: block;
+}
+
+.table th.order1 a {
+    background-image: url(../images/arrow_down.png) !important;
+}
+
+.table th.order2 a {
+    background-image: url(../images/arrow_up.png) !important;
+}
+
+div#main .tableHeaderImage { /* Tapestry */
+    position: absolute;
+    margin: 2px 0 0 -5px;
+    background: transparent;
+    border: 0;
+}
+
+/*.table th.sortable a {
+    background-image: url(../images/arrow_off.png);
+}*/
+
+.table th.sorted {
+    background-color: #ffd;
+    color: #000000;
+}
+
+.table th.sorted a, .table th.sortable a {
+    background-position: right;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.table tr.even {
+    background: #eee;
+    border-top: 1px solid #c0c0c0;
+    color: #000000;
+}
+
+.table tr.odd {
+    background: #fff;
+    border-top: 1px solid #c0c0c0;
+    color: #000000;
+}
+
+/* TR Elements */
+
+table.default tr.odd {
+	background: #fffef9;
+	background-color: #fffef9;
+}
+
+table.default tr.tableRowEven,tr.even {
+	background: #f7f7ef;
+	background-color: #f7f7ef;
+}
+
+/* highlight .table row onmouseover */
+.table tr.over {
+    border-bottom: 1px solid #C0C0C0;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+    cursor: pointer;
+}
+
+.detail th {
+    text-align: right;
+}

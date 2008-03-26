@@ -25,3 +25,6 @@
 	<!-- STG Styles - MUST FOLLOW USSA STYLES -->
 	<link href="<c:url value='/styles/main.css'/>" type="text/css" rel="stylesheet"/>
 	<link href="<c:url value='/styles/stg-forms.css'/>" type="text/css" rel="stylesheet"/>
+
+	<!--I think this is being used, but not entirely sure yet-->
+	<link href="<c:url value='/styles/displaytag.css'/>" type="text/css" rel="stylesheet"/>
