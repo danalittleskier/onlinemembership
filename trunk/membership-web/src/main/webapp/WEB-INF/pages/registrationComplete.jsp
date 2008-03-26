@@ -6,7 +6,7 @@
 	<!-- Progress bar -->
 
 
-<div id="stg-progress"><img src="${ctx}/images/ussa/progress_4.gif" width="917" height="53" /></div>
+<div id="stg-progress"><img src="${ctx}/images/progress_4.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Membership Registration</div>
 
 	<!-- Content -->

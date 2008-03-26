@@ -8,12 +8,14 @@
 
 	<title>USSA Membership Registration</title>
 
+<%--
 	<script type="text/javascript" src="<c:url value='/scripts/prototype.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/scriptaculous.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/global.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/calendar/calendar.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/calendar/calendar-setup.js'/>"></script>
 	<script type="text/javascript" src="<c:url value='/scripts/calendar/lang/calendar-en.js'/>"></script>
+--%>
 
 	<!-- USSA Scripts -->
 	<script type="text/javascript" src="/scripts/_sfHover.js"></script>
@@ -27,8 +29,8 @@
 	<link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
 	<link href="${ctx}/styles/ussa/ussa_home.css" type="text/css" rel="stylesheet"/>
 	<!-- STG Styles - MUST FOLLOW USSA STYLES -->
-	<link href="${ctx}/styles/ussa/main.css" type="text/css" rel="stylesheet"/>
-	<link href="${ctx}/styles/ussa/stg-forms.css" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/main.css'/>" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/stg-forms.css'/>" type="text/css" rel="stylesheet"/>
 
 	<decorator:head/>
 </head>

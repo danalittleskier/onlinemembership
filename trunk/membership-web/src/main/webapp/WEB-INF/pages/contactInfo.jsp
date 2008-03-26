@@ -1,12 +1,11 @@
 <%@ include file="/common/taglibs.jsp"%>
-
 <body>
 
 <!-------------------------------------------- Content ------------------------------------------------->
 <!-- Container -->
 <div id="stg-content">
 	<!-- Progress bar -->
-	<div id="stg-progress"><img src="${ctx}/images/ussa/progress_1.gif" width="917" height="53" /></div>
+	<div id="stg-progress"><img src="${ctx}/images/progress_1.gif" width="917" height="53" /></div>
 
 	<div id="stg-pagetitle">Member Information</div>
 	<p class="req-fields"><em>* Required Fields</em></p>

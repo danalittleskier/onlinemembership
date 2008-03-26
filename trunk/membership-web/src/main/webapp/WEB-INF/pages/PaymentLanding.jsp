@@ -6,14 +6,14 @@
 <%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
 
-  <div id="stg-progress"><img src="${ctx}/images/ussa/progress_2.gif" width="917" height="53" /></div>
+  <div id="stg-progress"><img src="${ctx}/images/progress_2.gif" width="917" height="53" /></div>
   <div id="stg-pagetitle">Membership Payment</div>
 
 	<!-- LEFT column -->
 	<div id="stg-twocol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
-<spring:bind path="accountBean.*">
+		<spring:bind path="accountBean.*">
 			<c:if test="${not empty status.errorMessages}">
 				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
 						<c:forEach var="errorMsg" items="${status.errorMessages}">
@@ -23,7 +23,7 @@
 		</spring:bind>
 
 <fieldset>
-				<legend>Membership Payment</legend>
+	<legend>Membership Payment</legend>
 
 	<table border="0" width="100%" id="table1">
 		<tr>
