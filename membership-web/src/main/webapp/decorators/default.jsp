@@ -18,16 +18,18 @@
 --%>
 
 	<!-- USSA Scripts -->
-	<script type="text/javascript" src="/scripts/_sfHover.js"></script>
-	<script type="text/javascript" src="/scripts/_quickLinks.js"></script>
-	<script type="text/javascript" src="/scripts/_hscroller.js"></script>
+	<script type="text/javascript" src="<c:url value='/scripts/_sfHover.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/scripts/_quickLinks.js'/>"></script>
+	<script type="text/javascript" src="<c:url value='/scripts/_hscroller.js'/>"></script>
+
 	<!-- USSA Styles -->
-	<link href="${ctx}/images/ussa/favicon.ico" rel="shortcut icon"/>
-	<link href="${ctx}/styles/ussa/_headers.css" type="text/css" rel="stylesheet"/>
-	<link href="${ctx}/styles/ussa/_globals.css" type="text/css" rel="stylesheet"/>
-	<link href="${ctx}/styles/ussa/_layout.css" type="text/css" rel="stylesheet"/>
-	<link href="${ctx}/styles/ussa/_menu.css" type="text/css" rel="stylesheet"/>
-	<link href="${ctx}/styles/ussa/ussa_home.css" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/images/ussa/favicon.ico'/>" rel="shortcut icon"/>
+	<link href="<c:url value='/styles/ussa/_headers.css'/>" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/ussa/_globals.css'/>" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/ussa/_layout.css'/>" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/ussa/_menu.css'/>" type="text/css" rel="stylesheet"/>
+	<link href="<c:url value='/styles/ussa/ussa_home.css'/>" type="text/css" rel="stylesheet"/>
+
 	<!-- STG Styles - MUST FOLLOW USSA STYLES -->
 	<link href="<c:url value='/styles/main.css'/>" type="text/css" rel="stylesheet"/>
 	<link href="<c:url value='/styles/stg-forms.css'/>" type="text/css" rel="stylesheet"/>
@@ -41,8 +43,8 @@
 
 	<!------------------------------------------- Advertisment ----------------------------------------------->
 	<div class="page_advertise_wrapper">
-		<script language="Javascript1.1" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=1;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
-		<script>
+		<script type="text/javascript" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=1;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
+		<script type="text/javascript">
 			<!--
 			if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || navigator.userAgent.indexOf("WebTV") >= 0) {
 				document.write('<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=1;sz=720x90;ord=' + ord + '?" target="_blank">');
@@ -54,7 +56,7 @@
 			<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=1;sz=720x90;ord=123456789?" target="_blank">
 				<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=1;sz=720x90;ord=123456789?" width="720" height="90" border="0" alt=""></a>
 		</noscript>
-		<img src="${ctx}/images/ussa/TV_TuneIn.jpg" border="0" ismap usemap="#topAdMap">
+		<img src="<c:url value='/images/ussa/TV_TuneIn.jpg'/>" border="0" ismap usemap="#topAdMap">
 	</div>
 	<map name="topAdMap">
 		<area shape="rect" coords="64,34,104,71" href="http://www.usskiteam.com/public/tv.php?&dId=6" target="_blank">
@@ -80,9 +82,9 @@
 					<table>
 						<tr>
 							<td>
-								<input type="textbox" name="q" size="25" maxlength="255" value="Search" onfocus="javascript:this.select();"/>
+								<input type="text" name="q" size="25" maxlength="255" value="Search" onfocus="this.select();"/>
 								<!--<input type="submit" name="btnG" value="USSA Search"/>-->
-								<a><img src="${ctx}/images/ussa/magnifying_glass.png" onclick="javascript:document.googleMini.submit();" border="0"></a>
+								<a><img src="<c:url value='/images/ussa/magnifying_glass.png'/>" onclick="document.googleMini.submit();" border="0"></a>
 								<input type="hidden" name="site" value="USSA"/>
 								<input type="hidden" name="client" value="ussa"/>
 								<input type="hidden" name="proxystylesheet" value="ussa"/>
@@ -115,8 +117,8 @@
 
 <!--------------------------------------------- Footer ------------------------------------------------->
 <div class=bottom_wrapper>
-	<script language="Javascript1.1" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=2;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
-	<script>
+	<script type="text/javascript" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=2;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>
+	<script type="text/javascript">
 		<!--
 		if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || navigator.userAgent.indexOf("WebTV") >= 0) {
 			document.write('<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=2;sz=720x90;ord=' + ord + '?" target="_blank">');
@@ -128,7 +130,7 @@
 		<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=2;sz=720x90;ord=123456789?" target="_blank">
 			<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=2;sz=720x90;ord=123456789?" width="720" height="90" border="0" alt=""></a>
 	</noscript>
-	<img src="${ctx}/images/ussa/TV_TuneIn.jpg" ismap usemap="#bottomAdMap" border="0">
+	<img src="<c:url value='/images/ussa/TV_TuneIn.jpg'/>" ismap usemap="#bottomAdMap" border="0">
 
 	<div class=bottom_menu>
 		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">contact us</a>
@@ -141,7 +143,7 @@
 	</div>
 
 	<div class=dotted_separator></div>
-	<img src="${ctx}/images/ussa/combined_logos_color.gif" alt="" height="37" ismap usemap="#teamMap" border="0">
+	<img src="<c:url value='/images/ussa/combined_logos_color.gif'/>" alt="" height="37" ismap usemap="#teamMap" border="0">
 	<!-- Image Maps -->
 	<map name="bottomAdMap">
 		<area shape="rect" coords="64,34,104,71" href="http://www.usskiteam.com/public/tv.php?&dId=6" target="_blank">
