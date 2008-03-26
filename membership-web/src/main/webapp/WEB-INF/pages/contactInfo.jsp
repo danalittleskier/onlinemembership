@@ -28,44 +28,22 @@
 			<form:input path="member.lastName" size="30" maxlength="30"/><br />
 			<label for="">Suffix</label>
 			<form:input path="member.suffixName" size="30" maxlength="30"/><br />
-		</fieldset>
-		<fieldset>
-			<legend>Address & Phone</legend>
-			<label for="">Company</label>
-			<form:input path="address.company" size="30" maxlength="30"/><br />
-			<label for="">* Address 1</label>
-			<form:input path="address.deliveryAddress" size="30" maxlength="40"/><br />
-			<label for="">Address 2</label>
-			<form:input path="address.secondaryAddress" size="30" maxlength="40"/><br />
-			<label for="">* City</label>
-			<form:input path="address.city" size="30" maxlength="30"/><br />
-			<label for="">* State</label>
 
-			<spring:bind path="accountBean.address.stateCode">
-				<select name="address.stateCode">
-					<option value=""></option>
-					<c:forEach var="o" items="${accountBean.usStates}">
-						<option value="<c:out value='${o.id}'/>" <c:if test="${o.id == status.value}">selected</c:if>>
-							<c:out value='${o.id}'/>
-						</option>
-					</c:forEach>
-				</select>
-			</spring:bind>
+			<label for="birth-date">* Birth Date:</label>
+			<form:input id="birth-date" path="member.birthDate" size="30" maxlength="30"/>
+			<a title="Select Date" href="#">
+				<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
+			</a>
 			<br/>
 
-			<label for="">* Zip/Potal Code</label>
-			<form:input path="address.postalCode" size="30" maxlength="30"/><br />
-			<label for="">* Country</label>
-			<form:input path="address.country" size="30" maxlength="30"/><br />
-			<label for="">* Home/Primary Phone</label>
-			<form:input path="address.phoneHome" size="30" maxlength="30"/><br />
-			<label for="">Work Phone</label>
-			<form:input path="address.phoneWork" size="30" maxlength="30"/><br />
-			<label for="">Other Phone</label>
-			<form:input path="address.phoneOther" size="30" maxlength="30"/><br />
-			<label for="">Fax</label>
-			<form:input path="address.phoneFax" size="30" maxlength="30"/><br />
-			</fieldset>
+			<label for="gender">* Gender:</label>
+			<div class="radios">
+				<form:radiobutton id="gender1" path="member.gender" value="M"/>
+				<label class="radio" for="gender1">Male</label>
+				<form:radiobutton id="gender2" path="member.gender" value="F"/>
+				<label class="radio" for="gender2">Female</label>
+			</div><br/>
+		</fieldset>
 
 		<c:if test="${accountBean.member.age < 18 && accountBean.member.age != 0}">
 		<fieldset>
@@ -99,6 +77,39 @@
 			<form:input path="member.parentInfo.parent2Email" size="30" maxlength="60"/><br />
 		</fieldset>
 		</c:if>
+
+		<fieldset>
+			<legend>Address & Phone</legend>
+			<label for="">Company</label>
+			<form:input path="address.company" size="30" maxlength="30"/><br />
+			<label for="">* Address 1</label>
+			<form:input path="address.deliveryAddress" size="30" maxlength="40"/><br />
+			<label for="">Address 2</label>
+			<form:input path="address.secondaryAddress" size="30" maxlength="40"/><br />
+			<label for="">* City</label>
+			<form:input path="address.city" size="30" maxlength="30"/><br />
+			<label for="">* State</label>
+
+			<form:select path="address.stateCode">
+				<form:option value=""></form:option>
+				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
+			</form:select>
+			<br/>
+
+			<label for="">* Zip/Potal Code</label>
+			<form:input path="address.postalCode" size="30" maxlength="30"/><br />
+			<label for="">* Country</label>
+			<form:input path="address.country" size="30" maxlength="30"/><br />
+			<label for="">* Home/Primary Phone</label>
+			<form:input path="address.phoneHome" size="30" maxlength="30"/><br />
+			<label for="">Work Phone</label>
+			<form:input path="address.phoneWork" size="30" maxlength="30"/><br />
+			<label for="">Other Phone</label>
+			<form:input path="address.phoneOther" size="30" maxlength="30"/><br />
+			<label for="">Fax</label>
+			<form:input path="address.phoneFax" size="30" maxlength="30"/><br />
+			</fieldset>
+
 		<fieldset class="buttons">
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">

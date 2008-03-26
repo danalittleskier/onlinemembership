@@ -43,9 +43,7 @@
 					<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
 					<option value=""></option>
 					<c:forEach var="o" items="${accountBean.usStates}">
-						<option value="${o.id}"
-								<c:if test="${o.id == status.value}">selected</c:if>
-								>${o.id}</option>
+						<option value="${o.id}" <c:if test="${o.id == status.value}">selected</c:if>>${o.id}</option>
 					</c:forEach>
 				</select>
 			</spring:bind>
@@ -55,9 +53,7 @@
 				<select name="clubId">
 					<option value=""></option>
 					<c:forEach var="o" items="${accountBean.clubsForState}">
-						<option value="${o.id}"
-								<c:if test="${o.id == status.value}">selected</c:if>
-								>${o.name}</option>
+						<option value="${o.id}" <c:if test="${o.id == status.value}">selected</c:if>>${o.name}</option>
 					</c:forEach>
 				</select>
 			</spring:bind>
@@ -67,7 +63,7 @@
 		<fieldset>
 			<legend>Division</legend>
 			<label for="">* Division:</label>
-			<c:out value="${accountBean.member.divisionCode}"/>
+			<c:out value="${accountBean.member.division.description}"/>
 			<br/>
 		</fieldset>
 
