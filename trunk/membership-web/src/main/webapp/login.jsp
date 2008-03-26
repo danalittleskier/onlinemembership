@@ -5,8 +5,9 @@
 </head>
 
 <body>
-<form method="post" id="loginForm" action="<c:url value='/j_security_check'/>"
-	  onsubmit="saveUsername(this);return validateForm(this)">
+<div id="stg-pagetitle">Mock Login</div>
+<div id="stg-onecol-primary">
+<form method="post" action="<c:url value='/j_security_check'/>" onsubmit="saveUsername(this);return validateForm(this)">
 	<fieldset style="padding-bottom: 0">
 		<ul>
 			<c:if test="${param.error != null}">
@@ -37,6 +38,7 @@
 		</fieldset>
 	</fieldset>
 </form>
+</div>
 
 <%@ include file="/scripts/login.js" %>
 

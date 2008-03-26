@@ -10,6 +10,8 @@ import javax.persistence.NamedQueries;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Calendar;
@@ -74,8 +76,9 @@ public class Member extends BaseObject implements Serializable
 	@Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
 	private String etnicity;
 
-	@Column(name = "DIVISION_CODE", nullable = true, length=2, unique=false)
-	private String divisionCode;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
+	private Division division;
 
 	@ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private Set<Club> clubs;
@@ -289,14 +292,14 @@ public class Member extends BaseObject implements Serializable
 		this.birthDate = birthDate;
 	}
 
-	public String getDivisionCode()
+	public Division getDivision()
 	{
-		return divisionCode;
+		return division;
 	}
 
-	public void setDivisionCode(String divisionCode)
+	public void setDivision(Division division)
 	{
-		this.divisionCode = divisionCode;
+		this.division = division;
 	}
 
 	public ParentInfo getParentInfo()
