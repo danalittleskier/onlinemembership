@@ -1,52 +1,38 @@
-<body>
-
-<!-------------------------------------------- Content ------------------------------------------------->
-<!-- Container -->
-<div id="stg-content">
 <%@ include file="/common/taglibs.jsp"%>
-	<!-- Progress bar -->
+<body>
+<!-- Progress bar -->
+<div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
+<div id="stg-pagetitle">Release Waiver</div>
 
-  <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-  <div id="stg-pagetitle">Release Waiver</div>
-
-	<!-- LEFT column -->
-	<div id="stg-twocol-primary">
+<!-- LEFT column -->
+<div id="stg-twocol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
-		<spring:bind path="accountBean.*">
-			<c:if test="${not empty status.errorMessages}">
-				<c:set var="sectionHasFormErrors" scope="request" value="true"/>
-						<c:forEach var="errorMsg" items="${status.errorMessages}">
-							<c:out value="${errorMsg}" escapeXml="false" />
-						</c:forEach>
-			</c:if>
-		</spring:bind>
+<%@ include file="/includes/messages.jsp"%>
 
 <fieldset>
-				<legend>Release Waiver</legend>
+<legend>Release Waiver</legend>
 
 </fieldset>
 
 <fieldset class="buttons">
-				<label></label>
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="submit" class="button" name="_eventId_next" value="Continue">
-             <input type="submit" class="button" name="_eventId_back" value="Back">
+	<label></label>
+	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+	<input type="submit" class="button" name="_eventId_next" value="Continue">
+	<input type="submit" class="button" name="_eventId_back" value="Back">
 
-  </fieldset>
-
+</fieldset>
 
 
 </form:form>
-	</div>
-
-
-	<!-- RIGHT column -->
-	<div id="stg-twocol-secondary">
-		<!-- BOX (START) -->
-
-	</div>
-	<div class="clear"></div>
 </div>
+
+
+<!-- RIGHT column -->
+<div id="stg-twocol-secondary">
+<!-- BOX (START) -->
+
+</div>
+<div class="clear"></div>
 
 </body>
