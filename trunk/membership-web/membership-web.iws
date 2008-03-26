@@ -19,32 +19,79 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/t-shirt.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/tile-extras-header.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/styles/certificate.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/error-head-left.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/images/progress_3.gif" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_3.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/decal_skiteam.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/main.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/tile-success.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/images/progress_1.gif" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_1.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/images/progress_4.gif" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_4.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/images/progress_2.gif" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_2.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/decal_snowboarding.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/success-head-right.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/icon_trashcan.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/ussa.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/success-head-left.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/images/progress_5.gif" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_5.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/progress_0.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css" afterPath="$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/tile-error.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/icon_calendar.gif" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout-navtop-subright.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/puzzlewithstyle/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\images\headerbackground.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\images\background.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\rowhover-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\displaytag.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-localleft.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/andreas01" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\nav-horizontal.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/simplicity" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\displaytag.css_bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/puzzlewithstyle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navleft-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/simplicity/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\messages.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\images\bodybackground.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\menuarrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\dark-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-3col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navleft-2col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\nav-horizontal.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\typo.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout-navtop-3col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\typo.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/membership-web.iws" afterPath="$PROJECT_DIR$/membership-web.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/images/error-head-right.gif" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\hover-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\status-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/andreas01/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\front.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\nav-horizontal.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\fieldbg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\print.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\active-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout-1col.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-subright.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\forms.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\nav-vertical.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\title-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/calendar-aqua" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\normal-bg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\typo.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/decorators/default.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/decorators/default.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\today-bg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp" />
     </list>
     <list name="WTF" comment="">
       <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\InventoryAdd.java" afterPath="" />
@@ -256,7 +303,7 @@
       <file leaf-file-name="contactInfo.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.24285714">
+            <state line="24" column="33" selection-start="885" selection-end="885" vertical-scroll-proportion="0.76981133">
               <folding />
             </state>
           </provider>
@@ -265,7 +312,7 @@
       <file leaf-file-name="decorators.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.26608697">
+            <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.28073394">
               <folding />
             </state>
           </provider>
@@ -274,25 +321,79 @@
       <file leaf-file-name="PaymentLanding.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.68">
+            <state line="8" column="74" selection-start="295" selection-end="295" vertical-scroll-proportion="0.24954128">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jdbc.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
+      <file leaf-file-name="extras.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.3252174">
+            <state line="9" column="0" selection-start="221" selection-end="330" vertical-scroll-proportion="0.28867924">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="applicationContext-resources.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-resources.xml">
+      <file leaf-file-name="medical.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="19" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.73913044">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicalWaiver.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationComplete.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationPayment.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="releaseWaiver.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="riskAgreement.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sportMembership.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
               <folding />
             </state>
           </provider>
@@ -301,7 +402,7 @@
       <file leaf-file-name="registration-flow.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-flow.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.6208696">
+            <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.65504587">
               <folding />
             </state>
           </provider>
@@ -310,7 +411,25 @@
       <file leaf-file-name="stateClub.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="5" selection-start="483" selection-end="483" vertical-scroll-proportion="0.39464286">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verification.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="44" selection-start="854" selection-end="854" vertical-scroll-proportion="0.8018868">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="taglibs.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.4678899">
               <folding />
             </state>
           </provider>
@@ -319,7 +438,7 @@
       <file leaf-file-name="Address.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Address.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.76869565">
+            <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.81100917">
               <folding />
             </state>
           </provider>
@@ -328,7 +447,7 @@
       <file leaf-file-name="validation.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.7892857">
+            <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.83396226">
               <folding />
             </state>
           </provider>
@@ -337,16 +456,16 @@
       <file leaf-file-name="default.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="42" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.7892857">
+            <state line="4" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.12830189">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="13" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.9165217">
+            <state line="31" column="22" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.5302752">
               <folding />
             </state>
           </provider>
@@ -355,16 +474,7 @@
       <file leaf-file-name="stg-forms.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.47304347">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/forms.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="40" selection-start="443" selection-end="443" vertical-scroll-proportion="0.56173915">
+            <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.49908257">
               <folding />
             </state>
           </provider>
@@ -373,7 +483,7 @@
       <file leaf-file-name="certificate.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/certificate.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.44347826">
+            <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.4678899">
               <folding />
             </state>
           </provider>
@@ -382,7 +492,7 @@
       <file leaf-file-name="messages.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/common/messages.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.41391304">
+            <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.43669724">
               <folding />
             </state>
           </provider>
@@ -391,7 +501,7 @@
       <file leaf-file-name="_headers.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5026087">
+            <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5302752">
               <folding />
             </state>
           </provider>
@@ -400,7 +510,7 @@
       <file leaf-file-name="_menu.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.6991304">
+            <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.7376147">
               <folding />
             </state>
           </provider>
@@ -418,16 +528,7 @@
       <file leaf-file-name="Member.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="110" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.7634783">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParentInfo.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/ParentInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="32" selection-start="489" selection-end="489" vertical-scroll-proportion="0.41391304">
+            <state line="110" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.80550456">
               <folding />
             </state>
           </provider>
@@ -436,34 +537,7 @@
       <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="17" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.92347825">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApplicationResources.properties" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/ApplicationResources.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="465" selection-end="479" vertical-scroll-proportion="0.425">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationAction.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/spring/flows/registration/RegistrationAction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="50" selection-start="3226" selection-end="3226" vertical-scroll-proportion="0.5269565">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resin3-1-5.conf" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resin3-1-5.conf">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="96" selection-start="5355" selection-end="5358" vertical-scroll-proportion="0.11826087">
+            <state line="22" column="74" selection-start="718" selection-end="718" vertical-scroll-proportion="0.40366971">
               <folding />
             </state>
           </provider>
@@ -472,7 +546,7 @@
       <file leaf-file-name="FieldChecks.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/FieldChecks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6452174">
+            <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6807339">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -483,16 +557,7 @@
       <file leaf-file-name="ValidWhenLexer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/validwhen/ValidWhenLexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-21.16174">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="taglibs.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="1169" selection-end="1169" vertical-scroll-proportion="0.5026087">
+            <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-22.326605">
               <folding />
             </state>
           </provider>
@@ -501,7 +566,7 @@
       <file leaf-file-name="spring.tld" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-2.5.jar!/META-INF/spring.tld">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="264" column="4" selection-start="9982" selection-end="9982" vertical-scroll-proportion="0.37913042">
+            <state line="264" column="4" selection-start="9982" selection-end="9982" vertical-scroll-proportion="0.4">
               <folding />
             </state>
           </provider>
@@ -895,6 +960,40 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\pages" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\flows" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
@@ -955,41 +1054,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\images" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="membership-web.ipr" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="membership-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\images" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\images\ussa" />
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\common" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -1471,7 +1536,7 @@
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.24983902" order="1" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39907408" order="8" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4101852" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" order="2" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24983902" order="2" />
       <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -1500,7 +1565,7 @@
     <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
     <option name="PUT_FOCUS_INTO_COMMENT" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating templates" />
+    <option name="LAST_COMMIT_MESSAGE" value="did more house cleaning" />
     <option name="SAVE_LAST_COMMIT_MESSAGE" value="true" />
     <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
@@ -1520,6 +1585,8 @@
     <MESSAGE value="Added intelliJ project files" />
     <MESSAGE value="Finished validation for the contact info page" />
     <MESSAGE value="updating templates" />
+    <MESSAGE value="adding eric's latest style changes" />
+    <MESSAGE value="did more house cleaning" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1581,89 +1648,19 @@
     <option name="myLastEditedConfigurable" value="Default" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/default-data.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-resources/root/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="398" selection-end="398" vertical-scroll-proportion="0.2622721">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="355" selection-end="355" vertical-scroll-proportion="0.3252174">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="20" selection-start="6537" selection-end="6537" vertical-scroll-proportion="0.16436252">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/applicationContext-resources.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="19" selection-start="1212" selection-end="1212" vertical-scroll-proportion="0.73913044">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/ParentInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="489" selection-end="489" vertical-scroll-proportion="0.41391304">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-modules-validation-0.8.jar!/org/springmodules/validation/commons/FieldChecks.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="174" selection-end="174" vertical-scroll-proportion="0.10932476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/ApplicationResources.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="465" selection-end="479" vertical-scroll-proportion="0.425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.7634783">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/validwhen/ValidWhenLexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-21.16174">
+        <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-22.326605">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/FieldChecks.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6452174">
+        <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6807339">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="17" selection-start="1428" selection-end="1428" vertical-scroll-proportion="0.92347825">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1683,14 +1680,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Address.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.76869565">
+        <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.81100917">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.7892857">
+        <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.83396226">
           <folding />
         </state>
       </provider>
@@ -1702,93 +1699,163 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="42" selection-start="1332" selection-end="1332" vertical-scroll-proportion="0.7892857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="806" selection-end="806" vertical-scroll-proportion="0.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/certificate.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.44347826">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/forms.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="40" selection-start="443" selection-end="443" vertical-scroll-proportion="0.56173915">
+        <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.4678899">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5026087">
+        <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5302752">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.6991304">
+        <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.7376147">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-flow.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.6208696">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="5" selection-start="483" selection-end="483" vertical-scroll-proportion="0.39464286">
+        <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.65504587">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/common/messages.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.41391304">
+        <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.43669724">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.26608697">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="317" selection-end="317" vertical-scroll-proportion="0.24285714">
+        <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.28073394">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.47304347">
+        <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.49908257">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/main.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="13" selection-start="1497" selection-end="1497" vertical-scroll-proportion="0.9165217">
+        <state line="31" column="22" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.5302752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.12830189">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="885" selection-end="885" vertical-scroll-proportion="0.76981133">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="74" selection-start="718" selection-end="718" vertical-scroll-proportion="0.40366971">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="74" selection-start="295" selection-end="295" vertical-scroll-proportion="0.24954128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="221" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="44" selection-start="854" selection-end="854" vertical-scroll-proportion="0.8018868">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.4678899">
           <folding />
         </state>
       </provider>

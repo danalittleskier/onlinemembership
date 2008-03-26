@@ -65,7 +65,7 @@
 
 	<!------------------------------------------- Page Header ----------------------------------------------->
 	<div class=page_header_wrapper>
-		<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="${ctx}/images/ussa/ussa.png" style="border:none"></a></div>
+		<div class=img><a href="http://www.ussa.org/magnoliaPublic/ussa/en.html"><img src="<c:url value='/images/ussa/ussa.png'/>" style="border:none"></a></div>
 		<div class=title>
 			<h1>United States Ski and Snowboard Association</h1>
 			An Olympic sports organization dedicated to fielding the <br> best skiing and snowboarding teams in the world

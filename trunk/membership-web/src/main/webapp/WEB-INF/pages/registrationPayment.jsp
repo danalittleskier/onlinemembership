@@ -6,7 +6,7 @@
 	<!-- Progress bar -->
 
 
-<div id="stg-progress"><img src="${ctx}/images/progress_5.gif" width="917" height="53" /></div>
+  <div id="stg-progress"><img src="<c:url value='/images/progress_5.gif'/>" width="917" height="53" /></div>
   <div id="stg-pagetitle">Payment</div>
   <p class="req-fields"><em>* Required Fields</em></p>
 

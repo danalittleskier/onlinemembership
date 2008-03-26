@@ -6,7 +6,7 @@
 <%@ include file="/common/taglibs.jsp"%>
 	<!-- Progress bar -->
 
-  <div id="stg-progress"><img src="${ctx}/images/progress_3.gif" width="917" height="53" /></div>
+  <div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53" /></div>
   <div id="stg-pagetitle">Verification</div>
 
 
