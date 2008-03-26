@@ -42,7 +42,6 @@
  #nav ul
  {
 	float: left;
-	
 	list-style: none;
 	line-height: 1;
 	background: #39393B;
@@ -60,16 +59,12 @@
 
 
 
-#nav a.daddy {
-	background:  url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/0YY1YMS3/data/right_arrow.gif) center right no-repeat;
-}
-
 #nav li {
 	float: left;
 	padding: 0;
 	/*width: 7em;*/
-	/*width:80px;*/
-        padding-right:32px;
+	width:80px;
+    padding-right:20px;
 }
 
 /* submenu container */

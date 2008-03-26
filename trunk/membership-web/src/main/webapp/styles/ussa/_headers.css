@@ -4,10 +4,10 @@
 		margin: 0px 0px 0px 0px;
 		padding: 0px 0px 0px 0px;
 		/* border: 0px 0px 0px 0px; */
-
+		
 		/*box-sizing: border-box
 		-moz-box-sizing: border-box;*/
-
+		
 		font-family:arial;
 		font-size:12px;
 	}
@@ -30,7 +30,7 @@
 	{
 		width:980px;
 		height:100px;
-
+	
 		background-color:white;
 	}
 /* page header */
@@ -39,45 +39,45 @@
 	{
 		width:960px;
 		height:75px;
-
+	
 		background-color:white;
 	}
-
+	
 		.page_header_wrapper .img
 		{
 			width:250px;
 			height:75px;
 			float:left;
 		}
-
+	
 		.page_header_wrapper .title
 		{
 			width:425px;
 			height:65px;
 				padding-top:10px;
 			float:left;
-
+		
 			text-align:right;
-
+			
 			color:#ADADAD;
 		}
-
+	
 			.page_header_wrapper .title h1
 			{
 				padding-bottom:4px;
-
+				
 				font-size:14px;
 				font-weight:bold;
 				color:#666666;
 			}
-
+	
 		.page_header_wrapper .menu
 		{
 			width:236px;
 			height:75px;
 			float:right;
 		}
-
+	
 			.page_header_wrapper .menu .links
 			{
 				height:25px;
@@ -85,34 +85,34 @@
 				width :226px ;
 				background-color:#4C4D4F;
 			}
-
+	
 				.page_header_wrapper .menu .links a
 				{
 					font-size:11px;
 					color:#BBBCBE;
 				}
-
+	
 			.page_header_wrapper .menu .search
 			{
 				height:30px;
 				padding:5px;
                                 width :222px ;
-
+				
 				background-color:white;
-
+				
 				border-left:2px solid #4C4D4F;
 				border-right:2px solid #4C4D4F;
 			}
-	/*
+	
 				.page_header_wrapper .menu .search input
 				{
 					width:183px;
-
+					
 					border:1px solid #A5A5A5;
 
 					color:#727071;
 				}
-*/
+
 /* top menu */
 
 	.topmenu_wrapper
@@ -121,13 +121,13 @@
 		height:25px;
 		background-color:#39393B;
 	}
-
+	
 		.topmenu_wrapper .topmenu
 		{
 			width:980px;
 			height:25px;
 		}
-
+		
 			.topmenu_wrapper .topmenu .left
 			{
 				width:680px;
@@ -144,7 +144,7 @@
                         .topmenu_wrapper .topmenu .left .sub_category
 			{
 				text-indent :20px ;
-
+                                
 			}
                         .topmenu_wrapper .topmenu .left .sub_category a
 			{
@@ -164,50 +164,50 @@
 					height:21px;
 						padding-top:4px;
 					float:left;
-
+					
 					font-size:13px;
 					color:#FEFFFF;
 				}
-
+				
 				.topmenu_wrapper .topmenu .left a:hover
 				{
 					background-color:#004586;
 					text-decoration:none;
 				}
 				*/
-
-
+                         
+                         
 			.topmenu_wrapper .topmenu .right
 			{
 				width:270px;
 				height:22px;
 					padding-top:3px;
 				float:right;
-
+				
 				background-color:#39393B;
-
+				
 				font-size:11px;
 				color:#FCFDFF;
 			}
 
 /* sidebar menu */
-
+    
 	.sidebar_menu
 	{
 		height:416px;
 		margin:5px;
 		padding:10px;
-
+		
 		background-color:white;
-
+		
 		text-align:left;
 	}
-
+	
 		.sidebar_menu select
 		{
 			width:220px;
 		}
-
+	
 		.sidebar_menu .item
 		{
 			display:block;
@@ -217,12 +217,12 @@
 			color:#666668;
 			text-decoration:none;
 		}
-
+	
 		.sidebar_menu .item:hover
 		{
 			color:red;
 		}
-
+	
 		.sidebar_menu .item_selected
 		{
 			display:block;
@@ -232,17 +232,17 @@
 			color:#01467D;
 			text-decoration:none;
 		}
-
+		
 		.sidebar_menu .item_selected_blue
 		{
 
 		}
-
+	
 		.sidebar_menu .submenu
 		{
 		    padding-left:30px;
 		}
-
+		
 		    .sidebar_menu .submenu .subitem
 		    {
 		        display:block;
@@ -253,13 +253,13 @@
                         color:#88898B;
 		        text-decoration:none;
 		    }
-
+		    
 		    .sidebar_menu .submenu .subitem:hover
 		    {
 		        color:#BC9806;
 		    }
-
-
+                
+                
                 .sidebar_menu select .category
 		{
                         font-weight:bold;
@@ -276,27 +276,27 @@
 	.bottom_menu
 	{
 		padding:10px;
-
+		
 		margin:10px;
-
+		
 		color:#595556;
 		font-family:arial;
 		font-weight:bold;
 		font-size:11px;
 	}
-
+	
 		.bottom_menu a
 		{
 			padding-left:5px;
 			padding-right:5px;
-
+			
 			color:#393536;
 			font-family:arial;
 			font-weight:bold;
 			font-size:11px;
 			text-decoration:none;
 		}
-
+		
 		.bottom_menu a:hover
 		{
 			text-decoration:underline;
