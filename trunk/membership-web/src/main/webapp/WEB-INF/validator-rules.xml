@@ -82,6 +82,18 @@
                  msg="errors.required">
       </validator>
 
+      <validator name="validWhen"
+                 classname="org.springmodules.validation.commons.FieldChecks"
+                 method="validateValidWhen"
+                 methodParams="java.lang.Object,
+                               org.apache.commons.validator.ValidatorAction,
+                               org.apache.commons.validator.Field,
+                               org.springframework.validation.Errors,
+                               org.apache.commons.validator.Validator"
+
+                 msg="errors.invalid">
+      </validator>
+
       <validator name="minlength"
             classname="org.springmodules.validation.commons.FieldChecks"
                method="validateMinLength"

@@ -397,6 +397,8 @@
         <root url="file://$PROJECT_DIR$/../../third-party-src/hibernate-annotations-3.3.0/src" />
         <root url="jar://$PROJECT_DIR$/../../third-party-src/spring-binding-src-1.0.1.zip!/" />
         <root url="jar://$PROJECT_DIR$/../../third-party-src/spring-webflow-src-1.0.1.zip!/" />
+        <root url="file://$PROJECT_DIR$/../../third-party-src/commons-validator-1.3.0/share" />
+        <root url="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/" />
       </SOURCES>
     </library>
   </component>
