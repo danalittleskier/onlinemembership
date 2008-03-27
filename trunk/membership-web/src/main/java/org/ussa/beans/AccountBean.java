@@ -4,216 +4,229 @@ import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.State;
+import org.ussa.model.Nation;
 
 public class AccountBean
 {
-    //Fields to save when done
-    private Member member; //Only save the member at the end...
+	//Fields to save when done
+	private Member member; //Only save the member at the end...
 
-    //These objects will be added to the member and saved via "member.save();".  May need a transactionManager
-    private Address address;
-    private Club club;
-    private Inventory inventory;
-    private CartBean cartBean;
+	//These objects will be added to the member and saved via "member.save();".  May need a transactionManager
+	private Address address;
+	private Club club;
+	private Inventory inventory;
+	private CartBean cartBean;
 
-    //Helper fields for binding, not persisited...
-    private Boolean waiverAgree = false; //This one will go away
-    private Long clubId;
-    private String membershipId;
-    private String sportId;
-    private String stateAffiliation;
+	//Helper fields for binding, not persisited...
+	private Boolean waiverAgree = false; //This one will go away
+	private Long clubId;
+	private String membershipId;
+	private String sportId;
 
 
-    //Reference Data fields.  Do not save when done:
-    List<State> usStates;
-    List<Club>  clubsForState;
-    List<Inventory> memberships;// inventory - memberships
-    List<String> sports;// inventory - sports
-    Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
-    BigDecimal total = BigDecimal.ZERO;
-    String totalCost = "0";
-    String paymentTransactionCode;
+	//Reference Data fields.  Do not save when done:
+	boolean usCitizen;
+	List<State> usStates;
+	List<Nation> nations;
+	List<Club> clubsForState;
+	List<Inventory> memberships;// inventory - memberships
+	List<String> sports;// inventory - sports
+	Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
+	BigDecimal total = BigDecimal.ZERO;
+	String totalCost = "0";
+	String paymentTransactionCode;
 
-    public String getPaymentTransactionCode() {
+	public String getPaymentTransactionCode()
+	{
 		return paymentTransactionCode;
 	}
 
-	public void setPaymentTransactionCode(String paymentTransactionCode) {
+	public void setPaymentTransactionCode(String paymentTransactionCode)
+	{
 		this.paymentTransactionCode = paymentTransactionCode;
 	}
 
 	public Member getMember()
-    {
-        return member;
-    }
+	{
+		return member;
+	}
 
-    public void setMember(Member member)
-    {
-        this.member = member;
-    }
+	public void setMember(Member member)
+	{
+		this.member = member;
+	}
 
-    public Address getAddress()
-    {
-        return address;
-    }
+	public Address getAddress()
+	{
+		return address;
+	}
 
-    public void setAddress(Address address)
-    {
-        this.address = address;
-    }
+	public void setAddress(Address address)
+	{
+		this.address = address;
+	}
 
-    public Boolean getWaiverAgree()
-    {
-        return waiverAgree;
-    }
+	public Boolean getWaiverAgree()
+	{
+		return waiverAgree;
+	}
 
-    public void setWaiverAgree(Boolean waiverAgree)
-    {
-        this.waiverAgree = waiverAgree;
-    }
+	public void setWaiverAgree(Boolean waiverAgree)
+	{
+		this.waiverAgree = waiverAgree;
+	}
 
-    public List<State> getUsStates()
-    {
-        return usStates;
-    }
+	public boolean getUsCitizen()
+	{
+		return usCitizen;
+	}
 
-    public void setUsStates(List<State> usStates)
-    {
-        this.usStates = usStates;
-    }
+	public void setUsCitizen(boolean usCitizen)
+	{
+		this.usCitizen = usCitizen;
+	}
 
-    public Club getClub()
-    {
-        return club;
-    }
+	public List<State> getUsStates()
+	{
+		return usStates;
+	}
 
-    public void setClub(Club club)
-    {
-        this.club = club;
-    }
+	public void setUsStates(List<State> usStates)
+	{
+		this.usStates = usStates;
+	}
 
-    public String getStateAffiliation()
-    {
-        return stateAffiliation;
-    }
+	public List<Nation> getNations()
+	{
+		return nations;
+	}
 
-    public void setStateAffiliation(String stateAffiliation)
-    {
-        this.stateAffiliation = stateAffiliation;
-    }
+	public void setNations(List<Nation> nations)
+	{
+		this.nations = nations;
+	}
 
-    public List<Club> getClubsForState()
-    {
-        return clubsForState;
-    }
+	public Club getClub()
+	{
+		return club;
+	}
 
-    public void setClubsForState(List<Club> clubsForState)
-    {
-        this.clubsForState = clubsForState;
-    }
+	public void setClub(Club club)
+	{
+		this.club = club;
+	}
 
-    public Long getClubId()
-    {
-        return clubId;
-    }
+	public List<Club> getClubsForState()
+	{
+		return clubsForState;
+	}
 
-    public void setClubId(Long clubId)
-    {
-        this.clubId = clubId;
-    }
+	public void setClubsForState(List<Club> clubsForState)
+	{
+		this.clubsForState = clubsForState;
+	}
 
-    /**
-     * @return the inventory
-     */
-    public Inventory getInventory()
-    {
-        return inventory;
-    }
+	public Long getClubId()
+	{
+		return clubId;
+	}
 
-    /**
-     * @param inventory the inventory to set
-     */
-    public void setInventory(Inventory inventory)
-    {
-        this.inventory = inventory;
-    }
+	public void setClubId(Long clubId)
+	{
+		this.clubId = clubId;
+	}
 
-    public List<Inventory> getMemberships()
-    {
-        return memberships;
-    }
+	/**
+	 * @return the inventory
+	 */
+	public Inventory getInventory()
+	{
+		return inventory;
+	}
 
-    public void setMemberships(List<Inventory> memberships)
-    {
-        this.memberships = memberships;
-    }
+	/**
+	 * @param inventory the inventory to set
+	 */
+	public void setInventory(Inventory inventory)
+	{
+		this.inventory = inventory;
+	}
 
-    public String getMembershipId()
-    {
-        return membershipId;
-    }
+	public List<Inventory> getMemberships()
+	{
+		return memberships;
+	}
 
-    public void setMembershipId(String membershipId)
-    {
-        this.membershipId = membershipId;
-    }
+	public void setMemberships(List<Inventory> memberships)
+	{
+		this.memberships = memberships;
+	}
 
-    public String getSportId()
-    {
-        return sportId;
-    }
+	public String getMembershipId()
+	{
+		return membershipId;
+	}
 
-    public void setSportId(String sportId)
-    {
-        this.sportId = sportId;
-    }
+	public void setMembershipId(String membershipId)
+	{
+		this.membershipId = membershipId;
+	}
 
-    public List<String> getSports()
-    {
-        return sports;
-    }
+	public String getSportId()
+	{
+		return sportId;
+	}
 
-    public void setSports(List<String> sports)
-    {
-        this.sports = sports;
-    }
+	public void setSportId(String sportId)
+	{
+		this.sportId = sportId;
+	}
 
-    public CartBean getCartBean()
-    {
-        return cartBean;
-    }
+	public List<String> getSports()
+	{
+		return sports;
+	}
 
-    public void setCartBean(CartBean cartBean)
-    {
-        this.cartBean = cartBean;
-    }
+	public void setSports(List<String> sports)
+	{
+		this.sports = sports;
+	}
 
-    public Set<LineItemBean> getShoppingCart()
-    {
-        return shoppingCart;
-    }
+	public CartBean getCartBean()
+	{
+		return cartBean;
+	}
 
-    public void setShoppingCart(Set<LineItemBean> shoppingCart)
-    {
-        this.shoppingCart = shoppingCart;
-    }
+	public void setCartBean(CartBean cartBean)
+	{
+		this.cartBean = cartBean;
+	}
 
-    public BigDecimal getTotal()
-    {
-        return total;
-    }
+	public Set<LineItemBean> getShoppingCart()
+	{
+		return shoppingCart;
+	}
 
-    public void setTotal(BigDecimal total)
-    {
-        this.total = total;
-    }
+	public void setShoppingCart(Set<LineItemBean> shoppingCart)
+	{
+		this.shoppingCart = shoppingCart;
+	}
+
+	public BigDecimal getTotal()
+	{
+		return total;
+	}
+
+	public void setTotal(BigDecimal total)
+	{
+		this.total = total;
+	}
 
 
 }
