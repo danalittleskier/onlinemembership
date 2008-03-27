@@ -17,58 +17,47 @@
 	<fieldset>
 		<legend>Sport & Membership Type</legend>
 		<label for="">* Sport:</label>
-		<spring:bind path="accountBean.sportId">
-			<select name="sportId" onchange="javascript: document.getElementById('update').click();">
-				<option value=""></option>
-				<c:forEach var="o" items="${accountBean.sports}">
-					<option value="${o}" <c:if test="${o == status.value}">selected</c:if>>
-						${o}
-					</option>
-				</c:forEach>
-			</select>
-		</spring:bind>
+		<form:select path="sportId" onchange="document.getElementById('update').click();">
+			<form:option value=""></form:option>
+			<form:options items="${accountBean.sports}"/>
+		</form:select>
 		<br/>
 		<label for="">* Membership:</label>
-
-		<c:choose>
-			<c:when test="${fn:length(accountBean.memberships) != 0}">
-				<spring:bind path="accountBean.membershipId">
-					<select name="membershipId">
-						<option value=""></option>
-						<c:forEach var="o" items="${accountBean.memberships}">
-							<option value="${o.id}"
-									<c:if test="${o.id == status.value}">selected</c:if>
-									>${o.description}</option>
-						</c:forEach>
-					</select>
-				</spring:bind>
-			</c:when>
-		</c:choose>
-
-
-		<c:choose>
-			<c:when test="${fn:length(accountBean.memberships) != 0}">
-				<input type="submit" class="btn-green-sm" name="_eventId_add" value="Add">
-			</c:when>
-		</c:choose>
+		<c:if test="${fn:length(accountBean.memberships) != 0}">
+			<form:select path="membershipId">
+				<form:option value=""></form:option>
+				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
+			</form:select>
+			<input type="submit" class="btn-green-sm" name="_eventId_add" value="Add">
+		</c:if>
 		<br/>
 	</fieldset>
 	<fieldset>
 		<legend>Communication Options</legend>
-		<table style="margin-left:165px;">
+		<table style="margin-left:195px;">
 			<tr>
 				<td valign="top" class="checkbox"><input name="division_email" type="checkbox" value=""/></td>
-				<td valign="top" width="100%"><label class="checkbox" style="text-align:left; width:auto;">Subscribe
-					to the email list of your division and/or state organization for important member
-					communications.</label></td>
+				<td valign="top" width="100%">
+					<label class="checkbox" style="text-align:left; width:auto;">
+					Subscribe to the email list of your division and/or state organization for important member communications.
+					</label>
+				</td>
 			</tr>
 			<tr>
 				<td valign="top" class="checkbox"><input name="mail_privacy" type="checkbox" value=""/></td>
-				<td valign="top" width="100%"><label class="checkbox" style="text-align:left; width:auto;">Request
-					Mail Privacy Status. By doing so you will not receive special offers from our carefully screened
-					list of vendors.</label></td>
+				<td valign="top" width="100%">
+					<label class="checkbox" style="text-align:left; width:auto;">
+					Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.
+					</label>
+				</td>
 			</tr>
 		</table>
+	</fieldset>
+	<fieldset>
+		<legend>Contribution</legend>
+		<p><strong>This section is optional.</strong> Your contribution will go to the sport of your primary membership. Thank you!</p>
+		<label for="amount">* Contribution Amount:</label>
+		<input id="amount" type="text" name="amount" value="" />
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>

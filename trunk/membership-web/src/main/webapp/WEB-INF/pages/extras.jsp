@@ -2,7 +2,7 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">Member Information</div>
+<div id="stg-pagetitle">Extras</div>
 
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
@@ -10,151 +10,203 @@
 
 <%@ include file="/includes/messages.jsp"%>
 
-<fieldset>
-	<legend>Membership  Information</legend>
 
-	<table border="0" width="100%" id="table1">
-		<tr>
-			<td width="180"><font size="2">Magazine Subscription</font></td>
-			<td><select size="1" name="D1">
-			<option value="MAGSB">Snowboard Magazine</option>
-			<option value="MRCE">Ski Racing Magazine</option>
-			<option value="MRLTD">Ski Racing Magazine-Limited Issues</option>
-			<option value="MTRX">Ski Trax Magazine</option>
-			<option value="NONE">No Magazine</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Contribution</font></td>
-			<td><input type="text" name="T1" size="20" value="$0.00"></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180"><b><font size="2">Shirts ( $20 each )</font></b></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Alpine </font><i><font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			view image</font></i></td>
-			<td><select size="1" name="D3">
-			<option selected value="S">Small</option>
-			<option value="M">Medium</option>
-			<option value="L">Large</option>
-			<option value="X">X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Freestyle </font><i><font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			view image</font></i></td>
-			<td><select size="1" name="D4">
-			<option value="S">Small</option>
-			<option value="M">Medium</option>
-			<option value="L">Large</option>
-			<option value="X">X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Cross Country </font><i>
-			<font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; view image</font></i></td>
-			<td><select size="1" name="D5">
-			<option>Small</option>
-			<option>Medium</option>
-			<option>Large</option>
-			<option>X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Jumping / NC </font><i>
-			<font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			view image</font></i></td>
-			<td><select size="1" name="D6">
-			<option>Small</option>
-			<option>Medium</option>
-			<option>Large</option>
-			<option>X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">Snowboarding </font><i>
-			<font size="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; view
-			image</font></i></td>
-			<td><select size="1" name="D7">
-			<option>Small</option>
-			<option>Medium</option>
-			<option>Large</option>
-			<option>X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">U.S. Ski Team General</font></td>
-			<td><select size="1" name="D8">
-			<option>Small</option>
-			<option>Medium</option>
-			<option>Large</option>
-			<option>X-Large</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2"><b>Decals (pack of 5 for $5)</b></font></td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180">&nbsp;</td>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">U.S. Snowboarding</font></td>
-			<td><select size="1" name="D9">
-			<option>5</option>
-			<option>12</option>
-			<option>20</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		<tr>
-			<td width="180"><font size="2">U.S. Ski Team</font></td>
-			<td><select size="1" name="D10">
-			<option>5</option>
-			<option>12</option>
-			<option>20</option>
-			</select></td>
-			<td><font size="2">add</font></td>
-		</tr>
-		</table>
+<div class="extras-header">
+	<p>Shirts</p>
+</div>
+<p style="text-align:center;">T-shirts are <strong>$20 each</strong> and are available in S, M, L, XL and XXL sizes.</p>
+<div class="tshirt-row">
+	<div class="tshirt-1">
+		<p>Alpine</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-1">
+		<p>Freestyle</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-1">
+		<p>Cross Country</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-menu-1">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="tshirt-menu-2">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="tshirt-menu-3">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="tshirt-row">
+	<div class="tshirt-1">
+		<p>Jumping N/C</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-1">
+		<p>Snowboarding</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-1">
+		<p>US Ski Team General</p>
+		<img src="images/t-shirt.jpg" width="145" height="136" />
+	</div>
+	<div class="tshirt-menu-1">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="tshirt-menu-2">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="tshirt-menu-3">
+		<div class="tshirt-size">
+			<label>Size:
+				<select>
+					<option selected></option>
+					<option value="">S</option>
+					<option value="">M</option>
+					<option value="">L</option>
+					<option value="">XL</option>
+					<option value="">XXL</option>
+				</select>
+			</label>
+		</div>
+		<div class="tshirt-qty">
+			<label>Qty:
+				<input name="" type="text" value="" /></label>
+		</div>
+	</div>
+	<div class="clear"></div>
+</div>
 
-</fieldset>
+<div class="extras-header">
+	<p>Decals</p>
+</div>
+<p style="text-align:center;">Decals <strong>start at $5/pack of 5</strong> and are approximately 4 inches across in size.</p>
 
-<fieldset class="buttons">
-	<label></label>
-	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-	<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
-	<input type="submit" class="btn-green" name="_eventId_back" value="Back">
-</fieldset>
+<div class="decal-row">
+	<div class="decal-1">
+		<p>US Ski Team</p>
+		<img src="images/decal_skiteam.gif" width="106" height="97" />
+	</div>
+	<div class="decal-1">
+		<p>Snowboarding</p>
+		<img src="images/decal_snowboarding.gif" width="149" height="97" />
+	</div>
+	<div class="decal-menu-1">
+		<div class="decal-pack">
+			<label>Qty / Price:
+				<select>
+					<option selected></option>
+					<option value="">5 for $5</option>
+					<option value="">12 for $10</option>
+					<option value="">20 for $15</option>
+				</select>
+			</label>
+		</div>
+		<!-- Hide for now ...
+		<div class="decal-qty">
+		<label>Qty:
+			<input name="" type="text" value="" /></label>
+		</div>
+		... End Hiding -->
+	</div>
+	<div class="decal-menu-2">
+		<div class="decal-pack">
+			<label>Qty / Price:
+				<select>
+					<option selected></option>
+					<option value="">5 for $5</option>
+					<option value="">12 for $10</option>
+					<option value="">20 for $15</option>
+				</select>
+			</label>
+		</div>
+		<!-- Hide for now ...
+		<div class="decal-qty">
+		<label>Qty:
+			<input name="" type="text" value="" /></label>
+		</div>
+		... End Hiding -->
+	</div>
+</div>
+<p style="text-align:center; clear:both;"><em>Bonus Packs not available for shipment outside the U.S. <br />
+	Please allow 4-6 weeks for delivery.</em></p>
 
 </form:form>
 	</div>
@@ -187,6 +239,15 @@
 		</div>
 	</div>
 	<!-- BOX (END) -->
+
+<fieldset class="buttons">
+	<label></label>
+	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+	<input type="submit" class="btn-green" name="_eventId_add" value="Add Selections to Cart">
+	<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+	<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+</fieldset>
+
 </div>
 <div class="clear"></div>
 
