@@ -10,7 +10,7 @@ Accounts Dashboard Mockup
 <table border="1" width="100%" id="table1">
 	<tr>
 		<td>New Registation</td>
-		<td></td>
+		<td>&nbsp;</td>
 		<td><a href="<c:url value="/registration.html"/>">New Registration</a></td>
 	</tr>
 	<tr>

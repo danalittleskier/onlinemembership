@@ -1,7 +1,10 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
 
 @Entity
@@ -9,30 +12,33 @@ import javax.persistence.*;
 
 public class Nation implements Serializable {
 
-    //Member table fields
+	@Id
+	@Column(name = "NATION_CODE", nullable = false, length=3, unique=false)
+	private String nationCode;
 
-    private String nationCode;
+	@Column(name = "DESCRIPTION", nullable = false, length=30, unique=false)
+	private String description;
 
-    public Nation() {
-    }
+	public Nation() {
+	}
 
-    /**
-     * @return the nATION_CODE
-     */
-    @Id
-    @Column(name = "NATION_CODE", nullable = false, length=20, unique=false)
-    public String getNATION_CODE()
-    {
-        return nationCode;
-    }
+	public String getNationCode()
+	{
+		return nationCode;
+	}
 
-    /**
-     * @param nation_code the nATION_CODE to set
-     */
-    public void setNATION_CODE(String nation_code)
-    {
-        nationCode = nation_code;
-    }
+	public void setNationCode(String nationCode)
+	{
+		this.nationCode = nationCode;
+	}
 
+	public String getDescription()
+	{
+		return description;
+	}
 
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 }

@@ -19,6 +19,10 @@
 			<constant-name>validWhenAgeNotPresentOrOver18</constant-name>
 			<constant-value><![CDATA[(((member.age == '0') or (member.age > 18)) or (*this* != null))]]></constant-value>
 		</constant>
+		<constant>
+			<constant-name>validWhenMemberIdNotPresent</constant-name>
+			<constant-value><![CDATA[((member.id != null) or (*this* != null))]]></constant-value>
+		</constant>
 	</global>
 	<formset>
 		<form name="fileUpload">
@@ -124,6 +128,17 @@
 			<field property="member.lastName" depends="required">
 				<arg0 key="registration.lastName" />
 			</field>
+			<field property="member.birthDate" depends="required">
+				<arg0 key="user.birth.date" />
+			</field>
+			<field property="member.gender" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="user.gender" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
 			<field property="address.deliveryAddress" depends="required">
 				<arg0 key="user.address.address" />
 			</field>
@@ -177,7 +192,31 @@
 		</form>
 
 		<form name="stateClub">
-			<field property="stateAffiliation" depends="required">
+			<field property="member.ethnicity" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.ethnicity" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="usCitizen" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.citizenship" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="member.nationCode" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.nation" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="member.stateCode" depends="required">
 				<arg0 key="user.address.province" />
 			</field>
 			<field property="clubId" depends="required">

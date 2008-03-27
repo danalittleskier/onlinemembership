@@ -1,4 +1,24 @@
 <%@ include file="/common/taglibs.jsp" %>
+
+<head>
+	<script type="text/javascript">
+		function changeCitizenship()
+		{
+			var isUsCitizen = !document.getElementById("citizen2").checked;
+			var nationCodeDiv = document.getElementById('nation-code');
+			if(isUsCitizen)
+			{
+				nationCodeDiv.style.display = 'none';
+				document.getElementById('nationCode').value='USA';
+			}
+			else
+			{
+				nationCodeDiv.style.display = 'block';
+			}
+		}
+	</script>
+</head>
+
 <body>
 
 <!-- Progress bar -->
@@ -11,58 +31,74 @@
 
 		<%@ include file="/includes/messages.jsp" %>
 
+		<c:if test="${empty accountBean.member.id}">
+		<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
+		<fieldset>
+			<legend>Ethnicity</legend>
+			<br/>
+			<label for="">* What is your ethnicity?</label>
+			<form:select path="member.ethnicity">
+				<form:option value=""></form:option>
+				<form:option value="W">White</form:option>
+				<form:option value="B">African American</form:option>
+				<form:option value="H">Hispanic or Latino</form:option>
+				<form:option value="A">Asian</form:option>
+				<form:option value="I">American Indian or Alaska Native</form:option>
+				<form:option value="N">Native Hawaiian</form:option>
+				<form:option value="P">Other Pacific Islander</form:option>
+				<form:option value="M">Mixed Race</form:option>
+				<form:option value="Z">Prefer Not to Respond</form:option>
+			</form:select>
+		</fieldset>
+
 		<fieldset>
 			<legend>Citizenship</legend>
-			* Are you a US Citizen?
+			<label for="">* Are you a US Citizen?</label>
 			<div class="radios">
-				<input name="citizen" id="citizen1" type="radio" value="yes" onclick="document.getElementById('nation-code').style.display = 'none'"/>
+				<form:radiobutton id="citizen1" path="usCitizen" value="true" onclick="changeCitizenship(); document.getElementById('update').click();"/>
 				<label for="citizen1" class="radio">Yes</label>
-				<input name="citizen" id="citizen2" type="radio" value="no" onclick="document.getElementById('nation-code').style.display = 'block'"/>
+				<form:radiobutton id="citizen2" path="usCitizen" value="false" onclick="changeCitizenship()"/>
 				<label for="citizen2" class="radio">No</label>
 			</div>
 			<br/>
 
 			<div id="nation-code">
 				<label for="">* Select Nation Code:</label>
-				<select>
-					<option selected></option>
-					<option value="">[...Nation Code Data...]</option>
-				</select><br/>
+				<form:select id="nationCode" path="member.nationCode" onchange="document.getElementById('update').click();">
+					<form:option value=""></form:option>
+					<form:options items="${accountBean.nations}" itemValue="nationCode" itemLabel="description"/>
+				</form:select>
+				<br/>
 			</div>
 		</fieldset>
+
+		<script type="text/javascript" defer="defer">
+			changeCitizenship();
+		</script>
+		</c:if>
 
 		<fieldset>
 			<legend>State & Club</legend>
 			<label for="">* State:</label>
-			<spring:bind path="accountBean.stateAffiliation"> <!-- onchange="javascript:
-				changeState(this.options[this.selectedIndex].value);accountBean.submit();" -->
-				<!-- onchange="javascript: changeState(this.options[this.selectedIndex].value);accountBean.submit();"
-				-->
-				<select name="stateAffiliation" onchange="javascript: document.getElementById('update').click();">
-					<!-- <select name="${status.expression}" value="${status.value[index]}">
-					<select name="stateId" onChange="javaScript: showAlert();accountBean.submit();"> -->
-					<option value=""></option>
-					<c:forEach var="o" items="${accountBean.usStates}">
-						<option value="${o.id}" <c:if test="${o.id == status.value}">selected</c:if>>${o.id}</option>
-					</c:forEach>
-				</select>
-			</spring:bind>
+			<form:select path="member.stateCode" onchange="document.getElementById('update').click();">
+				<form:option value=""></form:option>
+				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
+			</form:select>
 			<br/>
 			<label for="">* Club:</label>
-			<spring:bind path="accountBean.clubId">
-				<select name="clubId">
-					<option value=""></option>
-					<c:forEach var="o" items="${accountBean.clubsForState}">
-						<option value="${o.id}" <c:if test="${o.id == status.value}">selected</c:if>>${o.name}</option>
-					</c:forEach>
-				</select>
-			</spring:bind>
+			<form:select path="clubId" onchange="document.getElementById('update').click();">
+				<form:option value=""></form:option>
+				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
+			</form:select>
 			<br/>
+			<div id="hide" style="display:none">
+				<input type="submit" class="button" id="update" name="_eventId_changeState" value="Update">
+			</div>
 		</fieldset>
 
 		<fieldset>
 			<legend>Division</legend>
-			<label for="">* Division:</label>
+			<label for="">Division:</label>
 			<c:out value="${accountBean.member.division.description}"/>
 			<br/>
 		</fieldset>
@@ -82,6 +118,14 @@
 
 <!-- RIGHT column -->
 <div id="stg-twocol-secondary">
+		<!-- BOX (START) -->
+		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+			<p class="stg-omr-header">About Your Division</p>
+				<p>Based on the information provided, you will be in the division shown. Division or state dues may apply.</p>
+				<p><em>Foreign members may be assigned to the foreign division or a
+					geographic division based on state affiliation and membership category. Division or state dues may apply.</em></p>
+		</div></div></div></div>
+		<!-- BOX (END) -->
 </div>
 
 <div class="clear"></div>

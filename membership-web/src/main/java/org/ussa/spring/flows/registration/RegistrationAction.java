@@ -15,15 +15,17 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
+import org.ussa.dao.NationDao;
 import org.ussa.dao.StateDao;
+import org.ussa.dao.DivisionDao;
 import org.ussa.manager.MemberManager;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
-import org.ussa.model.State;
 import org.ussa.model.ParentInfo;
+import org.ussa.model.State;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -32,7 +34,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private MemberDao memberDao;
 	private AddressDao addressDao;
 	private StateDao stateDao;
+	private NationDao nationDao;
 	private ClubDao clubDao;
+	private DivisionDao divisionDao;
 	private InventoryDao inventoryDao;
 
 
@@ -108,39 +112,54 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 	public Event findClubInfo(RequestContext context) throws Exception
 	{
-		AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		List<Club> clubs = new ArrayList<Club>();
 		String stateAffiliation = new String();
-		System.out.println("BirthDate["+obj.getMember().getBirthDate()+"]");
-		System.out.println("Address's city["+obj.getAddress().getCity()+"]");
-		System.out.println("Address's state["+obj.getAddress().getStateCode()+"]");
-		System.out.println("StateAffiliation["+obj.getStateAffiliation()+"]");
+/*
+		System.out.println("BirthDate["+accountBean.getMember().getBirthDate()+"]");
+		System.out.println("Address's city["+accountBean.getAddress().getCity()+"]");
+		System.out.println("Address's state["+accountBean.getAddress().getStateCode()+"]");
+		System.out.println("StateAffiliation["+accountBean.getMember().getStateCode()+"]");
+*/
 
-		if (obj != null)
+		accountBean.setUsCitizen("USA".equals(accountBean.getMember().getNationCode()));
+		accountBean.setNations(nationDao.getAllNations());
+
+		if (accountBean != null)
 		{
-			System.out.println("Club Info -- Orig state["+obj.getStateAffiliation()+"]");
-			if (obj.getStateAffiliation() != null)
+//			System.out.println("Club Info -- Orig state["+accountBean.getMember().getStateCode()+"]");
+			if (accountBean.getMember().getStateCode() != null)
 			{ //If I change the state affiliation (in stateClub) set it here
-				stateAffiliation = obj.getStateAffiliation();
+				stateAffiliation = accountBean.getMember().getStateCode();
 			}
-			else if (obj.getAddress() != null)
+			else if (accountBean.getAddress() != null)
 			{ //Coming through first pass regular flow
-				if (obj.getAddress().getStateCode() != null)
+				if (accountBean.getAddress().getStateCode() != null)
 				{ //This should always be hit as the user is required to put in an address on the prior screen
-					stateAffiliation = obj.getAddress().getStateCode();
+					stateAffiliation = accountBean.getAddress().getStateCode();
 
 				}
 			}
 			if (stateAffiliation.length()!=0)
 			{
-				System.out.println("state["+stateAffiliation+"]");
+//				System.out.println("state["+stateAffiliation+"]");
 				clubs = clubDao.findByStateCode(stateAffiliation);
-				System.out.println("clubs["+clubs.size()+"]");
+//				System.out.println("clubs["+clubs.size()+"]");
 			}
+
+			if(!"USA".equals(accountBean.getMember().getNationCode()))
+			{
+				accountBean.getMember().setDivision(divisionDao.getDivision("X"));
+			}
+			else if(accountBean.getClubId() != null)
+			{
+				Club club = clubDao.get(accountBean.getClubId());
+				accountBean.getMember().setDivision(club.getDivision());
+			}
+
 		}
-		obj.setClubsForState(clubs);
-		obj.setStateAffiliation(stateAffiliation);
-		obj.getMember().setStateCode(stateAffiliation);//TODO: get rid of stateAffiliation should just use member.stateCode
+		accountBean.setClubsForState(clubs);
+		accountBean.getMember().setStateCode(stateAffiliation);
 		return result("form");
 	}
 
@@ -215,7 +234,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 	}
 
 
-
+	public void setNationDao(NationDao nationDao)
+	{
+		this.nationDao = nationDao;
+	}
 	public void setStateDao(StateDao stateDao)
 	{
 		this.stateDao = stateDao;
@@ -224,6 +246,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.clubDao = clubDao;
 	}
+	public void setDivisionDao(DivisionDao divisionDao)
+	{
+		this.divisionDao = divisionDao;
+	}
 	/**
 	 * @param inventoryDao the inventoryDao to set
 	 */
@@ -231,9 +257,4 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.inventoryDao = inventoryDao;
 	}
-
-
-
-
-
 }

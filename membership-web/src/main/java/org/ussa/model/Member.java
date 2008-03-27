@@ -74,7 +74,7 @@ public class Member extends BaseObject implements Serializable
 	private String gender;
 
 	@Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
-	private String etnicity;
+	private String ethnicity;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
@@ -252,14 +252,14 @@ public class Member extends BaseObject implements Serializable
 		this.gender = gender;
 	}
 
-	public String getEtnicity()
+	public String getEthnicity()
 	{
-		return etnicity;
+		return ethnicity;
 	}
 
-	public void setEtnicity(String etnicity)
+	public void setEthnicity(String ethnicity)
 	{
-		this.etnicity = etnicity;
+		this.ethnicity = ethnicity;
 	}
 
 	public Set<Club> getClubs()

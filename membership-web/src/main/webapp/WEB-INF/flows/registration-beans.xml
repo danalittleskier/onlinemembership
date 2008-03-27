@@ -1,49 +1,51 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
-	"http://www.springframework.org/dtd/spring-beans.dtd">
+		"http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
 
 	<bean id="registrationAction" class="org.ussa.spring.flows.registration.RegistrationAction">
-	   <property name="addressDao" ref="addressDao"/>
-	   <property name="clubDao" ref="clubDao"/>
-	   <property name="memberDao" ref="memberDao"/>
-	   <property name="stateDao" ref="stateDao"/>
-	   <property name="memberManager" ref="memberManager"/>
-	   <property name="inventoryDao" ref="inventoryDao"/>
-    </bean>
+		<property name="addressDao" ref="addressDao"/>
+		<property name="clubDao" ref="clubDao"/>
+		<property name="divisionDao" ref="divisionDao"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="stateDao" ref="stateDao"/>
+		<property name="nationDao" ref="nationDao"/>
+		<property name="memberManager" ref="memberManager"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
 
-    <bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">
-	   <property name="addressDao" ref="addressDao"/>
-	   <property name="clubDao" ref="clubDao"/>
-	   <property name="memberDao" ref="memberDao"/>
-	   <property name="stateDao" ref="stateDao"/>
-	   <property name="memberManager" ref="memberManager"/>
-	   <property name="inventoryDao" ref="inventoryDao"/>
-    </bean>
+	<bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">
+		<property name="addressDao" ref="addressDao"/>
+		<property name="clubDao" ref="clubDao"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="stateDao" ref="stateDao"/>
+		<property name="memberManager" ref="memberManager"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
 
-    <!-- Form objects -->
-    <bean id="accountBean" class="org.ussa.spring.flows.FormActionTemplate">
-      <property name="formObjectName" value="accountBean"/>
-      <property name="formObjectClass" value="org.ussa.beans.AccountBean"/>
-      <property name="formObjectScope" value="FLOW"/>
-      <property name="validators">
-        <map>
-          <entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
-          <entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
-          <entry key="validatorStateClub" value-ref="validatorStateClub"/>
-        </map>
-      </property>
-    </bean>
+	<!-- Form objects -->
+	<bean id="accountBean" class="org.ussa.spring.flows.FormActionTemplate">
+		<property name="formObjectName" value="accountBean"/>
+		<property name="formObjectClass" value="org.ussa.beans.AccountBean"/>
+		<property name="formObjectScope" value="FLOW"/>
+		<property name="validators">
+			<map>
+				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
+				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
+				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
+			</map>
+		</property>
+	</bean>
 
-    <!-- Validators -->
-    <bean id="validatorContactInfo" parent="validatorTemplate">
-      <property name="formName" value="contactInfo" />
-    </bean>
-    <bean id="validatorStateClub" parent="validatorTemplate">
-      <property name="formName" value="stateClub" />
-    </bean>
-    <bean id="validatorSportMembership" parent="validatorTemplate">
-      <property name="formName" value="sportMembership" />
-    </bean>
+	<!-- Validators -->
+	<bean id="validatorContactInfo" parent="validatorTemplate">
+		<property name="formName" value="contactInfo"/>
+	</bean>
+	<bean id="validatorStateClub" parent="validatorTemplate">
+		<property name="formName" value="stateClub"/>
+	</bean>
+	<bean id="validatorSportMembership" parent="validatorTemplate">
+		<property name="formName" value="sportMembership"/>
+	</bean>
 
 </beans>

@@ -36,13 +36,15 @@
 			</a>
 			<br/>
 
-			<label for="gender">* Gender:</label>
-			<div class="radios">
-				<form:radiobutton id="gender1" path="member.gender" value="M"/>
-				<label class="radio" for="gender1">Male</label>
-				<form:radiobutton id="gender2" path="member.gender" value="F"/>
-				<label class="radio" for="gender2">Female</label>
-			</div><br/>
+			<c:if test="${empty accountBean.member.id}">
+				<label for="gender">* Gender:</label>
+				<div class="radios">
+					<form:radiobutton id="gender1" path="member.gender" value="M"/>
+					<label class="radio" for="gender1">Male</label>
+					<form:radiobutton id="gender2" path="member.gender" value="F"/>
+					<label class="radio" for="gender2">Female</label>
+				</div><br/>
+			</c:if>
 		</fieldset>
 
 		<c:if test="${accountBean.member.age < 18 && accountBean.member.age != 0}">
