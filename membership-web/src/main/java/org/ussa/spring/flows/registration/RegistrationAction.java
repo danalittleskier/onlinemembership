@@ -168,7 +168,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 		HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
 		AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
 		List<Inventory> memberships = new ArrayList<Inventory>();
-		List<String> sports = new ArrayList<String>();
 		//Here is where logic goes off of birthdate...
 		System.out.println("sportId["+obj.getSportId()+"]");
 
@@ -181,55 +180,51 @@ public class RegistrationAction extends MultiAction implements Serializable
 			{
 				memberships = inventoryDao.getAllMembershipsByCriteria(age, sportCode);
 			}
-			//sports = inventoryDao.getAllSportsCodes();
-			sports = inventoryDao.getAllSportCodes();
 		}
 		obj.setMemberships(memberships);
-		obj.setSports(sports);
 		System.out.println("numMemberships["+memberships.size()+"]");
-		System.out.println("numSports["+sports.size()+"]");
 		return result("form");
 	}
 
 	public Event addSportMemberships(RequestContext context) throws Exception
 	{
 		HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
-		AccountBean obj = (AccountBean) context.getFlowScope().get("accountBean");
-		CartBean cart = obj.getCartBean();
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		CartBean cart = accountBean.getCartBean();
 		System.out.println("In addSportMembership!!!");
 		if (cart == null)
 		{
 			cart = new CartBean();
 		}
-		String membershipId = obj.getMembershipId();
+		String membershipId = accountBean.getMembershipId();
 		Inventory membership = inventoryDao.get(membershipId);
 		cart.addMembership(membership);
-		if ((obj.getMemberships() != null) && (cart != null))
+		if ((accountBean.getMemberships() != null) && (cart != null))
 		{
-			if (obj.getMemberships().size() > 0)
+			if (accountBean.getMemberships().size() > 0)
 			{
 
-				obj.setShoppingCart(cart.getShoppingCart());
+				accountBean.setShoppingCart(cart.getShoppingCart());
 //				BigDecimal total = BigDecimal.ZERO;
-//				if (obj.getCartBean().getTotal() != null)
+//				if (accountBean.getCartBean().getTotal() != null)
 //				{
-//					total = obj.getCartBean().getTotal();
+//					total = accountBean.getCartBean().getTotal();
 //					System.out.println("shoppingCart total["+total+"]");
 //				}
 
-				//System.out.println("shoppingCart total["+obj.getCartBean().getTotal().toString()+"]");
-				//obj.setTotal(total);
-				//System.out.println("shoppingCart["+obj.getCartBean().getShoppingCart().size()+"]");
-				//System.out.println("shoppingCart["+obj.getCartBean().getTotal().intValue()+"]");
+				//System.out.println("shoppingCart total["+accountBean.getCartBean().getTotal().toString()+"]");
+				//accountBean.setTotal(total);
+				//System.out.println("shoppingCart["+accountBean.getCartBean().getShoppingCart().size()+"]");
+				//System.out.println("shoppingCart["+accountBean.getCartBean().getTotal().intValue()+"]");
 
 			}
 		}
 		System.out.println("cart size["+cart.getMemberships().size()+"]");
-		obj.setCartBean(cart);
+		accountBean.setCartBean(cart);
 		//Clear membership and sport for the next addition
-		obj.setSportId(null);
-		obj.setMembershipId(null);
-		obj.setMemberships(new ArrayList<Inventory>());
+		accountBean.setSportId(null);
+		accountBean.setMembershipId(null);
+		accountBean.setMemberships(new ArrayList<Inventory>());
 		return result("form");
 	}
 

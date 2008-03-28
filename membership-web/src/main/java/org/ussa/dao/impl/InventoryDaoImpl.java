@@ -1,6 +1,5 @@
 package org.ussa.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.appfuse.dao.hibernate.GenericDaoHibernate;
@@ -20,15 +19,6 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
         List<Inventory> objs = getHibernateTemplate().find(query.toString());
         return objs;
     }
-    public List<String> getAllSportCodes()
-    {
-        //List<String> objs = new ArrayList<String>();
-        //objs.add("All");
-        StringBuilder query = new StringBuilder("select distinct i.sportCode from Inventory i where lower(i.active)='y' and i.sportCode is not null order by i.sportCode asc");
-        List<String> objs = getHibernateTemplate().find(query.toString());
-        return objs;
-    }
-
     public List<Inventory> getAllMembershipsByAge(Integer age)
     {
         StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' ");
