@@ -63,7 +63,9 @@
 				<attribute name="validator" value="validatorSportMembership"/>
 			</action>
 		</transition>
-		<transition on="next" to="extras"/>
+		<transition on="next" to="extras">
+			<action bean="accountBean" method="bind"/>
+		</transition>
 	</view-state>
 	<action-state id="addSportMemberships">
 		<entry-actions>

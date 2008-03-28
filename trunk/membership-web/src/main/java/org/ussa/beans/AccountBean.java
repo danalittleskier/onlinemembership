@@ -36,11 +36,11 @@ public class AccountBean
 	List<Nation> nations;
 	List<Club> clubsForState;
 	List<Inventory> memberships;// inventory - memberships
-	List<String> sports;// inventory - sports
 	Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
 	BigDecimal total = BigDecimal.ZERO;
 	String totalCost = "0";
 	String paymentTransactionCode;
+	String contributionAmount;
 
 	public String getPaymentTransactionCode()
 	{
@@ -188,16 +188,6 @@ public class AccountBean
 		this.sportId = sportId;
 	}
 
-	public List<String> getSports()
-	{
-		return sports;
-	}
-
-	public void setSports(List<String> sports)
-	{
-		this.sports = sports;
-	}
-
 	public CartBean getCartBean()
 	{
 		return cartBean;
@@ -228,5 +218,13 @@ public class AccountBean
 		this.total = total;
 	}
 
+	public String getContributionAmount()
+	{
+		return contributionAmount;
+	}
 
+	public void setContributionAmount(String contributionAmount)
+	{
+		this.contributionAmount = contributionAmount;
+	}
 }

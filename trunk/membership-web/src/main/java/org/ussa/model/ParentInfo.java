@@ -14,7 +14,7 @@ import org.appfuse.model.BaseObject;
 public class ParentInfo extends BaseObject implements Serializable {
 
 	@Id
-	@Column(name = "USSA_ID", length=5)
+	@Column(name = "USSA_ID", length=7)
 	private Long id;
 
 	@Column(name = "PARENT1FIRST", nullable = true, length=30, unique=false)

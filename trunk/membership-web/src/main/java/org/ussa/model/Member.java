@@ -31,7 +31,7 @@ public class Member extends BaseObject implements Serializable
 {
 	//Member table fields
 	@Id
-	@Column(name = "USSA_ID", length=5)
+	@Column(name = "USSA_ID", length=7)
 	private Long id;
 
 	@Column(name = "MEMBER_TYPE", nullable = true, length=2, unique=false)
@@ -75,6 +75,12 @@ public class Member extends BaseObject implements Serializable
 
 	@Column(name = "ETHNICITY", nullable = true, length=1, unique=false)
 	private String ethnicity;
+
+	@Column(name = "PRIVATE_ADDRESS", nullable = true, length=1, unique=false)
+	private String privateAddress;
+
+	@Column(name = "RECEIVE_EMAIL", nullable = true, length=1, unique=false)
+	private String receiveEmail;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
@@ -260,6 +266,26 @@ public class Member extends BaseObject implements Serializable
 	public void setEthnicity(String ethnicity)
 	{
 		this.ethnicity = ethnicity;
+	}
+
+	public String getPrivateAddress()
+	{
+		return privateAddress;
+	}
+
+	public void setPrivateAddress(String privateAddress)
+	{
+		this.privateAddress = privateAddress;
+	}
+
+	public String getReceiveEmail()
+	{
+		return receiveEmail;
+	}
+
+	public void setReceiveEmail(String receiveEmail)
+	{
+		this.receiveEmail = receiveEmail;
 	}
 
 	public Set<Club> getClubs()
