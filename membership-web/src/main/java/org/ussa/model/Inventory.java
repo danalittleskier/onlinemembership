@@ -1,9 +1,11 @@
 package org.ussa.model;
 
-import java.io.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.math.BigDecimal;
-
-import javax.persistence.*;
 
 import org.appfuse.model.BaseObject;
 
@@ -11,174 +13,176 @@ import org.appfuse.model.BaseObject;
 @Table(name = "INVENTORY")
 public class Inventory extends BaseObject implements Serializable
 {
-    @Id
-    @Column(name = "INV_ID", length = 8)
-    private String id;
+	public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
+	public static final String INVENTORY_TYPE_DONATION = "DONATION";
 
-    @Column(name = "DESCRIPTION", nullable = true, length = 50, unique = false)
-    private String description;
+	@Id
+	@Column(name = "INV_ID", length = 8)
+	private String id;
 
-    @Column(name = "AGE_FROM", nullable = true, length = 5, unique = false)
-    private Long ageFrom;
+	@Column(name = "DESCRIPTION", nullable = true, length = 50, unique = false)
+	private String description;
 
-    @Column(name = "AGE_TO", nullable = true, length = 5, unique = false)
-    private Long ageTo;
+	@Column(name = "AGE_FROM", nullable = true, length = 5, unique = false)
+	private Long ageFrom;
 
-    @Column(name = "SPORT_CODE", nullable = true, length = 3, unique = false)
-    private String sportCode;
+	@Column(name = "AGE_TO", nullable = true, length = 5, unique = false)
+	private Long ageTo;
 
-    @Column(name = "INVENTORY_TYPE", nullable = true, length = 20, unique = false)
-    private String inventoryType;
+	@Column(name = "SPORT_CODE", nullable = true, length = 3, unique = false)
+	private String sportCode;
 
-    @Column(name = "ACTIVE", nullable = true, length = 1, unique = false)
-    private String active;
+	@Column(name = "INVENTORY_TYPE", nullable = true, length = 20, unique = false)
+	private String inventoryType;
 
-    @Column(name = "AMOUNT", nullable = true, length = 5, unique = false)
-    private BigDecimal amount;
+	@Column(name = "ACTIVE", nullable = true, length = 1, unique = false)
+	private String active;
 
-    @Override
-    public boolean equals(Object o)
-    {
-        // TODO Auto-generated method stub
-        return false;
-    }
+	@Column(name = "AMOUNT", nullable = true, length = 5, unique = false)
+	private BigDecimal amount;
 
-    @Override
-    public int hashCode()
-    {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+	@Override
+	public boolean equals(Object o)
+	{
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public String toString()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Override
+	public int hashCode()
+	{
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
-    /**
-     * @return the id
-     */
-    public String getId()
-    {
-        return id;
-    }
+	@Override
+	public String toString()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id)
-    {
-        this.id = id;
-    }
+	/**
+	 * @return the id
+	 */
+	public String getId()
+	{
+		return id;
+	}
 
-    public BigDecimal getAmount()
-    {
-        return amount;
-    }
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id)
+	{
+		this.id = id;
+	}
 
-    public void setAmount(BigDecimal amount)
-    {
-        this.amount = amount;
-    }
+	public BigDecimal getAmount()
+	{
+		return amount;
+	}
 
-    /**
-     * @return the description
-     */
-    public String getDescription()
-    {
-        return description;
-    }
+	public void setAmount(BigDecimal amount)
+	{
+		this.amount = amount;
+	}
 
-    /**
-     * @param description the description to set
-     */
-    public void setDescription(String description)
-    {
-        this.description = description;
-    }
+	/**
+	 * @return the description
+	 */
+	public String getDescription()
+	{
+		return description;
+	}
 
-    /**
-     * @return the ageFrom
-     */
-    public Long getAgeFrom()
-    {
-        return ageFrom;
-    }
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 
-    /**
-     * @param ageFrom the ageFrom to set
-     */
-    public void setAgeFrom(Long ageFrom)
-    {
-        this.ageFrom = ageFrom;
-    }
+	/**
+	 * @return the ageFrom
+	 */
+	public Long getAgeFrom()
+	{
+		return ageFrom;
+	}
 
-    /**
-     * @return the ageTo
-     */
-    public Long getAgeTo()
-    {
-        return ageTo;
-    }
+	/**
+	 * @param ageFrom the ageFrom to set
+	 */
+	public void setAgeFrom(Long ageFrom)
+	{
+		this.ageFrom = ageFrom;
+	}
 
-    /**
-     * @param ageTo the ageTo to set
-     */
-    public void setAgeTo(Long ageTo)
-    {
-        this.ageTo = ageTo;
-    }
+	/**
+	 * @return the ageTo
+	 */
+	public Long getAgeTo()
+	{
+		return ageTo;
+	}
 
-    /**
-     * @return the sportCode
-     */
-    public String getSportCode()
-    {
-        return sportCode;
-    }
+	/**
+	 * @param ageTo the ageTo to set
+	 */
+	public void setAgeTo(Long ageTo)
+	{
+		this.ageTo = ageTo;
+	}
 
-    /**
-     * @param sportCode the sportCode to set
-     */
-    public void setSportCode(String sportCode)
-    {
-        this.sportCode = sportCode;
-    }
+	/**
+	 * @return the sportCode
+	 */
+	public String getSportCode()
+	{
+		return sportCode;
+	}
 
-    /**
-     * @return the inventoryType
-     */
-    public String getInventoryType()
-    {
-        return inventoryType;
-    }
+	/**
+	 * @param sportCode the sportCode to set
+	 */
+	public void setSportCode(String sportCode)
+	{
+		this.sportCode = sportCode;
+	}
 
-    /**
-     * @param inventoryType the inventoryType to set
-     */
-    public void setInventoryType(String inventoryType)
-    {
-        this.inventoryType = inventoryType;
-    }
+	/**
+	 * @return the inventoryType
+	 */
+	public String getInventoryType()
+	{
+		return inventoryType;
+	}
 
-    /**
-     * @return the active
-     */
-    public String getActive()
-    {
-        return active;
-    }
+	/**
+	 * @param inventoryType the inventoryType to set
+	 */
+	public void setInventoryType(String inventoryType)
+	{
+		this.inventoryType = inventoryType;
+	}
 
-    /**
-     * @param active the active to set
-     */
-    public void setActive(String active)
-    {
-        this.active = active;
-    }
+	/**
+	 * @return the active
+	 */
+	public String getActive()
+	{
+		return active;
+	}
 
+	/**
+	 * @param active the active to set
+	 */
+	public void setActive(String active)
+	{
+		this.active = active;
+	}
 
 
 }

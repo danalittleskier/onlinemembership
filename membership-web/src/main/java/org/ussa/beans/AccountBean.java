@@ -1,27 +1,22 @@
 package org.ussa.beans;
 
-import java.math.BigDecimal;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-import org.ussa.model.Address;
 import org.ussa.model.Club;
-import org.ussa.model.Inventory;
 import org.ussa.model.Member;
-import org.ussa.model.State;
 import org.ussa.model.Nation;
+import org.ussa.model.State;
+import org.ussa.model.Address;
+import org.ussa.model.Inventory;
 
 public class AccountBean
 {
 	//Fields to save when done
 	private Member member; //Only save the member at the end...
+	private String birthDate;
 
-	//These objects will be added to the member and saved via "member.save();".  May need a transactionManager
+	private CartBean cartBean = new CartBean();
 	private Address address;
-	private Club club;
-	private Inventory inventory;
-	private CartBean cartBean;
 
 	//Helper fields for binding, not persisited...
 	private Boolean waiverAgree = false; //This one will go away
@@ -36,9 +31,7 @@ public class AccountBean
 	List<Nation> nations;
 	List<Club> clubsForState;
 	List<Inventory> memberships;// inventory - memberships
-	Set<LineItemBean> shoppingCart = new HashSet<LineItemBean>();
-	BigDecimal total = BigDecimal.ZERO;
-	String totalCost = "0";
+
 	String paymentTransactionCode;
 	String contributionAmount;
 
@@ -70,6 +63,16 @@ public class AccountBean
 	public void setAddress(Address address)
 	{
 		this.address = address;
+	}
+
+	public String getBirthDate()
+	{
+		return birthDate;
+	}
+
+	public void setBirthDate(String birthDate)
+	{
+		this.birthDate = birthDate;
 	}
 
 	public Boolean getWaiverAgree()
@@ -112,16 +115,6 @@ public class AccountBean
 		this.nations = nations;
 	}
 
-	public Club getClub()
-	{
-		return club;
-	}
-
-	public void setClub(Club club)
-	{
-		this.club = club;
-	}
-
 	public List<Club> getClubsForState()
 	{
 		return clubsForState;
@@ -132,32 +125,6 @@ public class AccountBean
 		this.clubsForState = clubsForState;
 	}
 
-	public Long getClubId()
-	{
-		return clubId;
-	}
-
-	public void setClubId(Long clubId)
-	{
-		this.clubId = clubId;
-	}
-
-	/**
-	 * @return the inventory
-	 */
-	public Inventory getInventory()
-	{
-		return inventory;
-	}
-
-	/**
-	 * @param inventory the inventory to set
-	 */
-	public void setInventory(Inventory inventory)
-	{
-		this.inventory = inventory;
-	}
-
 	public List<Inventory> getMemberships()
 	{
 		return memberships;
@@ -166,6 +133,16 @@ public class AccountBean
 	public void setMemberships(List<Inventory> memberships)
 	{
 		this.memberships = memberships;
+	}
+
+	public Long getClubId()
+	{
+		return clubId;
+	}
+
+	public void setClubId(Long clubId)
+	{
+		this.clubId = clubId;
 	}
 
 	public String getMembershipId()
@@ -196,26 +173,6 @@ public class AccountBean
 	public void setCartBean(CartBean cartBean)
 	{
 		this.cartBean = cartBean;
-	}
-
-	public Set<LineItemBean> getShoppingCart()
-	{
-		return shoppingCart;
-	}
-
-	public void setShoppingCart(Set<LineItemBean> shoppingCart)
-	{
-		this.shoppingCart = shoppingCart;
-	}
-
-	public BigDecimal getTotal()
-	{
-		return total;
-	}
-
-	public void setTotal(BigDecimal total)
-	{
-		this.total = total;
 	}
 
 	public String getContributionAmount()

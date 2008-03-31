@@ -63,7 +63,7 @@
 					<input id="receiveEmailControl" type="checkbox" onclick="updateCheckboxHidden('receiveEmail', this)"/>
 				</td>
 				<td valign="top" width="100%">
-					<label for="divisionEmailSubscribe" class="checkbox" style="text-align:left; width:auto;">
+					<label for="receiveEmailControl" class="checkbox" style="text-align:left; width:auto;">
 					Subscribe to the email list of your division and/or state organization for important member communications.
 					</label>
 				</td>
@@ -74,7 +74,7 @@
 					<input id="privateAddressControl" type="checkbox" onclick="updateCheckboxHidden('privateAddress', this)"/>
 				</td>
 				<td valign="top" width="100%">
-					<label for="mailPrivacy" class="checkbox" style="text-align:left; width:auto;">
+					<label for="privateAddressControl" class="checkbox" style="text-align:left; width:auto;">
 					Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.
 					</label>
 				</td>

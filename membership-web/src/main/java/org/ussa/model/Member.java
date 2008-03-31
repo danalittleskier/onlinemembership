@@ -5,17 +5,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Calendar;
-import java.util.Set;
 
 import org.appfuse.model.BaseObject;
 
@@ -86,8 +84,8 @@ public class Member extends BaseObject implements Serializable
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
 	private Division division;
 
-	@ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
-	private Set<Club> clubs;
+//	@ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+//	private Set<Club> clubs;
 
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@PrimaryKeyJoinColumn
@@ -286,16 +284,6 @@ public class Member extends BaseObject implements Serializable
 	public void setReceiveEmail(String receiveEmail)
 	{
 		this.receiveEmail = receiveEmail;
-	}
-
-	public Set<Club> getClubs()
-	{
-		return clubs;
-	}
-
-	public void setClubs(Set<Club> clubs)
-	{
-		this.clubs = clubs;
 	}
 
 	public String getType()

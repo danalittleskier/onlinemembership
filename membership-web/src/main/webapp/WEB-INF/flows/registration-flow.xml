@@ -6,6 +6,7 @@
 	  xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						  http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
 	<start-state idref="findContactInfo"/>
+	
 	<action-state id="findContactInfo">
 		<entry-actions>
 			<!-- setupForm in org.springframework.webflow.action.FormAction -->
@@ -18,12 +19,20 @@
 	</action-state>
 
 	<view-state id="contactInfo" view="contactInfo">
-		<transition on="next" to="findClubInfo">
+		<transition on="next" to="handleBirthDate">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorContactInfo"/>
 			</action>
 		</transition>
 	</view-state>
+
+	<action-state id="handleBirthDate">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="findClubInfo"/>
+	</action-state>
 
 	<action-state id="findClubInfo">
 		<entry-actions>
@@ -63,9 +72,15 @@
 				<attribute name="validator" value="validatorSportMembership"/>
 			</action>
 		</transition>
-		<transition on="next" to="extras">
-			<action bean="accountBean" method="bind"/>
+	<transition on="remove" to="removeSportMemberships"/>
+		<transition on="next" to="handleContribution">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorSportMembershipNext"/>
+			</action>
 		</transition>
+		<exit-actions>
+			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
+		</exit-actions>
 	</view-state>
 	<action-state id="addSportMemberships">
 		<entry-actions>
@@ -74,10 +89,29 @@
 		<action bean="registrationAction"/>
 		<transition on="*" to="sportMembership"/>
 	</action-state>
+	<action-state id="removeSportMemberships">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="removeItemFromCart"/>
+		<transition on="back" to="${flowScope.lastViewStateId}"/>
+	</action-state>
+
+	<action-state id="handleContribution">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="handleContribution"/>
+		<transition on="*" to="extras"/>
+	</action-state>
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="sportMembership"/>
 		<transition on="next" to="medical"/>
+		<transition on="remove" to="removeSportMemberships"/>
+		<exit-actions>
+			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
+		</exit-actions>
 	</view-state>
 
 	<view-state id="medical" view="medical">
@@ -91,7 +125,6 @@
 	</view-state>
 
 	<view-state id="verification" view="verification">
-
 		<transition on="back" to="medical"/>
 		<transition on="next" to="riskAgreement"/>
 		<transition on="editContactInfo" to="editContactInfo"/>
@@ -157,7 +190,6 @@
 		<action bean="paymentAction"/>
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
-
 
 	<end-state id="completion" view="mainMenu"/>
 

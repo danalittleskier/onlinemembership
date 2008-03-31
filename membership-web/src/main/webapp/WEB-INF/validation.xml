@@ -128,8 +128,12 @@
 			<field property="member.lastName" depends="required">
 				<arg0 key="registration.lastName" />
 			</field>
-			<field property="member.birthDate" depends="required">
+			<field property="birthDate" depends="required, date">
 				<arg0 key="user.birth.date" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
 			</field>
 			<field property="member.gender" depends="validWhen">
 				<msg name="validWhen" key="errors.required"/>
@@ -230,6 +234,15 @@
 			</field>
 			<field property="sportId" depends="required">
 				<arg0 key="registration.sport" />
+			</field>
+		</form>
+
+		<form name="sportMembershipNext">
+			<field property="cartBean.lineItems" depends="membershipRequired">
+				<msg name="membershipRequired" key="errors.membership.required"/>
+			</field>
+			<field property="contributionAmount" depends="float">
+				<arg0 key="label.contribution.amount" />
 			</field>
 		</form>
 	</formset>
