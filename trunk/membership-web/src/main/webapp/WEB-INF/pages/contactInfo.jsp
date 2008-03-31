@@ -29,11 +29,21 @@
 			<label for="">Suffix</label>
 			<form:input path="member.suffixName" size="30" maxlength="30"/><br />
 
-			<label for="birth-date">* Birth Date:</label>
-			<form:input id="birth-date" path="member.birthDate" size="30" maxlength="30"/>
-			<a title="Select Date" href="#">
+			<label for="birthDate">* Birth Date:</label>
+			<form:input id="birthDate" path="birthDate" size="30" maxlength="30"/>
+			<a title="Select Date" href="#" id="birthDateCalendar">
 				<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
 			</a>
+			<script type="text/javascript" defer="defer">
+				Calendar.setup(
+					{
+						inputField : "birthDate", // ID of the input field
+						ifFormat : "%m/%d/%Y", // the date format
+						button : "birthDateCalendar" // ID of the button
+					}
+				);
+			</script>
+
 			<br/>
 
 			<c:if test="${empty accountBean.member.id}">

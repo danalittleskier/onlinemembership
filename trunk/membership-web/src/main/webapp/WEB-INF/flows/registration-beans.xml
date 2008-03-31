@@ -10,7 +10,6 @@
 		<property name="memberDao" ref="memberDao"/>
 		<property name="stateDao" ref="stateDao"/>
 		<property name="nationDao" ref="nationDao"/>
-		<property name="memberManager" ref="memberManager"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
 	</bean>
 
@@ -32,6 +31,7 @@
 			<map>
 				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
 				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
+				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
 				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
 			</map>
 		</property>
@@ -46,6 +46,9 @@
 	</bean>
 	<bean id="validatorSportMembership" parent="validatorTemplate">
 		<property name="formName" value="sportMembership"/>
+	</bean>
+	<bean id="validatorSportMembershipNext" parent="validatorTemplate">
+		<property name="formName" value="sportMembershipNext"/>
 	</bean>
 
 </beans>

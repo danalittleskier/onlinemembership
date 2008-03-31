@@ -6,6 +6,15 @@
 
    <global>
 
+      <validator name="membershipRequired"
+            classname="org.ussa.validation.FieldChecks"
+               method="validateMembershipRequired"
+         methodParams="java.lang.Object,
+                       org.apache.commons.validator.ValidatorAction,
+                       org.apache.commons.validator.Field,
+                       org.springframework.validation.Errors"
+                  msg="errors.required"/>
+
       <validator name="twofields"
          classname="org.appfuse.webapp.util.ValidationUtil"
          method="validateTwoFields"
