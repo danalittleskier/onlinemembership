@@ -219,7 +219,7 @@
 			<div class="stg-tl">
 				<div class="stg-tr">
 					<div></div>
-					<%@ include file="/includes/shoppingCartInclude.jsp"%>
+					<%@ include file="/includes/shoppingCart.jsp"%>
 				</div>
 			</div>
 		</div>

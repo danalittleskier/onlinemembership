@@ -19,6 +19,9 @@
 	<link type="text/css" href="<c:url value='/styles/ussa/_menu.css'/>" rel="stylesheet"/>
 	<link type="text/css" href="<c:url value='/styles/ussa/ussa_home.css'/>" rel="stylesheet"/>
 
-	<%-- STG Styles - MUST FOLLOW USSA STYLES --%>
+	<%-- Project Styles - MUST FOLLOW USSA STYLES --%>
 	<link type="text/css" href="<c:url value='/styles/main.css'/>" rel="stylesheet"/>
 	<link type="text/css" href="<c:url value='/styles/stg-forms.css'/>" rel="stylesheet"/>
+
+	<%-- Project Scripts --%>
+	<script type="text/javascript" src="<c:url value='/scripts/common.js'/>"></script>

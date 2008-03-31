@@ -72,16 +72,17 @@
 				<attribute name="validator" value="validatorSportMembership"/>
 			</action>
 		</transition>
-	<transition on="remove" to="removeSportMemberships"/>
 		<transition on="next" to="handleContribution">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorSportMembershipNext"/>
 			</action>
 		</transition>
+		<transition on="remove" to="removeItemFromCart"/>
 		<exit-actions>
 			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
 		</exit-actions>
 	</view-state>
+
 	<action-state id="addSportMemberships">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
@@ -89,7 +90,8 @@
 		<action bean="registrationAction"/>
 		<transition on="*" to="sportMembership"/>
 	</action-state>
-	<action-state id="removeSportMemberships">
+
+	<action-state id="removeItemFromCart">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
@@ -107,32 +109,24 @@
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="sportMembership"/>
-		<transition on="next" to="medical"/>
-		<transition on="remove" to="removeSportMemberships"/>
+		<transition on="next" to="verification"/>
+		<transition on="remove" to="removeItemFromCart"/>
 		<exit-actions>
 			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
 		</exit-actions>
 	</view-state>
 
-	<view-state id="medical" view="medical">
-		<transition on="back" to="extras"/>
-		<transition on="next" to="verification"/>
-	</view-state>
-
-	<view-state id="medicalWaiver" view="medicalWaiver">
-		<transition on="back" to="medical"/>
-		<transition on="next" to="verification"/>
-	</view-state>
-
 	<view-state id="verification" view="verification">
-		<transition on="back" to="medical"/>
-		<transition on="next" to="riskAgreement"/>
+		<transition on="back" to="extras"/>
+		<transition on="next" to="medical"/>
 		<transition on="editContactInfo" to="editContactInfo"/>
+		<transition on="editStateClub" to="editStateClub"/>
+		<transition on="editSportMembership" to="editSportMembership"/>
 		<transition on="editExtras" to="editExtras"/>
-		<transition on="editMedical" to="editMedical"/>
-		<transition on="editSport" to="editSport"/>
-		<transition on="editClub" to="editClub"/>
-		<transition on="editMember" to="editMember"/>
+		<transition on="remove" to="removeItemFromCart"/>
+		<exit-actions>
+			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
+		</exit-actions>
 	</view-state>
 
 	<view-state id="editContactInfo" view="contactInfo">
@@ -143,12 +137,12 @@
 		</transition>
 	</view-state>
 
-	<view-state id="editClub" view="stateClub">
+	<view-state id="editStateClub" view="stateClub">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
 
-	<view-state id="editSport" view="sportMembership">
+	<view-state id="editSportMembership" view="sportMembership">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
@@ -158,29 +152,25 @@
 		<transition on="next" to="verification"/>
 	</view-state>
 
-	<view-state id="editMedical" view="medical">
+
+	<view-state id="medical" view="medical">
 		<transition on="back" to="verification"/>
-		<transition on="next" to="verification"/>
+		<transition on="next" to="medicalWaiver"/>
 	</view-state>
 
-	<view-state id="editMember" view="sportMembership">
-		<transition on="back" to="verification"/>
-		<transition on="next" to="verification"/>
+	<view-state id="medicalWaiver" view="medicalWaiver">
+		<transition on="back" to="medical"/>
+		<transition on="next" to="riskAgreement"/>
 	</view-state>
 
 	<view-state id="riskAgreement" view="riskAgreement">
-		<transition on="back" to="verification"/>
+		<transition on="back" to="medicalWaiver"/>
 		<transition on="next" to="registrationPayment"/>
 	</view-state>
 
 	<view-state id="registrationPayment" view="registrationPayment">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="processOrder"/>
-	</view-state>
-
-	<view-state id="registrationComplete" view="registrationComplete">
-		<transition on="back" to="registrationPayment"/>
-
 	</view-state>
 
 	<action-state id="processOrder">
@@ -190,6 +180,10 @@
 		<action bean="paymentAction"/>
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
+
+	<view-state id="registrationComplete" view="registrationComplete">
+		<transition on="back" to="registrationPayment"/>
+	</view-state>
 
 	<end-state id="completion" view="mainMenu"/>
 

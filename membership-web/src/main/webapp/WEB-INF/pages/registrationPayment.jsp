@@ -14,8 +14,8 @@
 	<fieldset>
 		<legend>Payment Information</legend>
 		<label for="">USSA Registration Fees:</label>
-		<span class="data-input"><strong><c:out value="${accountBean.cartBean.totalCost}" /></strong></span>
-		<input type="hidden" name="amount" value="<c:out value="${accountBean.cartBean.totalCost}" />">
+		<span class="data-input"><strong><c:out value="${accountBean.cartBean.total}" /></strong></span>
+		<input type="hidden" name="amount" value="<c:out value="${accountBean.cartBean.total}" />">
 		<label for="">* Credit Card Type:</label>
 		<span class="multiselect-margin">
 		<select name="cardType">

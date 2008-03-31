@@ -1,7 +1,7 @@
 <%@ include file="/common/taglibs.jsp"%>
 <body>
 <!-- Progress bar -->
-<div id="stg-progress"><img src="<c:url value='/images/progress_2.gif'/>" width="917" height="53" /></div>
+<div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">Medical Information</div>
 
 <!-- LEFT column -->
@@ -11,39 +11,20 @@
 <%@ include file="/includes/messages.jsp"%>
 
 <fieldset>
-	<legend>Medical  Information</legend>
-
-	<table border="0" width="100%" id="table1">
-		<tr>
-			<td><font size="2">* Primary Medical Insurance Co.</font></td>
-			<td><input type="text" name="T1" size="20"></td>
-		</tr>
-		<tr>
-			<td><font size="2">* Policy Number</font></td>
-			<td><input type="text" name="T2" size="20"></td>
-		</tr>
-		<tr>
-			<td><font size="2">Phone Number</font></td>
-			<td><input type="text" name="T3" size="20"></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td><font size="1"></font></td>
-			<td>&nbsp;</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-		</tr>
-		</table>
-
+	<legend>Primary Medical Insurance</legend>
+	<label>* Do you have medical insurance?</label>
+	<div class="radios">
+	<input name="citizen" id="have-medical-1" type="radio" value="yes" class="radio" onclick="document.getElementById('insurance').style.display = 'block'" /> <label for="have-medical-1" class="radio">Yes</label>
+	<input name="citizen" id="have-medical-2" type="radio" value="no" class="radio" onclick="document.getElementById('insurance').style.display = 'none'" /> <label for="have-medical-2" class="radio">No</label>
+	</div><br />
+	<div id="insurance" style="display:none;">
+		<label>* Insurance Company Name:</label>
+		<input name="" type="text"  /><br />
+		<label>* Policy/ID Number:</label>
+		<input name="" type="text"  /><br />
+		<label>Phone Number:</label>
+		<input name="" type="text"  /><br />
+	</div>
 </fieldset>
 
 <fieldset class="buttons">

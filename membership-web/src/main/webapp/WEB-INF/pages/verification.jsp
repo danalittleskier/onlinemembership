@@ -1,7 +1,7 @@
 <%@ include file="/common/taglibs.jsp" %>
 <body>
 <!-- Progress bar -->
-<div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53"/></div>
+<div id="stg-progress"><img src="<c:url value='/images/progress_2.gif'/>" width="917" height="53"/></div>
 <div id="stg-pagetitle">Verification</div>
 
 <form:form commandName="accountBean" name="accountBean">
@@ -17,7 +17,6 @@
 	<tr>
 		<th scope="col">Personal Information</th>
 		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
-
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">USSA Member #:</td>
@@ -33,7 +32,9 @@
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">MI:</td>
-		<td class="data-text" scope="row"></td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.member.middleName}"/>
+		</td>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Last Name:</td>
@@ -43,7 +44,9 @@
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Suffix:</td>
-		<td class="data-text-none" scope="row"></td>
+		<td class="data-text-none" scope="row">
+			<c:out value="${accountBean.member.suffixName}"/>
+		</td>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Gender:</td>
@@ -54,18 +57,20 @@
 	<tr>
 		<td class="data-label" scope="row">Ethnicity:</td>
 		<td class="data-text" scope="row">
-			<c:out value="${accountBean.member.etnicity}"/>
+			<c:out value="${accountBean.member.ethnicity}"/>
 		</td>
 	</tr>
 </table>
 <table id="stg-data-review">
 	<tr>
 		<th scope="col">Address & Phone</th>
-
+		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Company:</td>
-		<td class="data-text" scope="row"></td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.address.company}"/>
+		</td>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Address:</td>
@@ -99,32 +104,50 @@
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Other Phone:</td>
-		<td class="data-text" scope="row"></td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.address.phoneOther}"/>
+		</td>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Fax:</td>
-		<td class="data-text-none" scope="row"></td>
+		<td class="data-text-none" scope="row">
+			<c:out value="${accountBean.address.phoneFax}"/>
+		</td>
 	</tr>
 </table>
 <table id="stg-data-review">
 	<tr>
-		<th scope="col">Primary Medical Insurance</th>
-		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editMedical" value="Edit">
+		<th scope="col">Membership Information</th>
+		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editSportMembership" value="Edit">
 		</th>
 
 	</tr>
 	<tr>
-		<td class="data-label" scope="row">Insurance Company Name:</td>
-		<td class="data-text" scope="row"></td>
+		<td class="data-label" scope="row">Division:</td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.member.division.description}"/>
+		</td>
 	</tr>
-	<tr>
-		<td class="data-label" scope="row">Policy Number:</td>
-		<td class="data-text" scope="row"></td>
-	</tr>
-	<tr>
-		<td class="data-label" scope="row">Phone Number:</td>
-		<td class="data-text-none" scope="row"></td>
-	</tr>
+	<c:forEach var="lineItem" items="${accountBean.cartBean.membershipLineItems}" varStatus="varStatus">
+		<c:choose>
+			<c:when test="${varStatus.first}">
+				<tr>
+					<td class="data-label" scope="row">Membership Type:</td>
+					<td class="data-text" scope="row">
+						<c:out value="${lineItem.description}"/>
+					</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<tr>
+					<td class="data-label" scope="row"></td>
+					<td class="data-text" scope="row">
+					<c:out value="${lineItem.description}"/>
+					</td>
+				</tr>
+			</c:otherwise>
+		</c:choose>
+	</c:forEach>
 </table>
 
 
@@ -148,24 +171,7 @@
 			<div class="stg-tl">
 				<div class="stg-tr">
 					<div></div>
-					<p class="stg-omr-header">
-						Your Membership Fees -
-						<input type="submit" class="btn-green" name="_eventId_editMember" value="<fmt:message key='button.edit'/>">
-					</p>
-
-					<display:table name="accountBean.shoppingCart" requestURI="" sort="list" defaultsort="1" id="cart">
-						<display:column property="description" title="Description" sortable="false" class="item"/>
-						<display:column property="amount" title="Amount" sortable="false" class="price"/>
-					</display:table>
-
-					<table id="carttotal">
-						<tr>
-							<td class="total">Total</td>
-							<td class="price">
-								<c:out value="${accountBean.cartBean.totalCost}"/>
-							</td>
-						</tr>
-					</table>
+					<%@ include file="/includes/shoppingCartReadOnly.jsp"%>
 				</div>
 			</div>
 		</div>
