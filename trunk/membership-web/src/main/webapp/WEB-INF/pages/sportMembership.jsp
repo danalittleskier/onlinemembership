@@ -1,20 +1,4 @@
 <%@ include file="/common/taglibs.jsp"%>
-<head>
-	<script type="text/javascript">
-		function updateCheckboxControl(hiddenId)
-		{
-			if('Y' == document.getElementById(hiddenId).value)
-			{
-				document.getElementById(hiddenId+'Control').checked = true;
-			}
-		}
-		function updateCheckboxHidden(hiddenId, element)
-		{
-			document.getElementById(hiddenId).value=(element.checked?'Y':'N')
-		}
-	</script>
-</head>
-
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
@@ -109,7 +93,7 @@
 			<div class="stg-tl">
 				<div class="stg-tr">
 					<div></div>
-					<%@ include file="/includes/shoppingCartInclude.jsp"%>
+					<%@ include file="/includes/shoppingCart.jsp"%>
 				</div>
 			</div>
 		</div>

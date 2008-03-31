@@ -87,6 +87,11 @@ public class CartBean
 		return lineItems;
 	}
 
+	public List<LineItemBean> getMembershipLineItems()
+	{
+		return getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+	}
+
 	public List<LineItemBean> getLineItems(String inventoryType)
 	{
 		List<LineItemBean> results = new ArrayList<LineItemBean>();
