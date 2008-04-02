@@ -33,6 +33,8 @@ import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
+import org.acegisecurity.context.SecurityContextHolder;
+import org.acegisecurity.userdetails.UserDetails;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -96,6 +98,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		String idParam = context.getRequestParameters().get("id");
+
+		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		System.out.println(" "+userDetails.getUsername());
 
 		Long id = null;
 		if (idParam != null)

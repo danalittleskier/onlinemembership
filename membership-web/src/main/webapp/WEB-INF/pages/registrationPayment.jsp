@@ -29,10 +29,6 @@
 --%>
 		<label for="">* Credit Card Number:</label>
 		<form:input path="paymentBean.cardNumber"/><br/>
-		<label for="fname">* First Name:</label>
-		<form:input path="paymentBean.firstName"/>
-		<label for="lname">* Last Name:</label>
-		<form:input path="paymentBean.lastName"/><br/>
 		<label for="">* Expiration Date:</label>
 		<span class="multiselect-margin">
 			<form:select path="paymentBean.expireMonth">

@@ -1,8 +1,8 @@
 package org.ussa.service;
 
-import org.ussa.beans.PaymentBean;
+import org.ussa.beans.AccountBean;
 
 public interface CreditCardProcessingService
 {
-	public void processCard(PaymentBean paymentBean) throws Exception;
+	public void processCard(AccountBean accountBean) throws Exception;
 }

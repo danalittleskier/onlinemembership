@@ -12,9 +12,12 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.ussa.beans.PaymentBean;
+import org.ussa.beans.AccountBean;
 import org.ussa.exception.CreditCardDeclinedException;
 import org.ussa.exception.CreditCardException;
 import org.ussa.service.CreditCardProcessingService;
+import org.ussa.model.Member;
+import org.ussa.model.Address;
 
 public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardProcessingService
 {
@@ -27,9 +30,10 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 
 	private static Log log = LogFactory.getLog(AuthorizeNetCreditCardProcessingServiceImpl.class);
 
-	public void processCard(PaymentBean paymentBean) throws Exception
+	public void processCard(AccountBean accountBean) throws Exception
 	{
-		GatewayResponse response = sendGatewayRequest(paymentBean);
+		PaymentBean paymentBean = accountBean.getPaymentBean();
+		GatewayResponse response = sendGatewayRequest(accountBean);
 
 		paymentBean.setCompletedTransactionId(String.valueOf(response.getTransId()));
 
@@ -43,8 +47,9 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 			throw new CreditCardException(response.getResponseDescription());
 	}
 
-	private GatewayResponse sendGatewayRequest(PaymentBean paymentBean) throws Exception
+	private GatewayResponse sendGatewayRequest(AccountBean accountBean) throws Exception
 	{
+		PaymentBean paymentBean = accountBean.getPaymentBean();
 
 		StringBuffer params = new StringBuffer();
 
@@ -60,13 +65,17 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		params.append("x_delim_char=").append(DELIMITER).append("&");
 		params.append("x_relay_response=FALSE&");
 
-		// address values. these are optional
-		appendParam(params, "x_first_name", paymentBean.getFirstName(), 50);
-		appendParam(params, "x_last_name", paymentBean.getLastName(), 50);
-		appendParam(params, "x_address", paymentBean.getAddress(), 60);
-		appendParam(params, "x_city", paymentBean.getCity(), 40);
-		appendParam(params, "x_state", paymentBean.getState(), 40);
-		appendParam(params, "x_zip", paymentBean.getZip(), 20);
+		Member member = accountBean.getMember();
+		Address address = accountBean.getAddress();
+		// address values. these are not optional
+		appendParam(params, "x_first_name", member.getFirstName(), 50);
+		appendParam(params, "x_last_name", member.getLastName(), 50);
+		appendParam(params, "x_address", address.getDeliveryAddress(), 60);
+		appendParam(params, "x_city", address.getCity(), 40);
+		appendParam(params, "x_state", address.getStateCode(), 40);
+		appendParam(params, "x_zip", address.getPostalCode(), 20);
+		appendParam(params, "x_country", address.getCountry(), 60);
+		appendParam(params, "x_phone", address.getPhoneHome(), 25);
 
 		// cc values
 		appendParam(params, "x_amount", paymentBean.getAmount());
@@ -149,8 +158,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 
 	private void appendParam(StringBuffer buffer, String paramName, String paramValue, int maxLength)
 	{
-		if (StringUtils.isNotEmpty(paramValue))
-			buffer.append(paramName).append("=").append(prepareString(paramValue, maxLength)).append("&");
+		buffer.append(paramName).append("=").append(prepareString(paramValue, maxLength)).append("&");
 	}
 
 	private String prepareString(String value, int maxLength)

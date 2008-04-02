@@ -61,4 +61,13 @@ public class RulesBLImpl implements RulesBL
 
 		return season;
 	}
+
+	public Long getNextUssaId()
+	{
+		// change this to a select for update, and then increment it and commit.
+		ParameterTable parameter = parameterTableDao.get(ParameterTable.USSAID);
+		String ussaId = parameter.getParameterData();
+
+		return new Long(ussaId);
+	}
 }

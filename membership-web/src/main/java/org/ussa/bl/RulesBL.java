@@ -7,4 +7,6 @@ public interface RulesBL
 
 	public String getLastSeason();
 
+	public Long getNextUssaId();
+
 }

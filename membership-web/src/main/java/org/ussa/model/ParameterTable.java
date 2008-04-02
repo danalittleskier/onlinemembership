@@ -13,6 +13,7 @@ public class ParameterTable implements Serializable
 {
 	public static final String LATE_RENEW_DATE = "LATE_RENEW_DATE";
 	public static final String LAST_DAY_RENEW_SEASON = "LAST_DY_RENEWSEASN";
+	public static final String USSAID = "USSAID";
 
 	@Id
 	@Column(name = "PARAMETER_CODE", nullable = false, length = 20, unique = false)
