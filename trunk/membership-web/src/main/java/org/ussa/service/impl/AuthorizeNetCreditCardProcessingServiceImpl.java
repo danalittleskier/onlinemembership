@@ -21,8 +21,8 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 
 	private static String DELIMITER = "|";
 
-	private String login = "3M7s8eKK6&";
-	private String tranKey = "7u86RL9PM4s4aRyF&";
+	private String login;
+	private String tranKey;
 	private boolean testMode;
 
 	private static Log log = LogFactory.getLog(AuthorizeNetCreditCardProcessingServiceImpl.class);
@@ -56,9 +56,9 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		params.append("x_test_request=").append(testMode ? "TRUE" : "FALSE").append("&");
 		params.append("x_method=CC&");
 		params.append("x_type=AUTH_CAPTURE&");
-		params.append("x_relay_response=FALSE&");
 		params.append("x_delim_data=TRUE&");
 		params.append("x_delim_char=").append(DELIMITER).append("&");
+		params.append("x_relay_response=FALSE&");
 
 		// address values. these are optional
 		appendParam(params, "x_first_name", paymentBean.getFirstName(), 50);

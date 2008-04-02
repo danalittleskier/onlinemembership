@@ -17,28 +17,26 @@ public class AccountBean
 	private Address address;
 	private MemberLegal memberLegal;
 
-	private String birthDate;
-
 	private CartBean cartBean = new CartBean();
 	private PaymentBean paymentBean = new PaymentBean();
 
 	//Helper fields for binding, not persisited...
-	private Boolean waiverAgree = false; //This one will go away
+	private String birthDate;
 	private Long clubId;
 	private String membershipId;
 	private String sportId;
-
+	private boolean usCitizen;
+	private boolean hasInsurance;
 
 	//Reference Data fields.  Do not save when done:
-	boolean usCitizen;
-	List<State> usStates;
-	List<Nation> nations;
-	List<Club> clubsForState;
-	List<Inventory> memberships;// inventory - memberships
-	List<Integer> years;
+	private List<State> usStates;
+	private List<Nation> nations;
+	private List<Club> clubsForState;
+	private List<Inventory> memberships;// inventory - memberships
+	private List<Integer> years;
 
-	String paymentTransactionCode;
-	String contributionAmount;
+	private String paymentTransactionCode;
+	private String contributionAmount;
 
 	public String getPaymentTransactionCode()
 	{
@@ -90,16 +88,6 @@ public class AccountBean
 		this.birthDate = birthDate;
 	}
 
-	public Boolean getWaiverAgree()
-	{
-		return waiverAgree;
-	}
-
-	public void setWaiverAgree(Boolean waiverAgree)
-	{
-		this.waiverAgree = waiverAgree;
-	}
-
 	public boolean getUsCitizen()
 	{
 		return usCitizen;
@@ -113,6 +101,16 @@ public class AccountBean
 	public List<State> getUsStates()
 	{
 		return usStates;
+	}
+
+	public boolean getHasInsurance()
+	{
+		return hasInsurance;
+	}
+
+	public void setHasInsurance(boolean hasInsurance)
+	{
+		this.hasInsurance = hasInsurance;
 	}
 
 	public void setUsStates(List<State> usStates)

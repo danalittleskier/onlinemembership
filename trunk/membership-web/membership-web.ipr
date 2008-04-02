@@ -8,8 +8,8 @@
       <customJdkName value="" />
       <maximumHeapSize value="128" />
       <properties />
-      <executeOn event="beforeRun" target="synch" runConfigurationType="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" runConfigurationName="Tomcat 5" />
       <executeOn event="beforeRun" target="synch" runConfigurationType="Resin Instance" runConfigurationName="Resin 3.1.5" />
+      <executeOn event="beforeRun" target="synch" runConfigurationType="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" runConfigurationName="Tomcat 5" />
     </buildFile>
   </component>
   <component name="BuildJarProjectSettings">
