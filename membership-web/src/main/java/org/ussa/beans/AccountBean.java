@@ -8,15 +8,19 @@ import org.ussa.model.Nation;
 import org.ussa.model.State;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
+import org.ussa.model.MemberLegal;
 
 public class AccountBean
 {
 	//Fields to save when done
-	private Member member; //Only save the member at the end...
+	private Member member;
+	private Address address;
+	private MemberLegal memberLegal;
+
 	private String birthDate;
 
 	private CartBean cartBean = new CartBean();
-	private Address address;
+	private PaymentBean paymentBean = new PaymentBean();
 
 	//Helper fields for binding, not persisited...
 	private Boolean waiverAgree = false; //This one will go away
@@ -31,6 +35,7 @@ public class AccountBean
 	List<Nation> nations;
 	List<Club> clubsForState;
 	List<Inventory> memberships;// inventory - memberships
+	List<Integer> years;
 
 	String paymentTransactionCode;
 	String contributionAmount;
@@ -63,6 +68,16 @@ public class AccountBean
 	public void setAddress(Address address)
 	{
 		this.address = address;
+	}
+
+	public MemberLegal getMemberLegal()
+	{
+		return memberLegal;
+	}
+
+	public void setMemberLegal(MemberLegal memberLegal)
+	{
+		this.memberLegal = memberLegal;
 	}
 
 	public String getBirthDate()
@@ -135,6 +150,16 @@ public class AccountBean
 		this.memberships = memberships;
 	}
 
+	public List<Integer> getYears()
+	{
+		return years;
+	}
+
+	public void setYears(List<Integer> years)
+	{
+		this.years = years;
+	}
+
 	public Long getClubId()
 	{
 		return clubId;
@@ -173,6 +198,16 @@ public class AccountBean
 	public void setCartBean(CartBean cartBean)
 	{
 		this.cartBean = cartBean;
+	}
+
+	public PaymentBean getPaymentBean()
+	{
+		return paymentBean;
+	}
+
+	public void setPaymentBean(PaymentBean paymentBean)
+	{
+		this.paymentBean = paymentBean;
 	}
 
 	public String getContributionAmount()

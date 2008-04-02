@@ -102,6 +102,8 @@
 	   <property name="addressDao" ref="addressDao"/>
 	   <property name="memberDao" ref="memberDao"/>
 	   <property name="memberManager" ref="memberManager"/>
+	   <property name="commandName" value="member"/>
+	   <property name="commandClass" value="org.ussa.beans.AccountBean"/>
       <property name="validator">
         <bean parent="validatorTemplate">
           <property name="formName" value="contactInfo" />

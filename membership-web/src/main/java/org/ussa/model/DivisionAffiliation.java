@@ -1,87 +1,55 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
-
-import org.appfuse.model.BaseObject;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-@Table (name="DIVISIONAFFILIATION")
+@Table(name = "DIVISIONAFFILIATION")
 
-public class DivisionAffiliation extends BaseObject implements Serializable
+public class DivisionAffiliation implements Serializable
 {
 
-    //Division Affiliation table fields
-    private String stateCode;
-    private String zipCode;
-    private String divisionCode;
+	@Id
+	@Column(name = "STATE_CODE", nullable = false, length = 2, unique = false)
+	private String stateCode;
 
-    public DivisionAffiliation() {
-    }
+	@Column(name = "ZIP_CODE", nullable = true, length = 10, unique = false)
+	private String zipCode;
 
-    /**
-     * @return the sTATE_CODE
-     */
-    @Id
-    @Column(name = "STATE_CODE", nullable = false, length=2, unique=false)
-    public String getSTATE_CODE()
-    {
-        return stateCode;
-    }
-    /**
-     * @param state_code the sTATE_CODE to set
-     */
-    public void setSTATE_CODE(String state_code)
-    {
-        stateCode = state_code;
-    }
-    /**
-     * @return the zIP_CODE
-     */
-    @Column(name = "ZIP_CODE", nullable = true, length=10, unique=false)
-    public String getZIP_CODE()
-    {
-        return zipCode;
-    }
-    /**
-     * @param zip_code the zIP_CODE to set
-     */
-    public void setZIP_CODE(String zip_code)
-    {
-        zipCode = zip_code;
-    }
-    /**
-     * @return the dIVISION_CODE
-     */
-    @Column(name = "DIVISION_CODE", nullable = false, length=1, unique=false)
-    public String getDIVISION_CODE()
-    {
-        return divisionCode;
-    }
-    /**
-     * @param division_code the dIVISION_CODE to set
-     */
-    public void setDIVISION_CODE(String division_code)
-    {
-        divisionCode = division_code;
-    }
-    @Override
-    public boolean equals(Object o)
-    {
-        // TODO Auto-generated method stub
-        return false;
-    }
-    @Override
-    public int hashCode()
-    {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-    @Override
-    public String toString()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	@Column(name = "DIVISION_CODE", nullable = false, length = 1, unique = false)
+	private String divisionCode;
 
+
+	public String getStateCode()
+	{
+		return stateCode;
+	}
+
+	public void setStateCode(String stateCode)
+	{
+		this.stateCode = stateCode;
+	}
+
+	public String getZipCode()
+	{
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode)
+	{
+		this.zipCode = zipCode;
+	}
+
+	public String getDivisionCode()
+	{
+		return divisionCode;
+	}
+
+	public void setDivisionCode(String divisionCode)
+	{
+		this.divisionCode = divisionCode;
+	}
 }

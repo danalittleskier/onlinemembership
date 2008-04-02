@@ -12,10 +12,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.Calendar;
-
-import org.appfuse.model.BaseObject;
+import java.util.Date;
 
 @NamedQueries ({
 		// @NamedQuery(name="Member.findByLastName", query="select m from Member m where lower(m.lastName) like lower(:lastName)"),
@@ -25,7 +23,7 @@ import org.appfuse.model.BaseObject;
 @Entity
 @Table (name="MEMBER")
 
-public class Member extends BaseObject implements Serializable
+public class Member implements Serializable
 {
 	//Member table fields
 	@Id
@@ -118,26 +116,6 @@ public class Member extends BaseObject implements Serializable
 
 		return new Integer(0);
 
-	}
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public Long getId()

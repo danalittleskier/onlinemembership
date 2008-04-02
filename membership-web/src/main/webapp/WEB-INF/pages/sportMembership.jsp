@@ -45,6 +45,9 @@
 				<td valign="top" class="checkbox">
 					<form:hidden id="receiveEmail" path="member.receiveEmail"/>
 					<input id="receiveEmailControl" type="checkbox" onclick="updateCheckboxHidden('receiveEmail', this)"/>
+					<script type="text/javascript" defer="defer">
+						updateCheckboxControl('receiveEmail');
+					</script>
 				</td>
 				<td valign="top" width="100%">
 					<label for="receiveEmailControl" class="checkbox" style="text-align:left; width:auto;">
@@ -56,6 +59,9 @@
 				<td valign="top" class="checkbox">
 					<form:hidden id="privateAddress" path="member.privateAddress"/>
 					<input id="privateAddressControl" type="checkbox" onclick="updateCheckboxHidden('privateAddress', this)"/>
+					<script type="text/javascript" defer="defer">
+						updateCheckboxControl('privateAddress');
+					</script>
 				</td>
 				<td valign="top" width="100%">
 					<label for="privateAddressControl" class="checkbox" style="text-align:left; width:auto;">
@@ -64,10 +70,6 @@
 				</td>
 			</tr>
 		</table>
-		<script type="text/javascript" defer="defer">
-			updateCheckboxControl('receiveEmail');
-			updateCheckboxControl('privateAddress');
-		</script>
 	</fieldset>
 	<fieldset>
 		<legend>Contribution</legend>

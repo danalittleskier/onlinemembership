@@ -7,11 +7,9 @@ import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
-import org.appfuse.model.BaseObject;
-
 @Entity
 @Table(name = "INVENTORY")
-public class Inventory extends BaseObject implements Serializable
+public class Inventory implements Serializable
 {
 	public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
 	public static final String INVENTORY_TYPE_DONATION = "DONATION";
@@ -22,6 +20,9 @@ public class Inventory extends BaseObject implements Serializable
 
 	@Column(name = "DESCRIPTION", nullable = true, length = 50, unique = false)
 	private String description;
+
+	@Column(name = "RENEW_DESC", nullable = true, length = 50, unique = false)
+	private String renewDescription;
 
 	@Column(name = "AGE_FROM", nullable = true, length = 5, unique = false)
 	private Long ageFrom;
@@ -41,41 +42,85 @@ public class Inventory extends BaseObject implements Serializable
 	@Column(name = "AMOUNT", nullable = true, length = 5, unique = false)
 	private BigDecimal amount;
 
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
 
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	/**
-	 * @return the id
-	 */
 	public String getId()
 	{
 		return id;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
 	public void setId(String id)
 	{
 		this.id = id;
+	}
+
+	public String getDescription()
+	{
+		return description;
+	}
+
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+
+	public String getRenewDescription()
+	{
+		return renewDescription;
+	}
+
+	public void setRenewDescription(String renewDescription)
+	{
+		this.renewDescription = renewDescription;
+	}
+
+	public Long getAgeFrom()
+	{
+		return ageFrom;
+	}
+
+	public void setAgeFrom(Long ageFrom)
+	{
+		this.ageFrom = ageFrom;
+	}
+
+	public Long getAgeTo()
+	{
+		return ageTo;
+	}
+
+	public void setAgeTo(Long ageTo)
+	{
+		this.ageTo = ageTo;
+	}
+
+	public String getSportCode()
+	{
+		return sportCode;
+	}
+
+	public void setSportCode(String sportCode)
+	{
+		this.sportCode = sportCode;
+	}
+
+	public String getInventoryType()
+	{
+		return inventoryType;
+	}
+
+	public void setInventoryType(String inventoryType)
+	{
+		this.inventoryType = inventoryType;
+	}
+
+	public String getActive()
+	{
+		return active;
+	}
+
+	public void setActive(String active)
+	{
+		this.active = active;
 	}
 
 	public BigDecimal getAmount()
@@ -87,102 +132,4 @@ public class Inventory extends BaseObject implements Serializable
 	{
 		this.amount = amount;
 	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription()
-	{
-		return description;
-	}
-
-	/**
-	 * @param description the description to set
-	 */
-	public void setDescription(String description)
-	{
-		this.description = description;
-	}
-
-	/**
-	 * @return the ageFrom
-	 */
-	public Long getAgeFrom()
-	{
-		return ageFrom;
-	}
-
-	/**
-	 * @param ageFrom the ageFrom to set
-	 */
-	public void setAgeFrom(Long ageFrom)
-	{
-		this.ageFrom = ageFrom;
-	}
-
-	/**
-	 * @return the ageTo
-	 */
-	public Long getAgeTo()
-	{
-		return ageTo;
-	}
-
-	/**
-	 * @param ageTo the ageTo to set
-	 */
-	public void setAgeTo(Long ageTo)
-	{
-		this.ageTo = ageTo;
-	}
-
-	/**
-	 * @return the sportCode
-	 */
-	public String getSportCode()
-	{
-		return sportCode;
-	}
-
-	/**
-	 * @param sportCode the sportCode to set
-	 */
-	public void setSportCode(String sportCode)
-	{
-		this.sportCode = sportCode;
-	}
-
-	/**
-	 * @return the inventoryType
-	 */
-	public String getInventoryType()
-	{
-		return inventoryType;
-	}
-
-	/**
-	 * @param inventoryType the inventoryType to set
-	 */
-	public void setInventoryType(String inventoryType)
-	{
-		this.inventoryType = inventoryType;
-	}
-
-	/**
-	 * @return the active
-	 */
-	public String getActive()
-	{
-		return active;
-	}
-
-	/**
-	 * @param active the active to set
-	 */
-	public void setActive(String active)
-	{
-		this.active = active;
-	}
-
-
 }

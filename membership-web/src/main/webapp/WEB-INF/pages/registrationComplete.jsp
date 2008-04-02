@@ -43,14 +43,11 @@
 <!-- BOX (END) -->
 
 <p>
-	<%--Why did Brad do this?--%>
-	<form name="" action="" method="">
-		<fieldset class="buttons">
-			<label></label>
-			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="submit" class="btn-green" name="_eventId_back" value="Back">
-		</fieldset>
-	</form>
+	<fieldset class="buttons">
+		<label></label>
+		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+	</fieldset>
 </p>
 
 </form:form>

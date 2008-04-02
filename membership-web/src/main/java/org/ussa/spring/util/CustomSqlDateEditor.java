@@ -3,6 +3,7 @@ package org.ussa.spring.util;
 import java.beans.PropertyEditorSupport;
 import java.text.DateFormat;
 import java.text.ParseException;
+import java.util.Date;
 
 import org.springframework.util.StringUtils;
 
@@ -21,8 +22,8 @@ public class CustomSqlDateEditor extends PropertyEditorSupport
 
     public String getAsText()
     {
-        java.sql.Date value = (java.sql.Date) getValue();
-        return (value != null ? this.format.format(new java.util.Date(value.getTime())) : "");
+        Date value = (Date) getValue();
+        return (value != null ? this.format.format(new Date(value.getTime())) : "");
     }
 
     public void setAsText(String text) throws IllegalArgumentException
@@ -36,7 +37,7 @@ public class CustomSqlDateEditor extends PropertyEditorSupport
         {
             try
             {
-                setValue(new java.sql.Date(this.format.parse(text).getTime()));
+                setValue(new Date(this.format.parse(text).getTime()));
             } catch (ParseException e)
             {
                 throw new IllegalArgumentException("Could not parse date: " + e.getMessage());

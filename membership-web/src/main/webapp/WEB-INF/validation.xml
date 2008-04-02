@@ -21,7 +21,7 @@
 		</constant>
 		<constant>
 			<constant-name>validWhenMemberIdNotPresent</constant-name>
-			<constant-value><![CDATA[((member.id != null) or (*this* != null))]]></constant-value>
+			<constant-value>((member.id != null) or (*this* != null))</constant-value>
 		</constant>
 	</global>
 	<formset>
@@ -243,6 +243,50 @@
 			</field>
 			<field property="contributionAmount" depends="float">
 				<arg0 key="label.contribution.amount" />
+			</field>
+		</form>
+
+		<form name="medical">
+			<field property="memberLegal.insuranceCompany" depends="required">
+				<arg0 key="label.insurance.company.name" />
+			</field>
+			<field property="memberLegal.insurancePolicy" depends="required">
+				<arg0 key="label.policy.id.number" />
+			</field>
+		</form>
+
+		<form name="medicalWaiver">
+			<field property="memberLegal.insuranceWaiver" depends="validWhen">
+				<msg name="validWhen" key="errors.must.agree.to.terms"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="releaseWaiver">
+			<field property="memberLegal.releaseWaiver" depends="validWhen">
+				<msg name="validWhen" key="errors.must.agree.to.terms"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="registrationPayment">
+			<field property="paymentBean.cardNumber" depends="required, creditCard">
+				<arg0 key="label.credit.card.number" />
+			</field>
+			<field property="paymentBean.expireMonth" depends="required">
+				<arg0 key="label.expiration.month" />
+			</field>
+			<field property="paymentBean.expireYear" depends="required">
+				<arg0 key="label.expiration.year" />
+			</field>
+			<field property="paymentBean.securityCode" depends="required">
+				<arg0 key="label.security.code" />
 			</field>
 		</form>
 	</formset>

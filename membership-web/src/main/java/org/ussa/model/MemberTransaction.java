@@ -1,19 +1,17 @@
 package org.ussa.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import org.appfuse.model.BaseObject;
-
 @Entity
 @Table(name = "MEMBERTRANSACTION")
 
-public class MemberTransaction extends BaseObject implements Serializable
+public class MemberTransaction implements Serializable
 {
 	@Id
 	@Column(name = "ID", nullable = false, length = 7)
@@ -122,28 +120,5 @@ public class MemberTransaction extends BaseObject implements Serializable
 	public void setPurchaseDate(Date purchaseDate)
 	{
 		this.purchaseDate = purchaseDate;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 }

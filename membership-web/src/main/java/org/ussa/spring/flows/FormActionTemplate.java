@@ -3,6 +3,7 @@ package org.ussa.spring.flows;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Map;
+import java.util.Date;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -41,8 +42,7 @@ public class FormActionTemplate extends FormAction
         binder.registerCustomEditor(BigDecimal.class, new CustomNumberEditor(BigDecimal.class, true));
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
         binder.registerCustomEditor(Character.class, new CharacterEditor(true));
-        binder.registerCustomEditor(java.sql.Date.class, new CustomSqlDateEditor(
-				new SimpleDateFormat("MM/dd/yyyy"), true));
+        binder.registerCustomEditor(Date.class, new CustomSqlDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true));
     }
 
     public Event bindAndValidate(RequestContext ctx) throws Exception

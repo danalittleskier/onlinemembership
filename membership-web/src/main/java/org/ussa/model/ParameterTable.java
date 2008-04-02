@@ -1,55 +1,56 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Id;
+import java.io.Serializable;
 
 @Entity
-@Table (name="PARAMETERTABLE")
+@Table(name = "PARAMETERTABLE")
 
-public class ParameterTable implements Serializable {
+public class ParameterTable implements Serializable
+{
+	public static final String LATE_RENEW_DATE = "LATE_RENEW_DATE";
+	public static final String LAST_DAY_RENEW_SEASON = "LAST_DY_RENEWSEASN";
 
-    //Member table fields
+	@Id
+	@Column(name = "PARAMETER_CODE", nullable = false, length = 20, unique = false)
+	private String parameterCode;
 
-    private String parameterCode;
-    private String parameterTable;
+	@Column(name = "PARAMETER_DATA", nullable = true, length = 20, unique = false)
+	private String parameterData;
 
-    /**
-     * @return the pARAMETER_CODE
-     */
-    @Id
-    @Column(name = "PARAMETER_CODE", nullable = false, length=20, unique=false)
-    public String getPARAMETER_CODE()
-    {
-        return parameterCode;
-    }
+	@Column(name = "PARAMETER_DESCRIPTION", nullable = true, length = 80, unique = false)
+	private String parameterDescription;
 
-    /**
-     * @param parameter_code the pARAMETER_CODE to set
-     */
-    public void setPARAMETER_CODE(String parameter_code)
-    {
-        parameterCode = parameter_code;
-    }
+	public String getParameterCode()
+	{
+		return parameterCode;
+	}
 
-    /**
-     * @return the pARAMETER_TABLE
-     */
-    @Column(name = "PARAMETER_TABLE", nullable = true, length=20, unique=false)
-    public String getPARAMETER_TABLE()
-    {
-        return parameterTable;
-    }
+	public void setParameterCode(String parameterCode)
+	{
+		this.parameterCode = parameterCode;
+	}
 
-    /**
-     * @param parameter_table the pARAMETER_TABLE to set
-     */
-    public void setPARAMETER_TABLE(String parameter_table)
-    {
-        parameterTable = parameter_table;
-    }
+	public String getParameterData()
+	{
+		return parameterData;
+	}
 
-    public ParameterTable() {
-    }
+	public void setParameterData(String parameterData)
+	{
+		this.parameterData = parameterData;
+	}
 
+	public String getParameterDescription()
+	{
+		return parameterDescription;
+	}
+
+	public void setParameterDescription(String parameterDescription)
+	{
+		this.parameterDescription = parameterDescription;
+	}
 }

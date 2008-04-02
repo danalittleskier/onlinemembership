@@ -1,17 +1,14 @@
 package org.ussa.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Set;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.propertyeditors.CharacterEditor;
-import org.springframework.beans.propertyeditors.CustomCollectionEditor;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -19,8 +16,6 @@ import org.springframework.validation.BindException;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.servlet.mvc.SimpleFormController;
-import org.ussa.spring.util.CustomSqlDateEditor;
-import org.ussa.spring.util.CustomSqlTimestampEditor;
 
 public abstract class AbstractSimpleFormController extends SimpleFormController
 {
@@ -35,12 +30,7 @@ public abstract class AbstractSimpleFormController extends SimpleFormController
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(true));
         binder.registerCustomEditor(Character.class, new CharacterEditor(true));
         binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
-        binder.registerCustomEditor(java.sql.Date.class, new CustomSqlDateEditor(new SimpleDateFormat(
-                getText("date.format")), true));
-//        binder.registerCustomEditor(java.sql.Timestamp.class, new CustomSqlTimestampEditor(new SimpleDateFormat(
-//                getText("dateTime.format")), true));
-        binder.registerCustomEditor(Date.class,
-                new CustomDateEditor(new SimpleDateFormat(getText("date.format")), true));
+        binder.registerCustomEditor(Date.class, new CustomDateEditor(new SimpleDateFormat(getText("date.format")), true));
         initCustomBinder(request, binder);
     }
 

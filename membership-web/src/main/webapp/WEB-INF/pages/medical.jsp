@@ -19,11 +19,11 @@
 	</div><br />
 	<div id="insurance" style="display:none;">
 		<label>* Insurance Company Name:</label>
-		<input name="" type="text"  /><br />
+		<form:input path="memberLegal.insuranceCompany"/><br />
 		<label>* Policy/ID Number:</label>
-		<input name="" type="text"  /><br />
+		<form:input path="memberLegal.insurancePolicy"/><br />
 		<label>Phone Number:</label>
-		<input name="" type="text"  /><br />
+		<form:input path="memberLegal.insurancePhone"/><br />
 	</div>
 </fieldset>
 

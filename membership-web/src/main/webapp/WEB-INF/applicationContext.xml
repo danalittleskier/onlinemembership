@@ -3,7 +3,7 @@
 	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
 	   default-lazy-init="true">
 
-	<!-- Add new DAOs here -->
+	<!-- Add DAOs here -->
 
 	<bean id="addressDao" class="org.ussa.dao.impl.AddressDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
@@ -23,13 +23,40 @@
 	<bean id="nationDao" class="org.ussa.dao.impl.NationDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="parameterTableDao" class="org.ussa.dao.impl.ParameterTableDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<bean id="inventoryDao" class="org.ussa.dao.impl.InventoryDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="recommendedMembershipsDao" class="org.ussa.dao.impl.RecommendedMembershipsDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
-	<!-- Add new Managers here -->
+	<!-- Add Managers here -->
 	<bean id="memberManager" class="org.ussa.manager.impl.MemberManagerImpl">
 		<constructor-arg ref="memberDao"/>
 	</bean>
+
+	<!-- Add business logic classes here-->
+	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
+		<property name="parameterTableDao" ref="parameterTableDao"/>
+	</bean>
+
+	<!-- Add service classes here-->
+	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
+		<property name="testMode" value="true"/>
+		<property name="login" value="3M7s8eKK6"/>
+		<property name="tranKey" value="7u86RL9PM4s4aRyF"/>
+	</bean>
+
+	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
+		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
+	</bean>
+
 
 </beans>

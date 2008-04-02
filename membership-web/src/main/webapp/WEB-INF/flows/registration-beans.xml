@@ -11,15 +11,13 @@
 		<property name="stateDao" ref="stateDao"/>
 		<property name="nationDao" ref="nationDao"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="recommendedMembershipsDao" ref="recommendedMembershipsDao"/>
+		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="rulesBL" ref="rulesBL"/>
 	</bean>
 
 	<bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">
-		<property name="addressDao" ref="addressDao"/>
-		<property name="clubDao" ref="clubDao"/>
-		<property name="memberDao" ref="memberDao"/>
-		<property name="stateDao" ref="stateDao"/>
-		<property name="memberManager" ref="memberManager"/>
-		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="memberRegistrationService" ref="memberRegistrationService"/>
 	</bean>
 
 	<!-- Form objects -->
@@ -33,6 +31,10 @@
 				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
 				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
 				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
+				<entry key="validatorMedical" value-ref="validatorMedical"/>
+				<entry key="validatorMedicalWaiver" value-ref="validatorMedicalWaiver"/>
+				<entry key="validatorReleaseWaiver" value-ref="validatorReleaseWaiver"/>
+				<entry key="validatorRegistrationPayment" value-ref="validatorRegistrationPayment"/>
 			</map>
 		</property>
 	</bean>
@@ -49,6 +51,18 @@
 	</bean>
 	<bean id="validatorSportMembershipNext" parent="validatorTemplate">
 		<property name="formName" value="sportMembershipNext"/>
+	</bean>
+	<bean id="validatorMedical" parent="validatorTemplate">
+		<property name="formName" value="medical"/>
+	</bean>
+	<bean id="validatorMedicalWaiver" parent="validatorTemplate">
+		<property name="formName" value="medicalWaiver"/>
+	</bean>
+	<bean id="validatorReleaseWaiver" parent="validatorTemplate">
+		<property name="formName" value="releaseWaiver"/>
+	</bean>
+	<bean id="validatorRegistrationPayment" parent="validatorTemplate">
+		<property name="formName" value="registrationPayment"/>
 	</bean>
 
 </beans>

@@ -6,12 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 
-import org.appfuse.model.BaseObject;
-
 @Entity
 @Table(name="PARENTINFO")
 
-public class ParentInfo extends BaseObject implements Serializable {
+public class ParentInfo implements Serializable {
 
 	@Id
 	@Column(name = "USSA_ID", length=7)
@@ -130,27 +128,6 @@ public class ParentInfo extends BaseObject implements Serializable {
 	public void setParent2Relation(String parent2Relation)
 	{
 		this.parent2Relation = parent2Relation;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
