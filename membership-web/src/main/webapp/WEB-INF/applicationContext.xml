@@ -52,10 +52,17 @@
 		<property name="testMode" value="true"/>
 		<property name="login" value="3M7s8eKK6"/>
 		<property name="tranKey" value="7u86RL9PM4s4aRyF"/>
+		<!--<property name="testMode" value="false"/>-->
+		<!--<property name="login" value="3M7s8eKK6"/>-->
+		<!--<property name="tranKey" value="7u86RL9PM4s4aRyF"/>-->
 	</bean>
 
 	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="addressDao" ref="addressDao"/>
+		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="rulesBL" ref="rulesBL"/>
 	</bean>
 
 

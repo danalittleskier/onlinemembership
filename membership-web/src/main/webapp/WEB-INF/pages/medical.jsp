@@ -14,8 +14,8 @@
 	<legend>Primary Medical Insurance</legend>
 	<label>* Do you have medical insurance?</label>
 	<div class="radios">
-	<input name="citizen" id="have-medical-1" type="radio" value="yes" class="radio" onclick="document.getElementById('insurance').style.display = 'block'" /> <label for="have-medical-1" class="radio">Yes</label>
-	<input name="citizen" id="have-medical-2" type="radio" value="no" class="radio" onclick="document.getElementById('insurance').style.display = 'none'" /> <label for="have-medical-2" class="radio">No</label>
+		<form:radiobutton id="hasInsurance1"  path="hasInsurance" value="${true}" onclick="showHideInsurance()"/> <label for="hasInsurance1" class="radio">Yes</label>
+		<form:radiobutton id="hasInsurance2"  path="hasInsurance" value="${false}" onclick="showHideInsurance()"/> <label for="hasInsurance2" class="radio">No</label>
 	</div><br />
 	<div id="insurance" style="display:none;">
 		<label>* Insurance Company Name:</label>
@@ -26,6 +26,25 @@
 		<form:input path="memberLegal.insurancePhone"/><br />
 	</div>
 </fieldset>
+
+	<script type="text/javascript" defer="defer">
+		function showHideInsurance()
+		{
+			var hasInsuranceYes = document.getElementById('hasInsurance1');
+			var insuranceDiv = document.getElementById('insurance');
+
+			if(hasInsuranceYes.checked)
+			{
+				insuranceDiv.style.display = 'block';
+			}
+			else
+			{
+				insuranceDiv.style.display = 'none';
+			}
+		}
+
+		showHideInsurance();
+	</script>
 
 <fieldset class="buttons">
 	<label></label>

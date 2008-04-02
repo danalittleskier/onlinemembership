@@ -29,7 +29,7 @@ public class MemberLegal implements Serializable
 	private String insuranceWaiver;
 
 	@Column(name = "INSURANCE_WAIVER_DATE", nullable = true)
-	private String insuranceWaiverDate;
+	private Date insuranceWaiverDate;
 
 	@Column(name = "RELEASE_WAIVER", nullable = true, length = 1)
 	private String releaseWaiver;
@@ -88,12 +88,12 @@ public class MemberLegal implements Serializable
 		this.insuranceWaiver = insuranceWaiver;
 	}
 
-	public String getInsuranceWaiverDate()
+	public Date getInsuranceWaiverDate()
 	{
 		return insuranceWaiverDate;
 	}
 
-	public void setInsuranceWaiverDate(String insuranceWaiverDate)
+	public void setInsuranceWaiverDate(Date insuranceWaiverDate)
 	{
 		this.insuranceWaiverDate = insuranceWaiverDate;
 	}

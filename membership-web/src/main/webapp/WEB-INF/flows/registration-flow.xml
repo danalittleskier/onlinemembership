@@ -155,12 +155,16 @@
 
 	<view-state id="medical" view="medical">
 		<transition on="back" to="verification"/>
-		<transition on="next" to="medicalWaiver">
+		<transition on="next" to="skipMedicalWaiverDecision">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedical"/>
 			</action>
 		</transition>
 	</view-state>
+
+	<decision-state id="skipMedicalWaiverDecision">
+		<if test="${flowScope.accountBean.hasInsurance}" then="releaseWaiver" else="medicalWaiver"/>
+	</decision-state>
 
 	<view-state id="medicalWaiver" view="medicalWaiver">
 		<transition on="back" to="medical"/>
@@ -173,16 +177,11 @@
 
 	<view-state id="releaseWaiver" view="releaseWaiver">
 		<transition on="back" to="medicalWaiver"/>
-		<transition on="next" to="riskAgreement">
+		<transition on="next" to="loadPayment">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorReleaseWaiver"/>
 			</action>
 		</transition>
-	</view-state>
-
-	<view-state id="riskAgreement" view="riskAgreement">
-		<transition on="back" to="medicalWaiver"/>
-		<transition on="next" to="loadPayment"/>
 	</view-state>
 
 	<action-state id="loadPayment">

@@ -23,6 +23,10 @@
 			<constant-name>validWhenMemberIdNotPresent</constant-name>
 			<constant-value>((member.id != null) or (*this* != null))</constant-value>
 		</constant>
+		<constant>
+			<constant-name>validWhenNoInsurance</constant-name>
+			<constant-value>((hasInsurance == 'false') or (*this* != null))</constant-value>
+		</constant>
 	</global>
 	<formset>
 		<form name="fileUpload">
@@ -247,11 +251,21 @@
 		</form>
 
 		<form name="medical">
-			<field property="memberLegal.insuranceCompany" depends="required">
+			<field property="memberLegal.insuranceCompany" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.insurance.company.name" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenNoInsurance}</var-value>
+				</var>
 			</field>
-			<field property="memberLegal.insurancePolicy" depends="required">
+			<field property="memberLegal.insurancePolicy" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.policy.id.number" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenNoInsurance}</var-value>
+				</var>
 			</field>
 		</form>
 
