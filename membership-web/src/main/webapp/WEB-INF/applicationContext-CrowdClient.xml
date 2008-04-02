@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+    <bean id="propertyUtils" class="com.atlassian.crowd.util.PropertyUtils"/>
+
+    <bean id="clientProperties" class="com.atlassian.crowd.integration.service.soap.client.ClientProperties">
+        <constructor-arg ref="propertyUtils"/>
+    </bean>
+
+    <bean id="securityServerClient" class="com.atlassian.crowd.integration.service.soap.client.SecurityServerClientImpl">
+        <constructor-arg ref="clientProperties"/>
+    </bean>
+
+    <bean id="httpAuthenticator" class="com.atlassian.crowd.integration.http.HttpAuthenticatorImpl">
+        <constructor-arg ref="securityServerClient"/>
+    </bean>
+
+</beans>
+
