@@ -15,7 +15,7 @@
 		<legend>Payment Information</legend>
 		<label for="">USSA Registration Fees:</label>
 		<span class="data-input"><strong><c:out value="${accountBean.cartBean.total}" /></strong></span>
-		<input type="hidden" name="amount" value="<c:out value="${accountBean.cartBean.total}" />">
+<%--
 		<label for="">* Credit Card Type:</label>
 		<span class="multiselect-margin">
 		<select name="cardType">
@@ -26,45 +26,38 @@
 		<option>MasterCard</option>
 		</select><br />
 		</span>
+--%>
 		<label for="">* Credit Card Number:</label>
-		<input name="ccnum" type="text"  /><br />
+		<form:input path="paymentBean.cardNumber"/><br/>
 		<label for="fname">* First Name:</label>
-		<input name="" type="text"  /><br />
+		<form:input path="paymentBean.firstName"/>
 		<label for="lname">* Last Name:</label>
-		<input name="" type="text"  /><br />
+		<form:input path="paymentBean.lastName"/><br/>
 		<label for="">* Expiration Date:</label>
 		<span class="multiselect-margin">
-		<select name="month">
-			<option selected></option>
-			<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5</option>
-		<option>6</option>
-		<option>7</option>
-		<option>8</option>
-		<option>9</option>
-		<option>10</option>
-		<option>11</option>
-		<option>12</option>
-		</select>
-		<select name="year">
-			<option selected></option>
-			<option>2007</option>
-	<option>2008</option>
-	<option>2009</option>
-	<option>2010</option>
-	<option>2011</option>
-	<option>2012</option>
-	<option>2013</option>
-	<option>2014</option>
-	<option>2015</option>
-		</select><br />
+			<form:select path="paymentBean.expireMonth">
+				<form:option value=""></form:option>
+				<form:option value="01">1</form:option>
+				<form:option value="02">2</form:option>
+				<form:option value="03">3</form:option>
+				<form:option value="04">4</form:option>
+				<form:option value="05">5</form:option>
+				<form:option value="06">6</form:option>
+				<form:option value="07">7</form:option>
+				<form:option value="08">8</form:option>
+				<form:option value="09">9</form:option>
+				<form:option value="10">10</form:option>
+				<form:option value="11">11</form:option>
+				<form:option value="12">12</form:option>
+			</form:select>
+			<form:select path="paymentBean.expireYear">
+				<form:option value=""></form:option>
+				<form:options items="${accountBean.years}"/>
+			</form:select><br/>
 		</span>
 		<span class="textfield-short">
 		<label for="">* Security Code:</label>
-		<input name="" type="text" /><br />
+		<form:input path="paymentBean.securityCode"/><br/>
 		</span>
 	</fieldset>
 	<fieldset class="buttons">

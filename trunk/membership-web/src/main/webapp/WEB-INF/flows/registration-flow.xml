@@ -155,22 +155,51 @@
 
 	<view-state id="medical" view="medical">
 		<transition on="back" to="verification"/>
-		<transition on="next" to="medicalWaiver"/>
+		<transition on="next" to="medicalWaiver">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedical"/>
+			</action>
+		</transition>
 	</view-state>
 
 	<view-state id="medicalWaiver" view="medicalWaiver">
 		<transition on="back" to="medical"/>
-		<transition on="next" to="riskAgreement"/>
+		<transition on="next" to="releaseWaiver">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedicalWaiver"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<view-state id="releaseWaiver" view="releaseWaiver">
+		<transition on="back" to="medicalWaiver"/>
+		<transition on="next" to="riskAgreement">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorReleaseWaiver"/>
+			</action>
+		</transition>
 	</view-state>
 
 	<view-state id="riskAgreement" view="riskAgreement">
 		<transition on="back" to="medicalWaiver"/>
-		<transition on="next" to="registrationPayment"/>
+		<transition on="next" to="loadPayment"/>
 	</view-state>
+
+	<action-state id="loadPayment">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="paymentAction"/>
+		<transition on="*" to="registrationPayment"/>
+	</action-state>
 
 	<view-state id="registrationPayment" view="registrationPayment">
 		<transition on="back" to="verification"/>
-		<transition on="next" to="processOrder"/>
+		<transition on="next" to="processOrder">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorRegistrationPayment"/>
+			</action>
+		</transition>
 	</view-state>
 
 	<action-state id="processOrder">
@@ -183,6 +212,7 @@
 
 	<view-state id="registrationComplete" view="registrationComplete">
 		<transition on="back" to="registrationPayment"/>
+		<transition on="next" to="completion"/>
 	</view-state>
 
 	<end-state id="completion" view="mainMenu"/>

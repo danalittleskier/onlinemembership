@@ -1,11 +1,11 @@
 package org.ussa.spring.flows.registration;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.webflow.action.MultiAction;
@@ -14,13 +14,16 @@ import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
+import org.ussa.bl.RulesBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.NationDao;
+import org.ussa.dao.RecommendedMembershipsDao;
 import org.ussa.dao.StateDao;
+import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
@@ -28,6 +31,8 @@ import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
+import org.ussa.model.MemberLegal;
+import org.ussa.model.MemberLegalPk;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -39,6 +44,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private ClubDao clubDao;
 	private DivisionDao divisionDao;
 	private InventoryDao inventoryDao;
+	private RecommendedMembershipsDao recommendedMembershipsDao;
+	private MemberLegalDao memberLegalDao;
+	private RulesBL rulesBL;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
 	private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -64,6 +72,18 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.inventoryDao = inventoryDao;
 	}
+	public void setRecommendedMembershipsDao(RecommendedMembershipsDao recommendedMembershipsDao)
+	{
+		this.recommendedMembershipsDao = recommendedMembershipsDao;
+	}
+	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
+	{
+		this.memberLegalDao = memberLegalDao;
+	}
+	public void setRulesBL(RulesBL rulesBL)
+	{
+		this.rulesBL = rulesBL;
+	}
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
@@ -75,18 +95,26 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event findContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		String zId = context.getRequestParameters().get("id");
+		String idParam = context.getRequestParameters().get("id");
 
 		Long id = null;
-		if (zId != null)
+		if (idParam != null)
 		{
-			id = Long.parseLong(zId);
+			id = Long.parseLong(idParam);
 		}
+
+		String currentSeason = rulesBL.getCurrentRenewSeason();
+		String lastSeason = rulesBL.getLastSeason();
 
 		Member member = new Member();
 		ParentInfo parentInfo = new ParentInfo();
 		member.setParentInfo(parentInfo);
 		Address address = new Address();
+
+		MemberLegal memberLegal = new MemberLegal();
+		MemberLegalPk memberLegalPk = new MemberLegalPk();
+		memberLegalPk.setSeason(currentSeason);
+		memberLegal.setMemberLegalPk(memberLegalPk);
 
 		List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
 		accountBean.setUsStates(usStates);
@@ -120,6 +148,23 @@ public class RegistrationAction extends MultiAction implements Serializable
 			{
 				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
 			}
+
+			// prepopulate the cart with the recommended membership options
+			accountBean.setCartBean(new CartBean());
+			List<LineItemBean> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(currentSeason, member.getId(), lastSeason);
+			accountBean.getCartBean().setLineItems(recommendedMemberships);
+
+			memberLegalPk.setUssaId(member.getId());
+			MemberLegal tempMemberLegal = memberLegalDao.get(memberLegalPk);
+			if(tempMemberLegal != null)
+			{
+				accountBean.setMemberLegal(tempMemberLegal);
+			}
+			else
+			{
+				accountBean.setMemberLegal(memberLegal);
+			}
+
 			return result("renew");
 		}
 		else
@@ -127,6 +172,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 			//Member does not exist, do a register
 			accountBean.setAddress(address);
 			accountBean.setMember(member);
+			accountBean.setMemberLegal(memberLegal);
 			return result("register");
 		}
 	}
@@ -137,7 +183,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		String birthDate = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDate))
 		{
-			accountBean.getMember().setBirthDate(new java.sql.Date(formatter.parse(birthDate).getTime()));
+			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
 		return success();
 	}

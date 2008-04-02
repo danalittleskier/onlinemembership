@@ -1,17 +1,15 @@
 package org.ussa.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Id;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
-
-import org.appfuse.model.BaseObject;
 
 @Entity
 @Table(name = "DIVISION")
 
-public class Division extends BaseObject implements Serializable
+public class Division implements Serializable
 {
 	@Id
 	@Column(name = "DIVISION_CODE", nullable = false, length = 21)
@@ -42,27 +40,6 @@ public class Division extends BaseObject implements Serializable
 	public void setDescription(String description)
 	{
 		this.description = description;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

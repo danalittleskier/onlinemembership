@@ -466,9 +466,10 @@
         <servlet.version>2.4</servlet.version>
         <wiser.version>1.2</wiser.version>
 
-        <jdbc.artifactId>com.microsoft.jdbc-2000</jdbc.artifactId>
-        <jdbc.version>mssqlserver</jdbc.version>
-        <jdbc.driverClassName>com.microsoft.jdbc.sqlserver.SQLServerDriver</jdbc.driverClassName>
+		<jdbc.groupId>com.microsoft.jdbc-2000</jdbc.groupId>
+		<jdbc.artifactId>mssqlserver</jdbc.artifactId>
+		<jdbc.version>3.0</jdbc.version>
+		<jdbc.driverClassName>com.microsoft.jdbc.sqlserver.SQLServerDriver</jdbc.driverClassName>
 		<hibernate.dialect>org.hibernate.dialect.SQLServerDialect</hibernate.dialect>
 
 <!--      <dbunit.dataTypeFactoryName>org.dbunit.ext.mssql.MsSqlDataTypeFactory</dbunit.dataTypeFactoryName>-->

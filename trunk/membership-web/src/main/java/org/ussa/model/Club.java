@@ -9,22 +9,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Set;
 
-import org.appfuse.model.BaseObject;
-
-@NamedQueries({
-		})
-
 @Entity
 @Table(name = "MEMBER")
 
-public class Club extends BaseObject implements Serializable
+public class Club implements Serializable
 {
-	//Member table fields for a club
+
 	@Id
 	@Column(name = "USSA_ID")
 	private Long id;
@@ -54,9 +48,6 @@ public class Club extends BaseObject implements Serializable
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique = false)
 	private Division division;
 
-//    @Column(name = "EXPIRE_SEASON", nullable = true, length=4, unique=false)
-//    private String expireSeason;
-
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "MEMBERCLUB",
 			inverseJoinColumns = {@JoinColumn(name = "IND_USSA_ID")},
@@ -72,27 +63,6 @@ public class Club extends BaseObject implements Serializable
 	public void setId(Long id)
 	{
 		this.id = id;
-	}
-
-	@Override
-	public boolean equals(Object o)
-	{
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int hashCode()
-	{
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public String toString()
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	public String getName()

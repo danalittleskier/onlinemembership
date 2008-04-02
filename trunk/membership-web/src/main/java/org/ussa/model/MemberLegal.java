@@ -1,122 +1,120 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.util.Date;
 
 
 @Entity
-@Table (name="MEMBERLEGAL")
+@Table(name = "MEMBERLEGAL")
 
-public class MemberLegal implements Serializable {
+public class MemberLegal implements Serializable
+{
+	@EmbeddedId
+	MemberLegalPk memberLegalPk;
 
+	@Column(name = "INSURANCE_COMPANY", nullable = true, length = 50)
+	private String insuranceCompany;
 
-    // Memberhship Legal
+	@Column(name = "INSURANCE_POLICY", nullable = true, length = 20)
+	private String insurancePolicy;
 
-    private int mlUssaId;
-    private String season;
-    private String insuranceCompany;
-    private String insurancePolicy;
-    private String insurancePhone;
+	@Column(name = "INSURANCE_PHONE", nullable = true, length = 15)
+	private String insurancePhone;
 
+	@Column(name = "INSURANCE_WAIVER", nullable = true, length = 1)
+	private String insuranceWaiver;
 
-    public MemberLegal() {
-    }
+	@Column(name = "INSURANCE_WAIVER_DATE", nullable = true)
+	private String insuranceWaiverDate;
 
+	@Column(name = "RELEASE_WAIVER", nullable = true, length = 1)
+	private String releaseWaiver;
 
-    /**
-     * @return the mL_USSA_ID
-     */
-    @Id
-    @Column(name = "USSA_ID", nullable = false, length=5, unique=false)
-    public int getML_USSA_ID()
-    {
-        return mlUssaId;
-    }
-
-
-    /**
-     * @param ml_ussa_id the mL_USSA_ID to set
-     */
-    public void setML_USSA_ID(int ml_ussa_id)
-    {
-        mlUssaId = ml_ussa_id;
-    }
+	@Column(name = "RELEASE_WAIVER_DATE", nullable = true)
+	private Date releaseWaiverDate;
 
 
-    /**
-     * @return the sEASON
-     */
-    @Column(name = "SEASON", nullable = true, length=4, unique=false)
-    public String getSEASON()
-    {
-        return season;
-    }
+	public MemberLegalPk getMemberLegalPk()
+	{
+		return memberLegalPk;
+	}
 
+	public void setMemberLegalPk(MemberLegalPk memberLegalPk)
+	{
+		this.memberLegalPk = memberLegalPk;
+	}
 
-    /**
-     * @param season the sEASON to set
-     */
-    public void setSEASON(String season)
-    {
-        season = season;
-    }
+	public String getInsuranceCompany()
+	{
+		return insuranceCompany;
+	}
 
+	public void setInsuranceCompany(String insuranceCompany)
+	{
+		this.insuranceCompany = insuranceCompany;
+	}
 
-    /**
-     * @return the iNSURANCE_COMPANY
-     */
-    @Column(name = "INSURANCE_COMPANY", nullable = true, length=50, unique=false)
-    public String getINSURANCE_COMPANY()
-    {
-        return insuranceCompany;
-    }
+	public String getInsurancePolicy()
+	{
+		return insurancePolicy;
+	}
 
+	public void setInsurancePolicy(String insurancePolicy)
+	{
+		this.insurancePolicy = insurancePolicy;
+	}
 
-    /**
-     * @param insurance_company the iNSURANCE_COMPANY to set
-     */
-    public void setINSURANCE_COMPANY(String insurance_company)
-    {
-        insuranceCompany = insurance_company;
-    }
+	public String getInsurancePhone()
+	{
+		return insurancePhone;
+	}
 
+	public void setInsurancePhone(String insurancePhone)
+	{
+		this.insurancePhone = insurancePhone;
+	}
 
-    /**
-     * @return the iNSURANCE_POLICY
-     */
-    @Column(name = "INSURANCE_POLICY", nullable = true, length=20, unique=false)
-    public String getINSURANCE_POLICY()
-    {
-        return insurancePolicy;
-    }
+	public String getInsuranceWaiver()
+	{
+		return insuranceWaiver;
+	}
 
+	public void setInsuranceWaiver(String insuranceWaiver)
+	{
+		this.insuranceWaiver = insuranceWaiver;
+	}
 
-    /**
-     * @param insurance_policy the iNSURANCE_POLICY to set
-     */
-    public void setINSURANCE_POLICY(String insurance_policy)
-    {
-        insurancePolicy = insurance_policy;
-    }
+	public String getInsuranceWaiverDate()
+	{
+		return insuranceWaiverDate;
+	}
 
+	public void setInsuranceWaiverDate(String insuranceWaiverDate)
+	{
+		this.insuranceWaiverDate = insuranceWaiverDate;
+	}
 
-    /**
-     * @return the iNSURANCE_PHONE
-     */
-    @Column(name = "INSURANCE_PHONE", nullable = true, length=15, unique=false)
-    public String getINSURANCE_PHONE()
-    {
-        return insurancePhone;
-    }
+	public String getReleaseWaiver()
+	{
+		return releaseWaiver;
+	}
 
+	public void setReleaseWaiver(String releaseWaiver)
+	{
+		this.releaseWaiver = releaseWaiver;
+	}
 
-    /**
-     * @param insurance_phone the iNSURANCE_PHONE to set
-     */
-    public void setINSURANCE_PHONE(String insurance_phone)
-    {
-        insurancePhone = insurance_phone;
-    }
+	public Date getReleaseWaiverDate()
+	{
+		return releaseWaiverDate;
+	}
 
-
+	public void setReleaseWaiverDate(Date releaseWaiverDate)
+	{
+		this.releaseWaiverDate = releaseWaiverDate;
+	}
 }

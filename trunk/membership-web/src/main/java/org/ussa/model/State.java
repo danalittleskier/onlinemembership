@@ -1,79 +1,58 @@
 package org.ussa.model;
 
-import java.io.*;
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-import org.appfuse.model.BaseObject;
-
-@NamedQueries ({
-})
+@NamedQueries({
+		})
 
 @Entity
-@Table (name="STATE")
+@Table(name = "STATE")
 
-public class State extends BaseObject implements Serializable
+public class State implements Serializable
 {
-    //Member table fields for a club
-    @Id
-    @Column(name = "CODE", length=2)
-    private String id;
+	@Id
+	@Column(name = "CODE", length = 2)
+	private String id;
 
-    @Column(name = "DESCRIPTION", nullable = true, length=30)
-    private String description;
+	@Column(name = "DESCRIPTION", nullable = true, length = 30)
+	private String description;
 
-    @Column(name = "USstate", nullable = true, length=2, unique=false)
-    private String us;
+	@Column(name = "USstate", nullable = true, length = 2, unique = false)
+	private String us;
 
-    @Override
-    public boolean equals(Object o)
-    {
-        // TODO Auto-generated method stub
-        return false;
-    }
+	public String getId()
+	{
+		return id;
+	}
 
-    @Override
-    public int hashCode()
-    {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+	public void setId(String id)
+	{
+		this.id = id;
+	}
 
-    @Override
-    public String toString()
-    {
-        // TODO Auto-generated method stub
-        return null;
-    }
+	public String getDescription()
+	{
+		return description;
+	}
 
-    public String getId()
-    {
-        return id;
-    }
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
 
-    public void setId(String id)
-    {
-        this.id = id;
-    }
+	public String getUs()
+	{
+		return us;
+	}
 
-    public String getDescription()
-    {
-        return description;
-    }
-
-    public void setDescription(String description)
-    {
-        this.description = description;
-    }
-
-    public String getUs()
-    {
-        return us;
-    }
-
-    public void setUs(String us)
-    {
-        this.us = us;
-    }
-
+	public void setUs(String us)
+	{
+		this.us = us;
+	}
 
 }
