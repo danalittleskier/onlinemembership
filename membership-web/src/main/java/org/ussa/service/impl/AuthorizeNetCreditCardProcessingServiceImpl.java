@@ -11,13 +11,13 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.ussa.beans.PaymentBean;
 import org.ussa.beans.AccountBean;
-import org.ussa.exception.CreditCardDeclinedException;
-import org.ussa.exception.CreditCardException;
-import org.ussa.service.CreditCardProcessingService;
-import org.ussa.model.Member;
+import org.ussa.beans.PaymentBean;
 import org.ussa.model.Address;
+import org.ussa.model.Member;
+import org.ussa.service.CreditCardProcessingService;
+import org.ussa.exception.CreditCardException;
+import org.ussa.exception.CreditCardDeclinedException;
 
 public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardProcessingService
 {
@@ -67,7 +67,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 
 		Member member = accountBean.getMember();
 		Address address = accountBean.getAddress();
-		// address values. these are not optional
+		// address values. these are optional
 		appendParam(params, "x_first_name", member.getFirstName(), 50);
 		appendParam(params, "x_last_name", member.getLastName(), 50);
 		appendParam(params, "x_address", address.getDeliveryAddress(), 60);
@@ -78,7 +78,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		appendParam(params, "x_phone", address.getPhoneHome(), 25);
 
 		// cc values
-		appendParam(params, "x_amount", paymentBean.getAmount());
+		appendParam(params, "x_amount", accountBean.getCartBean().getTotal().toString());
 		appendParam(params, "x_card_num", paymentBean.getCardNumber(), 22);
 		appendParam(params, "x_exp_date", paymentBean.getExpireMonth() + paymentBean.getExpireYear());
 		appendParam(params, "x_card_code", paymentBean.getSecurityCode(), 6);
@@ -89,11 +89,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		if (log.isDebugEnabled()) log.debug("Gateway Request: " + params.toString());
 
 		// open secure connection
-		URL url;
-		if (testMode)
-			url = new URL("https://test.authorize.net/gateway/transact.dll");
-		else
-			url = new URL("https://secure.authorize.net/gateway/transact.dll");
+		URL url = new URL("https://secure.authorize.net/gateway/transact.dll");
 
 		URLConnection connection = url.openConnection();
 		connection.setDoOutput(true);

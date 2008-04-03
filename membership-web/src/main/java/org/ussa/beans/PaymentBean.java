@@ -2,6 +2,7 @@ package org.ussa.beans;
 
 public class PaymentBean
 {
+	private String paymentType;
 	private String amount;
 	private String cardNumber;
 	private String expireMonth;
@@ -9,6 +10,17 @@ public class PaymentBean
 	private String securityCode;
 
 	private String completedTransactionId;
+
+
+	public String getPaymentType()
+	{
+		return paymentType;
+	}
+
+	public void setPaymentType(String paymentType)
+	{
+		this.paymentType = paymentType;
+	}
 
 	public String getAmount()
 	{
