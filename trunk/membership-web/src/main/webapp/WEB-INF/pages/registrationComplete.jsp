@@ -18,7 +18,7 @@
 				<div></div>
 				<p>
 					Membership Registration:
-					<c:out value="${accountBean.cartBean.totalCost}"/>
+					<c:out value="${accountBean.cartBean.total}"/>
 					<br/>
 					Registration Details:
 					<c:out value="${accountBean.paymentTransactionCode}"/>

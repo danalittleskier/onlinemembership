@@ -36,10 +36,8 @@
 	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-
-	<!-- Add Managers here -->
-	<bean id="memberManager" class="org.ussa.manager.impl.MemberManagerImpl">
-		<constructor-arg ref="memberDao"/>
+	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
 	</bean>
 
 	<!-- Add business logic classes here-->
@@ -51,18 +49,19 @@
 	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
 		<property name="testMode" value="true"/>
 		<property name="login" value="3M7s8eKK6"/>
-		<property name="tranKey" value="7u86RL9PM4s4aRyF"/>
+		<property name="tranKey" value="57wHJDb4865yc935"/>
 		<!--<property name="testMode" value="false"/>-->
 		<!--<property name="login" value="3M7s8eKK6"/>-->
 		<!--<property name="tranKey" value="7u86RL9PM4s4aRyF"/>-->
 	</bean>
 
 	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
+		<property name="rulesBL" ref="rulesBL"/>
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="addressDao" ref="addressDao"/>
 		<property name="memberLegalDao" ref="memberLegalDao"/>
-		<property name="rulesBL" ref="rulesBL"/>
+		<property name="batchTransactionDao" ref="batchTransactionDao"/>
 	</bean>
 
 

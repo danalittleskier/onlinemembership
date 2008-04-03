@@ -9,6 +9,7 @@ public class LineItemBean
 	Inventory inventory;
 	String description;
 	BigDecimal amount;
+	Integer qty;
 
 	public Inventory getInventory()
 	{
@@ -18,16 +19,6 @@ public class LineItemBean
 	public void setInventory(Inventory inventory)
 	{
 		this.inventory = inventory;
-	}
-
-	public BigDecimal getAmount()
-	{
-		return amount;
-	}
-
-	public void setAmount(BigDecimal amount)
-	{
-		this.amount = amount;
 	}
 
 	public String getDescription()
@@ -40,4 +31,23 @@ public class LineItemBean
 		this.description = description;
 	}
 
+	public BigDecimal getAmount()
+	{
+		return amount;
+	}
+
+	public void setAmount(BigDecimal amount)
+	{
+		this.amount = amount;
+	}
+
+	public Integer getQty()
+	{
+		return qty;
+	}
+
+	public void setQty(Integer qty)
+	{
+		this.qty = qty;
+	}
 }

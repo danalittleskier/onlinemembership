@@ -1,4 +1,17 @@
 <%@ include file="/common/taglibs.jsp"%>
+<head>
+	<script type="text/javascript">
+		function disableButtons(form)
+		{
+			var continueButton = document.getElementById("continueButton");
+			continueButton.value = "Processing ...";
+//			continueButton.disabled = true;
+			var backButton = document.getElementById("backButton");
+//			backButton.disabled = true;
+		}
+	</script>
+</head>
+
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_5.gif'/>" width="917" height="53" /></div>
@@ -7,7 +20,7 @@
 
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
-<form:form commandName="accountBean" name="accountBean">
+<form:form commandName="accountBean" name="accountBean" onsubmit="disableButtons(this)">
 
 <%@ include file="/includes/messages.jsp"%>
 
@@ -15,18 +28,14 @@
 		<legend>Payment Information</legend>
 		<label for="">USSA Registration Fees:</label>
 		<span class="data-input"><strong><c:out value="${accountBean.cartBean.total}" /></strong></span>
-<%--
 		<label for="">* Credit Card Type:</label>
 		<span class="multiselect-margin">
-		<select name="cardType">
-			<option selected></option>
-			<option>Visa</option>
-		<option>Amex</option>
-		<option>Discover</option>
-		<option>MasterCard</option>
-		</select><br />
+			<form:select path="paymentBean.paymentType">
+				<form:option value=""></form:option>
+				<form:option value="Visa">Visa</form:option>
+				<form:option value="MasterCard">MasterCard</form:option>
+			</form:select><br/>
 		</span>
---%>
 		<label for="">* Credit Card Number:</label>
 		<form:input path="paymentBean.cardNumber"/><br/>
 		<label for="">* Expiration Date:</label>
@@ -59,8 +68,8 @@
 	<fieldset class="buttons">
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
-		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue">
+		<input id="backButton" type="submit" class="btn-green" name="_eventId_back" value="Back">
 	</fieldset>
 </form:form>
 </div>

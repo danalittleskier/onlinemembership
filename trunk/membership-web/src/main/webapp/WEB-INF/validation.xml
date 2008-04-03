@@ -290,6 +290,9 @@
 		</form>
 
 		<form name="registrationPayment">
+			<field property="paymentBean.paymentType" depends="required">
+				<arg0 key="label.credit.card.type" />
+			</field>
 			<field property="paymentBean.cardNumber" depends="required, creditCard">
 				<arg0 key="label.credit.card.number" />
 			</field>
