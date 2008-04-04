@@ -15,4 +15,6 @@ public interface InventoryDao extends GenericDao<Inventory, String>
 	public List<Inventory> getAllMembershipsByCriteria(Integer age, String sportCode);
 
 	public List<Inventory> getIventoryByType(String inventoryType);
+
+	public List<Inventory> getIventoryByTypeAndSportCode(String inventoryType, String sportCode);
 }

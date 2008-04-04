@@ -17,14 +17,14 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
 
 	public List<Inventory> getAllMembershipTypes()
 	{
-		StringBuilder query = new StringBuilder("select i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' order by i.description asc");
+		StringBuilder query = new StringBuilder("select i from Inventory i where inventoryType='MEMBERSHIP' and i.active='Y' order by i.description asc");
 		List<Inventory> objs = getHibernateTemplate().find(query.toString());
 		return objs;
 	}
 
 	public List<Inventory> getAllMembershipsByAge(Integer age)
 	{
-		StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' ");
+		StringBuilder query = new StringBuilder("select distinct i from Inventory i where inventoryType='MEMBERSHIP' and i.active='Y' ");
 		if (age != null)
 		{
 			query.append(" and (i.ageFrom <= '").append(age).append("' or i.ageFrom is null)");
@@ -36,7 +36,7 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
 
 	public List<Inventory> getAllMembershipsByCriteria(Integer age, String sportCode)
 	{
-		StringBuilder query = new StringBuilder("select distinct i from Inventory i where lower(inventoryType)='membership' and lower(i.active)='y' ");
+		StringBuilder query = new StringBuilder("select distinct i from Inventory i where inventoryType='MEMBERSHIP' and i.active='Y' ");
 		if (age != null)
 		{
 			query.append(" and (i.ageFrom <= '").append(age).append("' or i.ageFrom is null)");
@@ -53,7 +53,17 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
 
 	public List<Inventory> getIventoryByType(String inventoryType)
 	{
-		StringBuilder query = new StringBuilder("select i from Inventory i where lower(inventoryType)='").append(inventoryType).append("' and lower(i.active)='y' ");
+		StringBuilder query = new StringBuilder("select i from Inventory i where inventoryType='")
+				.append(inventoryType).append("' and i.active='Y' ");
+
+		List<Inventory> list = getHibernateTemplate().find(query.toString());
+		return list;
+	}
+
+	public List<Inventory> getIventoryByTypeAndSportCode(String inventoryType, String sportCode)
+	{
+		StringBuilder query = new StringBuilder("select i from Inventory i where inventoryType='")
+				.append(inventoryType).append("' and sportCode='").append(sportCode).append("' and i.active='Y' ");
 
 		List<Inventory> list = getHibernateTemplate().find(query.toString());
 		return list;

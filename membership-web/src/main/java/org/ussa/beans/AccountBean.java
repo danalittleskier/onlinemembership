@@ -19,6 +19,7 @@ public class AccountBean
 
 	private CartBean cartBean = new CartBean();
 	private PaymentBean paymentBean = new PaymentBean();
+	private ExtrasBean extrasBean = new ExtrasBean();
 
 	//Helper fields for binding, not persisited...
 	private String birthDate;
@@ -206,6 +207,16 @@ public class AccountBean
 	public void setPaymentBean(PaymentBean paymentBean)
 	{
 		this.paymentBean = paymentBean;
+	}
+
+	public ExtrasBean getExtrasBean()
+	{
+		return extrasBean;
+	}
+
+	public void setExtrasBean(ExtrasBean extrasBean)
+	{
+		this.extrasBean = extrasBean;
 	}
 
 	public String getContributionAmount()

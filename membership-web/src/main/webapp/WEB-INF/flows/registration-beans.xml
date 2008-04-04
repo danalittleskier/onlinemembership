@@ -30,6 +30,7 @@
 				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
 				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
 				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
+				<entry key="validatorAddExtras" value-ref="validatorAddExtras"/>
 				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
 				<entry key="validatorMedical" value-ref="validatorMedical"/>
 				<entry key="validatorMedicalWaiver" value-ref="validatorMedicalWaiver"/>
@@ -51,6 +52,9 @@
 	</bean>
 	<bean id="validatorSportMembershipNext" parent="validatorTemplate">
 		<property name="formName" value="sportMembershipNext"/>
+	</bean>
+	<bean id="validatorAddExtras" parent="validatorTemplate">
+		<property name="formName" value="extras"/>
 	</bean>
 	<bean id="validatorMedical" parent="validatorTemplate">
 		<property name="formName" value="medical"/>

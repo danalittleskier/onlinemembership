@@ -14,6 +14,7 @@ import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
+import org.ussa.beans.ExtrasBean;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
@@ -322,6 +323,61 @@ public class RegistrationAction extends MultiAction implements Serializable
 		}
 
 		return result("back");
+	}
+
+	public Event loadExtras(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		ExtrasBean extrasBean = accountBean.getExtrasBean();
+
+//		extrasBean.setAlpineOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_ALP));
+//		extrasBean.setFreestyleOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_BRD));
+//		extrasBean.setCrossCountryOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_XC));
+//		extrasBean.setJumpingOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_JNC));
+//		extrasBean.setBoardingOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_BRD));
+//		extrasBean.setGeneralOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_ALL));
+
+//		extrasBean.setDecal1Options(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_));
+//		extrasBean.setDecal2Options(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_));
+
+		return success();
+	}
+
+	public Event addExtras(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		ExtrasBean extrasBean = accountBean.getExtrasBean();
+		CartBean cartBean = accountBean.getCartBean();
+
+		handleOption(cartBean, extrasBean.getAlpineOption(), extrasBean.getAlpineQty());
+		handleOption(cartBean, extrasBean.getFreestyleOption(), extrasBean.getFreestyleQty());
+		handleOption(cartBean, extrasBean.getCrossCountryOption(), extrasBean.getCrossCountryQty());
+		handleOption(cartBean, extrasBean.getJumpingOption(), extrasBean.getJumpingQty());
+		handleOption(cartBean, extrasBean.getBoardingOption(), extrasBean.getBoardingQty());
+		handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
+		handleOption(cartBean, extrasBean.getDecal1Option(), extrasBean.getDecal1Qty());
+		handleOption(cartBean, extrasBean.getDecal2Option(), extrasBean.getDecal2Qty());
+
+		// clear the extras bean the quick and dirty way
+		accountBean.setExtrasBean(new ExtrasBean());
+
+		return success();
+	}
+
+	private void handleOption(CartBean cartBean, String invId, String qty)
+	{
+		if(StringUtils.isNotBlank(invId))
+		{
+			Inventory inventory = inventoryDao.get(invId);
+			if(StringUtils.isNotBlank(qty))
+			{
+				cartBean.addItem(inventory, new Integer(qty));
+			}
+			else
+			{
+				cartBean.addItem(inventory);
+			}
+		}
 	}
 
 }
