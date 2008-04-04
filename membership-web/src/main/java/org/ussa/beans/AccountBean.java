@@ -2,13 +2,13 @@ package org.ussa.beans;
 
 import java.util.List;
 
+import org.ussa.model.Address;
 import org.ussa.model.Club;
+import org.ussa.model.Inventory;
 import org.ussa.model.Member;
+import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
-import org.ussa.model.Address;
-import org.ussa.model.Inventory;
-import org.ussa.model.MemberLegal;
 
 public class AccountBean
 {
@@ -22,12 +22,13 @@ public class AccountBean
 	private ExtrasBean extrasBean = new ExtrasBean();
 
 	//Helper fields for binding, not persisited...
+	private int age;
 	private String birthDate;
 	private Long clubId;
 	private String membershipId;
 	private String sportId;
-	private boolean usCitizen;
-	private boolean hasInsurance;
+	private Boolean usCitizen;
+	private Boolean hasInsurance;
 
 	//Reference Data fields.  Do not save when done:
 	private List<State> usStates;
@@ -36,18 +37,7 @@ public class AccountBean
 	private List<Inventory> memberships;// inventory - memberships
 	private List<Integer> years;
 
-	private String paymentTransactionCode;
 	private String contributionAmount;
-
-	public String getPaymentTransactionCode()
-	{
-		return paymentTransactionCode;
-	}
-
-	public void setPaymentTransactionCode(String paymentTransactionCode)
-	{
-		this.paymentTransactionCode = paymentTransactionCode;
-	}
 
 	public Member getMember()
 	{
@@ -79,6 +69,16 @@ public class AccountBean
 		this.memberLegal = memberLegal;
 	}
 
+	public int getAge()
+	{
+		return age;
+	}
+
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
+
 	public String getBirthDate()
 	{
 		return birthDate;
@@ -89,12 +89,12 @@ public class AccountBean
 		this.birthDate = birthDate;
 	}
 
-	public boolean getUsCitizen()
+	public Boolean getUsCitizen()
 	{
 		return usCitizen;
 	}
 
-	public void setUsCitizen(boolean usCitizen)
+	public void setUsCitizen(Boolean usCitizen)
 	{
 		this.usCitizen = usCitizen;
 	}
@@ -104,12 +104,12 @@ public class AccountBean
 		return usStates;
 	}
 
-	public boolean getHasInsurance()
+	public Boolean getHasInsurance()
 	{
 		return hasInsurance;
 	}
 
-	public void setHasInsurance(boolean hasInsurance)
+	public void setHasInsurance(Boolean hasInsurance)
 	{
 		this.hasInsurance = hasInsurance;
 	}

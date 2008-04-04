@@ -171,39 +171,19 @@
 	</div>
 	<div class="decal-menu-1">
 		<div class="decal-pack">
-			<label>Qty / Price:
-				<select>
-					<option selected></option>
-					<option value="">5 for $5</option>
-					<option value="">12 for $10</option>
-					<option value="">20 for $15</option>
-				</select>
+			<label>Qty:
+				<input type="hidden" name="extrasBean.decalBoardOption" value="DECSB"/>
+				<form:input path="extrasBean.decalBoardQty"/>
 			</label>
 		</div>
-		<!-- Hide for now ...
-		<div class="decal-qty">
-		<label>Qty:
-			<input name="" type="text" value="" /></label>
-		</div>
-		... End Hiding -->
 	</div>
 	<div class="decal-menu-2">
 		<div class="decal-pack">
-			<label>Qty / Price:
-				<select>
-					<option selected></option>
-					<option value="">5 for $5</option>
-					<option value="">12 for $10</option>
-					<option value="">20 for $15</option>
-				</select>
+			<label>Qty:
+				<input type="hidden" name="extrasBean.decalSkiOption" value="DECSKI"/>
+				<form:input path="extrasBean.decalSkiQty"/>
 			</label>
 		</div>
-		<!-- Hide for now ...
-		<div class="decal-qty">
-		<label>Qty:
-			<input name="" type="text" value="" /></label>
-		</div>
-		... End Hiding -->
 	</div>
 </div>
 <p style="text-align:center; clear:both;"><em>Bonus Packs not available for shipment outside the U.S. <br />

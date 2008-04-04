@@ -154,6 +154,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 			{
 				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
 			}
+			accountBean.setAge(rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate()));
 
 			// prepopulate the cart with the recommended membership options
 			accountBean.setCartBean(new CartBean());
@@ -191,6 +192,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
+		accountBean.setAge(rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate()));
 		return success();
 	}
 
@@ -242,7 +244,8 @@ public class RegistrationAction extends MultiAction implements Serializable
 		List<Inventory> memberships = new ArrayList<Inventory>();
 		if (StringUtils.isNotBlank(accountBean.getSportId()))
 		{
-			memberships = inventoryDao.getAllMembershipsByCriteria(accountBean.getMember().getAge(), accountBean.getSportId());
+			int age = rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+			memberships = inventoryDao.getAllMembershipsByCriteria(age, accountBean.getSportId());
 			filterMembershipsThatAlreadyAreInCart(memberships, accountBean.getCartBean());
 		}
 
@@ -325,24 +328,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("back");
 	}
 
-	public Event loadExtras(RequestContext context) throws Exception
-	{
-		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		ExtrasBean extrasBean = accountBean.getExtrasBean();
-
-//		extrasBean.setAlpineOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_ALP));
-//		extrasBean.setFreestyleOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_BRD));
-//		extrasBean.setCrossCountryOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_XC));
-//		extrasBean.setJumpingOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_JNC));
-//		extrasBean.setBoardingOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_BRD));
-//		extrasBean.setGeneralOptions(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_ALL));
-
-//		extrasBean.setDecal1Options(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_));
-//		extrasBean.setDecal2Options(inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_BONUS_PACK, Inventory.SPORT_CODE_));
-
-		return success();
-	}
-
 	public Event addExtras(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
@@ -355,8 +340,8 @@ public class RegistrationAction extends MultiAction implements Serializable
 		handleOption(cartBean, extrasBean.getJumpingOption(), extrasBean.getJumpingQty());
 		handleOption(cartBean, extrasBean.getBoardingOption(), extrasBean.getBoardingQty());
 		handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
-		handleOption(cartBean, extrasBean.getDecal1Option(), extrasBean.getDecal1Qty());
-		handleOption(cartBean, extrasBean.getDecal2Option(), extrasBean.getDecal2Qty());
+		handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
+		handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
 
 		// clear the extras bean the quick and dirty way
 		accountBean.setExtrasBean(new ExtrasBean());
@@ -372,10 +357,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 			if(StringUtils.isNotBlank(qty))
 			{
 				cartBean.addItem(inventory, new Integer(qty));
-			}
-			else
-			{
-				cartBean.addItem(inventory);
 			}
 		}
 	}

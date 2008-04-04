@@ -1,53 +1,31 @@
 package org.ussa.beans;
 
-import java.util.List;
-
-import org.ussa.model.Inventory;
-
 public class ExtrasBean
 {
-	private List<Inventory> alpineOptions;
 	private String alpineOption;
 	private String alpineQty;
 
-	private List<Inventory> freestyleOptions;
 	private String freestyleOption;
 	private String freestyleQty;
 
-	private List<Inventory> crossCountryOptions;
 	private String crossCountryOption;
 	private String crossCountryQty;
 
-	private List<Inventory> jumpingOptions;
 	private String jumpingOption;
 	private String jumpingQty;
 
-	private List<Inventory> boardingOptions;
 	private String boardingOption;
 	private String boardingQty;
 
-	private List<Inventory> generalOptions;
 	private String generalOption;
 	private String generalQty;
 
-	private List<Inventory> decal1Options;
-	private String decal1Option;
-	private String decal1Qty;
+	private String decalSkiOption;
+	private String decalSkiQty;
 
-	private List<Inventory> decal2Options;
-	private String decal2Option;
-	private String decal2Qty;
+	private String decalBoardOption;
+	private String decalBoardQty;
 
-
-	public List<Inventory> getAlpineOptions()
-	{
-		return alpineOptions;
-	}
-
-	public void setAlpineOptions(List<Inventory> alpineOptions)
-	{
-		this.alpineOptions = alpineOptions;
-	}
 
 	public String getAlpineOption()
 	{
@@ -67,16 +45,6 @@ public class ExtrasBean
 	public void setAlpineQty(String alpineQty)
 	{
 		this.alpineQty = alpineQty;
-	}
-
-	public List<Inventory> getFreestyleOptions()
-	{
-		return freestyleOptions;
-	}
-
-	public void setFreestyleOptions(List<Inventory> freestyleOptions)
-	{
-		this.freestyleOptions = freestyleOptions;
 	}
 
 	public String getFreestyleOption()
@@ -99,16 +67,6 @@ public class ExtrasBean
 		this.freestyleQty = freestyleQty;
 	}
 
-	public List<Inventory> getCrossCountryOptions()
-	{
-		return crossCountryOptions;
-	}
-
-	public void setCrossCountryOptions(List<Inventory> crossCountryOptions)
-	{
-		this.crossCountryOptions = crossCountryOptions;
-	}
-
 	public String getCrossCountryOption()
 	{
 		return crossCountryOption;
@@ -127,16 +85,6 @@ public class ExtrasBean
 	public void setCrossCountryQty(String crossCountryQty)
 	{
 		this.crossCountryQty = crossCountryQty;
-	}
-
-	public List<Inventory> getJumpingOptions()
-	{
-		return jumpingOptions;
-	}
-
-	public void setJumpingOptions(List<Inventory> jumpingOptions)
-	{
-		this.jumpingOptions = jumpingOptions;
 	}
 
 	public String getJumpingOption()
@@ -159,16 +107,6 @@ public class ExtrasBean
 		this.jumpingQty = jumpingQty;
 	}
 
-	public List<Inventory> getBoardingOptions()
-	{
-		return boardingOptions;
-	}
-
-	public void setBoardingOptions(List<Inventory> boardingOptions)
-	{
-		this.boardingOptions = boardingOptions;
-	}
-
 	public String getBoardingOption()
 	{
 		return boardingOption;
@@ -187,16 +125,6 @@ public class ExtrasBean
 	public void setBoardingQty(String boardingQty)
 	{
 		this.boardingQty = boardingQty;
-	}
-
-	public List<Inventory> getGeneralOptions()
-	{
-		return generalOptions;
-	}
-
-	public void setGeneralOptions(List<Inventory> generalOptions)
-	{
-		this.generalOptions = generalOptions;
 	}
 
 	public String getGeneralOption()
@@ -219,63 +147,43 @@ public class ExtrasBean
 		this.generalQty = generalQty;
 	}
 
-	public List<Inventory> getDecal1Options()
+	public String getDecalSkiOption()
 	{
-		return decal1Options;
+		return decalSkiOption;
 	}
 
-	public void setDecal1Options(List<Inventory> decal1Options)
+	public void setDecalSkiOption(String decalSkiOption)
 	{
-		this.decal1Options = decal1Options;
+		this.decalSkiOption = decalSkiOption;
 	}
 
-	public String getDecal1Option()
+	public String getDecalSkiQty()
 	{
-		return decal1Option;
+		return decalSkiQty;
 	}
 
-	public void setDecal1Option(String decal1Option)
+	public void setDecalSkiQty(String decalSkiQty)
 	{
-		this.decal1Option = decal1Option;
+		this.decalSkiQty = decalSkiQty;
 	}
 
-	public String getDecal1Qty()
+	public String getDecalBoardOption()
 	{
-		return decal1Qty;
+		return decalBoardOption;
 	}
 
-	public void setDecal1Qty(String decal1Qty)
+	public void setDecalBoardOption(String decalBoardOption)
 	{
-		this.decal1Qty = decal1Qty;
+		this.decalBoardOption = decalBoardOption;
 	}
 
-	public List<Inventory> getDecal2Options()
+	public String getDecalBoardQty()
 	{
-		return decal2Options;
+		return decalBoardQty;
 	}
 
-	public void setDecal2Options(List<Inventory> decal2Options)
+	public void setDecalBoardQty(String decalBoardQty)
 	{
-		this.decal2Options = decal2Options;
-	}
-
-	public String getDecal2Option()
-	{
-		return decal2Option;
-	}
-
-	public void setDecal2Option(String decal2Option)
-	{
-		this.decal2Option = decal2Option;
-	}
-
-	public String getDecal2Qty()
-	{
-		return decal2Qty;
-	}
-
-	public void setDecal2Qty(String decal2Qty)
-	{
-		this.decal2Qty = decal2Qty;
+		this.decalBoardQty = decalBoardQty;
 	}
 }
