@@ -15,17 +15,17 @@ public class CartBean
 
 	public void addItem(Inventory inventory)
 	{
-		addItem(inventory, null, null);
+		addItem(inventory, null, null, null);
 	}
 	public void addItem(Inventory inventory, BigDecimal cost)
 	{
-		addItem(inventory, cost, null);
+		addItem(inventory, cost, null, null);
 	}
 	public void addItem(Inventory inventory, Integer qty)
 	{
-		addItem(inventory, null, qty);
+		addItem(inventory, null, null, qty);
 	}
-	public void addItem(Inventory inventory, BigDecimal cost, Integer qty)
+	public void addItem(Inventory inventory, BigDecimal cost, BigDecimal discount, Integer qty)
 	{
 		LineItemBean lineItem = new LineItemBean();
 		lineItem.setInventory(inventory);
@@ -46,6 +46,8 @@ public class CartBean
 			}
 		}
 
+		lineItem.setDiscount(discount);
+
 		if(qty != null)
 		{
 			lineItem.setQty(qty);
@@ -56,7 +58,7 @@ public class CartBean
 		}
 
 		LineItemBean existingLineItem = getLineItem(inventory.getId());
-		if(existingLineItem != null && existingLineItem.getAmount().equals(lineItem.getAmount()))
+		if(existingLineItem != null && existingLineItem.getDiscountedAmount().equals(lineItem.getDiscountedAmount()))
 		{
 			Integer existingQty = existingLineItem.getQty();
 			existingQty += lineItem.getQty();
@@ -107,7 +109,7 @@ public class CartBean
 		BigDecimal total = BigDecimal.ZERO;
 		for (LineItemBean lineItemBean : lineItems)
 		{
-			total = total.add(lineItemBean.getAmount().multiply(new BigDecimal(lineItemBean.getQty())));
+			total = total.add(lineItemBean.getDiscountedAmount().multiply(new BigDecimal(lineItemBean.getQty())));
 		}
 		return total;
 	}
