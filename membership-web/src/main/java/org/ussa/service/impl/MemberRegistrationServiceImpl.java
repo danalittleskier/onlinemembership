@@ -81,7 +81,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			memberTransaction.setSeason(currentSeason);
 			memberTransaction.setInvId(lineItem.getInventory().getId());
 			memberTransaction.setQty(lineItem.getQty());
-			memberTransaction.setAmount(lineItem.getAmount());
+			memberTransaction.setAmount(lineItem.getDiscountedAmount());
 			memberTransaction.setSentDate(null);
 			memberTransaction.setPurchaseDate(new Date());
 			// TODO: save these

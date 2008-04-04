@@ -10,6 +10,7 @@ public class LineItemBean
 	Inventory inventory;
 	String description;
 	BigDecimal amount;
+	BigDecimal discount;
 	Integer qty;
 
 	public Inventory getInventory()
@@ -42,6 +43,16 @@ public class LineItemBean
 		this.amount = amount;
 	}
 
+	public BigDecimal getDiscount()
+	{
+		return discount;
+	}
+
+	public void setDiscount(BigDecimal discount)
+	{
+		this.discount = discount;
+	}
+
 	public Integer getQty()
 	{
 		return qty;
@@ -52,9 +63,19 @@ public class LineItemBean
 		this.qty = qty;
 	}
 
+	public BigDecimal getDiscountedAmount()
+	{
+		BigDecimal discount = getDiscount();
+		if(discount != null)
+		{
+			return getAmount().subtract(discount);
+		}
+		return getAmount();
+	}
+
 	public BigDecimal getLineItemTotal()
 	{
-		return getAmount().multiply(new BigDecimal(getQty()));
+		return getDiscountedAmount().multiply(new BigDecimal(getQty()));
 	}
 
 	public String getLineItemTotalFormatted()

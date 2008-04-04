@@ -4,38 +4,37 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+import org.acegisecurity.context.SecurityContextHolder;
+import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.webflow.action.MultiAction;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
-import org.ussa.beans.LineItemBean;
 import org.ussa.beans.ExtrasBean;
+import org.ussa.beans.LineItemBean;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
+import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.RecommendedMembershipsDao;
 import org.ussa.dao.StateDao;
-import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
-import org.ussa.model.ParentInfo;
-import org.ussa.model.State;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
-import org.acegisecurity.context.SecurityContextHolder;
-import org.acegisecurity.userdetails.UserDetails;
+import org.ussa.model.ParentInfo;
+import org.ussa.model.State;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -246,24 +245,12 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			int age = rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
 			memberships = inventoryDao.getAllMembershipsByCriteria(age, accountBean.getSportId());
-			filterMembershipsThatAlreadyAreInCart(memberships, accountBean.getCartBean());
+			rulesBL.filterMemberships(accountBean, memberships);
 		}
 
 		accountBean.setMemberships(memberships);
 
 		return success();
-	}
-
-	private void filterMembershipsThatAlreadyAreInCart(List<Inventory> memberships, CartBean cart)
-	{
-		for (Iterator<Inventory> iterator = memberships.iterator(); iterator.hasNext();)
-		{
-			Inventory inventory = iterator.next();
-			if(cart.contains(inventory.getId()))
-			{
-				iterator.remove();
-			}
-		}
 	}
 
 	public Event addSportMemberships(RequestContext context) throws Exception
@@ -272,7 +259,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 		CartBean cart = accountBean.getCartBean();
 		Inventory membership = inventoryDao.get(accountBean.getMembershipId());
-		cart.addItem(membership);
+		if(!rulesBL.inventoryIsRestricted(accountBean, membership))
+		{
+			cart.addItem(membership);
+		}
 
 		return success();
 	}

@@ -66,7 +66,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
-			Object[] detailParams = {123123, maxS, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getAmount()};
+			Object[] detailParams = {123123, maxS, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
 			bd.update(detailParams);
 		}
 
