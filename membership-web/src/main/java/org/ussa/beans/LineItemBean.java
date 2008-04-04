@@ -50,4 +50,9 @@ public class LineItemBean
 	{
 		this.qty = qty;
 	}
+
+	public BigDecimal getLineItemTotal()
+	{
+		return getAmount().multiply(new BigDecimal(getQty()));
+	}
 }
