@@ -11,6 +11,7 @@
 		</c:url>
 		<img src="<c:url value='/images/icon_trashcan.gif'/>" width="10" height="11" /><a href="${deleteUrl}">Remove</a></td>
 	</display:column>
+	<display:column property="qty" title="Qty" sortable="false" class="price"/>
 	<display:column property="amount" title="Amount" sortable="false" class="price"/>
 </display:table>
 

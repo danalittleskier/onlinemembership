@@ -19,68 +19,68 @@
 <div class="tshirt-row">
 	<div class="tshirt-1">
 		<p>Alpine</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-1">
 		<p>Freestyle</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-1">
 		<p>Cross Country</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-menu-1">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.alpineOption">
+					<form:option value=""></form:option>
+					<form:option value="BPAS">S</form:option>
+					<form:option value="BPAM">M</form:option>
+					<form:option value="BPAL">L</form:option>
+					<form:option value="BPAX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.alpineQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="tshirt-menu-2">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.freestyleOption">
+					<form:option value=""></form:option>
+					<form:option value="BPFS">S</form:option>
+					<form:option value="BPFM">M</form:option>
+					<form:option value="BPFL">L</form:option>
+					<form:option value="BPFX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.freestyleQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="tshirt-menu-3">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.crossCountryOption">
+					<form:option value=""></form:option>
+					<form:option value="BPXS">S</form:option>
+					<form:option value="BPXM">M</form:option>
+					<form:option value="BPXL">L</form:option>
+					<form:option value="BPXX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.crossCountryQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -88,68 +88,68 @@
 <div class="tshirt-row">
 	<div class="tshirt-1">
 		<p>Jumping N/C</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-1">
 		<p>Snowboarding</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-1">
 		<p>US Ski Team General</p>
-		<img src="images/t-shirt.jpg" width="145" height="136" />
+		<img src="<c:url value='/images/t-shirt.jpg'/>" width="145" height="136" />
 	</div>
 	<div class="tshirt-menu-1">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.jumpingOption">
+					<form:option value=""></form:option>
+					<form:option value="BPFS">S</form:option>
+					<form:option value="BPFM">M</form:option>
+					<form:option value="BPFL">L</form:option>
+					<form:option value="BPFX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.jumpingQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="tshirt-menu-2">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.boardingOption">
+					<form:option value=""></form:option>
+					<form:option value="BPFS">S</form:option>
+					<form:option value="BPFM">M</form:option>
+					<form:option value="BPFL">L</form:option>
+					<form:option value="BPFX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.boardingQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="tshirt-menu-3">
 		<div class="tshirt-size">
 			<label>Size:
-				<select>
-					<option selected></option>
-					<option value="">S</option>
-					<option value="">M</option>
-					<option value="">L</option>
-					<option value="">XL</option>
-					<option value="">XXL</option>
-				</select>
+				<form:select path="extrasBean.generalOption">
+					<form:option value=""></form:option>
+					<form:option value="BPFS">S</form:option>
+					<form:option value="BPFM">M</form:option>
+					<form:option value="BPFL">L</form:option>
+					<form:option value="BPFX">XL</form:option>
+				</form:select>
 			</label>
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<input name="" type="text" value="" /></label>
+				<form:input path="extrasBean.generalQty"/>
+			</label>
 		</div>
 	</div>
 	<div class="clear"></div>
@@ -163,11 +163,11 @@
 <div class="decal-row">
 	<div class="decal-1">
 		<p>US Ski Team</p>
-		<img src="images/decal_skiteam.gif" width="106" height="97" />
+		<img src="<c:url value='/images/decal_skiteam.gif'/>" width="106" height="97" />
 	</div>
 	<div class="decal-1">
 		<p>Snowboarding</p>
-		<img src="images/decal_snowboarding.gif" width="149" height="97" />
+		<img src="<c:url value='/images/decal_snowboarding.gif'/>" width="149" height="97" />
 	</div>
 	<div class="decal-menu-1">
 		<div class="decal-pack">

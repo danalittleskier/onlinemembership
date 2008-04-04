@@ -3,6 +3,7 @@
 
 <display:table name="accountBean.cartBean.lineItems" requestURI="" sort="list" defaultsort="1" id="cart" >
 	<display:column property="description" title="Membership/Items" sortable="false" class="item"/>
+	<display:column property="qty" title="Qty" sortable="false" class="price"/>
 	<display:column property="amount" title="Amount" sortable="false" class="price"/>
 </display:table>
 

@@ -250,6 +250,69 @@
 			</field>
 		</form>
 
+		<form name="extras">
+			<field property="extrasBean.alpineOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.alpineQty == null)) or ((*this* != null) and (extrasBean.alpineQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.alpineQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+			<field property="extrasBean.freestyleOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.freestyleQty == null)) or ((*this* != null) and (extrasBean.freestyleQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.freestyleQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+			<field property="extrasBean.crossCountryOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.crossCountryQty == null)) or ((*this* != null) and (extrasBean.crossCountryQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.crossCountryQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+			<field property="extrasBean.jumpingOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.jumpingQty == null)) or ((*this* != null) and (extrasBean.jumpingQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.jumpingQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+			<field property="extrasBean.boardingOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.boardingQty == null)) or ((*this* != null) and (extrasBean.boardingQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.boardingQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+			<field property="extrasBean.generalOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.generalQty == null)) or ((*this* != null) and (extrasBean.generalQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.generalQty" depends="integer">
+				<arg0 key="label.quantity" />
+			</field>
+		</form>
+
 		<form name="medical">
 			<field property="memberLegal.insuranceCompany" depends="validWhen">
 				<msg name="validWhen" key="errors.required"/>

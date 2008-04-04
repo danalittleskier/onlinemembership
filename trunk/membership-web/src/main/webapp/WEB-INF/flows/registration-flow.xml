@@ -110,11 +110,24 @@
 	<view-state id="extras" view="extras">
 		<transition on="back" to="sportMembership"/>
 		<transition on="next" to="verification"/>
+		<transition on="add" to="addExtras">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorAddExtras"/>
+			</action>
+		</transition>
 		<transition on="remove" to="removeItemFromCart"/>
 		<exit-actions>
 			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
 		</exit-actions>
 	</view-state>
+
+	<action-state id="addExtras">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="addExtras"/>
+		<transition on="*" to="extras"/>
+	</action-state>
 
 	<view-state id="verification" view="verification">
 		<transition on="back" to="extras"/>
