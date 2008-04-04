@@ -98,29 +98,6 @@ public class Member implements Serializable
 //    @OneToMany(mappedBy = "id", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 //    private Set<Address> addresses = null;
 
-	public Integer getAge()
-	{
-		if(birthDate != null)
-		{
-			Integer age;
-			int acctYr=0;
-			Calendar today=Calendar.getInstance();
-			Calendar bDate=Calendar.getInstance();
-			Calendar memYear=Calendar.getInstance();
-			bDate.setTime(birthDate);
-			memYear.setTime(birthDate);
-			memYear.set(Calendar.YEAR, today.get(Calendar.YEAR));
-			if(memYear.after(today)){
-				acctYr--;
-			}
-			age = today.get(Calendar.YEAR)-bDate.get(Calendar.YEAR)+acctYr;
-			return age;
-		}
-
-		return new Integer(0);
-
-	}
-
 	public Long getId()
 	{
 		return id;

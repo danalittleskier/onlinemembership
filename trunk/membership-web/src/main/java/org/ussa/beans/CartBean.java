@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.text.DecimalFormat;
 
 import org.ussa.model.Inventory;
 
@@ -98,7 +99,8 @@ public class CartBean
 
 	public String getTotalFormatted()
 	{
-		return getTotal().toString();
+		DecimalFormat format = new DecimalFormat("###,###.00");
+		return "$"+format.format(getTotal());
 	}
 	public BigDecimal getTotal()
 	{

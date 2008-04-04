@@ -1,6 +1,7 @@
 package org.ussa.beans;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 import org.ussa.model.Inventory;
 
@@ -54,5 +55,11 @@ public class LineItemBean
 	public BigDecimal getLineItemTotal()
 	{
 		return getAmount().multiply(new BigDecimal(getQty()));
+	}
+
+	public String getLineItemTotalFormatted()
+	{
+		DecimalFormat format = new DecimalFormat("###,###.00");
+		return "$"+format.format(getLineItemTotal());
 	}
 }

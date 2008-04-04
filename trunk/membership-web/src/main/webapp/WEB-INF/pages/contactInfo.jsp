@@ -57,7 +57,7 @@
 			</c:if>
 		</fieldset>
 
-		<c:if test="${accountBean.member.age < 18 && accountBean.member.age != 0}">
+		<c:if test="${accountBean.age < 18 && accountBean.age != 0}">
 		<fieldset>
 			<legend>Parent/Guardian #1</legend>
 			<label for="">* First Name:</label>
@@ -123,6 +123,7 @@
 			</fieldset>
 
 		<fieldset class="buttons">
+			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 		</fieldset>

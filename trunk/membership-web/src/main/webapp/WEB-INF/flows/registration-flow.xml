@@ -223,7 +223,6 @@
 	</action-state>
 
 	<view-state id="registrationComplete" view="registrationComplete">
-		<transition on="back" to="registrationPayment"/>
 		<transition on="next" to="completion"/>
 	</view-state>
 

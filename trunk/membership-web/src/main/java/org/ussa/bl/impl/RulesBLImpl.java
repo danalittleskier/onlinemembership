@@ -3,6 +3,7 @@ package org.ussa.bl.impl;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.ParameterTableDao;
@@ -27,7 +28,7 @@ public class RulesBLImpl implements RulesBL
 		return String.valueOf(calculateCurrentRenewSeason()-1);
 	}
 
-	public int calculateCurrentRenewSeason()
+	public Integer calculateCurrentRenewSeason()
 	{
 		ParameterTable parameter = parameterTableDao.get(ParameterTable.LAST_DAY_RENEW_SEASON);
 
@@ -69,5 +70,20 @@ public class RulesBLImpl implements RulesBL
 		String ussaId = parameter.getParameterData();
 
 		return new Long(ussaId);
+	}
+
+	public Integer getAgeForCurrentRenewSeason(Date birthDate)
+	{
+		if(birthDate != null)
+		{
+			Calendar bDate = Calendar.getInstance();
+			bDate.setTime(birthDate);
+			int birthDateYear = bDate.get(Calendar.YEAR);
+			int currentRenewSeason = calculateCurrentRenewSeason();
+
+			return currentRenewSeason - (birthDateYear + 1);
+		}
+
+		return 0;
 	}
 }
