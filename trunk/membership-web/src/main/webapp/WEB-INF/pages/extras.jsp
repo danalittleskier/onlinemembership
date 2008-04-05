@@ -34,6 +34,7 @@
 			<label>Size:
 				<form:select path="extrasBean.alpineOption">
 					<form:option value=""></form:option>
+					<%-- TODO: add these invetory ids as contants in Inventory.java --%>
 					<form:option value="BPAS">S</form:option>
 					<form:option value="BPAM">M</form:option>
 					<form:option value="BPAL">L</form:option>

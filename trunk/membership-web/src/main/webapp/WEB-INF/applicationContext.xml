@@ -41,7 +41,11 @@
 	</bean>
 
 	<!-- Add business logic classes here-->
+	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
+		<property name="parameterTableDao" ref="parameterTableDao"/>
+	</bean>
 	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
+		<property name="dateBL" ref="dateBL"/>
 		<property name="parameterTableDao" ref="parameterTableDao"/>
 	</bean>
 
@@ -57,6 +61,7 @@
 
 	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
 		<property name="rulesBL" ref="rulesBL"/>
+		<property name="dateBL" ref="dateBL"/>
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="addressDao" ref="addressDao"/>

@@ -9,6 +9,7 @@ import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.RulesBL;
+import org.ussa.bl.DateBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.MemberDao;
@@ -25,6 +26,7 @@ import org.ussa.service.MemberRegistrationService;
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
 	private RulesBL rulesBL;
+	private DateBL dateBL;
 	private MemberDao memberDao;
 	private AddressDao addressDao;
 	private MemberLegalDao memberLegalDao;
@@ -34,7 +36,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
 	{
-		String currentSeason = rulesBL.getCurrentRenewSeason();
+		String currentSeason = dateBL.getCurrentRenewSeason();
 
 		Member member = accountBean.getMember();
 		Address address = accountBean.getAddress();
@@ -138,6 +140,16 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	public void setRulesBL(RulesBL rulesBL)
 	{
 		this.rulesBL = rulesBL;
+	}
+
+	public DateBL getDateBL()
+	{
+		return dateBL;
+	}
+
+	public void setDateBL(DateBL dateBL)
+	{
+		this.dateBL = dateBL;
 	}
 
 	public BatchTransactionDao getBatchTransactionDao()

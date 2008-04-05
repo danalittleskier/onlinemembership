@@ -9,10 +9,6 @@ import org.ussa.model.Inventory;
 
 public interface RulesBL
 {
-	public String getCurrentRenewSeason();
-
-	public String getLastSeason();
-
 	public Long getNextUssaId();
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate);
@@ -22,4 +18,6 @@ public interface RulesBL
 	public void filterMemberships(AccountBean accountBean, List<Inventory> memberships);
 
 	public boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory);
+
+	public void addMembershipToCart(AccountBean accountBean, Inventory inventory);
 }

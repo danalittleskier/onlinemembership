@@ -22,6 +22,38 @@ public class Inventory implements Serializable
 	public static final String SPORT_CODE_XC = "XC";
 	public static final String SPORT_CODE_ALL = "ALL";
 
+	// coach memberships
+	public static final String INV_ID_ALPINE_COACH = "ACO";
+	public static final String INV_ID_SNOWBOARD_COACH = "BCO";
+	public static final String INV_ID_FREESTYLE_COACH = "FCO";
+	public static final String INV_ID_JUMPING_COACH = "JCO";
+	public static final String INV_ID_CROSS_COUNTRY_COACH = "XCO";
+
+	// official memberships
+	public static final String INV_ID_ALPINE_OFFICIAL = "AO";
+	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
+	public static final String INV_ID_FREESTYLE_OFFICIAL = "FO";
+	public static final String INV_ID_JUMPING_OFFICIAL = "JO";
+	public static final String INV_ID_CROSS_COUNTRY_OFFICIAL = "XO";
+
+	// competitior memberships
+	public static final String INV_ID_ALPINE_COMPETITOR = "AC";
+	public static final String INV_ID_SNOWBOARD_COMPETITOR = "BC";
+	public static final String INV_ID_SNOWBOARD_COMPETITOR_REGIONAL = "BCR";
+	public static final String INV_ID_FREESTYLE_COMPETITOR = "FC";
+	public static final String INV_ID_JUMPING_COMPETITOR = "JC";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR = "XC";
+
+	// youth memberships
+	public static final String INV_ID_ALPINE_YOUTH = "AY";
+	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
+	public static final String INV_ID_JUMPING_YOUTH = "JY";
+	public static final String INV_ID_CROSS_COUNTRY_YOUTH = "XY";
+
+	// non-scored students
+	public static final String INV_ID_ALPINE_STUDENT = "AS";
+	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
+
 	@Id
 	@Column(name = "INV_ID", length = 8)
 	private String id;
