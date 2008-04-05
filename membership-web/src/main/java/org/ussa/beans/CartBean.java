@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Collection;
 import java.text.DecimalFormat;
 
 import org.ussa.model.Inventory;
@@ -97,6 +98,18 @@ public class CartBean
 	public boolean contains(String inventoryId)
 	{
 		return getLineItem(inventoryId) != null;
+	}
+
+	public boolean containsAny(Collection<String> inventoryIds)
+	{
+		for (String inventoryId : inventoryIds)
+		{
+			if (getLineItem(inventoryId) != null)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public String getTotalFormatted()

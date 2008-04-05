@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 public class ParameterTable implements Serializable
 {
+	public static final String CC_FIS_LATE_DATE = "CC_FIS_LATE_DATE";
+	public static final String ALPINE_FIS_LATE_DATE = "ALPINE_FIS_LATE_DATE";
 	public static final String LATE_RENEW_DATE = "LATE_RENEW_DATE";
 	public static final String LAST_DAY_RENEW_SEASON = "LAST_DY_RENEWSEASN";
 	public static final String USSAID = "USSAID";

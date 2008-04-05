@@ -17,6 +17,7 @@ import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.RulesBL;
+import org.ussa.bl.DateBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
@@ -49,6 +50,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private RecommendedMembershipsDao recommendedMembershipsDao;
 	private MemberLegalDao memberLegalDao;
 	private RulesBL rulesBL;
+	private DateBL dateBL;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
 	private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -86,6 +88,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.rulesBL = rulesBL;
 	}
+	public void setDateBL(DateBL dateBL)
+	{
+		this.dateBL = dateBL;
+	}
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
@@ -108,8 +114,8 @@ public class RegistrationAction extends MultiAction implements Serializable
 			id = Long.parseLong(idParam);
 		}
 
-		String currentSeason = rulesBL.getCurrentRenewSeason();
-		String lastSeason = rulesBL.getLastSeason();
+		String currentSeason = dateBL.getCurrentRenewSeason();
+		String lastSeason = dateBL.getLastSeason();
 
 		Member member = new Member();
 		ParentInfo parentInfo = new ParentInfo();
@@ -153,12 +159,16 @@ public class RegistrationAction extends MultiAction implements Serializable
 			{
 				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
 			}
-			accountBean.setAge(rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate()));
+			Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
+			accountBean.setAge(currentSeasonAge);
 
-			// prepopulate the cart with the recommended membership options
+			// for renewals prepopulate the cart with the recommended membership options
 			accountBean.setCartBean(new CartBean());
-			List<LineItemBean> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(currentSeason, member.getId(), lastSeason);
-			accountBean.getCartBean().setLineItems(recommendedMemberships);
+			List<Inventory> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
+			for (Inventory inventory : recommendedMemberships)
+			{
+				rulesBL.addMembershipToCart(accountBean, inventory);
+			}
 
 			memberLegalPk.setUssaId(member.getId());
 			MemberLegal tempMemberLegal = memberLegalDao.get(memberLegalPk);
@@ -261,7 +271,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		Inventory membership = inventoryDao.get(accountBean.getMembershipId());
 		if(!rulesBL.inventoryIsRestricted(accountBean, membership))
 		{
-			cart.addItem(membership);
+			rulesBL.addMembershipToCart(accountBean, membership);
 		}
 
 		return success();

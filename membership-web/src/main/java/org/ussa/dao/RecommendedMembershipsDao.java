@@ -2,11 +2,9 @@ package org.ussa.dao;
 
 import java.util.List;
 
-import org.ussa.beans.LineItemBean;
+import org.ussa.model.Inventory;
 
 public interface RecommendedMembershipsDao
 {
-
-	public List<LineItemBean> getRecommendedMemberships(String currentYear, Long ussaID, String lastSeason);
-
+	public List<Inventory> getRecommendedMemberships(Long ussaID, Integer currentSeasonAge, String lastSeason);
 }
