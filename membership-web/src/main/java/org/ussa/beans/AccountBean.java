@@ -23,18 +23,22 @@ public class AccountBean
 
 	//Helper fields for binding, not persisited...
 	private int age;
+	private Boolean usCitizen;
 	private String birthDate;
 	private Long clubId;
-	private String membershipId;
 	private String sportId;
-	private Boolean usCitizen;
+	private String membershipId;
+	private String[] fisOptions;
+	private String magazineOption;
 	private Boolean hasInsurance;
 
 	//Reference Data fields.  Do not save when done:
 	private List<State> usStates;
 	private List<Nation> nations;
 	private List<Club> clubsForState;
-	private List<Inventory> memberships;// inventory - memberships
+	private List<Inventory> memberships;
+	private List<Inventory> fisItems;
+	private List<Inventory> magazineItems;
 	private List<Integer> years;
 
 	private String contributionAmount;
@@ -149,6 +153,26 @@ public class AccountBean
 		this.memberships = memberships;
 	}
 
+	public List<Inventory> getFisItems()
+	{
+		return fisItems;
+	}
+
+	public void setFisItems(List<Inventory> fisItems)
+	{
+		this.fisItems = fisItems;
+	}
+
+	public List<Inventory> getMagazineItems()
+	{
+		return magazineItems;
+	}
+
+	public void setMagazineItems(List<Inventory> magazineItems)
+	{
+		this.magazineItems = magazineItems;
+	}
+
 	public List<Integer> getYears()
 	{
 		return years;
@@ -177,6 +201,26 @@ public class AccountBean
 	public void setMembershipId(String membershipId)
 	{
 		this.membershipId = membershipId;
+	}
+
+	public String[] getFisOptions()
+	{
+		return fisOptions;
+	}
+
+	public void setFisOptions(String[] fisOptions)
+	{
+		this.fisOptions = fisOptions;
+	}
+
+	public String getMagazineOption()
+	{
+		return magazineOption;
+	}
+
+	public void setMagazineOption(String magazineOption)
+	{
+		this.magazineOption = magazineOption;
 	}
 
 	public String getSportId()

@@ -80,7 +80,7 @@ public class LineItemBean
 
 	public String getLineItemTotalFormatted()
 	{
-		DecimalFormat format = new DecimalFormat("###,###.00");
+		DecimalFormat format = new DecimalFormat("###,##0.00");
 		return "$"+format.format(getLineItemTotal());
 	}
 }

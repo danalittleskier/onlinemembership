@@ -1,6 +1,5 @@
 package org.ussa.bl;
 
-import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
@@ -13,11 +12,21 @@ public interface RulesBL
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate);
 
-	public BigDecimal calculateDiscount(AccountBean accountBean, Inventory inventory);
+	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean);
 
-	public void filterMemberships(AccountBean accountBean, List<Inventory> memberships);
+	public List<Inventory> findApplicableFisItems(AccountBean accountBean);
 
-	public boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory);
+	public List<Inventory> findApplicableMagazineItems(AccountBean accountBean);
 
 	public void addMembershipToCart(AccountBean accountBean, Inventory inventory);
+
+	public void removeItemFromCart(AccountBean accountBean, String invId);
+
+	public void handleFisOptions(AccountBean accountBean);
+
+	public void handleMagazineOption(AccountBean accountBean);
+
+	public void handleContribution(AccountBean accountBean);
+
+	public void addRemoveUssaLateFee(AccountBean accountBean);
 }

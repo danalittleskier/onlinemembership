@@ -42,9 +42,21 @@ public class DateBLImpl implements DateBL
 		return getDateFromParameterTable(ParameterTable.CC_FIS_LATE_DATE);
 	}
 
-	public Date getFisLateDate()
+	public Date getFreestyleFisLateDate()
 	{
-		return getDateFromParameterTable(ParameterTable.LATE_RENEW_DATE);
+		return getDateFromParameterTable(ParameterTable.ALPINE_FIS_LATE_DATE);
+//		return getDateFromParameterTable(ParameterTable.FREESTYLE_FIS_LATE_DATE);
+	}
+
+	public Date getJumpingFisLateDate()
+	{
+		return getDateFromParameterTable(ParameterTable.ALPINE_FIS_LATE_DATE);
+//		return getDateFromParameterTable(ParameterTable.JUMPING_FIS_LATE_DATE);
+	}
+
+	public Date getIpcAsLateDate()
+	{
+		return getDateFromParameterTable(ParameterTable.IPC_AS_LATE_DATE);
 	}
 
 	public Date getLateRenewDate()
