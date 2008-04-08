@@ -78,6 +78,26 @@ public class LineItemBean
 		return getDiscountedAmount().multiply(new BigDecimal(getQty()));
 	}
 
+	public String getAmountFormatted()
+	{
+		if(getDiscount() != null)
+		{
+			DecimalFormat format = new DecimalFormat("###,##0.00");
+			return "$"+format.format(getAmount());
+		}
+		return "";
+	}
+
+	public String getDiscountedFormatted()
+	{
+		if(getDiscount() != null)
+		{
+			DecimalFormat format = new DecimalFormat("###,##0.00");
+			return "$"+format.format(getDiscount());
+		}
+		return "";
+	}
+
 	public String getLineItemTotalFormatted()
 	{
 		DecimalFormat format = new DecimalFormat("###,##0.00");
