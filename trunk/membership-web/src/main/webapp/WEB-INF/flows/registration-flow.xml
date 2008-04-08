@@ -112,8 +112,40 @@
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction" method="handleContribution"/>
-		<transition on="*" to="extras"/>
+		<transition on="*" to="loadFisWaiver"/>
 	</action-state>
+
+	<action-state id="loadFisWaiver">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="showWaiver" to="fisWaiver"/>
+		<transition on="skip" to="loadFisWaiverDisabled"/>
+	</action-state>
+
+	<view-state id="fisWaiver" view="fisWaiver">
+		<transition on="back" to="loadSportMemberships"/>
+		<transition on="next" to="loadFisWaiverDisabled">
+			<action bean="accountBean" method="bind"/>
+		</transition>
+	</view-state>
+
+	<action-state id="loadFisWaiverDisabled">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="showWaiver" to="fisWaiverDisabled"/>
+		<transition on="skip" to="extras"/>
+	</action-state>
+
+	<view-state id="fisWaiverDisabled" view="fisWaiverDisabled">
+		<transition on="back" to="loadSportMemberships"/>
+		<transition on="next" to="extras">
+			<action bean="accountBean" method="bind"/>
+		</transition>
+	</view-state>
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="sportMembership"/>

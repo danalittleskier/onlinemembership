@@ -304,6 +304,16 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("back");
 	}
 
+	public Event loadFisWaiver(RequestContext context) throws Exception
+	{
+		return result("showWaiver");
+	}
+
+	public Event loadFisWaiverDisabled(RequestContext context) throws Exception
+	{
+		return result("showWaiver");
+	}
+
 	public Event addExtras(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
