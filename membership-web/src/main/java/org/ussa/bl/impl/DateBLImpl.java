@@ -44,8 +44,7 @@ public class DateBLImpl implements DateBL
 
 	public Date getFreestyleFisLateDate()
 	{
-		return getDateFromParameterTable(ParameterTable.ALPINE_FIS_LATE_DATE);
-//		return getDateFromParameterTable(ParameterTable.FREESTYLE_FIS_LATE_DATE);
+		return getDateFromParameterTable(ParameterTable.FREESTYLE_FIS_LATE_DATE);
 	}
 
 	public Date getJumpingFisLateDate()
@@ -56,7 +55,7 @@ public class DateBLImpl implements DateBL
 
 	public Date getIpcAsLateDate()
 	{
-		return getDateFromParameterTable(ParameterTable.IPC_AS_LATE_DATE);
+		return getDateFromParameterTable(ParameterTable.IPC_LATE_DATE);
 	}
 
 	public Date getLateRenewDate()

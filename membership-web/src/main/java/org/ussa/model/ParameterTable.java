@@ -11,8 +11,8 @@ import java.io.Serializable;
 
 public class ParameterTable implements Serializable
 {
-	public static final String IPC_AS_LATE_DATE = "IPC_AS_LATE_DATE";
-	public static final String FREESTYLE_FIS_LATE_DATE = "FREESTYLE_FIS_LATE_DATE";
+	public static final String IPC_LATE_DATE = "IPC_LATE_DATE";
+	public static final String FREESTYLE_FIS_LATE_DATE = "FRE_FIS_LATE_DATE";
 	public static final String JUMPING_FIS_LATE_DATE = "JUMPING_FIS_LATE_DATE";
 	public static final String CC_FIS_LATE_DATE = "CC_FIS_LATE_DATE";
 	public static final String ALPINE_FIS_LATE_DATE = "ALPINE_FIS_LATE_DATE";
