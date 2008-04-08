@@ -75,9 +75,8 @@ public class RecommendedMembershipsDaoJDBC implements RecommendedMembershipsDao
 		RecommendedMembershipsQuery(DataSource dataSource)
 		{
 			super(dataSource, RECOMMDENDED_MEMBERSHIPS_SQL);
-			declareParameter(new SqlParameter(Types.VARCHAR));
-			declareParameter(new SqlParameter(Types.VARCHAR));
-			declareParameter(new SqlParameter(Types.VARCHAR));
+			declareParameter(new SqlParameter(Types.NUMERIC));
+			declareParameter(new SqlParameter(Types.NUMERIC));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 		}
 

@@ -45,8 +45,9 @@
 		<property name="parameterTableDao" ref="parameterTableDao"/>
 	</bean>
 	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
-		<property name="dateBL" ref="dateBL"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
 		<property name="parameterTableDao" ref="parameterTableDao"/>
+		<property name="dateBL" ref="dateBL"/>
 	</bean>
 
 	<!-- Add service classes here-->

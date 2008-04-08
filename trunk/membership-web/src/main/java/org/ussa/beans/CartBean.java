@@ -114,7 +114,7 @@ public class CartBean
 
 	public String getTotalFormatted()
 	{
-		DecimalFormat format = new DecimalFormat("###,###.00");
+		DecimalFormat format = new DecimalFormat("###,##0.00");
 		return "$"+format.format(getTotal());
 	}
 	public BigDecimal getTotal()

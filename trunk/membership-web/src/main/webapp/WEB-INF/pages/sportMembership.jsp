@@ -34,10 +34,61 @@
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
-			<input type="submit" class="btn-green-sm" name="_eventId_add" value="Add">
+			<label></label>
+			<input type="submit" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart">
 		</c:if>
 		<br/>
 	</fieldset>
+	<c:if test="${not empty accountBean.fisItems}">
+		<fieldset>
+			<legend>Applicable FIS Options</legend>
+			<table style="margin-left:195px;">
+				<c:forEach var="fisItem" items="${accountBean.fisItems}" varStatus="varStatus">
+					<tr>
+						<td valign="top" class="checkbox">
+							<form:checkbox id="fis${varStatus.index}" path="fisOptions" value="${fisItem.id}"/>
+						</td>
+						<td valign="top" width="100%">
+							<label for="fis${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
+								<c:out value="${fisItem.description}"/>
+							</label>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<br/>
+			*FIS waiver will be required for any FIS options selected
+		</fieldset>
+	</c:if>
+	<c:if test="${not empty accountBean.magazineItems}">
+		<fieldset>
+			<legend>Magazine Options</legend>
+			<table style="margin-left:195px;">
+					<tr>
+						<td valign="top" class="checkbox">
+							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value=""/>
+						</td>
+						<td valign="top" width="100%">
+							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
+								None
+							</label>
+						</td>
+					</tr>
+				<c:forEach var="magazineItem" items="${accountBean.magazineItems}" varStatus="varStatus">
+					<tr>
+						<td valign="top" class="checkbox">
+							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value="${magazineItem.id}"/>
+						</td>
+						<td valign="top" width="100%">
+							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
+								<c:out value="${magazineItem.description}"/>
+							</label>
+						</td>
+					</tr>
+				</c:forEach>
+			</table>
+		</fieldset>
+	</c:if>
 	<fieldset>
 		<legend>Communication Options</legend>
 		<table style="margin-left:195px;">
@@ -80,9 +131,9 @@
 	<fieldset class="buttons">
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+		<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">
 		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
-
 	</fieldset>
 </form:form>
 </div>

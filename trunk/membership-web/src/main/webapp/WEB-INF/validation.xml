@@ -17,7 +17,7 @@
 		</constant>
 		<constant>
 			<constant-name>validWhenAgeNotPresentOrOver18</constant-name>
-			<constant-value><![CDATA[(((member.age == '0') or (member.age > 18)) or (*this* != null))]]></constant-value>
+			<constant-value><![CDATA[(((age == '0') or (age > 18)) or (*this* != null))]]></constant-value>
 		</constant>
 		<constant>
 			<constant-name>validWhenMemberIdNotPresent</constant-name>

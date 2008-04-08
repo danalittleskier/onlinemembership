@@ -47,14 +47,14 @@
 		<transition on="changeState" to="findClubInfo">
 			<action bean="accountBean" method="bindAndValidate"/>
 		</transition>
-		<transition on="next" to="findApplicableSportMemberships">
+		<transition on="next" to="loadSportMemberships">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorStateClub"/>
 			</action>
 		</transition>
 	</view-state>
 
-	<action-state id="findApplicableSportMemberships">
+	<action-state id="loadSportMemberships">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
@@ -64,7 +64,7 @@
 
 	<view-state id="sportMembership" view="sportMembership">
 		<transition on="back" to="stateClub"/>
-		<transition on="change" to="findApplicableSportMemberships">
+		<transition on="change" to="loadSportMemberships">
 			<action bean="accountBean" method="bind"/>
 		</transition>
 		<transition on="add" to="addSportMemberships">
@@ -72,15 +72,15 @@
 				<attribute name="validator" value="validatorSportMembership"/>
 			</action>
 		</transition>
+		<transition on="update" to="updateMembershipOptions">
+			<action bean="accountBean" method="bind"/>
+		</transition>
 		<transition on="next" to="handleContribution">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorSportMembershipNext"/>
 			</action>
 		</transition>
-		<transition on="remove" to="removeItemFromCart"/>
-		<exit-actions>
-			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
-		</exit-actions>
+		<transition on="remove" to="removeMembershipFromCart"/>
 	</view-state>
 
 	<action-state id="addSportMemberships">
@@ -88,15 +88,23 @@
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction"/>
-		<transition on="*" to="sportMembership"/>
+		<transition on="*" to="loadSportMemberships"/>
 	</action-state>
 
-	<action-state id="removeItemFromCart">
+	<action-state id="updateMembershipOptions">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="loadSportMemberships"/>
+	</action-state>
+
+	<action-state id="removeMembershipFromCart">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction" method="removeItemFromCart"/>
-		<transition on="back" to="${flowScope.lastViewStateId}"/>
+		<transition on="back" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="handleContribution">
@@ -127,6 +135,14 @@
 		</entry-actions>
 		<action bean="registrationAction" method="addExtras"/>
 		<transition on="*" to="extras"/>
+	</action-state>
+
+	<action-state id="removeItemFromCart">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="removeItemFromCart"/>
+		<transition on="back" to="${flowScope.lastViewStateId}"/>
 	</action-state>
 
 	<view-state id="verification" view="verification">

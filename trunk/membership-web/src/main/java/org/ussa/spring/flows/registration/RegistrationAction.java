@@ -1,7 +1,6 @@
 package org.ussa.spring.flows.registration;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +14,8 @@ import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
-import org.ussa.beans.LineItemBean;
-import org.ussa.bl.RulesBL;
 import org.ussa.bl.DateBL;
+import org.ussa.bl.RulesBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
@@ -246,19 +244,13 @@ public class RegistrationAction extends MultiAction implements Serializable
 	}
 
 
-	public Event findApplicableSportMemberships(RequestContext context) throws Exception
+	public Event loadSportMemberships(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		List<Inventory> memberships = new ArrayList<Inventory>();
-		if (StringUtils.isNotBlank(accountBean.getSportId()))
-		{
-			int age = rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
-			memberships = inventoryDao.getAllMembershipsByCriteria(age, accountBean.getSportId());
-			rulesBL.filterMemberships(accountBean, memberships);
-		}
-
-		accountBean.setMemberships(memberships);
+		accountBean.setMemberships(rulesBL.findApplicableSportMemberships(accountBean));
+		accountBean.setFisItems(rulesBL.findApplicableFisItems(accountBean));
+		accountBean.setMagazineItems(rulesBL.findApplicableMagazineItems(accountBean));
 
 		return success();
 	}
@@ -267,12 +259,23 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		CartBean cart = accountBean.getCartBean();
 		Inventory membership = inventoryDao.get(accountBean.getMembershipId());
-		if(!rulesBL.inventoryIsRestricted(accountBean, membership))
-		{
-			rulesBL.addMembershipToCart(accountBean, membership);
-		}
+		rulesBL.addMembershipToCart(accountBean, membership);
+
+		rulesBL.handleFisOptions(accountBean);
+		rulesBL.handleMagazineOption(accountBean);
+		rulesBL.handleContribution(accountBean);
+
+		return success();
+	}
+
+	public Event updateMembershipOptions(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		rulesBL.handleFisOptions(accountBean);
+		rulesBL.handleMagazineOption(accountBean);
+		rulesBL.handleContribution(accountBean);
 
 		return success();
 	}
@@ -281,29 +284,11 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		CartBean cart = accountBean.getCartBean();
-		List<LineItemBean> donations = cart.getLineItems(Inventory.INVENTORY_TYPE_DONATION);
-		LineItemBean donation = null;
-		if(donations.size() > 0)
-		{
-			donation = donations.get(0);
-			if(accountBean.getContributionAmount() != null)
-			{
-				donation.setAmount(new BigDecimal(accountBean.getContributionAmount()));
-			}
-			else
-			{
-				cart.removeLineItem(donation.getInventory().getId());
-			}
-		}
-		else
-		{
-			if(accountBean.getContributionAmount() != null)
-			{
-				List<Inventory> donationInventory = inventoryDao.getIventoryByType(Inventory.INVENTORY_TYPE_DONATION);
-				cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
-			}
-		}
+		rulesBL.handleFisOptions(accountBean);
+		rulesBL.handleMagazineOption(accountBean);
+		rulesBL.handleContribution(accountBean);
+
+		rulesBL.addRemoveUssaLateFee(accountBean);
 
 		return success();
 	}
@@ -312,18 +297,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		CartBean cart = accountBean.getCartBean();
 		String id = context.getRequestParameters().get("id");
 
-		LineItemBean lineItem = cart.getLineItem(id);
-		if(lineItem != null)
-		{
-			if(Inventory.INVENTORY_TYPE_DONATION.equals(lineItem.getInventory().getInventoryType()))
-			{
-				accountBean.setContributionAmount(null);
-			}
-			cart.removeLineItem(id);
-		}
+		rulesBL.removeItemFromCart(accountBean, id);
 
 		return result("back");
 	}

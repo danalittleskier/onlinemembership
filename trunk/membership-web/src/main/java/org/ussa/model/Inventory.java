@@ -12,8 +12,10 @@ import java.math.BigDecimal;
 public class Inventory implements Serializable
 {
 	public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
+	public static final String INVENTORY_TYPE_FIS = "FIS";
 	public static final String INVENTORY_TYPE_DONATION = "DONATION";
 	public static final String INVENTORY_TYPE_BONUS_PACK = "BONUS PACK";
+	public static final String INVENTORY_TYPE_MAGAZINE = "MAG";
 
 	public static final String SPORT_CODE_ALP = "ALP";
 	public static final String SPORT_CODE_BRD = "BRD";
@@ -42,7 +44,19 @@ public class Inventory implements Serializable
 	public static final String INV_ID_SNOWBOARD_COMPETITOR_REGIONAL = "BCR";
 	public static final String INV_ID_FREESTYLE_COMPETITOR = "FC";
 	public static final String INV_ID_JUMPING_COMPETITOR = "JC";
+	public static final String INV_ID_NORDIC_COMBINED_COMPETITOR = "NC";
 	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR = "XC";
+
+	// disabled competitors
+	public static final String INV_ID_DISABLED_ALPINE_ASSOCIATE = "DAA";
+	public static final String INV_ID_DISABLED_ALPINE_COMPETITOR = "DAC";
+	public static final String INV_ID_DISABLED_ALPINE_COACH = "DACO";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE = "DXA";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR = "DXC";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COACH = "DXCO";
+
+	// master
+	public static final String INV_ID_ALPINE_MASTER = "AM";
 
 	// youth memberships
 	public static final String INV_ID_ALPINE_YOUTH = "AY";
@@ -53,6 +67,35 @@ public class Inventory implements Serializable
 	// non-scored students
 	public static final String INV_ID_ALPINE_STUDENT = "AS";
 	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
+
+	// FIS
+	public static final String INV_ID_ALPINE_FIS = "FISA";
+	public static final String INV_ID_ALPINE_MASTER_FIS = "FISAM";
+	public static final String INV_ID_SPEED_SKIING_ALPINE_FIS = "FISAPSS";
+	public static final String INV_ID_ALP_PTS_CONF_FIS = "FISAPTC";
+	public static final String INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASD";
+	public static final String INV_ID_SNOWBOARD_FIS = "FISB";
+	public static final String INV_ID_SNOWBOARD_POINTS_CONFIRMATION_FIS = "FISBPTC";
+	public static final String INV_ID_FREESTYLE_FIS = "FISF";
+	public static final String INV_ID_CROSS_COUNTRY_FIS = "FISX";
+	public static final String INV_ID_JUMPING_FIS = "FISJ";
+	public static final String INV_ID_NORDIC_COMBINED_FIS = "FISN";
+
+	// FIS Late
+	public static final String INV_ID_LATE_ALPINE_FIS = "FISAL";
+	public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE = "FISASDL";
+	public static final String INV_ID_LATE_CROSS_COUNTRY_FIS = "FISXL";
+	public static final String INV_ID_LATE_FREESTYLE_FIS = "FISFL";
+	public static final String INV_ID_LATE_JUMPING_FIS = "FISJL";
+
+	// Magazines
+	public static final String INV_ID_SNOWBOARD_MAGAZINE = "MAGSB";
+	public static final String INV_ID_SKI_RACING_MAGAZINE = "MRCE";
+	public static final String INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES = "MRLTD";
+	public static final String INV_ID_SKI_TRAX_MAGAZINE = "MTRX";
+
+	// USSA Late Fee
+	public static final String INV_ID_MEMBER_LATE_FEE = "LATE";
 
 	@Id
 	@Column(name = "INV_ID", length = 8)

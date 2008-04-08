@@ -1,53 +1,38 @@
 package org.ussa.bl.impl;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
+import org.apache.commons.lang.StringUtils;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
+import org.ussa.beans.LineItemBean;
 import org.ussa.bl.DateBL;
+import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
+import org.ussa.dao.InventoryDao;
 import org.ussa.dao.ParameterTableDao;
+import org.ussa.model.Address;
 import org.ussa.model.Inventory;
-import org.ussa.model.Member;
 import org.ussa.model.ParameterTable;
+import org.ussa.model.Member;
 
 public class RulesBLImpl implements RulesBL
 {
-	private static Map<String, String> officialsByCoach;
-	private static Map<String, String> coachesByOfficial;
-	private static Map<String, String> twentyFiveDollarDiscountGroup;
-	static {
-		officialsByCoach = new HashMap<String, String>();
-		officialsByCoach.put(Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL);
-
-		coachesByOfficial = new HashMap<String, String>();
-		coachesByOfficial.put(Inventory.INV_ID_ALPINE_OFFICIAL, Inventory.INV_ID_ALPINE_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_SNOWBOARD_OFFICIAL, Inventory.INV_ID_SNOWBOARD_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_FREESTYLE_OFFICIAL, Inventory.INV_ID_FREESTYLE_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_JUMPING_OFFICIAL, Inventory.INV_ID_JUMPING_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL, Inventory.INV_ID_CROSS_COUNTRY_COACH);
-
-		twentyFiveDollarDiscountGroup = new HashMap<String, String>();
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_ALPINE_YOUTH, "Y");
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_FREESTYLE_YOUTH, "Y");
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_JUMPING_YOUTH, "Y");
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_CROSS_COUNTRY_YOUTH, "Y");
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_FREESTYLE_ROOKIE, "Y");
-		twentyFiveDollarDiscountGroup.put(Inventory.INV_ID_SNOWBOARD_COMPETITOR_REGIONAL, "Y");
-	}
-
+	private InventoryDao inventoryDao;
 	private ParameterTableDao parameterTableDao;
 	private DateBL dateBL;
+
+	public void setInventoryDao(InventoryDao inventoryDao)
+	{
+		this.inventoryDao = inventoryDao;
+	}
 
 	public void setParameterTableDao(ParameterTableDao parameterTableDao)
 	{
@@ -83,40 +68,36 @@ public class RulesBLImpl implements RulesBL
 		return 0;
 	}
 
-	public void addMembershipToCart(AccountBean accountBean, Inventory inventory)
-	{
-		CartBean cartBean = new CartBean();
-
-		cartBean.addItem(inventory);
-
-		// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
-		String officialInvId = officialsByCoach.get(inventory.getId());
-		if(officialInvId != null && cartBean.contains(officialInvId))
-		{
-			cartBean.removeLineItem(officialInvId);
-		}
-	}
-
-	public void filterMemberships(AccountBean accountBean, List<Inventory> memberships)
+	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
-		for (Iterator<Inventory> iterator = memberships.iterator(); iterator.hasNext();)
+		List<Inventory> memberships = new ArrayList<Inventory>();
+		if (StringUtils.isNotBlank(accountBean.getSportId()))
 		{
-			Inventory inventory = iterator.next();
-			if(cart.contains(inventory.getId()) || inventoryIsRestricted(accountBean, inventory))
+			int age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+			memberships = inventoryDao.getAllMembershipsByCriteria(age, accountBean.getSportId());
+
+			// filter memberships
+			for (Iterator<Inventory> iterator = memberships.iterator(); iterator.hasNext();)
 			{
-				iterator.remove();
+				Inventory inventory = iterator.next();
+				if(cart.contains(inventory.getId()) || inventoryIsRestricted(accountBean, inventory))
+				{
+					iterator.remove();
+				}
 			}
 		}
+
+		return memberships;
 	}
 
-	public boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory)
+	private boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory)
 	{
 		CartBean cartBean = new CartBean();
 		String invId = inventory.getId();
 
 		// If a coach membership is selected, they may not add an official membership (it’s already included).
-		String coachInvId = coachesByOfficial.get(invId);
+		String coachInvId = RuleAssociations.coachesByOfficial.get(invId);
 		if(coachInvId != null && cartBean.contains(coachInvId))
 		{
 			return true;
@@ -145,24 +126,165 @@ public class RulesBLImpl implements RulesBL
 		return false;
 	}
 
-	public BigDecimal calculateDiscount(AccountBean accountBean, Inventory inventory)
+	public List<Inventory> findApplicableFisItems(AccountBean accountBean)
 	{
-		Member member = accountBean.getMember();
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> lineItems = cart.getLineItems();
+		List<String> fisInvIds = new ArrayList<String>();
+		for (LineItemBean lineItem : lineItems)
+		{
+			String[] fises = RuleAssociations.fisByMembership.get(lineItem.getInventory().getId());
+			if(fises != null)
+			{
+				for (String fis : fises)
+				{
+					if(!fisInvIds.contains(fis))
+					{
+						fisInvIds.add(fis);
+					}
+				}
+			}
+		}
+
+		List<Inventory> fisItems = new ArrayList<Inventory>();
+		for (String invId : fisInvIds)
+		{
+			Inventory fisItem = inventoryDao.get(invId);
+			Inventory lateFisItem = getLateFis(fisItem);
+			if(lateFisItem != null)
+			{
+				fisItem = lateFisItem;
+			}
+			if(!inventoryIsRestricted(accountBean, fisItem))
+			{
+				fisItems.add(fisItem);
+			}
+		}
+
+		return fisItems;
+	}
+
+	public List<Inventory> findApplicableMagazineItems(AccountBean accountBean)
+	{
+		Address member = accountBean.getAddress();
+		CartBean cart = accountBean.getCartBean();
+		List<Inventory> magazineItems = new ArrayList<Inventory>();
+
+		// only give magazines to people with addresses in the US
+		// TODO: Do a better USA check than this
+		if(member.getCountry().equals("USA"))
+		{
+			List<String> magazineInvIds = new ArrayList<String>();
+
+			if(cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() > 0)
+			{
+				if(hasOnlyYouthMemberships(accountBean))
+				{
+					magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES);
+				}
+				else
+				{
+					magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+					magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
+					magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
+				}
+			}
+
+			for (String magazineInvId : magazineInvIds)
+			{
+				Inventory magazineInventory = inventoryDao.get(magazineInvId);
+				if(!inventoryIsRestricted(accountBean, magazineInventory))
+				{
+					magazineItems.add(magazineInventory);
+				}
+			}
+		}
+
+		return magazineItems;
+	}
+
+	private boolean hasOnlyYouthMemberships(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+		if(membershipItems.size() > 0)
+		{
+			for (LineItemBean lineItem : membershipItems)
+			{
+				if(!RuleAssociations.youthMemberships.contains(lineItem.getInventory().getId()))
+				{
+					return false;
+				}
+			}
+		}
+		else
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	private boolean hasOnlyOfficialMemberships(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+		if(membershipItems.size() > 0)
+		{
+			for (LineItemBean lineItem : membershipItems)
+			{
+				if(!RuleAssociations.officialMemberships.contains(lineItem.getInventory().getId()))
+				{
+					return false;
+				}
+			}
+		}
+		else
+		{
+			return false;
+		}
+
+		return true;
+	}
+
+	public void addMembershipToCart(AccountBean accountBean, Inventory inventory)
+	{
+		CartBean cartBean = accountBean.getCartBean();
+
+		if(!inventoryIsRestricted(accountBean, inventory))
+		{
+			BigDecimal discount = calculateMembershipDiscount(accountBean, inventory);
+
+			if(discount == null)
+			{
+				cartBean.addItem(inventory);
+			}
+			else
+			{
+				cartBean.addItem(inventory, inventory.getAmount(), discount, 1);
+			}
+
+			// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
+			String officialInvId = RuleAssociations.officialsByCoach.get(inventory.getId());
+			if(officialInvId != null && cartBean.contains(officialInvId))
+			{
+				cartBean.removeLineItem(officialInvId);
+			}
+		}
+	}
+
+	private BigDecimal calculateMembershipDiscount(AccountBean accountBean, Inventory inventory)
+	{
 		CartBean cart = accountBean.getCartBean();
 		BigDecimal discount = null;
-
-		if("Y".equals(member.getLifetimeMember()))
-		{
-			// TODO: give $35 discount to lifetime members
-		}
 
 		// If you purchase more than one membership then subsequent ones should be discounted $35 or $25
 		if(Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(inventory.getInventoryType())
 				&& cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() > 0)
 		{
 			// If you are adding or have a membership from the 25 dollar group then the discount is 25.
-			if(twentyFiveDollarDiscountGroup.containsKey(inventory.getId())
-					|| cart.containsAny(twentyFiveDollarDiscountGroup.keySet()))
+			if(RuleAssociations.twentyFiveDollarDiscountGroup.contains(inventory.getId())
+					|| cart.containsAny(RuleAssociations.twentyFiveDollarDiscountGroup))
 			{
 				discount = new BigDecimal(25);
 			}
@@ -174,19 +296,244 @@ public class RulesBLImpl implements RulesBL
 		return discount;
 	}
 
+	private void revokeMembershipDiscountIfNeeded(AccountBean accountBean)
+	{
+		List<LineItemBean> lineItems = accountBean.getCartBean().getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+		if(lineItems.size() > 0)
+		{
+			// if there is more than on membership and they aren't paying full price for any of them.
+			int indexOfMinDiscount = -1;
+			BigDecimal minDiscount = null;
+			for (int i = 0; i < lineItems.size(); i++)
+			{
+				LineItemBean lineItemBean = lineItems.get(i);
+				BigDecimal discount = lineItemBean.getDiscount();
+				if(discount == null)
+				{
+					// the are already paying full price for one of their memberships so do nothing
+					return;
+				}
+				else if(minDiscount == null || discount.floatValue() < minDiscount.floatValue())
+				{
+					minDiscount = discount;
+					indexOfMinDiscount = i;
+				}
+			}
+			// remove the smallest discounted value from one of the memberships
+			if(indexOfMinDiscount >= 0)
+			{
+				lineItems.get(indexOfMinDiscount).setDiscount(null);
+			}
+		}
+	}
+
+	public void removeItemFromCart(AccountBean accountBean, String invId)
+	{
+		CartBean cart = accountBean.getCartBean();
+
+		LineItemBean lineItem = cart.getLineItem(invId);
+		if(lineItem != null)
+		{
+			if(Inventory.INVENTORY_TYPE_DONATION.equals(lineItem.getInventory().getInventoryType()))
+			{
+				accountBean.setContributionAmount(null);
+			}
+			cart.removeLineItem(invId);
+		}
+
+		String[] fises = RuleAssociations.fisByMembership.get(invId);
+		if(fises != null)
+		{
+			for (String fis : fises)
+			{
+				cart.removeLineItem(fis);
+			}
+		}
+
+		resetFisOptions(accountBean);
+		resetMagazineOption(accountBean);
+
+		revokeMembershipDiscountIfNeeded(accountBean);
+	}
+
+	public void handleFisOptions(AccountBean accountBean)
+	{
+		// convert String array to Set
+		Set<String> fisOptions = new HashSet<String>();
+		if(accountBean.getFisOptions() != null)
+		{
+			for (String fisOption : accountBean.getFisOptions())
+			{
+				fisOptions.add(fisOption);
+			}
+		}
+
+		// remove any fis items from the cart that aren't checked
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> fisItems = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
+		for (LineItemBean fisItem : fisItems)
+		{
+			if(!fisOptions.contains(fisItem.getInventory().getId()))
+			{
+				cart.removeLineItem(fisItem.getInventory().getId());
+			}
+		}
+
+		// add any fis items that are checked that aren't in the cart
+		if(accountBean.getFisOptions() != null)
+		{
+			for(String fisOption : accountBean.getFisOptions())
+			{
+				if(!cart.contains(fisOption))
+				{
+					Inventory fisItem = inventoryDao.get(fisOption);
+					addMembershipToCart(accountBean, fisItem);
+				}
+			}
+		}
+	}
+
+	private void resetFisOptions(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
+		List<String> fisInvIds = new ArrayList<String>();
+		for (LineItemBean lineItem : lineItems)
+		{
+			fisInvIds.add(lineItem.getInventory().getId());
+		}
+
+		accountBean.setFisOptions(fisInvIds.toArray(new String[fisInvIds.size()]));
+	}
+
+	public void handleMagazineOption(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+
+		String magazineOption = accountBean.getMagazineOption();
+
+		List<LineItemBean> magazines = accountBean.getCartBean().getLineItems(Inventory.INVENTORY_TYPE_MAGAZINE);
+		if(magazines.size() > 0 && !magazines.get(0).getInventory().getId().equals(magazineOption))
+		{
+			cart.removeLineItem(magazines.get(0).getInventory().getId());
+			if(StringUtils.isNotBlank(magazineOption))
+			{
+				cart.addItem(inventoryDao.get(magazineOption));
+			}
+		}
+		else if(magazines.size() == 0)
+		{
+			if(StringUtils.isNotBlank(magazineOption))
+			{
+				cart.addItem(inventoryDao.get(magazineOption));
+			}
+		}
+	}
+
+	private void resetMagazineOption(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MAGAZINE);
+		if(lineItems.size() > 0)
+		{
+			accountBean.setMagazineOption(lineItems.get(0).getInventory().getId());
+		}
+		else
+		{
+			accountBean.setMagazineOption("");
+		}
+	}
+
+	public void handleContribution(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> donations = cart.getLineItems(Inventory.INVENTORY_TYPE_DONATION);
+		LineItemBean donation = null;
+		if(donations.size() > 0)
+		{
+			donation = donations.get(0);
+			if(accountBean.getContributionAmount() != null)
+			{
+				donation.setAmount(new BigDecimal(accountBean.getContributionAmount()));
+			}
+			else
+			{
+				cart.removeLineItem(donation.getInventory().getId());
+			}
+		}
+		else
+		{
+			if(accountBean.getContributionAmount() != null)
+			{
+				// TODO: find the primary membership and donate to that club
+				List<Inventory> donationInventory = inventoryDao.getIventoryByType(Inventory.INVENTORY_TYPE_DONATION);
+				cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
+			}
+		}
+	}
+
+	private Inventory getLateFis(Inventory fisItem)
+	{
+		String invId = fisItem.getId();
+		String lateInvId = null;
+		Date now = new Date();
+		if(Inventory.INV_ID_ALPINE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
+		}
+		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE;
+		}
+		else if(Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(invId) && now.after(dateBL.getCrossCountryFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_CROSS_COUNTRY_FIS;
+		}
+		else if(Inventory.INV_ID_FREESTYLE_FIS.equals(invId) && now.after(dateBL.getFreestyleFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_FREESTYLE_FIS;
+		}
+		else if(Inventory.INV_ID_JUMPING_FIS.equals(invId) && now.after(dateBL.getJumpingFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_JUMPING_FIS;
+		}
+
+
+		if(lateInvId != null)
+		{
+			return inventoryDao.get(lateInvId);
+		}
+		else
+		{
+			return null;
+		}
+	}
+
 	public BigDecimal calculateDivisionDuesLateFees()
 	{
+		Date now = new Date();
 		return null;
 	}
 
-	public BigDecimal calculateUssaLateFees()
+	public void addRemoveUssaLateFee(AccountBean accountBean)
 	{
+		Member member = accountBean.getMember();
+		CartBean cart = accountBean.getCartBean();
 		Calendar currentTime = Calendar.getInstance();
 		if(currentTime.after(dateBL.getLateRenewDate()))
 		{
-			return new BigDecimal(25);
-		}
 
-		return null;
+			if((member.getId() == null || member.getId() == 0)
+				|| hasOnlyYouthMemberships(accountBean)
+				|| hasOnlyOfficialMemberships(accountBean))
+			{
+				cart.removeLineItem(Inventory.INV_ID_MEMBER_LATE_FEE);
+			}
+			else if(!cart.contains(Inventory.INV_ID_MEMBER_LATE_FEE))
+			{
+				Inventory memberLateFee = inventoryDao.get(Inventory.INV_ID_MEMBER_LATE_FEE);
+				addMembershipToCart(accountBean, memberLateFee);
+			}
+		}
 	}
 }
