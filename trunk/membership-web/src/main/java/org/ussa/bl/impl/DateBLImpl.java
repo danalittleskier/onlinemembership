@@ -47,12 +47,6 @@ public class DateBLImpl implements DateBL
 		return getDateFromParameterTable(ParameterTable.FREESTYLE_FIS_LATE_DATE);
 	}
 
-	public Date getJumpingFisLateDate()
-	{
-		return getDateFromParameterTable(ParameterTable.ALPINE_FIS_LATE_DATE);
-//		return getDateFromParameterTable(ParameterTable.JUMPING_FIS_LATE_DATE);
-	}
-
 	public Date getIpcAsLateDate()
 	{
 		return getDateFromParameterTable(ParameterTable.IPC_LATE_DATE);

@@ -14,8 +14,6 @@ public interface DateBL
 
 	public Date getFreestyleFisLateDate();
 
-	public Date getJumpingFisLateDate();
-
 	public Date getIpcAsLateDate();
 
 	public Date getLateRenewDate();
