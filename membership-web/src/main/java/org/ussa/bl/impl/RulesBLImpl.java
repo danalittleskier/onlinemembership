@@ -493,10 +493,6 @@ public class RulesBLImpl implements RulesBL
 		{
 			lateInvId = Inventory.INV_ID_LATE_FREESTYLE_FIS;
 		}
-		else if(Inventory.INV_ID_JUMPING_FIS.equals(invId) && now.after(dateBL.getJumpingFisLateDate()))
-		{
-			lateInvId = Inventory.INV_ID_LATE_JUMPING_FIS;
-		}
 
 
 		if(lateInvId != null)

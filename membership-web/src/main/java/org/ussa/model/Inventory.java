@@ -86,7 +86,6 @@ public class Inventory implements Serializable
 	public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE = "FISASDL";
 	public static final String INV_ID_LATE_CROSS_COUNTRY_FIS = "FISXL";
 	public static final String INV_ID_LATE_FREESTYLE_FIS = "FISFL";
-	public static final String INV_ID_LATE_JUMPING_FIS = "FISJL";
 
 	// Magazines
 	public static final String INV_ID_SNOWBOARD_MAGAZINE = "MAGSB";
