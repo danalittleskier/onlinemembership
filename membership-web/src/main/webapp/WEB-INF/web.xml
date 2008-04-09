@@ -26,11 +26,13 @@
     <!-- Context Configuration locations for Spring XML files -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
+		<!--applicatoin context service is in appfuse-service-2.0.1.jar -->
+		<!-- classpath*:/applicationContext.xml -->
+		<param-value>
             classpath:/applicationContext-resources.xml
-            classpath:/applicationContext-service.xml
-            classpath*:/applicationContext.xml
-            /WEB-INF/applicationContext*.xml
+            classpath:/applicationContext-service-membership.xml
+			classpath*:/applicationContext.xml
+			/WEB-INF/applicationContext*.xml
             /WEB-INF/xfire-servlet.xml
             /WEB-INF/security.xml
             /WEB-INF/applicationContext-CrowdClient.xml
@@ -72,7 +74,7 @@
     <!-- Use "org.springframework.orm.jpa.support.OpenEntityManagerInViewFilter" if you're using JPA -->
     <filter>
         <filter-name>localeFilter</filter-name>
-        <filter-class>org.appfuse.webapp.filter.LocaleFilter</filter-class>
+        <filter-class>org.ussa.webapp.filter.LocaleFilter</filter-class>
     </filter>
     <filter>
         <filter-name>rewriteFilter</filter-name>
@@ -96,7 +98,7 @@
     </filter>
     <filter>
         <filter-name>staticFilter</filter-name>
-        <filter-class>org.appfuse.webapp.filter.StaticFilter</filter-class>
+        <filter-class>org.ussa.webapp.filter.StaticFilter</filter-class>
         <init-param>
             <param-name>includes</param-name>
             <param-value>/scripts/dojo/*,/dwr/*</param-value>
@@ -186,12 +188,14 @@
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
+<!--
     <listener>
-        <listener-class>org.appfuse.webapp.listener.StartupListener</listener-class>
+        <listener-class>org.ussa.webapp.listener.StartupListener</listener-class>
     </listener>
     <listener>
-        <listener-class>org.appfuse.webapp.listener.UserCounterListener</listener-class>
+        <listener-class>org.ussa.webapp.listener.UserCounterListener</listener-class>
     </listener>
+-->
     <listener>
         <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
     </listener>

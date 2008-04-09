@@ -98,7 +98,7 @@
     </bean>
 
     <bean id="rememberMeServices" class="org.acegisecurity.ui.rememberme.TokenBasedRememberMeServices">
-        <property name="userDetailsService" ref="userDao"/>
+        <property name="userDetailsService" ref="crowdUserDetailsService"/>
         <property name="key" value="23_*!cdU='612./e;NrI"/>
         <property name="parameter" value="rememberMe"/>
     </bean>
@@ -140,22 +140,6 @@
     <!-- This bean is optional; it isn't used by any other bean as it only listens and logs -->
     <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
 
-    <!-- Apply method-level interceptor to userManager bean -->
-    <aop:config>
-        <aop:advisor id="managerSecurity" advice-ref="methodSecurityInterceptor" pointcut="execution(* org.appfuse.service.UserManager.*(..))"/>
-    </aop:config>
-
-    <bean id="methodSecurityInterceptor" class="org.acegisecurity.intercept.method.aopalliance.MethodSecurityInterceptor">
-        <property name="authenticationManager" ref="authenticationManager"/>
-        <property name="accessDecisionManager" ref="accessDecisionManager"/>
-        <property name="objectDefinitionSource">
-             <value>
-                 org.appfuse.service.UserManager.getUsers=ROLE_ADMIN
-                 org.appfuse.service.UserManager.removeUser=ROLE_ADMIN
-             </value>
-        </property>
-    </bean>
-
     <!-- SSL Switching: to use this, configure it in the filterChainProxy bean -->
     <bean id="channelProcessingFilter" class="org.acegisecurity.securechannel.ChannelProcessingFilter">
         <property name="channelDecisionManager" ref="channelDecisionManager"/>
@@ -181,4 +165,8 @@
             </list>
         </property>
     </bean>
+
+	<bean id="securityContext" class="org.acegisecurity.context.SecurityContextHolder" factory-method="getContext" scope="prototype">
+		<aop:scoped-proxy/>
+	</bean>
 </beans>

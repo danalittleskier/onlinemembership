@@ -45,10 +45,6 @@
         <level value="ERROR"/>
     </logger>
 
-    <logger name="org.appfuse">
-        <level value="INFO"/>
-    </logger>
-    
     <logger name="com.ussa.app">
         <level value="DEBUG"/>
     </logger>

@@ -3,7 +3,7 @@ package org.ussa.dao.impl;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.appfuse.dao.hibernate.GenericDaoHibernate;
+import org.ussa.app.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.StateDao;
 import org.ussa.model.State;

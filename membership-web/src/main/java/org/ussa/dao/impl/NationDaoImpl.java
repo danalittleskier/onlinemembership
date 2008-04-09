@@ -2,7 +2,7 @@ package org.ussa.dao.impl;
 
 import java.util.List;
 
-import org.appfuse.dao.hibernate.GenericDaoHibernate;
+import org.ussa.app.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.NationDao;
 import org.ussa.model.Nation;
 

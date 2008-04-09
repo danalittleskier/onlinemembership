@@ -2,7 +2,7 @@ package org.ussa.dao;
 
 import java.util.List;
 
-import org.appfuse.dao.GenericDao;
+import org.ussa.app.dao.GenericDao;
 import org.ussa.model.Member;
 
 
