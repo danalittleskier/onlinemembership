@@ -79,13 +79,13 @@
 
 		<fieldset>
 			<legend>State & Club</legend>
-			<label for="">* State:</label>
+			<label style="width: 100px;" for="">* State:</label>
 			<form:select path="member.stateCode" onchange="document.getElementById('update').click();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
-			<label for="">* Club:</label>
+			<label style="width: 100px;" for="">* Club:</label>
 			<form:select path="clubId" onchange="document.getElementById('update').click();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
@@ -98,7 +98,7 @@
 
 		<fieldset>
 			<legend>Division</legend>
-			<label for="">Division:</label>
+			<label style="width: 100px;" for="">Division:</label>
 			<c:out value="${accountBean.member.division.description}"/>
 			<br/>
 		</fieldset>

@@ -16,7 +16,7 @@
 <table id="stg-data-review">
 	<tr>
 		<th scope="col">Personal Information</th>
-		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
+		<th scope="col" class="edit"><input style="float:right;" type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">USSA Member #:</td>
@@ -64,7 +64,7 @@
 <table id="stg-data-review">
 	<tr>
 		<th scope="col">Address & Phone</th>
-		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
+		<th scope="col" class="edit"><input style="float:right;" type="submit" class="btn-green" name="_eventId_editContactInfo" value="Edit"></th>
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Company:</td>
@@ -118,7 +118,7 @@
 <table id="stg-data-review">
 	<tr>
 		<th scope="col">Membership Information</th>
-		<th scope="col" class="edit"><input type="submit" class="btn-green" name="_eventId_editSportMembership" value="Edit">
+		<th scope="col" class="edit"><input style="float:right;" type="submit" class="btn-green" name="_eventId_editSportMembership" value="Edit">
 		</th>
 
 	</tr>

@@ -30,6 +30,7 @@ reside in the roots of these too directories (/images/ and /scripts/).
 .clear {clear:both;}
 p {margin:0 0 15px 0;}
 ul {margin-left:20px;}
+a img {border:0;}
 
 /* Header
 ---------------------------------------------------------------------- */
@@ -52,6 +53,10 @@ ul {margin-left:20px;}
 	height:400px;
 	background:#fff;
 	padding:20px 20px 0 20px;
+	/* this was added for the t-shirt popup - start*/
+	position:relative;
+	z-index:1;
+	/* this was added for the t-shirt popup - end*/
 }
 
 #stg-onecol-primary {
@@ -205,13 +210,38 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .tshirt-menu-2, .tshirt-menu-3 {margin-left:50px !important; margin-left:40px;}
 .tshirt-size, .tshirt-qty {float:left;}
 
-.decal-row {width:320px; margin:0 auto;}
+.decal-row {width:410px; margin:0 auto;}
 .decal-row p {font-weight:bold;}
-.decal-row label {width:70px; text-align:left; padding-bottom:20px;}
+.decal-row label {width:20px; text-align:left;}
 .decal-row input {width:30px; height:17px;}
 
-.decal-1, .decal-2 {width:160px; float:left; text-align:center;}
+.decal-qty {text-align:left;}
+.packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
+.decal {width:195px; float:left; text-align:center; padding:0 5px;}
 
-.decal-menu-1, .decal-menu-2 {width:80px; margin-left:40px !important; margin-left:20px; float:left;}
-.decal-menu-2 {margin-left:82px !important; margin-left:67px;}
-.decal-pack, .decal-qty {float:left;}
+/* If you use a modal then delete everthing that comes after this line */
+#bonus-popup {display:none; position:absolute; z-index:2; left:100px; top:100px; width:540px; height:450px; background-color:#333;}
+.popup-title {width:90%; padding:15px 0 10px 15px; text-align:left;}
+.popup-subtitle {font:bold 110% arial,verdana,sans-serif; color:#ccc; text-align:left;}
+.popup-title input {float:right; margin-top:-20px;}
+#title-text{font:bold 180% arial,verdana,sans-serif; color:#fff; margin-right:5px;}
+
+#popup-content {width:535px; height:366px;}
+.alpine {background:url(../images/popup-alpine.gif) no-repeat;}
+.freestyle {background:url(../images/popup-freestyle.gif) no-repeat;}
+.crosscountry {background:url(../images/popup-crosscountry.gif) no-repeat;}
+.jumpingnc {background:url(../images/popup-jumpingnc.gif) no-repeat;}
+.skigeneral {background:url(../images/popup-skigeneral.gif) no-repeat;}
+.snowboarding {background:url(../images/popup-snowboarding.gif) no-repeat;}
+
+#bonus-popup iframe
+{
+display:none;/*sorry for IE5*/
+display/**/:block;/*sorry for IE5*/
+position:absolute;/*must have*/
+top:0;/*must have*/
+left:0;/*must have*/
+z-index:-1;/*must have*/
+filter:mask();/*must have*/
+width: 100%;/*must have for any big value*/
+height: 100%;/*must have for any big value*/;

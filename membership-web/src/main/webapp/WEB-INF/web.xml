@@ -29,9 +29,8 @@
 		<!--applicatoin context service is in appfuse-service-2.0.1.jar -->
 		<!-- classpath*:/applicationContext.xml -->
 		<param-value>
-            classpath:/applicationContext-resources.xml
+            classpath:/applicationContext-resources-membership.xml
             classpath:/applicationContext-service-membership.xml
-			classpath*:/applicationContext.xml
 			/WEB-INF/applicationContext*.xml
             /WEB-INF/xfire-servlet.xml
             /WEB-INF/security.xml
