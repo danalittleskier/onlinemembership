@@ -2,7 +2,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
     
-    <display-name>appfuse</display-name>
+    <display-name>membership</display-name>
     <distributable/>
 
     <!-- precompiled jsp mappings -->
@@ -188,14 +188,6 @@
     <listener>
         <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
     </listener>
-<!--
-    <listener>
-        <listener-class>org.ussa.webapp.listener.StartupListener</listener-class>
-    </listener>
-    <listener>
-        <listener-class>org.ussa.webapp.listener.UserCounterListener</listener-class>
-    </listener>
--->
     <listener>
         <listener-class>net.sf.navigator.menu.MenuContextListener</listener-class>
     </listener>
