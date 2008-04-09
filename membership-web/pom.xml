@@ -7,8 +7,8 @@
 	<artifactId>membership-web</artifactId>
 	<packaging>war</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>AppFuse Spring MVC Application</name>
-	<url>http://www.mycompany.com</url>
+	<name>Spring MVC Application</name>
+	<url>http://www.ussa.org</url>
 
 	<prerequisites>
 		<maven>2.0.6</maven>
@@ -84,26 +84,6 @@
 					<dependentWarExcludes>
 						**/jdbc.properties,**/hibernate.cfg.xml,**/sql-map-config.xml,**/web.xml,WEB-INF/classes/META-INF/**
 					</dependentWarExcludes>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.appfuse</groupId>
-				<artifactId>maven-warpath-plugin</artifactId>
-				<version>${appfuse.version}</version>
-				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<goals>
-							<goal>add-classes</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<warpathExcludes>
-						applicationContext-resources.xml,ApplicationResources*.properties,ehcache.xml,
-						hibernate.cfg.xml,jdbc.properties,log4j.xml,mail.properties,**/persistence.xml,
-						sql-map-config.xml
-					</warpathExcludes>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -249,33 +229,6 @@
 					<artifactId>jta</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.appfuse</groupId>
-			<artifactId>appfuse-${web.framework}</artifactId>
-			<version>${appfuse.version}</version>
-			<type>war</type>
-		</dependency>
-		<dependency>
-			<groupId>org.appfuse</groupId>
-			<artifactId>appfuse-${web.framework}</artifactId>
-			<version>${appfuse.version}</version>
-			<type>warpath</type>
-			<!-- This exclusion and the dependency following this one allow DAO framework switching. -->
-			<!-- You only need these if you want to use JPA or iBATIS. See APF-565 for more information. -->
-			<!-- It does no harm to leave it in for Hibernate, but it's not needed. -->
-			<exclusions>
-				<exclusion>
-					<groupId>org.appfuse</groupId>
-					<artifactId>appfuse-hibernate</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-		<dependency>
-			<groupId>org.appfuse</groupId>
-			<artifactId>appfuse-${dao.framework}</artifactId>
-			<version>${appfuse.version}</version>
 		</dependency>
 
 		<dependency>
@@ -442,7 +395,6 @@
 		<amp.fullSource>false</amp.fullSource>
 
 		<!-- Framework dependency versions -->
-		<appfuse.version>2.0.1</appfuse.version>
 		<spring.version>2.5</spring.version>
 
 		<!-- Testing dependency versions -->
