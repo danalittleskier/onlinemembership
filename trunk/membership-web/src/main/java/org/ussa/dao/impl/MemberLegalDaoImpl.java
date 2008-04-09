@@ -1,6 +1,6 @@
 package org.ussa.dao.impl;
 
-import org.appfuse.dao.hibernate.GenericDaoHibernate;
+import org.ussa.app.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;

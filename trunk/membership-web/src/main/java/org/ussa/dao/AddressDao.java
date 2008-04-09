@@ -1,6 +1,6 @@
 package org.ussa.dao;
 
-import org.appfuse.dao.GenericDao;
+import org.ussa.app.dao.GenericDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 
