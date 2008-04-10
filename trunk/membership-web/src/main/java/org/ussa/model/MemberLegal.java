@@ -37,8 +37,15 @@ public class MemberLegal implements Serializable
 	@Column(name = "RELEASE_WAIVER_DATE", nullable = true)
 	private Date releaseWaiverDate;
 
+    public MemberLegal() {
+        // empty constructor required for Hibernate
+    }
 
-	public MemberLegalPk getMemberLegalPk()
+    public MemberLegal(Member member, String season) {
+        memberLegalPk = new MemberLegalPk(member, season);
+    }
+
+    public MemberLegalPk getMemberLegalPk()
 	{
 		return memberLegalPk;
 	}
@@ -117,4 +124,20 @@ public class MemberLegal implements Serializable
 	{
 		this.releaseWaiverDate = releaseWaiverDate;
 	}
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MemberLegal that = (MemberLegal) o;
+
+        if (memberLegalPk != null ? !memberLegalPk.equals(that.memberLegalPk) : that.memberLegalPk != null)
+            return false;
+
+        return true;
+    }
+
+    public int hashCode() {
+        return (memberLegalPk != null ? memberLegalPk.hashCode() : 0);
+    }
 }

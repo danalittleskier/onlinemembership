@@ -1,15 +1,12 @@
 package org.ussa.service.impl;
 
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
-import org.ussa.bl.RulesBL;
 import org.ussa.bl.DateBL;
+import org.ussa.bl.RulesBL;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.MemberDao;
@@ -18,10 +15,13 @@ import org.ussa.model.Address;
 import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
-import org.ussa.model.MemberTransaction;
 import org.ussa.model.MemberSeason;
+import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
+
+import java.util.Date;
+import java.util.List;
 
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
@@ -49,8 +49,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		{
 			ussaId = rulesBL.getNextUssaId();
 			member.setId(ussaId);
-			address.getAddressPk().setId(ussaId);
-			memberLegal.getMemberLegalPk().setUssaId(ussaId);
+//			address.getAddressPk().setId(ussaId);
+//			memberLegal.getMemberLegalPk().setUssaId(ussaId);
 		}
 
 		// MEMBERLEGAL

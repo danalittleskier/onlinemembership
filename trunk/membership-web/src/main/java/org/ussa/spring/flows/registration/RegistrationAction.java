@@ -1,10 +1,5 @@
 package org.ussa.spring.flows.registration;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.acegisecurity.context.SecurityContextHolder;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -34,6 +29,11 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -145,7 +145,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 			AddressPk addressPk = new AddressPk();
 			addressPk.setType("P");
-			addressPk.setId(id);
+//			addressPk.setId(id);
 			address = addressDao.get(addressPk);
 			if (address == null)
 			{
@@ -168,7 +168,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 				rulesBL.addMembershipToCart(accountBean, inventory);
 			}
 
-			memberLegalPk.setUssaId(member.getId());
+//			memberLegalPk.setUssaId(member.getId());
 			MemberLegal tempMemberLegal = memberLegalDao.get(memberLegalPk);
 			if(tempMemberLegal != null)
 			{
