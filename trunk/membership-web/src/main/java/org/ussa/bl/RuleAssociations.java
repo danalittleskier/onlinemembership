@@ -13,6 +13,7 @@ public class RuleAssociations
 	public static final Map<String, String> coachesByOfficial;
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
+	public static final Set<String> disabledFisMemberships;
 	public static final Set<String> youthMemberships;
 	public static final Set<String> officialMemberships;
 	static {
@@ -48,6 +49,10 @@ public class RuleAssociations
 		fisByMembership.put(Inventory.INV_ID_SNOWBOARD_COMPETITOR, new String[]{Inventory.INV_ID_SNOWBOARD_FIS});
 		fisByMembership.put(Inventory.INV_ID_JUMPING_COMPETITOR, new String[]{Inventory.INV_ID_JUMPING_FIS});
 		fisByMembership.put(Inventory.INV_ID_NORDIC_COMBINED_COMPETITOR, new String[]{Inventory.INV_ID_NORDIC_COMBINED_FIS});
+
+		disabledFisMemberships = new HashSet<String>();
+		disabledFisMemberships.add(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS);
+		disabledFisMemberships.add(Inventory.INV_ID_ALP_PTS_CONF_FIS);
 
 		youthMemberships = new HashSet<String>();
 		youthMemberships.add(Inventory.INV_ID_ALPINE_YOUTH);

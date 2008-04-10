@@ -532,4 +532,33 @@ public class RulesBLImpl implements RulesBL
 			}
 		}
 	}
+
+	public boolean hasFis(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> fis = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
+		for (LineItemBean lineItem : fis)
+		{
+			if(!RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean hasDisabledFis(AccountBean accountBean)
+	{
+		CartBean cart = accountBean.getCartBean();
+		List<LineItemBean> fis = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
+		for (LineItemBean lineItem : fis)
+		{
+			if(RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 }

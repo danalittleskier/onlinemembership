@@ -29,4 +29,8 @@ public interface RulesBL
 	public void handleContribution(AccountBean accountBean);
 
 	public void addRemoveUssaLateFee(AccountBean accountBean);
+
+	public boolean hasFis(AccountBean accountBean);
+
+	public boolean hasDisabledFis(AccountBean accountBean);
 }
