@@ -9,7 +9,6 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
-import org.ussa.bl.RuleAssociations;
 
 public class AccountBean
 {
@@ -32,6 +31,8 @@ public class AccountBean
 	private String[] fisOptions;
 	private String magazineOption;
 	private Boolean hasInsurance;
+	private Boolean hasFisWaiver;
+	private Boolean hasFisWaiverDisabled;
 
 	//Reference Data fields.  Do not save when done:
 	private List<State> usStates;
@@ -117,6 +118,26 @@ public class AccountBean
 	public void setHasInsurance(Boolean hasInsurance)
 	{
 		this.hasInsurance = hasInsurance;
+	}
+
+	public Boolean getHasFisWaiver()
+	{
+		return hasFisWaiver;
+	}
+
+	public void setHasFisWaiver(Boolean hasFisWaiver)
+	{
+		this.hasFisWaiver = hasFisWaiver;
+	}
+
+	public Boolean getHasFisWaiverDisabled()
+	{
+		return hasFisWaiverDisabled;
+	}
+
+	public void setHasFisWaiverDisabled(Boolean hasFisWaiverDisabled)
+	{
+		this.hasFisWaiverDisabled = hasFisWaiverDisabled;
 	}
 
 	public void setUsStates(List<State> usStates)

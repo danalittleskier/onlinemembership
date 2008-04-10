@@ -31,6 +31,8 @@
 				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
 				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
 				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
+				<entry key="validatorFisWaiver" value-ref="validatorFisWaiver"/>
+				<entry key="validatorFisWaiverDisabled" value-ref="validatorFisWaiverDisabled"/>
 				<entry key="validatorAddExtras" value-ref="validatorAddExtras"/>
 				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
 				<entry key="validatorMedical" value-ref="validatorMedical"/>
@@ -56,6 +58,12 @@
 	</bean>
 	<bean id="validatorAddExtras" parent="validatorTemplate">
 		<property name="formName" value="extras"/>
+	</bean>
+	<bean id="validatorFisWaiver" parent="validatorTemplate">
+		<property name="formName" value="fisWaiver"/>
+	</bean>
+	<bean id="validatorFisWaiverDisabled" parent="validatorTemplate">
+		<property name="formName" value="fisWaiverDisabled"/>
 	</bean>
 	<bean id="validatorMedical" parent="validatorTemplate">
 		<property name="formName" value="medical"/>

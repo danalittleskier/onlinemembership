@@ -96,10 +96,8 @@
 			{
 				height:30px;
 				padding:5px;
-                                width :222px ;
-				
+                width :222px ;
 				background-color:white;
-				
 				border-left:2px solid #4C4D4F;
 				border-right:2px solid #4C4D4F;
 			}
@@ -107,9 +105,7 @@
 				.page_header_wrapper .menu .search input
 				{
 					width:183px;
-					
 					border:1px solid #A5A5A5;
-
 					color:#727071;
 				}
 
@@ -130,9 +126,9 @@
 		
 			.topmenu_wrapper .topmenu .left
 			{
-				width:680px;
+				width:980px;
 				padding-left:10px;
-                                height:25px;
+                height:25px;
 				float:left;
 			}
 
@@ -156,15 +152,14 @@
                         .topmenu_wrapper .topmenu .left li ul li{
                             text-align:left;
                         }
-				/*
+
 				.topmenu_wrapper .topmenu .left a
 				{
 					display:block;
-					width:80px;
 					height:21px;
-						padding-top:4px;
+					padding-top:4px;
 					float:left;
-					
+					padding-right:25px;
 					font-size:13px;
 					color:#FEFFFF;
 				}
@@ -174,7 +169,7 @@
 					background-color:#004586;
 					text-decoration:none;
 				}
-				*/
+
                          
                          
 			.topmenu_wrapper .topmenu .right

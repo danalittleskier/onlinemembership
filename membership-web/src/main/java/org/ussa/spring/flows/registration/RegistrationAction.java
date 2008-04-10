@@ -1,5 +1,10 @@
 package org.ussa.spring.flows.registration;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.acegisecurity.context.SecurityContextHolder;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -29,11 +34,6 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
-
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -304,10 +304,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("back");
 	}
 
-	public Event hasFis(RequestContext context) throws Exception
+	public Event needsFisWaiver(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(rulesBL.hasFis(accountBean))
+		if(rulesBL.hasFis(accountBean, false) && !Boolean.TRUE.equals(accountBean.getHasFisWaiver()))
 		{
 			return result("true");
 		}
@@ -317,10 +317,21 @@ public class RegistrationAction extends MultiAction implements Serializable
 		}
 	}
 
-	public Event hasDisabledFis(RequestContext context) throws Exception
+	public Event handleFisWaiverResponse(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(rulesBL.hasDisabledFis(accountBean))
+		if(Boolean.FALSE.equals(accountBean.getHasFisWaiver()))
+		{
+			rulesBL.removeFisFromCart(accountBean, false);
+		}
+
+		return success();
+	}
+
+	public Event needsFisWaiverDisabled(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		if(rulesBL.hasFis(accountBean, true) && !Boolean.TRUE.equals(accountBean.getHasFisWaiverDisabled()))
 		{
 			return result("true");
 		}
@@ -328,6 +339,17 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			return result("false");
 		}
+	}
+
+	public Event handleFisWaiverDisabledResponse(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		if(Boolean.FALSE.equals(accountBean.getHasFisWaiverDisabled()))
+		{
+			rulesBL.removeFisFromCart(accountBean, true);
+		}
+
+		return success();
 	}
 
 	public Event addExtras(RequestContext context) throws Exception

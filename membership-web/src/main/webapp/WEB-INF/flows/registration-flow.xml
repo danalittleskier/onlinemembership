@@ -116,42 +116,68 @@
 	</action-state>
 
 	<action-state id="loadFisWaiverBack">
-		<action bean="registrationAction" method="hasFis"/>
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
 		<transition on="false" to="sportMembership"/>
 	</action-state>
 
 	<action-state id="loadFisWaiver">
-		<action bean="registrationAction" method="hasFis"/>
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
 		<transition on="false" to="loadFisWaiverDisabled"/>
 	</action-state>
 
 	<view-state id="fisWaiver" view="fisWaiver">
 		<transition on="back" to="loadSportMemberships"/>
-		<transition on="next" to="loadFisWaiverDisabled">
-			<action bean="accountBean" method="bind"/>
+		<transition on="next" to="handleFisWaiverResponse">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorFisWaiver"/>
+			</action>
 		</transition>
 	</view-state>
 
+	<action-state id="handleFisWaiverResponse">
+		<action bean="registrationAction"/>
+		<transition on="*" to="loadFisWaiverDisabled"/>
+	</action-state>
+
 	<action-state id="loadFisWaiverDisabledBack">
-		<action bean="registrationAction" method="hasDisabledFis"/>
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
 		<transition on="true" to="fisWaiverDisabled"/>
 		<transition on="false" to="loadFisWaiverBack"/>
 	</action-state>
 
 	<action-state id="loadFisWaiverDisabled">
-		<action bean="registrationAction" method="hasDisabledFis"/>
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
 		<transition on="true" to="fisWaiverDisabled"/>
 		<transition on="false" to="extras"/>
 	</action-state>
 
 	<view-state id="fisWaiverDisabled" view="fisWaiverDisabled">
 		<transition on="back" to="loadFisWaiverBack"/>
-		<transition on="next" to="extras">
-			<action bean="accountBean" method="bind"/>
+		<transition on="next" to="handleFisWaiverDisabledResponse">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorFisWaiverDisabled"/>
+			</action>
 		</transition>
 	</view-state>
+
+	<action-state id="handleFisWaiverDisabledResponse">
+		<action bean="registrationAction"/>
+		<transition on="*" to="extras"/>
+	</action-state>
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="loadFisWaiverDisabledBack"/>

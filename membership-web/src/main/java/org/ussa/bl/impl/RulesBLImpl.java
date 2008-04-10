@@ -533,32 +533,33 @@ public class RulesBLImpl implements RulesBL
 		}
 	}
 
-	public boolean hasFis(AccountBean accountBean)
+	public boolean hasFis(AccountBean accountBean, boolean disabled)
 	{
 		CartBean cart = accountBean.getCartBean();
 		List<LineItemBean> fis = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
 		for (LineItemBean lineItem : fis)
 		{
-			if(!RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
+			if(disabled && RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId())
+				|| !disabled && !RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
 			{
 				return true;
 			}
 		}
 		return false;
 	}
-
-	public boolean hasDisabledFis(AccountBean accountBean)
+	
+	public void removeFisFromCart(AccountBean accountBean, boolean disabled)
 	{
 		CartBean cart = accountBean.getCartBean();
 		List<LineItemBean> fis = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
 		for (LineItemBean lineItem : fis)
 		{
-			if(RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
+			if(disabled && RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId())
+				|| !disabled && !RuleAssociations.disabledFisMemberships.contains(lineItem.getInventory().getId()))
 			{
-				return true;
+				cart.removeLineItem(lineItem.getInventory().getId());
 			}
 		}
-		return false;
 	}
 
 }
