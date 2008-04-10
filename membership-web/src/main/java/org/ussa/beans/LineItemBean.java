@@ -88,7 +88,7 @@ public class LineItemBean
 		return "";
 	}
 
-	public String getDiscountedFormatted()
+	public String getDiscountFormatted()
 	{
 		if(getDiscount() != null)
 		{

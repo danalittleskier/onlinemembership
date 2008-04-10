@@ -9,6 +9,7 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
+import org.ussa.bl.RuleAssociations;
 
 public class AccountBean
 {

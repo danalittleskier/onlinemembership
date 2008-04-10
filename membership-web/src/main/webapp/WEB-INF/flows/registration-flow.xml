@@ -115,13 +115,16 @@
 		<transition on="*" to="loadFisWaiver"/>
 	</action-state>
 
+	<action-state id="loadFisWaiverBack">
+		<action bean="registrationAction" method="hasFis"/>
+		<transition on="true" to="fisWaiver"/>
+		<transition on="false" to="sportMembership"/>
+	</action-state>
+
 	<action-state id="loadFisWaiver">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
-		<action bean="registrationAction"/>
-		<transition on="showWaiver" to="fisWaiver"/>
-		<transition on="skip" to="loadFisWaiverDisabled"/>
+		<action bean="registrationAction" method="hasFis"/>
+		<transition on="true" to="fisWaiver"/>
+		<transition on="false" to="loadFisWaiverDisabled"/>
 	</action-state>
 
 	<view-state id="fisWaiver" view="fisWaiver">
@@ -131,24 +134,27 @@
 		</transition>
 	</view-state>
 
+	<action-state id="loadFisWaiverDisabledBack">
+		<action bean="registrationAction" method="hasDisabledFis"/>
+		<transition on="true" to="fisWaiverDisabled"/>
+		<transition on="false" to="loadFisWaiverBack"/>
+	</action-state>
+
 	<action-state id="loadFisWaiverDisabled">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
-		<action bean="registrationAction"/>
-		<transition on="showWaiver" to="fisWaiverDisabled"/>
-		<transition on="skip" to="extras"/>
+		<action bean="registrationAction" method="hasDisabledFis"/>
+		<transition on="true" to="fisWaiverDisabled"/>
+		<transition on="false" to="extras"/>
 	</action-state>
 
 	<view-state id="fisWaiverDisabled" view="fisWaiverDisabled">
-		<transition on="back" to="loadSportMemberships"/>
+		<transition on="back" to="loadFisWaiverBack"/>
 		<transition on="next" to="extras">
 			<action bean="accountBean" method="bind"/>
 		</transition>
 	</view-state>
 
 	<view-state id="extras" view="extras">
-		<transition on="back" to="sportMembership"/>
+		<transition on="back" to="loadFisWaiverDisabledBack"/>
 		<transition on="next" to="verification"/>
 		<transition on="add" to="addExtras">
 			<action bean="accountBean" method="bindAndValidate">
@@ -181,9 +187,7 @@
 		<transition on="back" to="extras"/>
 		<transition on="next" to="medical"/>
 		<transition on="editContactInfo" to="editContactInfo"/>
-		<transition on="editStateClub" to="editStateClub"/>
 		<transition on="editSportMembership" to="editSportMembership"/>
-		<transition on="editExtras" to="editExtras"/>
 		<transition on="remove" to="removeItemFromCart"/>
 		<exit-actions>
 			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
@@ -198,17 +202,7 @@
 		</transition>
 	</view-state>
 
-	<view-state id="editStateClub" view="stateClub">
-		<transition on="back" to="verification"/>
-		<transition on="next" to="verification"/>
-	</view-state>
-
 	<view-state id="editSportMembership" view="sportMembership">
-		<transition on="back" to="verification"/>
-		<transition on="next" to="verification"/>
-	</view-state>
-
-	<view-state id="editExtras" view="extras">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
@@ -216,14 +210,18 @@
 
 	<view-state id="medical" view="medical">
 		<transition on="back" to="verification"/>
-		<transition on="next" to="skipMedicalWaiverDecision">
+		<transition on="next" to="medicalWaiverDecision">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedical"/>
 			</action>
 		</transition>
 	</view-state>
 
-	<decision-state id="skipMedicalWaiverDecision">
+	<decision-state id="medicalWaiverDecisionBack">
+		<if test="${flowScope.accountBean.hasInsurance}" then="medical" else="medicalWaiver"/>
+	</decision-state>
+
+	<decision-state id="medicalWaiverDecision">
 		<if test="${flowScope.accountBean.hasInsurance}" then="releaseWaiver" else="medicalWaiver"/>
 	</decision-state>
 
@@ -237,7 +235,7 @@
 	</view-state>
 
 	<view-state id="releaseWaiver" view="releaseWaiver">
-		<transition on="back" to="medicalWaiver"/>
+		<transition on="back" to="medicalWaiverDecisionBack"/>
 		<transition on="next" to="loadPayment">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorReleaseWaiver"/>
@@ -254,7 +252,7 @@
 	</action-state>
 
 	<view-state id="registrationPayment" view="registrationPayment">
-		<transition on="back" to="verification"/>
+		<transition on="back" to="releaseWaiver"/>
 		<transition on="next" to="processOrder">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorRegistrationPayment"/>

@@ -304,14 +304,30 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("back");
 	}
 
-	public Event loadFisWaiver(RequestContext context) throws Exception
+	public Event hasFis(RequestContext context) throws Exception
 	{
-		return result("showWaiver");
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		if(rulesBL.hasFis(accountBean))
+		{
+			return result("true");
+		}
+		else
+		{
+			return result("false");
+		}
 	}
 
-	public Event loadFisWaiverDisabled(RequestContext context) throws Exception
+	public Event hasDisabledFis(RequestContext context) throws Exception
 	{
-		return result("showWaiver");
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		if(rulesBL.hasDisabledFis(accountBean))
+		{
+			return result("true");
+		}
+		else
+		{
+			return result("false");
+		}
 	}
 
 	public Event addExtras(RequestContext context) throws Exception
