@@ -49,7 +49,15 @@ public class Address implements Serializable
 	@Column(name = "PHONE_OTHER", nullable = true, length = 16, unique = false)
 	private String phoneOther;
 
-	public String getCompany()
+    public Address() {
+        // empty constructor required for Hibernate
+    }
+
+    public Address(Member member, String type) {
+        addressPk = new AddressPk(member, type);
+    }
+
+    public String getCompany()
 	{
 		return company;
 	}
@@ -169,4 +177,18 @@ public class Address implements Serializable
 		this.addressPk = addressPk;
 	}
 
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (addressPk != null ? !addressPk.equals(address.addressPk) : address.addressPk != null) return false;
+
+        return true;
+    }
+
+    public int hashCode() {
+        return (addressPk != null ? addressPk.hashCode() : 0);
+    }
 }

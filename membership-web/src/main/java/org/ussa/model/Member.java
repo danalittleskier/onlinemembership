@@ -1,11 +1,12 @@
 package org.ussa.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -14,7 +15,6 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.util.Calendar;
 import java.util.Date;
 
 @NamedQueries ({
@@ -28,8 +28,8 @@ import java.util.Date;
 public class Member implements Serializable
 {
 	//Member table fields
-	@Id
-	@GeneratedValue(strategy = GenerationType.TABLE)
+	@Id @GeneratedValue(generator="ussaidgen")
+    @GenericGenerator(name="ussaidgen", strategy = "org.ussa.dao.impl.UssaIdentifierGenerator")
 	@Column(name = "USSA_ID", length=7)
 	private Long id;
 
@@ -283,4 +283,19 @@ public class Member implements Serializable
 	{
 		this.parentInfo = parentInfo;
 	}
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Member member = (Member) o;
+
+        if (id != null ? !id.equals(member.id) : member.id != null) return false;
+
+        return true;
+    }
+
+    public int hashCode() {
+        return (id != null ? id.hashCode() : 0);
+    }
 }
