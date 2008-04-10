@@ -98,8 +98,8 @@
 
 		<fieldset>
 			<legend>Division</legend>
-			<label style="width: 100px;" for="">Division:</label>
-			<c:out value="${accountBean.member.division.description}"/>
+			<label style="width: 100px;">Division:</label>
+			<span class="data-input"><c:out value="${accountBean.member.division.description}"/></span>
 			<br/>
 		</fieldset>
 

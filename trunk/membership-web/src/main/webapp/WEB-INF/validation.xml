@@ -250,6 +250,18 @@
 			</field>
 		</form>
 
+		<form name="fisWaiver">
+			<field property="hasFisWaiver" depends="required">
+				<msg name="required" key="errors.must.accept.or.reject"/>
+			</field>
+		</form>
+
+		<form name="fisWaiverDisabled">
+			<field property="hasFisWaiverDisabled" depends="required">
+				<msg name="required" key="errors.must.accept.or.reject"/>
+			</field>
+		</form>
+
 		<form name="extras">
 			<field property="extrasBean.alpineOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>

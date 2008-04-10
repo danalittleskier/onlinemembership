@@ -1,7 +1,7 @@
 <%@ include file="/common/taglibs.jsp"%>
 <body>
 <!-- Progress bar -->
-<div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53" /></div>
+<div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">IPC Waiver</div>
 
 <!-- LEFT column -->
@@ -48,6 +48,13 @@ Notwithstanding anything contained herein to the contrary, I agree that for all 
 For Athletes of minority age (according to national laws):
 This is to certify that ,as parent/guardian of this participant, I do consent to his/her agreement to be bound by each of the terms and conditions identified above.
 <br/>
+
+	<label for="fisWaiver1">I agree.</label>
+	<form:radiobutton id="fisWaiver1" path="hasFisWaiverDisabled" value="${true}"/>
+	<br/>
+	<br/>
+	<label for="fisWaiver2">No I don't agree. Please remove all IPC FIS items from my cart.</label>
+	<form:radiobutton id="fisWaiver2" path="hasFisWaiverDisabled" value="${false}"/>
 
 </p>
 </div></div></div></div>

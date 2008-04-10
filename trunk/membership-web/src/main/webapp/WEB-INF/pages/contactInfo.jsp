@@ -16,8 +16,8 @@
 		<legend>Personal Information</legend>
 
 		<c:if test="${!empty accountBean.member.id }">
-			<label for="">USSA Member #</label>
-			<c:out value="${accountBean.member.id}" />
+			<label>USSA Member #</label>
+			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
 			<br/><br/>
 		</c:if>
 			<label for="">* First Name</label>

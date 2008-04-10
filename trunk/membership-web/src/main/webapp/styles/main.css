@@ -32,6 +32,11 @@ p {margin:0 0 15px 0;}
 ul {margin-left:20px;}
 a img {border:0;}
 
+.data-input {
+ display:block;
+ padding:4px 0 11px 0;
+}
+
 /* Header
 ---------------------------------------------------------------------- */
 #stg-header {background:#fff;}
