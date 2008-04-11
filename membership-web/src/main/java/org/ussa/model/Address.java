@@ -12,6 +12,9 @@ import java.io.Serializable;
 
 public class Address implements Serializable
 {
+	public static final String ADDRESS_TYPE_PRIMARY = "P";
+	public static final String ADDRESS_TYPE_SHIPPING = "S";
+	public static final String ADDRESS_TYPE_WINTER = "W";
 
 	@EmbeddedId
 	private AddressPk addressPk;

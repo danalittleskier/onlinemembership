@@ -67,9 +67,9 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 
 		Member member = accountBean.getMember();
 		Address address = accountBean.getAddress();
-		// address values. these are optional
-		appendParam(params, "x_first_name", member.getFirstName(), 50);
-		appendParam(params, "x_last_name", member.getLastName(), 50);
+		// address values. these are not optional
+//		appendParam(params, "x_first_name", member.getFirstName(), 50);
+//		appendParam(params, "x_last_name", member.getLastName(), 50);
 		appendParam(params, "x_address", address.getDeliveryAddress(), 60);
 		appendParam(params, "x_city", address.getCity(), 40);
 		appendParam(params, "x_state", address.getStateCode(), 40);
