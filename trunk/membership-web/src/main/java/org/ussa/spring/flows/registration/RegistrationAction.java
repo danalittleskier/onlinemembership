@@ -145,7 +145,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 			AddressPk addressPk = new AddressPk();
 			addressPk.setType("P");
-//			addressPk.setId(id);
+			addressPk.setMember(member);
 			address = addressDao.get(addressPk);
 			if (address == null)
 			{
@@ -168,7 +168,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 				rulesBL.addMembershipToCart(accountBean, inventory);
 			}
 
-//			memberLegalPk.setUssaId(member.getId());
+			memberLegalPk.setMember(member);
 			MemberLegal tempMemberLegal = memberLegalDao.get(memberLegalPk);
 			if(tempMemberLegal != null)
 			{
