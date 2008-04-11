@@ -1,1 +1,1 @@
-<%response.sendRedirect("/accounts/login.html");%>
+<%response.sendRedirect("/accounts/dashboard.html");%>
