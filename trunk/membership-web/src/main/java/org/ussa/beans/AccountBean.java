@@ -22,7 +22,7 @@ public class AccountBean
 	private ExtrasBean extrasBean = new ExtrasBean();
 
 	//Helper fields for binding, not persisited...
-	private int age;
+	private Boolean parentInfoRequired;
 	private Boolean usCitizen;
 	private String birthDate;
 	private Long clubId;
@@ -75,14 +75,14 @@ public class AccountBean
 		this.memberLegal = memberLegal;
 	}
 
-	public int getAge()
+	public Boolean getParentInfoRequired()
 	{
-		return age;
+		return parentInfoRequired;
 	}
 
-	public void setAge(int age)
+	public void setParentInfoRequired(Boolean parentInfoRequired)
 	{
-		this.age = age;
+		this.parentInfoRequired = parentInfoRequired;
 	}
 
 	public String getBirthDate()

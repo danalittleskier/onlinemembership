@@ -12,6 +12,8 @@ public interface RulesBL
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate);
 
+	public void setParentInfoRequired(AccountBean accountBean);
+
 	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean);
 
 	public List<Inventory> findApplicableFisItems(AccountBean accountBean);

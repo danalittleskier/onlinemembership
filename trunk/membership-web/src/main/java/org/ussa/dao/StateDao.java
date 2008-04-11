@@ -2,7 +2,7 @@ package org.ussa.dao;
 
 import java.util.List;
 
-import org.ussa.app.dao.GenericDao;
+import org.ussa.common.dao.GenericDao;
 import org.ussa.model.State;
 
 public interface StateDao extends GenericDao<State, String>

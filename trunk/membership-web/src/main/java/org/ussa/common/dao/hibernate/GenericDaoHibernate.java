@@ -1,9 +1,9 @@
-package org.ussa.app.dao.hibernate;
+package org.ussa.common.dao.hibernate;
 
 import java.io.Serializable;
 import java.util.List;
 
-import org.ussa.app.dao.GenericDao;
+import org.ussa.common.dao.GenericDao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.orm.ObjectRetrievalFailureException;

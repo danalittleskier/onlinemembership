@@ -2,7 +2,7 @@ package org.ussa.dao.impl;
 
 import java.util.List;
 
-import org.ussa.app.dao.hibernate.GenericDaoHibernate;
+import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.InventoryDao;
 import org.ussa.model.Inventory;
 

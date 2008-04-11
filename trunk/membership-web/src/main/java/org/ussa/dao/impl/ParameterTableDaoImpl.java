@@ -1,6 +1,6 @@
 package org.ussa.dao.impl;
 
-import org.ussa.app.dao.hibernate.GenericDaoHibernate;
+import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.ParameterTableDao;
 import org.ussa.model.ParameterTable;
 

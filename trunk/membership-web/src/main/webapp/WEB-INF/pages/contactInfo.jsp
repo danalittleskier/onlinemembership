@@ -57,7 +57,7 @@
 			</c:if>
 		</fieldset>
 
-		<c:if test="${accountBean.age < 18 && accountBean.age != 0}">
+		<c:if test="${accountBean.parentInfoRequired}">
 		<fieldset>
 			<legend>Parent/Guardian #1</legend>
 			<label for="">* First Name:</label>

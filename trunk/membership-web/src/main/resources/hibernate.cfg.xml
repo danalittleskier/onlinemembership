@@ -3,10 +3,6 @@
 
 <hibernate-configuration>
 	<session-factory>
-<!--
-		<mapping class="org.appfuse.model.User"/>
-		<mapping class="org.appfuse.model.Role"/>
--->
 		<mapping class="org.ussa.model.Member"/>
 		<mapping class="org.ussa.model.Division"/>
 		<mapping class="org.ussa.model.ParentInfo"/>
@@ -28,6 +24,5 @@
 		<mapping class="org.ussa.model.MemberLegalPk"/>
 		<mapping class="org.ussa.model.ParameterTable"/>
 		<mapping class="org.ussa.model.DivisionAffiliation"/>
-
 	</session-factory>
 </hibernate-configuration>

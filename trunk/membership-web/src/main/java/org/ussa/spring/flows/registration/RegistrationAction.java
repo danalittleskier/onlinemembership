@@ -34,6 +34,8 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
+import org.ussa.common.service.UserManager;
+import org.ussa.common.model.User;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -49,6 +51,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private MemberLegalDao memberLegalDao;
 	private RulesBL rulesBL;
 	private DateBL dateBL;
+	private UserManager userManager;
 	private SecurityContext securityContext;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
@@ -99,6 +102,15 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.addressDao = addressDao;
 	}
+	public UserManager getUserManager()
+	{
+		return userManager;
+	}
+	public void setUserManager(UserManager userManager)
+	{
+		this.userManager = userManager;
+	}
+
 	public void setSecurityContext(SecurityContext securityContext)
 	{
 		this.securityContext = securityContext;
@@ -110,6 +122,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		String idParam = context.getRequestParameters().get("id");
 
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
+		User user = userManager.getUserByUsername(userDetails.getUsername());
 
 		Long id = null;
 		if (idParam != null)
@@ -118,13 +131,20 @@ public class RegistrationAction extends MultiAction implements Serializable
 		}
 		else
 		{
-			String username = userDetails.getUsername();
+			id = user.getUssaId();
 		}
 
 		String currentSeason = dateBL.getCurrentRenewSeason();
 		String lastSeason = dateBL.getLastSeason();
 
 		Member member = new Member();
+		member.setFirstName(user.getFirstName());
+		member.setLastName(user.getLastName());
+		if(StringUtils.isNotBlank(user.getBirthDate()))
+		{
+			member.setBirthDate(formatter.parse(user.getBirthDate()));
+		}
+		
 		ParentInfo parentInfo = new ParentInfo();
 		member.setParentInfo(parentInfo);
 		Address address = new Address();
@@ -141,11 +161,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			//Member exists, do a renew and pre-populate info
 			member = memberDao.get(id);
-
-			if (member == null)
-			{
-				member = new Member();
-			}
 
 			if(member.getParentInfo() == null)
 			{
@@ -167,7 +182,8 @@ public class RegistrationAction extends MultiAction implements Serializable
 				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
 			}
 			Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
-			accountBean.setAge(currentSeasonAge);
+
+			rulesBL.setParentInfoRequired(accountBean);
 
 			// for renewals prepopulate the cart with the recommended membership options
 			accountBean.setCartBean(new CartBean());
@@ -208,7 +224,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
-		accountBean.setAge(rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate()));
+		rulesBL.setParentInfoRequired(accountBean);
 		return success();
 	}
 
