@@ -15,6 +15,7 @@
 		<property name="memberLegalDao" ref="memberLegalDao"/>
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="dateBL" ref="dateBL"/>
+		<property name="userManager" ref="userManager"/>
 		<property name="securityContext" ref="securityContext"/>
 	</bean>
 

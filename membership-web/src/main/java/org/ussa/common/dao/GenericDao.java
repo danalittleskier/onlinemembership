@@ -1,4 +1,4 @@
-package org.ussa.app.dao;
+package org.ussa.common.dao;
 
 import java.io.Serializable;
 import java.util.List;

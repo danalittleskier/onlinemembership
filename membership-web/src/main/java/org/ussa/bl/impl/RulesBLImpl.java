@@ -68,6 +68,22 @@ public class RulesBLImpl implements RulesBL
 		return 0;
 	}
 
+	public void setParentInfoRequired(AccountBean accountBean)
+	{
+		Date birthdate = accountBean.getMember().getBirthDate();
+		if(birthdate != null)
+		{
+			Integer currentSeasonAge = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+			if(currentSeasonAge < 18)
+			{
+				accountBean.setParentInfoRequired(true);
+				return;
+			}
+		}
+
+		accountBean.setParentInfoRequired(false);
+	}
+
 	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
