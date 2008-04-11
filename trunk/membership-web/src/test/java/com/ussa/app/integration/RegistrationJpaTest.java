@@ -4,9 +4,9 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Address;
-import org.ussa.model.AddressPk;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
+import org.ussa.model.ParentInfo;
 
 import java.util.Date;
 
@@ -42,10 +42,20 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         member.setReceiveEmail("Y");
         member.setStateCode("UT");
         member.setSuffixName("suffix");
+
+        ParentInfo parentInfo = new ParentInfo();
+        parentInfo.setParent1Email("parent1@email.com");
+        parentInfo.setParent1First("first1");
+        parentInfo.setParent1Last("last1");
+        parentInfo.setParent2Email("parent2@email.com");
+        parentInfo.setParent2First("first2");
+        parentInfo.setParent2Last("last2");
+        parentInfo.setParent2Relation("relation2");
+        member.setParentInfo(parentInfo);
+
         Member persistentMember = memberDao.save(member);
         
         Address address = new Address(persistentMember, "M");
-        address.setAddressPk(new AddressPk(persistentMember, "M"));
         address.setCity("sale lake city");
         address.setCountry("USA");
         address.setCompany("ussa");

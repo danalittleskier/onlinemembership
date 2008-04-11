@@ -12,9 +12,11 @@ import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Address;
+import org.ussa.model.AddressPk;
 import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
+import org.ussa.model.MemberLegalPk;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
@@ -43,26 +45,20 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		MemberLegal memberLegal = accountBean.getMemberLegal();
 		CartBean cartBean = accountBean.getCartBean();
 
-		// Generate a new ussaId for new registrations
-		Long ussaId = member.getId();
-		if(ussaId == null || ussaId == 0)
-		{
-			ussaId = rulesBL.getNextUssaId();
-			member.setId(ussaId);
-//			address.getAddressPk().setId(ussaId);
-//			memberLegal.getMemberLegalPk().setUssaId(ussaId);
-		}
+        // MEMBER
+        member.setType("I"); // "I" = Individual, "C" = Club, todo: use Enum constants?
+        member = memberDao.save(member);
+        
+        // MEMBERADDRESS
+        address.setAddressPk(new AddressPk(member, "P")); // "P" = Primary, todo: use Enum constants?
+        addressDao.save(address);
 
-		// MEMBERLEGAL
-		memberLegal.setInsuranceWaiverDate(new Date());
+        // MEMBERLEGAL
+        String season = dateBL.getCurrentRenewSeason();
+        memberLegal.setMemberLegalPk(new MemberLegalPk(member, season));
+        memberLegal.setInsuranceWaiverDate(new Date());
 		memberLegal.setReleaseWaiverDate(new Date());
-//		memberLegalDao.save(memberLegal);
-
-		// MEMBERADDRESS
-//		addressDao.save(address);
-
-		// MEMBER
-//		memberDao.save(member);
+		memberLegalDao.save(memberLegal);
 
 		// BATCH TABLES
 //		batchTransactionDao.insertToBatchTables(accountBean);
@@ -79,7 +75,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		for (LineItemBean lineItem : lineItemBeans)
 		{
 			MemberTransaction memberTransaction = new MemberTransaction();
-			memberTransaction.setUssaId(ussaId);
+//			memberTransaction.setUssaId(ussaId);
 			memberTransaction.setSeason(currentSeason);
 			memberTransaction.setInvId(lineItem.getInventory().getId());
 			memberTransaction.setQty(lineItem.getQty());
