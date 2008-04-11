@@ -100,7 +100,7 @@
         <filter-class>org.ussa.webapp.filter.StaticFilter</filter-class>
         <init-param>
             <param-name>includes</param-name>
-            <param-value>/scripts/dojo/*,/dwr/*</param-value>
+            <param-value>/scripts/dojo/*,/dwr/*,/scripts/greybox/*</param-value>
         </init-param>
         <init-param>
             <param-name>servletName</param-name>
@@ -165,13 +165,13 @@
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
         <url-pattern>/*</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
     <filter-mapping>
         <filter-name>staticFilter</filter-name>
         <url-pattern>*.html</url-pattern>
-        <dispatcher>REQUEST</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
         <dispatcher>FORWARD</dispatcher>
     </filter-mapping>
 

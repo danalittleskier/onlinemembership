@@ -34,20 +34,20 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Alpine</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'alpine',document.getElementById('title-text').innerHTML = 'Alpine';">
-			<img src="<c:url value='/images/bp-alpine.gif'/>" height="141" width="145">
-			</a>
+		<a href="<c:url value='/images/popup-alpine.gif'/>" title="Alpine Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-alpine.gif'/>" height="141" width="145" alt="Enlarge Image">
+		</a>
 	</div>
 	<div class="tshirt-2">
 		<p>Freestyle</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'freestyle',document.getElementById('title-text').innerHTML = 'Freestyle';">
-			<img src="<c:url value='/images/bp-freestyle.gif'/>" height="141" width="145">
+		<a href="<c:url value='/images/popup-freestyle.gif'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-freestyle.gif'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
 		<p>Cross Country</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'crosscountry',document.getElementById('title-text').innerHTML = 'Cross Country';">
-			<img src="<c:url value='/images/bp-crosscountry.gif'/>" height="141" width="145">
+		<a href="<c:url value='/images/popup-crosscountry.gif'/>" title="Cross Country Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-crosscountry.gif'/>" height="141" width="145" alt="Enlarge Image">
 			</a>
 	</div>
 	<div class="tshirt-menu-1">
@@ -112,20 +112,20 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Jumping N/C</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'jumpingnc',document.getElementById('title-text').innerHTML = 'Jumping N/C';">
-			<img src="<c:url value='/images/bp-jumpingnc.gif'/>" height="141" width="145">
+		<a href="<c:url value='/images/popup-jumpingnc.gif'/>" title="Jumping N/C Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-jumpingnc.gif'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
 		<p>US Ski Team General</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'skigeneral',document.getElementById('title-text').innerHTML = 'US Ski Team General';">
-			<img src="<c:url value='/images/bp-skigeneral.gif'/>" height="141" width="145">
+		<a href="<c:url value='/images/popup-skigeneral.gif'/>" title="US Ski Team General Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-skigeneral.gif'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
 		<p>Snowboarding</p>
-		<a href="javascript:void(0);" title="Enlarge Image" onclick="document.getElementById('bonus-popup').style.display = 'block',document.getElementById('popup-content').className = 'snowboarding',document.getElementById('title-text').innerHTML = 'Snowboarding';">
-			<img src="<c:url value='/images/bp-snowboarding.gif'/>" height="141" width="145">
+		<a href="<c:url value='/images/popup-snowboarding.gif'/>" title="Snowboarding Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/bp-snowboarding.gif'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-menu-1">
