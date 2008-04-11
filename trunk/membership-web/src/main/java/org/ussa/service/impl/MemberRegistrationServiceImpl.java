@@ -1,5 +1,8 @@
 package org.ussa.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.ussa.beans.AccountBean;
@@ -22,9 +25,6 @@ import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 
-import java.util.Date;
-import java.util.List;
-
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
 	private RulesBL rulesBL;
@@ -45,23 +45,20 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		MemberLegal memberLegal = accountBean.getMemberLegal();
 		CartBean cartBean = accountBean.getCartBean();
 
-        // MEMBER
-        member.setType("I"); // "I" = Individual, "C" = Club, todo: use Enum constants?
-        member = memberDao.save(member);
-        
-        // MEMBERADDRESS
-        address.setAddressPk(new AddressPk(member, "P")); // "P" = Primary, todo: use Enum constants?
-        addressDao.save(address);
+		// MEMBER
+		member.setType(Member.MEMBER_TYPE_INDIVIDUAL); // "I" = Individual, "C" = Club, todo: use Enum constants?
+		member = memberDao.save(member);
 
-        // MEMBERLEGAL
-        String season = dateBL.getCurrentRenewSeason();
-        memberLegal.setMemberLegalPk(new MemberLegalPk(member, season));
-        memberLegal.setInsuranceWaiverDate(new Date());
+		// MEMBERADDRESS
+		address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY)); // "P" = Primary, todo: use Enum constants?
+		addressDao.save(address);
+
+		// MEMBERLEGAL
+		String season = dateBL.getCurrentRenewSeason();
+		memberLegal.setMemberLegalPk(new MemberLegalPk(member, season));
+		memberLegal.setInsuranceWaiverDate(new Date());
 		memberLegal.setReleaseWaiverDate(new Date());
 		memberLegalDao.save(memberLegal);
-
-		// BATCH TABLES
-//		batchTransactionDao.insertToBatchTables(accountBean);
 
 		// MEMBERSEASON
 		MemberSeason memberSeason = new MemberSeason();
@@ -88,7 +85,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		// then run the card. if the card completes without throwing exception then the transaction completes
 		creditCardProcessingService.processCard(accountBean);
 
-		//TODO: GET THE TRASANCTION NUMBER FROM AUTHORIZE.NET AND SAVE IT
+		// BATCH TABLES
+//		batchTransactionDao.insertToBatchTables(accountBean);
 	}
 
 

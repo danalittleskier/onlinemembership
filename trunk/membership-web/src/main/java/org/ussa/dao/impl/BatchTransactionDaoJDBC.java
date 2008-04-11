@@ -16,12 +16,13 @@ import org.ussa.beans.PaymentBean;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
+import org.apache.commons.lang.StringUtils;
 
 public class BatchTransactionDaoJDBC implements BatchTransactionDao
 {
 	private DataSource dataSource;
 	private String INSERT_BATCHPAYMENT_SQL = "insert into BatchPayment (Batch_id,Sequence,Payment_Type, " +
-			" Check_Number,cc_number, CC_EXP,Amount,Account_Code) " +
+			" Check_Number,cc_number, CC_EXP,Amount,Account_Code, Transaction_Id) " +
 			" Values (?, ?, 'CREDIT', NULL, ?, ?, ?, NULL)";
 	private String INSERT_BATCHMEMBER_SQL = "Insert Into BatchMember (Batch_Id, Sequence, USSA_Id, Processed)" +
 			" Values (?, ?, ?, 'Y')";
@@ -51,10 +52,10 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		SelectMaxSeq maxQuery = new SelectMaxSeq(getDataSource());
 		List top = maxQuery.execute(parameters);
 
-
 		String maxS = (String) top.get(0);
 		InsertBatchPayment bp = new InsertBatchPayment(getDataSource());
-		Object[] bpParams = {123123, maxS, payment.getCardNumber(), payment.getExpireMonth() + "/" + payment.getExpireYear(), cart.getTotal()};
+		Object[] bpParams = {123123, maxS, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + payment.getExpireYear(),
+				cart.getTotal(), payment.getCompletedTransactionId()};
 		bp.update(bpParams);
 
 		InsertBatchMember bm = new InsertBatchMember(getDataSource());
@@ -74,6 +75,20 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		Object[] seqParams = {123123, maxS};
 		bs.update(seqParams);
 
+	}
+
+	private String lastFour(String ccNumber)
+	{
+		if(StringUtils.isNotBlank(ccNumber))
+		{
+			int length = ccNumber.length();
+			if(length >= 4)
+			{
+				return ccNumber.substring(length-4, length);
+			}
+		}
+
+		return null;
 	}
 
 	private class SelectMaxSeq extends MappingSqlQuery
@@ -98,6 +113,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			super(ds, INSERT_BATCHPAYMENT_SQL);
 			declareParameter(new SqlParameter(Types.NUMERIC));
 			declareParameter(new SqlParameter(Types.NUMERIC));
+			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));

@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.acegisecurity.context.SecurityContextHolder;
+import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.webflow.action.MultiAction;
@@ -49,6 +49,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private MemberLegalDao memberLegalDao;
 	private RulesBL rulesBL;
 	private DateBL dateBL;
+	private SecurityContext securityContext;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
 	private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -98,18 +99,26 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.addressDao = addressDao;
 	}
+	public void setSecurityContext(SecurityContext securityContext)
+	{
+		this.securityContext = securityContext;
+	}
+
 	public Event findContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		String idParam = context.getRequestParameters().get("id");
 
-		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		System.out.println(" "+userDetails.getUsername());
+		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
 
 		Long id = null;
 		if (idParam != null)
 		{
 			id = Long.parseLong(idParam);
+		}
+		else
+		{
+			String username = userDetails.getUsername();
 		}
 
 		String currentSeason = dateBL.getCurrentRenewSeason();
@@ -144,7 +153,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 			}
 
 			AddressPk addressPk = new AddressPk();
-			addressPk.setType("P");
+			addressPk.setType(Address.ADDRESS_TYPE_PRIMARY);
 			addressPk.setMember(member);
 			address = addressDao.get(addressPk);
 			if (address == null)
