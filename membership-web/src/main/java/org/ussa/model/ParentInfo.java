@@ -1,8 +1,14 @@
 package org.ussa.model;
 
+import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parameter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
 
@@ -12,10 +18,18 @@ import java.io.Serializable;
 public class ParentInfo implements Serializable {
 
 	@Id
-	@Column(name = "USSA_ID", length=7)
+    @GeneratedValue(generator="foreign")
+      @GenericGenerator(name="foreign", strategy = "foreign", parameters={
+        @Parameter(name="property", value="member")
+      }) 
+    @Column(name = "USSA_ID", length=7)
 	private Long id;
+    
+    @OneToOne
+    @PrimaryKeyJoinColumn
+    private Member member;
 
-	@Column(name = "PARENT1FIRST", nullable = true, length=30, unique=false)
+    @Column(name = "PARENT1FIRST", nullable = true, length=30, unique=false)
 	private String parent1First;
 
 	@Column(name = "PARENT1LAST", nullable = true, length=30, unique=false)
@@ -50,7 +64,15 @@ public class ParentInfo implements Serializable {
 		this.id = id;
 	}
 
-	public String getParent1First()
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public String getParent1First()
 	{
 		return parent1First;
 	}
