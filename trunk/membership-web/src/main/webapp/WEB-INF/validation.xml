@@ -16,8 +16,8 @@
 			<constant-value>^\d{1,3}(,?\d{1,3})*\.?(\d{1,2})?$</constant-value>
 		</constant>
 		<constant>
-			<constant-name>validWhenAgeNotPresentOrOver18</constant-name>
-			<constant-value><![CDATA[(((age == '0') or (age > 18)) or (*this* != null))]]></constant-value>
+			<constant-name>validWhenParentInfoNotRequired</constant-name>
+			<constant-value><![CDATA[(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))]]></constant-value>
 		</constant>
 		<constant>
 			<constant-name>validWhenMemberIdNotPresent</constant-name>
@@ -170,7 +170,7 @@
 				<arg0 key="label.parent.guardian.firstName" />
 				<var>
 					<var-name>test</var-name>
-					<var-value>${validWhenAgeNotPresentOrOver18}</var-value>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
 			</field>
 			<field property="member.parentInfo.parent1Last" depends="validWhen">
@@ -178,7 +178,7 @@
 				<arg0 key="label.parent.guardian.lastName" />
 				<var>
 					<var-name>test</var-name>
-					<var-value>${validWhenAgeNotPresentOrOver18}</var-value>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
 			</field>
 			<field property="member.parentInfo.parent1Relation" depends="validWhen">
@@ -186,15 +186,15 @@
 				<arg0 key="label.parent.guardian.relationship" />
 				<var>
 					<var-name>test</var-name>
-					<var-value>${validWhenAgeNotPresentOrOver18}</var-value>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
 			</field>
-			<field property="member.parentInfo.parent1Email" depends="validWhen">
+			<field property="member.parentInfo.parent1Email" depends="validWhen, email">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.parent.guardian.email.address" />
 				<var>
 					<var-name>test</var-name>
-					<var-value>${validWhenAgeNotPresentOrOver18}</var-value>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
 			</field>
 		</form>

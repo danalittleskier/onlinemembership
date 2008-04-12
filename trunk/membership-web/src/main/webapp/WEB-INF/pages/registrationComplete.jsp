@@ -66,7 +66,7 @@
 	<fieldset class="buttons">
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		<input type="submit" class="btn-green" name="_eventId_next" value="Go to Account Home">
+		<input type="button" class="btn-green" name="button" value="Go to Account Home" onclick="location.href='<c:url value="/authenticationRedirect.jsp"/>'">
 	</fieldset>
 </p>
 
