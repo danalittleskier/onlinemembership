@@ -9,7 +9,7 @@
 	<!-- Hibernate SessionFactory -->
 	<bean id="accountsSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="accountsDataSource"/>
-		<property name="configLocation" value="classpath:/org/ussa/common/hibernate.cfg.accounts.xml"/>
+		<property name="configLocation" value="classpath:/hibernate.cfg.accounts.xml"/>
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=${hibernate.dialect}
