@@ -29,7 +29,7 @@
 		<!--applicatoin context service is in appfuse-service-2.0.1.jar -->
 		<!-- classpath*:/applicationContext.xml -->
 		<param-value>
-            classpath:/org/ussa/common/applicationContext-resources-common.xml
+            classpath:/applicationContext-resources-common.xml
             classpath:/applicationContext-resources-membership.xml
             classpath:/applicationContext-service-membership.xml
 			/WEB-INF/applicationContext*.xml
