@@ -42,8 +42,8 @@
     <bean id="authenticationProcessingFilter" class="com.atlassian.crowd.integration.acegi.CrowdAuthenticationProcessingFilter">
         <property name="httpAuthenticator" ref="httpAuthenticator"/>
         <property name="authenticationManager" ref="authenticationManager"/>
-        <property name="authenticationFailureUrl" value="/login.html"/>
-        <property name="defaultTargetUrl" value="/"/>
+        <property name="authenticationFailureUrl" value="/authenticationRedirect.jsp"/>
+        <property name="defaultTargetUrl" value="/registration.html"/>
         <property name="filterProcessesUrl" value="/j_security_check"/>
         <property name="rememberMeServices" ref="rememberMeServices"/>
 		<property name="alwaysUseDefaultTargetUrl" value="false"/>

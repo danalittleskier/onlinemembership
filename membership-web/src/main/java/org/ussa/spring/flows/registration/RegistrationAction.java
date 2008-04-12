@@ -124,7 +124,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
 		User user = userManager.getUserByUsername(userDetails.getUsername());
 
-		Long id = null;
+		Long id;
 		if (idParam != null)
 		{
 			id = Long.parseLong(idParam);
@@ -135,97 +135,123 @@ public class RegistrationAction extends MultiAction implements Serializable
 		}
 
 		String currentSeason = dateBL.getCurrentRenewSeason();
-		String lastSeason = dateBL.getLastSeason();
-
-		Member member = new Member();
-		member.setFirstName(user.getFirstName());
-		member.setLastName(user.getLastName());
-		if(StringUtils.isNotBlank(user.getBirthDate()))
-		{
-			member.setBirthDate(formatter.parse(user.getBirthDate()));
-		}
-		
-		ParentInfo parentInfo = new ParentInfo();
-		member.setParentInfo(parentInfo);
-		Address address = new Address();
-
-		MemberLegal memberLegal = new MemberLegal();
-		MemberLegalPk memberLegalPk = new MemberLegalPk();
-		memberLegalPk.setSeason(currentSeason);
-		memberLegal.setMemberLegalPk(memberLegalPk);
 
 		List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
 		accountBean.setUsStates(usStates);
 
-		if (id != null)
-		{
-			//Member exists, do a renew and pre-populate info
-			member = memberDao.get(id);
+		accountBean.setCartBean(new CartBean());
 
+		// new registration
+		if(id == null)
+		{
+			Member member = new Member();
+			accountBean.setMember(member);
+			member.setFirstName(user.getFirstName());
+			member.setLastName(user.getLastName());
+			member.setParentInfo(new ParentInfo());
+			if(StringUtils.isNotBlank(user.getBirthDate()))
+			{
+				member.setBirthDate(formatter.parse(user.getBirthDate()));
+				rulesBL.setParentInfoRequired(accountBean);
+			}
+
+			Address address = new Address();
+			accountBean.setAddress(address);
+
+			MemberLegal memberLegal = new MemberLegal();
+			accountBean.setMemberLegal(memberLegal);
+			MemberLegalPk memberLegalPk = new MemberLegalPk();
+			memberLegalPk.setSeason(currentSeason);
+			memberLegal.setMemberLegalPk(memberLegalPk);
+		}
+		// renewals
+		else
+		{
+			Member member = memberDao.get(id);
+			accountBean.setMember(member);
+
+			if(member.getBirthDate() != null)
+			{
+				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
+			}
+
+			rulesBL.setParentInfoRequired(accountBean);
 			if(member.getParentInfo() == null)
 			{
-				member.setParentInfo(parentInfo);
+				member.setParentInfo(new ParentInfo());
 			}
 
 			AddressPk addressPk = new AddressPk();
 			addressPk.setType(Address.ADDRESS_TYPE_PRIMARY);
 			addressPk.setMember(member);
-			address = addressDao.get(addressPk);
+			Address address = addressDao.get(addressPk);
 			if (address == null)
 			{
 				address = new Address();
 			}
+			else
+			{
+				// TODO: there has to be a better check that I can than this.
+				if(!"USA".equals(address.getCountry()))
+				{
+					return result("foreign");
+				}
+			}
 			accountBean.setAddress(address);
-			accountBean.setMember(member);
-			if(member.getBirthDate() != null)
-			{
-				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
-			}
-			Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
 
-			rulesBL.setParentInfoRequired(accountBean);
-
-			// for renewals prepopulate the cart with the recommended membership options
-			accountBean.setCartBean(new CartBean());
-			List<Inventory> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
-			for (Inventory inventory : recommendedMemberships)
-			{
-				rulesBL.addMembershipToCart(accountBean, inventory);
-			}
-
+			MemberLegalPk memberLegalPk = new MemberLegalPk();
 			memberLegalPk.setMember(member);
-			MemberLegal tempMemberLegal = memberLegalDao.get(memberLegalPk);
-			if(tempMemberLegal != null)
+			memberLegalPk.setSeason(currentSeason);
+			MemberLegal memberLegal = memberLegalDao.get(memberLegalPk);
+			if(memberLegal == null)
 			{
-				accountBean.setMemberLegal(tempMemberLegal);
+				memberLegal = new MemberLegal();
+				memberLegal.setMemberLegalPk(memberLegalPk);
+				accountBean.setMemberLegal(memberLegal);
 			}
 			else
 			{
-				accountBean.setMemberLegal(memberLegal);
+				// the person has already processed a registration for this year.
+				return result("alreadyRegistered");
 			}
 
-			return result("renew");
+			// don't prepopulate the cart for non members
+			if(!Member.MEMBER_TYPE_NON_MEMBER.equals(member.getType()))
+			{
+				// for renewals prepopulate the cart with the recommended membership options
+				String lastSeason = dateBL.getLastSeason();
+				Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
+				List<Inventory> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
+				for (Inventory inventory : recommendedMemberships)
+				{
+					rulesBL.addMembershipToCart(accountBean, inventory);
+				}
+			}
 		}
-		else
-		{
-			//Member does not exist, do a register
-			accountBean.setAddress(address);
-			accountBean.setMember(member);
-			accountBean.setMemberLegal(memberLegal);
-			return result("register");
-		}
+
+		return result("contactInfo");
 	}
 
 	public Event handleBirthDate(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		rulesBL.setParentInfoRequired(accountBean);
+		boolean wasParentInfoRequired = accountBean.getParentInfoRequired();
+
 		String birthDate = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDate))
 		{
 			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
+
 		rulesBL.setParentInfoRequired(accountBean);
-		return success();
+		if(!wasParentInfoRequired && accountBean.getParentInfoRequired())
+		{
+			return result("parentInfo");
+		}
+
+		return result("findClubInfo");
 	}
 
 	public Event findClubInfo(RequestContext context) throws Exception
