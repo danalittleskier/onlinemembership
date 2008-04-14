@@ -1,0 +1,1865 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4" relativePaths="true">
+  <component name="BookmarkManager">
+    <editor_bookmark url="file://$PROJECT_DIR$/../../../java/apache-tomcat-5.5.26/conf/context.xml" line="10" number="1" />
+  </component>
+  <component name="ChangeBrowserSettings">
+    <option name="MAIN_SPLITTER_PROPORTION" value="0.3" />
+    <option name="MESSAGES_SPLITTER_PROPORTION" value="0.8" />
+    <option name="USE_DATE_BEFORE_FILTER" value="false" />
+    <option name="USE_DATE_AFTER_FILTER" value="false" />
+    <option name="USE_CHANGE_BEFORE_FILTER" value="false" />
+    <option name="USE_CHANGE_AFTER_FILTER" value="false" />
+    <option name="DATE_BEFORE" />
+    <option name="DATE_AFTER" />
+    <option name="CHANGE_BEFORE" value="" />
+    <option name="CHANGE_AFTER" value="" />
+    <option name="USE_USER_FILTER" value="false" />
+    <option name="USER" value="" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" name="Default" comment="">
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout-navtop-subright.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/puzzlewithstyle/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\images\headerbackground.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\images\background.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\rowhover-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\displaytag.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-localleft.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/andreas01" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\nav-horizontal.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/simplicity" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\displaytag.css_bak" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/puzzlewithstyle" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navleft-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\print.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/simplicity/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\messages.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\images\bodybackground.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\menuarrow.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\dark-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-3col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navleft-2col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\theme.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\nav-horizontal.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\typo.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout-navtop-3col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\typo.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/membership-web.iws" afterPath="$PROJECT_DIR$/membership-web.iws" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\hover-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\status-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/andreas01/images" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\front.jpg" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\nav-horizontal.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\fieldbg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\print.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\images\bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\active-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout-1col.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\layout-navtop-subright.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\forms.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\simplicity\layout-1col.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\tools.css" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\puzzlewithstyle\nav-vertical.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\title-bg.gif" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\Thumbs.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/webapp/styles/calendar-aqua" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\normal-bg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\typo.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/decorators/default.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/decorators/default.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\andreas01\layout.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp" />
+      <change type="DELETED" beforePath="C:\dev\ussa\membership-web\src\main\webapp\styles\calendar-aqua\today-bg.gif" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp" />
+    </list>
+    <list name="WTF" comment="">
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\InventoryAdd.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\MemberSeason.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\BatchMember.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\BatchDetail.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\BatchPayment.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\MemberClub.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\MemberTransaction.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\dev\membership-web\src\main\java\org\ussa\model\age.java" afterPath="" />
+    </list>
+  </component>
+  <component name="ChangeListSynchronizer" />
+  <component name="ChangesViewManager" flattened_view="true" />
+  <component name="CheckinPanelState" />
+  <component name="Commander">
+    <leftPanel />
+    <rightPanel />
+    <splitter proportion="0.5" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="COMPILE_IN_BACKGROUND" value="false" />
+    <option name="AUTO_SHOW_ERRORS_IN_EDITOR" value="true" />
+    <option name="CLOSE_MESSAGE_VIEW_IF_SUCCESS" value="false" />
+    <option name="COMPILE_DEPENDENT_FILES" value="false" />
+    <option name="CLEAR_OUTPUT_DIRECTORY" value="false" />
+    <option name="ASSERT_NOT_NULL" value="true" />
+  </component>
+  <component name="CoverageDataManager" />
+  <component name="Cvs2Configuration">
+    <option name="PRUNE_EMPTY_DIRECTORIES" value="true" />
+    <option name="MERGING_MODE" value="0" />
+    <option name="MERGE_WITH_BRANCH1_NAME" value="HEAD" />
+    <option name="MERGE_WITH_BRANCH2_NAME" value="HEAD" />
+    <option name="RESET_STICKY" value="false" />
+    <option name="CREATE_NEW_DIRECTORIES" value="true" />
+    <option name="DEFAULT_TEXT_FILE_SUBSTITUTION" value="kv" />
+    <option name="PROCESS_UNKNOWN_FILES" value="false" />
+    <option name="PROCESS_DELETED_FILES" value="false" />
+    <option name="PROCESS_IGNORED_FILES" value="false" />
+    <option name="RESERVED_EDIT" value="false" />
+    <option name="CHECKOUT_DATE_OR_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="UPDATE_DATE_OR_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="SHOW_CHANGES_REVISION_SETTINGS">
+      <value>
+        <option name="BRANCH" value="" />
+        <option name="DATE" value="" />
+        <option name="USE_BRANCH" value="false" />
+        <option name="USE_DATE" value="false" />
+      </value>
+    </option>
+    <option name="SHOW_OUTPUT" value="false" />
+    <option name="ADD_WATCH_INDEX" value="0" />
+    <option name="REMOVE_WATCH_INDEX" value="0" />
+    <option name="UPDATE_KEYWORD_SUBSTITUTION" />
+    <option name="MAKE_NEW_FILES_READONLY" value="false" />
+    <option name="SHOW_CORRUPTED_PROJECT_FILES" value="0" />
+    <option name="TAG_AFTER_PROJECT_COMMIT" value="false" />
+    <option name="OVERRIDE_EXISTING_TAG_FOR_PROJECT" value="true" />
+    <option name="TAG_AFTER_PROJECT_COMMIT_NAME" value="" />
+    <option name="CLEAN_COPY" value="false" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/main/java/org/ussa/spring/controller/MedicalController.java" line="13" class="org.ussa.spring.controller.MedicalController" package="org.ussa.spring.controller">
+        <option name="ENABLED" value="true" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
+    <breakpoint_any>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint>
+        <option name="NOTIFY_CAUGHT" value="true" />
+        <option name="NOTIFY_UNCAUGHT" value="true" />
+        <option name="ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </breakpoint_any>
+    <breakpoint_rules />
+    <ui_properties>
+      <property name="exception_breakpoints_flattenPackages" value="true" />
+      <property name="line_breakpoints_groupByClasses" value="true" />
+      <property name="exception_breakpoints_groupByMethods" value="false" />
+      <property name="method_breakpoints_viewId" value="TABLE" />
+      <property name="line_breakpoints_viewId" value="TABLE" />
+      <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="method_breakpoints_groupByMethods" value="false" />
+      <property name="field_breakpoints_flattenPackages" value="true" />
+      <property name="line_breakpoints_flattenPackages" value="true" />
+      <property name="exception_breakpoints_viewId" value="TABLE" />
+      <property name="field_breakpoints_groupByClasses" value="true" />
+      <property name="method_breakpoints_flattenPackages" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
+      <property name="line_breakpoints_groupByMethods" value="false" />
+      <property name="method_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_groupByMethods" value="false" />
+    </ui_properties>
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="HIDE_WARNINGS" value="false" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="membership-web">
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/common/menu.jsp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Address.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/model/ParentInfo.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/../../java/apache-tomcat-5.5.26/conf/context.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/common/meta.jsp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/resources/applicationContext-resources.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/../third-party-src/hibernate-3.2.5/src/org/hibernate/dialect/DialectFactory.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/../third-party-src/hibernate-3.2.5/src/org/hibernate/cfg/Configuration.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/resin3-1-5.conf" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/pom.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/resources/jdbc.properties" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/spring/flows/registration/PaymentAction.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-flow.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/spring/flows/registration/RegistrationAction.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/dao/ClubDao.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/dao/StateDao.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/dao/AddressDao.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/dao/MemberDao.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/manager/MemberManager.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/beans/AccountBean.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-beans.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/spring/flows/FormActionTemplate.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="jar://$PROJECT_DIR$/../third-party-src/spring-webflow-src-1.0.1.zip!/org/springframework/webflow/util/DispatchMethodInvoker.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="jar://$PROJECT_DIR$/../third-party-src/spring-webflow-src-1.0.1.zip!/org/springframework/webflow/action/MultiAction.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/mainMenu.jsp" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Member.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+      <favorite_root url="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Club.java" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+    <favorites_list name="Out of Project">
+      <favorite_root url="file://$PROJECT_DIR$/../../../java/apache-tomcat-5.5.26/conf/context.xml" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
+  </component>
+  <component name="FavoritesProjectViewPane">
+    <subPane subId="Out of Project">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" />
+          <option name="myItemType" value="com.intellij.ide.favoritesTreeView.FavoritesTreeNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+    <subPane subId="membership-web">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" />
+          <option name="myItemType" value="com.intellij.ide.favoritesTreeView.FavoritesTreeNodeDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="contactInfo.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="33" selection-start="885" selection-end="885" vertical-scroll-proportion="0.76981133">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decorators.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PaymentLanding.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="74" selection-start="295" selection-end="295" vertical-scroll-proportion="0.24954128">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="extras.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="221" selection-end="330" vertical-scroll-proportion="0.28867924">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medical.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="medicalWaiver.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationComplete.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registrationPayment.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="releaseWaiver.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="riskAgreement.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sportMembership.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="registration-flow.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-flow.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.65504587">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stateClub.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="verification.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="44" selection-start="854" selection-end="854" vertical-scroll-proportion="0.8018868">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="taglibs.jsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.4678899">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Address.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Address.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.81100917">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="validation.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.83396226">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="default.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.12830189">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/main.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="22" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.5302752">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stg-forms.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.49908257">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="certificate.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/certificate.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.4678899">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/common/messages.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.43669724">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_headers.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5302752">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_menu.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.7376147">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="global.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/global.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Member.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Member.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="110" column="0" selection-start="3326" selection-end="3326" vertical-scroll-proportion="0.80550456">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="74" selection-start="718" selection-end="718" vertical-scroll-proportion="0.40366971">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FieldChecks.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/FieldChecks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6807339">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ValidWhenLexer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/validwhen/ValidWhenLexer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-22.326605">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spring.tld" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/spring-webmvc-2.5.jar!/META-INF/spring.tld">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="264" column="4" selection-start="9982" selection-end="9982" vertical-scroll-proportion="0.4">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="HierarchyBrowserManager">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="SORT_ALPHABETICALLY" value="false" />
+    <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="InspectionManager">
+    <option name="AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="SPLITTER_PROPORTION" value="0.5" />
+    <option name="GROUP_BY_SEVERITY" value="false" />
+    <option name="FILTER_RESOLVED_ITEMS" value="true" />
+    <option name="ANALYZE_TEST_SOURCES" value="true" />
+    <option name="SHOW_DIFF_WITH_PREVIOUS_RUN" value="false" />
+    <option name="SCOPE_TYPE" value="1" />
+    <option name="CUSTOM_SCOPE_NAME" value="" />
+    <option name="SHOW_ONLY_DIFF" value="false" />
+    <option name="myCurrentProfileName" value="Default" />
+  </component>
+  <component name="J2EEProjectPane" />
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/messages.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/decorators/default_Original.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/src/main/webapp/common/meta.jsp" context-file="file://$PROJECT_DIR$/src/main/webapp/decorators/default_Original.jsp" />
+  </component>
+  <component name="ModuleEditorState">
+    <option name="LAST_EDITED_MODULE_NAME" />
+    <option name="LAST_EDITED_TAB_NAME" />
+  </component>
+  <component name="NamedScopeManager" />
+  <component name="PackagesPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="org.ussa" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="org.ussa" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="model" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="PerforceChangeBrowserSettings">
+    <option name="USE_CLIENT_FILTER" value="true" />
+    <option name="CLIENT" value="" />
+  </component>
+  <component name="PerforceDirect.Settings">
+    <option name="useP4CONFIG" value="true" />
+    <option name="port" value="&lt;perforce_server&gt;:1666" />
+    <option name="client" value="" />
+    <option name="user" value="" />
+    <option name="passwd" value="" />
+    <option name="showCmds" value="false" />
+    <option name="useNativeApi" value="true" />
+    <option name="pathToExec" value="p4" />
+    <option name="useCustomPathToExec" value="false" />
+    <option name="SYNC_FORCE" value="false" />
+    <option name="SYNC_RUN_RESOLVE" value="true" />
+    <option name="REVERT_UNCHANGED_FILES" value="true" />
+    <option name="CHARSET" value="none" />
+    <option name="SHOW_BRANCHES_HISTORY" value="true" />
+    <option name="ENABLED" value="true" />
+    <option name="USE_LOGIN" value="false" />
+    <option name="LOGIN_SILENTLY" value="false" />
+    <option name="INTEGRATE_RUN_RESOLVE" value="true" />
+    <option name="INTEGRATE_REVERT_UNCHANGED" value="true" />
+    <option name="SERVER_TIMEOUT" value="20000" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkin" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Compare with SourceSafe Version" />
+    <OptionsSetting value="true" id="Get Latest Version" />
+    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectPane">
+    <subPane>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation\commons" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation\commons" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\lib\spring-modules-validation-0.8.jar!\org\springmodules\validation\commons\validwhen" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Libraries" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.LibraryGroupNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\pages" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\WEB-INF\flows" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\styles" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\webapp\common" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\java\org\ussa" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\java\org\ussa" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\src\main\java\org\ussa\model" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\my-resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web.ipr" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\my-resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\my-resources\appfuse" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:C:\dev\ussa\membership-web\my-resources\appfuse\webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="0.16666667" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <showStructure PackagesPane="false" ProjectPane="false" Scope="false" Favorites="false" />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+    </navigator>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.includeLibraries" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="RunManagerConfig.compileBeforeRunning" value="true" />
+    <property name="TEMP_MODULE_EXPLODED_DIR_FOR_membership-web" value="C:\Documents and Settings\Admin\Local Settings\Temp\webExplodedDir22tmp" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="last_opened_file_path" value="C:\java\apache-tomcat-5.5.26\conf" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="true" />
+    <property name="RunManagerConfig.showSettingsBeforeRunnig" value="false" />
+  </component>
+  <component name="ReadonlyStatusHandler">
+    <option name="SHOW_DIALOG" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.ussa.model" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" />
+  <component name="RunManager" selected="Tomcat Server.Tomcat 5">
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="membership-web" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <module name="" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Resin Instance" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="HOST" value="" />
+        <option name="MODULE_NAME" value="membership-web" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <option name="PORT" value="80" />
+      <option name="CHARSET" value="" />
+      <option name="RESIN_CONF" value="" />
+      <option name="DEBUG_CONFIGURATION" value="false" />
+      <option name="READ_ONLY_CONFIGURATION" value="false" />
+      <option name="ADDITIONAL_PARAMETERS" value="" />
+    </configuration>
+    <configuration default="false" name="Resin 3.1.5" type="Resin Instance" factoryName="Local" APPLICATION_SERVER_NAME="Resin 3.1.5">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="80" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:80" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="HOST" value="" />
+        <option name="MODULE_NAME" value="membership-web" />
+        <option name="DEPLOY" value="true" />
+      </J2EE_MODULE>
+      <option name="PORT" value="80" />
+      <option name="CHARSET" value="" />
+      <option name="RESIN_CONF" value="C:\dev\membership-web\resin3-1-5.conf" />
+      <option name="DEBUG_CONFIGURATION" value="false" />
+      <option name="READ_ONLY_CONFIGURATION" value="false" />
+      <option name="ADDITIONAL_PARAMETERS" value="" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4065" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="Make" value="true" />
+        <option name="Run ant target" value="true" />
+      </method>
+    </configuration>
+    <configuration default="false" name="Tomcat 5" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5.5.26">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="false" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/membership/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/membership" />
+        <option name="MODULE_NAME" value="membership-web" />
+        <option name="DEPLOY" value="true" />
+      </J2EE_MODULE>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e3932d06" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="4091" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\java\apache-tomcat-5.5.26\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\java\apache-tomcat-5.5.26\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\java\apache-tomcat-5.5.26\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="C:\java\apache-tomcat-5.5.26\bin\catalina.bat" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="Make" value="true" />
+        <option name="Run ant target" value="true" />
+      </method>
+    </configuration>
+    <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
+      <Host>localhost</Host>
+      <Port>5050</Port>
+    </configuration>
+  </component>
+  <component name="ScopeViewComponent">
+    <subPane subId="Problems" />
+    <subPane subId="Project">
+      <PATH>
+        <PATH_ELEMENT USER_OBJECT="Root">
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="" />
+        </PATH_ELEMENT>
+      </PATH>
+    </subPane>
+  </component>
+  <component name="SelectInManager" />
+  <component name="StarteamConfiguration">
+    <option name="SERVER" value="" />
+    <option name="PORT" value="49201" />
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="PROJECT" value="" />
+    <option name="VIEW" value="" />
+    <option name="ALTERNATIVE_WORKING_PATH" value="" />
+    <option name="LOCK_ON_CHECKOUT" value="false" />
+    <option name="UNLOCK_ON_CHECKIN" value="false" />
+  </component>
+  <component name="StructuralSearchPlugin" />
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_MODE" value="true" />
+    <option name="AUTOSCROLL_FROM_SOURCE" value="false" />
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR" />
+  </component>
+  <component name="Struts Assistant">
+    <option name="showInputs" value="true" />
+    <option name="resources">
+      <value>
+        <option name="strutsPath" />
+        <option name="strutsHelp" />
+      </value>
+    </option>
+    <option name="selectedTaglibs" />
+    <option name="selectedTaglibs" />
+    <option name="myStrutsValidationEnabled" value="false" />
+    <option name="myTilesValidationEnabled" value="false" />
+    <option name="myValidatorValidationEnabled" value="false" />
+    <option name="myReportErrorsAsWarnings" value="false" />
+  </component>
+  <component name="SvnChangesBrowserSettings">
+    <option name="USE_AUTHOR_FIELD" value="true" />
+    <option name="AUTHOR" value="" />
+    <option name="LOCATION" value="" />
+    <option name="USE_PROJECT_SETTINGS" value="true" />
+    <option name="USE_ALTERNATE_LOCATION" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="PROCESS_UNRESOLVED" value="false" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="UPDATE_RUN_STATUS" value="false" />
+    <option name="UPDATE_RECURSIVELY" value="true" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <configuration useDefault="true">C:\Documents and Settings\Admin\Application Data\Subversion</configuration>
+    <checkoutURL>http://repositories.hq.ussa.org/membership-web</checkoutURL>
+    <checkoutURL>http://repositories.hq.ussa.org/accounts</checkoutURL>
+    <upgradeMode>none</upgradeMode>
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1276" y="-436" width="1608" height="1208" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="CVS" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21506761" order="0" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31851852" order="1" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1976819" order="1" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18518518" order="8" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="6" />
+      <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.24983902" order="1" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4101852" order="8" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" order="2" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24983902" order="2" />
+      <window_info id="File View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27592593" order="4" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32962963" order="8" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35185185" order="8" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
+    </layout>
+  </component>
+  <component name="VCS.FileViewConfiguration">
+    <option name="SELECTED_STATUSES" value="DEFAULT" />
+    <option name="SELECTED_COLUMNS" value="DEFAULT" />
+    <option name="SHOW_FILTERS" value="true" />
+    <option name="CUSTOMIZE_VIEW" value="true" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="false" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="false" />
+    <option name="PUT_FOCUS_INTO_COMMENT" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" value="did more house cleaning" />
+    <option name="SAVE_LAST_COMMIT_MESSAGE" value="true" />
+    <option name="CHECKIN_DIALOG_SPLITTER_PROPORTION" value="0.8" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ERROR_OCCURED" value="false" />
+    <option name="ACTIVE_VCS_NAME" value="svn" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+    <MESSAGE value="format doc" />
+    <MESSAGE value="Finally setup sitemesh to be used the way that it was intended" />
+    <MESSAGE value="This shouldn't be in the repository" />
+    <MESSAGE value="Deleted unused classes. Made JNDI changes so that tomcat will now handle connection pooling. Made changes for contact info screen... added missing data model and bound missing mocked up fields." />
+    <MESSAGE value="Added intelliJ project files" />
+    <MESSAGE value="Finished validation for the contact info page" />
+    <MESSAGE value="updating templates" />
+    <MESSAGE value="adding eric's latest style changes" />
+    <MESSAGE value="did more house cleaning" />
+  </component>
+  <component name="VssConfiguration">
+    <option name="CLIENT_PATH" value="" />
+    <option name="SRCSAFEINI_PATH" value="" />
+    <option name="USER_NAME" value="" />
+    <option name="PWD" value="" />
+    <option name="VSS_IS_INITIALIZED" value="true" />
+    <CheckoutOptions>
+      <option name="COMMENT" value="" />
+      <option name="DO_NOT_GET_LATEST_VERSION" value="false" />
+      <option name="REPLACE_WRITABLE" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckoutOptions>
+    <CheckinOptions>
+      <option name="COMMENT" value="" />
+      <option name="KEEP_CHECKED_OUT" value="false" />
+      <option name="RECURSIVE" value="false" />
+    </CheckinOptions>
+    <AddOptions>
+      <option name="STORE_ONLY_LATEST_VERSION" value="false" />
+      <option name="CHECK_OUT_IMMEDIATELY" value="false" />
+      <option name="FILE_TYPE" value="0" />
+    </AddOptions>
+    <UndocheckoutOptions>
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="REPLACE_LOCAL_COPY" value="0" />
+      <option name="RECURSIVE" value="false" />
+    </UndocheckoutOptions>
+    <GetOptions>
+      <option name="REPLACE_WRITABLE" value="0" />
+      <option name="MAKE_WRITABLE" value="false" />
+      <option name="ANSWER_NEGATIVELY" value="false" />
+      <option name="ANSWER_POSITIVELY" value="false" />
+      <option name="RECURSIVE" value="false" />
+      <option name="VERSION" />
+    </GetOptions>
+    <VssConfigurableExcludedFilesTag />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+    <buildFile url="file://$PROJECT_DIR$/dev-build.xml">
+      <antCommandLine value="" />
+      <runInBackground value="false" />
+      <targetFilters />
+      <treeView value="true" />
+      <verbose value="true" />
+      <viewClosedWhenNoErrors value="false" />
+    </buildFile>
+  </component>
+  <component name="com.intellij.ide.util.scopeChooser.ScopeChooserConfigurable" proportions="0.16666667" version="1">
+    <option name="myLastEditedConfigurable" value="Local Scopes" />
+  </component>
+  <component name="com.intellij.openapi.roots.ui.configuration.projectRoot.ProjectRootMasterDetailsConfigurable" proportions="0.435" version="1">
+    <option name="myPlainMode" value="false" />
+    <option name="myLastEditedConfigurable" value="membership-web" />
+  </component>
+  <component name="com.intellij.profile.ui.ErrorOptionsConfigurable" proportions="0.16666667,0.5314286" version="1">
+    <option name="myLastEditedConfigurable" value="Default" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/validwhen/ValidWhenLexer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="0" selection-start="1366" selection-end="1366" vertical-scroll-proportion="-22.326605">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../third-party-src/spring-modules-validation-src.zip!/org/springmodules/validation/commons/FieldChecks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="774" column="27" selection-start="28806" selection-end="28806" vertical-scroll-proportion="0.6807339">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validator-rules-custom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="22" selection-start="606" selection-end="606" vertical-scroll-proportion="0.39170507">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validator-rules.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="747" column="44" selection-start="30785" selection-end="30785" vertical-scroll-proportion="0.38556066">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/ussa/model/Address.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="28" selection-start="1337" selection-end="1346" vertical-scroll-proportion="0.81100917">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/validation.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="20" selection-start="988" selection-end="988" vertical-scroll-proportion="0.83396226">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/scripts/global.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/certificate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="38" selection-start="534" selection-end="534" vertical-scroll-proportion="0.4678899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_headers.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="5" selection-start="275" selection-end="275" vertical-scroll-proportion="0.5302752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/ussa/_menu.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="15" selection-start="908" selection-end="908" vertical-scroll-proportion="0.7376147">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/flows/registration-flow.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="41" selection-start="1268" selection-end="1268" vertical-scroll-proportion="0.65504587">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/messages.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="46" selection-start="501" selection-end="501" vertical-scroll-proportion="0.43669724">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/decorators.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="18" selection-start="340" selection-end="340" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/stg-forms.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="19" selection-start="423" selection-end="423" vertical-scroll-proportion="0.49908257">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/styles/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="22" selection-start="1506" selection-end="1506" vertical-scroll-proportion="0.5302752">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/decorators/default.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="221" selection-end="221" vertical-scroll-proportion="0.12830189">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/contactInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="33" selection-start="885" selection-end="885" vertical-scroll-proportion="0.76981133">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="74" selection-start="718" selection-end="718" vertical-scroll-proportion="0.40366971">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/PaymentLanding.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="74" selection-start="295" selection-end="295" vertical-scroll-proportion="0.24954128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/extras.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="221" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medical.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/medicalWaiver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationComplete.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/registrationPayment.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/releaseWaiver.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/riskAgreement.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="312" selection-end="312" vertical-scroll-proportion="0.28073394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/sportMembership.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/stateClub.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="330" selection-end="330" vertical-scroll-proportion="0.28867924">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/verification.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="44" selection-start="854" selection-end="854" vertical-scroll-proportion="0.8018868">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/taglibs.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.4678899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:flow="http://www.springframework.org/schema/webflow-config"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+           http://www.springframework.org/schema/webflow-config
+           http://www.springframework.org/schema/webflow-config/spring-webflow-config-1.0.xsd">
+
+    <!--  URL Handlers -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                <!-- USSA Membership mappings -->
+
+                /mainMenu.html=filenameController
+                /registration.html=registrationController
+
+            </value>
+        </property>
+        <property name="order" value="0"/>
+    </bean>
+
+    <!--  Exception Resolver -->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="org.springframework.dao.DataAccessException">
+                    dataAccessFailure
+                </prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="filenameController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="2097152"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="ApplicationResources"/>
+        <property name="useCodeAsDefaultMessage" value="true"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping">
+        <property name="order" value="1"/>
+    </bean>
+
+    <!-- View Resolver for JSPs -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="requestContextAttribute" value="rc"/>
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+	<!-- ====================================== Web Flows ============================================== -->
+	<bean name="registrationController" class="org.springframework.webflow.executor.mvc.FlowController">
+		<property name="flowExecutor" ref="flowExecutor" />
+		<property name="cacheSeconds" value="5" />
+		<property name="defaultFlowId" value="registration-flow" />
+	</bean>
+
+	<!-- Launches new flow executions and resumes existing executions. -->
+	<flow:executor id="flowExecutor" registry-ref="flowRegistry" repository-type="singlekey"/>
+
+	<!-- Creates the registry of flow definitions for this application -->
+	<flow:registry id="flowRegistry">
+		<flow:location path="/WEB-INF/flows/registration-flow.xml" />
+	</flow:registry>
+
+</beans>

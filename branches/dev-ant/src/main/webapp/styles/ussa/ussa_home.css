@@ -1,0 +1,114 @@
+/* overwrite */
+	body
+	{
+		background-color:#E4E4E5;
+	}
+	
+	.layout_wrapper
+	{
+		background-image: url(/layout_home_bg.png);
+		background-color:#E4E4E5;
+		background-repeat:repeat-x;
+	}
+	
+	.sidebar_menu
+	{
+		padding-top:5px;
+		height:35px;
+		background:none;
+	}
+	
+	.container_white
+	{
+		
+	}
+	
+	.container_white h1
+	{
+		color:#CD1041;
+		font-size:14px;
+	}
+	
+	.container_white h3
+	{
+		color:#818385;
+		font-size:13px;
+		font-weight:normal;
+	}
+	
+	.container_white h4
+	{
+		color:#818385;
+		font-size:12px;
+		font-weight:bold;
+	}
+	
+		.container_white .category
+		{
+			font-name:georgia;
+			font-size:11px;
+			font-weight:bold;
+			color:black;
+			font-style:italic;
+		}
+		
+		.container_white .category_date
+		{
+			font-size:12px;
+			font-weight:bold;
+			color:#818385;
+		}
+
+/* layout logic ( height set in _layout.css )*/
+	.section1
+	{
+		height:454px;
+		
+		/*background-image:url(data/splashes/splash1.png);*/
+	}
+	
+		.section1 .left
+		{
+			width:695px;
+			float:left;
+		}
+		
+		.section1 .right
+		{
+			width:265px;
+			float:right;	
+		}
+		
+	.section_news
+	{
+		height:27px;
+		background-color:#004785;
+	}
+	
+		.section_news .news
+		{
+			height:27px;
+			
+			font-size:19px;
+			font-family:georgia;
+			font-weight:bold;
+			font-style:italic;
+			color:white;
+			
+			white-space:no-wrap;
+		}
+	
+		.section_news  .news a
+		{
+			font-size:18px;
+			font-family:georgia;
+			font-weight:normal;
+			font-style:italic;
+			color:white;
+		}
+	
+	.section3
+	{
+		margin-top:10px;
+		margin-bottom:10px;
+	}

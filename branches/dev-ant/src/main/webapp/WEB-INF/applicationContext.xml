@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	   default-lazy-init="true">
+
+	<!-- Add DAOs here -->
+
+	<bean id="addressDao" class="org.ussa.dao.impl.AddressDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="clubDao" class="org.ussa.dao.impl.ClubDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="divisionDao" class="org.ussa.dao.impl.DivisionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="memberDao" class="org.ussa.dao.impl.MemberDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="nationDao" class="org.ussa.dao.impl.NationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="parameterTableDao" class="org.ussa.dao.impl.ParameterTableDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="inventoryDao" class="org.ussa.dao.impl.InventoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="recommendedMembershipsDao" class="org.ussa.dao.impl.RecommendedMembershipsDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- Add business logic classes here-->
+	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
+		<property name="parameterTableDao" ref="parameterTableDao"/>
+	</bean>
+	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
+		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="parameterTableDao" ref="parameterTableDao"/>
+		<property name="dateBL" ref="dateBL"/>
+	</bean>
+
+	<!-- Add service classes here-->
+	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
+		<property name="testMode" value="true"/>
+		<property name="login" value="3M7s8eKK6"/>
+		<property name="tranKey" value="57wHJDb4865yc935"/>
+	</bean>
+
+	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
+		<property name="rulesBL" ref="rulesBL"/>
+		<property name="dateBL" ref="dateBL"/>
+		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="addressDao" ref="addressDao"/>
+		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="batchTransactionDao" ref="batchTransactionDao"/>
+	</bean>
+
+
+</beans>

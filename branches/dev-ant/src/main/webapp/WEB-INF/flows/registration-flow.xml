@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<flow xmlns="http://www.springframework.org/schema/webflow"
+	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	  xsi:schemaLocation="http://www.springframework.org/schema/webflow
+						  http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
+	<start-state idref="findContactInfo"/>
+	
+	<action-state id="findContactInfo">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="foreign" to="foreign"/>
+		<transition on="alreadyRegistered" to="alreadyRegistered"/>
+		<transition on="contactInfo" to="contactInfo"/>
+	</action-state>
+
+	<view-state id="foreign" view="errorForeign"/>
+	<view-state id="alreadyRegistered" view="errorAlreadyRegistered"/>
+
+	<view-state id="contactInfo" view="contactInfo">
+		<transition on="next" to="handleBirthDate">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorContactInfo"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="handleBirthDate">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="parentInfo" to="parentInfo"/>
+		<transition on="findClubInfo" to="findClubInfo"/>
+	</action-state>
+
+	<view-state id="parentInfo" view="parentInfo">
+		<transition on="back" to="contactInfo"/>
+		<transition on="next" to="findClubInfo">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorContactInfo"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="findClubInfo">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="stateClub"/>
+	</action-state>
+
+	<view-state id="stateClub" view="stateClub">
+		<transition on="back" to="contactInfo"/>
+		<transition on="changeState" to="findClubInfo">
+			<action bean="accountBean" method="bindAndValidate"/>
+		</transition>
+		<transition on="next" to="loadSportMemberships">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorStateClub"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="loadSportMemberships">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="sportMembership"/>
+	</action-state>
+
+	<view-state id="sportMembership" view="sportMembership">
+		<transition on="back" to="stateClub"/>
+		<transition on="change" to="loadSportMemberships">
+			<action bean="accountBean" method="bind"/>
+		</transition>
+		<transition on="add" to="addSportMemberships">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorSportMembership"/>
+			</action>
+		</transition>
+		<transition on="update" to="updateMembershipOptions">
+			<action bean="accountBean" method="bind"/>
+		</transition>
+		<transition on="next" to="handleContribution">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorSportMembershipNext"/>
+			</action>
+		</transition>
+		<transition on="remove" to="removeMembershipFromCart"/>
+	</view-state>
+
+	<action-state id="addSportMemberships">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="loadSportMemberships"/>
+	</action-state>
+
+	<action-state id="updateMembershipOptions">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction"/>
+		<transition on="*" to="loadSportMemberships"/>
+	</action-state>
+
+	<action-state id="removeMembershipFromCart">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="removeItemFromCart"/>
+		<transition on="back" to="loadSportMemberships"/>
+	</action-state>
+
+	<action-state id="handleContribution">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="handleContribution"/>
+		<transition on="*" to="loadFisWaiver"/>
+	</action-state>
+
+	<action-state id="loadFisWaiverBack">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiver"/>
+		<transition on="true" to="fisWaiver"/>
+		<transition on="false" to="sportMembership"/>
+	</action-state>
+
+	<action-state id="loadFisWaiver">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiver"/>
+		<transition on="true" to="fisWaiver"/>
+		<transition on="false" to="loadFisWaiverDisabled"/>
+	</action-state>
+
+	<view-state id="fisWaiver" view="fisWaiver">
+		<transition on="back" to="loadSportMemberships"/>
+		<transition on="next" to="handleFisWaiverResponse">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorFisWaiver"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="handleFisWaiverResponse">
+		<action bean="registrationAction"/>
+		<transition on="*" to="loadFisWaiverDisabled"/>
+	</action-state>
+
+	<action-state id="loadFisWaiverDisabledBack">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
+		<transition on="true" to="fisWaiverDisabled"/>
+		<transition on="false" to="loadFisWaiverBack"/>
+	</action-state>
+
+	<action-state id="loadFisWaiverDisabled">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
+		<transition on="true" to="fisWaiverDisabled"/>
+		<transition on="false" to="extras"/>
+	</action-state>
+
+	<view-state id="fisWaiverDisabled" view="fisWaiverDisabled">
+		<transition on="back" to="loadFisWaiverBack"/>
+		<transition on="next" to="handleFisWaiverDisabledResponse">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorFisWaiverDisabled"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="handleFisWaiverDisabledResponse">
+		<action bean="registrationAction"/>
+		<transition on="*" to="extras"/>
+	</action-state>
+
+	<view-state id="extras" view="extras">
+		<transition on="back" to="loadFisWaiverDisabledBack"/>
+		<transition on="next" to="verification"/>
+		<transition on="add" to="addExtras">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorAddExtras"/>
+			</action>
+		</transition>
+		<transition on="remove" to="removeItemFromCart"/>
+		<exit-actions>
+			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
+		</exit-actions>
+	</view-state>
+
+	<action-state id="addExtras">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="addExtras"/>
+		<transition on="*" to="extras"/>
+	</action-state>
+
+	<action-state id="removeItemFromCart">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="registrationAction" method="removeItemFromCart"/>
+		<transition on="back" to="${flowScope.lastViewStateId}"/>
+	</action-state>
+
+	<view-state id="verification" view="verification">
+		<transition on="back" to="extras"/>
+		<transition on="next" to="medical"/>
+		<transition on="editContactInfo" to="editContactInfo"/>
+		<transition on="editSportMembership" to="editSportMembership"/>
+		<transition on="remove" to="removeItemFromCart"/>
+		<exit-actions>
+			<set attribute="lastViewStateId" value="${currentState.id}" scope="flow"/>
+		</exit-actions>
+	</view-state>
+
+	<view-state id="editContactInfo" view="contactInfo">
+		<transition on="next" to="verification">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorContactInfo"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<view-state id="editSportMembership" view="sportMembership">
+		<transition on="back" to="verification"/>
+		<transition on="next" to="verification"/>
+	</view-state>
+
+
+	<view-state id="medical" view="medical">
+		<transition on="back" to="verification"/>
+		<transition on="next" to="medicalWaiverDecision">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedical"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<decision-state id="medicalWaiverDecisionBack">
+		<if test="${flowScope.accountBean.hasInsurance}" then="medical" else="medicalWaiver"/>
+	</decision-state>
+
+	<decision-state id="medicalWaiverDecision">
+		<if test="${flowScope.accountBean.hasInsurance}" then="releaseWaiver" else="medicalWaiver"/>
+	</decision-state>
+
+	<view-state id="medicalWaiver" view="medicalWaiver">
+		<transition on="back" to="medical"/>
+		<transition on="next" to="releaseWaiver">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedicalWaiver"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<view-state id="releaseWaiver" view="releaseWaiver">
+		<transition on="back" to="medicalWaiverDecisionBack"/>
+		<transition on="next" to="loadPayment">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorReleaseWaiver"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="loadPayment">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="paymentAction"/>
+		<transition on="*" to="registrationPayment"/>
+	</action-state>
+
+	<view-state id="registrationPayment" view="registrationPayment">
+		<transition on="back" to="releaseWaiver"/>
+		<transition on="next" to="processOrder">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorRegistrationPayment"/>
+			</action>
+		</transition>
+	</view-state>
+
+	<action-state id="processOrder">
+		<entry-actions>
+			<action bean="accountBean" method="setupForm"/>
+		</entry-actions>
+		<action bean="paymentAction"/>
+		<transition on="*" to="registrationComplete"/>
+	</action-state>
+
+	<view-state id="registrationComplete" view="registrationComplete">
+		<transition on="next" to="completion"/>
+	</view-state>
+
+	<end-state id="completion" view="mainMenu"/>
+
+	<import resource="registration-beans.xml"/>
+</flow>
