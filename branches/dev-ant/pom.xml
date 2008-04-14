@@ -424,6 +424,65 @@
 				<finalName>membership-web</finalName>
 			</build>
 		</profile>
+		
+<profile>
+ <id>dev-ant</id>
+ <build>
+  <plugins>
+            <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.ant</groupId>
+                        <artifactId>ant-jsch</artifactId>
+                        <version>1.7.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.jcraft</groupId>
+                        <artifactId>jsch</artifactId>
+                        <version>0.1.31</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                     <phase>install</phase>
+                        <configuration>
+                            <tasks>
+                                <property environment="env"/>
+
+                                <sshexec host="devweb.hq.ussa.org"
+                                         username="root"
+                                         password="835t1nw0rld"
+                                         command="cd /home/stg/deploy; ./tomcatstop; rm -r /home/stg/deploy/tomcat/webapps/membership-web; rm -r /home/stg/deploy/tomcat/webapps/membership-web.war"
+                                         trust="true"
+                                        />
+
+                                <scp file="d:/Backup/Programs/Bamboo/xml-data/build-dir/MRR-ANTDEF/target/membership-web.war"
+                                     todir="root@devweb.hq.ussa.org:/home/stg/deploy/tomcat/webapps"
+                                     password="835t1nw0rld"
+                                     verbose="true"
+                                     trust="true"
+                                        />
+
+        <sshexec host="devweb.hq.ussa.org"
+                                         username="root"
+                                         password="835t1nw0rld"
+                                         command="cd /home/stg/deploy; ./tomcatstart"
+                                         trust="true"
+                                        />
+                            </tasks>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+               </executions>
+           </plugin>
+        </plugins>
+        <finalName>membership-web</finalName>
+ </build>
+  </profile>  		
+		
 	</profiles>
 
 	<properties>
