@@ -7,7 +7,7 @@ import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Embeddable
-public class MemberLegalPk implements Serializable
+public class MemberSeasonPk implements Serializable
 {
     @ManyToOne
     @JoinColumn(name = "USSA_ID")
@@ -17,11 +17,11 @@ public class MemberLegalPk implements Serializable
 	private String season;
 
 
-    public MemberLegalPk() {
+    public MemberSeasonPk() {
         // empty constructor required for Hibernate
     }
 
-    public MemberLegalPk(Member member, String season) {
+    public MemberSeasonPk(Member member, String season) {
         this.member = member;
         this.season = season;
     }
@@ -50,7 +50,7 @@ public class MemberLegalPk implements Serializable
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        MemberLegalPk that = (MemberLegalPk) o;
+        MemberSeasonPk that = (MemberSeasonPk) o;
 
         if (member != null ? !member.equals(that.member) : that.member != null) return false;
         if (season != null ? !season.equals(that.season) : that.season != null) return false;

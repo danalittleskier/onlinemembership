@@ -3,9 +3,9 @@ package org.ussa.dao.impl;
 import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.MemberLegal;
-import org.ussa.model.MemberLegalPk;
+import org.ussa.model.MemberSeasonPk;
 
-public class MemberLegalDaoImpl extends GenericDaoHibernate<MemberLegal, MemberLegalPk> implements MemberLegalDao
+public class MemberLegalDaoImpl extends GenericDaoHibernate<MemberLegal, MemberSeasonPk> implements MemberLegalDao
 {
 	public MemberLegalDaoImpl()
 	{
@@ -13,8 +13,8 @@ public class MemberLegalDaoImpl extends GenericDaoHibernate<MemberLegal, MemberL
 	}
 
 
-	public MemberLegal get(MemberLegalPk memberLegalPk)
+	public MemberLegal get(MemberSeasonPk memberSeasonPk)
 	{
-		return (MemberLegal) getHibernateTemplate().get(MemberLegal.class, memberLegalPk);
+		return (MemberLegal) getHibernateTemplate().get(MemberLegal.class, memberSeasonPk);
 	}
 }

@@ -17,7 +17,7 @@ import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
-import org.ussa.model.MemberLegalPk;
+import org.ussa.model.MemberSeasonPk;
 import org.ussa.util.DateTimeUtils;
 
 public class CertificateController extends AbstractController
@@ -40,10 +40,10 @@ public class CertificateController extends AbstractController
 			member = memberDao.get(user.getUssaId());
 			String lastSeason = dateBL.getLastSeason();
 			String currentSeason = dateBL.getCurrentRenewSeason();
-			MemberLegalPk memberLegalPk = new MemberLegalPk();
-			memberLegalPk.setMember(member);
-			memberLegalPk.setSeason(currentSeason);
-			MemberLegal memberLegal = memberLegalDao.get(memberLegalPk);
+			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
+			memberSeasonPk.setMember(member);
+			memberSeasonPk.setSeason(currentSeason);
+			MemberLegal memberLegal = memberLegalDao.get(memberSeasonPk);
 			if(memberLegal == null)
 			{
 				return new ModelAndView("redirect:errorNotRegistered.html");

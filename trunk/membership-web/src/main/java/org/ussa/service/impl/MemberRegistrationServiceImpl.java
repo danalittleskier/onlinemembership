@@ -1,34 +1,34 @@
 package org.ussa.service.impl;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.DateBL;
-import org.ussa.bl.RulesBL;
+import org.ussa.common.dao.UniversalDao;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.BatchTransactionDao;
+import org.ussa.dao.InventoryAddDao;
+import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
-import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
-import org.ussa.model.MemberLegalPk;
 import org.ussa.model.MemberSeason;
+import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 
-import java.util.Date;
-import java.util.List;
-
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
-	private RulesBL rulesBL;
 	private DateBL dateBL;
 	private MemberDao memberDao;
 	private AddressDao addressDao;
@@ -36,6 +36,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	private BatchTransactionDao batchTransactionDao;
     private MemberTransactionDao memberTransactionDao;
     private CreditCardProcessingService creditCardProcessingService;
+    private UniversalDao universalDao;
+    private InventoryAddDao inventoryAddDao;
+    private InventoryDao inventoryDao;
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
@@ -48,46 +51,64 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		CartBean cartBean = accountBean.getCartBean();
 
 		// MEMBER
-		member.setType(Member.MEMBER_TYPE_INDIVIDUAL); // "I" = Individual, "C" = Club, todo: use Enum constants?
+		member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
 		member = memberDao.save(member);
 
 		// MEMBERADDRESS
-		address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY)); // "P" = Primary, todo: use Enum constants?
+		address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY));
 		addressDao.save(address);
 
 		// MEMBERLEGAL
 		String season = dateBL.getCurrentRenewSeason();
-		memberLegal.setMemberLegalPk(new MemberLegalPk(member, season));
+		memberLegal.setMemberSeasonPk(new MemberSeasonPk(member, season));
 		memberLegal.setInsuranceWaiverDate(new Date());
 		memberLegal.setReleaseWaiverDate(new Date());
 		memberLegalDao.save(memberLegal);
 
 		// MEMBERSEASON
 		MemberSeason memberSeason = new MemberSeason();
-
-		// INVENTORYADD
-		// Get extra inventory that needs to be added, and add it to the list.
-		InventoryAdd inventoryAdd = new InventoryAdd();
+		memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
+		memberSeason.setAppProcessDate(new Date());
+		memberSeason.setAppReceiveDate(new Date());
+		universalDao.save(memberSeason);
 
 		// MEMBERTRANSACTION
 		List<LineItemBean> lineItemBeans = cartBean.getLineItems();
 		for (LineItemBean lineItem : lineItemBeans)
 		{
-			MemberTransaction memberTransaction = new MemberTransaction(member);
-			memberTransaction.setSeason(currentSeason);
-			memberTransaction.setInvId(lineItem.getInventory().getId());
-			memberTransaction.setQty(lineItem.getQty());
-			memberTransaction.setAmount(lineItem.getDiscountedAmount());
-			memberTransaction.setSentDate(null);
-			memberTransaction.setPurchaseDate(new Date());
-			memberTransactionDao.save(memberTransaction);
+			saveMemberTransaction(lineItem, member, currentSeason);
+
+			// INVENTORYADD
+//			String invId = lineItem.getInventory().getId();
+//			String divisionCode = member.getDivision().getDivisionCode();
+//			List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
+//			for (InventoryAdd inventoryAdd : additionInventory)
+//			{
+//				Inventory inventory = inventoryDao.get(inventoryAdd.getAddInvId());
+//
+//				saveMemberTransaction(new LineItemBean(inventory), member, currentSeason);
+//			}
 		}
+
+		// TODO update account user's ussaid
 
 		// then run the card. if the card completes without throwing exception then the transaction completes
 		creditCardProcessingService.processCard(accountBean);
 
 		// BATCH TABLES
 //		batchTransactionDao.insertToBatchTables(accountBean);
+	}
+
+	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason)
+	{
+		MemberTransaction memberTransaction = new MemberTransaction(member);
+		memberTransaction.setSeason(currentSeason);
+		memberTransaction.setInvId(lineItem.getInventory().getId());
+		memberTransaction.setQty(lineItem.getQty());
+		memberTransaction.setAmount(lineItem.getDiscountedAmount());
+		memberTransaction.setSentDate(null);
+		memberTransaction.setPurchaseDate(new Date());
+		memberTransactionDao.save(memberTransaction);
 	}
 
 
@@ -97,19 +118,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	}
 
 
-	public MemberDao getMemberDao()
-	{
-		return memberDao;
-	}
-
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
-	}
-
-	public AddressDao getAddressDao()
-	{
-		return addressDao;
 	}
 
 	public void setAddressDao(AddressDao addressDao)
@@ -117,29 +128,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		this.addressDao = addressDao;
 	}
 
-	public MemberLegalDao getMemberLegalDao()
-	{
-		return memberLegalDao;
-	}
-
 	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
 	{
 		this.memberLegalDao = memberLegalDao;
-	}
-
-	public RulesBL getRulesBL()
-	{
-		return rulesBL;
-	}
-
-	public void setRulesBL(RulesBL rulesBL)
-	{
-		this.rulesBL = rulesBL;
-	}
-
-	public DateBL getDateBL()
-	{
-		return dateBL;
 	}
 
 	public void setDateBL(DateBL dateBL)
@@ -147,23 +138,28 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		this.dateBL = dateBL;
 	}
 
-	public BatchTransactionDao getBatchTransactionDao()
-	{
-		return batchTransactionDao;
-	}
-
 	public void setBatchTransactionDao(BatchTransactionDao batchTransactionDao)
 	{
 		this.batchTransactionDao = batchTransactionDao;
 	}
 
-    public MemberTransactionDao getMemberTransactionDao() 
-    {
-        return memberTransactionDao;
-    }
-
-    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) 
+    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao)
     {
         this.memberTransactionDao = memberTransactionDao;
     }
+
+	public void setUniversalDao(UniversalDao universalDao)
+	{
+		this.universalDao = universalDao;
+	}
+
+	public void setInventoryAddDao(InventoryAddDao inventoryAddDao)
+	{
+		this.inventoryAddDao = inventoryAddDao;
+	}
+
+	public void setInventoryDao(InventoryDao inventoryDao)
+	{
+		this.inventoryDao = inventoryDao;
+	}
 }

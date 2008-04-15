@@ -34,7 +34,7 @@ THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGL
 
 <label for="insuranceWaiverControl">* I agree to the terms above</label>
 <form:hidden id="insuranceWaiver" path="memberLegal.insuranceWaiver"/>
-<input id="insuranceWaiverControl" type="checkbox" onclick="updateCheckboxHidden('insuranceWaiver', this)"/>
+<input id="insuranceWaiverControl" type="checkbox" onclick="updateCheckboxHidden('insuranceWaiver', this)" class="checkbox"/>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('insuranceWaiver');
 </script>
