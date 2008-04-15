@@ -10,6 +10,7 @@ import org.springframework.test.AbstractTransactionalSpringContextTests;
 public class AbstractUssaIntegrationTests extends AbstractTransactionalSpringContextTests {
     private static final String[] CONFIG_LOCATIONS = new String[]{
         "classpath:/applicationContext-resources-test.xml", 
+        "classpath:/applicationContext-resources-common-test.xml", 
         "classpath:/applicationContext-service-membership.xml", 
         "file:./src/main/webapp/WEB-INF/applicationContext.xml"
     };

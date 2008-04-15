@@ -1,8 +1,5 @@
 package org.ussa.service.impl;
 
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.ussa.beans.AccountBean;
@@ -14,6 +11,7 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
+import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.InventoryAdd;
@@ -25,6 +23,9 @@ import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 
+import java.util.Date;
+import java.util.List;
+
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
 	private RulesBL rulesBL;
@@ -33,7 +34,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	private AddressDao addressDao;
 	private MemberLegalDao memberLegalDao;
 	private BatchTransactionDao batchTransactionDao;
-	private CreditCardProcessingService creditCardProcessingService;
+    private MemberTransactionDao memberTransactionDao;
+    private CreditCardProcessingService creditCardProcessingService;
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
@@ -71,15 +73,14 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		List<LineItemBean> lineItemBeans = cartBean.getLineItems();
 		for (LineItemBean lineItem : lineItemBeans)
 		{
-			MemberTransaction memberTransaction = new MemberTransaction();
-//			memberTransaction.setUssaId(ussaId);
+			MemberTransaction memberTransaction = new MemberTransaction(member);
 			memberTransaction.setSeason(currentSeason);
 			memberTransaction.setInvId(lineItem.getInventory().getId());
 			memberTransaction.setQty(lineItem.getQty());
 			memberTransaction.setAmount(lineItem.getDiscountedAmount());
 			memberTransaction.setSentDate(null);
 			memberTransaction.setPurchaseDate(new Date());
-			// TODO: save these
+			memberTransactionDao.save(memberTransaction);
 		}
 
 		// then run the card. if the card completes without throwing exception then the transaction completes
@@ -155,4 +156,14 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	{
 		this.batchTransactionDao = batchTransactionDao;
 	}
+
+    public MemberTransactionDao getMemberTransactionDao() 
+    {
+        return memberTransactionDao;
+    }
+
+    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) 
+    {
+        this.memberTransactionDao = memberTransactionDao;
+    }
 }

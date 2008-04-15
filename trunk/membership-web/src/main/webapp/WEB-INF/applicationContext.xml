@@ -39,8 +39,11 @@
 	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+    <bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
-	<!-- Add business logic classes here-->
+    <!-- Add business logic classes here-->
 	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
 		<property name="parameterTableDao" ref="parameterTableDao"/>
 	</bean>
@@ -66,7 +69,8 @@
 		<property name="addressDao" ref="addressDao"/>
 		<property name="memberLegalDao" ref="memberLegalDao"/>
 		<property name="batchTransactionDao" ref="batchTransactionDao"/>
-	</bean>
+        <property name="memberTransactionDao" ref="memberTransactionDao"/>
+    </bean>
 
 
 </beans>
