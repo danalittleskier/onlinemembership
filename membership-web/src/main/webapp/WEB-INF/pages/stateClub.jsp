@@ -85,7 +85,7 @@
 				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
-			<label style="width: 100px;" for="">* Club:</label>
+			<label style="width: 100px;" for="">Club:</label>
 			<form:select path="clubId" onchange="document.getElementById('update').click();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>

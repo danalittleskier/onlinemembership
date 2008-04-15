@@ -8,8 +8,6 @@ import org.ussa.model.Inventory;
 
 public interface RulesBL
 {
-	public Long getNextUssaId();
-
 	public Integer getAgeForCurrentRenewSeason(Date birthDate);
 
 	public void setParentInfoRequired(AccountBean accountBean);

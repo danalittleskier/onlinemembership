@@ -41,11 +41,13 @@ public class RuleAssociations
 		competitorByYouth = new HashMap<String, String>();
 		competitorByYouth.put(Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_YOUTH);
 		competitorByYouth.put(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
+		competitorByYouth.put(Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_YOUTH);
 		competitorByYouth.put(Inventory.INV_ID_JUMPING_COMPETITOR, Inventory.INV_ID_JUMPING_YOUTH);
 
 		youthByCompetitor = new HashMap<String, String>();
 		youthByCompetitor.put(Inventory.INV_ID_ALPINE_YOUTH, Inventory.INV_ID_ALPINE_COMPETITOR);
 		youthByCompetitor.put(Inventory.INV_ID_CROSS_COUNTRY_YOUTH, Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
+		youthByCompetitor.put(Inventory.INV_ID_FREESTYLE_YOUTH, Inventory.INV_ID_FREESTYLE_YOUTH);
 		youthByCompetitor.put(Inventory.INV_ID_JUMPING_YOUTH, Inventory.INV_ID_JUMPING_COMPETITOR);
 
 		twentyFiveDollarDiscountGroup = new HashSet<String>();

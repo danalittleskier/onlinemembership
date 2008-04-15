@@ -30,7 +30,7 @@ public class CartBean
 	{
 		LineItemBean lineItem = new LineItemBean();
 		lineItem.setInventory(inventory);
-		lineItem.setDescription(inventory.getDescription());
+		lineItem.setDescription(inventory.getRenewDescription());
 		if(cost != null)
 		{
 			lineItem.setAmount(cost);

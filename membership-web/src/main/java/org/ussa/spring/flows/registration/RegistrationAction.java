@@ -78,7 +78,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.inventoryDao = inventoryDao;
 	}
-	public void setRecommendedMembershipsDao(RenewRuleInvDao renewRuleInvDao)
+	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
 	{
 		this.renewRuleInvDao = renewRuleInvDao;
 	}

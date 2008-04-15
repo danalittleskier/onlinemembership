@@ -56,6 +56,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+	<bean id="certificateController" class="org.ussa.spring.controller.CertificateController">
+		<property name="userManager" ref="userManager"/>
+		<property name="memberDao" ref="memberDao"/>
+	</bean>
+
 	<!-- ====================================== Web Flows ============================================== -->
 	<bean name="registrationController" class="org.springframework.webflow.executor.mvc.FlowController">
 		<property name="flowExecutor" ref="flowExecutor" />
