@@ -1,7 +1,5 @@
 package com.ussa.app.integration;
 
-import org.ussa.common.model.User;
-import org.ussa.common.service.UserManager;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
@@ -25,13 +23,7 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
     private AddressDao addressDao;
     private MemberLegalDao memberLegalDao;
     private MemberTransactionDao memberTransactionDao;
-    private UserManager userManager;
     
-    public void testGetUserByUsername() {
-        User user = userManager.getUserByUsername("user9");
-        assertNotNull(user);
-    }
-
     /**
      * persist Member, Address, and MemberLegal
      */
@@ -106,9 +98,5 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
 
     public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) {
         this.memberTransactionDao = memberTransactionDao;
-    }
-
-    public void setUserManager(UserManager userManager) {
-        this.userManager = userManager;
     }
 }
