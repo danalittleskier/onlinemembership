@@ -9,14 +9,15 @@
 	<div class="stg-error-content">
 		<ul>
 				<li>
-					We are not processing foreign registrations or renewals on-line at this time. Please call support.
+					We are not processing foreign registrations or renewals on-line at this time. Please contact Member Services
+					at 435-647-2666 or by email at membership@ussa.org.
 				</li>
 		</ul>
 	</div>
 
 	<p>
 		<fieldset class="buttons">
-			<input type="button" class="btn-green" name="button" value="Go to Account Home" onclick="location.href='<c:url value="/authenticationRedirect.jsp"/>'">
+			<input type="button" class="btn-green" name="button" value="Go to Account Home" onclick="location.href='<c:url value="/dashboardRedirect.jsp"/>'">
 		</fieldset>
 	</p>
 

@@ -42,9 +42,9 @@
     <bean id="authenticationProcessingFilter" class="com.atlassian.crowd.integration.acegi.CrowdAuthenticationProcessingFilter">
         <property name="httpAuthenticator" ref="httpAuthenticator"/>
         <property name="authenticationManager" ref="authenticationManager"/>
-        <property name="authenticationFailureUrl" value="/authenticationRedirect.jsp"/>
+        <property name="authenticationFailureUrl" value="/dashboardRedirect.jsp"/>
         <property name="defaultTargetUrl" value="/registration.html"/>
-        <property name="filterProcessesUrl" value="/j_security_check"/>
+		<property name="filterProcessesUrl" value="/j_security_check"/>
         <property name="rememberMeServices" ref="rememberMeServices"/>
 		<property name="alwaysUseDefaultTargetUrl" value="false"/>
 	</bean>
@@ -64,7 +64,7 @@
     <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
         <property name="authenticationEntryPoint">
             <bean class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
-                <property name="loginFormUrl" value="/authenticationRedirect.jsp"/>
+                <property name="loginFormUrl" value="/dashboardRedirect.jsp"/>
                 <property name="forceHttps" value="false"/>
             </bean>
         </property>
@@ -82,7 +82,7 @@
                 /admin/*=ROLE_ADMIN
                 /passwordHint.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
                 /signup.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
-                /authenticationRedirect.jsp*=ROLE_ANONYMOUS
+                /dashboardRedirect.jsp*=ROLE_ANONYMOUS,ROLE_USER
                 /a4j.res/*.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER <!-- APF-737, OK to remove if not using JSF -->
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>
@@ -102,7 +102,8 @@
         <property name="userDetailsService" ref="crowdUserDetailsService"/>
         <property name="key" value="23_*!cdU='612./e;NrI"/>
         <property name="parameter" value="rememberMe"/>
-    </bean>
+		<property name="tokenValiditySeconds" value="1800"/>
+	</bean>
 
     <bean id="authenticationManager" class="org.acegisecurity.providers.ProviderManager">
         <property name="providers">

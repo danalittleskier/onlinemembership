@@ -17,10 +17,15 @@
 		<transition on="contactInfo" to="contactInfo"/>
 	</action-state>
 
-	<view-state id="foreign" view="errorForeign"/>
-	<view-state id="alreadyRegistered" view="errorAlreadyRegistered"/>
+	<view-state id="foreign" view="errorForeign">
+		<transition on="back" to="endState"/>
+	</view-state>
+	<view-state id="alreadyRegistered" view="errorAlreadyRegistered">
+		<transition on="back" to="endState"/>
+	</view-state>
 
 	<view-state id="contactInfo" view="contactInfo">
+		<transition on="back" to="endState"/>
 		<transition on="next" to="handleBirthDate">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorContactInfo"/>
@@ -240,7 +245,8 @@
 		</transition>
 	</view-state>
 
-	<view-state id="editSportMembership" view="loadSportMemberships">
+	<!--TODO: this needs to go to an action state loadSportmemberships -->
+	<view-state id="editSportMembership" view="sportMembership">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
@@ -306,7 +312,11 @@
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
 
-	<end-state id="registrationComplete" view="registrationComplete"/>
+	<view-state id="registrationComplete" view="registrationComplete">
+		<transition on="next" to="endState"/>
+	</view-state>
+
+	<end-state id="endState" view="dashboard"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>

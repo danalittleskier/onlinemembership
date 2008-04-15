@@ -34,7 +34,7 @@
 	<div></div>
 	<p class="stg-omr-header">When You're Finished...</p>
 	<p>
-		You may continue to the <a href="<c:url value="/authenticationRedirect.jsp"/>">USSA Member Home Page</a>
+		You may continue to the <a href="<c:url value="/dashboardRedirect.jsp"/>">USSA Member Home Page</a>
 		to continue using your account or <a href="<c:url value="/logout.html"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>
