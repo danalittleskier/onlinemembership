@@ -227,9 +227,6 @@
 			<field property="member.stateCode" depends="required">
 				<arg0 key="user.address.province" />
 			</field>
-			<field property="clubId" depends="required">
-				<arg0 key="registration.club" />
-			</field>
 		</form>
 
 		<form name="sportMembership">
@@ -364,7 +361,7 @@
 			</field>
 		</form>
 
-		<form name="registrationPayment">
+		<form name="payment">
 			<field property="paymentBean.paymentType" depends="required">
 				<arg0 key="label.credit.card.type" />
 			</field>

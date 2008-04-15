@@ -23,7 +23,6 @@ import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
-import org.ussa.model.ParameterTable;
 import org.ussa.model.State;
 
 public class RulesBLImpl implements RulesBL
@@ -51,15 +50,6 @@ public class RulesBLImpl implements RulesBL
 	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
 	{
 		this.renewRuleInvDao = renewRuleInvDao;
-	}
-
-	public Long getNextUssaId()
-	{
-		// change this to a select for update, and then increment it and commit.
-		ParameterTable parameter = parameterTableDao.get(ParameterTable.USSAID);
-		String ussaId = parameter.getParameterData();
-
-		return new Long(ussaId);
 	}
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate)
@@ -118,7 +108,7 @@ public class RulesBLImpl implements RulesBL
 
 	private boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory)
 	{
-		CartBean cartBean = new CartBean();
+		CartBean cartBean = accountBean.getCartBean();
 		String invId = inventory.getId();
 
 		// If a coach membership is already selected, user may not add an official membership (it’s already included).

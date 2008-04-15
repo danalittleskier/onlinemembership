@@ -37,11 +37,11 @@ public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 			"order by r.inv_id, r.division_code";
 
 	private String DUES_SQL = "select r.inv_id, r.new_inv_id " +
-			"from renewruleinv r" +
+			"from renewruleinv r " +
 			"where " +
 			"r.division_code = ? " +
 			"and ? between r.age_from and r.age_to " +
-			"and inv_id in ($INVENTORY_LIST$) " +
+			"and r.inv_id in ($INVENTORY_LIST$) " +
 			"group by r.inv_id, r.new_inv_id";
 
 	private InventoryDao inventoryDao;
@@ -76,41 +76,45 @@ public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 
 	public List<Inventory> getDivisionDues(String divisionCode, Integer currentSeasonAge, List<String> membershipIds)
 	{
-		String query = DUES_SQL;
-		StringBuffer inventoryWhere = new StringBuffer();
-		for (int i = 0; i < membershipIds.size(); i++)
-		{
-			if(i > 0)
-			{
-				inventoryWhere.append(",");
-			}
-			inventoryWhere.append("?");
-		}
-		query = StringUtils.replace(query, "$INVENTORY_LIST$", inventoryWhere.toString());
-		DuesQuery duesQuery = new DuesQuery(getDataSource(), query, membershipIds.size());
-
-		List<Object> parameters = new ArrayList<Object>();
-		parameters.add(divisionCode);
-		parameters.add(currentSeasonAge);
-		parameters.addAll(membershipIds);
-
 		List<Inventory> dues = new ArrayList<Inventory>();
-		Set<String> dueIds = new HashSet<String>();
-		List<Map<String, String>> newOldInvIdMappings = (List<Map<String, String>>) duesQuery.execute(parameters.toArray());
-		for (Map<String, String> newOldInvIdMapping : newOldInvIdMappings)
+
+		if(membershipIds != null && membershipIds.size() > 0)
 		{
-			String invId = newOldInvIdMapping.get("inv_id");
-			String[] newInvIds = newOldInvIdMapping.get("new_inv_id").split(",");
-			for (String newInvId : newInvIds)
+			String query = DUES_SQL;
+			StringBuffer inventoryWhere = new StringBuffer();
+			for (int i = 0; i < membershipIds.size(); i++)
 			{
-				String newInvIdUpper = newInvId.toUpperCase();
-				if(!dueIds.contains(invId) && (newInvIdUpper.startsWith("DD") || newInvIdUpper.startsWith("SD")))
+				if(i > 0)
 				{
-					dueIds.add(invId);
-					Inventory due = inventoryDao.get(newInvId);
-					if("Y".equals(due.getActive().toUpperCase()))
+					inventoryWhere.append(",");
+				}
+				inventoryWhere.append("?");
+			}
+			query = StringUtils.replace(query, "$INVENTORY_LIST$", inventoryWhere.toString());
+			DuesQuery duesQuery = new DuesQuery(getDataSource(), query, membershipIds.size());
+
+			List<Object> parameters = new ArrayList<Object>();
+			parameters.add(divisionCode);
+			parameters.add(currentSeasonAge);
+			parameters.addAll(membershipIds);
+
+			Set<String> dueIds = new HashSet<String>();
+			List<Map<String, String>> newOldInvIdMappings = (List<Map<String, String>>) duesQuery.execute(parameters.toArray());
+			for (Map<String, String> newOldInvIdMapping : newOldInvIdMappings)
+			{
+				String invId = newOldInvIdMapping.get("inv_id");
+				String[] newInvIds = newOldInvIdMapping.get("new_inv_id").split(",");
+				for (String newInvId : newInvIds)
+				{
+					String newInvIdUpper = newInvId.toUpperCase();
+					if(!dueIds.contains(invId) && (newInvIdUpper.startsWith("DD") || newInvIdUpper.startsWith("SD")))
 					{
-						dues.add(due);
+						dueIds.add(invId);
+						Inventory due = inventoryDao.get(newInvId);
+						if("Y".equals(due.getActive().toUpperCase()))
+						{
+							dues.add(due);
+						}
 					}
 				}
 			}

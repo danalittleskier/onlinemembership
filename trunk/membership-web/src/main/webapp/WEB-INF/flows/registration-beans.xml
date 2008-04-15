@@ -40,7 +40,7 @@
 				<entry key="validatorMedical" value-ref="validatorMedical"/>
 				<entry key="validatorMedicalWaiver" value-ref="validatorMedicalWaiver"/>
 				<entry key="validatorReleaseWaiver" value-ref="validatorReleaseWaiver"/>
-				<entry key="validatorRegistrationPayment" value-ref="validatorRegistrationPayment"/>
+				<entry key="validatorPayment" value-ref="validatorPayment"/>
 			</map>
 		</property>
 	</bean>
@@ -76,8 +76,8 @@
 	<bean id="validatorReleaseWaiver" parent="validatorTemplate">
 		<property name="formName" value="releaseWaiver"/>
 	</bean>
-	<bean id="validatorRegistrationPayment" parent="validatorTemplate">
-		<property name="formName" value="registrationPayment"/>
+	<bean id="validatorPayment" parent="validatorTemplate">
+		<property name="formName" value="payment"/>
 	</bean>
 
 </beans>

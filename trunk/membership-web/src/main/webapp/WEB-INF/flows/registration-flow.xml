@@ -133,7 +133,7 @@
 		</entry-actions>
 		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
-		<transition on="false" to="sportMembership"/>
+		<transition on="false" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="loadFisWaiver">
@@ -240,7 +240,7 @@
 		</transition>
 	</view-state>
 
-	<view-state id="editSportMembership" view="sportMembership">
+	<view-state id="editSportMembership" view="loadSportMemberships">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
@@ -286,14 +286,14 @@
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="paymentAction"/>
-		<transition on="*" to="registrationPayment"/>
+		<transition on="*" to="payment"/>
 	</action-state>
 
-	<view-state id="registrationPayment" view="registrationPayment">
+	<view-state id="payment" view="payment">
 		<transition on="back" to="releaseWaiver"/>
 		<transition on="next" to="processOrder">
 			<action bean="accountBean" method="bindAndValidate">
-				<attribute name="validator" value="validatorRegistrationPayment"/>
+				<attribute name="validator" value="validatorPayment"/>
 			</action>
 		</transition>
 	</view-state>
@@ -306,11 +306,7 @@
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
 
-	<view-state id="registrationComplete" view="registrationComplete">
-		<transition on="next" to="completion"/>
-	</view-state>
-
-	<end-state id="completion" view="mainMenu"/>
+	<end-state id="registrationComplete" view="registrationComplete"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>
