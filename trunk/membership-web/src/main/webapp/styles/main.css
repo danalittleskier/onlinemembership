@@ -223,30 +223,3 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .decal-qty {text-align:left;}
 .packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
 .decal {width:195px; float:left; text-align:center; padding:0 5px;}
-
-/* If you use a modal then delete everthing that comes after this line */
-#bonus-popup {display:none; position:absolute; z-index:2; left:100px; top:100px; width:540px; height:450px; background-color:#333;}
-.popup-title {width:90%; padding:15px 0 10px 15px; text-align:left;}
-.popup-subtitle {font:bold 110% arial,verdana,sans-serif; color:#ccc; text-align:left;}
-.popup-title input {float:right; margin-top:-20px;}
-#title-text{font:bold 180% arial,verdana,sans-serif; color:#fff; margin-right:5px;}
-
-#popup-content {width:535px; height:366px;}
-.alpine {background:url(../images/popup-alpine.gif) no-repeat;}
-.freestyle {background:url(../images/popup-freestyle.gif) no-repeat;}
-.crosscountry {background:url(../images/popup-crosscountry.gif) no-repeat;}
-.jumpingnc {background:url(../images/popup-jumpingnc.gif) no-repeat;}
-.skigeneral {background:url(../images/popup-skigeneral.gif) no-repeat;}
-.snowboarding {background:url(../images/popup-snowboarding.gif) no-repeat;}
-
-#bonus-popup iframe
-{
-display:none;/*sorry for IE5*/
-display/**/:block;/*sorry for IE5*/
-position:absolute;/*must have*/
-top:0;/*must have*/
-left:0;/*must have*/
-z-index:-1;/*must have*/
-filter:mask();/*must have*/
-width: 100%;/*must have for any big value*/
-height: 100%;/*must have for any big value*/;

@@ -1,0 +1,1 @@
+<%response.sendRedirect("/accounts/dashboard.html");%>
