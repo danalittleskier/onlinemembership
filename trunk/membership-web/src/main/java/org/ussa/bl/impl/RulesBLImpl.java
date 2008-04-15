@@ -111,6 +111,12 @@ public class RulesBLImpl implements RulesBL
 		CartBean cartBean = accountBean.getCartBean();
 		String invId = inventory.getId();
 
+		// For memberships that you want hidden from the users, add them to RuleAssociations.restrictedMemberships.
+		if(RuleAssociations.restrictedMemberships.contains(invId))
+		{
+			return true;
+		}
+
 		// If a coach membership is already selected, user may not add an official membership (it’s already included).
 		String coachInvId = RuleAssociations.coachesByOfficial.get(invId);
 		if(coachInvId != null && cartBean.contains(coachInvId))
@@ -546,18 +552,42 @@ public class RulesBLImpl implements RulesBL
 		cart.removeLineItems(Inventory.INVENTORY_TYPE_DIVISION_DUES);
 		cart.removeLineItems(Inventory.INVENTORY_TYPE_STATE_DUES);
 
-		// RE-CALCULATE AND RE-ADD DIVISION DUES
+		// RE-CALCULATE AND RE-ADD DIVISION AND STATE DUES
 		if(!cart.containsAny(RuleAssociations.disabledMemberships))
 		{
+			Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
 			String stateCode = member.getStateCode();
-			if(State.STATE_CODE_MAINE.equals(stateCode) || State.STATE_CODE_NEW_JERSEY.equals(stateCode))
+			if(State.STATE_CODE_MAINE.equals(stateCode))
 			{
-				// TODO: do the state dues
+				if(age <= 10 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH))
+				{
+					cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_10_UNDER));
+				}
+				if(age >= 11 && age <= 12 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
+						|| cart.contains(Inventory.INV_ID_ALPINE_STUDENT)
+						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)
+						|| cart.contains(Inventory.INV_ID_ALPINE_COACH))
+				{
+					cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO));
+				}
+
+			}
+			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
+			{
+				if(cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
+						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
+				{
+					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
+				}
+				if(cart.contains(Inventory.INV_ID_ALPINE_COACH)
+						|| cart.contains(Inventory.INV_ID_ALPINE_OFFICIAL))
+				{
+					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
+				}
 			}
 			else
 			{
 				String divisionCode = member.getDivision().getDivisionCode();
-				Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
 				List<LineItemBean> membershipLineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
 				List<String> membershipIds = new ArrayList<String>();
 				for (LineItemBean lineItem : membershipLineItems)
@@ -599,8 +629,17 @@ public class RulesBLImpl implements RulesBL
 
 		if(now.after(lateRenewDate))
 		{
-			// DIVISION LATE FEES
-			if(cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)) // There are currently only division late fees for alpine competitors
+			// DIVISION AND STATE LATE FEES
+			String stateCode = member.getStateCode();
+			if(State.STATE_CODE_MAINE.equals(stateCode))
+			{
+				cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_LATE_FEE));
+			}
+			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
+			{
+				cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_LATE_FEE));
+			}
+			else if(cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)) // There are currently only division late fees for alpine competitors
 			{
 				String divisionCode = member.getDivision().getDivisionCode();
 				String invId = RuleAssociations.divisionLateFeesAplineCompetitor.get(divisionCode);

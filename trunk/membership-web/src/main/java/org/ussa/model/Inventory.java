@@ -103,6 +103,14 @@ public class Inventory implements Serializable
 	public static final String INV_ID_FARWEST_LATE_FEE = "DDFAL";
 	public static final String INV_ID_INTERMOUNTAIN_ALPINE_LATE_FEE = "DDIAL";
 
+	// State Dues
+	public static final String INV_ID_MARA_LATE_FEE = "SDMEAL";
+	public static final String INV_ID_MARA_DUES_AY_10_UNDER = "SDMEA1";
+	public static final String INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO = "SDMEA2";
+	public static final String INV_ID_NJSRA_LATE_FEE = "SDNJAL";
+	public static final String INV_ID_NJSRA_DUES_AY_AC = "SDNJA1";
+	public static final String INV_ID_NJSRA_STATE_DUES_ACO_AO = "SDNJA2";
+
 	// USSA Late Fee
 	public static final String INV_ID_MEMBER_LATE_FEE = "LATE";
 
