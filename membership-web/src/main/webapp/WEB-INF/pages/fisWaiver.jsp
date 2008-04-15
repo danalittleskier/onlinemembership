@@ -43,12 +43,15 @@ I have read the above Athlete’s Declaration.
 For Athletes of minority age: (according to national laws): This is to certify that, as parent/guardian of this participant, I do consent to his/her agreement to be bound by each of the terms and conditions identified above.
 
 </p>
-	<label for="fisWaiver1">I agree.</label>
-	<form:radiobutton id="fisWaiver1" path="hasFisWaiver" value="${true}"/>
-	<br/>
-	<br/>
-	<label for="fisWaiver2">No I don't agree. Please remove all FIS items from my cart.</label>
-	<form:radiobutton id="fisWaiver2" path="hasFisWaiver" value="${false}"/>
+
+	<fieldset style="border:none;">
+		<div class="radios">
+			<form:radiobutton id="fisWaiver1" path="hasFisWaiver" value="${true}"/>
+			<label for="fisWaiver1">I agree.</label>
+			<form:radiobutton id="fisWaiver2" path="hasFisWaiver" value="${false}"/>
+			<label for="fisWaiver2">No I don't agree. Please remove all FIS items from my cart.</label>
+		</div>
+	</fieldset>
 
 </div></div></div></div>
 <!-- BOX (END) -->
