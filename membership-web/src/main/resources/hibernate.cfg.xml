@@ -21,7 +21,7 @@
 		<mapping class="org.ussa.model.MemberClub"/>
 		<mapping class="org.ussa.model.MemberSeason"/>
 		<mapping class="org.ussa.model.MemberLegal"/>
-		<mapping class="org.ussa.model.MemberLegalPk"/>
+		<mapping class="org.ussa.model.MemberSeasonPk"/>
 		<mapping class="org.ussa.model.MemberTransaction"/>
 		<mapping class="org.ussa.model.ParameterTable"/>
 		<mapping class="org.ussa.model.DivisionAffiliation"/>

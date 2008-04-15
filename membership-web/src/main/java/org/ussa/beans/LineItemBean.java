@@ -13,6 +13,18 @@ public class LineItemBean
 	BigDecimal discount;
 	Integer qty;
 
+	public LineItemBean()
+	{
+	}
+
+	public LineItemBean(Inventory inventory)
+	{
+		this.inventory = inventory;
+		this.description = inventory.getRenewDescription();
+		this.amount = inventory.getAmount();
+		this.qty = 1;
+	}
+
 	public Inventory getInventory()
 	{
 		return inventory;

@@ -33,7 +33,7 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 
 <label for="releaseWaiverControl">* I agree to the terms above</label>
 <form:hidden id="releaseWaiver" path="memberLegal.releaseWaiver"/>
-<input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)"/>
+<input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)" class="checkbox"/>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('releaseWaiver');
 </script>

@@ -1,5 +1,10 @@
 package org.ussa.spring.flows.registration;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -28,14 +33,9 @@ import org.ussa.model.Club;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
-import org.ussa.model.MemberLegalPk;
+import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
-
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -159,9 +159,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 			MemberLegal memberLegal = new MemberLegal();
 			accountBean.setMemberLegal(memberLegal);
-			MemberLegalPk memberLegalPk = new MemberLegalPk();
-			memberLegalPk.setSeason(currentSeason);
-			memberLegal.setMemberLegalPk(memberLegalPk);
+			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
+			memberSeasonPk.setSeason(currentSeason);
+			memberLegal.setMemberSeasonPk(memberSeasonPk);
 		}
 		// renewals
 		else
@@ -198,14 +198,14 @@ public class RegistrationAction extends MultiAction implements Serializable
 			}
 			accountBean.setAddress(address);
 
-			MemberLegalPk memberLegalPk = new MemberLegalPk();
-			memberLegalPk.setMember(member);
-			memberLegalPk.setSeason(currentSeason);
-			MemberLegal memberLegal = memberLegalDao.get(memberLegalPk);
+			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
+			memberSeasonPk.setMember(member);
+			memberSeasonPk.setSeason(currentSeason);
+			MemberLegal memberLegal = memberLegalDao.get(memberSeasonPk);
 			if(memberLegal == null)
 			{
 				memberLegal = new MemberLegal();
-				memberLegal.setMemberLegalPk(memberLegalPk);
+				memberLegal.setMemberSeasonPk(memberSeasonPk);
 				accountBean.setMemberLegal(memberLegal);
 			}
 			else

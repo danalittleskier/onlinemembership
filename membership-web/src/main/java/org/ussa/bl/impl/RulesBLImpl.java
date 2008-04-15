@@ -18,7 +18,6 @@ import org.ussa.bl.DateBL;
 import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.InventoryDao;
-import org.ussa.dao.ParameterTableDao;
 import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
@@ -28,18 +27,12 @@ import org.ussa.model.State;
 public class RulesBLImpl implements RulesBL
 {
 	private InventoryDao inventoryDao;
-	private ParameterTableDao parameterTableDao;
 	private DateBL dateBL;
 	private RenewRuleInvDao renewRuleInvDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
 		this.inventoryDao = inventoryDao;
-	}
-
-	public void setParameterTableDao(ParameterTableDao parameterTableDao)
-	{
-		this.parameterTableDao = parameterTableDao;
 	}
 
 	public void setDateBL(DateBL dateBL)

@@ -42,6 +42,9 @@
     <bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+    <bean id="inventoryAddDao" class="org.ussa.dao.impl.InventoryDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
 
     <!-- Add business logic classes here-->
 	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
@@ -49,7 +52,6 @@
 	</bean>
 	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
 		<property name="inventoryDao" ref="inventoryDao"/>
-		<property name="parameterTableDao" ref="parameterTableDao"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 	</bean>
@@ -62,7 +64,6 @@
 	</bean>
 
 	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
-		<property name="rulesBL" ref="rulesBL"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
@@ -70,6 +71,9 @@
 		<property name="memberLegalDao" ref="memberLegalDao"/>
 		<property name="batchTransactionDao" ref="batchTransactionDao"/>
         <property name="memberTransactionDao" ref="memberTransactionDao"/>
+        <property name="universalDao" ref="universalDao"/>
+        <property name="inventoryAddDao" ref="inventoryAddDao"/>
+        <property name="inventoryDao" ref="inventoryDao"/>
     </bean>
 
 

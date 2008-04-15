@@ -14,7 +14,7 @@ import java.util.Date;
 public class MemberLegal implements Serializable
 {
 	@EmbeddedId
-	MemberLegalPk memberLegalPk;
+	MemberSeasonPk memberSeasonPk;
 
 	@Column(name = "INSURANCE_COMPANY", nullable = true, length = 50)
 	private String insuranceCompany;
@@ -42,17 +42,17 @@ public class MemberLegal implements Serializable
     }
 
     public MemberLegal(Member member, String season) {
-        memberLegalPk = new MemberLegalPk(member, season);
+        memberSeasonPk = new MemberSeasonPk(member, season);
     }
 
-    public MemberLegalPk getMemberLegalPk()
+    public MemberSeasonPk getMemberSeasonPk()
 	{
-		return memberLegalPk;
+		return memberSeasonPk;
 	}
 
-	public void setMemberLegalPk(MemberLegalPk memberLegalPk)
+	public void setMemberSeasonPk(MemberSeasonPk memberSeasonPk)
 	{
-		this.memberLegalPk = memberLegalPk;
+		this.memberSeasonPk = memberSeasonPk;
 	}
 
 	public String getInsuranceCompany()
@@ -131,13 +131,13 @@ public class MemberLegal implements Serializable
 
         MemberLegal that = (MemberLegal) o;
 
-        if (memberLegalPk != null ? !memberLegalPk.equals(that.memberLegalPk) : that.memberLegalPk != null)
+        if (memberSeasonPk != null ? !memberSeasonPk.equals(that.memberSeasonPk) : that.memberSeasonPk != null)
             return false;
 
         return true;
     }
 
     public int hashCode() {
-        return (memberLegalPk != null ? memberLegalPk.hashCode() : 0);
+        return (memberSeasonPk != null ? memberSeasonPk.hashCode() : 0);
     }
 }

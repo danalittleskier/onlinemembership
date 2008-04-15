@@ -1,8 +1,8 @@
 package org.ussa.model;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
@@ -12,12 +12,8 @@ import java.util.Date;
 
 public class MemberSeason implements Serializable
 {
-	@Id
-	@Column(name = "USSA_ID", nullable = false, length = 7)
-	private Long ussaId;
-
-	@Column(name = "SEASON", nullable = false, length = 4, unique = false)
-	private String season;
+	@EmbeddedId
+	MemberSeasonPk memberSeasonPk;
 
 	@Column(name = "APP_PROCESS_DATE", nullable = true, unique = false)
 	private Date appProcessDate;
@@ -25,24 +21,14 @@ public class MemberSeason implements Serializable
 	@Column(name = "APP_RECEIVE_DATE", nullable = true, unique = false)
 	private Date appReceiveDate;
 
-	public Long getUssaId()
+	public MemberSeasonPk getMemberSeasonPk()
 	{
-		return ussaId;
+		return memberSeasonPk;
 	}
 
-	public void setUssaId(Long ussaId)
+	public void setMemberSeasonPk(MemberSeasonPk memberSeasonPk)
 	{
-		this.ussaId = ussaId;
-	}
-
-	public String getSeason()
-	{
-		return season;
-	}
-
-	public void setSeason(String season)
-	{
-		this.season = season;
+		this.memberSeasonPk = memberSeasonPk;
 	}
 
 	public Date getAppProcessDate()
