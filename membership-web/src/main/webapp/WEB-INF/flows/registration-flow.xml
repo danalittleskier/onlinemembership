@@ -26,21 +26,32 @@
 
 	<view-state id="contactInfo" view="contactInfo">
 		<transition on="back" to="endState"/>
-		<transition on="next" to="handleBirthDate">
+		<transition on="next" to="handleContactInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorContactInfo"/>
 			</action>
 		</transition>
 	</view-state>
 
-	<action-state id="handleBirthDate">
+	<action-state id="handleContactInfo">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="findClubInfo"/>
+		<transition on="duplicateAccount" to="duplicateAccount"/>
 	</action-state>
+    
+    <view-state id="duplicateAccount" view="duplicateAccount">
+        <transition on="back" to="contactInfo"/>
+        <transition on="next" to="findContactInfo"/>
+    </view-state>
+    
+    <action-state id="processDuplicateAccount">
+        <action bean="registrationAction"/>
+        <transition to="contactInfo"/>
+    </action-state>
 
 	<view-state id="parentInfo" view="parentInfo">
 		<transition on="back" to="contactInfo"/>
@@ -245,8 +256,7 @@
 		</transition>
 	</view-state>
 
-	<!--TODO: this needs to go to an action state loadSportmemberships -->
-	<view-state id="editSportMembership" view="sportMembership">
+	<view-state id="editSportMembership" view="loadSportMemberships">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>
@@ -312,11 +322,7 @@
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
 
-	<view-state id="registrationComplete" view="registrationComplete">
-		<transition on="next" to="endState"/>
-	</view-state>
-
-	<end-state id="endState" view="dashboard"/>
+	<end-state id="registrationComplete" view="registrationComplete"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>

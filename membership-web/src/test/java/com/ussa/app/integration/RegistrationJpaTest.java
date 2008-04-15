@@ -11,7 +11,9 @@ import org.ussa.model.MemberTransaction;
 import org.ussa.model.ParentInfo;
 
 import java.math.BigDecimal;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * User: jminer
@@ -23,6 +25,36 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
     private AddressDao addressDao;
     private MemberLegalDao memberLegalDao;
     private MemberTransactionDao memberTransactionDao;
+    
+    public void testDuplicates() {
+        Calendar c = Calendar.getInstance();
+        c.set(2008, 0, 31, 0, 0, 0); // int year, int month, int date, int hourOfDay, int minute, int second
+        Date birthDate = c.getTime();
+        createMember("joe", "nobody", "joe@nobody.com", birthDate);
+        createMember("joe", "nobody", "joe2@nobody.com", birthDate);
+        createMember("joe", "nobody", "joe3@nobody.com", birthDate);
+        List<Member> list = memberDao.getDuplicateCandidates("nobody", birthDate);
+        assertNotNull(list);
+        assertTrue(list.size() >= 3);
+    }
+    
+    private Member createMember(String firstName, String lastName, String email, Date birthDate) {
+        Member member = new Member();
+        member.setFirstName(firstName);
+        member.setLastName(lastName);
+        member.setEmail(email);
+        member.setBirthDate(birthDate);
+        
+        member.setType("hi");
+        member.setLifetimeMember("N");
+        member.setMiddleName("m");
+        member.setNationCode("USA");
+        member.setPrivateAddress("Y");
+        member.setReceiveEmail("Y");
+        member.setStateCode("UT");
+        member.setSuffixName("suffix");
+        return memberDao.save(member);
+    }
     
     /**
      * persist Member, Address, and MemberLegal
@@ -36,9 +68,9 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         member.setEmail("my@email.com");
         member.setEthnicity("c");
         member.setExpireSeason("expi");
-        member.setFirstName("first name");
+        member.setFirstName("firstname");
         member.setGender("M");
-        member.setLastName("last name");
+        member.setLastName("lastname");
         member.setLifetimeMember("N");
         member.setMiddleName("m");
         member.setNationCode("USA");

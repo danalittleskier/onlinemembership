@@ -1,5 +1,7 @@
 package org.ussa.model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,25 +11,25 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
 
-import org.hibernate.annotations.GenericGenerator;
-
-@NamedQueries ({
-		// @NamedQuery(name="Member.findByLastName", query="select m from Member m where lower(m.lastName) like lower(:lastName)"),
-		// @NamedQuery(name="Member.findByUssaId", query="Select m from Member m ")//where m.mUssaId=:ussaId" )
-		})
-
 @Entity
 @Table (name="MEMBER")
-
+@NamedQueries({
+    @NamedQuery(
+            name=Member.QUERY_DUPLICATES, 
+            query="select m from Member m where lower(m.lastName) = :lastName and m.birthDate = :birthDate")
+})
 public class Member implements Serializable
 {
-	public static final String MEMBER_TYPE_INDIVIDUAL = "I";
+    public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
+    
+    public static final String MEMBER_TYPE_INDIVIDUAL = "I";
 	public static final String MEMBER_TYPE_CLUB = "C";
 	public static final String MEMBER_TYPE_AFFILIATE = "A";
 	public static final String MEMBER_TYPE_NON_MEMBER = "N";

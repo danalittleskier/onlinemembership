@@ -4,6 +4,9 @@ import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.MemberDao;
 import org.ussa.model.Member;
 
+import java.util.Date;
+import java.util.List;
+
 public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements MemberDao {
 
     public MemberDaoImpl() {
@@ -25,5 +28,11 @@ public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements 
         }
         getHibernateTemplate().saveOrUpdate(member);
         return member;
+    }
+
+    @SuppressWarnings("unchecked")
+    public List<Member> getDuplicateCandidates(String lastName, Date birthDate) {
+        return getHibernateTemplate().findByNamedQueryAndNamedParam(Member.QUERY_DUPLICATES, 
+                new String[]{"lastName", "birthDate"}, new Object[]{lastName, birthDate});
     }
 }

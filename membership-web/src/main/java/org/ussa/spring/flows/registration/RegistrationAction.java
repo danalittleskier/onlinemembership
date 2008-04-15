@@ -1,10 +1,5 @@
 package org.ussa.spring.flows.registration;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -16,6 +11,8 @@ import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
+import org.ussa.common.model.User;
+import org.ussa.common.service.UserManager;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
@@ -34,8 +31,11 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberLegalPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
-import org.ussa.common.service.UserManager;
-import org.ussa.common.model.User;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -119,17 +119,16 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event findContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		String idParam = context.getRequestParameters().get("id");
 
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
 		User user = userManager.getUserByUsername(userDetails.getUsername());
 
 		Long id;
-		if (idParam != null)
+		if (context.getRequestParameters().get("id") != null)
 		{
-			id = Long.parseLong(idParam);
+			id = Long.parseLong(context.getRequestParameters().get("id"));
 		}
-		else
+        else
 		{
 			id = user.getUssaId();
 		}
@@ -232,7 +231,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("contactInfo");
 	}
 
-	public Event handleBirthDate(RequestContext context) throws Exception
+    public Event handleContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
@@ -244,8 +243,17 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
+        
+        Member member = accountBean.getMember();
+        if (member.getId() == null) { // only check for dups on new registrations!
+            List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
+            if (dups != null && !dups.isEmpty()) {
+                accountBean.setDuplicateUsers(dups);
+                return result("duplicateAccount");
+            }
+        }
 
-		rulesBL.setParentInfoRequired(accountBean);
+        rulesBL.setParentInfoRequired(accountBean);
 		if(!wasParentInfoRequired && accountBean.getParentInfoRequired())
 		{
 			return result("parentInfo");
@@ -254,7 +262,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("findClubInfo");
 	}
 
-	public Event findClubInfo(RequestContext context) throws Exception
+    public Event findClubInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		List<Club> clubs = new ArrayList<Club>();
