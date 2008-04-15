@@ -65,7 +65,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.alpineQty"/>
+				<form:input path="extrasBean.alpineQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -83,7 +83,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.freestyleQty"/>
+				<form:input path="extrasBean.freestyleQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -101,7 +101,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.crossCountryQty"/>
+				<form:input path="extrasBean.crossCountryQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -142,7 +142,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.jumpingQty"/>
+				<form:input path="extrasBean.jumpingQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -160,7 +160,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.generalQty"/>
+				<form:input path="extrasBean.generalQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -178,7 +178,7 @@
 		</div>
 		<div class="tshirt-qty">
 			<label>Qty:
-				<form:input path="extrasBean.boardingQty"/>
+				<form:input path="extrasBean.boardingQty" maxlength="3"/>
 			</label>
 		</div>
 	</div>
@@ -230,14 +230,14 @@
 			<div class="decal-qty">
 				<label>Qty:</label>
 				<input type="hidden" name="extrasBean.decalSkiOption" value="DECSKI"/>
-				<form:input path="extrasBean.decalSkiQty"/>
+				<form:input path="extrasBean.decalSkiQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
 			<img src="<c:url value='/images/decal_skiteam.gif'/>" width="195" height="101" /> </div>
 		<div class="decal">
 			<div class="decal-qty">
 				<label>Qty:</label>
 				<input type="hidden" name="extrasBean.decalBoardOption" value="DECSB"/>
-				<form:input path="extrasBean.decalBoardQty"/>
+				<form:input path="extrasBean.decalBoardQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
 			<img src="<c:url value='/images/decal_snowboarding.gif'/>" width="195" height="101" />
 		</div>

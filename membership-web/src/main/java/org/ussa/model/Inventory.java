@@ -16,6 +16,8 @@ public class Inventory implements Serializable
 	public static final String INVENTORY_TYPE_DONATION = "DONATION";
 	public static final String INVENTORY_TYPE_BONUS_PACK = "BONUS PACK";
 	public static final String INVENTORY_TYPE_MAGAZINE = "MAG";
+	public static final String INVENTORY_TYPE_DIVISION_DUES = "DIV DUES";
+	public static final String INVENTORY_TYPE_STATE_DUES = "STATE DUES";
 
 	public static final String SPORT_CODE_ALP = "ALP";
 	public static final String SPORT_CODE_BRD = "BRD";
@@ -24,49 +26,51 @@ public class Inventory implements Serializable
 	public static final String SPORT_CODE_XC = "XC";
 	public static final String SPORT_CODE_ALL = "ALL";
 
-	// coach memberships
+	// Alpine memberships
+	public static final String INV_ID_ALPINE_ASSOCIATE = "AA";
 	public static final String INV_ID_ALPINE_COACH = "ACO";
-	public static final String INV_ID_SNOWBOARD_COACH = "BCO";
-	public static final String INV_ID_FREESTYLE_COACH = "FCO";
-	public static final String INV_ID_JUMPING_COACH = "JCO";
-	public static final String INV_ID_CROSS_COUNTRY_COACH = "XCO";
-
-	// official memberships
+	public static final String INV_ID_ALPINE_COMPETITOR = "AC";
+	public static final String INV_ID_ALPINE_MASTER = "AM";
+	public static final String INV_ID_ALPINE_STUDENT = "AS";
 	public static final String INV_ID_ALPINE_OFFICIAL = "AO";
-	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
-	public static final String INV_ID_FREESTYLE_OFFICIAL = "FO";
-	public static final String INV_ID_JUMPING_OFFICIAL = "JO";
+	public static final String INV_ID_ALPINE_YOUTH = "AY";
+
+	// Cross country memberships
+	public static final String INV_ID_CROSS_COUNTRY_ASSOCIATE = "XA";
+	public static final String INV_ID_CROSS_COUNTRY_COACH = "XCO";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR = "XC";
+	public static final String INV_ID_CROSS_COUNTRY_YOUTH = "XY";
 	public static final String INV_ID_CROSS_COUNTRY_OFFICIAL = "XO";
 
-	// competitior memberships
-	public static final String INV_ID_ALPINE_COMPETITOR = "AC";
+	// Disabled Alpine memberships
+	public static final String INV_ID_DISABLED_ALPINE_ASSOCIATE = "DAA";
+	public static final String INV_ID_DISABLED_ALPINE_COACH = "DACO";
+	public static final String INV_ID_DISABLED_ALPINE_COMPETITOR = "DAC";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE = "DXA";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COACH = "DXCO";
+	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR = "DXC";
+
+	// Freestyle memberships
+	public static final String INV_ID_FREESTYLE_ASSOCIATE = "FA";
+	public static final String INV_ID_FREESTYLE_COACH = "FCO";
+	public static final String INV_ID_FREESTYLE_COMPETITOR = "FC";
+	public static final String INV_ID_FREESTYLE_OFFICIAL = "FO";
+	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
+	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
+
+	// Jumping / Nordic Combined memberships
+	public static final String INV_ID_JUMPING_ASSOCIATE = "JA";
+	public static final String INV_ID_JUMPING_COACH = "JCO";
+	public static final String INV_ID_JUMPING_COMPETITOR = "JC";
+	public static final String INV_ID_JUMPING_YOUTH = "JY";
+	public static final String INV_ID_JUMPING_OFFICIAL = "JO";
+
+	// Snowboarding memberships
+	public static final String INV_ID_SNOWBOARD_ASSOCIATE = "BA";
+	public static final String INV_ID_SNOWBOARD_COACH = "BCO";
 	public static final String INV_ID_SNOWBOARD_COMPETITOR = "BC";
 	public static final String INV_ID_SNOWBOARD_COMPETITOR_REGIONAL = "BCR";
-	public static final String INV_ID_FREESTYLE_COMPETITOR = "FC";
-	public static final String INV_ID_JUMPING_COMPETITOR = "JC";
-	public static final String INV_ID_NORDIC_COMBINED_COMPETITOR = "NC";
-	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR = "XC";
-
-	// disabled competitors
-	public static final String INV_ID_DISABLED_ALPINE_ASSOCIATE = "DAA";
-	public static final String INV_ID_DISABLED_ALPINE_COMPETITOR = "DAC";
-	public static final String INV_ID_DISABLED_ALPINE_COACH = "DACO";
-	public static final String INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE = "DXA";
-	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR = "DXC";
-	public static final String INV_ID_DISABLED_CROSS_COUNTRY_COACH = "DXCO";
-
-	// master
-	public static final String INV_ID_ALPINE_MASTER = "AM";
-
-	// youth memberships
-	public static final String INV_ID_ALPINE_YOUTH = "AY";
-	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
-	public static final String INV_ID_JUMPING_YOUTH = "JY";
-	public static final String INV_ID_CROSS_COUNTRY_YOUTH = "XY";
-
-	// non-scored students
-	public static final String INV_ID_ALPINE_STUDENT = "AS";
-	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
+	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
 
 	// FIS
 	public static final String INV_ID_ALPINE_FIS = "FISA";
@@ -83,7 +87,7 @@ public class Inventory implements Serializable
 
 	// FIS Late
 	public static final String INV_ID_LATE_ALPINE_FIS = "FISAL";
-	public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE = "FISASDL";
+	public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASDL";
 	public static final String INV_ID_LATE_CROSS_COUNTRY_FIS = "FISXL";
 	public static final String INV_ID_LATE_FREESTYLE_FIS = "FISFL";
 
@@ -93,8 +97,21 @@ public class Inventory implements Serializable
 	public static final String INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES = "MRLTD";
 	public static final String INV_ID_SKI_TRAX_MAGAZINE = "MTRX";
 
+	// Division Late Fees
+	public static final String INV_ID_NORTHERN_ALPINE_LATE_FEE = "DDNAL";
+	public static final String INV_ID_ALASKA_ALPINE_LATE_FEE = "DDAA1L";
+	public static final String INV_ID_FARWEST_LATE_FEE = "DDFAL";
+	public static final String INV_ID_INTERMOUNTAIN_ALPINE_LATE_FEE = "DDIAL";
+
 	// USSA Late Fee
 	public static final String INV_ID_MEMBER_LATE_FEE = "LATE";
+
+	// Misc - not used at this point
+	public static final String INV_ID_MEMBER_CLUB = "CLUB";
+	public static final String INV_ID_STAFF_MEMBERSHIP = "ZS";
+	public static final String INV_ID_TRUSTEE_MEMBERSHIP = "TM";
+
+
 
 	@Id
 	@Column(name = "INV_ID", length = 8)

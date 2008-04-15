@@ -126,7 +126,7 @@
 		<legend>Contribution</legend>
 		<p><strong>This section is optional.</strong> Your contribution will go to the sport of your primary membership. Thank you!</p>
 		<label for="contributionAmount">Contribution Amount:</label>
-		<form:input id="contributionAmount" path="contributionAmount"/>
+		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>
