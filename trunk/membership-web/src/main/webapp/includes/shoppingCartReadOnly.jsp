@@ -3,7 +3,7 @@
 
 <display:table name="accountBean.cartBean.lineItems" requestURI="" sort="list" defaultsort="1" id="cart" >
 	<display:column title="Membership/Items" sortable="false" class="item">
-		<c:out value="${cart.description}"/><br/>
+		<c:out value="${cart.renewDescription}"/><br/>
 		<c:if test="${cart.discount != null}">
 			(Disounted <c:out value="${cart.discountFormatted}"/> from <c:out value="${cart.amountFormatted}"/>)
 		</c:if>

@@ -83,6 +83,18 @@ public class CartBean
 		}
 	}
 
+	public void removeLineItems(String inventoryType)
+	{
+		for (Iterator<LineItemBean> iterator = lineItems.iterator(); iterator.hasNext();)
+		{
+			LineItemBean lineItemBean = iterator.next();
+			if(inventoryType.equals(lineItemBean.getInventory().getInventoryType()))
+			{
+				iterator.remove();
+			}
+		}
+	}
+
 	public LineItemBean getLineItem(String inventoryId)
 	{
 		for (LineItemBean lineItemBean : lineItems)
@@ -93,6 +105,18 @@ public class CartBean
 			}
 		}
 		return null;
+	}
+
+	public boolean containsSport(String sportCode)
+	{
+		for (LineItemBean lineItemBean : lineItems)
+		{
+			if (sportCode.equals(lineItemBean.getInventory().getSportCode()))
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public boolean contains(String inventoryId)

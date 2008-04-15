@@ -29,7 +29,7 @@
 	<bean id="inventoryDao" class="org.ussa.dao.impl.InventoryDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-	<bean id="recommendedMembershipsDao" class="org.ussa.dao.impl.RecommendedMembershipsDaoJDBC">
+	<bean id="renewRuleInvDao" class="org.ussa.dao.impl.RenewRuleInvDaoJDBC">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
 	</bean>
@@ -48,6 +48,7 @@
 		<property name="inventoryDao" ref="inventoryDao"/>
 		<property name="parameterTableDao" ref="parameterTableDao"/>
 		<property name="dateBL" ref="dateBL"/>
+		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 	</bean>
 
 	<!-- Add service classes here-->

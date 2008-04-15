@@ -23,7 +23,7 @@ import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.NationDao;
-import org.ussa.dao.RecommendedMembershipsDao;
+import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.dao.StateDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
@@ -47,7 +47,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	private ClubDao clubDao;
 	private DivisionDao divisionDao;
 	private InventoryDao inventoryDao;
-	private RecommendedMembershipsDao recommendedMembershipsDao;
+	private RenewRuleInvDao renewRuleInvDao;
 	private MemberLegalDao memberLegalDao;
 	private RulesBL rulesBL;
 	private DateBL dateBL;
@@ -78,9 +78,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.inventoryDao = inventoryDao;
 	}
-	public void setRecommendedMembershipsDao(RecommendedMembershipsDao recommendedMembershipsDao)
+	public void setRecommendedMembershipsDao(RenewRuleInvDao renewRuleInvDao)
 	{
-		this.recommendedMembershipsDao = recommendedMembershipsDao;
+		this.renewRuleInvDao = renewRuleInvDao;
 	}
 	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
 	{
@@ -221,7 +221,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 				// for renewals prepopulate the cart with the recommended membership options
 				String lastSeason = dateBL.getLastSeason();
 				Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
-				List<Inventory> recommendedMemberships = recommendedMembershipsDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
+				List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
 				for (Inventory inventory : recommendedMemberships)
 				{
 					rulesBL.addMembershipToCart(accountBean, inventory);
@@ -338,8 +338,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 		rulesBL.handleFisOptions(accountBean);
 		rulesBL.handleMagazineOption(accountBean);
 		rulesBL.handleContribution(accountBean);
-
-		rulesBL.addRemoveUssaLateFee(accountBean);
 
 		return success();
 	}

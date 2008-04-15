@@ -37,7 +37,7 @@
 			</form:select><br/>
 		</span>
 		<label for="">* Credit Card Number:</label>
-		<form:input path="paymentBean.cardNumber"/><br/>
+		<form:input path="paymentBean.cardNumber" maxlength="16"/><br/>
 		<label for="">* Expiration Date:</label>
 		<span class="multiselect-margin">
 			<form:select path="paymentBean.expireMonth">
@@ -62,7 +62,7 @@
 		</span>
 		<span class="textfield-short">
 		<label for="">* Security Code:</label>
-		<form:input path="paymentBean.securityCode"/><br/>
+		<form:input path="paymentBean.securityCode" maxlength="4"/><br/>
 		</span>
 	</fieldset>
 	<fieldset class="buttons">

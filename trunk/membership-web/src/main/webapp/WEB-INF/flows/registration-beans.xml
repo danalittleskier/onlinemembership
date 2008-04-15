@@ -11,7 +11,7 @@
 		<property name="stateDao" ref="stateDao"/>
 		<property name="nationDao" ref="nationDao"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
-		<property name="recommendedMembershipsDao" ref="recommendedMembershipsDao"/>
+		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 		<property name="memberLegalDao" ref="memberLegalDao"/>
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="dateBL" ref="dateBL"/>

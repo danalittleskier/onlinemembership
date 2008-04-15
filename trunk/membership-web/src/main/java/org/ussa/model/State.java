@@ -15,6 +15,9 @@ import java.io.Serializable;
 
 public class State implements Serializable
 {
+	public static final String STATE_CODE_MAINE = "ME";
+	public static final String STATE_CODE_NEW_JERSEY = "NJ";
+
 	@Id
 	@Column(name = "CODE", length = 2)
 	private String id;
