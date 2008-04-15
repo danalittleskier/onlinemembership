@@ -14,6 +14,7 @@ public class RuleAssociations
 	public static final Map<String, String> coachesByOfficial;
 	public static final Map<String, String> competitorByYouth;
 	public static final Map<String, String> youthByCompetitor;
+	public static final Set<String> restrictedMemberships;
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
 	public static final Set<String> disabledFisMemberships;
@@ -49,6 +50,14 @@ public class RuleAssociations
 		youthByCompetitor.put(Inventory.INV_ID_CROSS_COUNTRY_YOUTH, Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
 		youthByCompetitor.put(Inventory.INV_ID_FREESTYLE_YOUTH, Inventory.INV_ID_FREESTYLE_YOUTH);
 		youthByCompetitor.put(Inventory.INV_ID_JUMPING_YOUTH, Inventory.INV_ID_JUMPING_COMPETITOR);
+
+		restrictedMemberships = new HashSet<String>();
+		restrictedMemberships.add(Inventory.INV_ID_ALPINE_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_DISABLED_ALPINE_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_FREESTYLE_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_JUMPING_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_SNOWBOARD_ASSOCIATE);
 
 		twentyFiveDollarDiscountGroup = new HashSet<String>();
 		twentyFiveDollarDiscountGroup.add(Inventory.INV_ID_ALPINE_YOUTH);

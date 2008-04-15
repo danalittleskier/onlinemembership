@@ -10,39 +10,35 @@
 	<table id="member-data">
 		<tr>
 			<td class="data-label">Name:</td>
-			<td>McDonald, Ryan J</td>
+			<td><c:out value="${member.lastName}"/>, <c:out value="${member.firstName}"/> <c:out value="${member.middleName}"/></td>
 		</tr>
 		<tr>
-
 			<td class="data-label">USSA Member Number:</td>
-			<td>5087291</td>
+			<td><c:out value="${member.id}"/></td>
 		</tr>
 		<tr>
 			<td class="data-label">Year of Birth:</td>
-			<td>1981</td>
+			<td><c:out value="${yearOfBirth}"/></td>
 		</tr>
-
 		<tr>
 			<td class="data-label">FIS ID:</td>
-			<td>1352762</td>
+			<td>TODO</td>
 		</tr>
 		<tr>
 			<td class="data-label">Paid On:</td>
-			<td>11/06/2007</td>
-
+			<td>TODO</td>
 		</tr>
 		<tr>
 			<td class="data-label">Division:</td>
-			<td>PNSA</td>
+			<td><c:out value="${member.division.description}"/></td>
 		</tr>
 		<tr>
 			<td class="data-label">Division Dues:</td>
-
-			<td>N/A</td>
+			<td>TODO</td>
 		</tr>
 		<tr>
-			<td class="data-label">Membership Type:</td>
-			<td>BC</td>
+			<td class="data-label">Membership Type(s):</td>
+			<td>TODO</td>
 		</tr>
 	</table>
 
