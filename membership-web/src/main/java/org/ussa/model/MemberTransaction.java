@@ -2,7 +2,11 @@ package org.ussa.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -14,11 +18,13 @@ import java.util.Date;
 public class MemberTransaction implements Serializable
 {
 	@Id
-	@Column(name = "ID", nullable = false, length = 7)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false, length = 7)
 	private Long id;
 
-	@Column(name = "USSA_ID", nullable = false, length = 7)
-	private Long ussaId;
+    @ManyToOne
+    @JoinColumn(name = "USSA_ID", nullable = false)
+    private Member member;
 
 	@Column(name = "SEASON", nullable = false, length = 4, unique = false)
 	private String season;
@@ -40,9 +46,15 @@ public class MemberTransaction implements Serializable
 
 	public MemberTransaction()
 	{
-	}
+        // empty constructor required by Hibernate
+    }
 
-	public Long getId()
+    public MemberTransaction(Member member) 
+    {
+        this.member = member;
+    }
+
+    public Long getId()
 	{
 		return id;
 	}
@@ -52,17 +64,17 @@ public class MemberTransaction implements Serializable
 		this.id = id;
 	}
 
-	public Long getUssaId()
-	{
-		return ussaId;
-	}
+    public Member getMember() 
+    {
+        return member;
+    }
 
-	public void setUssaId(Long ussaId)
-	{
-		this.ussaId = ussaId;
-	}
+    public void setMember(Member member) 
+    {
+        this.member = member;
+    }
 
-	public String getSeason()
+    public String getSeason()
 	{
 		return season;
 	}

@@ -1,13 +1,18 @@
 package com.ussa.app.integration;
 
+import org.ussa.common.model.User;
+import org.ussa.common.service.UserManager;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
+import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.Address;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
+import org.ussa.model.MemberTransaction;
 import org.ussa.model.ParentInfo;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**
@@ -19,6 +24,13 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
     private MemberDao memberDao;
     private AddressDao addressDao;
     private MemberLegalDao memberLegalDao;
+    private MemberTransactionDao memberTransactionDao;
+    private UserManager userManager;
+    
+    public void testGetUserByUsername() {
+        User user = userManager.getUserByUsername("user9");
+        assertNotNull(user);
+    }
 
     /**
      * persist Member, Address, and MemberLegal
@@ -68,6 +80,15 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         memberLegal.setInsuranceWaiverDate(new Date());
         memberLegalDao.save(memberLegal);
         
+        MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
+        memberTransaction.setAmount(BigDecimal.TEN);
+        memberTransaction.setInvId("CLUB");
+        memberTransaction.setPurchaseDate(new Date());
+        memberTransaction.setQty(3);
+        memberTransaction.setSeason("2008");
+        memberTransaction = memberTransactionDao.save(memberTransaction);
+        assertNotNull(memberTransaction.getId());
+        
         // setComplete(); // tells spring to commit the transaction instead of rolling back (default)
     }
 
@@ -81,5 +102,13 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
 
     public void setMemberLegalDao(MemberLegalDao memberLegalDao) {
         this.memberLegalDao = memberLegalDao;
+    }
+
+    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) {
+        this.memberTransactionDao = memberTransactionDao;
+    }
+
+    public void setUserManager(UserManager userManager) {
+        this.userManager = userManager;
     }
 }
