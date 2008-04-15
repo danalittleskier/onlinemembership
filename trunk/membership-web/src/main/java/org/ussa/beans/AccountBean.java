@@ -1,7 +1,5 @@
 package org.ussa.beans;
 
-import java.util.List;
-
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
@@ -9,6 +7,8 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
+
+import java.util.List;
 
 public class AccountBean
 {
@@ -42,8 +42,9 @@ public class AccountBean
 	private List<Inventory> fisItems;
 	private List<Inventory> magazineItems;
 	private List<Integer> years;
+    private List<Member> duplicateMembers;
 
-	private String contributionAmount;
+    private String contributionAmount;
 
 	public Member getMember()
 	{
@@ -285,7 +286,17 @@ public class AccountBean
 		this.extrasBean = extrasBean;
 	}
 
-	public String getContributionAmount()
+    public List<Member> getDuplicateMembers() 
+    {
+        return duplicateMembers;
+    }
+
+    public void setDuplicateUsers(List<Member> duplicateMembers) 
+    {
+        this.duplicateMembers = duplicateMembers;
+    }
+
+    public String getContributionAmount()
 	{
 		return contributionAmount;
 	}
