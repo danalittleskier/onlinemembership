@@ -36,7 +36,6 @@ label.radio {display:inline; float:none; width:auto; margin:0; padding:0;}
 input {
 	float:left;
 	margin-bottom:5px;
-	width:200px;
 	height:20px;
 	font-size:12px;
 	line-height:20px;
@@ -83,6 +82,7 @@ input.btn-red {color:#a91c1c; background:url(../images/tile_button_red.gif) repe
 .data-input {
 	display:block;
 	padding:4px 0 11px 0;
+	float:left;
 }
 
 .stg-data-entered {

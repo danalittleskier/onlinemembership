@@ -25,17 +25,14 @@ reside in the roots of these too directories (/images/ and /scripts/).
 .bottom_wrapper  {margin:0 auto; text-align:center;}
 .dotted_separator {width:980px; margin:0 auto;}
 
+.link-submit {background:none; color:#4800FF; border:0; cursor:pointer;}
+
 /* General
 ---------------------------------------------------------------------- */
 .clear {clear:both;}
 p {margin:0 0 15px 0;}
 ul {margin-left:20px;}
 a img {border:0;}
-
-.data-input {
- display:block;
- padding:4px 0 11px 0;
-}
 
 /* Header
 ---------------------------------------------------------------------- */

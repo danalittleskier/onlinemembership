@@ -49,14 +49,17 @@ For Athletes of minority age (according to national laws):
 This is to certify that ,as parent/guardian of this participant, I do consent to his/her agreement to be bound by each of the terms and conditions identified above.
 <br/>
 
-	<label for="fisWaiver1">I agree.</label>
-	<form:radiobutton id="fisWaiver1" path="hasFisWaiverDisabled" value="${true}"/>
-	<br/>
-	<br/>
-	<label for="fisWaiver2">No I don't agree. Please remove all IPC FIS items from my cart.</label>
-	<form:radiobutton id="fisWaiver2" path="hasFisWaiverDisabled" value="${false}"/>
-
 </p>
+
+	<fieldset style="border:none;">
+		<div class="radios">
+			<form:radiobutton id="fisWaiver1" path="hasFisWaiverDisabled" value="${true}"/>
+			<label for="fisWaiver1">I agree.</label>
+			<form:radiobutton id="fisWaiver2" path="hasFisWaiverDisabled" value="${false}"/>
+			<label for="fisWaiver2">No I don't agree. Please remove all IPC FIS items from my cart.</label>
+		</div>
+	</fieldset>
+
 </div></div></div></div>
 <!-- BOX (END) -->
 

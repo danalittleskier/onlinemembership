@@ -18,7 +18,6 @@
 		<c:if test="${!empty accountBean.member.id }">
 			<label>USSA Member #</label>
 			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
-			<br/><br/>
 		</c:if>
 			<label for="">* First Name</label>
 			<form:input path="member.firstName" size="30" maxlength="30" /><br />
@@ -29,12 +28,13 @@
 			<label for="">Suffix</label>
 			<form:input path="member.suffixName" size="30" maxlength="30"/><br />
 
-			<label for="birthDate">* Birth Date:</label>
 			<c:choose>
 				<c:when test="${!empty accountBean.member.id}">
+					<label for="birthDate">Birth Date:</label>
 					<span class="data-input"><c:out value="${accountBean.birthDate}"/></span>
 				</c:when>
 				<c:otherwise>
+					<label for="birthDate">* Birth Date:</label>
 					<form:input id="birthDate" path="birthDate" size="30" maxlength="30"/>
 					<a title="Select Date" href="#" id="birthDateCalendar">
 						<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
