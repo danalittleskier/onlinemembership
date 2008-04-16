@@ -6,7 +6,7 @@
 	<h1>USSA</h1>
 	<p><strong>To Whom It May Concern:</strong></p>
 
-	<p>This letter is to verify that the USSA membership dues have been paid for the 2007/2008 season for:</p>
+	<p>This letter is to verify that the USSA membership dues have been paid for the <c:out value="${lastSeason}"/>/<c:out value="${currentSeason}"/> season for:</p>
 	<table id="member-data">
 		<tr>
 			<td class="data-label">Name:</td>
