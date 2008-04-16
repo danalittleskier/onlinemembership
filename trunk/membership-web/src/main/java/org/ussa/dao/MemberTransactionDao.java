@@ -8,5 +8,7 @@ import org.ussa.model.MemberTransaction;
  * Date: Apr 15, 2008
  * Time: 7:08:23 AM
  */
-public interface MemberTransactionDao extends GenericDao<MemberTransaction, Long> {
+public interface MemberTransactionDao extends GenericDao<MemberTransaction, Long>
+{
+	public boolean hasHeldIventory(Long ussaId, String invId);
 }

@@ -55,10 +55,6 @@ a img {border:0;}
 	height:400px;
 	background:#fff;
 	padding:20px 20px 0 20px;
-	/* this was added for the t-shirt popup - start*/
-	position:relative;
-	z-index:1;
-	/* this was added for the t-shirt popup - end*/
 }
 
 #stg-onecol-primary {
