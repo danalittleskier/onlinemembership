@@ -18,6 +18,7 @@
 		<c:if test="${!empty accountBean.member.id }">
 			<label>USSA Member #</label>
 			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
+			<div class="clear"></div>
 		</c:if>
 			<label for="">* First Name</label>
 			<form:input path="member.firstName" size="30" maxlength="30" /><br />
