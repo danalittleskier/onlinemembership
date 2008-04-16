@@ -32,9 +32,9 @@ By his/her signature below, MEMBER CERTIFIES THAT HE/SHE HAS READ AND UNDERSTOOD
 
 THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGLIGENCE.  DO NOT AGREE TO THIS DOCUMENT UNLESS YOU HAVE READ IT IN ITS ENTIRETY.  SEEK THE ADVICE OF LEGAL COUNSEL IF YOU ARE UNSURE OF ITS EFFECT.<br/><br/>
 
-<label for="insuranceWaiverControl">* I agree to the terms above</label>
 <form:hidden id="insuranceWaiver" path="memberLegal.insuranceWaiver"/>
 <input id="insuranceWaiverControl" type="checkbox" onclick="updateCheckboxHidden('insuranceWaiver', this)" class="checkbox"/>
+<label for="insuranceWaiverControl" class="checkbox">* I agree to the terms above</label>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('insuranceWaiver');
 </script>

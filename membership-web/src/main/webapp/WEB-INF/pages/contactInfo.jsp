@@ -29,7 +29,7 @@
 			<form:input path="member.suffixName" size="30" maxlength="30"/><br />
 
 			<c:choose>
-				<c:when test="${!empty accountBean.member.id}">
+				<c:when test="${!empty accountBean.member.id && !empty accountBean.birthDate}">
 					<label for="birthDate">Birth Date:</label>
 					<span class="data-input"><c:out value="${accountBean.birthDate}"/></span>
 				</c:when>

@@ -9,7 +9,7 @@
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
 
-	<%@ include file="/includes/messages.jsp"%>
+<%@ include file="/includes/messages.jsp"%>
 
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -31,9 +31,9 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 
 5.	This Agreement shall be construed in accordance with, and governed by the substantive laws of the State of Colorado, without reference to principles governing choice or conflicts of laws. In addition, Member agrees that all lawsuits for personal injury or related loss against USSA must be maintained in state courts sitting in Summit County, Utah or federal district courts sitting in the District of Utah, Central Division, and Member consents and agrees that jurisdiction and venue for such proceedings shall lie exclusively with such courts. In the event any portion of this release is found to be unenforceable, the remaining terms shall be fully enforceable.<br/><br/>
 
-<label for="releaseWaiverControl">* I agree to the terms above</label>
 <form:hidden id="releaseWaiver" path="memberLegal.releaseWaiver"/>
 <input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)" class="checkbox"/>
+<label for="releaseWaiverControl" class="checkbox">* I agree to the terms above</label>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('releaseWaiver');
 </script>
