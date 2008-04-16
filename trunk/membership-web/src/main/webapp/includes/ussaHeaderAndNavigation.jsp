@@ -64,8 +64,7 @@
 	<div class=topmenu>
 		<div class=left>
 			<ul id="nav">
-				<li><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a>
-				<li><a href="#" title="contact us" accesskey="2">contact us</a></li>
+				<li style="float:left;"><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a></li>
 			</ul>
 		</div>
 	</div>

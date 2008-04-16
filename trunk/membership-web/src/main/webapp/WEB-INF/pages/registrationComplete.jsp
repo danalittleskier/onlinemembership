@@ -31,7 +31,8 @@
 	<div></div>
 	<p class="stg-omr-header">When You're Finished...</p>
 	<p>
-		You may continue to the <a href="<c:url value="/dashboardRedirect.jsp"/>">USSA Member Home Page</a>
+		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+		You may continue to the <input id="continueButton" type="submit" class="btn-link" name="_eventId_next" value="USSA Member Home Page">
 		to continue using your account or <a href="<c:url value="/logout.html"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>

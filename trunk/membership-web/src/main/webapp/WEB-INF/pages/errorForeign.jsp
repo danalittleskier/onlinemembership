@@ -17,7 +17,7 @@
 
 	<p>
 		<fieldset class="buttons">
-			<input type="button" class="btn-green" name="button" value="Go to Account Home" onclick="location.href='<c:url value="/dashboardRedirect.jsp"/>'">
+			<input type="button" class="btn-green" name="button" value="Go to Account Home" onclick="location.href='<c:url value="/dashboard.html"/>'">
 		</fieldset>
 	</p>
 

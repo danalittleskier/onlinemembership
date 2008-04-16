@@ -42,7 +42,7 @@
     <bean id="authenticationProcessingFilter" class="com.atlassian.crowd.integration.acegi.CrowdAuthenticationProcessingFilter">
         <property name="httpAuthenticator" ref="httpAuthenticator"/>
         <property name="authenticationManager" ref="authenticationManager"/>
-        <property name="authenticationFailureUrl" value="/dashboardRedirect.jsp"/>
+        <property name="authenticationFailureUrl" value="/dashboard.html"/>
         <property name="defaultTargetUrl" value="/registration.html"/>
 		<property name="filterProcessesUrl" value="/j_security_check"/>
         <property name="rememberMeServices" ref="rememberMeServices"/>
@@ -64,7 +64,7 @@
     <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
         <property name="authenticationEntryPoint">
             <bean class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
-                <property name="loginFormUrl" value="/dashboardRedirect.jsp"/>
+                <property name="loginFormUrl" value="/dashboard.html"/>
                 <property name="forceHttps" value="false"/>
             </bean>
         </property>
@@ -82,7 +82,7 @@
                 /admin/*=ROLE_ADMIN
                 /passwordHint.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
                 /signup.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER
-                /dashboardRedirect.jsp*=ROLE_ANONYMOUS,ROLE_USER
+                /dashboard.html*=ROLE_ANONYMOUS,ROLE_USER
                 /a4j.res/*.html*=ROLE_ANONYMOUS,ROLE_ADMIN,ROLE_USER <!-- APF-737, OK to remove if not using JSF -->
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>

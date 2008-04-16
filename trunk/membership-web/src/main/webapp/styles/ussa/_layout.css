@@ -1,13 +1,13 @@
-	.layout_wrapper
+.layout_wrapper
+{
+	width:100%;
+	background-image: url(../../images/ussa/layout_bg.png);
+	background-repeat:repeat-x;
+	background-color:#F6F6F6;
+}
+
+	.layout_wrapper .layout
 	{
-		width:100%;
-		background-image: url(file:///C|/Documents%20and%20Settings/Erik/Local%20Settings/Temporary%20Internet%20Files/Content.IE5/EOU12B3D/data/layout_bg.png);
-		background-repeat:repeat-x;
-		background-color:#F6F6F6;
+		width:960px;
+		height:100%;
 	}
-	
-		.layout_wrapper .layout
-		{
-			width:960px;
-			height:100%;
-		}
