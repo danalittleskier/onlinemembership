@@ -68,6 +68,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		// MEMBERSEASON
 		MemberSeason memberSeason = new MemberSeason();
 		memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
+		// TODO: What date should go here?
 		memberSeason.setAppProcessDate(new Date());
 		memberSeason.setAppReceiveDate(new Date());
 		universalDao.save(memberSeason);
@@ -106,7 +107,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		memberTransaction.setInvId(lineItem.getInventory().getId());
 		memberTransaction.setQty(lineItem.getQty());
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
-		memberTransaction.setSentDate(null);
+		// TODO: What date should go here?
+		memberTransaction.setSentDate(new Date());
 		memberTransaction.setPurchaseDate(new Date());
 		memberTransactionDao.save(memberTransaction);
 	}

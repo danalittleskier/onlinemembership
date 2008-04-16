@@ -2,14 +2,11 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_5.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">Membership Registration Complete</div>
+<div id="stg-pagetitle">Registration Complete</div>
 
-<!-- Content -->
-<div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
 <%@ include file="/includes/messages.jsp"%>
 
-<div id="stg-pagetitle">Registration Complete</div>
 <div id="stg-twocol-primary">
 	<p>Your USSA registration is complete.</p>
 	<fieldset>
@@ -26,7 +23,7 @@
 	<fieldset>
 		<legend>Your Membership Certificate</legend>
 		<p>Please print your Membership Certificate and store it in a safe place for future use as proof of membership for USSA event participation.</p>
-		<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"/>');" value="Print Certificate" name="button"/>
+		<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${account.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
 	</fieldset>
 </div>
 <div id="stg-twocol-secondary">
@@ -39,10 +36,8 @@
 	</p>
 	</div></div></div></div>
 </div>
-<div class="clear"/>
+<div class="clear"></div>
 
 </form:form>
-</div>
-<div class="clear"></div>
 
 </body>

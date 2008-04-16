@@ -2,7 +2,6 @@ package org.ussa.spring.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import java.util.Calendar;
 
 import org.acegisecurity.Authentication;
@@ -16,7 +15,6 @@ import org.ussa.common.service.UserManager;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Member;
-import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.util.DateTimeUtils;
 
@@ -30,30 +28,39 @@ public class CertificateController extends AbstractController
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-		User user = userManager.getUserByUsername(userDetails.getUsername());
+		Long id;
+		if (request.getParameter("id") != null)
+		{
+			id = Long.parseLong(request.getParameter("id"));
+		}
+		else
+		{
+			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+			User user = userManager.getUserByUsername(userDetails.getUsername());
+			id = user.getUssaId();
+		}
 
 		Member member = null;
-		if(user.getUssaId() != null)
+		if(id != null)
 		{
-			member = memberDao.get(user.getUssaId());
+			member = memberDao.get(id);
 			String lastSeason = dateBL.getLastSeason();
 			String currentSeason = dateBL.getCurrentRenewSeason();
 			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
 			memberSeasonPk.setMember(member);
 			memberSeasonPk.setSeason(currentSeason);
-			MemberLegal memberLegal = memberLegalDao.get(memberSeasonPk);
-			if(memberLegal == null)
-			{
-				return new ModelAndView("redirect:errorNotRegistered.html");
-			}
+//			MemberLegal memberLegal = memberLegalDao.get(memberSeasonPk);
+//			if(memberLegal == null)
+//			{
+//				return new ModelAndView("redirect:errorNotRegistered.html");
+//			}
 
 			request.setAttribute("member", member);
 			Calendar birthday = DateTimeUtils.getCalendar(member.getBirthDate());
 			request.setAttribute("yearOfBirth",  birthday.get(Calendar.YEAR));
 			request.setAttribute("lastSeason", lastSeason);
-			request.setAttribute("lastSeason", lastSeason);
+			request.setAttribute("currentSeason", currentSeason);
 		}
 		else
 		{
