@@ -13,6 +13,13 @@
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 <p>
+	Your USSA and FIS (or IPC) registrations must be received one week
+	prior to list deadlines to guarantee inclusion on the FIS or IPC list.
+	For specific list dates for your sport, please call Member Services at
+	435.647.2666.
+</p>
+
+<p>
 
 I, the undersigned, understanding that my acceptance of this declaration does not limit the obligation of the organizer to prepare and maintain competitions courses in accordance with FIS rules and FIS safety standards then in effect, make the following declaration
 <br/>

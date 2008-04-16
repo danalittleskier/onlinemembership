@@ -19,6 +19,7 @@ import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.RenewRuleInvDao;
+import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
@@ -29,6 +30,7 @@ public class RulesBLImpl implements RulesBL
 	private InventoryDao inventoryDao;
 	private DateBL dateBL;
 	private RenewRuleInvDao renewRuleInvDao;
+	private MemberTransactionDao memberTransactionDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
@@ -43,6 +45,11 @@ public class RulesBLImpl implements RulesBL
 	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
 	{
 		this.renewRuleInvDao = renewRuleInvDao;
+	}
+
+	public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao)
+	{
+		this.memberTransactionDao = memberTransactionDao;
 	}
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate)
@@ -146,9 +153,10 @@ public class RulesBLImpl implements RulesBL
 		}
 
 		// Can't be a freestyle rookie if you have ever been a freestyle competitor
-		if(invId.equals(Inventory.INV_ID_FREESTYLE_ROOKIE))
+		if(invId.equals(Inventory.INV_ID_FREESTYLE_ROOKIE)
+				&& memberTransactionDao.hasHeldIventory(accountBean.getMember().getId(), Inventory.INV_ID_FREESTYLE_COMPETITOR))
 		{
-			// TODO: check to see if the member has ever been a freestyle competitor
+			return true;
 		}
 
 		return false;
