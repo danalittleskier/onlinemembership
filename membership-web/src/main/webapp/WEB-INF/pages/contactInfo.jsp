@@ -115,8 +115,9 @@
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 		<p class="stg-omr-header">Online Membership Registration</p>
 		<ul id="stg-omr">
-			<li>Memberships, FIS registrations and IPC registrations are non-refundable</li>
-			<li>Memberships expire annually on June 30</li>
+			<li>Memberships, FIS registrations and IPC registrations are non-refundable.</li>
+			<li>Memberships expire annually on June 30.</li>
+			<li>Associate members may register or renew by mail or fax.</li>
 			<li>Registration must be submitted only by those 18 &amp; older</li>
 			<li>Code of Conduct:<br />
 				I understand that by virtue of my membership in USSA, I must comply with USSA's
