@@ -25,8 +25,8 @@
         </property>
         <property name="annotatedClasses">
             <list>
-                <value>org.appfuse.model.User</value>
-                <value>org.appfuse.model.Role</value>
+                <value>org.ussa.common.model.User</value>
+                <value>org.ussa.common.model.Role</value>
             </list>
         </property>
 -->

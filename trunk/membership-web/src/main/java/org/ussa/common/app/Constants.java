@@ -1,4 +1,4 @@
-package org.ussa.app;
+package org.ussa.common.app;
 
 
 

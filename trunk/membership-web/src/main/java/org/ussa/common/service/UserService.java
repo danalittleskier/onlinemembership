@@ -39,7 +39,7 @@ public interface UserService {
      * Saves a user's information
      *
      * @param user the user's information
-     * @throws org.appfuse.service.UserExistsException thrown when user already exists
+     * @throws org.ussa.common.service.UserExistsException thrown when user already exists
      * @return updated user
      */
     User saveUser(User user) throws UserExistsException;

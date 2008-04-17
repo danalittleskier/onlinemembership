@@ -3,7 +3,6 @@ package org.ussa.common.service;
 import java.util.List;
 
 import org.acegisecurity.userdetails.UsernameNotFoundException;
-import org.appfuse.service.UniversalManager;
 import org.ussa.common.model.User;
 import org.ussa.common.dao.UserDao;
 

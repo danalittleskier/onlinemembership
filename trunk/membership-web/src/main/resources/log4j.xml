@@ -45,10 +45,6 @@
         <level value="ERROR"/>
     </logger>
 
-    <logger name="com.ussa.app">
-        <level value="DEBUG"/>
-    </logger>
-
     <root>
         <level value="WARN"/>
         <appender-ref ref="CONSOLE"/>

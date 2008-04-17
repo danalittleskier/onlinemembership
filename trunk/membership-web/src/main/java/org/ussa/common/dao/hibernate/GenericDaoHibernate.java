@@ -16,8 +16,8 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  *
  * <p>To register this class in your Spring context file, use the following XML.
  * <pre>
- *      &lt;bean id="fooDao" class="com.ussa.app.dao.hibernate.GenericDaoHibernate"&gt;
- *          &lt;constructor-arg value="com.ussa.app.model.Foo"/&gt;
+ *      &lt;bean id="fooDao" class="org.ussa.common.dao.hibernate.GenericDaoHibernate"&gt;
+ *          &lt;constructor-arg value="org.ussa.common.model.Foo"/&gt;
  *          &lt;property name="sessionFactory" ref="sessionFactory"/&gt;
  *      &lt;/bean&gt;
  * </pre>
