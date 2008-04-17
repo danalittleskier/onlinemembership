@@ -5,7 +5,4 @@
 <meta http-equiv="Pragma" content="no-cache"/>
 <%-- Prevents caching at the Proxy Server --%>
 <meta http-equiv="Expires" content="0"/>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-<link rel="icon" href="<c:url value="/images/ussa/favicon.ico"/>"/>
