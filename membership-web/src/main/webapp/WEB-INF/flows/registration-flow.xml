@@ -322,7 +322,11 @@
 		<transition on="*" to="registrationComplete"/>
 	</action-state>
 
-	<end-state id="registrationComplete" view="registrationComplete"/>
+	<view-state id="registrationComplete" view="registrationComplete">
+		<transition on="next" to="endState"/>
+	</view-state>
+
+	<end-state id="endState" view="dashboard"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>

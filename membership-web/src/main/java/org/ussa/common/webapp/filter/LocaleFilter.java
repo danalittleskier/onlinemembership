@@ -12,7 +12,7 @@ import java.util.Map;
 
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
-import org.ussa.app.Constants;
+import org.ussa.common.app.Constants;
 
 /**
  * Filter to wrap request with a request including user preferred locale.
