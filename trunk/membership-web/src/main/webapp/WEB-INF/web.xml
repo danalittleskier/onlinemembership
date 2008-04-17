@@ -30,7 +30,7 @@
 		<!-- classpath*:/applicationContext.xml -->
 		<param-value>
             classpath:/applicationContext-resources-common.xml
-            classpath:/applicationContext-resources-membership.xml
+            classpath:/applicationContext-resources.xml
             classpath:/applicationContext-service-membership.xml
 			/WEB-INF/applicationContext*.xml
             /WEB-INF/xfire-servlet.xml
