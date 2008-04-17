@@ -1,4 +1,4 @@
-package org.ussa.webapp.filter;
+package org.ussa.common.webapp.filter;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;

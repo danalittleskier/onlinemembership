@@ -1,4 +1,4 @@
-package org.ussa.webapp.filter;
+package org.ussa.common.webapp.filter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
