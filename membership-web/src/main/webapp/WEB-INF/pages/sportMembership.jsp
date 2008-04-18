@@ -131,9 +131,9 @@
 	<fieldset class="buttons">
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">
-		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
 		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 	</fieldset>
 </form:form>
 </div>

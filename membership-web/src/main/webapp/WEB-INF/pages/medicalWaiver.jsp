@@ -46,8 +46,8 @@ THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGL
 	<p>
 		<fieldset class="buttons">
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="submit" class="btn-green" name="_eventId_next" value="I Agree to the Terms Above">
 			<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 		</fieldset>
 	</p>
 

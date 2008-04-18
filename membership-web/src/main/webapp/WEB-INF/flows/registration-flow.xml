@@ -101,7 +101,9 @@
 			</action>
 		</transition>
 		<transition on="update" to="updateMembershipOptions">
-			<action bean="accountBean" method="bind"/>
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorSportMembershipNext"/>
+			</action>
 		</transition>
 		<transition on="next" to="handleContribution">
 			<action bean="accountBean" method="bindAndValidate">
