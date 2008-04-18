@@ -3,6 +3,8 @@ package org.ussa.service.impl;
 import java.util.Date;
 import java.util.List;
 
+import org.acegisecurity.context.SecurityContext;
+import org.acegisecurity.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.ussa.beans.AccountBean;
@@ -10,15 +12,16 @@ import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.DateBL;
 import org.ussa.common.dao.UniversalDao;
-import org.ussa.dao.AddressDao;
+import org.ussa.common.model.User;
+import org.ussa.common.service.UserManager;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
-import org.ussa.dao.MemberLegalDao;
-import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
+import org.ussa.model.Inventory;
+import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
@@ -31,67 +34,70 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
 	private DateBL dateBL;
 	private MemberDao memberDao;
-	private AddressDao addressDao;
-	private MemberLegalDao memberLegalDao;
 	private BatchTransactionDao batchTransactionDao;
-    private MemberTransactionDao memberTransactionDao;
     private CreditCardProcessingService creditCardProcessingService;
     private UniversalDao universalDao;
     private InventoryAddDao inventoryAddDao;
     private InventoryDao inventoryDao;
+	private UserManager userManager;
+	private SecurityContext securityContext;
 
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
 
-		Member member = accountBean.getMember();
-		Address address = accountBean.getAddress();
-		MemberLegal memberLegal = accountBean.getMemberLegal();
-		CartBean cartBean = accountBean.getCartBean();
-
 		// MEMBER
+		Member member = accountBean.getMember();
 		member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
 		member = memberDao.save(member);
 
 		// MEMBERADDRESS
+		Address address = accountBean.getAddress();
 		address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY));
-		addressDao.save(address);
+		universalDao.save(address);
 
 		// MEMBERLEGAL
+		MemberLegal memberLegal = accountBean.getMemberLegal();
 		String season = dateBL.getCurrentRenewSeason();
 		memberLegal.setMemberSeasonPk(new MemberSeasonPk(member, season));
+		// TODO: What dates should go here?
 		memberLegal.setInsuranceWaiverDate(new Date());
 		memberLegal.setReleaseWaiverDate(new Date());
-		memberLegalDao.save(memberLegal);
+		universalDao.save(memberLegal);
 
 		// MEMBERSEASON
 		MemberSeason memberSeason = new MemberSeason();
 		memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
-		// TODO: What date should go here?
+		memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
+		// TODO: What dates should go here?
 		memberSeason.setAppProcessDate(new Date());
 		memberSeason.setAppReceiveDate(new Date());
 		universalDao.save(memberSeason);
 
 		// MEMBERTRANSACTION
+		CartBean cartBean = accountBean.getCartBean();
 		List<LineItemBean> lineItemBeans = cartBean.getLineItems();
 		for (LineItemBean lineItem : lineItemBeans)
 		{
 			saveMemberTransaction(lineItem, member, currentSeason);
 
 			// INVENTORYADD
-//			String invId = lineItem.getInventory().getId();
-//			String divisionCode = member.getDivision().getDivisionCode();
-//			List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
-//			for (InventoryAdd inventoryAdd : additionInventory)
-//			{
-//				Inventory inventory = inventoryDao.get(inventoryAdd.getAddInvId());
-//
-//				saveMemberTransaction(new LineItemBean(inventory), member, currentSeason);
-//			}
+			String invId = lineItem.getInventory().getId();
+			String divisionCode = member.getDivision().getDivisionCode();
+			List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
+			for (InventoryAdd inventoryAdd : additionInventory)
+			{
+				Inventory inventory = inventoryDao.get(inventoryAdd.getAddInvId());
+
+				saveMemberTransaction(new LineItemBean(inventory), member, currentSeason);
+			}
 		}
 
-		// TODO update account user's ussaid
+		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
+		User user = userManager.getUserByUsername(userDetails.getUsername());
+		user.setUssaId(member.getId());
+		userManager.saveUser(user);
 
 		// then run the card. if the card completes without throwing exception then the transaction completes
 		creditCardProcessingService.processCard(accountBean);
@@ -107,10 +113,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		memberTransaction.setInvId(lineItem.getInventory().getId());
 		memberTransaction.setQty(lineItem.getQty());
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
-		// TODO: What date should go here?
+		// TODO: What dates should go here?
 		memberTransaction.setSentDate(new Date());
 		memberTransaction.setPurchaseDate(new Date());
-		memberTransactionDao.save(memberTransaction);
+//		memberTransactionDao.save(memberTransaction);
 	}
 
 
@@ -125,16 +131,6 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		this.memberDao = memberDao;
 	}
 
-	public void setAddressDao(AddressDao addressDao)
-	{
-		this.addressDao = addressDao;
-	}
-
-	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
-	{
-		this.memberLegalDao = memberLegalDao;
-	}
-
 	public void setDateBL(DateBL dateBL)
 	{
 		this.dateBL = dateBL;
@@ -144,11 +140,6 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	{
 		this.batchTransactionDao = batchTransactionDao;
 	}
-
-    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao)
-    {
-        this.memberTransactionDao = memberTransactionDao;
-    }
 
 	public void setUniversalDao(UniversalDao universalDao)
 	{
@@ -163,5 +154,15 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
 		this.inventoryDao = inventoryDao;
+	}
+
+	public void setUserManager(UserManager userManager)
+	{
+		this.userManager = userManager;
+	}
+
+	public void setSecurityContext(SecurityContext securityContext)
+	{
+		this.securityContext = securityContext;
 	}
 }

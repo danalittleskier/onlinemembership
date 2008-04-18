@@ -34,9 +34,6 @@
 	</view-state>
 
 	<action-state id="handleContactInfo">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="findClubInfo"/>
@@ -63,9 +60,6 @@
 	</view-state>
 
 	<action-state id="findClubInfo">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="*" to="stateClub"/>
 	</action-state>
@@ -83,9 +77,6 @@
 	</view-state>
 
 	<action-state id="loadSportMemberships">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="*" to="sportMembership"/>
 	</action-state>
@@ -114,50 +105,32 @@
 	</view-state>
 
 	<action-state id="addSportMemberships">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="*" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="updateMembershipOptions">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction"/>
 		<transition on="*" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="removeMembershipFromCart">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="removeItemFromCart"/>
 		<transition on="back" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="handleContribution">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="handleContribution"/>
 		<transition on="*" to="loadFisWaiver"/>
 	</action-state>
 
 	<action-state id="loadFisWaiverBack">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
 		<transition on="false" to="loadSportMemberships"/>
 	</action-state>
 
 	<action-state id="loadFisWaiver">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
 		<transition on="false" to="loadFisWaiverDisabled"/>
@@ -178,18 +151,12 @@
 	</action-state>
 
 	<action-state id="loadFisWaiverDisabledBack">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
 		<transition on="true" to="fisWaiverDisabled"/>
 		<transition on="false" to="loadFisWaiverBack"/>
 	</action-state>
 
 	<action-state id="loadFisWaiverDisabled">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="needsFisWaiverDisabled"/>
 		<transition on="true" to="fisWaiverDisabled"/>
 		<transition on="false" to="extras"/>
@@ -211,7 +178,11 @@
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="loadFisWaiverDisabledBack"/>
-		<transition on="next" to="verification"/>
+		<transition on="next" to="addExtrasAndGoToVerification">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorAddExtras"/>
+			</action>
+		</transition>
 		<transition on="add" to="addExtras">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorAddExtras"/>
@@ -224,17 +195,16 @@
 	</view-state>
 
 	<action-state id="addExtras">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="addExtras"/>
 		<transition on="*" to="extras"/>
 	</action-state>
 
+	<action-state id="addExtrasAndGoToVerification">
+		<action bean="registrationAction" method="addExtras"/>
+		<transition on="*" to="verification"/>
+	</action-state>
+
 	<action-state id="removeItemFromCart">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="registrationAction" method="removeItemFromCart"/>
 		<transition on="back" to="${flowScope.lastViewStateId}"/>
 	</action-state>
@@ -300,9 +270,6 @@
 	</view-state>
 
 	<action-state id="loadPayment">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="paymentAction"/>
 		<transition on="*" to="payment"/>
 	</action-state>
@@ -317,9 +284,6 @@
 	</view-state>
 
 	<action-state id="processOrder">
-		<entry-actions>
-			<action bean="accountBean" method="setupForm"/>
-		</entry-actions>
 		<action bean="paymentAction"/>
 		<transition on="*" to="registrationComplete"/>
 	</action-state>

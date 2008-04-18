@@ -110,7 +110,7 @@
 	</tr>
 	<tr>
 		<td class="data-label" scope="row">Fax:</td>
-		<td class="data-text-none" scope="row">
+		<td class="data-text" scope="row">
 			<c:out value="${accountBean.address.phoneFax}"/>
 		</td>
 	</tr>

@@ -12,18 +12,22 @@
 	<fieldset>
 		<legend>Your Registration Information</legend>
 		<p>
-			Your payment confirmation number is:
+			Your USSA ID is:
 			<strong><c:out value="${accountBean.member.id}"/></strong>
 		</p>
 		<p>
-			Your payment amount is:
+			Your payment confirmation number is:
+			<strong><c:out value="${accountBean.paymentBean.completedTransactionId}"/></strong>
+		</p>
+		<p>
+			Your amount paid is:
 			<strong><c:out value="${accountBean.cartBean.totalFormatted}"/></strong>
 		</p>
 	</fieldset>
 	<fieldset>
 		<legend>Your Membership Certificate</legend>
 		<p>Please print your Membership Certificate and store it in a safe place for future use as proof of membership for USSA event participation.</p>
-		<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${account.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
+		<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
 	</fieldset>
 </div>
 <div id="stg-twocol-secondary">
@@ -31,8 +35,13 @@
 	<div></div>
 	<p class="stg-omr-header">When You're Finished...</p>
 	<p>
+		<c:url var="continueUrl" value="/registration.html">
+			<c:param name="_eventId_next" value="Continue"/>
+			<c:param name="_flowExecutionKey" value="${flowExecutionKey}"/>
+		</c:url>
+
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		You may continue to the <input id="continueButton" type="submit" class="btn-link" name="_eventId_next" value="USSA Member Home Page">
+		You may continue to the <a href="${continueUrl}">USSA Account Dashboard</a>
 		to continue using your account or <a href="<c:url value="/logout.html"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>
