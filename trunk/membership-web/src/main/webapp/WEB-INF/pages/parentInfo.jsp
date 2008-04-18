@@ -17,8 +17,8 @@
 		<p>
 			<fieldset class="buttons">
 				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 				<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 			</fieldset>
 		</p>
 	</form:form>

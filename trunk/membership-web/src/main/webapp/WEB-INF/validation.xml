@@ -242,8 +242,20 @@
 			<field property="cartBean.lineItems" depends="membershipRequired">
 				<msg name="membershipRequired" key="errors.membership.required"/>
 			</field>
-			<field property="contributionAmount" depends="float">
+			<field property="contributionAmount" depends="floatRange,validWhen">
 				<arg0 key="label.contribution.amount" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>100000</var-value>
+				</var>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${currency}</var-value>
+				</var>
 			</field>
 		</form>
 
@@ -267,8 +279,16 @@
 					<var-value>(((*this* == null) and (extrasBean.alpineQty == null)) or ((*this* != null) and (extrasBean.alpineQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.alpineQty" depends="integer">
+			<field property="extrasBean.alpineQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 			<field property="extrasBean.freestyleOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
@@ -277,8 +297,16 @@
 					<var-value>(((*this* == null) and (extrasBean.freestyleQty == null)) or ((*this* != null) and (extrasBean.freestyleQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.freestyleQty" depends="integer">
+			<field property="extrasBean.freestyleQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 			<field property="extrasBean.crossCountryOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
@@ -287,8 +315,16 @@
 					<var-value>(((*this* == null) and (extrasBean.crossCountryQty == null)) or ((*this* != null) and (extrasBean.crossCountryQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.crossCountryQty" depends="integer">
+			<field property="extrasBean.crossCountryQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 			<field property="extrasBean.jumpingOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
@@ -297,8 +333,16 @@
 					<var-value>(((*this* == null) and (extrasBean.jumpingQty == null)) or ((*this* != null) and (extrasBean.jumpingQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.jumpingQty" depends="integer">
+			<field property="extrasBean.jumpingQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 			<field property="extrasBean.boardingOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
@@ -307,8 +351,16 @@
 					<var-value>(((*this* == null) and (extrasBean.boardingQty == null)) or ((*this* != null) and (extrasBean.boardingQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.boardingQty" depends="integer">
+			<field property="extrasBean.boardingQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 			<field property="extrasBean.generalOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
@@ -317,8 +369,16 @@
 					<var-value>(((*this* == null) and (extrasBean.generalQty == null)) or ((*this* != null) and (extrasBean.generalQty != null)))</var-value>
 				</var>
 			</field>
-			<field property="extrasBean.generalQty" depends="integer">
+			<field property="extrasBean.generalQty" depends="intRange">
 				<arg0 key="label.quantity" />
+				<var>
+					<var-name>min</var-name>
+					<var-value>0</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
 			</field>
 		</form>
 

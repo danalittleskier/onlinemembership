@@ -124,11 +124,11 @@ public class RegistrationAction extends MultiAction implements Serializable
 		User user = userManager.getUserByUsername(userDetails.getUsername());
 
 		Long id;
-		if (context.getRequestParameters().get("id") != null)
+		if (StringUtils.isNotBlank(context.getRequestParameters().get("id")))
 		{
 			id = Long.parseLong(context.getRequestParameters().get("id"));
 		}
-        else
+		else
 		{
 			id = user.getUssaId();
 		}
