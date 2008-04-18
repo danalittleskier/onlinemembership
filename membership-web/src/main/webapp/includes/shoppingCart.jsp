@@ -15,7 +15,7 @@
 	</display:column>
 	<display:column title="&nbsp;" sortable="false" class="item-remove">
 		<c:if test="${!(cart.inventory.inventoryType eq divisionDues) and !(cart.inventory.inventoryType eq stateDues)}">
-			<c:url var="deleteUrl" value="registration.html">
+			<c:url var="deleteUrl" value="/registration.html">
 				<c:param name="id" value="${cart.inventory.id}"/>
 				<c:param name="_eventId_remove" value="Remove"/>
 				<c:param name="_flowExecutionKey" value="${flowExecutionKey}"/>

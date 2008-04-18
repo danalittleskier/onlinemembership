@@ -17,6 +17,7 @@ import org.ussa.dao.MemberLegalDao;
 import org.ussa.model.Member;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.util.DateTimeUtils;
+import org.apache.commons.lang.StringUtils;
 
 public class CertificateController extends AbstractController
 {
@@ -29,7 +30,7 @@ public class CertificateController extends AbstractController
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		Long id;
-		if (request.getParameter("id") != null)
+		if (StringUtils.isNotBlank(request.getParameter("id")))
 		{
 			id = Long.parseLong(request.getParameter("id"));
 		}

@@ -2,7 +2,7 @@
 <head>
 	<title>USSA Membership Certificate</title>
 </head>
-<body onload="this.window.print();">
+<body>
 	<h1>USSA</h1>
 	<p><strong>To Whom It May Concern:</strong></p>
 
@@ -46,4 +46,8 @@
 	<p>Thank you for consideration in this matter.</p>
 	<p>Sincerely,</p>
 	<p>USSA Member Services</p>
+
+<script type="text/javascript" defer="defer">
+	window.print();
+</script>
 </body>

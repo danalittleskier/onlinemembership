@@ -39,15 +39,15 @@
 	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
-    <bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-    <bean id="inventoryAddDao" class="org.ussa.dao.impl.InventoryAddDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
+	<bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="inventoryAddDao" class="org.ussa.dao.impl.InventoryAddDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
-    <!-- Add business logic classes here-->
+	<!-- Add business logic classes here-->
 	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
 		<property name="parameterTableDao" ref="parameterTableDao"/>
 	</bean>
@@ -69,14 +69,13 @@
 		<property name="dateBL" ref="dateBL"/>
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
-		<property name="addressDao" ref="addressDao"/>
-		<property name="memberLegalDao" ref="memberLegalDao"/>
 		<property name="batchTransactionDao" ref="batchTransactionDao"/>
-        <property name="memberTransactionDao" ref="memberTransactionDao"/>
-        <property name="universalDao" ref="universalDao"/>
-        <property name="inventoryAddDao" ref="inventoryAddDao"/>
-        <property name="inventoryDao" ref="inventoryDao"/>
-    </bean>
+		<property name="universalDao" ref="universalDao"/>
+		<property name="inventoryAddDao" ref="inventoryAddDao"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="userManager" ref="userManager"/>
+		<property name="securityContext" ref="securityContext"/>
+	</bean>
 
 
 </beans>

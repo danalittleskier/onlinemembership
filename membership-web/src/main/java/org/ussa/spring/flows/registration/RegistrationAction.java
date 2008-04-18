@@ -102,15 +102,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		this.addressDao = addressDao;
 	}
-	public UserManager getUserManager()
-	{
-		return userManager;
-	}
 	public void setUserManager(UserManager userManager)
 	{
 		this.userManager = userManager;
 	}
-
 	public void setSecurityContext(SecurityContext securityContext)
 	{
 		this.securityContext = securityContext;
