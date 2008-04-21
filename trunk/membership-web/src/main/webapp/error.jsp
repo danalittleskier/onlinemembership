@@ -1,5 +1,5 @@
 <%@ page language="java" isErrorPage="true" %>
-<%@ include file="/common/taglibs.jsp" %>
+<%@ include file="/includes/taglibs.jsp" %>
 
 <page:applyDecorator name="default">
 	<head>

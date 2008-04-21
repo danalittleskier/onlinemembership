@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp" %>
+<%@ include file="/includes/taglibs.jsp" %>
 
 <%-- Calendar Scripts and CSS --%>
 <script type="text/javascript" src="<c:url value='/scripts/calendar/calendar.js'/>"></script>

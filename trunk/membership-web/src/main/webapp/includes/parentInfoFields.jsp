@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 
 <fieldset>
 	<legend>Parent/Guardian #1</legend>

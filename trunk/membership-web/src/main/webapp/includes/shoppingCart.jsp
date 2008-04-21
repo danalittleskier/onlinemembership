@@ -1,5 +1,5 @@
 <%@ page import="org.ussa.model.Inventory" %>
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <p class="stg-omr-header">Your Membership Fees</p>
 
 <c:set var="divisionDues"><%=Inventory.INVENTORY_TYPE_DIVISION_DUES%></c:set>

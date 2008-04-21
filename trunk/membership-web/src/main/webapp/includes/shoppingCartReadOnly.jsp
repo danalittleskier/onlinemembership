@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <p class="stg-omr-header">Your Membership Fees</p>
 
 <display:table name="accountBean.cartBean.lineItems" requestURI="" sort="list" id="cart" >

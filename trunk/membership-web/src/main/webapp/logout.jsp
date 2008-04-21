@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <%@ page import="javax.servlet.http.Cookie" %>
 <%@ page import="org.acegisecurity.ui.rememberme.TokenBasedRememberMeServices" %>
 

@@ -1,3 +1,3 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 
 <c:redirect url="/registration.html"/>

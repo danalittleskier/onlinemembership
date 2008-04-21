@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <spring:bind path="accountBean.*">
 	<c:if test="${not empty status.errorMessages}">
 		<div class="stg-error-tl">

@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <%-- HTTP 1.1 --%>
 <meta http-equiv="Cache-Control" content="no-store"/>
 <%-- HTTP 1.0 --%>
