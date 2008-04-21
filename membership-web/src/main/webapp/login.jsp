@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp" %>
+<%@ include file="/includes/taglibs.jsp" %>
 
 <head>
 	<title>USSA Membership Login Page</title>

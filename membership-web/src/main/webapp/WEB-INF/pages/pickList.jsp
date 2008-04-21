@@ -1,6 +1,6 @@
 <!-- I'm pretty sure this can be deleted -->
 
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <tr>
     <td>
         <select name="<c:out value="${param.leftId}"/>" multiple="multiple"

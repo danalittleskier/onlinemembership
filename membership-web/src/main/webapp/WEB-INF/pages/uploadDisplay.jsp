@@ -1,6 +1,6 @@
 <!-- I'm pretty sure this can be deleted -->
 
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 
 <head>
     <title><fmt:message key="display.title"/></title>

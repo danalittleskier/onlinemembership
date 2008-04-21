@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp" %>
+<%@ include file="/includes/taglibs.jsp" %>
 <!--------------------------------------------- Footer ------------------------------------------------->
 <div class=bottom_wrapper>
 	<script type="text/javascript" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=2;dcopt=ist;abr=!webtv;sz=720x90;ord=' + ord + '?"></script>

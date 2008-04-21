@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp" %>
+<%@ include file="/includes/taglibs.jsp" %>
 
 <div id="stg-header">
 	<!------------------------------------------- Advertisment ----------------------------------------------->

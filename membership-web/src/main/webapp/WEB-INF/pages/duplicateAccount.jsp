@@ -1,4 +1,4 @@
-<%@ include file="/common/taglibs.jsp"%>
+<%@ include file="/includes/taglibs.jsp"%>
 <body>
 <form:form commandName="accountBean" name="accountBean">
   <div id="stg-pagetitle">Duplicate Account(s) Found</div>
