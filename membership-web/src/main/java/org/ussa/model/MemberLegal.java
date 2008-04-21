@@ -37,15 +37,29 @@ public class MemberLegal implements Serializable
 	@Column(name = "RELEASE_WAIVER_DATE", nullable = true)
 	private Date releaseWaiverDate;
 
-    public MemberLegal() {
-        // empty constructor required for Hibernate
-    }
+	@Column(name = "FIS_RELEASE_FORM", nullable = true, length = 1)
+	private String fisReleaseForm;
 
-    public MemberLegal(Member member, String season) {
-        memberSeasonPk = new MemberSeasonPk(member, season);
-    }
+	@Column(name = "FIS_RELEASE_FORM_DATE", nullable = true)
+	private Date fisReleaseFormDate;
 
-    public MemberSeasonPk getMemberSeasonPk()
+	@Column(name = "IPC_RELEASE_FORM", nullable = true, length = 1)
+	private String ipcReleaseForm;
+
+	@Column(name = "IPC_RELEASE_FORM_DATE", nullable = true)
+	private Date ipcReleaseFormDate;
+
+	public MemberLegal()
+	{
+		// empty constructor required for Hibernate
+	}
+
+	public MemberLegal(Member member, String season)
+	{
+		memberSeasonPk = new MemberSeasonPk(member, season);
+	}
+
+	public MemberSeasonPk getMemberSeasonPk()
 	{
 		return memberSeasonPk;
 	}
@@ -125,19 +139,61 @@ public class MemberLegal implements Serializable
 		this.releaseWaiverDate = releaseWaiverDate;
 	}
 
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+	public String getFisReleaseForm()
+	{
+		return fisReleaseForm;
+	}
 
-        MemberLegal that = (MemberLegal) o;
+	public void setFisReleaseForm(String fisReleaseForm)
+	{
+		this.fisReleaseForm = fisReleaseForm;
+	}
 
-        if (memberSeasonPk != null ? !memberSeasonPk.equals(that.memberSeasonPk) : that.memberSeasonPk != null)
-            return false;
+	public Date getFisReleaseFormDate()
+	{
+		return fisReleaseFormDate;
+	}
 
-        return true;
-    }
+	public void setFisReleaseFormDate(Date fisReleaseFormDate)
+	{
+		this.fisReleaseFormDate = fisReleaseFormDate;
+	}
 
-    public int hashCode() {
-        return (memberSeasonPk != null ? memberSeasonPk.hashCode() : 0);
-    }
+	public String getIpcReleaseForm()
+	{
+		return ipcReleaseForm;
+	}
+
+	public void setIpcReleaseForm(String ipcReleaseForm)
+	{
+		this.ipcReleaseForm = ipcReleaseForm;
+	}
+
+	public Date getIpcReleaseFormDate()
+	{
+		return ipcReleaseFormDate;
+	}
+
+	public void setIpcReleaseFormDate(Date ipcReleaseFormDate)
+	{
+		this.ipcReleaseFormDate = ipcReleaseFormDate;
+	}
+
+	public boolean equals(Object o)
+	{
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		MemberLegal that = (MemberLegal) o;
+
+		if (memberSeasonPk != null ? !memberSeasonPk.equals(that.memberSeasonPk) : that.memberSeasonPk != null)
+			return false;
+
+		return true;
+	}
+
+	public int hashCode()
+	{
+		return (memberSeasonPk != null ? memberSeasonPk.hashCode() : 0);
+	}
 }
