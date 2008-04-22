@@ -26,20 +26,28 @@
 	<!-- Hibernate SessionFactory -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
-		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
-<!--
-		<property name="annotatedPackages">
-			<list>
-				<value>org.ussa.model</value>
-			</list>
-		</property>
+		<!--<property name="configLocation" value="classpath:hibernate.cfg.xml"/>-->
 		<property name="annotatedClasses">
 			<list>
-				<value>org.ussa.common.model.User</value>
-				<value>org.ussa.common.model.Role</value>
+				<value>org.ussa.model.Member</value>
+				<value>org.ussa.model.Division</value>
+				<value>org.ussa.model.ParentInfo</value>
+				<value>org.ussa.model.Club</value>
+				<value>org.ussa.model.Address</value>
+				<value>org.ussa.model.AddressPk</value>
+				<value>org.ussa.model.State</value>
+				<value>org.ussa.model.Nation</value>
+				<value>org.ussa.model.Inventory</value>
+				<value>org.ussa.model.InventoryAdd</value>
+				<value>org.ussa.model.MemberClub</value>
+				<value>org.ussa.model.MemberSeason</value>
+				<value>org.ussa.model.MemberLegal</value>
+				<value>org.ussa.model.MemberSeasonPk</value>
+				<value>org.ussa.model.MemberTransaction</value>
+				<value>org.ussa.model.ParameterTable</value>
+				<value>org.ussa.model.DivisionAffiliation</value>
 			</list>
 		</property>
--->
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=${hibernate.dialect}

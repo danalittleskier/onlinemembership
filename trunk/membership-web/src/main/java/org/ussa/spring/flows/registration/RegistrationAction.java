@@ -130,7 +130,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 		String currentSeason = dateBL.getCurrentRenewSeason();
 
-		List<State> usStates = stateDao.getAllStateUS_CodeOrdered();
+		List<State> usStates = stateDao.getAllUsStatesOrderedByCode();
 		accountBean.setUsStates(usStates);
 
 		accountBean.setCartBean(new CartBean());
@@ -284,7 +284,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 
 		if(!"USA".equals(accountBean.getMember().getNationCode()))
 		{
-			accountBean.getMember().setDivision(divisionDao.getDivision("X"));
+			accountBean.getMember().setDivision(divisionDao.get("X"));
 		}
 		else if(accountBean.getClubId() != null)
 		{

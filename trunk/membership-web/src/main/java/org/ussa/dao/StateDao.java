@@ -7,7 +7,7 @@ import org.ussa.model.State;
 
 public interface StateDao extends GenericDao<State, String>
 {
-   public List<State> getAllStateUS_CodeOrdered();
-   public List<State> getAllStateUS_DescriptionOrdered();
+   public List<State> getAllUsStatesOrderedByCode();
+   public List<State> getAllUsStatesOrderedByDescription();
 
 }
