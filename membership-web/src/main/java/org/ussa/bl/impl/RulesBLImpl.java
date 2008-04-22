@@ -583,7 +583,7 @@ public class RulesBLImpl implements RulesBL
 				if(cart.contains(Inventory.INV_ID_ALPINE_COACH)
 						|| cart.contains(Inventory.INV_ID_ALPINE_OFFICIAL))
 				{
-					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
+					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_ACO_AO));
 				}
 			}
 			else
