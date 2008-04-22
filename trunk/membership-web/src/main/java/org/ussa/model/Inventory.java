@@ -132,10 +132,10 @@ public class Inventory implements Serializable
 	private String renewDescription;
 
 	@Column(name = "AGE_FROM", nullable = true, length = 5, unique = false)
-	private Long ageFrom;
+	private Integer ageFrom;
 
 	@Column(name = "AGE_TO", nullable = true, length = 5, unique = false)
-	private Long ageTo;
+	private Integer ageTo;
 
 	@Column(name = "SPORT_CODE", nullable = true, length = 3, unique = false)
 	private String sportCode;
@@ -180,22 +180,22 @@ public class Inventory implements Serializable
 		this.renewDescription = renewDescription;
 	}
 
-	public Long getAgeFrom()
+	public Integer getAgeFrom()
 	{
 		return ageFrom;
 	}
 
-	public void setAgeFrom(Long ageFrom)
+	public void setAgeFrom(Integer ageFrom)
 	{
 		this.ageFrom = ageFrom;
 	}
 
-	public Long getAgeTo()
+	public Integer getAgeTo()
 	{
 		return ageTo;
 	}
 
-	public void setAgeTo(Long ageTo)
+	public void setAgeTo(Integer ageTo)
 	{
 		this.ageTo = ageTo;
 	}

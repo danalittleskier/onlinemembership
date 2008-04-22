@@ -96,7 +96,7 @@ public class RulesBLImpl implements RulesBL
 			for (Iterator<Inventory> iterator = memberships.iterator(); iterator.hasNext();)
 			{
 				Inventory inventory = iterator.next();
-				if(cart.contains(inventory.getId()) || inventoryIsRestricted(accountBean, inventory))
+				if(cart.contains(inventory.getId()) || inventoryIsRestricted(accountBean, inventory, age))
 				{
 					iterator.remove();
 				}
@@ -106,13 +106,18 @@ public class RulesBLImpl implements RulesBL
 		return memberships;
 	}
 
-	private boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory)
+	private boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory, Integer age)
 	{
 		CartBean cartBean = accountBean.getCartBean();
 		String invId = inventory.getId();
 
 		// For memberships that you want hidden from the users, add them to RuleAssociations.restrictedMemberships.
 		if(RuleAssociations.restrictedMemberships.contains(invId))
+		{
+			return true;
+		}
+
+		if(age != null && age < inventory.getAgeFrom() || age > inventory.getAgeTo())
 		{
 			return true;
 		}
@@ -182,6 +187,8 @@ public class RulesBLImpl implements RulesBL
 			}
 		}
 
+		Integer age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+
 		List<Inventory> fisItems = new ArrayList<Inventory>();
 		for (String invId : fisInvIds)
 		{
@@ -191,7 +198,7 @@ public class RulesBLImpl implements RulesBL
 			{
 				fisItem = lateFisItem;
 			}
-			if(!inventoryIsRestricted(accountBean, fisItem))
+			if(!inventoryIsRestricted(accountBean, fisItem, age))
 			{
 				fisItems.add(fisItem);
 			}
@@ -226,10 +233,12 @@ public class RulesBLImpl implements RulesBL
 				}
 			}
 
+			Integer age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+
 			for (String magazineInvId : magazineInvIds)
 			{
 				Inventory magazineInventory = inventoryDao.get(magazineInvId);
-				if(!inventoryIsRestricted(accountBean, magazineInventory))
+				if(!inventoryIsRestricted(accountBean, magazineInventory, age))
 				{
 					magazineItems.add(magazineInventory);
 				}
@@ -287,7 +296,7 @@ public class RulesBLImpl implements RulesBL
 	{
 		CartBean cartBean = accountBean.getCartBean();
 
-		if(!inventoryIsRestricted(accountBean, inventory))
+		if(!inventoryIsRestricted(accountBean, inventory, null))
 		{
 			BigDecimal discount = calculateMembershipDiscount(accountBean, inventory);
 
@@ -560,31 +569,34 @@ public class RulesBLImpl implements RulesBL
 			String stateCode = member.getStateCode();
 			if(State.STATE_CODE_MAINE.equals(stateCode))
 			{
+				List<Inventory> items = new ArrayList<Inventory>();
 				if(age <= 10 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH))
 				{
-					cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_10_UNDER));
+					items.add(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_10_UNDER));
 				}
 				if(age >= 11 && age <= 12 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
 						|| cart.contains(Inventory.INV_ID_ALPINE_STUDENT)
 						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)
 						|| cart.contains(Inventory.INV_ID_ALPINE_COACH))
 				{
-					cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO));
+					items.add(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO));
 				}
-
+				cart.addItem(getMostExpensive(items));
 			}
 			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
 			{
+				List<Inventory> items = new ArrayList<Inventory>();
 				if(cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
 						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
 				{
-					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
+					items.add(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
 				}
 				if(cart.contains(Inventory.INV_ID_ALPINE_COACH)
 						|| cart.contains(Inventory.INV_ID_ALPINE_OFFICIAL))
 				{
-					cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_ACO_AO));
+					items.add(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_ACO_AO));
 				}
+				cart.addItem(getMostExpensive(items));
 			}
 			else
 			{
