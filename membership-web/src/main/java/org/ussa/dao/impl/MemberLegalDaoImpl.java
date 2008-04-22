@@ -11,10 +11,4 @@ public class MemberLegalDaoImpl extends GenericDaoHibernate<MemberLegal, MemberS
 	{
 		super(MemberLegal.class);
 	}
-
-
-	public MemberLegal get(MemberSeasonPk memberSeasonPk)
-	{
-		return (MemberLegal) getHibernateTemplate().get(MemberLegal.class, memberSeasonPk);
-	}
 }

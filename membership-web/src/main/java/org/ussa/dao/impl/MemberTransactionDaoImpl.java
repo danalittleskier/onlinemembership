@@ -34,14 +34,14 @@ public class MemberTransactionDaoImpl extends GenericDaoHibernate<MemberTransact
 
 	public boolean hasHeldIventory(Long ussaId, String invId)
 	{
-		CountPurchasedInventory query = new CountPurchasedInventory(dataSource);
+		CountPurchasedInventoryQuery query = new CountPurchasedInventoryQuery(dataSource);
 		List<Boolean> results = (List<Boolean>) query.execute(new Object[]{ussaId, invId});
 		return results.get(0);
 	}
 
-	private class CountPurchasedInventory extends MappingSqlQuery
+	private class CountPurchasedInventoryQuery extends MappingSqlQuery
 	{
-		CountPurchasedInventory(DataSource dataSource)
+		CountPurchasedInventoryQuery(DataSource dataSource)
 		{
 			super(dataSource, "select count(1) num from membertransaction where ussa_id = ? and inv_id = ?");
 			declareParameter(new SqlParameter(Types.NUMERIC));

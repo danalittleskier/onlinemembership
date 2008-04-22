@@ -36,7 +36,9 @@
 				</c:when>
 				<c:otherwise>
 					<label for="birthDate">* Birth Date:</label>
-					<form:input id="birthDate" path="birthDate" size="30" maxlength="30"/>
+					<form:input id="birthDate" path="birthDate" size="13" maxlength="10"/>
+					<span style="padding-left:5px;" class="data-input">(MM/DD/YYYY)</span>
+<%--
 					<a title="Select Date" href="#" id="birthDateCalendar">
 						<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
 					</a>
@@ -49,6 +51,7 @@
 							}
 						);
 					</script>
+--%>
 				</c:otherwise>
 			</c:choose>
 			<br/>
