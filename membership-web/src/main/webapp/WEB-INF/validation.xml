@@ -17,7 +17,11 @@
 		</constant>
 		<constant>
 			<constant-name>validWhenParentInfoNotRequired</constant-name>
-			<constant-value><![CDATA[(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))]]></constant-value>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenParentInfoNotRequiredOrUssaIdIsNull</constant-name>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((member.id == null) or (*this* != null)))</constant-value>
 		</constant>
 		<constant>
 			<constant-name>validWhenMemberIdNotPresent</constant-name>
@@ -45,85 +49,6 @@
 		<!--
 			Define form validation config in validation-forms.xml
 		  -->
-
-		<form name="address">
-			<field property="city" depends="required">
-
-				<arg0 key="address.city"/>
-			</field>
-			<field property="country" depends="required">
-
-				<arg0 key="address.country"/>
-			</field>
-			<field property="postalCode" depends="required,mask">
-				<msg name="mask" key="errors.zip"/>
-				<arg0 key="address.postalCode"/>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>${zip}</var-value>
-				</var>
-			</field>
-			<field property="province" depends="required">
-				<arg0 key="address.province"/>
-			</field>
-		</form>
-
-		<form name="user">
-			<field property="username" depends="required">
-
-				<arg0 key="user.username"/>
-			</field>
-			<field property="password" depends="required,twofields">
-				<msg name="twofields" key="errors.twofields"/>
-
-				<arg0 key="user.password"/>
-				<arg1 key="user.confirmPassword"/>
-				<var>
-					<var-name>secondProperty</var-name>
-					<var-value>confirmPassword</var-value>
-				</var>
-			</field>
-			<field property="confirmPassword" depends="required">
-				<arg0 key="user.confirmPassword"/>
-			</field>
-			<field property="firstName" depends="required">
-				<arg0 key="user.firstName"/>
-			</field>
-			<field property="lastName" depends="required">
-				<arg0 key="user.lastName"/>
-			</field>
-			<field property="address.city" depends="required">
-				<arg0 key="user.address.city"/>
-			</field>
-			<field property="address.country" depends="required">
-				<arg0 key="user.address.country"/>
-			</field>
-			<field property="address.postalCode" depends="required,mask">
-				<msg name="mask" key="errors.zip"/>
-				<arg0 key="user.address.postalCode"/>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>${zip}</var-value>
-				</var>
-			</field>
-			<field property="address.province" depends="required">
-				<arg0 key="user.address.province"/>
-			</field>
-			<field property="email" depends="required,email">
-				<arg0 key="user.email"/>
-			</field>
-			<field property="phoneNumber" depends="mask">
-				<msg name="mask" key="errors.phone"/>
-				<arg0 key="user.phoneNumber"/>
-				<var>
-					<var-name>mask</var-name>
-					<var-value>${phone}</var-value>
-				</var>
-			</field>
-			<field property="passwordHint" depends="required">
-				<arg0 key="user.passwordHint"/>
-			</field>
-		</form>
 
 		<form name="contactInfo">
 			<field property="member.firstName" depends="required">
@@ -170,6 +95,45 @@
 				<arg0 key="label.parent.guardian.firstName" />
 				<var>
 					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Last" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.lastName" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Relation" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.relationship" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Email" depends="validWhen, email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent2Email" depends="email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+			</field>
+		</form>
+
+		<form name="parentInfo">
+			<field property="member.parentInfo.parent1First" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.firstName" />
+				<var>
+					<var-name>test</var-name>
 					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
 			</field>
@@ -196,6 +160,10 @@
 					<var-name>test</var-name>
 					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
+			</field>
+			<field property="member.parentInfo.parent2Email" depends="email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
 			</field>
 		</form>
 

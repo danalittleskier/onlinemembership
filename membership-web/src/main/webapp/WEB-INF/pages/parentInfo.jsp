@@ -6,7 +6,7 @@
 <div id="stg-pagetitle">Member Information</div>
 <p class="req-fields"><em>* Required Fields</em></p>
 <!-- LEFT column -->
-<div id="stg-onecol-primary">
+<div id="stg-twocol-primary">
 
 	<%@ include file="/includes/messages.jsp"%>
 
@@ -14,13 +14,12 @@
 
 		<%@ include file="/includes/parentInfoFields.jsp"%>
 
-		<p>
-			<fieldset class="buttons">
-				<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-				<input type="submit" class="btn-green" name="_eventId_back" value="Back">
-				<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
-			</fieldset>
-		</p>
+		<fieldset class="buttons">
+			<label></label>
+			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
+			<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+		</fieldset>
 	</form:form>
 </div>
 
