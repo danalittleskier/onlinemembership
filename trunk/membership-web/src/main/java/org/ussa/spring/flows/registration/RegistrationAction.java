@@ -230,26 +230,23 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		rulesBL.setParentInfoRequired(accountBean);
-		boolean wasParentInfoRequired = accountBean.getParentInfoRequired();
-
 		String birthDate = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDate))
 		{
 			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
 		}
-        
-        Member member = accountBean.getMember();
-        if (member.getId() == null) { // only check for dups on new registrations!
-            List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
-            if (dups != null && !dups.isEmpty()) {
-                accountBean.setDuplicateUsers(dups);
-                return result("duplicateAccount");
-            }
-        }
+
+		Member member = accountBean.getMember();
+		if (member.getId() == null) { // only check for dups on new registrations!
+			List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
+			if (dups != null && !dups.isEmpty()) {
+				accountBean.setDuplicateUsers(dups);
+				return result("duplicateAccount");
+			}
+		}
 
         rulesBL.setParentInfoRequired(accountBean);
-		if(!wasParentInfoRequired && accountBean.getParentInfoRequired())
+		if(member.getId() == null && accountBean.getParentInfoRequired())
 		{
 			return result("parentInfo");
 		}

@@ -67,7 +67,7 @@
 			</c:if>
 		</fieldset>
 
-		<c:if test="${accountBean.parentInfoRequired}">
+		<c:if test="${accountBean.parentInfoRequired && not empty accountBean.member.id}">
 			<%@ include file="/includes/parentInfoFields.jsp"%>
 		</c:if>
 

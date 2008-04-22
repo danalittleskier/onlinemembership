@@ -39,25 +39,29 @@
 		<transition on="findClubInfo" to="findClubInfo"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>
 	</action-state>
-    
-    <view-state id="duplicateAccount" view="duplicateAccount">
-        <transition on="back" to="contactInfo"/>
-        <transition on="next" to="findContactInfo"/>
-    </view-state>
-    
-    <action-state id="processDuplicateAccount">
-        <action bean="registrationAction"/>
-        <transition to="contactInfo"/>
-    </action-state>
+
+	<view-state id="duplicateAccount" view="duplicateAccount">
+		<transition on="back" to="contactInfo"/>
+		<transition on="next" to="findContactInfo"/>
+	</view-state>
+
+	<action-state id="processDuplicateAccount">
+		<action bean="registrationAction"/>
+		<transition to="contactInfo"/>
+	</action-state>
 
 	<view-state id="parentInfo" view="parentInfo">
 		<transition on="back" to="contactInfo"/>
 		<transition on="next" to="findClubInfo">
 			<action bean="accountBean" method="bindAndValidate">
-				<attribute name="validator" value="validatorContactInfo"/>
+				<attribute name="validator" value="validatorParentInfo"/>
 			</action>
 		</transition>
 	</view-state>
+
+	<decision-state id="backToParentInfo">
+		<if test="${flowScope.accountBean.parentInfoRequired and flowScope.accountBean.member.id == null}" then="parentInfo" else="contactInfo"/>
+	</decision-state>
 
 	<action-state id="findClubInfo">
 		<action bean="registrationAction"/>
@@ -65,7 +69,7 @@
 	</action-state>
 
 	<view-state id="stateClub" view="stateClub">
-		<transition on="back" to="contactInfo"/>
+		<transition on="back" to="backToParentInfo"/>
 		<transition on="changeState" to="findClubInfo">
 			<action bean="accountBean" method="bindAndValidate"/>
 		</transition>

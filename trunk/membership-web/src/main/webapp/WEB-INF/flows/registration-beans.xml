@@ -31,6 +31,7 @@
 		<property name="validators">
 			<map>
 				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
+				<entry key="validatorParentInfo" value-ref="validatorParentInfo"/>
 				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
 				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
 				<entry key="validatorFisWaiver" value-ref="validatorFisWaiver"/>
@@ -48,6 +49,9 @@
 	<!-- Validators -->
 	<bean id="validatorContactInfo" parent="validatorTemplate">
 		<property name="formName" value="contactInfo"/>
+	</bean>
+	<bean id="validatorParentInfo" parent="validatorTemplate">
+		<property name="formName" value="parentInfo"/>
 	</bean>
 	<bean id="validatorStateClub" parent="validatorTemplate">
 		<property name="formName" value="stateClub"/>
