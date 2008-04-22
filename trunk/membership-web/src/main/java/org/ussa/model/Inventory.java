@@ -109,7 +109,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO = "SDMEA2";
 	public static final String INV_ID_NJSRA_LATE_FEE = "SDNJAL";
 	public static final String INV_ID_NJSRA_DUES_AY_AC = "SDNJA1";
-	public static final String INV_ID_NJSRA_STATE_DUES_ACO_AO = "SDNJA2";
+	public static final String INV_ID_NJSRA_DUES_ACO_AO = "SDNJA2";
 
 	// USSA Late Fee
 	public static final String INV_ID_MEMBER_LATE_FEE = "LATE";
