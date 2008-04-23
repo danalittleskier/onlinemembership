@@ -225,8 +225,7 @@ public class RulesBLImpl implements RulesBL
 		List<Inventory> magazineItems = new ArrayList<Inventory>();
 
 		// only give magazines to people with addresses in the US
-		// TODO: Do a better USA check than this
-		if(member.getCountry().equals("USA"))
+		if(isCountryUs(member.getCountry()))
 		{
 			List<String> magazineInvIds = new ArrayList<String>();
 
@@ -832,4 +831,20 @@ public class RulesBLImpl implements RulesBL
 		return true;
 	}
 
+	public boolean isCountryUs(String country)
+	{
+		if(StringUtils.isNotBlank(country))
+		{
+			country = country.toUpperCase();
+			if(
+					"US".equals(country)
+					|| "USA".equals(country)
+					|| "UNITED STATES".equals(country)
+					|| "UNITED STATES OF AMERICA".equals(country))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
 }
