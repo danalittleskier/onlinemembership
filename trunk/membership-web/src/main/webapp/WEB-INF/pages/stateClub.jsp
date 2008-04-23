@@ -1,22 +1,51 @@
 <%@ include file="/includes/taglibs.jsp" %>
 
 <head>
-	<script type="text/javascript">
-		function changeCitizenship()
-		{
-			var isUsCitizen = !document.getElementById("citizen2").checked;
-			var nationCodeDiv = document.getElementById('nation-code');
-			if(isUsCitizen)
-			{
-				nationCodeDiv.style.display = 'none';
-				document.getElementById('nationCode').value='USA';
-			}
-			else
-			{
-				nationCodeDiv.style.display = 'block';
-			}
-		}
-	</script>
+    <script type='text/javascript' src='/membership-web/dwr/interface/clubDao.js'></script>
+    <script type='text/javascript' src='/membership-web/dwr/engine.js'></script>
+    <script type='text/javascript' src='/membership-web/dwr/util.js'></script>
+    <script type="text/javascript">
+        function changeCitizenship() {
+            // assume they are a US citizen if citizen-yes is checked
+            var isUsCitizen = document.getElementById("citizen-yes").checked;
+            var nationCodeDiv = document.getElementById('nation-code');
+            if (isUsCitizen) {
+                nationCodeDiv.style.display = 'none';
+                document.getElementById('nationCode').value = 'USA';
+            } else {
+                nationCodeDiv.style.display = 'block';
+            }
+            updateDivision();
+        }
+
+        var clubSelectId = 'clubSelect';
+
+        function updateClubSelectOptions() {
+            var stateCode = document.getElementById('stateSelect').value;
+            clubDao.findByStateCode(stateCode, function(clubs) {
+                dwr.util.removeAllOptions(clubSelectId);
+                dwr.util.addOptions(clubSelectId, ['']); // add blank option
+                dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
+                updateDivision();
+            });
+        }
+
+        function updateDivision() {
+            var divisionSpan = document.getElementById('division');
+            divisionSpan.innerHTML = ''; // clear first
+            var nationCode = document.getElementById('nationCode').value;
+            if (nationCode == 'USA') {
+                var clubId = document.getElementById('clubSelect').value;
+                if (clubId) {
+                    clubDao.getClub(clubId, function(club){
+                        divisionSpan.innerHTML = club.division.description;
+                    });
+                }
+            } else {
+                divisionSpan.innerHTML = 'Foreign'; // not internationalized, i know...
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -31,7 +60,8 @@
 
 		<%@ include file="/includes/messages.jsp" %>
 
-		<c:if test="${empty accountBean.member.id}">
+        <!-- only asking this for new registrations -->
+        <c:if test="${empty accountBean.member.id}">
 		<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
 		<fieldset>
 			<legend>Ethnicity</legend>
@@ -55,16 +85,16 @@
 			<legend>Citizenship</legend>
 			<label for="">* Are you a US Citizen?</label>
 			<div class="radios">
-				<form:radiobutton id="citizen1" path="usCitizen" value="true" onclick="changeCitizenship(); document.getElementById('update').click();"/>
-				<label for="citizen1" class="radio">Yes</label>
-				<form:radiobutton id="citizen2" path="usCitizen" value="false" onclick="changeCitizenship()"/>
-				<label for="citizen2" class="radio">No</label>
+				<form:radiobutton id="citizen-yes" path="usCitizen" value="true" onclick="changeCitizenship();"/>
+				<label for="citizen-yes" class="radio">Yes</label>
+				<form:radiobutton id="citizen-no" path="usCitizen" value="false" onclick="changeCitizenship();"/>
+				<label for="citizen-no" class="radio">No</label>
 			</div>
 			<br/>
 
 			<div id="nation-code">
 				<label for="">* Select Nation Code:</label>
-				<form:select id="nationCode" path="member.nationCode" onchange="document.getElementById('update').click();">
+				<form:select id="nationCode" path="member.nationCode" onchange="updateDivision();">
 					<form:option value=""></form:option>
 					<form:options items="${accountBean.nations}" itemValue="nationCode" itemLabel="description"/>
 				</form:select>
@@ -80,26 +110,23 @@
 		<fieldset>
 			<legend>State & Club</legend>
 			<label style="width: 100px;" for="">* State:</label>
-			<form:select path="member.stateCode" onchange="document.getElementById('update').click();">
+			<form:select id="stateSelect" path="member.stateCode" onchange="updateClubSelectOptions();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
 			<label style="width: 100px;" for="">Club:</label>
-			<form:select path="clubId" onchange="document.getElementById('update').click();">
+			<form:select id="clubSelect" path="clubId" onchange="updateDivision();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
 			</form:select>
 			<br/>
-			<div id="hide" style="display:none">
-				<input type="submit" class="button" id="update" name="_eventId_changeState" value="Update">
-			</div>
 		</fieldset>
 
 		<fieldset>
 			<legend>Division</legend>
 			<label style="width: 100px;">Division:</label>
-			<span class="data-input"><c:out value="${accountBean.member.division.description}"/></span>
+			<span id="division" class="data-input"><c:out value="${accountBean.member.division.description}"/></span>
 			<br/>
 		</fieldset>
 

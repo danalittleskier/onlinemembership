@@ -1,10 +1,5 @@
 package org.ussa.spring.flows.registration;
 
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -36,6 +31,11 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
+
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -257,45 +257,78 @@ public class RegistrationAction extends MultiAction implements Serializable
     public Event findClubInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		List<Club> clubs = new ArrayList<Club>();
-		String stateAffiliation = new String();
-
-		accountBean.setUsCitizen("USA".equals(accountBean.getMember().getNationCode()));
+        
+        // default US citizenship to 'true' if their nationCode is already USA
+        accountBean.setUsCitizen("USA".equals(accountBean.getMember().getNationCode()));
 		accountBean.setNations(nationDao.getAllNations());
 
-		if (accountBean.getMember().getStateCode() != null)
-		{ //If I change the state affiliation (in stateClub) set it here
-			stateAffiliation = accountBean.getMember().getStateCode();
-		}
-		else if (accountBean.getAddress() != null)
-		{ //Coming through first pass regular flow
-			if (accountBean.getAddress().getStateCode() != null)
-			{ //This should always be hit as the user is required to put in an address on the prior screen
-				stateAffiliation = accountBean.getAddress().getStateCode();
-			}
-		}
-		if (stateAffiliation.length()!=0)
-		{
-			clubs = clubDao.findByStateCode(stateAffiliation);
-		}
+        determineDivision(accountBean);
+        
+        // determine the default the user's state affiliation
+        String stateAffiliation = getStateAffiliation(accountBean);
+        accountBean.getMember().setStateCode(stateAffiliation);
 
-		if(!"USA".equals(accountBean.getMember().getNationCode()))
-		{
-			accountBean.getMember().setDivision(divisionDao.get("X"));
-		}
-		else if(accountBean.getClubId() != null)
-		{
-			Club club = clubDao.get(accountBean.getClubId());
-			accountBean.getMember().setDivision(club.getDivision());
-		}
-
-		accountBean.setClubsForState(clubs);
-		accountBean.getMember().setStateCode(stateAffiliation);
-		return success();
+        // determine which clubs to display in the select list based on the state affiliation
+        loadClubOptions(accountBean);
+        
+        return success();
 	}
+    
+    private void loadClubOptions(AccountBean accountBean) {
+        List<Club> clubs = new ArrayList<Club>();
+        String stateCode = accountBean.getMember().getStateCode();
+        if (StringUtils.isNotEmpty(stateCode))
+		{
+			clubs = clubDao.findByStateCode(stateCode);
+		}
+        accountBean.setClubsForState(clubs);
+    }
 
+    /**
+     * If their nation code is USA, then look at their club to determine their division.
+     * If their nation code is NOT USA, their division is Foreign ("X")
+     * @param accountBean
+     */
+    private void determineDivision(AccountBean accountBean) {
+        // set their division based on their nationCode
+        if ("USA".equals(accountBean.getMember().getNationCode()))
+        {
+            if(accountBean.getClubId() != null)
+            {
+                Club club = clubDao.get(accountBean.getClubId());
+                accountBean.getMember().setDivision(club.getDivision());
+            }
+        } else {
+			accountBean.getMember().setDivision(divisionDao.getForeignDivision());
+		}
+    }
 
-	public Event loadSportMemberships(RequestContext context) throws Exception
+    /**
+     * The user's state affiliation is retrieved first
+     * from their state code (if available) or from the state code of their address.
+     */
+    private String getStateAffiliation(AccountBean accountBean) {
+        String result = null;
+        if (StringUtils.isNotEmpty(accountBean.getMember().getStateCode()))
+        {
+            result = accountBean.getMember().getStateCode();
+        }
+        else if (accountBean.getAddress() != null && StringUtils.isNotEmpty(accountBean.getAddress().getStateCode()))
+        {
+            result = accountBean.getAddress().getStateCode();
+        }
+        return result;
+    }
+    
+    public Event processClubInfo(RequestContext context) throws Exception
+    {
+        AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+        determineDivision(accountBean);
+        loadClubOptions(accountBean); // do this again here to account for dynamic DWR changes
+        return success();
+    }
+
+    public Event loadSportMemberships(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 

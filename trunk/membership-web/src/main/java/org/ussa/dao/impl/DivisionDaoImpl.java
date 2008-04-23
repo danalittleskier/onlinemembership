@@ -6,9 +6,13 @@ import org.ussa.model.Division;
 
 public class DivisionDaoImpl extends GenericDaoHibernate<Division, String> implements DivisionDao
 {
-
-	public DivisionDaoImpl()
+    public DivisionDaoImpl()
 	{
 		super(Division.class);
 	}
+
+    public Division getForeignDivision() 
+    {
+        return get(Division.DIVISION_FOREIGN);
+    }
 }
