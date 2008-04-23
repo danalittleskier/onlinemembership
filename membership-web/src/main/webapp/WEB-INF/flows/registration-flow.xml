@@ -70,17 +70,19 @@
 
 	<view-state id="stateClub" view="stateClub">
 		<transition on="back" to="backToParentInfo"/>
-		<transition on="changeState" to="findClubInfo">
-			<action bean="accountBean" method="bindAndValidate"/>
-		</transition>
-		<transition on="next" to="loadSportMemberships">
+		<transition on="next" to="processClubInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorStateClub"/>
 			</action>
 		</transition>
 	</view-state>
+    
+    <action-state id="processClubInfo">
+        <action bean="registrationAction"/>
+        <transition on="*" to="loadSportMemberships"/>
+    </action-state>
 
-	<action-state id="loadSportMemberships">
+    <action-state id="loadSportMemberships">
 		<action bean="registrationAction"/>
 		<transition on="*" to="sportMembership"/>
 	</action-state>

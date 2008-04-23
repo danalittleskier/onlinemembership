@@ -5,4 +5,9 @@ import org.ussa.model.Division;
 
 public interface DivisionDao extends GenericDao<Division, String>
 {
+
+    /**
+     * Get the foreign division ("X")
+     */
+    public Division getForeignDivision();
 }

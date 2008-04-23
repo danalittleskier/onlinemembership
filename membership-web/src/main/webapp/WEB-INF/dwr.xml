@@ -3,13 +3,17 @@
     "http://getahead.ltd.uk/dwr/dwr20.dtd">
 <dwr>
     <allow>
-<!--
-        <create creator="spring" javascript="UserManager">
-            <param name="class" value="org.ussa.common.service.UserManager"/>
-            <param name="beanName" value="userManager"/>
-            <include method="getUsers"/>
+        <create creator="spring" javascript="clubDao">
+            <param name="class" value="org.ussa.dao.ClubDao"/>
+            <param name="beanName" value="clubDao"/>
+            <include method="getClub"/>
+            <include method="findByStateCode"/>
         </create>
-        <convert converter="bean" match="org.ussa.common.model.User"/>
--->
+        <convert converter="bean" match="org.ussa.model.Club">
+            <param name="include" value="id, name, division"/>
+        </convert>
+        <convert converter="bean" match="org.ussa.model.Division">
+            <param name="include" value="description"/>
+        </convert>
     </allow>
 </dwr>
