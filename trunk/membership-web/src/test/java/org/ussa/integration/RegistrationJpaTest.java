@@ -1,10 +1,12 @@
 package org.ussa.integration;
 
+import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import org.ussa.dao.AddressDao;
+import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.MemberTransactionDao;
@@ -23,6 +25,7 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
     private MemberDao memberDao;
     private AddressDao addressDao;
     private MemberLegalDao memberLegalDao;
+    private InventoryDao inventoryDao;
     private MemberTransactionDao memberTransactionDao;
 
     public void testDuplicates() {
@@ -104,10 +107,10 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         memberLegalDao.save(memberLegal);
 
         MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
-//        memberTransaction.setAmount(BigDecimal.TEN);
-        memberTransaction.setInvId("ALP");
-//        memberTransaction.setPurchaseDate(new Date());
-//        memberTransaction.setQty(3);
+        memberTransaction.setAmount(BigDecimal.TEN);
+        memberTransaction.setInventory(inventoryDao.get("ALP"));
+        memberTransaction.setPurchaseDate(new Date());
+        memberTransaction.setQty(3);
         memberTransaction.setSeason("2008");
         memberTransaction = memberTransactionDao.save(memberTransaction);
         assertNotNull(memberTransaction.getId());
@@ -127,7 +130,12 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         this.memberLegalDao = memberLegalDao;
     }
 
-    public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) {
+	public void setInventoryDao(InventoryDao inventoryDao)
+	{
+		this.inventoryDao = inventoryDao;
+	}
+
+	public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao) {
         this.memberTransactionDao = memberTransactionDao;
     }
 }

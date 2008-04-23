@@ -21,6 +21,7 @@ public class RuleAssociations
 	public static final Set<String> disabledMemberships;
 	public static final Set<String> youthMemberships;
 	public static final Set<String> officialMemberships;
+	public static final Set<String> coachMemberships;
 	public static final Set<String> onlyOneDivisionDuePerSport;
 	public static final Set<String> onlyOneDivisionDue;
 	public static final Map<String, String> divisionLateFeesAplineCompetitor;
@@ -99,11 +100,8 @@ public class RuleAssociations
 		youthMemberships.add(Inventory.INV_ID_FREESTYLE_ROOKIE);
 		youthMemberships.add(Inventory.INV_ID_JUMPING_YOUTH);
 
-		officialMemberships = new HashSet<String>();
-		officialMemberships.add(Inventory.INV_ID_ALPINE_OFFICIAL);
-		officialMemberships.add(Inventory.INV_ID_SNOWBOARD_OFFICIAL);
-		officialMemberships.add(Inventory.INV_ID_FREESTYLE_OFFICIAL);
-		officialMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL);
+		officialMemberships = RuleAssociations.coachesByOfficial.keySet();
+		coachMemberships = RuleAssociations.officialsByCoach.keySet();
 
 		onlyOneDivisionDuePerSport = new HashSet<String>();
 		onlyOneDivisionDuePerSport.add(Division.DIVISION_FAR_WEST);

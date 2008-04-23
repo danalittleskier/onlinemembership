@@ -61,7 +61,9 @@
 		<property name="userManager" ref="userManager"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="dateBL" ref="dateBL"/>
-		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="rulesBL" ref="rulesBL"/>
+		<property name="memberSeasonDao" ref="memberSeasonDao"/>
+		<property name="memberTransactionDao" ref="memberTransactionDao"/>
 	</bean>
 
 	<!-- ====================================== Web Flows ============================================== -->

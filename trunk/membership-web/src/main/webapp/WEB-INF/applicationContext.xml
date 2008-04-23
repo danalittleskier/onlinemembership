@@ -36,6 +36,9 @@
 	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="memberSeasonDao" class="org.ussa.dao.impl.MemberSeasonDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
@@ -56,6 +59,7 @@
 		<property name="dateBL" ref="dateBL"/>
 		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
+		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 	</bean>
 
 	<!-- Add service classes here-->

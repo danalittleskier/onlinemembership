@@ -1,5 +1,7 @@
 package org.ussa.dao;
 
+import java.util.List;
+
 import org.ussa.common.dao.GenericDao;
 import org.ussa.model.MemberTransaction;
 
@@ -10,5 +12,7 @@ import org.ussa.model.MemberTransaction;
  */
 public interface MemberTransactionDao extends GenericDao<MemberTransaction, Long>
 {
+	public List<MemberTransaction> getMemberTransactionsForSeason(Long ussaId, String season);
+
 	public boolean hasHeldIventory(Long ussaId, String invId);
 }

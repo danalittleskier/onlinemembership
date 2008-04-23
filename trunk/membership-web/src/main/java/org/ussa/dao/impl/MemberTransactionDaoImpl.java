@@ -1,16 +1,16 @@
 package org.ussa.dao.impl;
 
 import javax.sql.DataSource;
-import java.sql.Types;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Types;
 import java.util.List;
 
+import org.springframework.jdbc.core.SqlParameter;
+import org.springframework.jdbc.object.MappingSqlQuery;
 import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.MemberTransactionDao;
 import org.ussa.model.MemberTransaction;
-import org.springframework.jdbc.object.MappingSqlQuery;
-import org.springframework.jdbc.core.SqlParameter;
 
 /**
  * User: jminer
@@ -30,6 +30,13 @@ public class MemberTransactionDaoImpl extends GenericDaoHibernate<MemberTransact
 	public void setDataSource(DataSource dataSource)
 	{
 		this.dataSource = dataSource;
+	}
+
+	public List<MemberTransaction> getMemberTransactionsForSeason(Long ussaId, String season)
+	{
+		return (List<MemberTransaction>) getHibernateTemplate()
+				.find("from MemberTransaction t where t.member.id = ? and t.season = ?",
+						new Object[]{ussaId, season});
 	}
 
 	public boolean hasHeldIventory(Long ussaId, String invId)

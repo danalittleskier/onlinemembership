@@ -32,4 +32,8 @@ public interface RulesBL
 
 	public void removeFisFromCart(AccountBean accountBean, boolean disabled);
 
+	public boolean needsBackgroundCheck(Long ussaId);
+
+	public boolean certificateIsRestricted(Long ussaId);
+
 }
