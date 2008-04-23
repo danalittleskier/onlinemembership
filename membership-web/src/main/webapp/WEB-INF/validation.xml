@@ -420,6 +420,25 @@
 			<field property="paymentBean.securityCode" depends="required">
 				<arg0 key="label.security.code" />
 			</field>
+<!--
+			<field property="paymentBean.firstName" depends="required">
+				<arg0 key="user.firstName" />
+			</field>
+			<field property="paymentBean.lastName" depends="required">
+				<arg0 key="user.lastName" />
+			</field>
+-->
+			<field property="paymentBean.address" depends="required">
+				<arg0 key="user.address.address" />
+			</field>
+<!--
+			<field property="paymentBean.city" depends="required">
+				<arg0 key="user.address.city" />
+			</field>
+-->
+			<field property="paymentBean.zip" depends="required">
+				<arg0 key="user.address.postalCode" />
+			</field>
 		</form>
 	</formset>
 </form-validation>

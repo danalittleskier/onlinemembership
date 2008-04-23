@@ -64,6 +64,24 @@
 		<label for="">* Security Code:</label>
 		<form:input path="paymentBean.securityCode" maxlength="4"/><br/>
 		</span>
+
+		<br/>
+		<label for="">Additional Card Information</label><br/>
+
+<%--
+		<label for="">* First Name:</label>
+		<form:input path="paymentBean.firstName" maxlength="50"/><br/>
+		<label for="">* Last Name:</label>
+		<form:input path="paymentBean.lastName" maxlength="50"/><br/>
+--%>
+		<label for="">* Street Address:</label>
+		<form:input path="paymentBean.address" maxlength="60"/><br/>
+<%--
+		<label for="">* City:</label>
+		<form:input path="paymentBean.city" maxlength="40"/><br/>
+--%>
+		<label for="">* Zip/Postal Code:</label>
+		<form:input path="paymentBean.zip" maxlength="20"/><br/>
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>
