@@ -117,7 +117,9 @@ public class RulesBLImpl implements RulesBL
 			return true;
 		}
 
-		if(age != null && age < inventory.getAgeFrom() || age > inventory.getAgeTo())
+		if(age != null 
+				&& ((inventory.getAgeFrom() != null && age < inventory.getAgeFrom())
+						|| (inventory.getAgeTo() != null && age > inventory.getAgeTo())))
 		{
 			return true;
 		}
