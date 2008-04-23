@@ -25,10 +25,12 @@
 				<td class="data-label">Year of Birth:</td>
 				<td><c:out value="${yearOfBirth}"/></td>
 			</tr>
-			<tr>
-				<td class="data-label">FIS ID:</td>
-				<td><c:out value="${member.fisId}"/></td>
-			</tr>
+			<c:if test="${hasFis}">
+				<tr>
+					<td class="data-label">FIS ID:</td>
+					<td><c:out value="${member.fisId}"/></td>
+				</tr>
+			</c:if>
 			<tr>
 				<td class="data-label">Paid On:</td>
 				<td><fmt:formatDate value="${memberSeason.appProcessDate}" pattern="MM/dd/yyyy"/></td>
@@ -39,7 +41,7 @@
 			</tr>
 			<tr>
 				<td class="data-label">Division Dues:</td>
-				<td><c:out value="${divisionDues}"/></td>
+				<td>$<c:out value="${divisionDues}"/></td>
 			</tr>
 			<tr>
 				<td class="data-label">Membership Type(s):</td>
