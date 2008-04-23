@@ -1,7 +1,5 @@
 package org.ussa.model;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -17,6 +15,8 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
+
+import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table (name="MEMBER")
@@ -57,6 +57,9 @@ public class Member implements Serializable
 
 	@Column(name = "BIRTHDATE", nullable = true, length=8, unique=false)
 	private Date birthDate;
+
+	@Column(name = "FIS_ID", nullable = true, length=7, unique=false)
+	private String fisId;
 
 	@Column(name = "EMAIL", nullable = true, length=60, unique=false)
 	private String email;
@@ -269,6 +272,16 @@ public class Member implements Serializable
 	public void setBirthDate(Date birthDate)
 	{
 		this.birthDate = birthDate;
+	}
+
+	public String getFisId()
+	{
+		return fisId;
+	}
+
+	public void setFisId(String fisId)
+	{
+		this.fisId = fisId;
 	}
 
 	public Division getDivision()

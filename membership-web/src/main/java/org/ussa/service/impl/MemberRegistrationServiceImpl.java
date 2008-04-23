@@ -110,7 +110,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	{
 		MemberTransaction memberTransaction = new MemberTransaction(member);
 		memberTransaction.setSeason(currentSeason);
-		memberTransaction.setInvId(lineItem.getInventory().getId());
+		memberTransaction.setInventory(lineItem.getInventory());
 		memberTransaction.setQty(lineItem.getQty());
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
 		// TODO: What dates should go here?

@@ -29,8 +29,9 @@ public class MemberTransaction implements Serializable
 	@Column(name = "SEASON", nullable = false, length = 4, unique = false)
 	private String season;
 
-	@Column(name = "INV_ID", nullable = false, length = 8, unique = false)
-	private String invId;
+	@ManyToOne
+	@JoinColumn(name = "INV_ID", nullable = false)
+	private Inventory inventory;
 
 	@Column(name = "QTY", nullable = true, length = 4, unique = false)
 	private Integer qty;
@@ -84,14 +85,15 @@ public class MemberTransaction implements Serializable
 		this.season = season;
 	}
 
-	public String getInvId()
+
+	public Inventory getInventory()
 	{
-		return invId;
+		return inventory;
 	}
 
-	public void setInvId(String invId)
+	public void setInventory(Inventory inventory)
 	{
-		this.invId = invId;
+		this.inventory = inventory;
 	}
 
 	public Integer getQty()

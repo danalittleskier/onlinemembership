@@ -20,10 +20,13 @@ import org.ussa.bl.RulesBL;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.dao.MemberTransactionDao;
+import org.ussa.dao.MemberSeasonDao;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.State;
+import org.ussa.model.MemberSeason;
+import org.ussa.model.MemberTransaction;
 
 public class RulesBLImpl implements RulesBL
 {
@@ -31,6 +34,7 @@ public class RulesBLImpl implements RulesBL
 	private DateBL dateBL;
 	private RenewRuleInvDao renewRuleInvDao;
 	private MemberTransactionDao memberTransactionDao;
+	private MemberSeasonDao memberSeasonDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
@@ -50,6 +54,11 @@ public class RulesBLImpl implements RulesBL
 	public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao)
 	{
 		this.memberTransactionDao = memberTransactionDao;
+	}
+
+	public void setMemberSeasonDao(MemberSeasonDao memberSeasonDao)
+	{
+		this.memberSeasonDao = memberSeasonDao;
 	}
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate)
@@ -748,6 +757,79 @@ public class RulesBLImpl implements RulesBL
 				cart.removeLineItem(lineItem.getInventory().getId());
 			}
 		}
+	}
+
+	public boolean needsBackgroundCheck(Long ussaId)
+	{
+		String currentSeason = dateBL.getCurrentRenewSeason();
+		List<MemberTransaction> memberTransactions = memberTransactionDao.getMemberTransactionsForSeason(ussaId, currentSeason);
+		Set<String> items = new HashSet<String>();
+		for (MemberTransaction memberTransaction : memberTransactions)
+		{
+			items.add(memberTransaction.getInventory().getId());
+		}
+		return needsBackgroundCheck(ussaId, items);
+	}
+
+	private boolean needsBackgroundCheck(Long ussaId, Set<String> items)
+	{
+		if(containsAny(items, RuleAssociations.coachMemberships) || containsAny(items, RuleAssociations.officialMemberships))
+		{
+			MemberSeason memberSeason = memberSeasonDao.getMostRecentBackgroundCheck(ussaId);
+			int bacgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
+			if(dateBL.calculateCurrentRenewSeason() <= (bacgroundCheckSeason + 3))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+
+	private boolean containsAny(Set<String> set, Collection<String> items)
+	{
+		for (String s : items)
+		{
+			if (set.contains(s))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean certificateIsRestricted(Long ussaId)
+	{
+		String currentSeason = dateBL.getCurrentRenewSeason();
+		List<MemberTransaction> memberTransactions = memberTransactionDao.getMemberTransactionsForSeason(ussaId, currentSeason);
+		Set<String> items = new HashSet<String>();
+		for (MemberTransaction memberTransaction : memberTransactions)
+		{
+			items.add(memberTransaction.getInventory().getId());
+		}
+
+		if(needsBackgroundCheck(ussaId, items))
+		{
+			Set<String> coachesAndOfficials = new HashSet<String>();
+			coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
+			coachesAndOfficials.addAll(RuleAssociations.officialMemberships);
+			if(containsOnly(items, coachesAndOfficials))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	private boolean containsOnly(Set<String> set, Collection<String> items)
+	{
+		for (String s : items)
+		{
+			if (!set.contains(s))
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 }
