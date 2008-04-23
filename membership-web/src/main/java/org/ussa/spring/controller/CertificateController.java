@@ -81,6 +81,7 @@ public class CertificateController extends AbstractController
 				request.setAttribute("currentSeason", currentSeason);
 
 				List<MemberTransaction> items = memberTransactionDao.getMemberTransactionsForSeason(id, currentSeason);
+				request.setAttribute("hasFis", filterByInventoryType(items, Inventory.INVENTORY_TYPE_FIS).size() > 0);
 				request.setAttribute("membershipTransactions", filterByInventoryType(items, Inventory.INVENTORY_TYPE_MEMBERSHIP));
 
 				List<MemberTransaction> divisionDues = filterByInventoryType(items, Inventory.INVENTORY_TYPE_DIVISION_DUES);
