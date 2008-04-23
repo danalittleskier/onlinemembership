@@ -1,51 +1,53 @@
 <%@ include file="/includes/taglibs.jsp" %>
 
 <head>
-    <script type='text/javascript' src='/membership-web/dwr/interface/clubDao.js'></script>
-    <script type='text/javascript' src='/membership-web/dwr/engine.js'></script>
-    <script type='text/javascript' src='/membership-web/dwr/util.js'></script>
-    <script type="text/javascript">
-        function changeCitizenship() {
-            // assume they are a US citizen if citizen-yes is checked
-            var isUsCitizen = document.getElementById("citizen-yes").checked;
-            var nationCodeDiv = document.getElementById('nation-code');
-            if (isUsCitizen) {
-                nationCodeDiv.style.display = 'none';
-                document.getElementById('nationCode').value = 'USA';
-            } else {
-                nationCodeDiv.style.display = 'block';
-            }
-            updateDivision();
-        }
+	<script type='text/javascript' src='<c:url value="/dwr/interface/clubDao.js"/>'></script>
+	<script type='text/javascript' src='<c:url value="/dwr/engine.js"/>'></script>
+	<script type='text/javascript' src='<c:url value="/dwr/util.js"/>'></script>
+	<script type="text/javascript">
+		function changeCitizenship() {
+			// assume they are a US citizen if citizen-yes is checked
+			var isUsCitizen = document.getElementById("citizen-yes").checked;
+			var nationCodeDiv = document.getElementById('nation-code');
+			if (isUsCitizen) {
+				nationCodeDiv.style.display = 'none';
+				document.getElementById('nationCode').value = 'USA';
+			} else {
+				nationCodeDiv.style.display = 'block';
+			}
+			updateDivision();
+		}
 
-        var clubSelectId = 'clubSelect';
+		var clubSelectId = 'clubSelect';
 
-        function updateClubSelectOptions() {
-            var stateCode = document.getElementById('stateSelect').value;
-            clubDao.findByStateCode(stateCode, function(clubs) {
-                dwr.util.removeAllOptions(clubSelectId);
-                dwr.util.addOptions(clubSelectId, ['']); // add blank option
-                dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
-                updateDivision();
-            });
-        }
+		function updateClubSelectOptions() {
+			var stateCode = document.getElementById('stateSelect').value;
+			dwr.util.removeAllOptions(clubSelectId);
+			dwr.util.addOptions(clubSelectId, ['loading...']); // add blank option
+			clubDao.findByStateCode(stateCode, function(clubs) {
+				dwr.util.removeAllOptions(clubSelectId);
+				dwr.util.addOptions(clubSelectId, ['']); // add blank option
+				dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
+				updateDivision();
+			});
+		}
 
-        function updateDivision() {
-            var divisionSpan = document.getElementById('division');
-            divisionSpan.innerHTML = ''; // clear first
-            var nationCode = document.getElementById('nationCode').value;
-            if (nationCode == 'USA') {
-                var clubId = document.getElementById('clubSelect').value;
-                if (clubId) {
-                    clubDao.getClub(clubId, function(club){
-                        divisionSpan.innerHTML = club.division.description;
-                    });
-                }
-            } else {
-                divisionSpan.innerHTML = 'Foreign'; // not internationalized, i know...
-            }
-        }
-    </script>
+		function updateDivision() {
+			var divisionSpan = document.getElementById('division');
+			removeChildren(divisionSpan);
+			var nationCode = document.getElementById('nationCode').value;
+			if (nationCode == 'USA') {
+				var clubId = document.getElementById('clubSelect').value;
+				if (clubId) {
+					clubDao.getClub(clubId, function(club){
+						divisionSpan.appendChild(document.createTextNode(club.division.description))
+					});
+				}
+			} else {
+				divisionSpan.appendChild(document.createTextNode('Foreign'))
+			}
+		}
+	</script>
 </head>
 
 <body>
@@ -60,52 +62,56 @@
 
 		<%@ include file="/includes/messages.jsp" %>
 
-        <!-- only asking this for new registrations -->
-        <c:if test="${empty accountBean.member.id}">
-		<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
-		<fieldset>
-			<legend>Ethnicity</legend>
-			<br/>
-			<label for="">* What is your ethnicity?</label>
-			<form:select path="member.ethnicity">
-				<form:option value=""></form:option>
-				<form:option value="W">White</form:option>
-				<form:option value="B">African American</form:option>
-				<form:option value="H">Hispanic or Latino</form:option>
-				<form:option value="A">Asian</form:option>
-				<form:option value="I">American Indian or Alaska Native</form:option>
-				<form:option value="N">Native Hawaiian</form:option>
-				<form:option value="P">Other Pacific Islander</form:option>
-				<form:option value="M">Mixed Race</form:option>
-				<form:option value="Z">Prefer Not to Respond</form:option>
-			</form:select>
-		</fieldset>
+		<!-- only asking this for new registrations -->
+		<c:choose>
+			<c:when test="${empty accountBean.member.id}">
+				<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
+				<fieldset>
+					<legend>Ethnicity</legend>
+					<br/>
+					<label for="">* What is your ethnicity?</label>
+					<form:select path="member.ethnicity">
+						<form:option value=""></form:option>
+						<form:option value="W">White</form:option>
+						<form:option value="B">African American</form:option>
+						<form:option value="H">Hispanic or Latino</form:option>
+						<form:option value="A">Asian</form:option>
+						<form:option value="I">American Indian or Alaska Native</form:option>
+						<form:option value="N">Native Hawaiian</form:option>
+						<form:option value="P">Other Pacific Islander</form:option>
+						<form:option value="M">Mixed Race</form:option>
+						<form:option value="Z">Prefer Not to Respond</form:option>
+					</form:select>
+				</fieldset>
 
-		<fieldset>
-			<legend>Citizenship</legend>
-			<label for="">* Are you a US Citizen?</label>
-			<div class="radios">
-				<form:radiobutton id="citizen-yes" path="usCitizen" value="true" onclick="changeCitizenship();"/>
-				<label for="citizen-yes" class="radio">Yes</label>
-				<form:radiobutton id="citizen-no" path="usCitizen" value="false" onclick="changeCitizenship();"/>
-				<label for="citizen-no" class="radio">No</label>
-			</div>
-			<br/>
+				<fieldset>
+					<legend>Citizenship</legend>
+					<label>* Are you a US Citizen?</label>
+					<div class="radios">
+						<form:radiobutton id="citizen-yes" path="usCitizen" value="true" onclick="changeCitizenship();"/>
+						<label for="citizen-yes" class="radio">Yes</label>
+						<form:radiobutton id="citizen-no" path="usCitizen" value="false" onclick="changeCitizenship();"/>
+						<label for="citizen-no" class="radio">No</label>
+					</div>
+					<br/>
+					<script type="text/javascript" defer="defer">
+						changeCitizenship();
+					</script>
 
-			<div id="nation-code">
-				<label for="">* Select Nation Code:</label>
-				<form:select id="nationCode" path="member.nationCode" onchange="updateDivision();">
-					<form:option value=""></form:option>
-					<form:options items="${accountBean.nations}" itemValue="nationCode" itemLabel="description"/>
-				</form:select>
-				<br/>
-			</div>
-		</fieldset>
-
-		<script type="text/javascript" defer="defer">
-			changeCitizenship();
-		</script>
-		</c:if>
+					<div id="nation-code">
+						<label for="">* Select Nation Code:</label>
+						<form:select id="nationCode" path="member.nationCode" onchange="updateDivision();">
+							<form:option value=""></form:option>
+							<form:options items="${accountBean.nations}" itemValue="nationCode" itemLabel="description"/>
+						</form:select>
+						<br/>
+					</div>
+				</fieldset>
+			</c:when>
+			<c:otherwise>
+				<form:hidden id="nationCode" path="member.nationCode"/>
+			</c:otherwise>
+		</c:choose>
 
 		<fieldset>
 			<legend>State & Club</legend>
@@ -144,16 +150,16 @@
 
 <!-- RIGHT column -->
 <div id="stg-twocol-secondary">
-		<!-- BOX (START) -->
-		<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
-			<p class="stg-omr-header">About Your Division</p>
-				<p>Based on the information provided, you will be in the division shown. Division or state dues may apply.</p>
-<%--
-				<p><em>Foreign members may be assigned to the foreign division or a
-					geographic division based on state affiliation and membership category. Division or state dues may apply.</em></p>
---%>
-		</div></div></div></div>
-		<!-- BOX (END) -->
+	<!-- BOX (START) -->
+	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+		<p class="stg-omr-header">About Your Division</p>
+		<p>Based on the information provided, you will be in the division shown. Division or state dues may apply.</p>
+		<%--
+				  <p><em>Foreign members may be assigned to the foreign division or a
+					  geographic division based on state affiliation and membership category. Division or state dues may apply.</em></p>
+  --%>
+	</div></div></div></div>
+	<!-- BOX (END) -->
 </div>
 
 <div class="clear"></div>

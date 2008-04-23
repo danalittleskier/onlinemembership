@@ -1,11 +1,17 @@
 package org.ussa.spring.flows.registration;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.webflow.action.MultiAction;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
+import org.springframework.orm.ObjectRetrievalFailureException;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
@@ -31,11 +37,6 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
-
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 
 public class RegistrationAction extends MultiAction implements Serializable
@@ -178,35 +179,40 @@ public class RegistrationAction extends MultiAction implements Serializable
 			AddressPk addressPk = new AddressPk();
 			addressPk.setType(Address.ADDRESS_TYPE_PRIMARY);
 			addressPk.setMember(member);
-			Address address = addressDao.get(addressPk);
-			if (address == null)
+			Address address = null;
+			try
 			{
-				address = new Address();
-			}
-			else
-			{
-				// TODO: there has to be a better check that I can than this.
-				if(!"USA".equals(address.getCountry()))
+				address = addressDao.get(addressPk);
+				if(rulesBL.isCountryUs(address.getCountry()))
 				{
 					return result("foreign");
 				}
+			}
+			catch (ObjectRetrievalFailureException e)
+			{
+				address = new Address();
 			}
 			accountBean.setAddress(address);
 
 			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
 			memberSeasonPk.setMember(member);
 			memberSeasonPk.setSeason(currentSeason);
-			MemberLegal memberLegal = memberLegalDao.get(memberSeasonPk);
-			if(memberLegal == null)
+
+			MemberLegal memberLegal = null;
+			try
+			{
+				memberLegal = memberLegalDao.get(memberSeasonPk);
+				if(memberLegal != null)
+				{
+					// the person has already processed a registration for this year.
+					return result("alreadyRegistered");
+				}
+			}
+			catch (ObjectRetrievalFailureException e)
 			{
 				memberLegal = new MemberLegal();
 				memberLegal.setMemberSeasonPk(memberSeasonPk);
 				accountBean.setMemberLegal(memberLegal);
-			}
-			else
-			{
-				// the person has already processed a registration for this year.
-				return result("alreadyRegistered");
 			}
 
 			// don't prepopulate the cart for non members
@@ -226,7 +232,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("contactInfo");
 	}
 
-    public Event handleContactInfo(RequestContext context) throws Exception
+	public Event handleContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
@@ -245,7 +251,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 			}
 		}
 
-        rulesBL.setParentInfoRequired(accountBean);
+		rulesBL.setParentInfoRequired(accountBean);
 		if(member.getId() == null && accountBean.getParentInfoRequired())
 		{
 			return result("parentInfo");
@@ -254,81 +260,97 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return result("findClubInfo");
 	}
 
-    public Event findClubInfo(RequestContext context) throws Exception
+	public Event findClubInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-        
-        // default US citizenship to 'true' if their nationCode is already USA
-        accountBean.setUsCitizen("USA".equals(accountBean.getMember().getNationCode()));
+		Member member = accountBean.getMember();
+
+		// default US citizenship to 'true' if their nationCode is already USA
+		if(rulesBL.isCountryUs(member.getNationCode()))
+		{
+			accountBean.setUsCitizen(true);
+		}
+
 		accountBean.setNations(nationDao.getAllNations());
+		if(StringUtils.isBlank(member.getNationCode()))
+		{
+			member.setNationCode("USA");
+		}
 
-        determineDivision(accountBean);
-        
-        // determine the default the user's state affiliation
-        String stateAffiliation = getStateAffiliation(accountBean);
-        accountBean.getMember().setStateCode(stateAffiliation);
+		determineDivision(accountBean);
 
-        // determine which clubs to display in the select list based on the state affiliation
-        loadClubOptions(accountBean);
-        
-        return success();
+		// determine the default the user's state affiliation
+		String stateAffiliation = getStateAffiliation(accountBean);
+		member.setStateCode(stateAffiliation);
+
+		// determine which clubs to display in the select list based on the state affiliation
+		loadClubOptions(accountBean);
+
+		return success();
 	}
-    
-    private void loadClubOptions(AccountBean accountBean) {
-        List<Club> clubs = new ArrayList<Club>();
-        String stateCode = accountBean.getMember().getStateCode();
-        if (StringUtils.isNotEmpty(stateCode))
+
+	private void loadClubOptions(AccountBean accountBean) {
+		List<Club> clubs = new ArrayList<Club>();
+		String stateCode = accountBean.getMember().getStateCode();
+		if (StringUtils.isNotEmpty(stateCode))
 		{
 			clubs = clubDao.findByStateCode(stateCode);
 		}
-        accountBean.setClubsForState(clubs);
-    }
+		accountBean.setClubsForState(clubs);
+	}
 
-    /**
-     * If their nation code is USA, then look at their club to determine their division.
-     * If their nation code is NOT USA, their division is Foreign ("X")
-     * @param accountBean
-     */
-    private void determineDivision(AccountBean accountBean) {
-        // set their division based on their nationCode
-        if ("USA".equals(accountBean.getMember().getNationCode()))
-        {
-            if(accountBean.getClubId() != null)
-            {
-                Club club = clubDao.get(accountBean.getClubId());
-                accountBean.getMember().setDivision(club.getDivision());
-            }
-        } else {
-			accountBean.getMember().setDivision(divisionDao.getForeignDivision());
+	/**
+	 * If their nation code is USA, then look at their club to determine their division.
+	 * If their nation code is NOT USA, their division is Foreign ("X")
+	 * @param accountBean
+	 */
+	private void determineDivision(AccountBean accountBean)
+	{
+		// set their division based on their nationCode
+		String nationCode = accountBean.getMember().getNationCode();
+		if(StringUtils.isNotBlank(nationCode))
+		{
+			if (rulesBL.isCountryUs(nationCode))
+			{
+				if (accountBean.getClubId() != null)
+				{
+					Club club = clubDao.get(accountBean.getClubId());
+					accountBean.getMember().setDivision(club.getDivision());
+				}
+			}
+			else
+			{
+				accountBean.getMember().setDivision(divisionDao.getForeignDivision());
+			}
 		}
-    }
+	}
 
-    /**
-     * The user's state affiliation is retrieved first
-     * from their state code (if available) or from the state code of their address.
-     */
-    private String getStateAffiliation(AccountBean accountBean) {
-        String result = null;
-        if (StringUtils.isNotEmpty(accountBean.getMember().getStateCode()))
-        {
-            result = accountBean.getMember().getStateCode();
-        }
-        else if (accountBean.getAddress() != null && StringUtils.isNotEmpty(accountBean.getAddress().getStateCode()))
-        {
-            result = accountBean.getAddress().getStateCode();
-        }
-        return result;
-    }
-    
-    public Event processClubInfo(RequestContext context) throws Exception
-    {
-        AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-        determineDivision(accountBean);
-        loadClubOptions(accountBean); // do this again here to account for dynamic DWR changes
-        return success();
-    }
+	/**
+	 * The user's state affiliation is retrieved first
+	 * from their state code (if available) or from the state code of their address.
+	 */
+	private String getStateAffiliation(AccountBean accountBean) {
+		String result = null;
+		if (StringUtils.isNotEmpty(accountBean.getMember().getStateCode()))
+		{
+			result = accountBean.getMember().getStateCode();
+		}
+		else if (accountBean.getAddress() != null && StringUtils.isNotEmpty(accountBean.getAddress().getStateCode()))
+		{
+			result = accountBean.getAddress().getStateCode();
+		}
+		return result;
+	}
 
-    public Event loadSportMemberships(RequestContext context) throws Exception
+	public Event processClubInfo(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		determineDivision(accountBean);
+		loadClubOptions(accountBean); // do this again here to account for dynamic DWR changes
+		return success();
+	}
+
+	public Event loadSportMemberships(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 

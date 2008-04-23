@@ -36,4 +36,5 @@ public interface RulesBL
 
 	public boolean certificateIsRestricted(Long ussaId);
 
+	public boolean isCountryUs(String country);
 }
