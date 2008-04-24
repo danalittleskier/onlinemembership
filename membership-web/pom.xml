@@ -361,9 +361,22 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>3.3.1.ga</version>
-		</dependency>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
 
-		<dependency>
+        <!-- 3.2.5 fixes a bug with IDENTITY primary key generation -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate</artifactId>
+            <version>3.2.5.ga</version>
+        </dependency>
+
+        <dependency>
 				<groupId>org.appfuse</groupId>
 			<artifactId>appfuse-${web.framework}</artifactId>
 			<version>${appfuse.version}</version>
