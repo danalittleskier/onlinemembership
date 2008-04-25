@@ -13,32 +13,32 @@ public class MemberClub implements Serializable
 {
 
 	@Id
-	@Column(name = "IND_USSA_ID", nullable = false, length = 5, unique = false)
-	private String indUssaId;
+	@Column(name = "IND_USSA_ID", nullable = false, length = 7, unique = false)
+	private Long indUssaId;
 
-	@Column(name = "CLUB_USSA_ID", nullable = false, length = 5, unique = false)
-	private String clubUssaId;
+	@Column(name = "CLUB_USSA_ID", nullable = false, length = 7, unique = false)
+	private Long clubUssaId;
 
 	public MemberClub()
 	{
 	}
 
-	public String getIndUssaId()
+	public Long getIndUssaId()
 	{
 		return indUssaId;
 	}
 
-	public void setIndUssaId(String indUssaId)
+	public void setIndUssaId(Long indUssaId)
 	{
 		this.indUssaId = indUssaId;
 	}
 
-	public String getClubUssaId()
+	public Long getClubUssaId()
 	{
 		return clubUssaId;
 	}
 
-	public void setClubUssaId(String clubUssaId)
+	public void setClubUssaId(Long clubUssaId)
 	{
 		this.clubUssaId = clubUssaId;
 	}

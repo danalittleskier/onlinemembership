@@ -4,6 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.CascadeType;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
 import java.io.Serializable;
 
 @Entity
@@ -19,8 +23,9 @@ public class DivisionAffiliation implements Serializable
 	@Column(name = "ZIP_CODE", nullable = true, length = 10, unique = false)
 	private String zipCode;
 
-	@Column(name = "DIVISION_CODE", nullable = false, length = 1, unique = false)
-	private String divisionCode;
+	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // this needs to be EAGER in order for the dwr marshaller not to complain.
+	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique = false)
+	private Division division;
 
 
 	public String getStateCode()
@@ -43,13 +48,13 @@ public class DivisionAffiliation implements Serializable
 		this.zipCode = zipCode;
 	}
 
-	public String getDivisionCode()
+	public Division getDivision()
 	{
-		return divisionCode;
+		return division;
 	}
 
-	public void setDivisionCode(String divisionCode)
+	public void setDivision(Division division)
 	{
-		this.divisionCode = divisionCode;
+		this.division = division;
 	}
 }

@@ -1,6 +1,7 @@
 <%@ include file="/includes/taglibs.jsp" %>
 
 <head>
+	<script type='text/javascript' src='<c:url value="/dwr/interface/rulesBL.js"/>'></script>
 	<script type='text/javascript' src='<c:url value="/dwr/interface/clubDao.js"/>'></script>
 	<script type='text/javascript' src='<c:url value="/dwr/engine.js"/>'></script>
 	<script type='text/javascript' src='<c:url value="/dwr/util.js"/>'></script>
@@ -22,30 +23,65 @@
 
 		function updateClubSelectOptions() {
 			var stateCode = document.getElementById('stateSelect').value;
+			var clubSelect = document.getElementById(clubSelectId);
 			dwr.util.removeAllOptions(clubSelectId);
-			dwr.util.addOptions(clubSelectId, ['loading...']); // add blank option
+			clubSelect.options[0] = new Option('Loading...', '');
 			clubDao.findByStateCode(stateCode, function(clubs) {
 				dwr.util.removeAllOptions(clubSelectId);
-				dwr.util.addOptions(clubSelectId, ['']); // add blank option
+				clubSelect.options[0] = new Option('No Club Affiliation', '');
 				dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
 				updateDivision();
 			});
 		}
 
+		var handleDivision = function(division)
+		{
+			var divisionCode = document.getElementById('divisionCode');
+			var divisionSpan = document.getElementById('division');
+			var zipCodeDiv = document.getElementById('zipCodeDiv');
+			removeChildren(divisionSpan);
+			if(division != null)
+			{
+				divisionCode.value = division.divisionCode;
+				divisionSpan.appendChild(document.createTextNode(division.description));
+				zipCodeDiv.style.display='none';
+			}
+			else
+			{
+				zipCodeDiv.style.display='block';
+				var span = document.createElement('span');
+				span.className='error-text';
+				span.appendChild(document.createTextNode('Undetermined'));
+				divisionSpan.appendChild(span);
+			}
+		};
+
 		function updateDivision() {
+			var zipCodeDiv = document.getElementById('zipCodeDiv');
+			zipCodeDiv.style.display='none';
+			var divisionCode = document.getElementById('divisionCode');
+			divisionCode.value = '';
 			var divisionSpan = document.getElementById('division');
 			removeChildren(divisionSpan);
+			divisionSpan.appendChild(document.createTextNode('Loading...'));
 			var nationCode = document.getElementById('nationCode').value;
-			if (nationCode == 'USA') {
-				var clubId = document.getElementById('clubSelect').value;
-				if (clubId) {
-					clubDao.getClub(clubId, function(club){
-						divisionSpan.appendChild(document.createTextNode(club.division.description))
-					});
-				}
-			} else {
-				divisionSpan.appendChild(document.createTextNode('Foreign'))
+			var stateCode = document.getElementById('stateSelect').value;
+			var clubId = document.getElementById('clubSelect').value;
+			var zipCode = document.getElementById('zipCode').value;
+
+			rulesBL.determineDivision(nationCode, stateCode, clubId, zipCode, handleDivision);
+
+			document.getElementById('zipCode').value = '';
+		}
+
+		function handleEnterKey(element) {
+			var e = window.event;
+			if(e.keyCode && e.keyCode == 13) {// intercept the enter key
+				e.returnValue = false;
+				element.blur();
+				return false;
 			}
+			return true;
 		}
 	</script>
 </head>
@@ -90,15 +126,11 @@
 					<div class="radios">
 						<form:radiobutton id="citizen-yes" path="usCitizen" value="true" onclick="changeCitizenship();"/>
 						<label for="citizen-yes" class="radio">Yes</label>
-						<form:radiobutton id="citizen-no" path="usCitizen" value="false" onclick="changeCitizenship();"/>
+						<form:radiobutton id="citizen-no" path="usCitizen" value="false" onclick="document.getElementById('nationCode').value='';changeCitizenship();"/>
 						<label for="citizen-no" class="radio">No</label>
 					</div>
 					<br/>
-					<script type="text/javascript" defer="defer">
-						changeCitizenship();
-					</script>
-
-					<div id="nation-code">
+					<div id="nation-code" <c:if test="${not(accountBean.usCitizen == true)}">style="display:none;"</c:if>>
 						<label for="">* Select Nation Code:</label>
 						<form:select id="nationCode" path="member.nationCode" onchange="updateDivision();">
 							<form:option value=""></form:option>
@@ -115,15 +147,15 @@
 
 		<fieldset>
 			<legend>State & Club</legend>
-			<label style="width: 100px;" for="">* State:</label>
+			<label style="width: 100px;">* State:</label>
 			<form:select id="stateSelect" path="member.stateCode" onchange="updateClubSelectOptions();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
-			<label style="width: 100px;" for="">Club:</label>
+			<label style="width: 100px;">Club:</label>
 			<form:select id="clubSelect" path="clubId" onchange="updateDivision();">
-				<form:option value=""></form:option>
+				<form:option value="">No Club Affiliation</form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
 			</form:select>
 			<br/>
@@ -131,11 +163,17 @@
 
 		<fieldset>
 			<legend>Division</legend>
+			<div id="zipCodeDiv" style="display:none;">
+				<p>We were unable to determine your division.<br/>Please provide the zip code of the area that you train in.</p>
+				<label style="width: 100px;">Zip Code:</label>
+				<input id="zipCode" type="text" maxlength="10" onchange="updateDivision()" onkeydown="handleEnterKey(this)" onkeypress="handleEnterKey(this)"/>
+				<br/>
+			</div>
 			<label style="width: 100px;">Division:</label>
+			<form:hidden id="divisionCode" path="divisionCode"/>
 			<span id="division" class="data-input"><c:out value="${accountBean.member.division.description}"/></span>
 			<br/>
 		</fieldset>
-
 
 		<fieldset class="buttons">
 			<label></label>

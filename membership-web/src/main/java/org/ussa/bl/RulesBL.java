@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.ussa.beans.AccountBean;
 import org.ussa.model.Inventory;
+import org.ussa.model.Division;
 
 public interface RulesBL
 {
@@ -37,4 +38,6 @@ public interface RulesBL
 	public boolean certificateIsRestricted(Long ussaId);
 
 	public boolean isCountryUs(String country);
+
+	public Division determineDivision(String nationCode, String stateCode, Long clubId, String zipCode);
 }

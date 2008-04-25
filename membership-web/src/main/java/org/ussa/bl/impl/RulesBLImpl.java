@@ -21,12 +21,18 @@ import org.ussa.dao.InventoryDao;
 import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.dao.MemberTransactionDao;
 import org.ussa.dao.MemberSeasonDao;
+import org.ussa.dao.ClubDao;
+import org.ussa.dao.DivisionAffiliationDao;
+import org.ussa.dao.DivisionDao;
 import org.ussa.model.Address;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.State;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
+import org.ussa.model.Division;
+import org.ussa.model.DivisionAffiliation;
+import org.ussa.model.Club;
 
 public class RulesBLImpl implements RulesBL
 {
@@ -35,6 +41,9 @@ public class RulesBLImpl implements RulesBL
 	private RenewRuleInvDao renewRuleInvDao;
 	private MemberTransactionDao memberTransactionDao;
 	private MemberSeasonDao memberSeasonDao;
+	private ClubDao clubDao;
+	private DivisionDao divisionDao;
+	private DivisionAffiliationDao divisionAffiliationDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
@@ -59,6 +68,21 @@ public class RulesBLImpl implements RulesBL
 	public void setMemberSeasonDao(MemberSeasonDao memberSeasonDao)
 	{
 		this.memberSeasonDao = memberSeasonDao;
+	}
+
+	public void setClubDao(ClubDao clubDao)
+	{
+		this.clubDao = clubDao;
+	}
+
+	public void setDivisionDao(DivisionDao divisionDao)
+	{
+		this.divisionDao = divisionDao;
+	}
+
+	public void setDivisionAffiliationDao(DivisionAffiliationDao divisionAffiliationDao)
+	{
+		this.divisionAffiliationDao = divisionAffiliationDao;
 	}
 
 	public Integer getAgeForCurrentRenewSeason(Date birthDate)
@@ -638,7 +662,7 @@ public class RulesBLImpl implements RulesBL
 					applicableDues = allDues;
 				}
 
-				for (Inventory due : allDues)
+				for (Inventory due : applicableDues)
 				{
 					cart.addItem(due);
 				}
@@ -846,5 +870,43 @@ public class RulesBLImpl implements RulesBL
 			}
 		}
 		return false;
+	}
+
+	public Division determineDivision(String nationCode, String stateCode, Long clubId, String zipCode)
+	{
+		if(!isCountryUs(nationCode))
+		{
+			return divisionDao.get(Division.DIVISION_FOREIGN);
+		}
+
+		if(clubId != null && clubId != 0)
+		{
+			Club club = clubDao.get(clubId);
+			return club.getDivision();
+		}
+
+		if(StringUtils.isNotBlank(stateCode))
+		{
+			List<DivisionAffiliation> affiliations = divisionAffiliationDao.getDivisionAffiliations(stateCode);
+			if(affiliations.size() == 1)
+			{
+				return affiliations.get(0).getDivision();
+			}
+		}
+
+		if(StringUtils.isNotBlank(stateCode) && StringUtils.isNotBlank(zipCode))
+		{
+			if(zipCode.length() > 3)
+			{
+				zipCode = zipCode.substring(0,3);
+			}
+			List<DivisionAffiliation> affiliations = divisionAffiliationDao.getDivisionAffiliations(stateCode, zipCode);
+			if(affiliations.size() == 1)
+			{
+				return affiliations.get(0).getDivision();
+			}
+		}
+
+		return null;
 	}
 }

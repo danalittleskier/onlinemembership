@@ -6,6 +6,7 @@
 	<bean id="registrationAction" class="org.ussa.spring.flows.registration.RegistrationAction">
 		<property name="addressDao" ref="addressDao"/>
 		<property name="clubDao" ref="clubDao"/>
+		<property name="memberClubDao" ref="memberClubDao"/>
 		<property name="divisionDao" ref="divisionDao"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="stateDao" ref="stateDao"/>

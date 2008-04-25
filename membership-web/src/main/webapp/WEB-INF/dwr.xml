@@ -1,19 +1,23 @@
 <!DOCTYPE dwr PUBLIC
-    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
-    "http://getahead.ltd.uk/dwr/dwr20.dtd">
+		"-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+		"http://getahead.ltd.uk/dwr/dwr20.dtd">
 <dwr>
-    <allow>
-        <create creator="spring" javascript="clubDao">
-            <param name="class" value="org.ussa.dao.ClubDao"/>
-            <param name="beanName" value="clubDao"/>
-            <include method="getClub"/>
-            <include method="findByStateCode"/>
-        </create>
-        <convert converter="bean" match="org.ussa.model.Club">
-            <param name="include" value="id, name, division"/>
-        </convert>
-        <convert converter="bean" match="org.ussa.model.Division">
-            <param name="include" value="description"/>
-        </convert>
-    </allow>
+	<allow>
+		<create creator="spring" javascript="rulesBL">
+			<param name="class" value="org.ussa.bl.RulesBL"/>
+			<param name="beanName" value="rulesBL"/>
+			<include method="determineDivision"/>
+		</create>
+		<create creator="spring" javascript="clubDao">
+			<param name="class" value="org.ussa.dao.ClubDao"/>
+			<param name="beanName" value="clubDao"/>
+			<include method="findByStateCode"/>
+		</create>
+		<convert converter="bean" match="org.ussa.model.Club">
+			<param name="include" value="id, name, division"/>
+		</convert>
+		<convert converter="bean" match="org.ussa.model.Division">
+			<param name="include" value="divisionCode, description"/>
+		</convert>
+	</allow>
 </dwr>

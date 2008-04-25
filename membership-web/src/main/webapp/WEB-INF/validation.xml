@@ -195,6 +195,14 @@
 			<field property="member.stateCode" depends="required">
 				<arg0 key="user.address.province" />
 			</field>
+			<field property="divisionCode" depends="required, validWhen">
+				<arg0 key="errors.division.code.problem" />
+				<msg name="validWhen" key="errors.no.foreign.registrations"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* != 'X')</var-value>
+				</var>
+			</field>
 		</form>
 
 		<form name="sportMembership">

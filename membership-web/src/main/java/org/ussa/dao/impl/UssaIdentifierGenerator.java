@@ -20,12 +20,12 @@ public class UssaIdentifierGenerator implements IdentifierGenerator
 	{
 		Session s = (Session) session;
 		ParameterTable ussaParam = (ParameterTable) s.load(ParameterTable.class, ParameterTable.USSAID, LockMode.UPGRADE);
-		Long previousUssaId = Long.valueOf(ussaParam.getParameterData());
+		Long ussaId = Long.valueOf(ussaParam.getParameterData());
+		ussaParam.setParameterData(String.valueOf(ussaId + 1));
+//		s.save(ussaParam);
+//		s.flush();
 
-		Long newUssaId = previousUssaId + 1;
-		ussaParam.setParameterData(String.valueOf(newUssaId));
-
-		return appendSingleRandomDigit(newUssaId);
+		return appendSingleRandomDigit(ussaId);
 	}
 
 /**
