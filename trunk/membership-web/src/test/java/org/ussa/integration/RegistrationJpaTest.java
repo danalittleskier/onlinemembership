@@ -3,6 +3,7 @@ package org.ussa.integration;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.math.BigDecimal;
 
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.InventoryDao;
@@ -13,6 +14,7 @@ import org.ussa.model.Address;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.ParentInfo;
+import org.ussa.model.MemberTransaction;
 
 /**
  * User: jminer
@@ -104,14 +106,14 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
         memberLegal.setInsuranceWaiverDate(new Date());
         memberLegalDao.save(memberLegal);
 
-//        MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
-//        memberTransaction.setAmount(BigDecimal.TEN);
-//        memberTransaction.setInventory(inventoryDao.get("ALP"));
-//        memberTransaction.setPurchaseDate(new Date());
-//        memberTransaction.setQty(3);
-//        memberTransaction.setSeason("2008");
-//        memberTransaction = memberTransactionDao.save(memberTransaction);
-//        assertNotNull(memberTransaction.getId());
+        MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
+        memberTransaction.setAmount(BigDecimal.TEN);
+        memberTransaction.setInventory(inventoryDao.get("AC"));
+        memberTransaction.setPurchaseDate(new Date());
+        memberTransaction.setQty(3);
+        memberTransaction.setSeason("2008");
+        memberTransaction = memberTransactionDao.save(memberTransaction);
+        assertNotNull(memberTransaction.getId());
 
         // setComplete(); // tells spring to commit the transaction instead of rolling back (default)
     }

@@ -53,4 +53,10 @@ public interface GenericDao <T, PK extends Serializable> {
      * @param id the identifier (primary key) of the object to remove
      */
     void remove(PK id);
+
+    /**
+     * Generic method to delete an object based on class and id
+     * @param t the identifier (primary key) of the object to remove
+     */
+    public void remove(T t);
 }

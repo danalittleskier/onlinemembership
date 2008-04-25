@@ -1,5 +1,7 @@
 package org.ussa.beans;
 
+import java.util.List;
+
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
@@ -7,8 +9,6 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
-
-import java.util.List;
 
 public class AccountBean
 {
@@ -26,6 +26,7 @@ public class AccountBean
 	private Boolean usCitizen;
 	private String birthDate;
 	private Long clubId;
+	private String divisionCode;
 	private String sportId;
 	private String membershipId;
 	private String[] fisOptions;
@@ -214,6 +215,16 @@ public class AccountBean
 	public void setClubId(Long clubId)
 	{
 		this.clubId = clubId;
+	}
+
+	public String getDivisionCode()
+	{
+		return divisionCode;
+	}
+
+	public void setDivisionCode(String divisionCode)
+	{
+		this.divisionCode = divisionCode;
 	}
 
 	public String getMembershipId()

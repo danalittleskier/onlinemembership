@@ -83,6 +83,10 @@ a img {border:0;}
 /* Content Extras
 ---------------------------------------------------------------------- */
 .labelmatch {margin-left:175px;} /* Positions element in line vertically with form inputs */
+.error-text{
+	color:#b22;
+	font-weight:bold;
+}
 
 #center-notice {margin:0 20%;}
 #center-notice table {width:400px; background:#fff; border:1px solid #ccc; border-collapse:collapse;}

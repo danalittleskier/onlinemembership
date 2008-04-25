@@ -5,9 +5,9 @@
 	  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	  xsi:schemaLocation="http://www.springframework.org/schema/webflow
 						  http://www.springframework.org/schema/webflow/spring-webflow-1.0.xsd">
-	<start-state idref="findContactInfo"/>
-	
-	<action-state id="findContactInfo">
+	<start-state idref="loadContactInfo"/>
+
+	<action-state id="loadContactInfo">
 		<entry-actions>
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
@@ -36,13 +36,13 @@
 	<action-state id="handleContactInfo">
 		<action bean="registrationAction"/>
 		<transition on="parentInfo" to="parentInfo"/>
-		<transition on="findClubInfo" to="findClubInfo"/>
+		<transition on="findClubInfo" to="stateClub"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>
 	</action-state>
 
 	<view-state id="duplicateAccount" view="duplicateAccount">
 		<transition on="back" to="contactInfo"/>
-		<transition on="next" to="findContactInfo"/>
+		<transition on="next" to="loadContactInfo"/>
 	</view-state>
 
 	<action-state id="processDuplicateAccount">
@@ -52,7 +52,7 @@
 
 	<view-state id="parentInfo" view="parentInfo">
 		<transition on="back" to="contactInfo"/>
-		<transition on="next" to="findClubInfo">
+		<transition on="next" to="stateClub">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorParentInfo"/>
 			</action>
@@ -63,33 +63,27 @@
 		<if test="${flowScope.accountBean.parentInfoRequired and flowScope.accountBean.member.id == null}" then="parentInfo" else="contactInfo"/>
 	</decision-state>
 
-	<action-state id="findClubInfo">
-		<action bean="registrationAction"/>
-		<transition on="*" to="stateClub"/>
-	</action-state>
-
 	<view-state id="stateClub" view="stateClub">
+		<entry-actions>
+			<action bean="registrationAction" method="loadClubInfo"/>
+		</entry-actions>
 		<transition on="back" to="backToParentInfo"/>
-		<transition on="next" to="processClubInfo">
+		<transition on="next" to="sportMembership">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorStateClub"/>
 			</action>
 		</transition>
+		<exit-actions>
+			<action bean="registrationAction" method="processClubInfo"/>
+		</exit-actions>
 	</view-state>
-    
-    <action-state id="processClubInfo">
-        <action bean="registrationAction"/>
-        <transition on="*" to="loadSportMemberships"/>
-    </action-state>
-
-    <action-state id="loadSportMemberships">
-		<action bean="registrationAction"/>
-		<transition on="*" to="sportMembership"/>
-	</action-state>
 
 	<view-state id="sportMembership" view="sportMembership">
+		<entry-actions>
+			<action bean="registrationAction" method="loadSportMemberships"/>
+		</entry-actions>
 		<transition on="back" to="stateClub"/>
-		<transition on="change" to="loadSportMemberships">
+		<transition on="change" to="sportMembership">
 			<action bean="accountBean" method="bind"/>
 		</transition>
 		<transition on="add" to="addSportMemberships">
@@ -112,17 +106,17 @@
 
 	<action-state id="addSportMemberships">
 		<action bean="registrationAction"/>
-		<transition on="*" to="loadSportMemberships"/>
+		<transition on="*" to="sportMembership"/>
 	</action-state>
 
 	<action-state id="updateMembershipOptions">
 		<action bean="registrationAction"/>
-		<transition on="*" to="loadSportMemberships"/>
+		<transition on="*" to="sportMembership"/>
 	</action-state>
 
 	<action-state id="removeMembershipFromCart">
 		<action bean="registrationAction" method="removeItemFromCart"/>
-		<transition on="back" to="loadSportMemberships"/>
+		<transition on="back" to="sportMembership"/>
 	</action-state>
 
 	<action-state id="handleContribution">
@@ -133,7 +127,7 @@
 	<action-state id="loadFisWaiverBack">
 		<action bean="registrationAction" method="needsFisWaiver"/>
 		<transition on="true" to="fisWaiver"/>
-		<transition on="false" to="loadSportMemberships"/>
+		<transition on="false" to="sportMembership"/>
 	</action-state>
 
 	<action-state id="loadFisWaiver">
@@ -143,7 +137,7 @@
 	</action-state>
 
 	<view-state id="fisWaiver" view="fisWaiver">
-		<transition on="back" to="loadSportMemberships"/>
+		<transition on="back" to="sportMembership"/>
 		<transition on="next" to="handleFisWaiverResponse">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorFisWaiver"/>
@@ -234,7 +228,7 @@
 		</transition>
 	</view-state>
 
-	<view-state id="editSportMembership" view="loadSportMemberships">
+	<view-state id="editSportMembership" view="sportMembership">
 		<transition on="back" to="verification"/>
 		<transition on="next" to="verification"/>
 	</view-state>

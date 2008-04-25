@@ -87,4 +87,11 @@ public class GenericDaoHibernate<T, PK extends Serializable> extends HibernateDa
     public void remove(PK id) {
         super.getHibernateTemplate().delete(this.get(id));
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void remove(T t) {
+        super.getHibernateTemplate().delete(t);
+    }
 }

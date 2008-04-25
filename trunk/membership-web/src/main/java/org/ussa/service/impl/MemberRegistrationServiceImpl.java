@@ -7,6 +7,7 @@ import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.orm.ObjectRetrievalFailureException;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
@@ -18,6 +19,7 @@ import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
+import org.ussa.dao.MemberClubDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Inventory;
@@ -27,6 +29,7 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
+import org.ussa.model.MemberClub;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 
@@ -34,6 +37,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
 	private DateBL dateBL;
 	private MemberDao memberDao;
+	private MemberClubDao memberClubDao;
 	private BatchTransactionDao batchTransactionDao;
     private CreditCardProcessingService creditCardProcessingService;
     private UniversalDao universalDao;
@@ -51,6 +55,31 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		Member member = accountBean.getMember();
 		member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
 		member = memberDao.save(member);
+
+		//MEMBERCLUB
+		MemberClub memberClub;
+		try
+		{
+			memberClub = memberClubDao.get(member.getId());
+		}
+		catch (ObjectRetrievalFailureException e)
+		{
+			memberClub = null;
+		}
+		if(accountBean.getClubId() != null)
+		{
+			if(memberClub == null)
+			{
+				memberClub = new MemberClub();
+				memberClub.setIndUssaId(member.getId());
+			}
+			memberClub.setClubUssaId(accountBean.getClubId());
+			memberClubDao.save(memberClub);
+		}
+		else if(memberClub != null)
+		{
+			memberClubDao.remove(memberClub);
+		}
 
 		// MEMBERADDRESS
 		Address address = accountBean.getAddress();
@@ -94,13 +123,14 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			}
 		}
 
+		// then run the card. if the card completes without throwing exception then the transaction completes
+		creditCardProcessingService.processCard(accountBean);
+
+		// moving this to the end until we get the transaction manager working with multiple datasources.
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
 		User user = userManager.getUserByUsername(userDetails.getUsername());
 		user.setUssaId(member.getId());
 		userManager.saveUser(user);
-
-		// then run the card. if the card completes without throwing exception then the transaction completes
-		creditCardProcessingService.processCard(accountBean);
 
 		// BATCH TABLES
 //		batchTransactionDao.insertToBatchTables(accountBean);
@@ -116,7 +146,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		// TODO: What dates should go here?
 		memberTransaction.setSentDate(new Date());
 		memberTransaction.setPurchaseDate(new Date());
-//		memberTransactionDao.save(memberTransaction);
+		universalDao.save(memberTransaction);
 	}
 
 
@@ -125,10 +155,14 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		this.creditCardProcessingService = creditCardProcessingService;
 	}
 
-
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
+	}
+
+	public void setMemberClubDao(MemberClubDao memberClubDao)
+	{
+		this.memberClubDao = memberClubDao;
 	}
 
 	public void setDateBL(DateBL dateBL)
