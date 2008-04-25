@@ -23,7 +23,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 	private DataSource dataSource;
 	private String INSERT_BATCHPAYMENT_SQL = "insert into BatchPayment (Batch_id,Sequence,Payment_Type, " +
 			" Check_Number,cc_number, CC_EXP,Amount,Account_Code, Transaction_Id) " +
-			" Values (?, ?, 'CREDIT', NULL, ?, ?, ?, NULL)";
+			" Values (?, ?, 'CREDIT', NULL, ?, ?, ?, NULL, ?)";
 	private String INSERT_BATCHMEMBER_SQL = "Insert Into BatchMember (Batch_Id, Sequence, USSA_Id, Processed)" +
 			" Values (?, ?, ?, 'Y')";
 	private String INSERT_BATCHDETAIL_SQL = "Insert Into BatchDetail (Batch_id, Sequence, USSA_ID, Inv_Id, Qty, Amount)" +
@@ -50,16 +50,21 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 
 		Object[] parameters = {123123};
 		SelectMaxSeq maxQuery = new SelectMaxSeq(getDataSource());
-		List top = maxQuery.execute(parameters);
-
-		String maxS = (String) top.get(0);
+		List results = maxQuery.execute(parameters);
+		Long sequence = (Long) results.get(0);
+		if(sequence == null || sequence == 0)
+		{
+			sequence = 1L;
+		}
 		InsertBatchPayment bp = new InsertBatchPayment(getDataSource());
-		Object[] bpParams = {123123, maxS, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + payment.getExpireYear(),
+		String expireYear = payment.getExpireYear();
+		expireYear = expireYear.substring(expireYear.length()-2, expireYear.length()); // only take the last 2 digits.
+		Object[] bpParams = {123123, sequence, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + expireYear,
 				cart.getTotal(), payment.getCompletedTransactionId()};
 		bp.update(bpParams);
 
 		InsertBatchMember bm = new InsertBatchMember(getDataSource());
-		Object[] params = {123123, maxS, member.getId()};
+		Object[] params = {123123, sequence, member.getId()};
 		bm.update(params);
 
 		InsertBatchDetail bd = new InsertBatchDetail(getDataSource());
@@ -67,12 +72,12 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
-			Object[] detailParams = {123123, maxS, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
+			Object[] detailParams = {123123, sequence, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
 			bd.update(detailParams);
 		}
 
 		InsertBatchSequence bs = new InsertBatchSequence(getDataSource());
-		Object[] seqParams = {123123, maxS};
+		Object[] seqParams = {123123, sequence};
 		bs.update(seqParams);
 
 	}
@@ -101,7 +106,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 
 		public Object mapRow(ResultSet resultSet, int rowNum) throws SQLException
 		{
-			return resultSet.getString(1);
+			return resultSet.getLong(1);
 		}
 	}
 

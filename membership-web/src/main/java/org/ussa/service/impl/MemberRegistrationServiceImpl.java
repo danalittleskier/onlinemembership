@@ -133,7 +133,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		userManager.saveUser(user);
 
 		// BATCH TABLES
-//		batchTransactionDao.insertToBatchTables(accountBean);
+		batchTransactionDao.insertToBatchTables(accountBean);
 	}
 
 	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason)

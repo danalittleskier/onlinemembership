@@ -381,17 +381,6 @@ public class RegistrationAction extends MultiAction implements Serializable
 		return success();
 	}
 
-	public Event updateMembershipOptions(RequestContext context) throws Exception
-	{
-		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-
-		rulesBL.handleFisOptions(accountBean);
-		rulesBL.handleMagazineOption(accountBean);
-		rulesBL.handleContribution(accountBean);
-
-		return success();
-	}
-
 	public Event handleContribution(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");

@@ -488,6 +488,7 @@ public class RulesBLImpl implements RulesBL
 		accountBean.setFisOptions(fisInvIds.toArray(new String[fisInvIds.size()]));
 	}
 
+	//TODO: magazines need to be removed from cart if you remove your memberships.
 	public void handleMagazineOption(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
