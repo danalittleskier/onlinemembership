@@ -5,31 +5,31 @@ import java.util.List;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
+import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.orm.ObjectRetrievalFailureException;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.DateBL;
 import org.ussa.common.dao.UniversalDao;
-import org.ussa.common.model.User;
 import org.ussa.common.service.UserManager;
+import org.ussa.common.model.User;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
-import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberClubDao;
+import org.ussa.dao.MemberDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Inventory;
 import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
+import org.ussa.model.MemberClub;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
-import org.ussa.model.MemberClub;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 
@@ -123,17 +123,18 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			}
 		}
 
-		// then run the card. if the card completes without throwing exception then the transaction completes
+		// PROCESS THE CARD. if the card completes without throwing exception then the transaction completes
 		creditCardProcessingService.processCard(accountBean);
 
+		// BATCH TABLES
+		batchTransactionDao.insertToBatchTables(accountBean);
+
 		// moving this to the end until we get the transaction manager working with multiple datasources.
+		// USER ACCOUNT
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
 		User user = userManager.getUserByUsername(userDetails.getUsername());
 		user.setUssaId(member.getId());
 		userManager.saveUser(user);
-
-		// BATCH TABLES
-		batchTransactionDao.insertToBatchTables(accountBean);
 	}
 
 	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason)
