@@ -4,7 +4,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -15,8 +14,6 @@ import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Date;
-
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table (name="MEMBER")
@@ -35,8 +32,7 @@ public class Member implements Serializable
 	public static final String MEMBER_TYPE_NON_MEMBER = "N";
 
 	//Member table fields
-	@Id @GeneratedValue(generator="ussaidgen")
-    @GenericGenerator(name="ussaidgen", strategy = "org.ussa.dao.impl.UssaIdentifierGenerator")
+	@Id
 	@Column(name = "USSA_ID", length=7)
 	private Long id;
 
