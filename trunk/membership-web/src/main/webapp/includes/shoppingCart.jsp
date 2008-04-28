@@ -10,7 +10,7 @@
 	<display:column title="Membership/Items" sortable="false" class="item">
 		<c:out value="${cart.description}"/><br/>
 		<c:if test="${cart.discount != null}">
-			<c:out value="${cart.discountFormatted}"/> discount
+			<c:out value="${cart.discountFormatted}"/> Discount
 		</c:if>
 	</display:column>
 	<display:column title="&nbsp;" sortable="false" class="item-remove">

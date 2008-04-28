@@ -1,5 +1,29 @@
 package org.ussa.bl.impl;
 
+import org.apache.commons.lang.StringUtils;
+import org.ussa.beans.AccountBean;
+import org.ussa.beans.CartBean;
+import org.ussa.beans.LineItemBean;
+import org.ussa.bl.DateBL;
+import org.ussa.bl.RuleAssociations;
+import org.ussa.bl.RulesBL;
+import org.ussa.dao.ClubDao;
+import org.ussa.dao.DivisionAffiliationDao;
+import org.ussa.dao.DivisionDao;
+import org.ussa.dao.InventoryDao;
+import org.ussa.dao.MemberSeasonDao;
+import org.ussa.dao.MemberTransactionDao;
+import org.ussa.dao.RenewRuleInvDao;
+import org.ussa.model.Address;
+import org.ussa.model.Club;
+import org.ussa.model.Division;
+import org.ussa.model.DivisionAffiliation;
+import org.ussa.model.Inventory;
+import org.ussa.model.Member;
+import org.ussa.model.MemberSeason;
+import org.ussa.model.MemberTransaction;
+import org.ussa.model.State;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -9,30 +33,6 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import org.apache.commons.lang.StringUtils;
-import org.ussa.beans.AccountBean;
-import org.ussa.beans.CartBean;
-import org.ussa.beans.LineItemBean;
-import org.ussa.bl.DateBL;
-import org.ussa.bl.RuleAssociations;
-import org.ussa.bl.RulesBL;
-import org.ussa.dao.InventoryDao;
-import org.ussa.dao.RenewRuleInvDao;
-import org.ussa.dao.MemberTransactionDao;
-import org.ussa.dao.MemberSeasonDao;
-import org.ussa.dao.ClubDao;
-import org.ussa.dao.DivisionAffiliationDao;
-import org.ussa.dao.DivisionDao;
-import org.ussa.model.Address;
-import org.ussa.model.Inventory;
-import org.ussa.model.Member;
-import org.ussa.model.State;
-import org.ussa.model.MemberSeason;
-import org.ussa.model.MemberTransaction;
-import org.ussa.model.Division;
-import org.ussa.model.DivisionAffiliation;
-import org.ussa.model.Club;
 
 public class RulesBLImpl implements RulesBL
 {
@@ -530,29 +530,12 @@ public class RulesBLImpl implements RulesBL
 	public void handleContribution(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
-		List<LineItemBean> donations = cart.getLineItems(Inventory.INVENTORY_TYPE_DONATION);
-		LineItemBean donation = null;
-		if(donations.size() > 0)
-		{
-			donation = donations.get(0);
-			if(accountBean.getContributionAmount() != null)
-			{
-				donation.setAmount(new BigDecimal(accountBean.getContributionAmount()));
-			}
-			else
-			{
-				cart.removeLineItem(donation.getInventory().getId());
-			}
-		}
-		else
-		{
-			if(accountBean.getContributionAmount() != null)
-			{
-				// TODO: find the primary membership and donate to that club
-				List<Inventory> donationInventory = inventoryDao.getIventoryByType(Inventory.INVENTORY_TYPE_DONATION);
-				cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
-			}
-		}
+        cart.removeLineItems(Inventory.INVENTORY_TYPE_DONATION);
+        if(accountBean.getContributionAmount() != null && StringUtils.isNotEmpty(accountBean.getContributionSportId()))
+        {
+            List<Inventory> donationInventory = inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_DONATION, accountBean.getContributionSportId());
+            cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
+        }
 	}
 
 	private Inventory getLateFis(Inventory fisItem)

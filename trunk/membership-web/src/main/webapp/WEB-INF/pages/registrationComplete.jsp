@@ -42,7 +42,7 @@
 
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		You may continue to the <a href="${continueUrl}">USSA Account Dashboard</a>
-		to continue using your account or <a href="<c:url value="/logout.html"/>">log out</a> to end your session.
+		to use your account or <a href="<c:url value="/logout.html"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>
 </div>

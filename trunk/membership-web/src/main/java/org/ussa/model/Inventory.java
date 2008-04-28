@@ -3,15 +3,23 @@ package org.ussa.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "INVENTORY")
+@NamedQueries({
+        @NamedQuery(name=Inventory.QUERY_BY_TYPE_AND_SPORT_CODE,
+        query="select i from Inventory i where i.active = 'Y' and i.inventoryType = :inventoryType and i.sportCode = :sportCode")
+        })
 public class Inventory implements Serializable
 {
-	public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
+    public static final String QUERY_BY_TYPE_AND_SPORT_CODE = "Inventory.QUERY_BY_TYPE_AND_SPORT_CODE";
+    
+    public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
 	public static final String INVENTORY_TYPE_FIS = "FIS";
 	public static final String INVENTORY_TYPE_DONATION = "DONATION";
 	public static final String INVENTORY_TYPE_BONUS_PACK = "BONUS PACK";

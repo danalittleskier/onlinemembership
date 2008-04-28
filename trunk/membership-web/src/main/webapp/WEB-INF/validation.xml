@@ -218,7 +218,14 @@
 			<field property="cartBean.lineItems" depends="membershipRequired">
 				<msg name="membershipRequired" key="errors.membership.required"/>
 			</field>
-			<field property="contributionAmount" depends="floatRange,mask">
+            <field property="contributionSportId" depends="validWhen">
+                <msg name="validWhen" key="errors.donation.both.required"/>
+                <var>
+                    <var-name>test</var-name>
+                    <var-value>(((*this* == null) and (contributionAmount == null)) or ((*this* != null) and (contributionAmount != null)))</var-value>
+                </var>
+            </field>            
+            <field property="contributionAmount" depends="floatRange,mask">
 				<msg name="mask" key="errors.currency"/>
 				<arg0 key="label.contribution.amount" />
 				<arg1 key="0" resource="false"/>
