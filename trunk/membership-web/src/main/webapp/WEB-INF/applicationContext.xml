@@ -20,8 +20,12 @@
 	<bean id="divisionAffiliationDao" class="org.ussa.dao.impl.DivisionAffiliationDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="ussaIdGeneratorDao" class="org.ussa.dao.impl.UssaIdGeneratorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<bean id="memberDao" class="org.ussa.dao.impl.MemberDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="ussaIdGeneratorDao" ref="ussaIdGeneratorDao"/>
 	</bean>
 	<bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>

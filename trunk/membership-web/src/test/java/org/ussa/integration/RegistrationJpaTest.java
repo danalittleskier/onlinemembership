@@ -1,13 +1,20 @@
 package org.ussa.integration;
 
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
+import java.math.BigDecimal;
 
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.MemberTransactionDao;
+import org.ussa.model.Address;
 import org.ussa.model.Member;
+import org.ussa.model.MemberLegal;
+import org.ussa.model.ParentInfo;
+import org.ussa.model.MemberTransaction;
 
 /**
  * User: jminer
@@ -22,15 +29,15 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
     private MemberTransactionDao memberTransactionDao;
 
     public void testDuplicates() {
-//        Calendar c = Calendar.getInstance();
-//        c.set(2008, 0, 31, 0, 0, 0); // int year, int month, int date, int hourOfDay, int minute, int second
-//        Date birthDate = c.getTime();
-//        Member member1 = createMember("joe", "nobody", "joe@nobody.com", birthDate);
-//        Member member2 = createMember("joe", "nobody", "joe2@nobody.com", birthDate);
-//        Member member3 = createMember("joe", "nobody", "joe3@nobody.com", birthDate);
-//        List<Member> list = memberDao.getDuplicateCandidates("nobody", birthDate);
-//        assertNotNull(list);
-//        assertTrue(list.size() >= 3);
+        Calendar c = Calendar.getInstance();
+        c.set(2008, 0, 31, 0, 0, 0); // int year, int month, int date, int hourOfDay, int minute, int second
+        Date birthDate = c.getTime();
+        Member member1 = createMember("joe", "nobody", "joe@nobody.com", birthDate);
+        Member member2 = createMember("joe", "nobody", "joe2@nobody.com", birthDate);
+        Member member3 = createMember("joe", "nobody", "joe3@nobody.com", birthDate);
+        List<Member> list = memberDao.getDuplicateCandidates("nobody", birthDate);
+        assertNotNull(list);
+        assertTrue(list.size() >= 3);
     }
 
     private Member createMember(String firstName, String lastName, String email, Date birthDate) {
@@ -56,57 +63,57 @@ public class RegistrationJpaTest extends AbstractUssaIntegrationTests {
      */
     public void testSave() {
 
-//        Member member = new Member();
-//        member.setType("hi");
-//        member.setBirthDate(new Date());
-//        member.setClubName("club name");
-//        member.setEmail("my@email.com");
-//        member.setEthnicity("c");
-//        member.setExpireSeason("expi");
-//        member.setFirstName("firstname");
-//        member.setGender("M");
-//        member.setLastName("lastname");
-//        member.setLifetimeMember("N");
-//        member.setMiddleName("m");
-//        member.setNationCode("USA");
-//        member.setPrivateAddress("Y");
-//        member.setReceiveEmail("Y");
-//        member.setStateCode("UT");
-//        member.setSuffixName("suffix");
-//
-//        ParentInfo parentInfo = new ParentInfo();
-//        parentInfo.setParent1Email("parent1@email.com");
-//        parentInfo.setParent1First("first1");
-//        parentInfo.setParent1Last("last1");
-//        parentInfo.setParent2Email("parent2@email.com");
-//        parentInfo.setParent2First("first2");
-//        parentInfo.setParent2Last("last2");
-//        parentInfo.setParent2Relation("relation2");
-//        member.setParentInfo(parentInfo);
-//
-//        Member persistentMember = memberDao.save(member);
-//
-//        Address address = new Address(persistentMember, "M");
-//        address.setCity("sale lake city");
-//        address.setCountry("USA");
-//        address.setCompany("ussa");
-//        address.setDeliveryAddress("delivery address");
-//        addressDao.save(address);
-//
-//        MemberLegal memberLegal = new MemberLegal(persistentMember, "fbar");
-//        memberLegal.setInsuranceCompany("insurance company");
-//        memberLegal.setInsurancePhone("888-555-1212");
-//        memberLegal.setInsuranceWaiverDate(new Date());
-//        memberLegalDao.save(memberLegal);
-//
-//        MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
-//        memberTransaction.setAmount(BigDecimal.TEN);
-//        memberTransaction.setInventory(inventoryDao.get("AC"));
-//        memberTransaction.setPurchaseDate(new Date());
-//        memberTransaction.setQty(3);
-//        memberTransaction.setSeason("2008");
-//        memberTransaction = memberTransactionDao.save(memberTransaction);
-//        assertNotNull(memberTransaction.getId());
+        Member member = new Member();
+        member.setType("hi");
+        member.setBirthDate(new Date());
+        member.setClubName("club name");
+        member.setEmail("my@email.com");
+        member.setEthnicity("c");
+        member.setExpireSeason("expi");
+        member.setFirstName("firstname");
+        member.setGender("M");
+        member.setLastName("lastname");
+        member.setLifetimeMember("N");
+        member.setMiddleName("m");
+        member.setNationCode("USA");
+        member.setPrivateAddress("Y");
+        member.setReceiveEmail("Y");
+        member.setStateCode("UT");
+        member.setSuffixName("suffix");
+
+        ParentInfo parentInfo = new ParentInfo();
+        parentInfo.setParent1Email("parent1@email.com");
+        parentInfo.setParent1First("first1");
+        parentInfo.setParent1Last("last1");
+        parentInfo.setParent2Email("parent2@email.com");
+        parentInfo.setParent2First("first2");
+        parentInfo.setParent2Last("last2");
+        parentInfo.setParent2Relation("relation2");
+        member.setParentInfo(parentInfo);
+
+        Member persistentMember = memberDao.save(member);
+
+        Address address = new Address(persistentMember, "M");
+        address.setCity("sale lake city");
+        address.setCountry("USA");
+        address.setCompany("ussa");
+        address.setDeliveryAddress("delivery address");
+        addressDao.save(address);
+
+        MemberLegal memberLegal = new MemberLegal(persistentMember, "fbar");
+        memberLegal.setInsuranceCompany("insurance company");
+        memberLegal.setInsurancePhone("888-555-1212");
+        memberLegal.setInsuranceWaiverDate(new Date());
+        memberLegalDao.save(memberLegal);
+
+        MemberTransaction memberTransaction = new MemberTransaction(persistentMember);
+        memberTransaction.setAmount(BigDecimal.TEN);
+        memberTransaction.setInventory(inventoryDao.get("AC"));
+        memberTransaction.setPurchaseDate(new Date());
+        memberTransaction.setQty(3);
+        memberTransaction.setSeason("2008");
+        memberTransaction = memberTransactionDao.save(memberTransaction);
+        assertNotNull(memberTransaction.getId());
 
         // setComplete(); // tells spring to commit the transaction instead of rolling back (default)
     }
