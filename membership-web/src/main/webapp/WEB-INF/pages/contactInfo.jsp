@@ -89,7 +89,7 @@
 			</form:select>
 			<br/>
 
-			<label for="">* Zip/Potal Code</label>
+			<label for="">* Zip/Postal Code</label>
 			<form:input path="address.postalCode" size="30" maxlength="30"/><br />
 			<label for="">* Country</label>
 			<form:input path="address.country" size="30" maxlength="30"/><br />
@@ -121,11 +121,11 @@
 		<ul id="stg-omr">
 			<li>Memberships, FIS registrations and IPC registrations are non-refundable.</li>
 			<li>Memberships expire annually on June 30.</li>
-			<li>Registration must be submitted only by those 18 &amp; older</li>
+			<li>Registration must be submitted only by those 18 &amp; older.</li>
 			<li>Code of Conduct:<br />
 				I understand that by virtue of my membership in USSA, I must comply with USSA's
 				Code of Conduct. I also understand that I may be required to participate in
-				competition drug testing. By executing this form I agree to abide by and/or
+				competition drug testing. By executing this form, I agree to abide by and/or
 				participate in such programs. I understand that failure to participate in competition
 				drug testing will result in a sanction.
 			</li>
@@ -140,16 +140,16 @@
 			<li>
 				In order to complete renewal or registration, your primary medical
 				insurance information will be required or you will be required to
-				execute the Primary Medical Exception Agrement provided. You wil
+				execute the Primary Medical Exception Agreement provided. You will
 				also be required to execute a release of liability.
 			</li>
 			<li>
 				A $25 late fee will be added to your total if renewing after Oct. 15
 				for USSA membership categories other than youth competitors, first
-				time members and officials. your division and/or state may assess late
+				time members and officials. Your division and/or state may assess late
 				fees in addition to those assessed by USSA.
 			</li>
-			<li>If you are not a U.S.Citizen and wish to change your membership category you must renew by mail or fax.</li>
+			<li>If you are not a U.S. citizen and wish to change your membership category, you must renew by mail or fax.</li>
 			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
 		</ul>
 	</div></div></div></div>

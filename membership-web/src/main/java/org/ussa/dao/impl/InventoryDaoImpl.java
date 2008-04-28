@@ -1,10 +1,10 @@
 package org.ussa.dao.impl;
 
-import java.util.List;
-
 import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.InventoryDao;
 import org.ussa.model.Inventory;
+
+import java.util.List;
 
 
 public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> implements InventoryDao
@@ -60,13 +60,11 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
 		return list;
 	}
 
-	public List<Inventory> getIventoryByTypeAndSportCode(String inventoryType, String sportCode)
+    @SuppressWarnings("unchecked")
+    public List<Inventory> getIventoryByTypeAndSportCode(String inventoryType, String sportCode)
 	{
-		StringBuilder query = new StringBuilder("select i from Inventory i where inventoryType='")
-				.append(inventoryType).append("' and sportCode='").append(sportCode).append("' and i.active='Y' ");
-
-		List<Inventory> list = getHibernateTemplate().find(query.toString());
-		return list;
+		return getHibernateTemplate().findByNamedQueryAndNamedParam(Inventory.QUERY_BY_TYPE_AND_SPORT_CODE, 
+                new String[]{"inventoryType", "sportCode"}, new Object[]{inventoryType, sportCode});
 	}
 
 }
