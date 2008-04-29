@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 import org.ussa.model.Inventory;
 import org.ussa.model.Division;
@@ -12,45 +14,53 @@ public class RuleAssociations
 {
 	public static final Map<String, String> officialsByCoach;
 	public static final Map<String, String> coachesByOfficial;
-	public static final Map<String, String> competitorByYouth;
-	public static final Map<String, String> youthByCompetitor;
 	public static final Set<String> restrictedMemberships;
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
 	public static final Set<String> disabledFisMemberships;
 	public static final Set<String> membershipsExemptFromDues;
 	public static final Set<String> youthMemberships;
+	public static final Map<String, Set<String>> mutuallyExclusiveMemberships;
 	public static final Set<String> officialMemberships;
 	public static final Set<String> coachMemberships;
 	public static final Set<String> onlyOneDivisionDuePerSport;
 	public static final Set<String> onlyOneDivisionDue;
 	public static final Map<String, String> divisionLateFeesAplineCompetitor;
 	static {
+		List<String[]> coachesAndOfficials = new ArrayList<String[]>();
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
+
 		officialsByCoach = new HashMap<String, String>();
-		officialsByCoach.put(Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL);
-		officialsByCoach.put(Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL);
-
 		coachesByOfficial = new HashMap<String, String>();
-		coachesByOfficial.put(Inventory.INV_ID_ALPINE_OFFICIAL, Inventory.INV_ID_ALPINE_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_SNOWBOARD_OFFICIAL, Inventory.INV_ID_SNOWBOARD_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_FREESTYLE_OFFICIAL, Inventory.INV_ID_FREESTYLE_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_JUMPING_OFFICIAL, Inventory.INV_ID_JUMPING_COACH);
-		coachesByOfficial.put(Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL, Inventory.INV_ID_CROSS_COUNTRY_COACH);
+		for (String[] invIds : coachesAndOfficials)
+		{
+			officialsByCoach.put(invIds[0], invIds[1]);
+			coachesByOfficial.put(invIds[1], invIds[0]);
+		}
 
-		competitorByYouth = new HashMap<String, String>();
-		competitorByYouth.put(Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_YOUTH);
-		competitorByYouth.put(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
-		competitorByYouth.put(Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_YOUTH);
-		competitorByYouth.put(Inventory.INV_ID_JUMPING_COMPETITOR, Inventory.INV_ID_JUMPING_YOUTH);
+		List<String[]> mutuallyExclusiveList = new ArrayList<String[]>();
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_CROSS_COUNTRY_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COMPETITOR, Inventory.INV_ID_JUMPING_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_COMPETITOR, Inventory.INV_ID_SNOWBOARD_COMPETITOR_REGIONAL});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_DISABLED_ALPINE_COACH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_STUDENT});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_ROOKIE});
 
-		youthByCompetitor = new HashMap<String, String>();
-		youthByCompetitor.put(Inventory.INV_ID_ALPINE_YOUTH, Inventory.INV_ID_ALPINE_COMPETITOR);
-		youthByCompetitor.put(Inventory.INV_ID_CROSS_COUNTRY_YOUTH, Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
-		youthByCompetitor.put(Inventory.INV_ID_FREESTYLE_YOUTH, Inventory.INV_ID_FREESTYLE_YOUTH);
-		youthByCompetitor.put(Inventory.INV_ID_JUMPING_YOUTH, Inventory.INV_ID_JUMPING_COMPETITOR);
+		mutuallyExclusiveMemberships = new HashMap<String, Set<String>>();
+		for (String[] invIds : mutuallyExclusiveList)
+		{
+			addedExcludedMembership(mutuallyExclusiveMemberships, invIds[0], invIds[1]);
+			addedExcludedMembership(mutuallyExclusiveMemberships, invIds[1], invIds[0]);
+		}
 
 		restrictedMemberships = new HashSet<String>();
 		restrictedMemberships.add(Inventory.INV_ID_ALPINE_ASSOCIATE);
@@ -117,5 +127,16 @@ public class RuleAssociations
 		divisionLateFeesAplineCompetitor.put(Division.DIVISION_ALASKA, Inventory.INV_ID_ALASKA_ALPINE_LATE_FEE);
 		divisionLateFeesAplineCompetitor.put(Division.DIVISION_FAR_WEST, Inventory.INV_ID_FARWEST_LATE_FEE);
 		divisionLateFeesAplineCompetitor.put(Division.DIVISION_INTERMOUNTAIN, Inventory.INV_ID_INTERMOUNTAIN_ALPINE_LATE_FEE);
+	}
+
+	private static void addedExcludedMembership(Map<String, Set<String>> mutuallyExclusiveMemberships, String invId, String excludedInvId)
+	{
+		Set<String> excludedMemberships = mutuallyExclusiveMemberships.get(invId);
+		if(excludedMemberships == null)
+		{
+			excludedMemberships = new HashSet<String>();
+			mutuallyExclusiveMemberships.put(invId, excludedMemberships);
+		}
+		excludedMemberships.add(excludedInvId);
 	}
 }

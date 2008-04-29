@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.MessageBean;
 import org.ussa.model.Inventory;
 import org.ussa.model.Division;
 
@@ -19,7 +20,7 @@ public interface RulesBL
 
 	public List<Inventory> getValidMagazineOptions(AccountBean accountBean);
 
-	public void addMembershipToCart(AccountBean accountBean, Inventory inventory);
+	public List<MessageBean> addMembershipToCart(AccountBean accountBean, Inventory inventory);
 
 	public void removeItemFromCart(AccountBean accountBean, String invId);
 

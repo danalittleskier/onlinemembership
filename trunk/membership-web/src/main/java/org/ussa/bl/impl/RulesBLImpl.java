@@ -14,6 +14,7 @@ import org.apache.commons.lang.StringUtils;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
+import org.ussa.beans.MessageBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
@@ -164,20 +165,6 @@ public class RulesBLImpl implements RulesBL
 			return true;
 		}
 
-		// If a competitor membership is already selected, user may not add a youth.
-		String competitorInvId = RuleAssociations.competitorByYouth.get(invIdAdding);
-		if(competitorInvId != null && cartBean.contains(competitorInvId))
-		{
-			return true;
-		}
-
-		// If a youth membership is already selected, user may not add a competitor.
-		String youthInvId = RuleAssociations.youthByCompetitor.get(invIdAdding);
-		if(youthInvId != null && cartBean.contains(youthInvId))
-		{
-			return true;
-		}
-
 		// If a member holds an Alpine Competitor or Disabled Alpine Competior membership and is 18 or over, they may not add an Alpine Master membership.
 		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER)
 				&& (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR))
@@ -190,20 +177,6 @@ public class RulesBLImpl implements RulesBL
 		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER)
 				&& cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT)
 				&& (age != null && age >= 18 && age <= 22))
-		{
-			return true;
-		}
-
-		// Alpine student cannot hold a competitor membership and vis versa
-		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT)
-				|| invIdAdding.equals(Inventory.INV_ID_ALPINE_STUDENT) && cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
-		{
-			return true;
-		}
-
-		// Freestyle rookie cannot hold a competitor membership and vis versa
-		if(invIdAdding.equals(Inventory.INV_ID_FREESTYLE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_FREESTYLE_ROOKIE)
-				|| invIdAdding.equals(Inventory.INV_ID_FREESTYLE_ROOKIE) && cartBean.contains(Inventory.INV_ID_FREESTYLE_COMPETITOR))
 		{
 			return true;
 		}
@@ -342,20 +315,40 @@ public class RulesBLImpl implements RulesBL
 		return true;
 	}
 
-	public void addMembershipToCart(AccountBean accountBean, Inventory inventory)
+	public List<MessageBean> addMembershipToCart(AccountBean accountBean, Inventory inventory)
 	{
 		CartBean cartBean = accountBean.getCartBean();
+		List<MessageBean> messages = new ArrayList<MessageBean>();
 
 		if(!inventoryIsRestricted(accountBean, inventory, null))
 		{
+			int age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+
+			/*
+			FIRST DO DATA SCRUBBING
+			 */
+
+			// remove any mutually exclusive memberships
+			Set<String> excludedInvIds = RuleAssociations.mutuallyExclusiveMemberships.get(inventory.getId());
+			if(excludedInvIds != null)
+			{
+				for (String excludedInvId : excludedInvIds)
+				{
+					if (cartBean.contains(excludedInvId))
+					{
+						LineItemBean lineItem = cartBean.getLineItem(excludedInvId);
+						cartBean.removeLineItem(excludedInvId);
+						messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
+					}
+				}
+			}
+
 			// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
 			String officialInvId = RuleAssociations.officialsByCoach.get(inventory.getId());
 			if(officialInvId != null && cartBean.contains(officialInvId))
 			{
 				cartBean.removeLineItem(officialInvId);
 			}
-
-			int age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
 
 			//  If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
 			if(cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18
@@ -371,8 +364,12 @@ public class RulesBLImpl implements RulesBL
 				cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
 			}
 
-			BigDecimal discount = calculateSecondMembershipDiscount(accountBean, inventory);
+			/*
+			THEN ADD ITEM TO CART
+			 */
 
+			// Calculate second membership discount
+			BigDecimal discount = calculateSecondMembershipDiscount(accountBean, inventory);
 			if(discount == null)
 			{
 				cartBean.addItem(inventory);
@@ -382,8 +379,11 @@ public class RulesBLImpl implements RulesBL
 				cartBean.addItem(inventory, inventory.getAmount(), discount, 1);
 			}
 
+			// Add or Remove applicable dues and late fees
 			addRemoveDivisionDuesAndLateFees(accountBean);
 		}
+
+		return messages;
 	}
 
 	private BigDecimal calculateSecondMembershipDiscount(AccountBean accountBean, Inventory inventory)
