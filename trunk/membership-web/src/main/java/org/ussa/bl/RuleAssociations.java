@@ -18,7 +18,7 @@ public class RuleAssociations
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
 	public static final Set<String> disabledFisMemberships;
-	public static final Set<String> disabledMemberships;
+	public static final Set<String> membershipsExemptFromDues;
 	public static final Set<String> youthMemberships;
 	public static final Set<String> officialMemberships;
 	public static final Set<String> coachMemberships;
@@ -82,13 +82,13 @@ public class RuleAssociations
 		//TODO: is this missing from the db?
 //		fisByMembership.put(Inventory.INV_ID_NORDIC_COMBINED_COMPETITOR, new String[]{Inventory.INV_ID_NORDIC_COMBINED_FIS});
 
-		disabledMemberships = new HashSet<String>();
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_ALPINE_ASSOCIATE);
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_ALPINE_COACH);
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR);
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE);
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH);
-		disabledMemberships.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR);
+		membershipsExemptFromDues = new HashSet<String>();
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_ALPINE_ASSOCIATE);
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_ALPINE_COACH);
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR);
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE);
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH);
+		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR);
 
 		disabledFisMemberships = new HashSet<String>();
 		disabledFisMemberships.add(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS);

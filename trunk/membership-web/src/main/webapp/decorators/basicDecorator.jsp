@@ -10,7 +10,7 @@
 
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 
-	<link type="text/css" href="<c:url value='/styles/certificate.css'/>" rel="stylesheet"/>
+	<script type="text/javascript" src="<c:url value='/scripts/common.js'/>"></script>
 
 	<decorator:head/>
 </head>

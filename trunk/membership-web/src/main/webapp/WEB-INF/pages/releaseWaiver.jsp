@@ -31,12 +31,19 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 
 5.	This Agreement shall be construed in accordance with, and governed by the substantive laws of the State of Colorado, without reference to principles governing choice or conflicts of laws. In addition, Member agrees that all lawsuits for personal injury or related loss against USSA must be maintained in state courts sitting in Summit County, Utah or federal district courts sitting in the District of Utah, Central Division, and Member consents and agrees that jurisdiction and venue for such proceedings shall lie exclusively with such courts. In the event any portion of this release is found to be unenforceable, the remaining terms shall be fully enforceable.<br/><br/>
 
+
 <form:hidden id="releaseWaiver" path="memberLegal.releaseWaiver"/>
 <input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)" class="checkbox"/>
-<label for="releaseWaiverControl" class="checkbox">* I agree to the terms above</label>
+<label for="releaseWaiverControl" class="checkbox">*  I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT</label>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('releaseWaiver');
 </script>
+
+<c:if test="${accountBean.parentInfoRequired}">
+	<h2>Parent Release<h2>
+	I, <form:input path="memberLegal.guardianName"/>, HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT
+</c:if>
+
 </p>
 
 </div></div></div></div>

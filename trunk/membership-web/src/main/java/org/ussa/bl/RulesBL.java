@@ -13,11 +13,11 @@ public interface RulesBL
 
 	public void setParentInfoRequired(AccountBean accountBean);
 
-	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean);
+	public List<Inventory> getApplicableSportMemberships(AccountBean accountBean);
 
-	public List<Inventory> findApplicableFisItems(AccountBean accountBean);
+	public List<Inventory> getApplicableFisItems(AccountBean accountBean);
 
-	public List<Inventory> findApplicableMagazineItems(AccountBean accountBean);
+	public List<Inventory> getValidMagazineOptions(AccountBean accountBean);
 
 	public void addMembershipToCart(AccountBean accountBean, Inventory inventory);
 
@@ -28,6 +28,8 @@ public interface RulesBL
 	public void handleMagazineOption(AccountBean accountBean);
 
 	public void handleContribution(AccountBean accountBean);
+
+	public void addRemoveDivisionDuesAndLateFees(AccountBean accountBean);
 
 	public boolean hasFis(AccountBean accountBean, boolean disabled);
 

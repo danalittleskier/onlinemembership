@@ -10,8 +10,7 @@ import org.ussa.model.Member;
 
 public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements MemberDao
 {
-
-	UssaIdGeneratorDao ussaIdGeneratorDao;
+	private UssaIdGeneratorDao ussaIdGeneratorDao;
 
 	public void setUssaIdGeneratorDao(UssaIdGeneratorDao ussaIdGeneratorDao)
 	{

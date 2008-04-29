@@ -1,5 +1,15 @@
 package org.ussa.bl.impl;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+
 import org.apache.commons.lang.StringUtils;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
@@ -23,16 +33,6 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
 import org.ussa.model.State;
-
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Collection;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
 
 public class RulesBLImpl implements RulesBL
 {
@@ -116,7 +116,7 @@ public class RulesBLImpl implements RulesBL
 		accountBean.setParentInfoRequired(false);
 	}
 
-	public List<Inventory> findApplicableSportMemberships(AccountBean accountBean)
+	public List<Inventory> getApplicableSportMemberships(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
 		List<Inventory> memberships = new ArrayList<Inventory>();
@@ -142,10 +142,10 @@ public class RulesBLImpl implements RulesBL
 	private boolean inventoryIsRestricted(AccountBean accountBean, Inventory inventory, Integer age)
 	{
 		CartBean cartBean = accountBean.getCartBean();
-		String invId = inventory.getId();
+		String invIdAdding = inventory.getId();
 
 		// For memberships that you want hidden from the users, add them to RuleAssociations.restrictedMemberships.
-		if(RuleAssociations.restrictedMemberships.contains(invId))
+		if(RuleAssociations.restrictedMemberships.contains(invIdAdding))
 		{
 			return true;
 		}
@@ -158,42 +158,58 @@ public class RulesBLImpl implements RulesBL
 		}
 
 		// If a coach membership is already selected, user may not add an official membership (it’s already included).
-		String coachInvId = RuleAssociations.coachesByOfficial.get(invId);
+		String coachInvId = RuleAssociations.coachesByOfficial.get(invIdAdding);
 		if(coachInvId != null && cartBean.contains(coachInvId))
 		{
 			return true;
 		}
 
 		// If a competitor membership is already selected, user may not add a youth.
-		String competitorInvId = RuleAssociations.competitorByYouth.get(invId);
+		String competitorInvId = RuleAssociations.competitorByYouth.get(invIdAdding);
 		if(competitorInvId != null && cartBean.contains(competitorInvId))
 		{
 			return true;
 		}
 
 		// If a youth membership is already selected, user may not add a competitor.
-		String youthInvId = RuleAssociations.youthByCompetitor.get(invId);
+		String youthInvId = RuleAssociations.youthByCompetitor.get(invIdAdding);
 		if(youthInvId != null && cartBean.contains(youthInvId))
 		{
 			return true;
 		}
 
+		// If a member holds an Alpine Competitor or Disabled Alpine Competior membership and is 18 or over, they may not add an Alpine Master membership.
+		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER)
+				&& (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR))
+				&& (age != null && age >= 18))
+		{
+			return true;
+		}
+
+		// If a member holds and Alpine Non-Scored Student memberhip and is between 18-22 years old they may not add an Alpine Masters membership.
+		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER)
+				&& cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT)
+				&& (age != null && age >= 18 && age <= 22))
+		{
+			return true;
+		}
+
 		// Alpine student cannot hold a competitor membership and vis versa
-		if(invId.equals(Inventory.INV_ID_ALPINE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT)
-				|| invId.equals(Inventory.INV_ID_ALPINE_STUDENT) && cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
+		if(invIdAdding.equals(Inventory.INV_ID_ALPINE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT)
+				|| invIdAdding.equals(Inventory.INV_ID_ALPINE_STUDENT) && cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
 		{
 			return true;
 		}
 
 		// Freestyle rookie cannot hold a competitor membership and vis versa
-		if(invId.equals(Inventory.INV_ID_FREESTYLE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_FREESTYLE_ROOKIE)
-				|| invId.equals(Inventory.INV_ID_FREESTYLE_ROOKIE) && cartBean.contains(Inventory.INV_ID_FREESTYLE_COMPETITOR))
+		if(invIdAdding.equals(Inventory.INV_ID_FREESTYLE_COMPETITOR) && cartBean.contains(Inventory.INV_ID_FREESTYLE_ROOKIE)
+				|| invIdAdding.equals(Inventory.INV_ID_FREESTYLE_ROOKIE) && cartBean.contains(Inventory.INV_ID_FREESTYLE_COMPETITOR))
 		{
 			return true;
 		}
 
 		// Can't be a freestyle rookie if you have ever been a freestyle competitor
-		if(invId.equals(Inventory.INV_ID_FREESTYLE_ROOKIE)
+		if(invIdAdding.equals(Inventory.INV_ID_FREESTYLE_ROOKIE)
 				&& memberTransactionDao.hasHeldIventory(accountBean.getMember().getId(), Inventory.INV_ID_FREESTYLE_COMPETITOR))
 		{
 			return true;
@@ -202,7 +218,7 @@ public class RulesBLImpl implements RulesBL
 		return false;
 	}
 
-	public List<Inventory> findApplicableFisItems(AccountBean accountBean)
+	public List<Inventory> getApplicableFisItems(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
 		List<LineItemBean> lineItems = cart.getLineItems();
@@ -242,7 +258,7 @@ public class RulesBLImpl implements RulesBL
 		return fisItems;
 	}
 
-	public List<Inventory> findApplicableMagazineItems(AccountBean accountBean)
+	public List<Inventory> getValidMagazineOptions(AccountBean accountBean)
 	{
 		Address member = accountBean.getAddress();
 		CartBean cart = accountBean.getCartBean();
@@ -332,7 +348,30 @@ public class RulesBLImpl implements RulesBL
 
 		if(!inventoryIsRestricted(accountBean, inventory, null))
 		{
-			BigDecimal discount = calculateMembershipDiscount(accountBean, inventory);
+			// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
+			String officialInvId = RuleAssociations.officialsByCoach.get(inventory.getId());
+			if(officialInvId != null && cartBean.contains(officialInvId))
+			{
+				cartBean.removeLineItem(officialInvId);
+			}
+
+			int age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+
+			//  If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
+			if(cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18
+					&& (Inventory.INV_ID_ALPINE_COMPETITOR.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId())))
+			{
+				cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
+			}
+
+			//  If a member has an alpine master in their cart and is between 18 and 22 yrs old, they must still have the option of adding the alpine non-scored student. If the non-scored student membership is chosen, the alpine master must be removed.
+			if(cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && age <= 22
+					&& (Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId())))
+			{
+				cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
+			}
+
+			BigDecimal discount = calculateSecondMembershipDiscount(accountBean, inventory);
 
 			if(discount == null)
 			{
@@ -343,18 +382,11 @@ public class RulesBLImpl implements RulesBL
 				cartBean.addItem(inventory, inventory.getAmount(), discount, 1);
 			}
 
-			// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
-			String officialInvId = RuleAssociations.officialsByCoach.get(inventory.getId());
-			if(officialInvId != null && cartBean.contains(officialInvId))
-			{
-				cartBean.removeLineItem(officialInvId);
-			}
-
 			addRemoveDivisionDuesAndLateFees(accountBean);
 		}
 	}
 
-	private BigDecimal calculateMembershipDiscount(AccountBean accountBean, Inventory inventory)
+	private BigDecimal calculateSecondMembershipDiscount(AccountBean accountBean, Inventory inventory)
 	{
 		CartBean cart = accountBean.getCartBean();
 		BigDecimal discount = null;
@@ -477,18 +509,28 @@ public class RulesBLImpl implements RulesBL
 
 	private void resetFisOptions(AccountBean accountBean)
 	{
+		List<Inventory> applicableFisItems = getApplicableFisItems(accountBean);
+
 		CartBean cart = accountBean.getCartBean();
 		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_FIS);
 		List<String> fisInvIds = new ArrayList<String>();
 		for (LineItemBean lineItem : lineItems)
 		{
-			fisInvIds.add(lineItem.getInventory().getId());
+			String invId = lineItem.getInventory().getId();
+			// if the user is no longer eligible for the selected fis option, then remove it from the cart
+			if(!contains(applicableFisItems, invId))
+			{
+				cart.removeLineItem(invId);
+			}
+			else
+			{
+				fisInvIds.add(invId);
+			}
 		}
 
 		accountBean.setFisOptions(fisInvIds.toArray(new String[fisInvIds.size()]));
 	}
 
-	//TODO: magazines need to be removed from cart if you remove your memberships.
 	public void handleMagazineOption(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
@@ -519,7 +561,18 @@ public class RulesBLImpl implements RulesBL
 		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MAGAZINE);
 		if(lineItems.size() > 0)
 		{
-			accountBean.setMagazineOption(lineItems.get(0).getInventory().getId());
+			String magazineOption = lineItems.get(0).getInventory().getId();
+			List<Inventory> validMagazineOptions = getValidMagazineOptions(accountBean);
+			// if the user is no longer eligible for the selected magazine option, then remove it from the cart
+			if(!contains(validMagazineOptions, magazineOption))
+			{
+				cart.removeLineItem(magazineOption);
+				accountBean.setMagazineOption("");
+			}
+			else
+			{
+				accountBean.setMagazineOption(magazineOption);
+			}
 		}
 		else
 		{
@@ -530,12 +583,12 @@ public class RulesBLImpl implements RulesBL
 	public void handleContribution(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
-        cart.removeLineItems(Inventory.INVENTORY_TYPE_DONATION);
-        if(accountBean.getContributionAmount() != null && StringUtils.isNotEmpty(accountBean.getContributionSportId()))
-        {
-            List<Inventory> donationInventory = inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_DONATION, accountBean.getContributionSportId());
-            cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
-        }
+		cart.removeLineItems(Inventory.INVENTORY_TYPE_DONATION);
+		if(accountBean.getContributionAmount() != null && StringUtils.isNotEmpty(accountBean.getContributionSportId()))
+		{
+			List<Inventory> donationInventory = inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_DONATION, accountBean.getContributionSportId());
+			cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
+		}
 	}
 
 	private Inventory getLateFis(Inventory fisItem)
@@ -571,7 +624,7 @@ public class RulesBLImpl implements RulesBL
 		}
 	}
 
-	private void addRemoveDivisionDuesAndLateFees(AccountBean accountBean)
+	public void addRemoveDivisionDuesAndLateFees(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
 		Member member = accountBean.getMember();
@@ -581,7 +634,7 @@ public class RulesBLImpl implements RulesBL
 		cart.removeLineItems(Inventory.INVENTORY_TYPE_STATE_DUES);
 
 		// RE-CALCULATE AND RE-ADD DIVISION AND STATE DUES
-		if(!cart.containsAny(RuleAssociations.disabledMemberships))
+		if(!cart.containsAny(RuleAssociations.membershipsExemptFromDues))
 		{
 			Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
 			String stateCode = member.getStateCode();
@@ -599,7 +652,11 @@ public class RulesBLImpl implements RulesBL
 				{
 					items.add(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO));
 				}
-				cart.addItem(getMostExpensive(items));
+				Inventory mostExpensive = getMostExpensive(items);
+				if(items.size() > 0)
+				{
+					cart.addItem(mostExpensive);
+				}
 			}
 			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
 			{
@@ -614,7 +671,11 @@ public class RulesBLImpl implements RulesBL
 				{
 					items.add(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_ACO_AO));
 				}
-				cart.addItem(getMostExpensive(items));
+				Inventory mostExpensive = getMostExpensive(items);
+				if(items.size() > 0)
+				{
+					cart.addItem(mostExpensive);
+				}
 			}
 			else
 			{
@@ -634,12 +695,20 @@ public class RulesBLImpl implements RulesBL
 					Set<String> applicableSportCodes = getApplicableSportCodes(allDues);
 					for (String sportCode : applicableSportCodes)
 					{
-						applicableDues.add(getMostExpensive(allDues, sportCode));
+						Inventory mostExpensive = getMostExpensive(allDues, sportCode);
+						if(mostExpensive != null)
+						{
+							applicableDues.add(mostExpensive);
+						}
 					}
 				}
 				else if(RuleAssociations.onlyOneDivisionDue.contains(member.getDivision().getDivisionCode()))
 				{
-					applicableDues.add(getMostExpensive(allDues));
+					Inventory mostExpensive = getMostExpensive(allDues);
+					if(mostExpensive != null)
+					{
+						applicableDues.add(mostExpensive);
+					}
 				}
 				else
 				{
@@ -702,7 +771,7 @@ public class RulesBLImpl implements RulesBL
 		Inventory mostExpensive = null;
 		for (Inventory inventory : items)
 		{
-			if (mostExpensive == null || inventory.getAmount().compareTo(mostExpensive.getAmount()) > 1)
+			if (mostExpensive == null || inventory.getAmount().compareTo(mostExpensive.getAmount()) > 0)
 			{
 				mostExpensive = inventory;
 			}
@@ -713,7 +782,6 @@ public class RulesBLImpl implements RulesBL
 
 	private Inventory getMostExpensive(Collection<Inventory> items, String sportCode)
 	{
-		Inventory mostExpensive = null;
 		List<Inventory> result = new ArrayList<Inventory>();
 		for (Inventory inventory : items)
 		{
@@ -804,6 +872,18 @@ public class RulesBLImpl implements RulesBL
 		return false;
 	}
 
+	private boolean contains(Collection<Inventory> items, String invId)
+	{
+		for (Inventory item : items)
+		{
+			if (invId.equals(item.getId()))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
 	public boolean certificateIsRestricted(Long ussaId)
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
@@ -843,10 +923,14 @@ public class RulesBLImpl implements RulesBL
 	{
 		if(StringUtils.isNotBlank(country))
 		{
-			country = country.toUpperCase();
+			country = country.toUpperCase().trim();
 			if(
 					"US".equals(country)
+					|| "U.S.".equals(country)
+					|| "U. S.".equals(country)
 					|| "USA".equals(country)
+					|| "U S.A.".equals(country)
+					|| "U. S. A.".equals(country)
 					|| "UNITED STATES".equals(country)
 					|| "UNITED STATES OF AMERICA".equals(country))
 			{
@@ -863,7 +947,7 @@ public class RulesBLImpl implements RulesBL
 			return divisionDao.get(Division.DIVISION_FOREIGN);
 		}
 
-		if(clubId != null && clubId != 0)
+		if(clubId != null && clubId > 0)
 		{
 			Club club = clubDao.get(clubId);
 			return club.getDivision();

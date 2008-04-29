@@ -13,8 +13,8 @@ import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.bl.DateBL;
 import org.ussa.common.dao.UniversalDao;
-import org.ussa.common.service.UserManager;
 import org.ussa.common.model.User;
+import org.ussa.common.service.UserManager;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
@@ -32,6 +32,7 @@ import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
+import org.apache.commons.lang.StringUtils;
 
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
@@ -66,7 +67,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		{
 			memberClub = null;
 		}
-		if(accountBean.getClubId() != null)
+		if(accountBean.getClubId() != null && accountBean.getClubId() > 0)
 		{
 			if(memberClub == null)
 			{
@@ -90,8 +91,19 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		MemberLegal memberLegal = accountBean.getMemberLegal();
 		String season = dateBL.getCurrentRenewSeason();
 		memberLegal.setMemberSeasonPk(new MemberSeasonPk(member, season));
-		// TODO: What dates should go here?
-		memberLegal.setInsuranceWaiverDate(new Date());
+		if(StringUtils.isNotBlank(memberLegal.getFisReleaseForm()))
+		{
+			memberLegal.setFisReleaseFormDate(new Date());
+		}
+		if(StringUtils.isNotBlank(memberLegal.getIpcReleaseForm()))
+		{
+			memberLegal.setIpcReleaseFormDate(new Date());
+		}
+		if(StringUtils.isNotBlank(memberLegal.getInsuranceWaiver()))
+		{
+			memberLegal.setInsuranceWaiverDate(new Date());
+		}
+		memberLegal.setReleaseWaiver("Y");
 		memberLegal.setReleaseWaiverDate(new Date());
 		universalDao.save(memberLegal);
 
@@ -123,7 +135,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			}
 		}
 
-		// PROCESS THE CARD. if the card completes without throwing exception then the transaction completes
+		// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
 		creditCardProcessingService.processCard(accountBean);
 
 		// BATCH TABLES

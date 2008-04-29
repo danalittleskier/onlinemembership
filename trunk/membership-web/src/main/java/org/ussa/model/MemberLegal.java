@@ -37,6 +37,9 @@ public class MemberLegal implements Serializable
 	@Column(name = "RELEASE_WAIVER_DATE", nullable = true)
 	private Date releaseWaiverDate;
 
+	@Column(name = "GUARDIAN_NAME", nullable = true, length = 1)
+	private String guardianName;
+
 	@Column(name = "FIS_RELEASE_FORM", nullable = true, length = 1)
 	private String fisReleaseForm;
 
@@ -137,6 +140,16 @@ public class MemberLegal implements Serializable
 	public void setReleaseWaiverDate(Date releaseWaiverDate)
 	{
 		this.releaseWaiverDate = releaseWaiverDate;
+	}
+
+	public String getGuardianName()
+	{
+		return guardianName;
+	}
+
+	public void setGuardianName(String guardianName)
+	{
+		this.guardianName = guardianName;
 	}
 
 	public String getFisReleaseForm()

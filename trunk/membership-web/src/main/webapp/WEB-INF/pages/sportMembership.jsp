@@ -16,18 +16,19 @@
 
 	<fieldset>
 		<legend>Sport & Membership Type</legend>
-        <p>Note: Athletes may choose more than one sport.</p>
+		<p>Note: Athletes may choose more than one sport.</p>
 		<label for="">* Sport:</label>
 		<form:select path="sportId" onchange="document.getElementById('update').click();">
 			<form:option value="">Select a Sport</form:option>
-			<form:option value="ALP">Alpine</form:option>
-			<form:option value="DAL">Disabled Alpine</form:option>
-			<form:option value="BRD">Snowboarding</form:option>
-			<form:option value="FRE">Freestyle</form:option>
-			<form:option value="JNC">Jumping/Nordic Combined</form:option>
-			<form:option value="XC">Cross Country</form:option>
-			<form:option value="DXC">Disabled Cross Country</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_ALP%>">Alpine</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_DAL%>">Disabled Alpine</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_BRD%>">Snowboarding</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
 		</form:select>
+		<a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Sport Info...</a>
 		<br/>
 		<c:if test="${fn:length(accountBean.memberships) != 0}">
 			<label for="">* Membership:</label>
@@ -126,17 +127,17 @@
 	<fieldset>
 		<legend>Contribution</legend>
 		<p>Your contribution will help U.S. Ski Team and U.S. Snowboarding athletes reach their full potential.  Thank you!</p>
-        <label for="">Sport:</label>
-        <form:select path="contributionSportId">
-            <form:option value="">Select a Sport</form:option>
-            <form:option value="ALP">Alpine</form:option>
-            <form:option value="DAL">Disabled Alpine</form:option>
-            <form:option value="BRD">Snowboarding</form:option>
-            <form:option value="FRE">Freestyle</form:option>
-            <form:option value="JNC">Jumping/Nordic Combined</form:option>
-            <form:option value="XC">Cross Country</form:option>
-            <form:option value="DXC">Disabled Cross Country</form:option>
-        </form:select><br/>
+		<label for="">Sport:</label>
+		<form:select path="contributionSportId">
+			<form:option value="">Select a Sport</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_ALP%>">Alpine</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_DAL%>">Disabled Alpine</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_BRD%>">Snowboarding</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
+		</form:select><br/>
 		<label for="contributionAmount">Contribution Amount:</label>
 		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
 	</fieldset>

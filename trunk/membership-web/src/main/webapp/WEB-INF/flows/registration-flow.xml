@@ -35,6 +35,7 @@
 
 	<action-state id="handleContactInfo">
 		<action bean="registrationAction"/>
+		<transition on="error" to="contactInfo"/>
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="stateClub"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>

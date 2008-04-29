@@ -53,9 +53,9 @@ For Athletes of minority age (according to national laws): This is to certify th
 
 	<fieldset style="border:none;">
 		<div class="radios">
-			<form:radiobutton id="fisWaiver1" path="hasFisWaiver" value="${true}" cssClass="radio"/>
+			<form:radiobutton id="fisWaiver1" path="memberLegal.fisReleaseForm" value="Y" cssClass="radio"/>
 			<label for="fisWaiver1" class="radio">I agree.</label>
-			<form:radiobutton id="fisWaiver2" path="hasFisWaiver" value="${false}" cssClass="radio"/>
+			<form:radiobutton id="fisWaiver2" path="memberLegal.fisReleaseForm" value="N" cssClass="radio"/>
 			<label for="fisWaiver2" class="radio">No, I don't agree. Please remove all FIS items from my cart.</label>
 		</div>
 	</fieldset>

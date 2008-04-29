@@ -28,8 +28,9 @@
 			clubSelect.options[0] = new Option('Loading...', '');
 			clubDao.findByStateCode(stateCode, function(clubs) {
 				dwr.util.removeAllOptions(clubSelectId);
-				clubSelect.options[0] = new Option('No Club Affiliation', '');
+				clubSelect.options[0] = new Option('', '-1');
 				dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
+				clubSelect.options[clubSelect.options.length] = new Option('No Club Affiliation', '0');
 				updateDivision();
 			});
 		}
@@ -37,12 +38,14 @@
 		var handleDivision = function(division)
 		{
 			var divisionCode = document.getElementById('divisionCode');
+			var divisionDescription = document.getElementById('divisionDescription');
 			var divisionSpan = document.getElementById('division');
 			var zipCodeDiv = document.getElementById('zipCodeDiv');
 			removeChildren(divisionSpan);
 			if(division != null)
 			{
 				divisionCode.value = division.divisionCode;
+				divisionDescription.value = division.description;
 				divisionSpan.appendChild(document.createTextNode(division.description));
 				zipCodeDiv.style.display='none';
 			}
@@ -51,6 +54,7 @@
 				zipCodeDiv.style.display='block';
 				var span = document.createElement('span');
 				span.className='error-text';
+				divisionDescription.value = 'Undetermined';
 				span.appendChild(document.createTextNode('Undetermined'));
 				divisionSpan.appendChild(span);
 			}
@@ -153,10 +157,11 @@
 				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
-			<label style="width: 100px;">Club:</label>
+			<label style="width: 100px;">* Club:</label>
 			<form:select id="clubSelect" path="clubId" onchange="updateDivision();">
-				<form:option value="">No Club Affiliation</form:option>
+				<form:option value="-1">&nbsp;</form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
+				<form:option value="0">No Club Affiliation</form:option>
 			</form:select>
 			<br/>
 		</fieldset>
@@ -166,12 +171,13 @@
 			<div id="zipCodeDiv" style="display:none;">
 				<p>We were unable to determine your division.<br/>Please provide the zip code of the area that you train in.</p>
 				<label style="width: 100px;">Zip Code:</label>
-				<input id="zipCode" type="text" maxlength="10" onchange="updateDivision()" onkeydown="handleEnterKey(this)" onkeypress="handleEnterKey(this)"/>
+				<form:input id="zipCode" path="clubZipCode" maxlength="10" onchange="updateDivision()" onkeydown="handleEnterKey(this)" onkeypress="handleEnterKey(this)"/>
 				<br/>
 			</div>
 			<label style="width: 100px;">Division:</label>
 			<form:hidden id="divisionCode" path="divisionCode"/>
-			<span id="division" class="data-input"><c:out value="${accountBean.member.division.description}"/></span>
+			<form:hidden id="divisionDescription" path="divisionDescription"/>
+			<span id="division" class="data-input"><c:out value="${accountBean.divisionDescription}"/></span>
 			<br/>
 		</fieldset>
 

@@ -5,13 +5,19 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.springframework.webflow.action.MultiAction;
+import org.springframework.validation.BindException;
+import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.PaymentBean;
+import org.ussa.exception.CreditCardDeclinedException;
+import org.ussa.exception.CreditCardException;
 import org.ussa.service.MemberRegistrationService;
+import org.ussa.model.Address;
+import org.apache.commons.lang.StringUtils;
 
-public class PaymentAction extends MultiAction implements Serializable
+public class PaymentAction extends FormAction implements Serializable
 {
 
 	private MemberRegistrationService memberRegistrationService;
@@ -38,8 +44,43 @@ public class PaymentAction extends MultiAction implements Serializable
 	public Event processOrder(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		Address address = accountBean.getAddress();
+		PaymentBean paymentBean = accountBean.getPaymentBean();
 
-		memberRegistrationService.processRegistration(accountBean);
+		try
+		{
+			if(StringUtils.isBlank(paymentBean.getAddress()))
+			{
+				paymentBean.setAddress(address.getDeliveryAddress());
+			}
+			if(StringUtils.isBlank(paymentBean.getZip()))
+			{
+				paymentBean.setZip(address.getPostalCode());
+			}
+
+			memberRegistrationService.processRegistration(accountBean);
+		}
+		catch (CreditCardDeclinedException e)
+		{
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.card.declined");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
+		catch (CreditCardException e)
+		{
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.card.not.approved");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
+		catch (Exception e)
+		{
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.problem.registering.user");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
 
 		return success();
 	}
