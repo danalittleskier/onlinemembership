@@ -66,17 +66,18 @@
 					<div></div>
 					<p class="stg-omr-header">Medical Information</p>
 					<ul id="stg-omr">
-						<b>Medical Insurance</b>
-
-						<p>Members must have and maintain Medical/Accident
-							insurance for duration of membership year.&nbsp; Failure to provide accurate
-							information demonstration the existence of such insurance coverage for
-							Member will prevent processing of this application and cause termination of
-							membership and suspension of all rights to participate in U.S. Ski and
-							Snowboard Association activities, unless Member timely returns a fully
-							executed Medial Exception Agreement ( which can be obtained by contacting
-							Member Services at&nbsp; 435.647.2666 or via fax at 435.647.2052).&nbsp;
-				</div>
+						<p>Members must have and maintain Medical/Accident insurance for the
+                        duration of the membership year.  Failure to provide accurate
+                        information demonstrating the existence of such insurance coverage for
+                        Member will cause termination of membership and suspension of all rights
+                        to participate in U.S. Ski and Snowboard Association activities.</p>
+                        
+                        <p>If the member does not hold primary Medical/Accident insurance (as
+                        noted above), or cannot provide the required information on such
+                        insurance, Member will need to execute the Medical Exception Agreement
+                        provided.</p>
+                    </ul>
+                </div>
 			</div>
 		</div>
 	</div>
