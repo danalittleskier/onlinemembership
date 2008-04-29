@@ -119,7 +119,7 @@
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 		<p class="stg-omr-header">Online Membership Registration</p>
 		<ul id="stg-omr">
-			<li>Memberships, FIS registrations and IPC registrations are non-refundable.</li>
+			<li>Memberships, FIS and IPC registrations are non-refundable.</li>
 			<li>Memberships expire annually on June 30.</li>
 			<li>Registration must be submitted only by those 18 &amp; older.</li>
 			<li>Code of Conduct:<br />
@@ -130,7 +130,7 @@
 				drug testing will result in a sanction.
 			</li>
 
-			<li><strong>Beginning April 1 all registrations completed online
+			<li><strong>Beginning April 1, all registrations completed online
 				will apply to the next competition season. If you wish to register
 				for the current competition season from April 1 through June 30,
 				you may do so by mail or fax. Please contact USSA Member Services
