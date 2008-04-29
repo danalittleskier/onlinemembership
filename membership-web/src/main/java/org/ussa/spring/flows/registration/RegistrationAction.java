@@ -3,15 +3,17 @@ package org.ussa.spring.flows.registration;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
-import org.springframework.webflow.action.MultiAction;
+import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.validation.BindException;
+import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
-import org.springframework.orm.ObjectRetrievalFailureException;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
@@ -23,26 +25,27 @@ import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.DivisionDao;
 import org.ussa.dao.InventoryDao;
+import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.dao.StateDao;
-import org.ussa.dao.MemberClubDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
+import org.ussa.model.Division;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
+import org.ussa.model.MemberClub;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.model.State;
-import org.ussa.model.MemberClub;
-import org.ussa.model.Division;
+import org.ussa.util.DateTimeUtils;
 
 
-public class RegistrationAction extends MultiAction implements Serializable
+public class RegistrationAction extends FormAction implements Serializable
 {
 	private MemberDao memberDao;
 	private AddressDao addressDao;
@@ -244,10 +247,21 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		String birthDate = accountBean.getBirthDate();
-		if(StringUtils.isNotBlank(birthDate))
+		String birthDateStr = accountBean.getBirthDate();
+		if(StringUtils.isNotBlank(birthDateStr))
 		{
-			accountBean.getMember().setBirthDate(formatter.parse(birthDate));
+			Calendar birthDate = DateTimeUtils.getCalendar(formatter.parse(birthDateStr));
+			Calendar now = Calendar.getInstance();
+			Calendar hundredsBack = DateTimeUtils.getCalendar(now.getTime());
+			hundredsBack.add(Calendar.YEAR, -150);
+			if(birthDate.after(now) || birthDate.before(hundredsBack))
+			{
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.invalid.birthdate");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return error();
+			}
+			accountBean.getMember().setBirthDate(birthDate.getTime());
 		}
 
 		Member member = accountBean.getMember();
@@ -314,6 +328,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			member.setDivision(division);
 			accountBean.setDivisionCode(division.getDivisionCode());
+			accountBean.setDivisionDescription(division.getDescription());
 		}
 
 		return success();
@@ -353,6 +368,10 @@ public class RegistrationAction extends MultiAction implements Serializable
 		{
 			accountBean.getMember().setDivision(divisionDao.get(accountBean.getDivisionCode()));
 		}
+
+		// Incase they just changed their division we need to reasses their div and state dues;
+		rulesBL.addRemoveDivisionDuesAndLateFees(accountBean);
+
 		return success();
 	}
 
@@ -360,9 +379,9 @@ public class RegistrationAction extends MultiAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
-		accountBean.setMemberships(rulesBL.findApplicableSportMemberships(accountBean));
-		accountBean.setFisItems(rulesBL.findApplicableFisItems(accountBean));
-		accountBean.setMagazineItems(rulesBL.findApplicableMagazineItems(accountBean));
+		accountBean.setMemberships(rulesBL.getApplicableSportMemberships(accountBean));
+		accountBean.setFisItems(rulesBL.getApplicableFisItems(accountBean));
+		accountBean.setMagazineItems(rulesBL.getValidMagazineOptions(accountBean));
 
 		return success();
 	}
@@ -406,7 +425,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event needsFisWaiver(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(rulesBL.hasFis(accountBean, false) && !Boolean.TRUE.equals(accountBean.getHasFisWaiver()))
+		if(rulesBL.hasFis(accountBean, false) && !"Y".equals(accountBean.getMemberLegal().getFisReleaseForm()))
 		{
 			return result("true");
 		}
@@ -419,7 +438,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event handleFisWaiverResponse(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(Boolean.FALSE.equals(accountBean.getHasFisWaiver()))
+		if("N".equals(accountBean.getMemberLegal().getFisReleaseForm()))
 		{
 			rulesBL.removeFisFromCart(accountBean, false);
 		}
@@ -430,7 +449,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event needsFisWaiverDisabled(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(rulesBL.hasFis(accountBean, true) && !Boolean.TRUE.equals(accountBean.getHasFisWaiverDisabled()))
+		if(rulesBL.hasFis(accountBean, true) && !"Y".equals(accountBean.getMemberLegal().getIpcReleaseForm()))
 		{
 			return result("true");
 		}
@@ -443,7 +462,7 @@ public class RegistrationAction extends MultiAction implements Serializable
 	public Event handleFisWaiverDisabledResponse(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		if(Boolean.FALSE.equals(accountBean.getHasFisWaiverDisabled()))
+		if("N".equals(accountBean.getMemberLegal().getIpcReleaseForm()))
 		{
 			rulesBL.removeFisFromCart(accountBean, true);
 		}

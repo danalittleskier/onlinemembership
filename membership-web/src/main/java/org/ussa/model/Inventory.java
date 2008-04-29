@@ -28,10 +28,12 @@ public class Inventory implements Serializable
 	public static final String INVENTORY_TYPE_STATE_DUES = "STATE DUES";
 
 	public static final String SPORT_CODE_ALP = "ALP";
+	public static final String SPORT_CODE_DAL = "DAL";
 	public static final String SPORT_CODE_BRD = "BRD";
 	public static final String SPORT_CODE_FRE = "FRE";
 	public static final String SPORT_CODE_JNC = "JNC";
 	public static final String SPORT_CODE_XC = "XC";
+	public static final String SPORT_CODE_DXC = "DXC";
 	public static final String SPORT_CODE_ALL = "ALL";
 
 	// Alpine memberships

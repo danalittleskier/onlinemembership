@@ -60,9 +60,9 @@ This is to certify that ,as parent/guardian of this participant, I do consent to
 
 	<fieldset style="border:none;">
 		<div class="radios">
-			<form:radiobutton id="fisWaiver1" path="hasFisWaiverDisabled" value="${true}" cssClass="radio"/>
+			<form:radiobutton id="fisWaiver1" path="memberLegal.ipcReleaseForm" value="Y" cssClass="radio"/>
 			<label for="fisWaiver1" class="radio">I agree.</label>
-			<form:radiobutton id="fisWaiver2" path="hasFisWaiverDisabled" value="${false}" cssClass="radio"/>
+			<form:radiobutton id="fisWaiver2" path="memberLegal.ipcReleaseForm" value="N" cssClass="radio"/>
 			<label for="fisWaiver2" class="radio">No I don't agree. Please remove all IPC FIS items from my cart.</label>
 		</div>
 	</fieldset>

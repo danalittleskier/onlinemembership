@@ -1,5 +1,7 @@
 package org.ussa.beans;
 
+import java.util.List;
+
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
@@ -7,8 +9,6 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
-
-import java.util.List;
 
 public class AccountBean
 {
@@ -26,15 +26,15 @@ public class AccountBean
 	private Boolean usCitizen;
 	private String birthDate;
 	private Long clubId;
+	private String clubZipCode;
 	private String divisionCode;
+	private String divisionDescription;
 	private String sportId;
 	private String contributionSportId;
 	private String membershipId;
 	private String[] fisOptions;
 	private String magazineOption;
 	private Boolean hasInsurance;
-	private Boolean hasFisWaiver;
-	private Boolean hasFisWaiverDisabled;
 
 	//Reference Data fields.  Do not save when done:
 	private List<State> usStates;
@@ -123,26 +123,6 @@ public class AccountBean
 		this.hasInsurance = hasInsurance;
 	}
 
-	public Boolean getHasFisWaiver()
-	{
-		return hasFisWaiver;
-	}
-
-	public void setHasFisWaiver(Boolean hasFisWaiver)
-	{
-		this.hasFisWaiver = hasFisWaiver;
-	}
-
-	public Boolean getHasFisWaiverDisabled()
-	{
-		return hasFisWaiverDisabled;
-	}
-
-	public void setHasFisWaiverDisabled(Boolean hasFisWaiverDisabled)
-	{
-		this.hasFisWaiverDisabled = hasFisWaiverDisabled;
-	}
-
 	public void setUsStates(List<State> usStates)
 	{
 		this.usStates = usStates;
@@ -218,6 +198,16 @@ public class AccountBean
 		this.clubId = clubId;
 	}
 
+	public String getClubZipCode()
+	{
+		return clubZipCode;
+	}
+
+	public void setClubZipCode(String clubZipCode)
+	{
+		this.clubZipCode = clubZipCode;
+	}
+
 	public String getDivisionCode()
 	{
 		return divisionCode;
@@ -226,6 +216,16 @@ public class AccountBean
 	public void setDivisionCode(String divisionCode)
 	{
 		this.divisionCode = divisionCode;
+	}
+
+	public String getDivisionDescription()
+	{
+		return divisionDescription;
+	}
+
+	public void setDivisionDescription(String divisionDescription)
+	{
+		this.divisionDescription = divisionDescription;
 	}
 
 	public String getMembershipId()
