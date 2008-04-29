@@ -72,7 +72,7 @@
 		</c:if>
 
 		<fieldset>
-			<legend>Address & Phone</legend>
+			<legend>Mailing Address &amp; Phone</legend>
 			<label for="">Company</label>
 			<form:input path="address.company" size="30" maxlength="30"/><br />
 			<label for="">* Address 1</label>

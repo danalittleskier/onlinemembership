@@ -63,7 +63,7 @@
 </table>
 <table id="stg-data-review">
 	<tr>
-		<th scope="col">Address & Phone</th>
+		<th scope="col">Mailing Address &amp; Phone</th>
 		<th scope="col" class="edit"><input style="float:right;" type="submit" class="link-submit" name="_eventId_editContactInfo" value="Edit"></th>
 	</tr>
 	<tr>
