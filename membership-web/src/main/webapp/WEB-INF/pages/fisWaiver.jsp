@@ -2,8 +2,10 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">FIS Waiver</div>
-
+<div id="stg-pagetitle">FIS Registration Assumption of Risk and Release of Liability</div>
+<p>
+This is a waiver of certain legal rights.  Please read carefully before signing.
+</p>
 <!-- LEFT column -->
 <div id="stg-onecol-primary">
 <form:form commandName="accountBean" name="accountBean">

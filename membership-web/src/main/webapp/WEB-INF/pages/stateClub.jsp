@@ -197,7 +197,7 @@
 	<!-- BOX (START) -->
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 		<p class="stg-omr-header">About Your Division</p>
-		<p>Based on the information provided, you will be in the division shown. Division or state dues may apply.</p>
+		<p>Based on the information provided, you will be in the division shown. Division or state dues may apply and will be automatically added to your cart when applicable.</p>
 		<%--
 				  <p><em>Foreign members may be assigned to the foreign division or a
 					  geographic division based on state affiliation and membership category. Division or state dues may apply.</em></p>

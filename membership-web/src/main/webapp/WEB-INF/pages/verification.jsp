@@ -2,7 +2,7 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_2.gif'/>" width="917" height="53"/></div>
-<div id="stg-pagetitle">Verification</div>
+<div id="stg-pagetitle">Confirm Member Information</div>
 
 <form:form commandName="accountBean" name="accountBean">
 
@@ -11,8 +11,8 @@
 
 <%@ include file="/includes/messages.jsp"%>
 
-<p>Please verify that the following information is correct. If you would like to change any of the information, you may
-	do so by choosing "Edit" below. When you have verified that the information is correct, click "Continue".</p>
+<p>Please verify that the following information is correct. 
+If you would like to make any changes, click "Edit" in the appropriate section.  If not, click "Continue".</p>
 <table id="stg-data-review">
 	<tr>
 		<th scope="col">Personal Information</th>
