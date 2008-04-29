@@ -1,5 +1,6 @@
 package org.ussa.spring.flows.registration;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,9 +15,11 @@ import org.springframework.validation.BindException;
 import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
+import org.springframework.webflow.context.servlet.ServletExternalContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
+import org.ussa.beans.MessageBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
 import org.ussa.common.model.User;
@@ -391,7 +394,11 @@ public class RegistrationAction extends FormAction implements Serializable
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
 		Inventory membership = inventoryDao.get(accountBean.getMembershipId());
-		rulesBL.addMembershipToCart(accountBean, membership);
+		List<MessageBean> messages = rulesBL.addMembershipToCart(accountBean, membership);
+
+		// Yes, this is a bit of a hack. need to learn more about Spring MVC messages. Hopefully there is a better way to do this.
+		HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
+		request.getSession().setAttribute("messages", messages);
 
 		rulesBL.handleFisOptions(accountBean);
 		rulesBL.handleMagazineOption(accountBean);

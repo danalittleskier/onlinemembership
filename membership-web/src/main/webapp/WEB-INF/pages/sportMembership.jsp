@@ -10,6 +10,47 @@
 <form:form commandName="accountBean" name="accountBean">
 
 	<%@ include file="/includes/messages.jsp" %>
+
+	<%-- Yes, this is a bit of a hack. need to learn more about Spring MVC messages. Hopefully there is a better way to do this. --%>
+	<c:if test="${not empty messages}">
+		<div class="stg-success-tl">
+			<p>Just so you know...</p>
+		</div>
+		<div class="stg-success-tr"></div>
+		<div class="stg-success-content">
+			<ul>
+			<c:forEach var="messageBean" items="${messages}">
+				<li>
+					<fmt:message key="${messageBean.resourceKey}">
+						<c:forEach var="parameter" items="${messageBean.params}">
+							<fmt:param value="${parameter}"/>
+						</c:forEach>
+					</fmt:message>
+				</li>
+			</c:forEach>
+			</ul>
+		</div>
+		<%session.removeAttribute("messages");%>
+	</c:if>
+
+	<spring:bind path="accountBean.messageBean.*">
+		<c:if test="${not empty status.errorMessages}">
+			<div class="stg-error-tl">
+				<p>Note</p>
+			</div>
+			<div class="stg-success-tr"></div>
+			<div class="stg-success-content">
+				<ul>
+					<c:forEach var="errorMsg" items="${status.errorMessages}">
+						<li>
+							<c:out value="${errorMsg}" escapeXml="false" />
+						</li>
+					</c:forEach>
+				</ul>
+			</div>
+		</c:if>
+	</spring:bind>
+
 	<div id="hide" style="display:none">
 		<input type="submit" class="button" id="update" name="_eventId_change" value="Update">
 	</div>
