@@ -2,7 +2,7 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">Extras</div>
+<div id="stg-pagetitle">Bonus Packs & Decals </div>
 
 <form:form commandName="accountBean" name="accountBean">
 
@@ -13,7 +13,7 @@
 
 
 <div class="extras-header">
-	<p>Shirts</p>
+	<p>Bonus Packs</p>
 </div>
 <p>Bonus Packs include a high quality 100% cotton U.S. Ski Team or U.S.
 	Snowboarding t-shirt, decal pack and a 2009 collectors lapel pin (or snowboarding
@@ -219,7 +219,7 @@
 	<br />
 	<br />
 	<div class="extras-header">
-		<p>Decals</p>
+		<p>5 for $5 Decal Packs</p>
 	</div>
 	<p>
 		Choose the U.S. Ski Team and/or U.S. Snowboarding packs.<br />

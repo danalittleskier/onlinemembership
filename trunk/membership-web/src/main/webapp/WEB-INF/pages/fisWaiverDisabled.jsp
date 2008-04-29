@@ -3,7 +3,9 @@
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">IPC Waiver</div>
-
+<p>
+This is a waiver of certain legal rights.  Please read carefully before signing.
+</p>
 <!-- LEFT column -->
 <div id="stg-onecol-primary">
 <form:form commandName="accountBean" name="accountBean">

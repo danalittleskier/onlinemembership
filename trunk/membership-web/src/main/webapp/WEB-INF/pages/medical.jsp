@@ -64,7 +64,7 @@
 			<div class="stg-tl">
 				<div class="stg-tr">
 					<div></div>
-					<p class="stg-omr-header">Medical Information</p>
+					<p class="stg-omr-header">Medical Insurance</p>
 					<ul id="stg-omr">
 						<p>Members must have and maintain Medical/Accident insurance for the
                         duration of the membership year.  Failure to provide accurate
