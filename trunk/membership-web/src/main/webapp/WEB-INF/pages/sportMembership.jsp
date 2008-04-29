@@ -84,7 +84,7 @@
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">
 		<fieldset>
-			<legend>Applicable FIS Options</legend>
+			<legend>FIS/IPC Registrations</legend>
 			<table style="margin-left:195px;">
 				<c:forEach var="fisItem" items="${accountBean.fisItems}" varStatus="varStatus">
 					<tr>
@@ -100,7 +100,7 @@
 				</c:forEach>
 			</table>
 			<br/>
-			*FIS waiver will be required for any FIS options selected
+			*FIS/IPC AS waivers will be required for FIS and IPC AS registrations.
 		</fieldset>
 	</c:if>
 	<c:if test="${not empty accountBean.magazineItems}">
@@ -133,7 +133,7 @@
 		</fieldset>
 	</c:if>
 	<fieldset>
-		<legend>Communication Options</legend>
+		<legend>Member Communication</legend>
 		<table style="margin-left:195px;">
 			<tr>
 				<td valign="top" class="checkbox">
@@ -166,8 +166,8 @@
 		</table>
 	</fieldset>
 	<fieldset>
-		<legend>Contribution</legend>
-		<p>Your contribution will help U.S. Ski Team and U.S. Snowboarding athletes reach their full potential.  Thank you!</p>
+		<legend>Contribution <i>(optional)</i></legend>
+		<p>Your generous contribution will help support U.S. Ski Team and U.S. Snowboarding athletes in their quest for victory. Thank you!</p>
 		<label for="">Sport:</label>
 		<form:select path="contributionSportId">
 			<form:option value="">Select a Sport</form:option>
