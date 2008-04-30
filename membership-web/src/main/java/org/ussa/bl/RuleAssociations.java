@@ -109,6 +109,7 @@ public class RuleAssociations
 		youthMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_YOUTH);
 		youthMemberships.add(Inventory.INV_ID_FREESTYLE_ROOKIE);
 		youthMemberships.add(Inventory.INV_ID_JUMPING_YOUTH);
+		youthMemberships.add(Inventory.INV_ID_FREESTYLE_YOUTH);
 
 		officialMemberships = RuleAssociations.coachesByOfficial.keySet();
 		coachMemberships = RuleAssociations.officialsByCoach.keySet();
