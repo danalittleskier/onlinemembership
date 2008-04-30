@@ -250,6 +250,11 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
+		if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
+		{
+			return result("foreign");
+		}
+
 		String birthDateStr = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDateStr))
 		{

@@ -1,6 +1,8 @@
 package org.ussa.bl.impl;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collection;
@@ -11,6 +13,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
@@ -37,6 +41,8 @@ import org.ussa.model.State;
 
 public class RulesBLImpl implements RulesBL
 {
+	private static Log log = LogFactory.getLog(RulesBLImpl.class);
+
 	private InventoryDao inventoryDao;
 	private DateBL dateBL;
 	private RenewRuleInvDao renewRuleInvDao;
@@ -320,7 +326,7 @@ public class RulesBLImpl implements RulesBL
 		CartBean cartBean = accountBean.getCartBean();
 		List<MessageBean> messages = new ArrayList<MessageBean>();
 
-		if(!inventoryIsRestricted(accountBean, inventory, null))
+		if(!inventoryIsRestricted(accountBean, inventory, null) && !cartBean.contains(inventory.getId()))
 		{
 			int age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
 
@@ -587,7 +593,17 @@ public class RulesBLImpl implements RulesBL
 		if(accountBean.getContributionAmount() != null && StringUtils.isNotEmpty(accountBean.getContributionSportId()))
 		{
 			List<Inventory> donationInventory = inventoryDao.getIventoryByTypeAndSportCode(Inventory.INVENTORY_TYPE_DONATION, accountBean.getContributionSportId());
-			cart.addItem(donationInventory.get(0), new BigDecimal(accountBean.getContributionAmount()));
+			String amountStr = accountBean.getContributionAmount();
+			amountStr = StringUtils.replace(amountStr, "$", "");
+			DecimalFormat format = new DecimalFormat("###,##0.##");
+			try
+			{
+				cart.addItem(donationInventory.get(0), new BigDecimal(format.parse(amountStr).floatValue()));
+			}
+			catch (ParseException e)
+			{
+				log.debug(e.getMessage());
+			}
 		}
 	}
 

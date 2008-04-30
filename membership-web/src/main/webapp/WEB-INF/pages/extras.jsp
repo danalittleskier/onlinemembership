@@ -55,11 +55,10 @@
 			<label>Size:
 				<form:select path="extrasBean.alpineOption">
 					<form:option value=""></form:option>
-					<%-- TODO: add these invetory ids as contants in Inventory.java --%>
-					<form:option value="BPAS">S</form:option>
-					<form:option value="BPAM">M</form:option>
-					<form:option value="BPAL">L</form:option>
-					<form:option value="BPAX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_ALPINE_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_ALPINE_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_ALPINE_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_ALPINE_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -74,10 +73,10 @@
 			<label>Size:
 				<form:select path="extrasBean.freestyleOption">
 					<form:option value=""></form:option>
-					<form:option value="BPFS">S</form:option>
-					<form:option value="BPFM">M</form:option>
-					<form:option value="BPFL">L</form:option>
-					<form:option value="BPFX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_FREESTYLE_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_FREESTYLE_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_FREESTYLE_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_FREESTYLE_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -92,10 +91,10 @@
 			<label>Size:
 				<form:select path="extrasBean.crossCountryOption">
 					<form:option value=""></form:option>
-					<form:option value="BPXS">S</form:option>
-					<form:option value="BPXM">M</form:option>
-					<form:option value="BPXL">L</form:option>
-					<form:option value="BPXX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_CROSS_COUNTRY_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_CROSS_COUNTRY_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_CROSS_COUNTRY_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_CROSS_COUNTRY_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -133,10 +132,10 @@
 			<label>Size:
 				<form:select path="extrasBean.jumpingOption">
 					<form:option value=""></form:option>
-					<form:option value="BPFS">S</form:option>
-					<form:option value="BPFM">M</form:option>
-					<form:option value="BPFL">L</form:option>
-					<form:option value="BPFX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_JUMPING_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_JUMPING_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_JUMPING_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_JUMPING_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -151,10 +150,10 @@
 			<label>Size:
 				<form:select path="extrasBean.generalOption">
 					<form:option value=""></form:option>
-					<form:option value="BPFS">S</form:option>
-					<form:option value="BPFM">M</form:option>
-					<form:option value="BPFL">L</form:option>
-					<form:option value="BPFX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SKI_TEAM_LOGO_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SKI_TEAM_LOGO_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SKI_TEAM_LOGO_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SKI_TEAM_LOGO_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -169,10 +168,10 @@
 			<label>Size:
 				<form:select path="extrasBean.boardingOption">
 					<form:option value=""></form:option>
-					<form:option value="BPFS">S</form:option>
-					<form:option value="BPFM">M</form:option>
-					<form:option value="BPFL">L</form:option>
-					<form:option value="BPFX">XL</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SNOWBOARD_SMALL%>">S</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SNOWBOARD_MEDIUM%>">M</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SNOWBOARD_LARGE%>">L</form:option>
+					<form:option value="<%=Inventory.INV_ID_BONUS_SNOWBOARD_EXTRA_LARGE%>">XL</form:option>
 				</form:select>
 			</label>
 		</div>
@@ -229,14 +228,14 @@
 		<div class="decal">
 			<div class="decal-qty">
 				<label>Qty:</label>
-				<input type="hidden" name="extrasBean.decalSkiOption" value="DECSKI"/>
+				<input type="hidden" name="extrasBean.decalSkiOption" value="<%=Inventory.INV_ID_BONUS_DECALS_SKI_TEAM%>"/>
 				<form:input path="extrasBean.decalSkiQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
 			<img src="<c:url value='/images/decal_skiteam.gif'/>" width="195" height="101" /> </div>
 		<div class="decal">
 			<div class="decal-qty">
 				<label>Qty:</label>
-				<input type="hidden" name="extrasBean.decalBoardOption" value="DECSB"/>
+				<input type="hidden" name="extrasBean.decalBoardOption" value="<%=Inventory.INV_ID_BONUS_DECALS_SNOWBOARD%>"/>
 				<form:input path="extrasBean.decalBoardQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
 			<img src="<c:url value='/images/decal_snowboarding.gif'/>" width="195" height="101" />

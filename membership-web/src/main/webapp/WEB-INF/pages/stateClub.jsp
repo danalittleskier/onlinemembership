@@ -29,8 +29,8 @@
 			clubDao.findByStateCode(stateCode, function(clubs) {
 				dwr.util.removeAllOptions(clubSelectId);
 				clubSelect.options[0] = new Option('', '-1');
-				dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
 				clubSelect.options[clubSelect.options.length] = new Option('No Club Affiliation', '0');
+				dwr.util.addOptions(clubSelectId, clubs, 'id', 'name');
 				updateDivision();
 			});
 		}
@@ -61,21 +61,25 @@
 		};
 
 		function updateDivision() {
+			var nationCode = document.getElementById('nationCode').value;
+			var stateCode = document.getElementById('stateSelect').value;
+			var clubId = document.getElementById('clubSelect').value;
+			var zipCode = document.getElementById('zipCode').value;
+
 			var zipCodeDiv = document.getElementById('zipCodeDiv');
 			zipCodeDiv.style.display='none';
 			var divisionCode = document.getElementById('divisionCode');
 			divisionCode.value = '';
 			var divisionSpan = document.getElementById('division');
 			removeChildren(divisionSpan);
-			divisionSpan.appendChild(document.createTextNode('Loading...'));
-			var nationCode = document.getElementById('nationCode').value;
-			var stateCode = document.getElementById('stateSelect').value;
-			var clubId = document.getElementById('clubSelect').value;
-			var zipCode = document.getElementById('zipCode').value;
 
-			rulesBL.determineDivision(nationCode, stateCode, clubId, zipCode, handleDivision);
+			if(nationCode != '' && stateCode != '' && clubId >= 0)
+			{
+				divisionSpan.appendChild(document.createTextNode('Loading...'));
 
-			document.getElementById('zipCode').value = '';
+				rulesBL.determineDivision(nationCode, stateCode, clubId, zipCode, handleDivision);
+				document.getElementById('zipCode').value = '';
+			}
 		}
 
 		function handleEnterKey(element) {
@@ -160,8 +164,8 @@
 			<label style="width: 100px;">* Club:</label>
 			<form:select id="clubSelect" path="clubId" onchange="updateDivision();">
 				<form:option value="-1">&nbsp;</form:option>
-				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
 				<form:option value="0">No Club Affiliation</form:option>
+				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
 			</form:select>
 			<br/>
 		</fieldset>

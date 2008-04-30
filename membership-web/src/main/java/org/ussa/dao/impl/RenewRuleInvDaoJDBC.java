@@ -33,8 +33,8 @@ public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 			"and mt.season = ? " +
 			"and ? between r.age_from and r.age_to " +
 			"and (r.division_code = m.division_code or r.division_code is null) " +
-			"group by r.inv_id, r.division_code " +
-			"order by r.inv_id, r.division_code";
+			"group by r.inv_id " +
+			"order by r.inv_id";
 
 	private String DUES_SQL = "select r.inv_id, r.new_inv_id " +
 			"from renewruleinv r " +

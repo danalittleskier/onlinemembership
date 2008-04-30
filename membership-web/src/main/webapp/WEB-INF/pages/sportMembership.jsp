@@ -57,7 +57,7 @@
 
 	<fieldset>
 		<legend>Sport & Membership Type</legend>
-		<p>Note: Athletes may choose more than one sport.</p>
+		<p>Note: Athletes may choose more than one sport. <a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Membership Descriptions...</a></p>
 		<label for="">* Sport:</label>
 		<form:select path="sportId" onchange="document.getElementById('update').click();">
 			<form:option value="">Select a Sport</form:option>
@@ -69,7 +69,6 @@
 			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
 		</form:select>
-		<a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Sport Info...</a>
 		<br/>
 		<c:if test="${fn:length(accountBean.memberships) != 0}">
 			<label for="">* Membership:</label>
@@ -181,6 +180,7 @@
 		</form:select><br/>
 		<label for="contributionAmount">Contribution Amount:</label>
 		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
+		<span style="padding-left:5px;" class="data-input">($X,XXX.00)</span>
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>
