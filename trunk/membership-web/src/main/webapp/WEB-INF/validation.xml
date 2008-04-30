@@ -35,6 +35,10 @@
 			<constant-name>validWhenNoInsurance</constant-name>
 			<constant-value>((hasInsurance == 'false') or (*this* != null))</constant-value>
 		</constant>
+		<constant>
+			<constant-name>alpha</constant-name>
+			<constant-value>^[A-Za-z\s]*$</constant-value>
+		</constant>
 	</global>
 	<formset>
 		<form name="fileUpload">
@@ -58,6 +62,14 @@
 			<field property="member.firstName" depends="required">
 				<arg0 key="registration.firstName" />
 			</field>
+            <field property="member.middleName" depends="mask">
+                <msg name="mask" key="errors.alpha"/>
+                <arg0 key="registration.middleName" />
+                <var>
+                    <var-name>mask</var-name>
+                    <var-value>${alpha}</var-value>
+                </var>
+            </field>
 			<field property="member.lastName" depends="required">
 				<arg0 key="registration.lastName" />
 			</field>
