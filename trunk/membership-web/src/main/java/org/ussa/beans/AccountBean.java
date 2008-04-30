@@ -1,7 +1,5 @@
 package org.ussa.beans;
 
-import java.util.List;
-
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
@@ -9,6 +7,8 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
+
+import java.util.List;
 
 public class AccountBean
 {
@@ -38,6 +38,7 @@ public class AccountBean
 
 	//Reference Data fields.  Do not save when done:
 	private List<State> usStates;
+	private List<State> allStates;
 	private List<Nation> nations;
 	private List<Club> clubsForState;
 	private List<Inventory> memberships;
@@ -128,7 +129,17 @@ public class AccountBean
 		this.usStates = usStates;
 	}
 
-	public List<Nation> getNations()
+    public List<State> getAllStates() 
+    {
+        return allStates;
+    }
+
+    public void setAllStates(List<State> allStates) 
+    {
+        this.allStates = allStates;
+    }
+
+    public List<Nation> getNations()
 	{
 		return nations;
 	}

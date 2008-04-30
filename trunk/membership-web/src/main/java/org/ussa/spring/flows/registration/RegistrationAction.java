@@ -1,21 +1,14 @@
 package org.ussa.spring.flows.registration;
 
-import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
-
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
 import org.springframework.webflow.action.FormAction;
+import org.springframework.webflow.context.servlet.ServletExternalContext;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
-import org.springframework.webflow.context.servlet.ServletExternalContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
@@ -44,8 +37,14 @@ import org.ussa.model.MemberClub;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
-import org.ussa.model.State;
 import org.ussa.util.DateTimeUtils;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class RegistrationAction extends FormAction implements Serializable
@@ -145,8 +144,8 @@ public class RegistrationAction extends FormAction implements Serializable
 
 		String currentSeason = dateBL.getCurrentRenewSeason();
 
-		List<State> usStates = stateDao.getAllUsStatesOrderedByCode();
-		accountBean.setUsStates(usStates);
+		accountBean.setUsStates(stateDao.getAllUsStatesOrderedByCode());
+		accountBean.setAllStates(stateDao.getAllStatesOrderedByCode());
 
 		accountBean.setCartBean(new CartBean());
 

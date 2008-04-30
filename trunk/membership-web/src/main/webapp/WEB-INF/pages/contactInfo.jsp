@@ -87,7 +87,7 @@
 
 			<form:select path="address.stateCode">
 				<form:option value=""></form:option>
-				<form:options items="${accountBean.usStates}" itemValue="id" itemLabel="description"/>
+				<form:options items="${accountBean.allStates}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<br/>
 
