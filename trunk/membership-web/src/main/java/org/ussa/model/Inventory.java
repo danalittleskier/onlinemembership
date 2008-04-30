@@ -18,8 +18,16 @@ import java.math.BigDecimal;
 public class Inventory implements Serializable
 {
     public static final String QUERY_BY_TYPE_AND_SPORT_CODE = "Inventory.QUERY_BY_TYPE_AND_SPORT_CODE";
-    
-    public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
+
+	/*
+		The following is a useful query for gernerating these constants:
+
+		select 'public static final String INV_ID_'+replace(upper(description), ' ', '_')+' = "'+inv_id+'";' as constant
+		from inventory
+		where ....;
+	 */
+
+	public static final String INVENTORY_TYPE_MEMBERSHIP = "MEMBERSHIP";
 	public static final String INVENTORY_TYPE_FIS = "FIS";
 	public static final String INVENTORY_TYPE_DONATION = "DONATION";
 	public static final String INVENTORY_TYPE_BONUS_PACK = "BONUS PACK";
@@ -128,6 +136,34 @@ public class Inventory implements Serializable
 	public static final String INV_ID_MEMBER_CLUB = "CLUB";
 	public static final String INV_ID_STAFF_MEMBERSHIP = "ZS";
 	public static final String INV_ID_TRUSTEE_MEMBERSHIP = "TM";
+
+	// Bonus Packs
+	public static final String INV_ID_BONUS_ALPINE_LARGE = "BPAL";
+	public static final String INV_ID_BONUS_ALPINE_MEDIUM = "BPAM";
+	public static final String INV_ID_BONUS_ALPINE_SMALL = "BPAS";
+	public static final String INV_ID_BONUS_ALPINE_EXTRA_LARGE = "BPAX";
+	public static final String INV_ID_BONUS_SNOWBOARD_LARGE = "BPBL";
+	public static final String INV_ID_BONUS_SNOWBOARD_MEDIUM = "BPBM";
+	public static final String INV_ID_BONUS_SNOWBOARD_SMALL = "BPBS";
+	public static final String INV_ID_BONUS_SNOWBOARD_EXTRA_LARGE = "BPBX";
+	public static final String INV_ID_BONUS_FREESTYLE_LARGE = "BPFL";
+	public static final String INV_ID_BONUS_FREESTYLE_MEDIUM = "BPFM";
+	public static final String INV_ID_BONUS_FREESTYLE_SMALL = "BPFS";
+	public static final String INV_ID_BONUS_FREESTYLE_EXTRA_LARGE = "BPFX";
+	public static final String INV_ID_BONUS_JUMPING_LARGE = "BPJL";
+	public static final String INV_ID_BONUS_JUMPING_MEDIUM = "BPJM";
+	public static final String INV_ID_BONUS_JUMPING_SMALL = "BPJS";
+	public static final String INV_ID_BONUS_JUMPING_EXTRA_LARGE = "BPJX";
+	public static final String INV_ID_BONUS_CROSS_COUNTRY_LARGE = "BPXL";
+	public static final String INV_ID_BONUS_CROSS_COUNTRY_MEDIUM = "BPXM";
+	public static final String INV_ID_BONUS_CROSS_COUNTRY_SMALL = "BPXS";
+	public static final String INV_ID_BONUS_CROSS_COUNTRY_EXTRA_LARGE = "BPXX";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_LARGE = "BPYL";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_MEDIUM = "BPYM";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_SMALL = "BPYS";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_EXTRA_LARGE = "BPYX";
+	public static final String INV_ID_BONUS_DECALS_SNOWBOARD = "DECSB";
+	public static final String INV_ID_BONUS_DECALS_SKI_TEAM = "DECSKI";
 
 
 

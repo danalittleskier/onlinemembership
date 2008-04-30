@@ -29,31 +29,33 @@
 			<label for="">Suffix</label>
 			<form:input path="member.suffixName" size="30" maxlength="30"/><br />
 
-			<c:choose>
-				<c:when test="${!empty accountBean.member.id && !empty accountBean.birthDate}">
-					<label for="birthDate">Birth Date:</label>
-					<span class="data-input"><c:out value="${accountBean.birthDate}"/></span>
-				</c:when>
-				<c:otherwise>
-					<label for="birthDate">* Birth Date:</label>
-					<form:input id="birthDate" path="birthDate" size="13" maxlength="10"/>
-					<span style="padding-left:5px;" class="data-input">(MM/DD/YYYY)</span>
-<%--
-					<a title="Select Date" href="#" id="birthDateCalendar">
-						<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
-					</a>
-					<script type="text/javascript" defer="defer">
-						Calendar.setup(
-							{
-								inputField : "birthDate", // ID of the input field
-								ifFormat : "%m/%d/%Y", // the date format
-								button : "birthDateCalendar" // ID of the button
-							}
-						);
-					</script>
---%>
-				</c:otherwise>
-			</c:choose>
+			<label for="birthDate">* Birth Date:</label>
+			<spring:bind path="accountBean.birthDate">
+				<c:choose>
+					<c:when test="${empty accountBean.birthDate or not empty status.errorMessages}">
+						<form:input id="birthDate" path="birthDate" size="13" maxlength="10"/>
+						<span style="padding-left:5px;" class="data-input">(MM/DD/YYYY)</span>
+
+						<%--
+						<a title="Select Date" href="#" id="birthDateCalendar">
+							<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
+						</a>
+						<script type="text/javascript" defer="defer">
+							Calendar.setup(
+								{
+									inputField : "birthDate", // ID of the input field
+									ifFormat : "%m/%d/%Y", // the date format
+									button : "birthDateCalendar" // ID of the button
+								}
+							);
+						</script>
+						--%>
+					</c:when>
+					<c:otherwise>
+						<span class="data-input"><c:out value="${accountBean.birthDate}"/></span>
+					</c:otherwise>
+				</c:choose>
+			</spring:bind>
 			<br/>
 
 			<c:if test="${empty accountBean.member.id}">

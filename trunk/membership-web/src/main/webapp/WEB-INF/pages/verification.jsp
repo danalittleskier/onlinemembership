@@ -48,18 +48,6 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 			<c:out value="${accountBean.member.suffixName}"/>
 		</td>
 	</tr>
-	<tr>
-		<td class="data-label" scope="row">Gender:</td>
-		<td class="data-text" scope="row">
-			<c:out value="${accountBean.member.gender}"/>
-		</td>
-	</tr>
-	<tr>
-		<td class="data-label" scope="row">Ethnicity:</td>
-		<td class="data-text" scope="row">
-			<c:out value="${accountBean.member.ethnicity}"/>
-		</td>
-	</tr>
 </table>
 <table id="stg-data-review">
 	<tr>
@@ -73,9 +61,15 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		</td>
 	</tr>
 	<tr>
-		<td class="data-label" scope="row">Address:</td>
+		<td class="data-label" scope="row">Address 1:</td>
 		<td class="data-text" scope="row">
 			<c:out value="${accountBean.address.deliveryAddress}"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="data-label" scope="row">Address 2:</td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.address.secondaryAddress}"/>
 		</td>
 	</tr>
 	<tr>
@@ -91,9 +85,15 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		</td>
 	</tr>
 	<tr>
-		<td class="data-label" scope="row">Zip:</td>
+		<td class="data-label" scope="row">Zip/Postal Code:</td>
 		<td class="data-text" scope="row">
 			<c:out value="${accountBean.address.postalCode}"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="data-label" scope="row">Country:</td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.address.country}"/>
 		</td>
 	</tr>
 	<tr>
@@ -121,12 +121,6 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		<th scope="col" class="edit"><input style="float:right;" type="submit" class="link-submit" name="_eventId_editSportMembership" value="Edit">
 		</th>
 
-	</tr>
-	<tr>
-		<td class="data-label" scope="row">Division:</td>
-		<td class="data-text" scope="row">
-			<c:out value="${accountBean.member.division.description}"/>
-		</td>
 	</tr>
 	<c:forEach var="lineItem" items="${accountBean.cartBean.membershipLineItems}" varStatus="varStatus">
 		<c:choose>

@@ -39,6 +39,7 @@
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="stateClub"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>
+		<transition on="foreign" to="foreign"/>
 	</action-state>
 
 	<view-state id="duplicateAccount" view="duplicateAccount">
