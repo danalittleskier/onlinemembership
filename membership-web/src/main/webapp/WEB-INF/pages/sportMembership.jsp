@@ -11,7 +11,7 @@
 
 	<%@ include file="/includes/messages.jsp" %>
 
-	<%-- Yes, this is a bit of a hack. need to learn more about Spring MVC messages. Hopefully there is a better way to do this. --%>
+	<%-- Yes, this messages thing is a bit of a hack... need to learn more about Spring MVC messages. Hopefully there is a better way to do this. --%>
 	<c:if test="${not empty messages}">
 		<div class="stg-success-tl">
 			<p>Just so you know...</p>
@@ -208,6 +208,13 @@
 	<!-- BOX (END) -->
 </div>
 <div class="clear"></div>
+
+<c:if test="${showBackgroundScreening}">
+	<script type="text/javascript" defer="defer">
+		GB_showCenter('USSA Background Screening Information', '<c:url value="/backgroundScreeningPopup.html"/>', 515, 625);
+	</script>
+	<%session.removeAttribute("showBackgroundScreening");%>
+</c:if>
 
 </body>
 

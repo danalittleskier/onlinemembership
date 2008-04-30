@@ -13,5 +13,6 @@
 	<decorator name="basicDecorator" page="basicDecorator.jsp">
 		<pattern>/certificate.html</pattern>
 		<pattern>/sportInfo.html</pattern>
+		<pattern>/backgroundScreeningPopup.html</pattern>
 	</decorator>
 </decorators>

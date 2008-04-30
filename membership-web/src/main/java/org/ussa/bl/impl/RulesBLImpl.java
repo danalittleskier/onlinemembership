@@ -237,6 +237,39 @@ public class RulesBLImpl implements RulesBL
 		return fisItems;
 	}
 
+	private Inventory getLateFis(Inventory fisItem)
+	{
+		String invId = fisItem.getId();
+		String lateInvId = null;
+		Date now = new Date();
+		if(Inventory.INV_ID_ALPINE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
+		}
+		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
+		}
+		else if(Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(invId) && now.after(dateBL.getCrossCountryFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_CROSS_COUNTRY_FIS;
+		}
+		else if(Inventory.INV_ID_FREESTYLE_FIS.equals(invId) && now.after(dateBL.getFreestyleFisLateDate()))
+		{
+			lateInvId = Inventory.INV_ID_LATE_FREESTYLE_FIS;
+		}
+
+
+		if(lateInvId != null)
+		{
+			return inventoryDao.get(lateInvId);
+		}
+		else
+		{
+			return null;
+		}
+	}
+
 	public List<Inventory> getValidMagazineOptions(AccountBean accountBean)
 	{
 		Address member = accountBean.getAddress();
@@ -373,77 +406,75 @@ public class RulesBLImpl implements RulesBL
 			/*
 			THEN ADD ITEM TO CART
 			 */
+			cartBean.addItem(inventory);
 
-			// Calculate second membership discount
-			BigDecimal discount = calculateSecondMembershipDiscount(accountBean, inventory);
-			if(discount == null)
-			{
-				cartBean.addItem(inventory);
-			}
-			else
-			{
-				cartBean.addItem(inventory, inventory.getAmount(), discount, 1);
-			}
-
-			// Add or Remove applicable dues and late fees
+			/*
+			THEN APPLY DISCOUNTS AND ADD FEES
+			 */
+			addRemoveSecondMembershipDiscounts(accountBean);
 			addRemoveDivisionDuesAndLateFees(accountBean);
 		}
 
 		return messages;
 	}
 
-	private BigDecimal calculateSecondMembershipDiscount(AccountBean accountBean, Inventory inventory)
+	private void addRemoveSecondMembershipDiscounts(AccountBean accountBean)
 	{
 		CartBean cart = accountBean.getCartBean();
-		BigDecimal discount = null;
+
+		List<LineItemBean> memberships = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+
+		LineItemBean fullPriceMembership = chooseTheFullPriceMembership(memberships);
 
 		// If you purchase more than one membership then subsequent ones should be discounted $35 or $25
-		if(Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(inventory.getInventoryType())
-				&& cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() > 0)
+		for (LineItemBean membership : memberships)
 		{
-			// If you are adding or have a membership from the 25 dollar group then the discount is 25.
-			if(RuleAssociations.twentyFiveDollarDiscountGroup.contains(inventory.getId())
-					|| cart.containsAny(RuleAssociations.twentyFiveDollarDiscountGroup))
+			String invId = membership.getInventory().getId();
+
+			if (fullPriceMembership.getInventory().getId().equals(invId))
 			{
-				discount = new BigDecimal(25);
+				// This is your full price membership. The rest are discounted.
+				membership.setDiscount(null);
 			}
 			else
 			{
-				discount = new BigDecimal(35);
+				// If you are adding or have a membership from the 25 dollar group then the discount is 25 otherwise 35.
+				if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId))
+				{
+					membership.setDiscount(new BigDecimal(25));
+				}
+				else
+				{
+					membership.setDiscount(new BigDecimal(35));
+				}
 			}
 		}
-		return discount;
 	}
 
-	private void revokeMembershipDiscountIfNeeded(AccountBean accountBean)
+	/**
+	 * this tries to pick the first membership from the 35 dollar discount group if there is one,
+	 * otherwise it returns the first match in the 25 dollar discount group
+	 * @param memberships all of the memberships in the cart.
+	 * @return the membership that will be full price.
+	 */
+	private LineItemBean chooseTheFullPriceMembership(List<LineItemBean> memberships)
 	{
-		List<LineItemBean> lineItems = accountBean.getCartBean().getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
-		if(lineItems.size() > 0)
+		LineItemBean firstFrom25DollarDiscoutGroup = null;
+		for (LineItemBean membership : memberships)
 		{
-			// if there is more than on membership and they aren't paying full price for any of them.
-			int indexOfMinDiscount = -1;
-			BigDecimal minDiscount = null;
-			for (int i = 0; i < lineItems.size(); i++)
+			String invId = membership.getInventory().getId();
+			// as soon as we find a membership from the 35 dollar discount group, return it and we are done.
+			if (! RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId))
 			{
-				LineItemBean lineItemBean = lineItems.get(i);
-				BigDecimal discount = lineItemBean.getDiscount();
-				if(discount == null)
-				{
-					// the are already paying full price for one of their memberships so do nothing
-					return;
-				}
-				else if(minDiscount == null || discount.floatValue() < minDiscount.floatValue())
-				{
-					minDiscount = discount;
-					indexOfMinDiscount = i;
-				}
+				return membership;
 			}
-			// remove the smallest discounted value from one of the memberships
-			if(indexOfMinDiscount >= 0)
+			else if (firstFrom25DollarDiscoutGroup == null)
 			{
-				lineItems.get(indexOfMinDiscount).setDiscount(null);
+				firstFrom25DollarDiscoutGroup = membership;
 			}
 		}
+
+		return firstFrom25DollarDiscoutGroup;
 	}
 
 	public void removeItemFromCart(AccountBean accountBean, String invId)
@@ -472,7 +503,7 @@ public class RulesBLImpl implements RulesBL
 		resetFisOptions(accountBean);
 		resetMagazineOption(accountBean);
 
-		revokeMembershipDiscountIfNeeded(accountBean);
+		addRemoveSecondMembershipDiscounts(accountBean);
 		addRemoveDivisionDuesAndLateFees(accountBean);
 	}
 
@@ -604,39 +635,6 @@ public class RulesBLImpl implements RulesBL
 			{
 				log.debug(e.getMessage());
 			}
-		}
-	}
-
-	private Inventory getLateFis(Inventory fisItem)
-	{
-		String invId = fisItem.getId();
-		String lateInvId = null;
-		Date now = new Date();
-		if(Inventory.INV_ID_ALPINE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
-		{
-			lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
-		}
-		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
-		{
-			lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
-		}
-		else if(Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(invId) && now.after(dateBL.getCrossCountryFisLateDate()))
-		{
-			lateInvId = Inventory.INV_ID_LATE_CROSS_COUNTRY_FIS;
-		}
-		else if(Inventory.INV_ID_FREESTYLE_FIS.equals(invId) && now.after(dateBL.getFreestyleFisLateDate()))
-		{
-			lateInvId = Inventory.INV_ID_LATE_FREESTYLE_FIS;
-		}
-
-
-		if(lateInvId != null)
-		{
-			return inventoryDao.get(lateInvId);
-		}
-		else
-		{
-			return null;
 		}
 	}
 
@@ -859,21 +857,39 @@ public class RulesBLImpl implements RulesBL
 		{
 			items.add(memberTransaction.getInventory().getId());
 		}
-		return needsBackgroundCheck(ussaId, items);
-	}
 
-	private boolean needsBackgroundCheck(Long ussaId, Set<String> items)
-	{
 		if(containsAny(items, RuleAssociations.coachMemberships) || containsAny(items, RuleAssociations.officialMemberships))
 		{
-			MemberSeason memberSeason = memberSeasonDao.getMostRecentBackgroundCheck(ussaId);
-			int bacgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
-			if(dateBL.calculateCurrentRenewSeason() <= (bacgroundCheckSeason + 3))
+			if(isBackgroundCheckCurrent(ussaId))
 			{
 				return false;
 			}
 		}
 		return true;
+	}
+
+	public boolean needsBackgroundCheck(AccountBean accountBean)
+	{
+		CartBean cartBean = accountBean.getCartBean();
+		return (cartBean.containsAny(RuleAssociations.coachMemberships) || cartBean.containsAny(RuleAssociations.officialMemberships))
+				&& !isBackgroundCheckCurrent(accountBean.getMember().getId());
+	}
+
+	private boolean isBackgroundCheckCurrent(Long ussaId)
+	{
+		if(ussaId != null)
+		{
+			MemberSeason memberSeason = memberSeasonDao.getMostRecentBackgroundCheck(ussaId);
+			if(memberSeason != null)
+			{
+				int bacgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
+				if(dateBL.calculateCurrentRenewSeason() <= (bacgroundCheckSeason + 3))
+				{
+					return true;
+				}
+			}
+		}
+		return false;
 	}
 
 	private boolean containsAny(Set<String> set, Collection<String> items)
@@ -900,6 +916,11 @@ public class RulesBLImpl implements RulesBL
 		return false;
 	}
 
+	/**
+	 * The certificate is restricted if the member has only coach and official memberships and their background check is not current
+	 * @param ussaId the member's ussa id
+	 * @return whether or not the member can get his/her membership verification certificate
+	 */
 	public boolean certificateIsRestricted(Long ussaId)
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
@@ -910,7 +931,7 @@ public class RulesBLImpl implements RulesBL
 			items.add(memberTransaction.getInventory().getId());
 		}
 
-		if(needsBackgroundCheck(ussaId, items))
+		if(!isBackgroundCheckCurrent(ussaId))
 		{
 			Set<String> coachesAndOfficials = new HashSet<String>();
 			coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
