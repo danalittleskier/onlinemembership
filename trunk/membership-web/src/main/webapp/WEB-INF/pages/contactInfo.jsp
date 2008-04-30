@@ -153,6 +153,7 @@
 			</li>
 			<li>If you are not a U.S. citizen and wish to change your membership category, you must renew by mail or fax.</li>
 			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
+			<li>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above.</li>
 		</ul>
 	</div></div></div></div>
 	<!-- BOX (END) -->

@@ -1,5 +1,7 @@
 package org.ussa.beans;
 
+import java.util.List;
+
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Inventory;
@@ -7,8 +9,6 @@ import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
-
-import java.util.List;
 
 public class AccountBean
 {
@@ -35,8 +35,9 @@ public class AccountBean
 	private String[] fisOptions;
 	private String magazineOption;
 	private Boolean hasInsurance;
+	private boolean wasBgScreeningInfoAlreadyShown;
 
-	//Reference Data fields.  Do not save when done:
+	//Reference Data fields.
 	private List<State> usStates;
 	private List<State> allStates;
 	private List<Nation> nations;
@@ -129,17 +130,27 @@ public class AccountBean
 		this.usStates = usStates;
 	}
 
-    public List<State> getAllStates() 
-    {
-        return allStates;
-    }
+	public boolean getWasBgScreeningInfoAlreadyShown()
+	{
+		return wasBgScreeningInfoAlreadyShown;
+	}
 
-    public void setAllStates(List<State> allStates) 
-    {
-        this.allStates = allStates;
-    }
+	public void setWasBgScreeningInfoAlreadyShown(boolean wasBgScreeningInfoAlreadyShown)
+	{
+		this.wasBgScreeningInfoAlreadyShown = wasBgScreeningInfoAlreadyShown;
+	}
 
-    public List<Nation> getNations()
+	public List<State> getAllStates()
+	{
+		return allStates;
+	}
+
+	public void setAllStates(List<State> allStates)
+	{
+		this.allStates = allStates;
+	}
+
+	public List<Nation> getNations()
 	{
 		return nations;
 	}

@@ -1,5 +1,12 @@
 package org.ussa.spring.flows.registration;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
@@ -38,13 +45,6 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.util.DateTimeUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 
 public class RegistrationAction extends FormAction implements Serializable
@@ -389,6 +389,16 @@ public class RegistrationAction extends FormAction implements Serializable
 		accountBean.setMemberships(rulesBL.getApplicableSportMemberships(accountBean));
 		accountBean.setFisItems(rulesBL.getApplicableFisItems(accountBean));
 		accountBean.setMagazineItems(rulesBL.getValidMagazineOptions(accountBean));
+
+		// this is needed to determine whether or not to show the backgroundScreeningPopup
+		HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
+		request.getSession().removeAttribute("showBackgroundScreening");
+		if(! accountBean.getWasBgScreeningInfoAlreadyShown() && rulesBL.needsBackgroundCheck(accountBean))
+		{
+			request.getSession().setAttribute("showBackgroundScreening", true);
+
+			accountBean.setWasBgScreeningInfoAlreadyShown(true);
+		}
 
 		return success();
 	}

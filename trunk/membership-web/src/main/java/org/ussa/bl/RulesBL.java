@@ -38,6 +38,8 @@ public interface RulesBL
 
 	public boolean needsBackgroundCheck(Long ussaId);
 
+	public boolean needsBackgroundCheck(AccountBean accountBean);
+
 	public boolean certificateIsRestricted(Long ussaId);
 
 	public boolean isCountryUs(String country);

@@ -17,8 +17,8 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 	public MemberSeason getMostRecentBackgroundCheck(Long ussaId)
 	{
 		List<MemberSeason> seasons = (List<MemberSeason>) getHibernateTemplate()
-				.find("from MemberSeason s where s.memberSeasonPk.member.id = ? and s.season = " +
-						"(select max(s.season) from MemberSeason ms where ms.memberSeasonPk.member.id = ? and ms.backgroundCheckFlag = 'Y')",
+				.find("from MemberSeason s where s.memberSeasonPk.member.id = ? and s.memberSeasonPk.season = " +
+						"(select max(ms.memberSeasonPk.season) from MemberSeason ms where ms.memberSeasonPk.member.id = ? and ms.backgroundCheckFlag = 'Y')",
 						new Object[]{ussaId, ussaId});
 
 		if(seasons != null && seasons.size() > 0)
