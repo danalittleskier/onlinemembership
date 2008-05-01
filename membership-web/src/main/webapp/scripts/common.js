@@ -46,3 +46,18 @@ function removeChildren(element)
 		element.removeChild(element.firstChild);
 	}
 }
+
+/**
+ * Submit a Spring MVC able form with a specified event name and value.  This is a workaround that 
+ * provides a way to submit from regular input buttons using the name / value of the specified button.
+ *
+ * @param buttonCtl		The button whose name / value will be submitted
+  */
+function submitFormWithInputButton(buttonCtl)
+{
+	var name = $(buttonCtl).attr('name');
+	var value = $(buttonCtl).attr('value');
+	$(buttonCtl).after("<input type='hidden' name='" + name + "' value='" + value + "'/>");
+	$(buttonCtl).parents("form").submit();
+}
+

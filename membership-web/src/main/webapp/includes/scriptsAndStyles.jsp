@@ -25,6 +25,7 @@
 
 <%-- Project Scripts --%>
 <script type="text/javascript" src="<c:url value='/scripts/common.js'/>"></script>
+<script type="text/javascript" src="<c:url value='/scripts/jquery/jquery-1.2.3.min.js'/>"></script>
 
 <%-- Greybox --%>
 <script type="text/javascript">
