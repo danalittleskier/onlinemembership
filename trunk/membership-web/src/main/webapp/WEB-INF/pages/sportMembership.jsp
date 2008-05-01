@@ -52,7 +52,7 @@
 	</spring:bind>
 
 	<div id="hide" style="display:none">
-		<input type="submit" class="button" id="update" name="_eventId_change" value="Update">
+		<input type="button" class="button" id="update" name="_eventId_change" value="Update" onclick="submitFormWithInputButton(this);">
 	</div>
 
 	<fieldset>
@@ -77,7 +77,7 @@
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<label></label>
-			<input type="submit" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart">
+			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">			
 		</c:if>
 		<br/>
 	</fieldset>
@@ -186,7 +186,7 @@
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
-		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+		<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 	</fieldset>
 </form:form>

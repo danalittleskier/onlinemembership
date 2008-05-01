@@ -27,7 +27,7 @@
 				</table>
 				<br />
                 <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-				<input type="submit" name="_eventId_back" value="Back" class="btn-green"/>
+				<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 				<input type="submit" name="_eventId_next" value="Continue" class="btn-green"/>
 				<em><p>If you believe your account is not shown, please call USSA Member Services at <br />
 				(435) 647-2666 to complete your registration.</p></em>

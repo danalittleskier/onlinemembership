@@ -192,9 +192,9 @@
 
 <fieldset class="buttons">
 	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-	<input type="submit" class="btn-green" name="_eventId_add" value="Add Selections to Cart">
+	<input type="button" class="btn-green" name="_eventId_add" value="Add Selections to Cart" onclick="submitFormWithInputButton(this);">
 	<div style="float: left; margin-left: 8px;">
-		<input type="submit" class="btn-green" name="_eventId_back" value="Back">
+		<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 		<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
 	</div>
 </fieldset>
