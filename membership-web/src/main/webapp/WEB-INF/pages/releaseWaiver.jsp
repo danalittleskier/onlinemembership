@@ -35,11 +35,15 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 
 
 <form:hidden id="releaseWaiver" path="memberLegal.releaseWaiver"/>
-<input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)" class="checkbox"/>
-<label for="releaseWaiverControl" class="checkbox">*  I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT</label>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('releaseWaiver');
 </script>
+<table width="100%">
+	<tr>
+		<td width="30px"><input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)"/></td>
+		<td>* I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT</td>
+	</tr>
+</table>
 
 <c:if test="${accountBean.parentInfoRequired}">
 	<h2>Parent Release<h2>

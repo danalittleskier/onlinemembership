@@ -66,6 +66,7 @@ public class RuleAssociations
 		restrictedMemberships.add(Inventory.INV_ID_ALPINE_ASSOCIATE);
 		restrictedMemberships.add(Inventory.INV_ID_DISABLED_ALPINE_ASSOCIATE);
 		restrictedMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_ASSOCIATE);
+		restrictedMemberships.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_ASSOCIATE);
 		restrictedMemberships.add(Inventory.INV_ID_FREESTYLE_ASSOCIATE);
 		restrictedMemberships.add(Inventory.INV_ID_JUMPING_ASSOCIATE);
 		restrictedMemberships.add(Inventory.INV_ID_SNOWBOARD_ASSOCIATE);
