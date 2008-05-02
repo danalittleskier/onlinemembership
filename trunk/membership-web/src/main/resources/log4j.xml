@@ -16,7 +16,7 @@
 
     <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
     <logger name="org.acegisecurity">
-        <level value="ERROR"/>
+        <level value="TRACE">
     </logger>
 
     <logger name="org.apache">
