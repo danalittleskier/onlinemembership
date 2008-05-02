@@ -16,7 +16,7 @@ public class InventoryAddDaoImpl extends GenericDaoHibernate<InventoryAdd, Long>
 	public List<InventoryAdd> getInventoryAddByInvId(String selectedInvId, String divisionCode)
 	{
 		StringBuilder query = new StringBuilder("select i from InventoryAdd i where selInvId = ? and ");
-		query.append("(divisionCode is null or divisionCode = ?) ");
+		query.append("(divisionCode is null or divisionCode = '' or divisionCode = ?) ");
 
 		List<InventoryAdd> inventory = getHibernateTemplate().find(query.toString(), new Object[] {selectedInvId, divisionCode});
 		return inventory;
