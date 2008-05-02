@@ -91,6 +91,12 @@ public class Member implements Serializable
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
 	private Division division;
 
+	@Column(name = "SINCE_SEASON", nullable = true, length=4, unique=false)
+	private String sinceSeason;
+
+	@Column(name = "CARD_PRINT_FLAG", nullable = true, length=1, unique=false)
+	private String cardPrintFlag;
+
 //	@ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 //	private Set<Club> clubs;
 
@@ -288,6 +294,26 @@ public class Member implements Serializable
 	public void setDivision(Division division)
 	{
 		this.division = division;
+	}
+
+	public String getSinceSeason()
+	{
+		return sinceSeason;
+	}
+
+	public void setSinceSeason(String sinceSeason)
+	{
+		this.sinceSeason = sinceSeason;
+	}
+
+	public String getCardPrintFlag()
+	{
+		return cardPrintFlag;
+	}
+
+	public void setCardPrintFlag(String cardPrintFlag)
+	{
+		this.cardPrintFlag = cardPrintFlag;
 	}
 
 	public ParentInfo getParentInfo()

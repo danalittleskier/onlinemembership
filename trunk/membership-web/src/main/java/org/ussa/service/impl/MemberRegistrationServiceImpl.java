@@ -1,11 +1,15 @@
 package org.ussa.service.impl;
 
-import java.util.Date;
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -23,7 +27,6 @@ import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
-import org.ussa.model.Inventory;
 import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberClub;
@@ -34,7 +37,6 @@ import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
-import org.apache.commons.lang.StringUtils;
 
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
@@ -53,106 +55,123 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	public void processRegistration(AccountBean accountBean) throws Exception
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
-
-		// MEMBER
 		Member member = accountBean.getMember();
-		member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
-		member = memberDao.save(member);
+		boolean isNewRegistration = false;
 
-		//MEMBERCLUB
-		MemberClub memberClub;
 		try
 		{
-			memberClub = memberClubDao.get(member.getId());
-		}
-		catch (ObjectRetrievalFailureException e)
-		{
-			memberClub = null;
-		}
-		if(accountBean.getClubId() != null && accountBean.getClubId() > 0)
-		{
-			if(memberClub == null)
+// MEMBER
+			member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
+			if(member.getId() == null)
 			{
-				memberClub = new MemberClub();
-				memberClub.setIndUssaId(member.getId());
+				isNewRegistration = true;
+				member.setSinceSeason(currentSeason);
 			}
-			memberClub.setClubUssaId(accountBean.getClubId());
-			memberClubDao.save(memberClub);
-		}
-		else if(memberClub != null)
-		{
-			memberClubDao.remove(memberClub);
-		}
+			member.setExpireSeason(currentSeason);
+			member.setCardPrintFlag("Y");
+			member = memberDao.save(member);
 
-		// MEMBERADDRESS
-		Address address = accountBean.getAddress();
-		address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY));
-		universalDao.save(address);
-
-		// MEMBERLEGAL
-		MemberLegal memberLegal = accountBean.getMemberLegal();
-		String season = dateBL.getCurrentRenewSeason();
-		memberLegal.setMemberSeasonPk(new MemberSeasonPk(member, season));
-		if(StringUtils.isNotBlank(memberLegal.getFisReleaseForm()))
-		{
-			memberLegal.setFisReleaseFormDate(new Date());
-		}
-		if(StringUtils.isNotBlank(memberLegal.getIpcReleaseForm()))
-		{
-			memberLegal.setIpcReleaseFormDate(new Date());
-		}
-		if(StringUtils.isNotBlank(memberLegal.getInsuranceWaiver()))
-		{
-			memberLegal.setInsuranceWaiverDate(new Date());
-		}
-		memberLegal.setReleaseWaiver("Y");
-		memberLegal.setReleaseWaiverDate(new Date());
-		universalDao.save(memberLegal);
-
-		// MEMBERSEASON
-		Calendar now = Calendar.getInstance();
-		Date appProcessDate = DateTimeUtils.moveToStartOfDay(now).getTime();
-		MemberSeason memberSeason = new MemberSeason();
-		memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
-		memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
-		memberSeason.setAppProcessDate(appProcessDate);
-		memberSeason.setAppReceiveDate(appProcessDate);
-		universalDao.save(memberSeason);
-
-		// MEMBERTRANSACTION
-		CartBean cartBean = accountBean.getCartBean();
-		List<LineItemBean> lineItemBeans = cartBean.getLineItems();
-		for (LineItemBean lineItem : lineItemBeans)
-		{
-			saveMemberTransaction(lineItem, member, currentSeason);
-
-			// INVENTORYADD
-			String invId = lineItem.getInventory().getId();
-			String divisionCode = member.getDivision().getDivisionCode();
-			List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
-			for (InventoryAdd inventoryAdd : additionInventory)
+			//MEMBERCLUB
+			MemberClub memberClub;
+			try
 			{
-				Inventory inventory = inventoryDao.get(inventoryAdd.getAddInvId());
-
-				saveMemberTransaction(new LineItemBean(inventory), member, currentSeason);
+				memberClub = memberClubDao.get(member.getId());
 			}
+			catch (ObjectRetrievalFailureException e)
+			{
+				memberClub = null;
+			}
+			if(accountBean.getClubId() != null && accountBean.getClubId() > 0)
+			{
+				if(memberClub == null)
+				{
+					memberClub = new MemberClub();
+					memberClub.setIndUssaId(member.getId());
+				}
+				memberClub.setClubUssaId(accountBean.getClubId());
+				memberClubDao.save(memberClub);
+			}
+			else if(memberClub != null)
+			{
+				memberClubDao.remove(memberClub);
+			}
+
+			// MEMBERADDRESS
+			Address address = accountBean.getAddress();
+			address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY));
+			universalDao.save(address);
+
+			// MEMBERLEGAL
+			MemberLegal memberLegal = accountBean.getMemberLegal();
+			String season = dateBL.getCurrentRenewSeason();
+			memberLegal.setMemberSeasonPk(new MemberSeasonPk(member, season));
+			if(StringUtils.isNotBlank(memberLegal.getFisReleaseForm()))
+			{
+				memberLegal.setFisReleaseFormDate(new Date());
+			}
+			if(StringUtils.isNotBlank(memberLegal.getIpcReleaseForm()))
+			{
+				memberLegal.setIpcReleaseFormDate(new Date());
+			}
+			if(StringUtils.isNotBlank(memberLegal.getInsuranceWaiver()))
+			{
+				memberLegal.setInsuranceWaiverDate(new Date());
+			}
+			memberLegal.setReleaseWaiver("Y");
+			memberLegal.setReleaseWaiverDate(new Date());
+			universalDao.save(memberLegal);
+
+			// MEMBERSEASON
+			Calendar now = Calendar.getInstance();
+			Date appProcessDate = DateTimeUtils.moveToStartOfDay(now).getTime();
+			MemberSeason memberSeason = new MemberSeason();
+			memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
+			memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
+			memberSeason.setAppProcessDate(appProcessDate);
+			memberSeason.setAppReceiveDate(appProcessDate);
+			universalDao.save(memberSeason);
+
+			// MEMBERTRANSACTION
+			CartBean cartBean = accountBean.getCartBean();
+			List<LineItemBean> lineItemBeans = cartBean.getLineItems();
+			Set<String> invIdsAdded = new HashSet<String>();
+			for (LineItemBean lineItem : lineItemBeans)
+			{
+				saveMemberTransaction(lineItem, member, currentSeason, invIdsAdded);
+
+				// add additional inventory
+				addAdditionalInventory(lineItem.getInventory().getId(), member, currentSeason, invIdsAdded);
+			}
+
+			// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
+			creditCardProcessingService.processCard(accountBean);
+
+			// BATCH TABLES
+			batchTransactionDao.insertToBatchTables(accountBean);
+
+			// moving this to the end until we get the transaction manager working with multiple datasources.
+			// USER ACCOUNT
+			UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
+			User user = userManager.getUserByUsername(userDetails.getUsername());
+			user.setUssaId(member.getId());
+			userManager.saveUser(user);
 		}
+		catch (Exception e)
+		{
+			if(isNewRegistration)
+			{
+				member.setId(null);
 
-		// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
-		creditCardProcessingService.processCard(accountBean);
-
-		// BATCH TABLES
-		batchTransactionDao.insertToBatchTables(accountBean);
-
-		// moving this to the end until we get the transaction manager working with multiple datasources.
-		// USER ACCOUNT
-		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
-		User user = userManager.getUserByUsername(userDetails.getUsername());
-		user.setUssaId(member.getId());
-		userManager.saveUser(user);
+				UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
+				User user = userManager.getUserByUsername(userDetails.getUsername());
+				user.setUssaId(null);
+				userManager.saveUser(user);
+			}
+			throw e;
+		}
 	}
 
-	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason)
+	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason, Set<String> invIdsAdded)
 	{
 		MemberTransaction memberTransaction = new MemberTransaction(member);
 		memberTransaction.setSeason(currentSeason);
@@ -161,6 +180,27 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
 		memberTransaction.setPurchaseDate(new Date());
 		universalDao.save(memberTransaction);
+		invIdsAdded.add(lineItem.getInventory().getId());
+	}
+
+	private void addAdditionalInventory(String invId, Member member, String currentSeason, Set<String> invIdsAdded)
+	{
+		String divisionCode = member.getDivision().getDivisionCode();
+		List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
+		for (InventoryAdd inventoryAdd : additionInventory)
+		{
+			if(! invIdsAdded.contains(inventoryAdd.getAddInvId()))
+			{
+				LineItemBean lineItem = new LineItemBean(inventoryDao.get(inventoryAdd.getAddInvId()));
+				lineItem.setAmount(BigDecimal.ZERO);
+
+				saveMemberTransaction(lineItem, member, currentSeason, invIdsAdded);
+
+				// add additional inventory
+				addAdditionalInventory(lineItem.getInventory().getId(), member, currentSeason, invIdsAdded);
+			}
+		}
+
 	}
 
 

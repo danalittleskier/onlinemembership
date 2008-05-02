@@ -4,6 +4,7 @@
 
 <c:set var="divisionDues"><%=Inventory.INVENTORY_TYPE_DIVISION_DUES%></c:set>
 <c:set var="stateDues"><%=Inventory.INVENTORY_TYPE_STATE_DUES%></c:set>
+<c:set var="ussaLate"><%=Inventory.INV_ID_MEMBER_LATE_FEE%></c:set>
 
 
 <display:table name="accountBean.cartBean.lineItems" requestURI="" sort="list" id="cart" >
@@ -14,7 +15,7 @@
 		</c:if>
 	</display:column>
 	<display:column title="&nbsp;" sortable="false" class="item-remove">
-		<c:if test="${!(cart.inventory.inventoryType eq divisionDues) and !(cart.inventory.inventoryType eq stateDues)}">
+		<c:if test="${!(cart.inventory.inventoryType eq divisionDues) and !(cart.inventory.inventoryType eq stateDues) and !(cart.inventory.id eq ussaLate)}">
 			<c:url var="deleteUrl" value="/registration.html">
 				<c:param name="id" value="${cart.inventory.id}"/>
 				<c:param name="_eventId_remove" value="Remove"/>

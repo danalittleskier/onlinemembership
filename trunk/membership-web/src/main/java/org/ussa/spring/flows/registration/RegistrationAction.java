@@ -165,6 +165,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			}
 
 			Address address = new Address();
+			address.setCountry("USA");
 			accountBean.setAddress(address);
 
 			MemberLegal memberLegal = new MemberLegal();
@@ -177,6 +178,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		else
 		{
 			Member member = memberDao.get(id);
+			member.setEmail(user.getEmail());
 			accountBean.setMember(member);
 
 			if(member.getBirthDate() != null)
