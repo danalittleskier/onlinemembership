@@ -179,6 +179,7 @@
 				<attribute name="validator" value="validatorContactInfo"/>
 			</action>
 		</transition>
+		<transition on="back" to="verification"/>
 	</view-state>
 
 	<view-state id="editSportMembership" view="sportMembership">
