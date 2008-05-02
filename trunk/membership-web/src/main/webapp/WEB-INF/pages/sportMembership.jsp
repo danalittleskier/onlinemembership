@@ -180,7 +180,6 @@
 		</form:select><br/>
 		<label for="contributionAmount">Contribution Amount:</label>
 		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
-		<span style="padding-left:5px;" class="data-input">($X,XXX.00)</span>
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>
