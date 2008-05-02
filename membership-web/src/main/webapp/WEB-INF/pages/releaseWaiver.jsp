@@ -3,7 +3,7 @@
 
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_4.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">Release Waiver</div>
+<div id="stg-pagetitle">United State Ski and Snowboard Assumption of Risk and Release of Liability</div>
 <p>
 This is a waiver of certain legal rights.  Please read carefully before signing.
 </p>
