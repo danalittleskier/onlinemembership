@@ -1,5 +1,11 @@
 package org.ussa.common.model;
 
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,15 +17,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.persistence.Version;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 import org.acegisecurity.GrantedAuthority;
-import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.builder.ToStringBuilder;
 import org.apache.commons.lang.builder.ToStringStyle;
 
@@ -34,13 +33,12 @@ import org.apache.commons.lang.builder.ToStringStyle;
  */
 @Entity
 @Table(name="app_user")
-public class User implements Serializable, UserDetails {
+public class User implements Serializable {
     private static final long serialVersionUID = 3832626162173359411L;
 
     //The following were originally setup by appFuse (commented out those not needed):
     private Long id;
     private String username;                    // required
-    private String password;                    // required
     //private String confirmPassword;
     //private String passwordHint;
     private String firstName;                   // required
@@ -49,12 +47,7 @@ public class User implements Serializable, UserDetails {
 //    private String phoneNumber;
 //    private String website;
 //    private Address address = new Address();
-    private Integer version;
     private Set<Role> roles = new HashSet<Role>();
-    private boolean enabled;
-    private boolean accountExpired;
-    private boolean accountLocked;
-    private boolean credentialsExpired;
 
     //The following were added for USSA:
     private Long ussaId;
@@ -83,11 +76,6 @@ public class User implements Serializable, UserDetails {
     @Column(nullable=false,length=50,unique=true)
     public String getUsername() {
         return username;
-    }
-
-    @Column(nullable=false)
-    public String getPassword() {
-        return password;
     }
 
 //    @Transient
@@ -183,65 +171,12 @@ public class User implements Serializable, UserDetails {
         return roles.toArray(new GrantedAuthority[0]);
     }
 
-    @Version
-    public Integer getVersion() {
-        return version;
-    }
-
-    @Column(name="account_enabled")
-    public boolean isEnabled() {
-        return enabled;
-    }
-
-    @Column(name="account_expired",nullable=false)
-    public boolean isAccountExpired() {
-        return accountExpired;
-    }
-
-    /**
-     * @see org.acegisecurity.userdetails.UserDetails#isAccountNonExpired()
-     */
-    @Transient
-    public boolean isAccountNonExpired() {
-        return !isAccountExpired();
-    }
-
-    @Column(name="account_locked",nullable=false)
-    public boolean isAccountLocked() {
-        return accountLocked;
-    }
-
-    /**
-     * @see org.acegisecurity.userdetails.UserDetails#isAccountNonLocked()
-     */
-    @Transient
-    public boolean isAccountNonLocked() {
-        return !isAccountLocked();
-    }
-
-    @Column(name="credentials_expired",nullable=false)
-    public boolean isCredentialsExpired() {
-        return credentialsExpired;
-    }
-
-    /**
-     * @see org.acegisecurity.userdetails.UserDetails#isCredentialsNonExpired()
-     */
-    @Transient
-    public boolean isCredentialsNonExpired() {
-        return !credentialsExpired;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 //    public void setConfirmPassword(String confirmPassword) {
@@ -279,27 +214,7 @@ public class User implements Serializable, UserDetails {
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
     }
-
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
-
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public void setAccountExpired(boolean accountExpired) {
-        this.accountExpired = accountExpired;
-    }
-
-    public void setAccountLocked(boolean accountLocked) {
-        this.accountLocked = accountLocked;
-    }
-
-    public void setCredentialsExpired(boolean credentialsExpired) {
-        this.credentialsExpired = credentialsExpired;
-    }
-
+  
     /**
      * {@inheritDoc}
      */
@@ -329,11 +244,7 @@ public class User implements Serializable, UserDetails {
      */
     public String toString() {
         ToStringBuilder sb = new ToStringBuilder(this, ToStringStyle.DEFAULT_STYLE)
-                .append("username", this.username)
-                .append("enabled", this.enabled)
-                .append("accountExpired", this.accountExpired)
-                .append("credentialsExpired", this.credentialsExpired)
-                .append("accountLocked", this.accountLocked);
+                .append("username", this.username);
 
         GrantedAuthority[] auths = this.getAuthorities();
         if (auths != null) {

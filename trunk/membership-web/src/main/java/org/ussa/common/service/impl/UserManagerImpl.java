@@ -52,7 +52,7 @@ public class UserManagerImpl extends UniversalManagerImpl implements UserManager
     public User saveUser(User user) throws UserExistsException
 	{
 
-        if (user.getVersion() == null) {
+        if (user.getId() == null) {
             // if new user, lowercase userId
             user.setUsername(user.getUsername().toLowerCase());
         }

@@ -2,7 +2,6 @@ package org.ussa.common.dao;
 
 import java.util.List;
 
-import org.acegisecurity.userdetails.UserDetails;
 import org.acegisecurity.userdetails.UsernameNotFoundException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +21,7 @@ public interface UserDao extends GenericDao<User, Long> {
      * @throws org.acegisecurity.userdetails.UsernameNotFoundException thrown when user not found in database
      */
     @Transactional
-    UserDetails loadUserByUsername(String username) throws UsernameNotFoundException;
+    User loadUserByUsername(String username) throws UsernameNotFoundException;
 
     /**
      * Gets a list of users ordered by the uppercase version of their username.
