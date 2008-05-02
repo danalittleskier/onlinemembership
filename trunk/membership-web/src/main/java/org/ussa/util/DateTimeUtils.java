@@ -13,4 +13,14 @@ public class DateTimeUtils
 		cal.setTime(date);
 		return cal;
 	}
+
+	public static Calendar moveToStartOfDay(Calendar cal)
+	{
+		Calendar newCal = getCalendar(cal.getTime());
+		newCal.set(Calendar.MILLISECOND, 0);
+		newCal.set(Calendar.SECOND, 0);
+		newCal.set(Calendar.MINUTE, 0);
+		newCal.set(Calendar.HOUR_OF_DAY, 0);
+		return newCal;
+	}
 }

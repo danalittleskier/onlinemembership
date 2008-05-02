@@ -43,6 +43,14 @@
 		<property name="dataSource" ref="dataSource"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
 	</bean>
+	<bean id="divDuesRulesDao" class="org.ussa.dao.impl.DivDuesRulesDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="stateDuesRulesDao" class="org.ussa.dao.impl.StateDuesRulesDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
 	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
@@ -67,7 +75,8 @@
 	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
 		<property name="inventoryDao" ref="inventoryDao"/>
 		<property name="dateBL" ref="dateBL"/>
-		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
+		<property name="divDuesRulesDao" ref="divDuesRulesDao"/>
+		<property name="stateDuesRulesDao" ref="stateDuesRulesDao"/>
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
 		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 		<property name="clubDao" ref="clubDao"/>

@@ -2,6 +2,7 @@ package org.ussa.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Calendar;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
@@ -32,6 +33,7 @@ import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
+import org.ussa.util.DateTimeUtils;
 import org.apache.commons.lang.StringUtils;
 
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
@@ -108,12 +110,13 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		universalDao.save(memberLegal);
 
 		// MEMBERSEASON
+		Calendar now = Calendar.getInstance();
+		Date appProcessDate = DateTimeUtils.moveToStartOfDay(now).getTime();
 		MemberSeason memberSeason = new MemberSeason();
 		memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
 		memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
-		// TODO: What dates should go here?
-		memberSeason.setAppProcessDate(new Date());
-		memberSeason.setAppReceiveDate(new Date());
+		memberSeason.setAppProcessDate(appProcessDate);
+		memberSeason.setAppReceiveDate(appProcessDate);
 		universalDao.save(memberSeason);
 
 		// MEMBERTRANSACTION
@@ -156,8 +159,6 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		memberTransaction.setInventory(lineItem.getInventory());
 		memberTransaction.setQty(lineItem.getQty());
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
-		// TODO: What dates should go here?
-		memberTransaction.setSentDate(new Date());
 		memberTransaction.setPurchaseDate(new Date());
 		universalDao.save(memberTransaction);
 	}

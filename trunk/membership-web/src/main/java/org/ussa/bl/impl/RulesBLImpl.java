@@ -23,12 +23,13 @@ import org.ussa.bl.DateBL;
 import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.ClubDao;
+import org.ussa.dao.DivDuesRulesDao;
 import org.ussa.dao.DivisionAffiliationDao;
 import org.ussa.dao.DivisionDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberSeasonDao;
 import org.ussa.dao.MemberTransactionDao;
-import org.ussa.dao.RenewRuleInvDao;
+import org.ussa.dao.StateDuesRulesDao;
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Division;
@@ -37,7 +38,6 @@ import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
-import org.ussa.model.State;
 
 public class RulesBLImpl implements RulesBL
 {
@@ -45,7 +45,8 @@ public class RulesBLImpl implements RulesBL
 
 	private InventoryDao inventoryDao;
 	private DateBL dateBL;
-	private RenewRuleInvDao renewRuleInvDao;
+	private DivDuesRulesDao divDuesRulesDao;
+	private StateDuesRulesDao stateDuesRulesDao;
 	private MemberTransactionDao memberTransactionDao;
 	private MemberSeasonDao memberSeasonDao;
 	private ClubDao clubDao;
@@ -62,9 +63,14 @@ public class RulesBLImpl implements RulesBL
 		this.dateBL = dateBL;
 	}
 
-	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
+	public void setDivDuesRulesDao(DivDuesRulesDao divDuesRulesDao)
 	{
-		this.renewRuleInvDao = renewRuleInvDao;
+		this.divDuesRulesDao = divDuesRulesDao;
+	}
+
+	public void setStateDuesRulesDao(StateDuesRulesDao stateDuesRulesDao)
+	{
+		this.stateDuesRulesDao = stateDuesRulesDao;
 	}
 
 	public void setMemberTransactionDao(MemberTransactionDao memberTransactionDao)
@@ -647,61 +653,42 @@ public class RulesBLImpl implements RulesBL
 		cart.removeLineItems(Inventory.INVENTORY_TYPE_DIVISION_DUES);
 		cart.removeLineItems(Inventory.INVENTORY_TYPE_STATE_DUES);
 
+		Date now = new Date();
+		Date lateRenewDate = dateBL.getLateRenewDate();
+
 		// RE-CALCULATE AND RE-ADD DIVISION AND STATE DUES
 		if(!cart.containsAny(RuleAssociations.membershipsExemptFromDues))
 		{
-			Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
 			String stateCode = member.getStateCode();
-			if(State.STATE_CODE_MAINE.equals(stateCode))
+			Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
+			List<LineItemBean> membershipLineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+			List<String> membershipIds = new ArrayList<String>();
+			for (LineItemBean lineItem : membershipLineItems)
 			{
-				List<Inventory> items = new ArrayList<Inventory>();
-				if(age <= 10 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH))
-				{
-					items.add(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_10_UNDER));
-				}
-				if(age >= 11 && age <= 12 && cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
-						|| cart.contains(Inventory.INV_ID_ALPINE_STUDENT)
-						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)
-						|| cart.contains(Inventory.INV_ID_ALPINE_COACH))
-				{
-					items.add(inventoryDao.get(Inventory.INV_ID_MARA_DUES_AY_11_12_AS_AC_ACO));
-				}
-				Inventory mostExpensive = getMostExpensive(items);
-				if(items.size() > 0)
-				{
-					cart.addItem(mostExpensive);
-				}
+				membershipIds.add(lineItem.getInventory().getId());
 			}
-			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
+			List<Inventory> stateDues = stateDuesRulesDao.getStateDues(stateCode, age, membershipIds, false);
+
+			if(stateDues.size() > 0)
 			{
-				List<Inventory> items = new ArrayList<Inventory>();
-				if(cart.contains(Inventory.INV_ID_ALPINE_YOUTH)
-						|| cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR))
+				Inventory mostExpensive = getMostExpensive(stateDues);
+				cart.addItem(mostExpensive);
+
+				// state late fees if any
+				if(now.after(lateRenewDate))
 				{
-					items.add(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_AY_AC));
-				}
-				if(cart.contains(Inventory.INV_ID_ALPINE_COACH)
-						|| cart.contains(Inventory.INV_ID_ALPINE_OFFICIAL))
-				{
-					items.add(inventoryDao.get(Inventory.INV_ID_NJSRA_DUES_ACO_AO));
-				}
-				Inventory mostExpensive = getMostExpensive(items);
-				if(items.size() > 0)
-				{
-					cart.addItem(mostExpensive);
+					List<Inventory> stateLateFees = stateDuesRulesDao.getStateDues(stateCode, age, membershipIds, true);
+					for (Inventory lateFee : stateLateFees)
+					{
+						cart.addItem(lateFee);
+					}
 				}
 			}
 			else
 			{
 				String divisionCode = member.getDivision().getDivisionCode();
-				List<LineItemBean> membershipLineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
-				List<String> membershipIds = new ArrayList<String>();
-				for (LineItemBean lineItem : membershipLineItems)
-				{
-					membershipIds.add(lineItem.getInventory().getId());
-				}
 
-				List<Inventory> allDues = renewRuleInvDao.getDivisionDues(divisionCode, age, membershipIds);
+				List<Inventory> allDues = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, false);
 				List<Inventory> applicableDues = new ArrayList<Inventory>();
 
 				if(RuleAssociations.onlyOneDivisionDuePerSport.contains(member.getDivision().getDivisionCode()))
@@ -733,38 +720,23 @@ public class RulesBLImpl implements RulesBL
 				{
 					cart.addItem(due);
 				}
-			}
 
-		}
-
-		// LATE FEES
-		Date now = new Date();
-		Date lateRenewDate = dateBL.getLateRenewDate();
-
-		if(now.after(lateRenewDate))
-		{
-			// DIVISION AND STATE LATE FEES
-			String stateCode = member.getStateCode();
-			if(State.STATE_CODE_MAINE.equals(stateCode))
-			{
-				cart.addItem(inventoryDao.get(Inventory.INV_ID_MARA_LATE_FEE));
-			}
-			else if(State.STATE_CODE_NEW_JERSEY.equals(stateCode))
-			{
-				cart.addItem(inventoryDao.get(Inventory.INV_ID_NJSRA_LATE_FEE));
-			}
-			else if(cart.contains(Inventory.INV_ID_ALPINE_COMPETITOR)) // There are currently only division late fees for alpine competitors
-			{
-				String divisionCode = member.getDivision().getDivisionCode();
-				String invId = RuleAssociations.divisionLateFeesAplineCompetitor.get(divisionCode);
-				if(invId != null)
+				// division late fees if any
+				if(now.after(lateRenewDate))
 				{
-					Inventory divisionLateFee = inventoryDao.get(invId);
-					cart.addItem(divisionLateFee);
+					List<Inventory> divisionLateFees = divDuesRulesDao.getDivisionDues(member.getDivision().getDivisionCode(), age, membershipIds, true);
+					for (Inventory lateFee : divisionLateFees)
+					{
+						cart.addItem(lateFee);
+					}
 				}
 			}
+		}
 
-			// USSA LATE FEES
+		//USSA LATE FEE
+		if(now.after(lateRenewDate))
+		{
+			// new registrants are exempt from late fee if they have only youth or official memberships
 			if((member.getId() == null || member.getId() == 0)
 				|| cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0
 				|| hasOnlyYouthMemberships(accountBean)

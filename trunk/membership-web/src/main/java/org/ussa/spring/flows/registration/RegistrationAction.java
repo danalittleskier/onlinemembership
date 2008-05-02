@@ -156,6 +156,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			accountBean.setMember(member);
 			member.setFirstName(user.getFirstName());
 			member.setLastName(user.getLastName());
+			member.setEmail(user.getEmail());
 			member.setParentInfo(new ParentInfo());
 			if(StringUtils.isNotBlank(user.getBirthDate()))
 			{
