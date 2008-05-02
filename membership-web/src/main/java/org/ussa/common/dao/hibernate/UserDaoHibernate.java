@@ -3,8 +3,6 @@ package org.ussa.common.dao.hibernate;
 import javax.persistence.Table;
 import java.util.List;
 
-import org.acegisecurity.userdetails.UserDetails;
-import org.acegisecurity.userdetails.UserDetailsService;
 import org.acegisecurity.userdetails.UsernameNotFoundException;
 import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.jdbc.core.simple.SimpleJdbcTemplate;
@@ -22,7 +20,7 @@ import org.ussa.common.model.User;
  *   Modified by <a href="mailto:bwnoll@gmail.com">Bryan Noll</a> to work with
  *   the new BaseDaoHibernate implementation that uses generics.
 */
-public class UserDaoHibernate extends GenericDaoHibernate<User, Long> implements UserDao, UserDetailsService {
+public class UserDaoHibernate extends GenericDaoHibernate<User, Long> implements UserDao {
 
     /**
      * Constructor that sets the entity to User.class.
@@ -66,12 +64,13 @@ public class UserDaoHibernate extends GenericDaoHibernate<User, Long> implements
     /**
      * {@inheritDoc}
     */
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        List users = getHibernateTemplate().find("from User where username=?", username);
+    @SuppressWarnings("unchecked")
+	public User loadUserByUsername(String username) throws UsernameNotFoundException {
+        List<User> users = getHibernateTemplate().find("from User where username=?", username);
         if (users == null || users.isEmpty()) {
             throw new UsernameNotFoundException("user '" + username + "' not found...");
         } else {
-            return (UserDetails) users.get(0);
+            return users.get(0);
         }
     }
 
