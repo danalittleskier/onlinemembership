@@ -16,7 +16,7 @@
 
     <!-- Suppress success logging from InteractiveAuthenticationSuccessEvent -->
     <logger name="org.acegisecurity">
-        <level value="TRACE">
+        <level value="TRACE"/>
     </logger>
 
     <logger name="org.apache">
@@ -36,7 +36,7 @@
     <logger name="org.springframework">
         <level value="WARN"/>
     </logger>
-
+    
     <!-- Suppress warnings from Commons Validator -->
     <logger name="org.apache.commons.validator.ValidatorResources">
         <level value="ERROR"/>
@@ -46,6 +46,10 @@
     <logger name="org.apache.myfaces.shared_impl.renderkit.html">
         <level value="ERROR"/>
     </logger>
+
+	<logger name="com.atlassian.crowd">
+		<level value="TRACE"/>
+	</logger>
 
     <root>
         <level value="WARN"/>
