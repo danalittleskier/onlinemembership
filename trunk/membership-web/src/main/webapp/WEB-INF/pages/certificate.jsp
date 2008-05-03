@@ -10,7 +10,7 @@
 		<%@ include file="/includes/backgroundScreeningText.jsp"%>
 	</c:when>
 	<c:otherwise>
-		<h1>USSA</h1>
+		<div class="header"><img src="<c:url value='images/ussa/ussa-header-icon.png'/>"/> </div>
 		<p><strong>To Whom It May Concern:</strong></p>
 
 		<p>This letter is to verify that the USSA membership dues have been paid for the <c:out value="${lastSeason}"/>/<c:out value="${currentSeason}"/> season for:</p>
@@ -42,7 +42,7 @@
 				<td><c:out value="${member.division.description}"/></td>
 			</tr>
 			<tr>
-				<td class="data-label">Division Dues:</td>
+				<td class="data-label">Division/State Dues:</td>
 				<td>$<c:out value="${divisionDues}"/></td>
 			</tr>
 			<tr>
@@ -53,12 +53,23 @@
 					</c:forEach>
 				</td>
 			</tr>
+			<c:if test="${member.clubName not empty}">
+				<tr>
+					<td class="data-label">
+						Club Affiliation:
+					</td>
+					<td>
+						<c:out value="${member.clubName}"/>
+					</td>
+				</tr>
+			</c:if>
 		</table>
 
 		<p>Please accept this letter as proof of membership and allow this member to participate in USSA events.</p>
 		<p>Thank you for consideration in this matter.</p>
 		<p>Sincerely,</p>
 		<p>USSA Member Services</p>
+		<div class="footer"><img src="<c:url value='images/ussa/ussa-footer-icon.png'/>"/></div>
 	</c:otherwise>
 </c:choose>
 
