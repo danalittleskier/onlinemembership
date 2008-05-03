@@ -10,6 +10,7 @@
 		<%@ include file="/includes/backgroundScreeningText.jsp"%>
 	</c:when>
 	<c:otherwise>
+		<div class="closeWindowLink"><a href="#" onclick="window.close();">Close Window</a></div>
 		<div class="header"><img src="<c:url value='images/ussa/ussa-header-icon.png'/>"/> </div>
 		<p><strong>To Whom It May Concern:</strong></p>
 
