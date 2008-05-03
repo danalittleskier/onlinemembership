@@ -53,7 +53,7 @@
 					</c:forEach>
 				</td>
 			</tr>
-			<c:if test="${member.clubName not empty}">
+			<c:if test="${not empty member.clubName}">
 				<tr>
 					<td class="data-label">
 						Club Affiliation:
