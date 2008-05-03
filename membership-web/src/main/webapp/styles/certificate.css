@@ -10,14 +10,14 @@ body {
 	font:85% arial,verdana,sans-serif;
 }
 .clear {clear:both;}
-p {margin-bottom:20px; line-height:120%;}
+p {margin-bottom:20px; line-height:100%;}
 
 /* Layout
 ---------------------------------------------------------------------- */
 #container {
 	width:500px;
 	padding:50px;
-	border:1px solid #ccc;
+	/*border:1px solid #ccc;*/
 }
 
 /* Content
@@ -28,6 +28,25 @@ h1 {
 	background:url(../images/ussa.gif) no-repeat;
 	text-indent:-5000px;
 }
+
+.header {
+	padding-left: 150px;
+	height: 90px;
+	
+}
+
+@media screen {
+	.footer {
+		height: 60px;
+	}
+}
+@media print {
+	.footer {
+		padding-top: 200px;
+		height: 60px;
+	}
+}
 #member-data {border:0; margin-collapse:collapse; margin-left:50px;}
-#member-data td {padding:3px;}
+#member-data td {
+	padding:3px 3px 3px 3px;}
 .data-label {font-weight:bold;}
