@@ -55,9 +55,9 @@ function removeChildren(element)
   */
 function submitFormWithInputButton(buttonCtl)
 {
-	var name = $(buttonCtl).attr('name');
-	var value = $(buttonCtl).attr('value');
-	$(buttonCtl).after("<input type='hidden' name='" + name + "' value='" + value + "'/>");
-	$(buttonCtl).parents("form").submit();
+	var name = $j(buttonCtl).attr('name');
+	var value = $j(buttonCtl).attr('value');
+	$j(buttonCtl).after("<input type='hidden' name='" + name + "' value='" + value + "'/>");
+	$j(buttonCtl).parents("form").submit();
 }
 

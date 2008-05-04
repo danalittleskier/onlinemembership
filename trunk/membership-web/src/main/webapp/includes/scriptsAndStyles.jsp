@@ -1,5 +1,11 @@
 <%@ include file="/includes/taglibs.jsp" %>
 
+<script type="text/javascript">
+	var myAlert = function() {
+		alert("yipee");
+	};
+</script>
+
 <%-- Calendar Scripts and CSS --%>
 <script type="text/javascript" src="<c:url value='/scripts/calendar/calendar.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/scripts/calendar/calendar-setup.js'/>"></script>
@@ -23,9 +29,14 @@
 <link type="text/css" href="<c:url value='/styles/main.css'/>" rel="stylesheet"/>
 <link type="text/css" href="<c:url value='/styles/stg-forms.css'/>" rel="stylesheet"/>
 
+<%-- JQuery --%>
+<script type="text/javascript" src="<c:url value='/scripts/jquery/jquery-1.2.3.min.js'/>"></script>
+<script type="text/javascript">
+	var $j = jQuery.noConflict(); // JQuery conflicts with rich faces faces:jquery if noConflict is not called.
+</script>
+
 <%-- Project Scripts --%>
 <script type="text/javascript" src="<c:url value='/scripts/common.js'/>"></script>
-<script type="text/javascript" src="<c:url value='/scripts/jquery/jquery-1.2.3.min.js'/>"></script>
 
 <%-- Greybox --%>
 <script type="text/javascript">
