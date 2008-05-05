@@ -251,11 +251,15 @@ public class RegistrationAction extends FormAction implements Serializable
 	public Event handleContactInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		Address address = accountBean.getAddress();
 
 		if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
 		{
 			return result("foreign");
 		}
+
+		// force country to upper case
+		address.setCountry(address.getCountry().toUpperCase());
 
 		String birthDateStr = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDateStr))
