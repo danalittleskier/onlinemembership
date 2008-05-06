@@ -20,7 +20,6 @@ import org.ussa.bl.DateBL;
 import org.ussa.common.dao.UniversalDao;
 import org.ussa.common.model.User;
 import org.ussa.common.service.UserManager;
-import org.ussa.dao.BatchTransactionDao;
 import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberClubDao;
@@ -34,6 +33,7 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
+import org.ussa.service.BatchService;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
@@ -43,7 +43,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	private DateBL dateBL;
 	private MemberDao memberDao;
 	private MemberClubDao memberClubDao;
-	private BatchTransactionDao batchTransactionDao;
+	private BatchService batchService;
     private CreditCardProcessingService creditCardProcessingService;
     private UniversalDao universalDao;
     private InventoryAddDao inventoryAddDao;
@@ -60,7 +60,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 
 		try
 		{
-// MEMBER
+			// MEMBER
 			member.setType(Member.MEMBER_TYPE_INDIVIDUAL);
 			if(member.getId() == null)
 			{
@@ -147,7 +147,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			creditCardProcessingService.processCard(accountBean);
 
 			// BATCH TABLES
-			batchTransactionDao.insertToBatchTables(accountBean);
+			batchService.doBatchInsert(accountBean, currentSeason);
 
 			// moving this to the end until we get the transaction manager working with multiple datasources.
 			// USER ACCOUNT
@@ -224,9 +224,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		this.dateBL = dateBL;
 	}
 
-	public void setBatchTransactionDao(BatchTransactionDao batchTransactionDao)
+	public void setBatchService(BatchService batchService)
 	{
-		this.batchTransactionDao = batchTransactionDao;
+		this.batchService = batchService;
 	}
 
 	public void setUniversalDao(UniversalDao universalDao)

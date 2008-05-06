@@ -13,6 +13,7 @@
 		<mapping class="org.ussa.model.Nation"/>
 		<mapping class="org.ussa.model.Inventory"/>
 
+		<mapping class="org.ussa.model.Batch"/>
 		<mapping class="org.ussa.model.BatchDetail"/>
 		<mapping class="org.ussa.model.BatchMember"/>
 		<mapping class="org.ussa.model.BatchPayment"/>

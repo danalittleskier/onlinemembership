@@ -1,13 +1,15 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
 	<script type="text/javascript">
-		function disableButtons(form)
+		function disableButtonsAndSubmit()
 		{
+			var backButton = document.getElementById("backButton");
+			backButton.disabled = true;
+
 			var continueButton = document.getElementById("continueButton");
 			continueButton.value = "Processing ...";
-//			continueButton.disabled = true;
-			var backButton = document.getElementById("backButton");
-//			backButton.disabled = true;
+			continueButton.disabled = true;
+			submitFormWithInputButton(continueButton);
 		}
 	</script>
 </head>
@@ -20,7 +22,7 @@
 
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
-<form:form commandName="accountBean" name="accountBean" onsubmit="disableButtons(this)">
+<form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
 
@@ -86,7 +88,7 @@
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<input id="backButton" type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
-		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue">
+		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();">
 	</fieldset>
 </form:form>
 </div>

@@ -76,6 +76,7 @@ public class PaymentAction extends FormAction implements Serializable
 		}
 		catch (Exception e)
 		{
+			e.printStackTrace();
 			BindException errors = new BindException(accountBean, "accountBean");
 			errors.reject("errors.problem.registering.user");
 			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());

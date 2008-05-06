@@ -27,6 +27,18 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 		<property name="ussaIdGeneratorDao" ref="ussaIdGeneratorDao"/>
 	</bean>
+	<bean id="batchIdGeneratorDao" class="org.ussa.dao.impl.BatchIdGeneratorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="batchDao" class="org.ussa.dao.impl.BatchDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="batchIdGeneratorDao" ref="batchIdGeneratorDao"/>
+	</bean>
+	<bean id="batchService" class="org.ussa.service.impl.BatchServiceImpl">
+		<property name="batchDao" ref="batchDao"/>
+		<property name="batchTransactionDao" ref="batchTransactionDao"/>
+	</bean>
 	<bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
@@ -96,7 +108,7 @@
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="memberClubDao" ref="memberClubDao"/>
-		<property name="batchTransactionDao" ref="batchTransactionDao"/>
+		<property name="batchService" ref="batchService"/>
 		<property name="universalDao" ref="universalDao"/>
 		<property name="inventoryAddDao" ref="inventoryAddDao"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
@@ -104,5 +116,21 @@
 		<property name="securityContext" ref="securityContext"/>
 	</bean>
 
+	<bean id="TimerFactoryBean" class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<!-- Batches need to be closed daily at 4PM -->
+				<bean class="org.ussa.app.TimerTaskScheduler">
+					<property name="timerTask" ref="batchCloseTimerTask"/>
+					<property name="startTime" value="16:00"/><!--  24 hour clock 0:00 - 23:59 -->
+					<property name="period" value="86400000"/><!--  millis between refreshes, 86400000 millis = 24 hours-->
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="batchCloseTimerTask" class="org.ussa.app.BatchCloseTimerTask">
+		<property name="batchService" ref="batchService"/>
+	</bean>
 
 </beans>

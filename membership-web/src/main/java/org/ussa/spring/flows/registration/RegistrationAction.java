@@ -253,13 +253,23 @@ public class RegistrationAction extends FormAction implements Serializable
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		Address address = accountBean.getAddress();
 
-		if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
-		{
-			return result("foreign");
-		}
-
 		// force country to upper case
 		address.setCountry(address.getCountry().toUpperCase());
+
+		if(rulesBL.isCountryUs(address.getCountry()))
+		{
+			// They everyone to enter the US the same way
+			address.setCountry("USA");
+
+			// if their address is in the US then their state is required
+			if(StringUtils.isBlank(address.getStateCode()))
+			{
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.state.required.for.us");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return error();
+			}
+		}
 
 		String birthDateStr = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDateStr))
@@ -378,6 +388,13 @@ public class RegistrationAction extends FormAction implements Serializable
 	public Event processClubInfo(RequestContext context) throws Exception
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		// if they are foreign then they can't do foreign at this time
+		if(!rulesBL.isCountryUs(accountBean.getMember().getNationCode()))
+		{
+			return result("foreign");
+		}
+
 		if(StringUtils.isNotBlank(accountBean.getDivisionCode()))
 		{
 			accountBean.getMember().setDivision(divisionDao.get(accountBean.getDivisionCode()));

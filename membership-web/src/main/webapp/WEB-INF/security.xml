@@ -139,6 +139,7 @@
     <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
 
     <!-- SSL Switching: to use this, configure it in the filterChainProxy bean -->
+<!--
     <bean id="channelProcessingFilter" class="org.acegisecurity.securechannel.ChannelProcessingFilter">
         <property name="channelDecisionManager" ref="channelDecisionManager"/>
         <property name="filterInvocationDefinitionSource">
@@ -154,11 +155,44 @@
     <bean id="channelDecisionManager" class="org.acegisecurity.securechannel.ChannelDecisionManagerImpl">
         <property name="channelProcessors">
             <list>
-                <bean class="org.acegisecurity.securechannel.SecureChannelProcessor"/>
-                <bean class="org.acegisecurity.securechannel.InsecureChannelProcessor"/>
+                <ref bean="secureChannelProcessor"/>
+                <ref bean="insecureChannelProcessor"/>
             </list>
         </property>
     </bean>
+
+	<bean id="secureChannelProcessor" class="org.acegisecurity.securechannel.SecureChannelProcessor">
+		<property name="entryPoint">
+			<bean class="org.acegisecurity.securechannel.RetryWithHttpsEntryPoint">
+				<property name="portMapper" ref="portMapper"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="insecureChannelProcessor" class="org.acegisecurity.securechannel.InsecureChannelProcessor">
+		<property name="entryPoint">
+			<bean class="org.acegisecurity.securechannel.RetryWithHttpEntryPoint">
+				<property name="portMapper" ref="portMapper"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="portMapper" class="org.acegisecurity.util.PortMapperImpl">
+		<property name="portMappings">
+			<map>
+				<entry key-ref="nonSecurePort" value-ref="securePort"/>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="nonSecurePort" class="java.lang.Integer">
+		<constructor-arg value="80"/>
+	</bean>
+
+	<bean id="securePort" class="java.lang.Integer">
+		<constructor-arg value="11443"/>
+	</bean>
+-->
 
 	<bean id="securityContext" class="org.acegisecurity.context.SecurityContextHolder" factory-method="getContext" scope="prototype">
 		<aop:scoped-proxy/>
