@@ -49,6 +49,27 @@
 	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	
+	<!-- USSA JavaMailer -->
+	<jee:jndi-lookup id="mailServer" jndi-name="java:comp/env/mail/serverName"/>
+	<jee:jndi-lookup id="mailServerPort" jndi-name="java:comp/env/mail/serverPort"/>
+	<jee:jndi-lookup id="mailUserName" jndi-name="java:comp/env/mail/userName"/>
+	<jee:jndi-lookup id="mailPassword" jndi-name="java:comp/env/mail/password"/>
+	<jee:jndi-lookup id="defaultFromAddress" jndi-name="java:comp/env/mail/defaultFromAddress"/>
+	<jee:jndi-lookup id="defaultReplyToAddress" jndi-name="java:comp/env/mail/defaultReplyToAddress"/>
+	<jee:jndi-lookup id="mailProperties" jndi-name="java:comp/env/mail/properties"/>
+	<jee:jndi-lookup id="mailEnabled" jndi-name="java:comp/env/mail/enabled"/>
+	
+	<bean id="UssaJavaMailer" class="org.ussa.util.UssaJavaMailer">
+		<constructor-arg ref="mailProperties"/>
+		<property name="host" ref="mailServer"/>
+		<property name="port" ref="mailServerPort"/>
+		<property name="username" ref="mailUserName"/>
+		<property name="password" ref="mailPassword"/>
+		<property name="defaultFromAddress" ref="defaultFromAddress"/>
+		<property name="defaultReplyToAddress" ref="defaultReplyToAddress"/>
+		<property name="enabled" ref="mailEnabled"/>
+	</bean>
 
 	<!-- UniversalDao - can be used when doing standard CRUD - made available
 			for those who don't mind casting.  If you don't want to cast, look at
