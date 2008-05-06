@@ -9,7 +9,7 @@ import java.util.List;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.WordUtils;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
 import org.springframework.webflow.action.FormAction;
@@ -45,6 +45,7 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.util.DateTimeUtils;
+import org.ussa.util.StringUtils;
 
 
 public class RegistrationAction extends FormAction implements Serializable
@@ -232,6 +233,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			}
 
 			// don't prepopulate the cart for non members
+			// TODO: push this into rulesBL
 			if(!Member.MEMBER_TYPE_NON_MEMBER.equals(member.getType()))
 			{
 				// for renewals prepopulate the cart with the recommended membership options
@@ -252,16 +254,23 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		Address address = accountBean.getAddress();
+		Member member = accountBean.getMember();
 
-		// force country to upper case
+		// they want to force the first letter of each word of the city to be capitalized
+		address.setCity(WordUtils.capitalizeFully(address.getCity()));
+
+		// they want to force the country to upper case
 		address.setCountry(address.getCountry().toUpperCase());
 
+		// They want to force the US the be entered same way for everyone
+		if(rulesBL.isCountryUs(address.getCountry()))
+		{
+			address.setCountry("USA");
+		}
+
+		// if their address is in the US then their state is required
 		if(rulesBL.isCountryUsOrCanada(address.getCountry()))
 		{
-			// They everyone to enter the US the same way
-			address.setCountry("USA");
-
-			// if their address is in the US then their state is required
 			if(StringUtils.isBlank(address.getStateCode()))
 			{
 				BindException errors = new BindException(accountBean, "accountBean");
@@ -271,6 +280,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			}
 		}
 
+		// bind the birthdate and do some additional validation
 		String birthDateStr = accountBean.getBirthDate();
 		if(StringUtils.isNotBlank(birthDateStr))
 		{
@@ -285,11 +295,18 @@ public class RegistrationAction extends FormAction implements Serializable
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 				return error();
 			}
-			accountBean.getMember().setBirthDate(birthDate.getTime());
+			member.setBirthDate(birthDate.getTime());
 		}
 
-		Member member = accountBean.getMember();
-		if (member.getId() == null) { // only check for dups on new registrations!
+		// force all phone numbers to the spcified format
+		address.setPhoneHome(StringUtils.formatPhone(address.getPhoneHome()));
+		address.setPhoneWork(StringUtils.formatPhone(address.getPhoneWork()));
+		address.setPhoneOther(StringUtils.formatPhone(address.getPhoneOther()));
+		address.setPhoneFax(StringUtils.formatPhone(address.getPhoneFax()));
+
+		// for new registrations check for dups
+		if (member.getId() == null)
+		{
 			List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
 			if (dups != null && !dups.isEmpty()) {
 				accountBean.setDuplicateUsers(dups);
@@ -297,6 +314,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			}
 		}
 
+		// for new registrations that are under 18 send them to the parent info screen
 		rulesBL.setParentInfoRequired(accountBean);
 		if(member.getId() == null && accountBean.getParentInfoRequired())
 		{

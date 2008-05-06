@@ -94,14 +94,43 @@
 			<field property="address.city" depends="required">
 				<arg0 key="user.address.city" />
 			</field>
-			<field property="address.postalCode" depends="required">
+			<field property="address.postalCode" depends="required, mask">
 				<arg0 key="user.address.postalCode" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${zip}</var-value>
+				</var>
 			</field>
 			<field property="address.country" depends="required">
 				<arg0 key="user.address.country" />
 			</field>
-			<field property="address.phoneHome" depends="required">
+			<field property="address.phoneHome" depends="required, mask">
 				<arg0 key="user.home.primary.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneWork" depends="mask">
+				<arg0 key="user.work.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneOther" depends="mask">
+				<arg0 key="user.other.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneFax" depends="mask">
+				<arg0 key="user.fax" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
 			</field>
 			<field property="member.parentInfo.parent1First" depends="validWhen">
 				<msg name="validWhen" key="errors.required"/>
