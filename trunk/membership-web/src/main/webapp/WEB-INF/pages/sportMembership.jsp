@@ -92,7 +92,7 @@
 						</td>
 						<td valign="top" width="100%">
 							<label for="fis${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
-								<c:out value="${fisItem.description}"/>
+								<c:out value="${fisItem.renewDescription}"/>
 							</label>
 						</td>
 					</tr>
@@ -123,7 +123,7 @@
 						</td>
 						<td valign="top" width="100%">
 							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
-								<c:out value="${magazineItem.description}"/>
+								<c:out value="${magazineItem.renewDescription}"/>
 							</label>
 						</td>
 					</tr>

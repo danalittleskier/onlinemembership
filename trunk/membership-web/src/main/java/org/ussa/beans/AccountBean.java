@@ -36,6 +36,10 @@ public class AccountBean
 	private String magazineOption;
 	private Boolean hasInsurance;
 	private boolean wasBgScreeningInfoAlreadyShown;
+	private String fisWaiverParentalConsent;
+	private String fisWaiverDisabledParentalConsent;
+	private String medicalWaiverParentalConsent;
+	private String releaseWaiverParentalConsent;
 
 	//Reference Data fields.
 	private List<State> usStates;
@@ -138,6 +142,46 @@ public class AccountBean
 	public void setWasBgScreeningInfoAlreadyShown(boolean wasBgScreeningInfoAlreadyShown)
 	{
 		this.wasBgScreeningInfoAlreadyShown = wasBgScreeningInfoAlreadyShown;
+	}
+
+	public String getFisWaiverParentalConsent()
+	{
+		return fisWaiverParentalConsent;
+	}
+
+	public void setFisWaiverParentalConsent(String fisWaiverParentalConsent)
+	{
+		this.fisWaiverParentalConsent = fisWaiverParentalConsent;
+	}
+
+	public String getFisWaiverDisabledParentalConsent()
+	{
+		return fisWaiverDisabledParentalConsent;
+	}
+
+	public void setFisWaiverDisabledParentalConsent(String fisWaiverDisabledParentalConsent)
+	{
+		this.fisWaiverDisabledParentalConsent = fisWaiverDisabledParentalConsent;
+	}
+
+	public String getMedicalWaiverParentalConsent()
+	{
+		return medicalWaiverParentalConsent;
+	}
+
+	public void setMedicalWaiverParentalConsent(String medicalWaiverParentalConsent)
+	{
+		this.medicalWaiverParentalConsent = medicalWaiverParentalConsent;
+	}
+
+	public String getReleaseWaiverParentalConsent()
+	{
+		return releaseWaiverParentalConsent;
+	}
+
+	public void setReleaseWaiverParentalConsent(String releaseWaiverParentalConsent)
+	{
+		this.releaseWaiverParentalConsent = releaseWaiverParentalConsent;
 	}
 
 	public List<State> getAllStates()

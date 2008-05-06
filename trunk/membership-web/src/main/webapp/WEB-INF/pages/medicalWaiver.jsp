@@ -3,14 +3,16 @@
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">Medical Insurance Waiver</div>
-<p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
-</p>
+
 <!-- LEFT column -->
 <div id="stg-onecol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
+
+<p>
+This is a waiver of certain legal rights.  Please read carefully before signing.
+</p>
 
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -34,6 +36,8 @@ By his/her signature below, MEMBER CERTIFIES THAT HE/SHE HAS READ AND UNDERSTOOD
 
 THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGLIGENCE.  DO NOT AGREE TO THIS DOCUMENT UNLESS YOU HAVE READ IT IN ITS ENTIRETY.  SEEK THE ADVICE OF LEGAL COUNSEL IF YOU ARE UNSURE OF ITS EFFECT.<br/><br/>
 
+</p>
+
 <form:hidden id="insuranceWaiver" path="memberLegal.insuranceWaiver"/>
 <script type="text/javascript" defer="defer">
 	updateCheckboxControl('insuranceWaiver');
@@ -45,7 +49,29 @@ THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGL
 	</tr>
 </table>
 
-</p>
+<c:if test="${accountBean.parentInfoRequired}">
+	<h2>Parent Release</h2>
+	<p>
+		As the parent or guardian of the minor child Member indicated above, I hereby make and enter into each and every agreement,
+		representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
+		Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns.
+		By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
+		any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
+		Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
+		from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+	</p>
+	<form:hidden id="medicalWaiverParentalConsent" path="medicalWaiverParentalConsent"/>
+	<table width="100%">
+		<tr>
+			<td width="30px"><input id="medicalWaiverParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('medicalWaiverParentalConsent', this)"/></td>
+			<td>* CERTIFICATION OF PARENT OR GUARDIAN REQUIRED HERE FOR MEMBERS UNDER THE AGE OF 18</td>
+		</tr>
+	</table>
+	<script type="text/javascript" defer="defer">
+		updateCheckboxControl('medicalWaiverParentalConsent');
+	</script>
+</c:if>
+
 </div></div></div></div>
 <!-- BOX (END) -->
 

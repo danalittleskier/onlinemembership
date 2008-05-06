@@ -290,6 +290,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			hundredsBack.add(Calendar.YEAR, -150);
 			if(birthDate.after(now) || birthDate.before(hundredsBack))
 			{
+				// TODO: this isn't allowing the birthdate to be editable after returning with an error.
 				BindException errors = new BindException(accountBean, "accountBean");
 				errors.reject("errors.invalid.birthdate");
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
@@ -359,7 +360,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		}
 		catch (ObjectRetrievalFailureException e)
 		{
-			accountBean.setClubId(null);
+			accountBean.setClubId(0L);
 		}
 
 		// determine which clubs to display in the select list based on the state affiliation

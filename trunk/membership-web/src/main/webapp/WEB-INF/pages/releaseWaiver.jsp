@@ -4,14 +4,15 @@
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_4.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">United State Ski and Snowboard Assumption of Risk and Release of Liability</div>
-<p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
-</p>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
+
+<p>
+This is a waiver of certain legal rights.  Please read carefully before signing.
+</p>
 
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -32,25 +33,42 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 4.	Member agrees never to utilize any run, course or facility for any training, practice or competition without first conducting his/her own thorough visual inspection of the run, course or facility.<br/><br/>
 
 5.	This Agreement shall be construed in accordance with, and governed by the substantive laws of the State of Colorado, without reference to principles governing choice or conflicts of laws. In addition, Member agrees that all lawsuits for personal injury or related loss against USSA must be maintained in state courts sitting in Summit County, Utah or federal district courts sitting in the District of Utah, Central Division, and Member consents and agrees that jurisdiction and venue for such proceedings shall lie exclusively with such courts. In the event any portion of this release is found to be unenforceable, the remaining terms shall be fully enforceable.<br/><br/>
+</p>
 
 
 <form:hidden id="releaseWaiver" path="memberLegal.releaseWaiver"/>
-<script type="text/javascript" defer="defer">
-	updateCheckboxControl('releaseWaiver');
-</script>
 <table width="100%">
 	<tr>
 		<td width="30px"><input id="releaseWaiverControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiver', this)"/></td>
 		<td>* I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT</td>
 	</tr>
 </table>
+<script type="text/javascript" defer="defer">
+	updateCheckboxControl('releaseWaiver');
+</script>
 
 <c:if test="${accountBean.parentInfoRequired}">
-	<h2>Parent Release<h2>
-	I, <form:input path="memberLegal.guardianName"/>, HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT
+	<h2>Parent Release</h2>
+	<p>
+		As the parent or guardian of the minor child Member indicated above, I hereby make and enter into each and every agreement,
+		representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
+		Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns. 
+		By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
+		any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
+		Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
+		from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+	</p>
+	<form:hidden id="releaseWaiverParentalConsent" path="releaseWaiverParentalConsent"/>
+	<table width="100%">
+		<tr>
+			<td width="30px"><input id="releaseWaiverParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiverParentalConsent', this)"/></td>
+			<td>* I, <form:input path="memberLegal.guardianName"/>, CERTIFY AS PARENT OR GUARDIAN OF THE MEMBER INDICATED to the waiver as noted above.</td>
+		</tr>
+	</table>
+	<script type="text/javascript" defer="defer">
+		updateCheckboxControl('releaseWaiverParentalConsent');
+	</script>
 </c:if>
-
-</p>
 
 </div></div></div></div>
 <!-- BOX (END) -->

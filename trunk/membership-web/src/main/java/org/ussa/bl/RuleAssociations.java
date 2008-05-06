@@ -12,8 +12,8 @@ import org.ussa.model.Division;
 
 public class RuleAssociations
 {
-	public static final Map<String, String> officialsByCoach;
-	public static final Map<String, String> coachesByOfficial;
+	public static final Map<String, Set<String>> officialsByCoach;
+	public static final Map<String, Set<String>> coachesByOfficial;
 	public static final Set<String> restrictedMemberships;
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
@@ -29,17 +29,19 @@ public class RuleAssociations
 	static {
 		List<String[]> coachesAndOfficials = new ArrayList<String[]>();
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
+		coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
 
-		officialsByCoach = new HashMap<String, String>();
-		coachesByOfficial = new HashMap<String, String>();
+		officialsByCoach = new HashMap<String, Set<String>>();
+		coachesByOfficial = new HashMap<String, Set<String>>();
 		for (String[] invIds : coachesAndOfficials)
 		{
-			officialsByCoach.put(invIds[0], invIds[1]);
-			coachesByOfficial.put(invIds[1], invIds[0]);
+			addMembership(officialsByCoach, invIds[0], invIds[1]);
+			addMembership(coachesByOfficial, invIds[1], invIds[0]);
 		}
 
 		List<String[]> mutuallyExclusiveList = new ArrayList<String[]>();
@@ -58,8 +60,8 @@ public class RuleAssociations
 		mutuallyExclusiveMemberships = new HashMap<String, Set<String>>();
 		for (String[] invIds : mutuallyExclusiveList)
 		{
-			addedExcludedMembership(mutuallyExclusiveMemberships, invIds[0], invIds[1]);
-			addedExcludedMembership(mutuallyExclusiveMemberships, invIds[1], invIds[0]);
+			addMembership(mutuallyExclusiveMemberships, invIds[0], invIds[1]);
+			addMembership(mutuallyExclusiveMemberships, invIds[1], invIds[0]);
 		}
 
 		restrictedMemberships = new HashSet<String>();
@@ -104,6 +106,7 @@ public class RuleAssociations
 		disabledFisMemberships = new HashSet<String>();
 		disabledFisMemberships.add(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS);
 		disabledFisMemberships.add(Inventory.INV_ID_ALP_PTS_CONF_FIS);
+		disabledFisMemberships.add(Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS);
 
 		youthMemberships = new HashSet<String>();
 		youthMemberships.add(Inventory.INV_ID_ALPINE_YOUTH);
@@ -131,14 +134,14 @@ public class RuleAssociations
 		divisionLateFeesAplineCompetitor.put(Division.DIVISION_INTERMOUNTAIN, Inventory.INV_ID_INTERMOUNTAIN_ALPINE_LATE_FEE);
 	}
 
-	private static void addedExcludedMembership(Map<String, Set<String>> mutuallyExclusiveMemberships, String invId, String excludedInvId)
+	private static void addMembership(Map<String, Set<String>> memberships, String invId, String childInvId)
 	{
-		Set<String> excludedMemberships = mutuallyExclusiveMemberships.get(invId);
+		Set<String> excludedMemberships = memberships.get(invId);
 		if(excludedMemberships == null)
 		{
 			excludedMemberships = new HashSet<String>();
-			mutuallyExclusiveMemberships.put(invId, excludedMemberships);
+			memberships.put(invId, excludedMemberships);
 		}
-		excludedMemberships.add(excludedInvId);
+		excludedMemberships.add(childInvId);
 	}
 }

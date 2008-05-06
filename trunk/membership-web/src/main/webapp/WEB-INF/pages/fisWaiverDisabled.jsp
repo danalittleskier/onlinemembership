@@ -2,15 +2,17 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">IPC Waiver</div>
-<p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
-</p>
+<div id="stg-pagetitle">IPC Registration Assumption of Risk and Release of Liability</div>
+
 <!-- LEFT column -->
 <div id="stg-onecol-primary">
 <form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
+
+<p>
+This is a waiver of certain legal rights.  Please read carefully before signing.
+</p>
 
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -68,6 +70,29 @@ This is to certify that ,as parent/guardian of this participant, I do consent to
 			<label for="fisWaiver2" class="radio">No I don't agree. Please remove all IPC FIS items from my cart.</label>
 		</div>
 	</fieldset>
+
+	<c:if test="${accountBean.parentInfoRequired}">
+		<h2>Parent Release</h2>
+		<p>
+			As the parent or guardian of the minor child Member indicated above, I hereby make and enter into each and every agreement,
+			representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
+			Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns.
+			By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
+			any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
+			Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
+			from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+		</p>
+		<form:hidden id="fisWaiverDisabledParentalConsent" path="fisWaiverDisabledParentalConsent"/>
+		<table width="100%">
+			<tr>
+				<td width="30px"><input id="fisWaiverDisabledParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('fisWaiverDisabledParentalConsent', this)"/></td>
+				<td>* CERTIFICATION OF PARENT OR GUARDIAN REQUIRED HERE FOR MEMBERS UNDER THE AGE OF 18</td>
+			</tr>
+		</table>
+		<script type="text/javascript" defer="defer">
+			updateCheckboxControl('fisWaiverDisabledParentalConsent');
+		</script>
+	</c:if>
 
 </div></div></div></div>
 <!-- BOX (END) -->

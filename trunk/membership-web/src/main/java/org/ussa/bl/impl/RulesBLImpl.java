@@ -171,8 +171,8 @@ public class RulesBLImpl implements RulesBL
 		}
 
 		// If a coach membership is already selected, user may not add an official membership (it’s already included).
-		String coachInvId = RuleAssociations.coachesByOfficial.get(invIdAdding);
-		if(coachInvId != null && cartBean.contains(coachInvId))
+		Set<String> coachInvIds = RuleAssociations.coachesByOfficial.get(invIdAdding);
+		if(coachInvIds != null && cartBean.containsAny(coachInvIds))
 		{
 			return true;
 		}
@@ -226,14 +226,14 @@ public class RulesBLImpl implements RulesBL
 		Integer age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
 
 		List<Inventory> fisItems = new ArrayList<Inventory>();
-		for (String invId : fisInvIds)
+		for (String fisInvId : fisInvIds)
 		{
-			Inventory fisItem = inventoryDao.get(invId);
-			Inventory lateFisItem = getLateFis(fisItem);
-			if(lateFisItem != null)
+			String lateFisInvId = getLateFisInvId(fisInvId);
+			if(lateFisInvId != null)
 			{
-				fisItem = lateFisItem;
+				fisInvId = lateFisInvId;
 			}
+			Inventory fisItem = inventoryDao.get(fisInvId);
 			if(!inventoryIsRestricted(accountBean, fisItem, age))
 			{
 				fisItems.add(fisItem);
@@ -243,24 +243,23 @@ public class RulesBLImpl implements RulesBL
 		return fisItems;
 	}
 
-	private Inventory getLateFis(Inventory fisItem)
+	private String getLateFisInvId(String fisInvId)
 	{
-		String invId = fisItem.getId();
 		String lateInvId = null;
 		Date now = new Date();
-		if(Inventory.INV_ID_ALPINE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		if(Inventory.INV_ID_ALPINE_FIS.equals(fisInvId) && now.after(dateBL.getAlpineFisLateDate()))
 		{
 			lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
 		}
-		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(invId) && now.after(dateBL.getAlpineFisLateDate()))
+		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(fisInvId) && now.after(dateBL.getAlpineFisLateDate()))
 		{
 			lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
 		}
-		else if(Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(invId) && now.after(dateBL.getCrossCountryFisLateDate()))
+		else if(Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(fisInvId) && now.after(dateBL.getCrossCountryFisLateDate()))
 		{
 			lateInvId = Inventory.INV_ID_LATE_CROSS_COUNTRY_FIS;
 		}
-		else if(Inventory.INV_ID_FREESTYLE_FIS.equals(invId) && now.after(dateBL.getFreestyleFisLateDate()))
+		else if(Inventory.INV_ID_FREESTYLE_FIS.equals(fisInvId) && now.after(dateBL.getFreestyleFisLateDate()))
 		{
 			lateInvId = Inventory.INV_ID_LATE_FREESTYLE_FIS;
 		}
@@ -268,7 +267,7 @@ public class RulesBLImpl implements RulesBL
 
 		if(lateInvId != null)
 		{
-			return inventoryDao.get(lateInvId);
+			return lateInvId;
 		}
 		else
 		{
@@ -389,10 +388,13 @@ public class RulesBLImpl implements RulesBL
 			}
 
 			// If adding a coach and a corresponding official is already in the cart then the coach replaces the official
-			String officialInvId = RuleAssociations.officialsByCoach.get(inventory.getId());
-			if(officialInvId != null && cartBean.contains(officialInvId))
+			Set<String> officialInvIds = RuleAssociations.officialsByCoach.get(inventory.getId());
+			if(officialInvIds != null && cartBean.containsAny(officialInvIds))
 			{
-				cartBean.removeLineItem(officialInvId);
+				for (String officialInvId : officialInvIds)
+				{
+					cartBean.removeLineItem(officialInvId);
+				}
 			}
 
 			//  If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
