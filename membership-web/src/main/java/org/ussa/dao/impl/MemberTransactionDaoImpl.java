@@ -39,18 +39,18 @@ public class MemberTransactionDaoImpl extends GenericDaoHibernate<MemberTransact
 						new Object[]{ussaId, season});
 	}
 
-	public boolean hasHeldIventory(Long ussaId, String invId)
+	public boolean hasEverHeldIventoryInSport(Long ussaId, String sportCode)
 	{
-		CountPurchasedInventoryQuery query = new CountPurchasedInventoryQuery(dataSource);
-		List<Boolean> results = (List<Boolean>) query.execute(new Object[]{ussaId, invId});
+		CountPurchasedInventoryBySportQuery query = new CountPurchasedInventoryBySportQuery(dataSource);
+		List<Boolean> results = (List<Boolean>) query.execute(new Object[]{ussaId, sportCode});
 		return results.get(0);
 	}
 
-	private class CountPurchasedInventoryQuery extends MappingSqlQuery
+	private class CountPurchasedInventoryBySportQuery extends MappingSqlQuery
 	{
-		CountPurchasedInventoryQuery(DataSource dataSource)
+		CountPurchasedInventoryBySportQuery(DataSource dataSource)
 		{
-			super(dataSource, "select count(1) num from membertransaction where ussa_id = ? and inv_id = ?");
+			super(dataSource, "select count(1) num from membertransaction mt inner join inventory i on mt.inv_id = i.inv_id where mt.ussa_id = ? and i.sport_code = ?");
 			declareParameter(new SqlParameter(Types.NUMERIC));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 		}

@@ -83,7 +83,7 @@
 			<form:input path="address.secondaryAddress" size="30" maxlength="40"/><br />
 			<label for="">* City</label>
 			<form:input path="address.city" size="30" maxlength="30"/><br />
-			<label for="">State</label>
+			<label for="">State/Province</label>
 
 			<form:select path="address.stateCode">
 				<form:option value=""></form:option>
