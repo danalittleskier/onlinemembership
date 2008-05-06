@@ -44,5 +44,7 @@ public interface RulesBL
 
 	public boolean isCountryUs(String country);
 
+	public boolean isCountryUsOrCanada(String country);
+
 	public Division determineDivision(String nationCode, String stateCode, Long clubId, String zipCode);
 }

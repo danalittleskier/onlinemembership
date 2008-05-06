@@ -256,7 +256,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		// force country to upper case
 		address.setCountry(address.getCountry().toUpperCase());
 
-		if(rulesBL.isCountryUs(address.getCountry()))
+		if(rulesBL.isCountryUsOrCanada(address.getCountry()))
 		{
 			// They everyone to enter the US the same way
 			address.setCountry("USA");

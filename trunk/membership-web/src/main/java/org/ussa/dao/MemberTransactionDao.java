@@ -14,5 +14,5 @@ public interface MemberTransactionDao extends GenericDao<MemberTransaction, Long
 {
 	public List<MemberTransaction> getMemberTransactionsForSeason(Long ussaId, String season);
 
-	public boolean hasHeldIventory(Long ussaId, String invId);
+	public boolean hasEverHeldIventoryInSport(Long ussaId, String invId);
 }

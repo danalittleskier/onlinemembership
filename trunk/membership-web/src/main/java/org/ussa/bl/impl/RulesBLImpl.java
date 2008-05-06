@@ -195,7 +195,7 @@ public class RulesBLImpl implements RulesBL
 
 		// Can't be a freestyle rookie if you have ever been a freestyle competitor
 		if(invIdAdding.equals(Inventory.INV_ID_FREESTYLE_ROOKIE)
-				&& memberTransactionDao.hasHeldIventory(accountBean.getMember().getId(), Inventory.INV_ID_FREESTYLE_COMPETITOR))
+				&& memberTransactionDao.hasEverHeldIventoryInSport(accountBean.getMember().getId(), Inventory.SPORT_CODE_FRE))
 		{
 			return true;
 		}
@@ -942,6 +942,22 @@ public class RulesBLImpl implements RulesBL
 					|| "U. S. A.".equals(country)
 					|| "UNITED STATES".equals(country)
 					|| "UNITED STATES OF AMERICA".equals(country))
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean isCountryUsOrCanada(String country)
+	{
+		if(StringUtils.isNotBlank(country))
+		{
+			country = country.toUpperCase().trim();
+			if(
+					"CAN".equals(country)
+					|| "CANADA".equals(country)
+					|| isCountryUs(country))
 			{
 				return true;
 			}
