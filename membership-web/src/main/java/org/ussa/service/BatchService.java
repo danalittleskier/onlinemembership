@@ -5,7 +5,7 @@ import org.ussa.beans.AccountBean;
 
 public interface BatchService
 {
-	public Batch doBatchInsert(AccountBean accountBean, String currentSeason);
+	public Batch doBatchTableInsert(AccountBean accountBean, String currentSeason);
 
 	public Batch getOrOpenBatch(String currentSeason);
 

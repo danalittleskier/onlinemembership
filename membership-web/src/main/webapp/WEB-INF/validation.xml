@@ -36,6 +36,10 @@
 			<constant-value>((hasInsurance == 'false') or (*this* != null))</constant-value>
 		</constant>
 		<constant>
+			<constant-name>validWhenTrueOrParentInfoNotRequired</constant-name>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* == 'Y'))</constant-value>
+		</constant>
+		<constant>
 			<constant-name>alpha</constant-name>
 			<constant-value>^[A-Za-z\s]*$</constant-value>
 		</constant>
@@ -299,11 +303,25 @@
 			<field property="memberLegal.fisReleaseForm" depends="required">
 				<msg name="required" key="errors.must.accept.or.reject"/>
 			</field>
+			<field property="fisWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((*this* == 'Y') or (memberLegal.fisReleaseForm == 'N')))</var-value>
+				</var>
+			</field>
 		</form>
 
 		<form name="fisWaiverDisabled">
 			<field property="memberLegal.ipcReleaseForm" depends="required">
 				<msg name="required" key="errors.must.accept.or.reject"/>
+			</field>
+			<field property="fisWaiverDisabledParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((*this* == 'Y') or (memberLegal.ipcReleaseForm == 'N')))</var-value>
+				</var>
 			</field>
 		</form>
 
@@ -483,6 +501,13 @@
 					<var-value>(*this* == 'Y')</var-value>
 				</var>
 			</field>
+			<field property="medicalWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
+				</var>
+			</field>
 		</form>
 
 		<form name="releaseWaiver">
@@ -491,6 +516,13 @@
 				<var>
 					<var-name>test</var-name>
 					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+			<field property="releaseWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
 				</var>
 			</field>
 			<field property="memberLegal.guardianName" depends="validWhen">

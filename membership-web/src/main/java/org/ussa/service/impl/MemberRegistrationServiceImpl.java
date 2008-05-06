@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.Iterator;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
@@ -26,6 +27,7 @@ import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
+import org.ussa.model.Inventory;
 import org.ussa.model.InventoryAdd;
 import org.ussa.model.Member;
 import org.ussa.model.MemberClub;
@@ -134,20 +136,41 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			// MEMBERTRANSACTION
 			CartBean cartBean = accountBean.getCartBean();
 			List<LineItemBean> lineItemBeans = cartBean.getLineItems();
-			Set<String> invIdsAdded = new HashSet<String>();
+			Set<String> invIdsAlreadyAdded = new HashSet<String>();
+			Set<String> inventoryAddInvIds = new HashSet<String>();
 			for (LineItemBean lineItem : lineItemBeans)
 			{
-				saveMemberTransaction(lineItem, member, currentSeason, invIdsAdded);
+				saveMemberTransaction(lineItem, member, currentSeason);
+				invIdsAlreadyAdded.add(lineItem.getInventory().getId());
 
 				// add additional inventory
-				addAdditionalInventory(lineItem.getInventory().getId(), member, currentSeason, invIdsAdded);
+				inventoryAddInvIds.addAll(getAdditionalInvIds(lineItem.getInventory().getId(), member.getDivision().getDivisionCode(), invIdsAlreadyAdded));
+			}
+
+			// make sure that the competition guide isn't added twice since the guide/dir includes both
+			for (Iterator<String> iterator = inventoryAddInvIds.iterator(); iterator.hasNext();)
+			{
+				String invId = iterator.next();
+				if(inventoryAddInvIds.contains(invId+"/DIR"))
+				{
+					iterator.remove();
+				}
+			}
+
+			// insert member transactions for all the inventory add items
+			for (String invId : inventoryAddInvIds)
+			{
+				Inventory inventory = inventoryDao.get(invId);
+				LineItemBean lineItem = new LineItemBean(inventory);
+				lineItem.setAmount(BigDecimal.ZERO);
+				saveMemberTransaction(lineItem, member, currentSeason);
 			}
 
 			// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
 			creditCardProcessingService.processCard(accountBean);
 
 			// BATCH TABLES
-			batchService.doBatchInsert(accountBean, currentSeason);
+			batchService.doBatchTableInsert(accountBean, currentSeason);
 
 			// moving this to the end until we get the transaction manager working with multiple datasources.
 			// USER ACCOUNT
@@ -171,7 +194,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		}
 	}
 
-	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason, Set<String> invIdsAdded)
+	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason)
 	{
 		MemberTransaction memberTransaction = new MemberTransaction(member);
 		memberTransaction.setSeason(currentSeason);
@@ -180,27 +203,26 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
 		memberTransaction.setPurchaseDate(new Date());
 		universalDao.save(memberTransaction);
-		invIdsAdded.add(lineItem.getInventory().getId());
 	}
 
-	private void addAdditionalInventory(String invId, Member member, String currentSeason, Set<String> invIdsAdded)
+	private Set<String> getAdditionalInvIds(String invId, String divisionCode, Set<String> invIdsAlreadyAdded)
 	{
-		String divisionCode = member.getDivision().getDivisionCode();
+		Set<String> additionalInvIds = new HashSet<String>();
 		List<InventoryAdd> additionInventory = inventoryAddDao.getInventoryAddByInvId(invId, divisionCode);
 		for (InventoryAdd inventoryAdd : additionInventory)
 		{
-			if(! invIdsAdded.contains(inventoryAdd.getAddInvId()))
+			if(! invIdsAlreadyAdded.contains(inventoryAdd.getAddInvId()))
 			{
-				LineItemBean lineItem = new LineItemBean(inventoryDao.get(inventoryAdd.getAddInvId()));
-				lineItem.setAmount(BigDecimal.ZERO);
+				invIdsAlreadyAdded.add(inventoryAdd.getAddInvId());
 
-				saveMemberTransaction(lineItem, member, currentSeason, invIdsAdded);
+				additionalInvIds.add(inventoryAdd.getAddInvId());
 
-				// add additional inventory
-				addAdditionalInventory(lineItem.getInventory().getId(), member, currentSeason, invIdsAdded);
+				// get additional child inventory
+				additionalInvIds.addAll(getAdditionalInvIds(inventoryAdd.getAddInvId(), divisionCode, invIdsAlreadyAdded));
 			}
 		}
 
+		return additionalInvIds;
 	}
 
 

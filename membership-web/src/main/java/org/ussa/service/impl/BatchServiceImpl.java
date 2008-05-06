@@ -26,7 +26,7 @@ public class BatchServiceImpl implements BatchService
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	public synchronized Batch doBatchInsert(AccountBean accountBean, String currentSeason)
+	public synchronized Batch doBatchTableInsert(AccountBean accountBean, String currentSeason)
 	{
 		Batch batch = getOrOpenBatch(currentSeason);
 
