@@ -51,7 +51,7 @@ public class Member implements Serializable
 	@Column(name = "SUFFIX_NAME", nullable = true, length=30, unique=false)
 	private String suffixName;
 
-	@Column(name = "BIRTHDATE", nullable = true, length=8, unique=false)
+	@Column(name = "BIRTHDATE", nullable = true, unique=false)
 	private Date birthDate;
 
 	@Column(name = "FIS_ID", nullable = true, length=7, unique=false)

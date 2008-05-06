@@ -10,7 +10,6 @@ import org.hibernate.LockMode;
 
 public class UssaIdGeneratorDaoImpl extends HibernateDaoSupport implements UssaIdGeneratorDao
 {
-
 	@Transactional (propagation = Propagation.REQUIRES_NEW)
 	public Long getNextUssaId()
 	{

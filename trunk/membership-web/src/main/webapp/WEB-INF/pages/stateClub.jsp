@@ -114,6 +114,7 @@
 					<legend>Ethnicity</legend>
 					<br/>
 					<label for="">* What is your ethnicity?</label>
+					<%-- TODO: pull these from the categorycode table where category='ETHNICITY' and Active = 'Y' order by sort_order --%>
 					<form:select path="member.ethnicity">
 						<form:option value=""></form:option>
 						<form:option value="W">White</form:option>
@@ -121,10 +122,9 @@
 						<form:option value="H">Hispanic or Latino</form:option>
 						<form:option value="A">Asian</form:option>
 						<form:option value="I">American Indian or Alaska Native</form:option>
-						<form:option value="N">Native Hawaiian</form:option>
-						<form:option value="P">Other Pacific Islander</form:option>
+						<form:option value="P">Native Hawaiian or Pacific Islander</form:option>
 						<form:option value="M">Mixed Race</form:option>
-						<form:option value="Z">Prefer Not to Respond</form:option>
+						<form:option value="N">Prefer Not to Respond</form:option>
 					</form:select>
 				</fieldset>
 

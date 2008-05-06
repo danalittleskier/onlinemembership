@@ -94,9 +94,6 @@
 			<field property="address.city" depends="required">
 				<arg0 key="user.address.city" />
 			</field>
-			<field property="address.stateCode" depends="required">
-				<arg0 key="user.address.province" />
-			</field>
 			<field property="address.postalCode" depends="required">
 				<arg0 key="user.address.postalCode" />
 			</field>
@@ -219,13 +216,8 @@
 					<var-value>(*this* != -1)</var-value>
 				</var>
 			</field>
-			<field property="divisionCode" depends="required, validWhen">
+			<field property="divisionCode" depends="required">
 				<arg0 key="errors.division.code.problem" />
-				<msg name="validWhen" key="errors.no.foreign.registrations"/>
-				<var>
-					<var-name>test</var-name>
-					<var-value>(*this* != 'X')</var-value>
-				</var>
 			</field>
 		</form>
 

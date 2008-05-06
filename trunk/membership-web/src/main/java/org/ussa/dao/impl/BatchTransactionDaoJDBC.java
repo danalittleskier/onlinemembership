@@ -1,22 +1,25 @@
 package org.ussa.dao.impl;
 
 import javax.sql.DataSource;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Types;
+import java.sql.SQLException;
+import java.sql.ResultSet;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.jdbc.core.SqlParameter;
-import org.springframework.jdbc.object.MappingSqlQuery;
 import org.springframework.jdbc.object.SqlUpdate;
+import org.springframework.jdbc.object.MappingSqlQuery;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.annotation.Propagation;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.beans.PaymentBean;
 import org.ussa.dao.BatchTransactionDao;
+import org.ussa.model.Batch;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
-import org.apache.commons.lang.StringUtils;
 
 public class BatchTransactionDaoJDBC implements BatchTransactionDao
 {
@@ -30,7 +33,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			" Values (?, ?, ?, ?, ?, ?)";
 	private String INSERT_BATCHSEQUENCE_SQL = "Insert Into BatchSequence (Batch_Id, Sequence, Receive_Date)" +
 			" Values (?, ?, getDate())";
-	private String SELECT_MAX_SQL = "Select Max(Sequence)+1 as MaxSeq from BatchMember where Batch_Id=? ";
+	private String SELECT_MAX_SQL = "Select max(Sequence) as MaxSeq from BatchSequence where Batch_Id=? ";
 
 	public void setDataSource(final DataSource dataSource)
 	{
@@ -42,29 +45,24 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		return this.dataSource;
 	}
 
-	public void insertToBatchTables(AccountBean accountBean)
+	@Transactional(propagation = Propagation.MANDATORY)
+	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean)
 	{
 		Member member = accountBean.getMember();
 		PaymentBean payment = accountBean.getPaymentBean();
 		CartBean cart = accountBean.getCartBean();
 
-		Object[] parameters = {123123};
-		SelectMaxSeq maxQuery = new SelectMaxSeq(getDataSource());
-		List results = maxQuery.execute(parameters);
-		Long sequence = (Long) results.get(0);
-		if(sequence == null || sequence == 0)
-		{
-			sequence = 1L;
-		}
+		Long batchId = batch.getBatchId();
+
 		InsertBatchPayment bp = new InsertBatchPayment(getDataSource());
 		String expireYear = payment.getExpireYear();
 		expireYear = expireYear.substring(expireYear.length()-2, expireYear.length()); // only take the last 2 digits.
-		Object[] bpParams = {123123, sequence, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + expireYear,
+		Object[] bpParams = {batchId, batchSequence, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + expireYear,
 				cart.getTotal(), payment.getCompletedTransactionId()};
 		bp.update(bpParams);
 
 		InsertBatchMember bm = new InsertBatchMember(getDataSource());
-		Object[] params = {123123, sequence, member.getId()};
+		Object[] params = {batchId, batchSequence, member.getId()};
 		bm.update(params);
 
 		InsertBatchDetail bd = new InsertBatchDetail(getDataSource());
@@ -72,14 +70,29 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
-			Object[] detailParams = {123123, sequence, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
+			Object[] detailParams = {batchId, batchSequence, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
 			bd.update(detailParams);
 		}
 
 		InsertBatchSequence bs = new InsertBatchSequence(getDataSource());
-		Object[] seqParams = {123123, sequence};
+		Object[] seqParams = {batchId, batchSequence};
 		bs.update(seqParams);
 
+	}
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	public synchronized Long getNextBatchSequence(Batch batch)
+	{
+		SelectMaxSeq maxSeq = new SelectMaxSeq(getDataSource());
+		List results = maxSeq.execute(new Object[]{batch.getBatchId()});
+		Long seq = (Long) results.get(0);
+
+		if(seq == null)
+		{
+			seq = 0L;
+		}
+
+		return seq+1;
 	}
 
 	private String lastFour(String ccNumber)

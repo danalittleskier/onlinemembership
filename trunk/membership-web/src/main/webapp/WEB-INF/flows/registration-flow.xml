@@ -39,7 +39,6 @@
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="stateClub"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>
-		<transition on="foreign" to="foreign"/>
 	</action-state>
 
 	<view-state id="duplicateAccount" view="duplicateAccount">
@@ -70,13 +69,18 @@
 			<action bean="registrationAction" method="loadClubInfo"/>
 		</entry-actions>
 		<transition on="back" to="backToParentInfo"/>
-		<transition on="next" to="sportMembership">
+		<transition on="next" to="processClubInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorStateClub"/>
 			</action>
-			<action bean="registrationAction" method="processClubInfo"/>
 		</transition>
 	</view-state>
+
+	<action-state id="processClubInfo">
+		<action bean="registrationAction" method="processClubInfo"/>
+		<transition on="foreign" to="foreign"/>
+		<transition on="success" to="sportMembership"/>
+	</action-state>
 
 	<view-state id="sportMembership" view="sportMembership">
 		<entry-actions>
