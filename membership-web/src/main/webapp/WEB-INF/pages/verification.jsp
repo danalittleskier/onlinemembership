@@ -122,7 +122,7 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		</th>
 
 	</tr>
-	<c:forEach var="lineItem" items="${accountBean.cartBean.membershipLineItems}" varStatus="varStatus">
+	<c:forEach var="lineItem" items="${accountBean.cartBean.memberships}" varStatus="varStatus">
 		<c:choose>
 			<c:when test="${varStatus.first}">
 				<tr>
