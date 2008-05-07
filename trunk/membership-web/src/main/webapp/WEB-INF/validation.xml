@@ -47,6 +47,14 @@
 			<constant-name>alpha</constant-name>
 			<constant-value>^[A-Za-z\s]*$</constant-value>
 		</constant>
+		<constant>
+			<constant-name>name</constant-name>
+			<constant-value>^[A-Za-z\s\'\-\.áéëñóúí]*$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>alphaNumeric</constant-name>
+			<constant-value>^[0-9A-Za-z\s\'\-\.áéëñóúí]*$</constant-value>
+		</constant>
 	</global>
 	<formset>
 		<form name="fileUpload">

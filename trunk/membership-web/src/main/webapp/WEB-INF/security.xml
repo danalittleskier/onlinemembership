@@ -180,17 +180,9 @@
 	<bean id="portMapper" class="org.acegisecurity.util.PortMapperImpl">
 		<property name="portMappings">
 			<map>
-				<entry key-ref="nonSecurePort" value-ref="securePort"/>
+				<entry key="80" value="11443"/>
 			</map>
 		</property>
-	</bean>
-
-	<bean id="nonSecurePort" class="java.lang.Integer">
-		<constructor-arg value="80"/>
-	</bean>
-
-	<bean id="securePort" class="java.lang.Integer">
-		<constructor-arg value="11443"/>
 	</bean>
 -->
 
