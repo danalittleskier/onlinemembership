@@ -1,3 +1,4 @@
+<%@ page import="org.ussa.model.Inventory" %>
 <%@ include file="/includes/taglibs.jsp"%>
 <body>
 <!-- Progress bar -->

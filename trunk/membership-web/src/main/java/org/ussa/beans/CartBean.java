@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Collection;
+import java.util.Set;
+import java.util.HashSet;
 import java.text.DecimalFormat;
 
 import org.ussa.model.Inventory;
@@ -161,11 +163,6 @@ public class CartBean
 		this.lineItems = lineItems;
 	}
 
-	public List<LineItemBean> getMembershipLineItems()
-	{
-		return getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
-	}
-
 	public List<LineItemBean> getLineItems(String inventoryType)
 	{
 		List<LineItemBean> results = new ArrayList<LineItemBean>();
@@ -177,5 +174,60 @@ public class CartBean
 			}
 		}
 		return results;
+	}
+
+	public List<LineItemBean> getMemberships()
+	{
+		return getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+	}
+
+	public List<LineItemBean> getFis()
+	{
+		return getLineItems(Inventory.INVENTORY_TYPE_FIS);
+	}
+
+	public List<LineItemBean> getDues()
+	{
+		List<LineItemBean> dues = getLineItems(Inventory.INVENTORY_TYPE_DIVISION_DUES);
+		dues.addAll(getLineItems(Inventory.INVENTORY_TYPE_STATE_DUES));
+		return dues;
+	}
+
+	public List<LineItemBean> getMagazines()
+	{
+		return getLineItems(Inventory.INVENTORY_TYPE_MAGAZINE);
+	}
+
+	public List<LineItemBean> getBonusPacks()
+	{
+		List<LineItemBean> dues = getLineItems(Inventory.INVENTORY_TYPE_BONUS_PACK);
+		dues.addAll(getLineItems(Inventory.INVENTORY_TYPE_GOLD_PACK));
+		return dues;
+	}
+
+	private static final Set<String> catagories;
+	static
+	{
+		catagories = new HashSet<String>();
+		catagories.add(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+		catagories.add(Inventory.INVENTORY_TYPE_FIS);
+		catagories.add(Inventory.INVENTORY_TYPE_DIVISION_DUES);
+		catagories.add(Inventory.INVENTORY_TYPE_STATE_DUES);
+		catagories.add(Inventory.INVENTORY_TYPE_MAGAZINE);
+		catagories.add(Inventory.INVENTORY_TYPE_BONUS_PACK);
+	}
+
+	public List<LineItemBean> getOther()
+	{
+		List<LineItemBean> lineItems = new ArrayList<LineItemBean>();
+		for (LineItemBean lineItem : getLineItems())
+		{
+			String type = lineItem.getInventory().getInventoryType();
+			if(! catagories.contains(type))
+			{
+				lineItems.add(lineItem);
+			}
+		}
+		return lineItems;
 	}
 }
