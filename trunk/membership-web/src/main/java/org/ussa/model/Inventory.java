@@ -35,7 +35,6 @@ public class Inventory implements Serializable
 	public static final String INVENTORY_TYPE_MAGAZINE = "MAG";
 	public static final String INVENTORY_TYPE_DIVISION_DUES = "DIV DUES";
 	public static final String INVENTORY_TYPE_STATE_DUES = "STATE DUES";
-	public static final String INVENTORY_TYPE_MISC = "MISC";
 
 	public static final String SPORT_CODE_ALP = "ALP";
 	public static final String SPORT_CODE_DAL = "DAL";
