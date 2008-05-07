@@ -215,6 +215,7 @@ public class CartBean
 		catagories.add(Inventory.INVENTORY_TYPE_STATE_DUES);
 		catagories.add(Inventory.INVENTORY_TYPE_MAGAZINE);
 		catagories.add(Inventory.INVENTORY_TYPE_BONUS_PACK);
+		catagories.add(Inventory.INVENTORY_TYPE_GOLD_PACK);
 	}
 
 	public List<LineItemBean> getOther()
