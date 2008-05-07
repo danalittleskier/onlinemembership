@@ -10,6 +10,7 @@
 			<div id="center-notice">
 				<p><strong>One or more accounts with a similar name and birth date is/are already on record.</strong></p>
 				<p>Select your account below and click "Continue" to renew your membership.</p>
+				<p><strong>ATTENTION</strong>: Please read before continuing the registration process. Members found falsifying registration information will be immediately placed on inactive for the remainder of the competition season with no refund provided.  If you have any question as to your membership history with USSA please contact Member Services before continuing the registration process.</p> 
 				<table>
 					<tr>
 						<th></th>
