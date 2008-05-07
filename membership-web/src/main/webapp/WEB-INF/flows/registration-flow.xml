@@ -218,6 +218,7 @@
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedical"/>
 			</action>
+			<action bean="registrationAction" method="handleMedical"/>
 		</transition>
 	</view-state>
 
