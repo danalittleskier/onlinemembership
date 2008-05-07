@@ -8,6 +8,7 @@
 <c:choose>
 	<c:when test="${restricted}">
 		<%@ include file="/includes/backgroundScreeningText.jsp"%>
+		<p><a href="https://www.ncsisafe.com" target="_BLANK">Go here to complete your backgound screening.</a></p>
 	</c:when>
 	<c:otherwise>
 		<div class="closeWindowLink"><a href="#" onclick="window.close();">Close Window</a></div>

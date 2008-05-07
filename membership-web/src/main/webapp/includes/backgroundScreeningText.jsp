@@ -8,5 +8,4 @@
 	<li>Background screening registration must be complete within 30 days of membership registration.</li>
 	<li>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</li>
 	<li>Please allow several weeks for screening process to be completed. Individual screening times will vary.</li>
-	<li><a href="https://www.ncsisafe.com" target="_BLANK">Go here to complete your backgound screening.</a></li>
 </ul>

@@ -14,5 +14,6 @@
 		<pattern>/certificate.html</pattern>
 		<pattern>/sportInfo.html</pattern>
 		<pattern>/backgroundScreeningPopup.html</pattern>
+		<pattern>/faq.html</pattern>
 	</decorator>
 </decorators>

@@ -65,6 +65,7 @@
 		<div class=left>
 			<ul id="nav">
 				<li style="float:left;"><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a></li>
+				<li style="float:left;"><a href="<c:url value="/faq.html"/>" title="Registration FAQ" target="_BLANK">registration FAQ</a></li>
 				<li style="float:left;"><a href="<c:url value="/logout.html"/>" title="Log out">logout</a></li>
 			</ul>
 		</div>
