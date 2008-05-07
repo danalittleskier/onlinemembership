@@ -567,4 +567,14 @@ public class RegistrationAction extends FormAction implements Serializable
 		}
 	}
 
+	public Event handleMedical(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		MemberLegal memberLegal = accountBean.getMemberLegal();
+
+		memberLegal.setInsurancePhone(StringUtils.formatPhone(memberLegal.getInsurancePhone()));
+
+		return success();
+	}
+
 }

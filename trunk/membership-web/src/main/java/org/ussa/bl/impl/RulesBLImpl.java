@@ -381,8 +381,8 @@ public class RulesBLImpl implements RulesBL
 					if (cartBean.contains(excludedInvId))
 					{
 						LineItemBean lineItem = cartBean.getLineItem(excludedInvId);
-						cartBean.removeLineItem(excludedInvId);
 						messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
+						cartBean.removeLineItem(excludedInvId);
 					}
 				}
 			}
@@ -393,6 +393,8 @@ public class RulesBLImpl implements RulesBL
 			{
 				for (String officialInvId : officialInvIds)
 				{
+					LineItemBean lineItem = cartBean.getLineItem(officialInvId);
+					messages.add(new MessageBean("messages.membership.includes.another", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
 					cartBean.removeLineItem(officialInvId);
 				}
 			}
@@ -401,6 +403,8 @@ public class RulesBLImpl implements RulesBL
 			if(cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18
 					&& (Inventory.INV_ID_ALPINE_COMPETITOR.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId())))
 			{
+				LineItemBean lineItem = cartBean.getLineItem(Inventory.INV_ID_ALPINE_MASTER);
+				messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
 				cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
 			}
 
@@ -408,6 +412,8 @@ public class RulesBLImpl implements RulesBL
 			if(cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && age <= 22
 					&& (Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId())))
 			{
+				LineItemBean lineItem = cartBean.getLineItem(Inventory.INV_ID_ALPINE_MASTER);
+				messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
 				cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
 			}
 

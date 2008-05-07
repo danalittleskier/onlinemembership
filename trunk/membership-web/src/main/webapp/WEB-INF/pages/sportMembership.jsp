@@ -176,7 +176,7 @@
 			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
-			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
+			<%--<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>--%>
 		</form:select><br/>
 		<label for="contributionAmount">Contribution Amount:</label>
 		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
