@@ -86,6 +86,7 @@
 	</bean>
 	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
 		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="divDuesRulesDao" ref="divDuesRulesDao"/>
 		<property name="stateDuesRulesDao" ref="stateDuesRulesDao"/>

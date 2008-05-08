@@ -12,15 +12,11 @@
 			<action bean="accountBean" method="setupForm"/>
 		</entry-actions>
 		<action bean="registrationAction"/>
-		<transition on="foreign" to="foreign"/>
-		<transition on="alreadyRegistered" to="alreadyRegistered"/>
+		<transition on="registrationError" to="registrationError"/>
 		<transition on="contactInfo" to="contactInfo"/>
 	</action-state>
 
-	<view-state id="foreign" view="errorForeign">
-		<transition on="back" to="endState"/>
-	</view-state>
-	<view-state id="alreadyRegistered" view="errorAlreadyRegistered">
+	<view-state id="registrationError" view="registrationError">
 		<transition on="back" to="endState"/>
 	</view-state>
 
@@ -236,6 +232,7 @@
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedicalWaiver"/>
 			</action>
+			<action bean="registrationAction" method="handleReleaseWaiver"/>
 		</transition>
 	</view-state>
 

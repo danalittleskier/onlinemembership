@@ -36,8 +36,11 @@ public class Member implements Serializable
 	@Column(name = "USSA_ID", length=7)
 	private Long id;
 
-	@Column(name = "MEMBER_TYPE", nullable = true, length=2, unique=false)
+	@Column(name = "MEMBER_TYPE", nullable = false, length=2, unique=false)
 	private String type;
+
+	@Column(name = "INACTIVE_STATUS", nullable = true, length=2, unique=false)
+	private String inactiveStatus;
 
 	@Column(name = "FIRST_NAME", nullable = true, length=30, unique=false)
 	private String firstName;
@@ -264,6 +267,16 @@ public class Member implements Serializable
 	public void setType(String type)
 	{
 		this.type = type;
+	}
+
+	public String getInactiveStatus()
+	{
+		return inactiveStatus;
+	}
+
+	public void setInactiveStatus(String inactiveStatus)
+	{
+		this.inactiveStatus = inactiveStatus;
 	}
 
 	public Date getBirthDate()

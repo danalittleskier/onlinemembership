@@ -14,6 +14,8 @@ public interface RulesBL
 
 	public void setParentInfoRequired(AccountBean accountBean);
 
+	public void prepopulateCart(AccountBean accountBean);
+
 	public List<Inventory> getApplicableSportMemberships(AccountBean accountBean);
 
 	public List<Inventory> getApplicableFisItems(AccountBean accountBean);

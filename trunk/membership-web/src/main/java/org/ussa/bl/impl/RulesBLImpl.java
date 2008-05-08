@@ -30,6 +30,7 @@ import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberSeasonDao;
 import org.ussa.dao.MemberTransactionDao;
 import org.ussa.dao.StateDuesRulesDao;
+import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.model.Address;
 import org.ussa.model.Club;
 import org.ussa.model.Division;
@@ -44,6 +45,7 @@ public class RulesBLImpl implements RulesBL
 	private static Log log = LogFactory.getLog(RulesBLImpl.class);
 
 	private InventoryDao inventoryDao;
+	private RenewRuleInvDao renewRuleInvDao;
 	private DateBL dateBL;
 	private DivDuesRulesDao divDuesRulesDao;
 	private StateDuesRulesDao stateDuesRulesDao;
@@ -56,6 +58,11 @@ public class RulesBLImpl implements RulesBL
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
 		this.inventoryDao = inventoryDao;
+	}
+
+	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
+	{
+		this.renewRuleInvDao = renewRuleInvDao;
 	}
 
 	public void setDateBL(DateBL dateBL)
@@ -127,6 +134,24 @@ public class RulesBLImpl implements RulesBL
 		}
 
 		accountBean.setParentInfoRequired(false);
+	}
+
+	public void prepopulateCart(AccountBean accountBean)
+	{
+		Member member = accountBean.getMember();
+
+		// don't prepopulate the cart for non members
+		if(!Member.MEMBER_TYPE_NON_MEMBER.equals(member.getType()))
+		{
+			// for renewals prepopulate the cart with the recommended membership options
+			String lastSeason = dateBL.getLastSeason();
+			Integer currentSeasonAge = getAgeForCurrentRenewSeason(member.getBirthDate());
+			List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
+			for (Inventory inventory : recommendedMemberships)
+			{
+				addMembershipToCart(accountBean, inventory);
+			}
+		}
 	}
 
 	public List<Inventory> getApplicableSportMemberships(AccountBean accountBean)
