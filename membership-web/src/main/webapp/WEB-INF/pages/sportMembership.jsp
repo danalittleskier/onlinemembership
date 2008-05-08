@@ -58,7 +58,7 @@
 
 	<fieldset>
 		<legend>Sport & Membership Type</legend>
-		<p>Note: Athletes may choose more than one sport. <a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Membership Descriptions...</a></p>
+		<p><a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Membership Descriptions...</a></p>
 		<label for="">* Sport:</label>
 		<form:select path="sportId" onchange="document.getElementById('update').click();">
 			<form:option value="">Select a Sport</form:option>
@@ -81,6 +81,7 @@
 			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">			
 		</c:if>
 		<br/>
+		Note: Athletes may choose more than one sport. 
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">
 		<fieldset>
