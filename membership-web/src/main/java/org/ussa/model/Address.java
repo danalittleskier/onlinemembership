@@ -52,6 +52,9 @@ public class Address implements Serializable
 	@Column(name = "PHONE_OTHER", nullable = true, length = 16, unique = false)
 	private String phoneOther;
 
+	@Column(name = "BAD_ADDRESS", nullable = true, length = 1, unique = false)
+	private String badAddress;
+
     public Address() {
         // empty constructor required for Hibernate
     }
@@ -170,6 +173,14 @@ public class Address implements Serializable
 		this.phoneOther = phoneOther;
 	}
 
+	public String getBadAddress() {
+		return badAddress;
+	}
+
+	public void setBadAddress(String badAddress) {
+		this.badAddress = badAddress;
+	}
+	
 	public AddressPk getAddressPk()
 	{
 		return addressPk;
@@ -194,4 +205,6 @@ public class Address implements Serializable
     public int hashCode() {
         return (addressPk != null ? addressPk.hashCode() : 0);
     }
+
+	
 }

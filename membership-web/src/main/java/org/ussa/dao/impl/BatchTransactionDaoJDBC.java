@@ -81,7 +81,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	public synchronized Long getNextBatchSequence(Batch batch)
+	public Long getNextBatchSequence(Batch batch)
 	{
 		SelectMaxSeq maxSeq = new SelectMaxSeq(getDataSource());
 		List results = maxSeq.execute(new Object[]{batch.getBatchId()});
