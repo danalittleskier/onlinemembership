@@ -68,7 +68,7 @@
 		</span>
 
 		<br/><br/>
-		<p style="clear: left;">Please Indicate if different from your mailing address:</p>
+		<p style="clear: left;">Please note if your billing address below if different from your mailing address:</p>
 <%--
 		<label for="">* First Name:</label>
 		<form:input path="paymentBean.firstName" maxlength="50"/><br/>

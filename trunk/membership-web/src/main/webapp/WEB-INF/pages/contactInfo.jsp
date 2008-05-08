@@ -132,7 +132,7 @@
 				drug testing will result in a sanction.
 			</li>
 
-			<li><strong>Beginning April 1, all registrations completed online
+			<li><strong>Beginning May 1, all registrations completed online
 				will apply to the next competition season. If you wish to register
 				for the current competition season from April 1 through June 30,
 				you may do so by mail or fax. Please contact USSA Member Services
@@ -151,7 +151,7 @@
 				time members and officials. Your division and/or state may assess late
 				fees in addition to those assessed by USSA.
 			</li>
-			<li>If you are not a U.S. citizen and wish to change your membership category, you must renew by mail or fax.</li>
+			<li>If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax.</li>
 			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
 		</ul>
 	</div></div></div></div>
