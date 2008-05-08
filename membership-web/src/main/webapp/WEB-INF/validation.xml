@@ -75,19 +75,27 @@
 		  -->
 
 		<form name="contactInfo">
-			<field property="member.firstName" depends="required">
+			<field property="member.firstName" depends="required, mask">
 				<arg0 key="registration.firstName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
-            <field property="member.middleName" depends="mask">
-                <msg name="mask" key="errors.alpha"/>
-                <arg0 key="registration.middleName" />
-                <var>
-                    <var-name>mask</var-name>
-                    <var-value>${alpha}</var-value>
-                </var>
-            </field>
-			<field property="member.lastName" depends="required">
+			<field property="member.middleName" depends="mask">
+				<msg name="mask" key="errors.alpha"/>
+				<arg0 key="registration.middleName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.lastName" depends="required, mask">
 				<arg0 key="registration.lastName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
 			<field property="birthDate" depends="required, date">
 				<arg0 key="user.birth.date" />
@@ -104,11 +112,19 @@
 					<var-value>${validWhenMemberIdNotPresent}</var-value>
 				</var>
 			</field>
-			<field property="address.deliveryAddress" depends="required">
+			<field property="address.deliveryAddress" depends="required, mask">
 				<arg0 key="user.address.address" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
+				</var>
 			</field>
-			<field property="address.city" depends="required">
+			<field property="address.city" depends="required, mask">
 				<arg0 key="user.address.city" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
 			<field property="address.postalCode" depends="required, mask">
 				<arg0 key="user.address.postalCode" />
@@ -117,8 +133,12 @@
 					<var-value>${postalCode}</var-value>
 				</var>
 			</field>
-			<field property="address.country" depends="required">
+			<field property="address.country" depends="required, mask">
 				<arg0 key="user.address.country" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
 			<field property="address.phoneHome" depends="required, mask">
 				<arg0 key="user.home.primary.phone" />
@@ -187,20 +207,28 @@
 		</form>
 
 		<form name="parentInfo">
-			<field property="member.parentInfo.parent1First" depends="validWhen">
+			<field property="member.parentInfo.parent1First" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.parent.guardian.firstName" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenParentInfoNotRequired}</var-value>
 				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
-			<field property="member.parentInfo.parent1Last" depends="validWhen">
+			<field property="member.parentInfo.parent1Last" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.parent.guardian.lastName" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
 				</var>
 			</field>
 			<field property="member.parentInfo.parent1Relation" depends="validWhen">
@@ -217,6 +245,20 @@
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1First" depends="mask">
+				<arg0 key="label.parent.guardian.firstName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Last" depends="mask">
+				<arg0 key="label.parent.guardian.lastName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
 				</var>
 			</field>
 			<field property="member.parentInfo.parent2Email" depends="email">
@@ -487,20 +529,28 @@
 		</form>
 
 		<form name="medical">
-			<field property="memberLegal.insuranceCompany" depends="validWhen">
+			<field property="memberLegal.insuranceCompany" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.insurance.company.name" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenNoInsurance}</var-value>
 				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
 			</field>
-			<field property="memberLegal.insurancePolicy" depends="validWhen">
+			<field property="memberLegal.insurancePolicy" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.policy.id.number" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenNoInsurance}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
 				</var>
 			</field>
 			<field property="memberLegal.insurancePhone" depends="mask">
@@ -544,11 +594,15 @@
 					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
 				</var>
 			</field>
-			<field property="memberLegal.guardianName" depends="validWhen">
+			<field property="memberLegal.guardianName" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.guardian.name.required"/>
 				<var>
 					<var-name>test</var-name>
 					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
 				</var>
 			</field>
 		</form>

@@ -12,10 +12,13 @@ import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.WordUtils;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.FieldError;
 import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.context.servlet.ServletExternalContext;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
@@ -32,7 +35,6 @@ import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.NationDao;
-import org.ussa.dao.RenewRuleInvDao;
 import org.ussa.dao.StateDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
@@ -58,7 +60,6 @@ public class RegistrationAction extends FormAction implements Serializable
 	private MemberClubDao memberClubDao;
 	private DivisionDao divisionDao;
 	private InventoryDao inventoryDao;
-	private RenewRuleInvDao renewRuleInvDao;
 	private MemberLegalDao memberLegalDao;
 	private RulesBL rulesBL;
 	private DateBL dateBL;
@@ -92,10 +93,6 @@ public class RegistrationAction extends FormAction implements Serializable
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
 		this.inventoryDao = inventoryDao;
-	}
-	public void setRenewRuleInvDao(RenewRuleInvDao renewRuleInvDao)
-	{
-		this.renewRuleInvDao = renewRuleInvDao;
 	}
 	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
 	{
@@ -166,6 +163,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			}
 
 			Address address = new Address();
+			// default the country to US
 			address.setCountry("USA");
 			accountBean.setAddress(address);
 
@@ -181,6 +179,14 @@ public class RegistrationAction extends FormAction implements Serializable
 			Member member = memberDao.get(id);
 			member.setEmail(user.getEmail());
 			accountBean.setMember(member);
+
+			if(StringUtils.isNotBlank(member.getInactiveStatus()))
+			{
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.inactive");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return result("registrationError");
+			}
 
 			if(member.getBirthDate() != null)
 			{
@@ -202,7 +208,10 @@ public class RegistrationAction extends FormAction implements Serializable
 				address = addressDao.get(addressPk);
 				if(!rulesBL.isCountryUs(address.getCountry()))
 				{
-					return result("foreign");
+					BindException errors = new BindException(accountBean, "accountBean");
+					errors.reject("errors.foreign");
+					getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+					return result("registrationError");
 				}
 			}
 			catch (ObjectRetrievalFailureException e)
@@ -222,7 +231,10 @@ public class RegistrationAction extends FormAction implements Serializable
 				if(memberLegal != null)
 				{
 					// the person has already processed a registration for this year.
-					return result("alreadyRegistered");
+					BindException errors = new BindException(accountBean, "accountBean");
+					errors.reject("errors.already.registered");
+					getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+					return result("registrationError");
 				}
 			}
 			catch (ObjectRetrievalFailureException e)
@@ -232,19 +244,8 @@ public class RegistrationAction extends FormAction implements Serializable
 				accountBean.setMemberLegal(memberLegal);
 			}
 
-			// don't prepopulate the cart for non members
-			// TODO: push this into rulesBL
-			if(!Member.MEMBER_TYPE_NON_MEMBER.equals(member.getType()))
-			{
-				// for renewals prepopulate the cart with the recommended membership options
-				String lastSeason = dateBL.getLastSeason();
-				Integer currentSeasonAge = rulesBL.getAgeForCurrentRenewSeason(member.getBirthDate());
-				List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
-				for (Inventory inventory : recommendedMemberships)
-				{
-					rulesBL.addMembershipToCart(accountBean, inventory);
-				}
-			}
+			// prepopulate cart
+			rulesBL.prepopulateCart(accountBean);
 		}
 
 		return result("contactInfo");
@@ -256,10 +257,19 @@ public class RegistrationAction extends FormAction implements Serializable
 		Address address = accountBean.getAddress();
 		Member member = accountBean.getMember();
 
-		// they want to force the first letter of each word of the city to be capitalized
+		// force all phone numbers to the spcified format
+		address.setPhoneHome(StringUtils.formatPhone(address.getPhoneHome()));
+		address.setPhoneWork(StringUtils.formatPhone(address.getPhoneWork()));
+		address.setPhoneOther(StringUtils.formatPhone(address.getPhoneOther()));
+		address.setPhoneFax(StringUtils.formatPhone(address.getPhoneFax()));
+
+		// force title case for the following
+		member.setFirstName(WordUtils.capitalizeFully(member.getFirstName()));
+		member.setMiddleName(WordUtils.capitalizeFully(member.getMiddleName()));
+		member.setLastName(WordUtils.capitalizeFully(member.getLastName()));
 		address.setCity(WordUtils.capitalizeFully(address.getCity()));
 
-		// they want to force the country to upper case
+		// force upper case for the country
 		address.setCountry(address.getCountry().toUpperCase());
 
 		// They want to force the US the be entered same way for everyone
@@ -290,20 +300,16 @@ public class RegistrationAction extends FormAction implements Serializable
 			hundredsBack.add(Calendar.YEAR, -150);
 			if(birthDate.after(now) || birthDate.before(hundredsBack))
 			{
-				// TODO: this isn't allowing the birthdate to be editable after returning with an error.
 				BindException errors = new BindException(accountBean, "accountBean");
-				errors.reject("errors.invalid.birthdate");
+				ObjectError error = new FieldError("accountBean", "member.birthDate", accountBean.getBirthDate(), 
+						false, new String[]{"errors.invalid.birthdate"},
+						new Object[]{new DefaultMessageSourceResolvable("label.birth.date")}, "errors.invalid.birthdate");
+				errors.addError(error);
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 				return error();
 			}
 			member.setBirthDate(birthDate.getTime());
 		}
-
-		// force all phone numbers to the spcified format
-		address.setPhoneHome(StringUtils.formatPhone(address.getPhoneHome()));
-		address.setPhoneWork(StringUtils.formatPhone(address.getPhoneWork()));
-		address.setPhoneOther(StringUtils.formatPhone(address.getPhoneOther()));
-		address.setPhoneFax(StringUtils.formatPhone(address.getPhoneFax()));
 
 		// for new registrations check for dups
 		if (member.getId() == null)
@@ -572,7 +578,19 @@ public class RegistrationAction extends FormAction implements Serializable
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		MemberLegal memberLegal = accountBean.getMemberLegal();
 
+		// format phone for insurance company
 		memberLegal.setInsurancePhone(StringUtils.formatPhone(memberLegal.getInsurancePhone()));
+
+		return success();
+	}
+
+	public Event handleReleaseWaiver(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		MemberLegal memberLegal = accountBean.getMemberLegal();
+
+		// force title case for guardian name
+		memberLegal.setGuardianName(WordUtils.capitalizeFully(memberLegal.getGuardianName()));
 
 		return success();
 	}
