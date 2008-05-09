@@ -19,7 +19,7 @@ import org.ussa.model.Inventory;
 public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 {
 	private DataSource dataSource;
-	private String RECOMMDENDED_MEMBERSHIPS_SQL = "select r.inv_id " +
+	/* private String RECOMMDENDED_MEMBERSHIPS_SQL = "select r.inv_id " +
 			"from membertransaction mt " +
 			"inner join member m on mt.ussa_id = m.ussa_id " +
 			"inner join renewruleinv r on mt.inv_id = r.inv_id " +
@@ -28,8 +28,19 @@ public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 			"and ? between r.age_from and r.age_to " +
 			"and (r.division_code = m.division_code or r.division_code is null) " +
 			"group by r.inv_id " +
-			"order by r.inv_id";
+			"order by r.inv_id"; */
 
+	private String RECOMMDENDED_MEMBERSHIPS_SQL = "select r.new_inv_id  " +
+		"from membertransaction mt, member m, renewruleinv r " +
+		"where mt.ussa_id = m.ussa_id " +
+		"and mt.inv_id = r.inv_id " +
+		"and mt.ussa_id = ? " +
+		"and mt.season = ? " +
+		"and ? between r.age_from and r.age_to " +
+		"and (r.division_code = m.division_code or r.division_code is null) " +
+		"group by r.inv_id " +
+		"order by r.inv_id"; 
+	
 	private InventoryDao inventoryDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
