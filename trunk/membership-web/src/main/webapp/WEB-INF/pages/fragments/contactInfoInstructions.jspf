@@ -1,0 +1,43 @@
+<%@ include file="/includes/taglibs.jsp"%>
+
+<!-- RIGHT column -->
+<div id="stg-twocol-secondary">
+	<!-- BOX (START) -->
+	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+		<p class="stg-omr-header">Online Membership Registration</p>
+		<ul id="stg-omr">
+			<li>Memberships, FIS and IPC registrations are non-refundable.</li>
+			<li>Memberships expire annually on June 30.</li>
+			<li>Registration must be submitted only by those 18 &amp; older.</li>
+			<li>Code of Conduct:<br />
+				I understand that by virtue of my membership in USSA, I must comply with USSA's
+				Code of Conduct. I also understand that I may be required to participate in
+				competition drug testing. By executing this form, I agree to abide by and/or
+				participate in such programs. I understand that failure to participate in competition
+				drug testing will result in a sanction.
+			</li>
+
+			<li><strong>Beginning May 1, all registrations completed online
+				will apply to the next competition season. If you wish to register
+				for the current competition season from April 1 through June 30,
+				you may do so by mail or fax. Please contact USSA Member Services
+				for details at <a href="mailto:membership@ussa.org">membership@ussa.org</a>
+				or by phone at 435.647.2666.</strong>
+			</li>
+			<li>
+				In order to complete renewal or registration, your primary medical
+				insurance information will be required or you will be required to
+				execute the Primary Medical Exception Agreement provided. You will
+				also be required to execute a release of liability.
+			</li>
+			<li>
+				A $25 late fee will be added to your total if renewing after Oct. 15
+				for USSA membership categories other than youth competitors, first
+				time members and officials. Your division and/or state may assess late
+				fees in addition to those assessed by USSA.
+			</li>
+			<li>If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax.</li>
+			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
+		</ul>
+	</div></div></div></div>
+	<!-- BOX (END) -->

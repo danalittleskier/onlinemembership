@@ -1,0 +1,37 @@
+<%@ include file="/includes/taglibs.jsp"%>
+
+	<fieldset>
+		<legend>Primary Medical Insurance</legend>
+		<label>* Do you have medical insurance?</label>
+		<div class="radios">
+			<form:radiobutton id="hasInsurance1"  path="hasInsurance" value="${true}" onclick="showHideInsurance()"/> <label for="hasInsurance1" class="radio">Yes</label>
+			<form:radiobutton id="hasInsurance2"  path="hasInsurance" value="${false}" onclick="showHideInsurance()"/> <label for="hasInsurance2" class="radio">No</label>
+		</div><br />
+		<div id="insurance" style="display:none;">
+			<label>* Insurance Company Name:</label>
+			<form:input path="memberLegal.insuranceCompany" maxlength="50"/><br />
+			<label>* Policy/ID Number:</label>
+			<form:input path="memberLegal.insurancePolicy" maxlength="20"/><br />
+			<label>Phone Number:</label>
+			<form:input path="memberLegal.insurancePhone" maxlength="15"/><br />
+		</div>
+	</fieldset>
+
+	<script type="text/javascript" defer="defer">
+		function showHideInsurance()
+		{
+			var hasInsuranceYes = document.getElementById('hasInsurance1');
+			var insuranceDiv = document.getElementById('insurance');
+
+			if(hasInsuranceYes.checked)
+			{
+				insuranceDiv.style.display = 'block';
+			}
+			else
+			{
+				insuranceDiv.style.display = 'none';
+			}
+		}
+
+		showHideInsurance();
+	</script>
