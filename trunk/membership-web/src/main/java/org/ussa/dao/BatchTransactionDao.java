@@ -8,7 +8,7 @@ import org.ussa.model.Batch;
 
 public interface BatchTransactionDao
 {
-	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddItems);
+	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddLineItems);
 
 	public Long getNextBatchSequence(Batch batch);
 }
