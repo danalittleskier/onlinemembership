@@ -17,6 +17,7 @@
 		<property name="dateBL" ref="dateBL"/>
 		<property name="userManager" ref="userManager"/>
 		<property name="securityContext" ref="securityContext"/>
+		<property name="universalDao" ref="universalDao"/>
 	</bean>
 
 	<bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">

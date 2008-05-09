@@ -26,6 +26,7 @@ import org.ussa.beans.ExtrasBean;
 import org.ussa.beans.MessageBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
+import org.ussa.common.dao.UniversalDao;
 import org.ussa.common.model.User;
 import org.ussa.common.service.UserManager;
 import org.ussa.dao.AddressDao;
@@ -66,6 +67,7 @@ public class RegistrationAction extends FormAction implements Serializable
 	private DateBL dateBL;
 	private UserManager userManager;
 	private SecurityContext securityContext;
+	private UniversalDao universalDao;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
 	private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -123,7 +125,9 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		this.securityContext = securityContext;
 	}
-	
+	public void setUniversalDao(UniversalDao universalDao) {
+		this.universalDao = universalDao;
+	}
 	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId) {
 		Member member = memberDao.get(memberId);
 		member.setEmail(user.getEmail());
@@ -199,6 +203,10 @@ public class RegistrationAction extends FormAction implements Serializable
 	}
 	
 	public Event saveMemberInfo(RequestContext context) throws Exception { 
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		
+		memberDao.save(accountBean.getMember());
+		universalDao.save(accountBean.getAddress());
 		return result("complete");
 	}
 	
