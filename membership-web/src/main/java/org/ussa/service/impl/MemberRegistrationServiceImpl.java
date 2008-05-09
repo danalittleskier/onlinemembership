@@ -180,7 +180,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			creditCardProcessingService.processCard(accountBean);
 
 			// BATCH TABLES
-			batchService.doBatchTableInsert(accountBean, null, currentSeason);
+			batchService.doBatchTableInsert(accountBean, inventoryAddLineItems, currentSeason);
 
 			// moving this to the end until we get the transaction manager working with multiple datasources.
 			// USER ACCOUNT

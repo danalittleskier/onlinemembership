@@ -8,7 +8,7 @@ import org.ussa.beans.LineItemBean;
 
 public interface BatchService
 {
-	public Batch doBatchTableInsert(AccountBean accountBean, List<LineItemBean> inventoryAddItems, String currentSeason);
+	public Batch doBatchTableInsert(AccountBean accountBean, List<LineItemBean> inventoryAddLineItems, String currentSeason);
 
 	public Batch getOrOpenBatch(String currentSeason);
 
