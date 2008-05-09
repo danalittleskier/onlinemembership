@@ -183,6 +183,7 @@
 				<entry key="80" value="443"/>
 				<entry key="8080" value="8443"/>
 				<entry key="11080" value="11443"/>
+				<entry key="12080" value="12443"/>
 			</map>
 		</property>
 	</bean>
