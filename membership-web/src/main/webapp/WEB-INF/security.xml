@@ -14,7 +14,7 @@
                 /images/**=#NONE#
                 /scripts/**=#NONE#
                 /styles/**=#NONE#
-                /**=httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,securityContextHolderAwareRequestFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor
+                /**=httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,channelProcessingFilter,securityContextHolderAwareRequestFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor
             </value>
             <!-- Put channelProcessingFilter before securityContextHolderAwareRequestFilter to turn on SSL switching -->
             <!-- It's off by default b/c Canoo WebTest doesn't support SSL out-of-the-box -->
@@ -139,7 +139,6 @@
     <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
 
     <!-- SSL Switching: to use this, configure it in the filterChainProxy bean -->
-<!--
     <bean id="channelProcessingFilter" class="org.acegisecurity.securechannel.ChannelProcessingFilter">
         <property name="channelDecisionManager" ref="channelDecisionManager"/>
         <property name="filterInvocationDefinitionSource">
@@ -147,6 +146,7 @@
                 PATTERN_TYPE_APACHE_ANT
                 /j_security_check*=REQUIRES_SECURE_CHANNEL
                 /registration.html*=REQUIRES_SECURE_CHANNEL
+                /certificate.html*=REQUIRES_SECURE_CHANNEL
                 /**=REQUIRES_INSECURE_CHANNEL
             </value>
         </property>
@@ -180,11 +180,12 @@
 	<bean id="portMapper" class="org.acegisecurity.util.PortMapperImpl">
 		<property name="portMappings">
 			<map>
-				<entry key="80" value="11443"/>
+				<entry key="80" value="443"/>
+				<entry key="8080" value="8443"/>
+				<entry key="11080" value="11443"/>
 			</map>
 		</property>
 	</bean>
--->
 
 	<bean id="securityContext" class="org.acegisecurity.context.SecurityContextHolder" factory-method="getContext" scope="prototype">
 		<aop:scoped-proxy/>
