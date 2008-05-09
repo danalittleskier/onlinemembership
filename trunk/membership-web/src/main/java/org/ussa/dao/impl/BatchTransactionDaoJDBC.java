@@ -46,7 +46,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 	}
 
 	@Transactional(propagation = Propagation.MANDATORY)
-	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean)
+	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddItems)
 	{
 		Member member = accountBean.getMember();
 		PaymentBean payment = accountBean.getPaymentBean();
@@ -67,6 +67,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 
 		InsertBatchDetail bd = new InsertBatchDetail(getDataSource());
 		List<LineItemBean> lineItems = cart.getLineItems();
+		lineItems.addAll(inventoryAddItems);
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();

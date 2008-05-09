@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.Iterator;
+import java.util.ArrayList;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
@@ -165,11 +166,13 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			}
 
 			// insert member transactions for all the inventory add items
+			List<LineItemBean> inventoryAddLineItems = new ArrayList<LineItemBean>();
 			for (String invId : inventoryAddInvIds)
 			{
 				Inventory inventory = inventoryDao.get(invId);
 				LineItemBean lineItem = new LineItemBean(inventory);
 				lineItem.setAmount(BigDecimal.ZERO);
+				inventoryAddLineItems.add(lineItem);
 				saveMemberTransaction(lineItem, member, currentSeason);
 			}
 

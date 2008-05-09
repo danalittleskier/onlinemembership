@@ -1,11 +1,14 @@
 package org.ussa.dao;
 
+import java.util.List;
+
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.LineItemBean;
 import org.ussa.model.Batch;
 
 public interface BatchTransactionDao
 {
-	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean);
+	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddItems);
 
 	public Long getNextBatchSequence(Batch batch);
 }

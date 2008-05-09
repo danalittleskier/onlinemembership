@@ -1,11 +1,14 @@
 package org.ussa.service;
 
+import java.util.List;
+
 import org.ussa.model.Batch;
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.LineItemBean;
 
 public interface BatchService
 {
-	public Batch doBatchTableInsert(AccountBean accountBean, String currentSeason);
+	public Batch doBatchTableInsert(AccountBean accountBean, List<LineItemBean> inventoryAddItems, String currentSeason);
 
 	public Batch getOrOpenBatch(String currentSeason);
 
