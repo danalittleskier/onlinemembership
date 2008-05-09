@@ -64,6 +64,7 @@
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
+		<property name="clubDao" ref="clubDao"/>
 	</bean>
 
 	<!-- ====================================== Web Flows ============================================== -->
