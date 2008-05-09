@@ -1,6 +1,7 @@
 package org.ussa.service.impl;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -9,6 +10,7 @@ import org.ussa.dao.BatchTransactionDao;
 import org.ussa.model.Batch;
 import org.ussa.service.BatchService;
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.LineItemBean;
 
 public class BatchServiceImpl implements BatchService
 {
@@ -26,7 +28,7 @@ public class BatchServiceImpl implements BatchService
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	public Batch doBatchTableInsert(AccountBean accountBean, String currentSeason)
+	public Batch doBatchTableInsert(AccountBean accountBean, List<LineItemBean> inventoryAddItems, String currentSeason)
 	{
 		Batch batch = getOrOpenBatch(currentSeason);
 
@@ -42,7 +44,7 @@ public class BatchServiceImpl implements BatchService
 				batchSequence = batchTransactionDao.getNextBatchSequence(batch);
 			}
 
-			batchTransactionDao.doBatchInsert(batch, batchSequence, accountBean);
+			batchTransactionDao.doBatchInsert(batch, batchSequence, accountBean, inventoryAddItems);
 		}
 
 		return batch;
