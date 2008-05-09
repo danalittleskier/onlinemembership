@@ -16,6 +16,7 @@
 
                 /registration.html=registrationController
                 /certificate.html=certificateController
+                /updateContactInfo.html=registrationController
                 /*.html=filenameController
 
             </value>
@@ -79,7 +80,7 @@
 
 	<!-- Creates the registry of flow definitions for this application -->
 	<flow:registry id="flowRegistry">
-		<flow:location path="/WEB-INF/flows/registration-flow.xml" />
+		<flow:location  path="/WEB-INF/flows/registration-flow.xml" />
 	</flow:registry>
 
 </beans>
