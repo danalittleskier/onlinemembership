@@ -48,6 +48,11 @@
     </logger>
 
 	<logger name="com.atlassian.crowd">
+		<level value="WARN"/>
+	</logger>
+	
+	<!-- MEMWEB-190 log time to create registration -->
+	<logger name="org.ussa.service.impl.MemberRegistrationServiceImpl">
 		<level value="TRACE"/>
 	</logger>
 

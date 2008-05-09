@@ -11,9 +11,12 @@ import java.util.Iterator;
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StopWatch;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
@@ -42,6 +45,7 @@ import org.ussa.util.DateTimeUtils;
 
 public class MemberRegistrationServiceImpl implements MemberRegistrationService
 {
+	protected final Log log = LogFactory.getLog(getClass());
 	private DateBL dateBL;
 	private MemberDao memberDao;
 	private MemberClubDao memberClubDao;
@@ -56,6 +60,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
 	{
+		StopWatch sw = new StopWatch();
+		sw.start();
 		String currentSeason = dateBL.getCurrentRenewSeason();
 		Member member = accountBean.getMember();
 		boolean isNewRegistration = false;
@@ -179,6 +185,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			User user = userManager.getUserByUsername(userDetails.getUsername());
 			user.setUssaId(member.getId());
 			userManager.saveUser(user);
+			log.trace("Member registration completed in (" + sw.getTotalTimeMillis() + ") milliseconds");
 		}
 		catch (Exception e)
 		{
