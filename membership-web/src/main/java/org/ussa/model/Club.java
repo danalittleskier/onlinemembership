@@ -9,15 +9,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "MEMBER")
-
+@NamedQueries({
+    @NamedQuery(
+            name=Club.MEMBER_CLUBS, 
+            query="select c from Club c, MemberClub mc where c.id = mc.clubUssaId and mc.indUssaId = ?")
+})
+//from Club c inner join MemberClub mc on c.id = mc.clubUssaId where mc.indUssaId = :memberUssaID
 public class Club implements Serializable
 {
+	public static final String MEMBER_CLUBS = "query.memberClubs";
 
 	@Id
 	@Column(name = "USSA_ID")

@@ -1,11 +1,12 @@
 package org.ussa.spring.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-import java.util.ArrayList;
-import java.math.BigDecimal;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.acegisecurity.Authentication;
 import org.acegisecurity.context.SecurityContextHolder;
@@ -17,14 +18,16 @@ import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
 import org.ussa.common.model.User;
 import org.ussa.common.service.UserManager;
+import org.ussa.dao.ClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberSeasonDao;
 import org.ussa.dao.MemberTransactionDao;
+import org.ussa.model.Club;
+import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
-import org.ussa.model.Inventory;
 import org.ussa.util.DateTimeUtils;
 
 public class CertificateController extends AbstractController
@@ -35,6 +38,7 @@ public class CertificateController extends AbstractController
 	private RulesBL rulesBL;
 	private MemberSeasonDao memberSeasonDao;
 	private MemberTransactionDao memberTransactionDao;
+	private ClubDao clubDao;
 
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception
@@ -91,6 +95,7 @@ public class CertificateController extends AbstractController
 					divisionDueTotal = divisionDueTotal.add(memberTransaction.getAmount());
 				}
 				request.setAttribute("divisionDues", divisionDueTotal.toString());
+				request.setAttribute("memberClubs", getMemberClubsAsStr(member));
 			}
 		}
 		else
@@ -101,7 +106,25 @@ public class CertificateController extends AbstractController
 		ModelAndView view = new ModelAndView("certificate");
 		return view;
 	}
+	
 
+	private String getMemberClubsAsStr(Member member) {
+		StringBuffer memberClubsStr = new StringBuffer();
+		List<Club> memberClubs = clubDao.findByMember(member);
+		
+		if (memberClubs != null) {
+			int x = 0;
+			for (Club club : memberClubs) {
+				memberClubsStr.append(club.getName());
+				if (++x < memberClubs.size()) {
+					memberClubsStr.append(",");
+				}
+			}
+		}
+		
+		return memberClubsStr.toString();
+	}
+	
 	private List<MemberTransaction> filterByInventoryType(List<MemberTransaction> items, String inventoryType)
 	{
 		List<MemberTransaction> result = new ArrayList<MemberTransaction>();
@@ -144,4 +167,14 @@ public class CertificateController extends AbstractController
 	{
 		this.memberTransactionDao = memberTransactionDao;
 	}
+
+	public ClubDao getClubDao() {
+		return clubDao;
+	}
+
+	public void setClubDao(ClubDao clubDao) {
+		this.clubDao = clubDao;
+	}
+	
+	
 }

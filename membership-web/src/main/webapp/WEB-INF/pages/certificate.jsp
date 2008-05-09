@@ -55,16 +55,14 @@
 					</c:forEach>
 				</td>
 			</tr>
-			<c:if test="${not empty member.clubName}">
-				<tr>
-					<td class="data-label">
-						Club Affiliation:
-					</td>
-					<td>
-						<c:out value="${member.clubName}"/>
-					</td>
-				</tr>
-			</c:if>
+			<tr>
+				<td class="data-label">
+					Club Affiliation:
+				</td>
+				<td>
+					<c:out value="${memberClubs}"/>
+				</td>
+			</tr>
 		</table>
 
 		<p>Please accept this letter as proof of membership and allow this member to participate in USSA events.</p>

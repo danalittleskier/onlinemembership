@@ -5,6 +5,7 @@ import java.util.List;
 import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.ClubDao;
 import org.ussa.model.Club;
+import org.ussa.model.Member;
 
 public class ClubDaoImpl extends GenericDaoHibernate<Club, Long> implements ClubDao
 {
@@ -27,5 +28,10 @@ public class ClubDaoImpl extends GenericDaoHibernate<Club, Long> implements Club
 	public Club getClub(Long id)
 	{
 		return (Club) getHibernateTemplate().get(Club.class, id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Club> findByMember(Member member) {
+		return getHibernateTemplate().findByNamedQuery(Club.MEMBER_CLUBS, member.getId());
 	}
 }
