@@ -30,7 +30,7 @@ public class RenewRuleInvDaoJDBC implements RenewRuleInvDao
 			"group by r.inv_id " +
 			"order by r.inv_id"; */
 
-	private String RECOMMDENDED_MEMBERSHIPS_SQL = "select r.new_inv_id  " +
+	private String RECOMMDENDED_MEMBERSHIPS_SQL = "select r.new_inv_id as inv_id " +
 		"from membertransaction mt, member m, renewruleinv r " +
 		"where mt.ussa_id = m.ussa_id " +
 		"and mt.inv_id = r.inv_id " +
