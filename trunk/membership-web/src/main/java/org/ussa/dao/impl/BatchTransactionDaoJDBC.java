@@ -67,7 +67,10 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 
 		InsertBatchDetail bd = new InsertBatchDetail(getDataSource());
 		List<LineItemBean> lineItems = cart.getLineItems();
-		lineItems.addAll(inventoryAddLineItems);
+		if(inventoryAddLineItems != null)
+		{
+			lineItems.addAll(inventoryAddLineItems);
+		}
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
