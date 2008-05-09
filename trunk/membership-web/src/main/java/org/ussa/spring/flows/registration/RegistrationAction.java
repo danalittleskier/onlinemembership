@@ -1,24 +1,25 @@
 package org.ussa.spring.flows.registration;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
 import org.apache.commons.lang.WordUtils;
+import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
-import org.springframework.validation.ObjectError;
 import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
 import org.springframework.webflow.action.FormAction;
 import org.springframework.webflow.context.servlet.ServletExternalContext;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
-import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
@@ -122,9 +123,104 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		this.securityContext = securityContext;
 	}
+	
+	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId) {
+		Member member = memberDao.get(memberId);
+		member.setEmail(user.getEmail());
+		accountBean.setMember(member);
+
+		if(member.getBirthDate() != null)
+		{
+			accountBean.setBirthDate(formatter.format(member.getBirthDate()));
+		}
+
+		rulesBL.setParentInfoRequired(accountBean);
+		if(member.getParentInfo() == null)
+		{
+			member.setParentInfo(new ParentInfo());
+		}
+
+		AddressPk addressPk = new AddressPk();
+		addressPk.setType(Address.ADDRESS_TYPE_PRIMARY);
+		addressPk.setMember(member);
+		Address address = null;
+		try
+		{
+			address = addressDao.get(addressPk);
+		}
+		catch (ObjectRetrievalFailureException e)
+		{
+			address = new Address();
+		}
+		accountBean.setAddress(address);
+		
+		// MemberLegal
+		
+		MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
+		memberSeasonPk.setMember(member);
+		memberSeasonPk.setSeason(dateBL.getCurrentRenewSeason());
+
+		MemberLegal memberLegal = null;
+		try
+		{
+			memberLegal = memberLegalDao.get(memberSeasonPk);
+			accountBean.setMemberLegal(memberLegal);
+		}
+		catch (ObjectRetrievalFailureException e)
+		{
+			memberLegal = new MemberLegal();
+			memberLegal.setMemberSeasonPk(memberSeasonPk);
+			accountBean.setMemberLegal(memberLegal);
+		}
+	}
+	
+	public Event loadContactInfoForUpdate(RequestContext context) throws Exception {
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
+		User user = userManager.getUserByUsername(userDetails.getUsername());
+
+		Long id;
+		if (StringUtils.isNotBlank(context.getRequestParameters().get("id")))
+		{
+			id = Long.parseLong(context.getRequestParameters().get("id"));
+		}
+		else
+		{
+			id = user.getUssaId();
+		}
+		
+		accountBean.setUsStates(stateDao.getAllUsStatesOrderedByCode());
+		accountBean.setAllStates(stateDao.getAllStatesOrderedByCode());
+
+		initExistingAccountBean(accountBean, user, id);
+		
+		return result("updateContactInfo");
+	}
+	
+	public Event saveMemberInfo(RequestContext context) throws Exception { 
+		return result("complete");
+	}
+	
+	public Event loadMedicalInfoForUpdate(RequestContext context) throws Exception {
+		loadContactInfoForUpdate(context);
+		return result("updateMedicalInfo");
+	}
 
 	public Event loadContactInfo(RequestContext context) throws Exception
 	{
+		// FIXME: Need to figure out the elegant way to do this via configuration in SWF
+		String subflow = context.getRequestParameters().get("subflow");
+		if (StringUtils.isNotBlank(subflow)) {
+			if ("updateContactInfo".equals(subflow)) {
+				return result("loadContactInfoForUpdate");
+			}
+			
+			if ("updateMedicalInfo".equals(subflow)) {
+				return result("loadMedicalInfoForUpdate");
+			}
+		}
+		
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
 		UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();
@@ -176,72 +272,23 @@ public class RegistrationAction extends FormAction implements Serializable
 		// renewals
 		else
 		{
-			Member member = memberDao.get(id);
-			member.setEmail(user.getEmail());
-			accountBean.setMember(member);
+			initExistingAccountBean(accountBean, user, id);
 
-			if(StringUtils.isNotBlank(member.getInactiveStatus()))
+			if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
 			{
 				BindException errors = new BindException(accountBean, "accountBean");
-				errors.reject("errors.inactive");
+				errors.reject("errors.foreign");
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 				return result("registrationError");
 			}
 
-			if(member.getBirthDate() != null)
+			if(accountBean.getMemberLegal() != null)
 			{
-				accountBean.setBirthDate(formatter.format(member.getBirthDate()));
-			}
-
-			rulesBL.setParentInfoRequired(accountBean);
-			if(member.getParentInfo() == null)
-			{
-				member.setParentInfo(new ParentInfo());
-			}
-
-			AddressPk addressPk = new AddressPk();
-			addressPk.setType(Address.ADDRESS_TYPE_PRIMARY);
-			addressPk.setMember(member);
-			Address address = null;
-			try
-			{
-				address = addressDao.get(addressPk);
-				if(!rulesBL.isCountryUs(address.getCountry()))
-				{
-					BindException errors = new BindException(accountBean, "accountBean");
-					errors.reject("errors.foreign");
-					getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-					return result("registrationError");
-				}
-			}
-			catch (ObjectRetrievalFailureException e)
-			{
-				address = new Address();
-			}
-			accountBean.setAddress(address);
-
-			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
-			memberSeasonPk.setMember(member);
-			memberSeasonPk.setSeason(currentSeason);
-
-			MemberLegal memberLegal = null;
-			try
-			{
-				memberLegal = memberLegalDao.get(memberSeasonPk);
-				if(memberLegal != null)
-				{
-					// the person has already processed a registration for this year.
-					BindException errors = new BindException(accountBean, "accountBean");
-					errors.reject("errors.already.registered");
-					getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-					return result("registrationError");
-				}
-			}
-			catch (ObjectRetrievalFailureException e)
-			{
-				memberLegal = new MemberLegal();
-				memberLegal.setMemberSeasonPk(memberSeasonPk);
-				accountBean.setMemberLegal(memberLegal);
+				// the person has already processed a registration for this year.
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.already.registered");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return result("registrationError");
 			}
 
 			// prepopulate cart

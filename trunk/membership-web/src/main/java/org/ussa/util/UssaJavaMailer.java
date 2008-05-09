@@ -50,6 +50,14 @@ public class UssaJavaMailer extends JavaMailSenderImpl {
 		return emailBody.toString();
 	}
 	
+	public String getBasicPasswordResetEmailText(String password) {
+		StringBuffer emailBody = new StringBuffer("PLEASE DO NOT REPLY TO THIS EMAIL. This is an automated message. If you need assistance, please call 435-647-2666\n\n");
+		emailBody.append("Your password has been reset to " + password + " thru USSA's Online Account Service.\n\n");
+		emailBody.append("If you did not request your password to be changed, then please contact USSA Member Services at 435-647-2666.");
+		
+		return emailBody.toString();
+	}
+	
 	public SimpleMailMessage getBasicMailMessage(User user) {
 		SimpleMailMessage mailMessage = new SimpleMailMessage();
 		mailMessage.setTo(user.getEmail());

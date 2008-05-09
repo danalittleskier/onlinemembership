@@ -14,6 +14,8 @@
 		<action bean="registrationAction"/>
 		<transition on="registrationError" to="registrationError"/>
 		<transition on="contactInfo" to="contactInfo"/>
+		<transition on="loadMedicalInfoForUpdate" to="loadMedicalInfoForUpdate"/>
+		<transition on="loadContactInfoForUpdate" to="loadContactInfoForUpdate"/>
 	</action-state>
 
 	<view-state id="registrationError" view="registrationError">
@@ -22,9 +24,42 @@
 
 	<view-state id="contactInfo" view="contactInfo">
 		<transition on="back" to="endState"/>
-		<transition on="next" to="handleContactInfo">
+		<transition on="next" to="updateContactInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorContactInfo"/>
+			</action>
+		</transition>
+	</view-state>
+	
+	<action-state id="loadContactInfoForUpdate">
+		<action bean="registrationAction"/>
+		<transition on="updateContactInfo" to="updateContactInfo"/>
+	</action-state>
+	
+	<view-state id="updateContactInfo" view="updateContactInfo">
+		<transition on="cancel" to="endState"/>
+		<transition on="update" to="saveMemberInfo">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorContactInfo"/>
+			</action>
+		</transition>
+	</view-state>
+	
+	<action-state id="saveMemberInfo">
+		<action bean="registrationAction"/>
+		<transition on="complete" to="endState"/>
+	</action-state>
+	
+	<action-state id="loadMedicalInfoForUpdate">
+		<action bean="registrationAction"/>
+		<transition on="updateMedicalInfo" to="updateMedicalInfo"/>
+	</action-state>
+	
+	<view-state id="updateMedicalInfo" view="updateMedical">
+		<transition on="cancel" to="endState"/>
+		<transition on="update" to="saveMemberInfo">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedical"/>
 			</action>
 		</transition>
 	</view-state>
