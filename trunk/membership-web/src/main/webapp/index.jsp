@@ -1,3 +1,3 @@
 <%@ include file="/includes/taglibs.jsp"%>
 
-<c:redirect url="/registration.html"/>
+<%response.sendRedirect("/accounts/dashboard.html"); %>
