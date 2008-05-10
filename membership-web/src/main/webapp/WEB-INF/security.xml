@@ -43,7 +43,7 @@
         <property name="httpAuthenticator" ref="httpAuthenticator"/>
         <property name="authenticationManager" ref="authenticationManager"/>
         <property name="authenticationFailureUrl" value="/dashboard.html"/>
-        <property name="defaultTargetUrl" value="/registration.html"/>
+        <property name="defaultTargetUrl" value="/dashboardRedirect.html"/>
 		<property name="filterProcessesUrl" value="/j_security_check"/>
         <property name="rememberMeServices" ref="rememberMeServices"/>
 		<property name="alwaysUseDefaultTargetUrl" value="false"/>

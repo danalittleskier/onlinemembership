@@ -50,6 +50,11 @@
 		<transition on="complete" to="endState"/>
 	</action-state>
 	
+	<action-state id="saveMedicalInfo">
+		<action bean="registrationAction"/>
+		<transition on="complete" to="endState"/>
+	</action-state>
+	
 	<action-state id="loadMedicalInfoForUpdate">
 		<action bean="registrationAction"/>
 		<transition on="updateMedicalInfo" to="updateMedicalInfo"/>
@@ -65,12 +70,12 @@
 	</view-state>
 	
 	<decision-state id="updateMedicalWaiverDecision">
-		<if test="${flowScope.accountBean.hasInsurance}" then="saveMemberInfo" else="updateMedicalWaiver"/>
+		<if test="${flowScope.accountBean.hasInsurance}" then="saveMedicalInfo" else="medicalWaiver"/>
 	</decision-state>
 
 	<view-state id="updateMedicalWaiver" view="medicalWaiver">
 		<transition on="back" to="updateMedicalInfo"/>
-		<transition on="next" to="saveMemberInfo">
+		<transition on="next" to="saveMedicalInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedicalWaiver"/>
 			</action>
@@ -311,7 +316,7 @@
 		<transition on="next" to="endState"/>
 	</view-state>
 
-	<end-state id="endState" view="dashboard"/>
+	<end-state id="endState" view="dashboardRedirect"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>
