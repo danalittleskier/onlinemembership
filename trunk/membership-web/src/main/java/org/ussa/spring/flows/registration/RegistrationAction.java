@@ -211,6 +211,13 @@ public class RegistrationAction extends FormAction implements Serializable
 		return result("complete");
 	}
 	
+	public Event saveMedicalInfo(RequestContext context) throws Exception {
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		
+		memberLegalDao.save(accountBean.getMemberLegal());
+		return result("complete");
+	}
+	
 	public Event loadMedicalInfoForUpdate(RequestContext context) throws Exception {
 		loadContactInfoForUpdate(context);
 		return result("updateMedicalInfo");
