@@ -79,7 +79,6 @@
             <value>
                 PATTERN_TYPE_APACHE_ANT
                 /dashboard.html*=ROLE_ANONYMOUS,ROLE_USER
-                /accounts/login.html*=ROLE_ANONYMOUS,ROLE_USER
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>
         </property>
