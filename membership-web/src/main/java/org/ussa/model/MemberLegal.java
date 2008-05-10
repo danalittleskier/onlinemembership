@@ -4,6 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import org.apache.commons.lang.StringUtils;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -192,6 +195,10 @@ public class MemberLegal implements Serializable
 		this.ipcReleaseFormDate = ipcReleaseFormDate;
 	}
 
+	public boolean hasInsurance() {
+		return (StringUtils.isNotBlank(getInsuranceCompany()) && StringUtils.isNotBlank(getInsurancePolicy()));
+	}
+	
 	public boolean equals(Object o)
 	{
 		if (this == o) return true;
