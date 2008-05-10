@@ -57,10 +57,24 @@
 	
 	<view-state id="updateMedicalInfo" view="updateMedical">
 		<transition on="cancel" to="endState"/>
-		<transition on="update" to="saveMemberInfo">
+		<transition on="update" to="updateMedicalWaiverDecision">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorMedical"/>
 			</action>
+		</transition>
+	</view-state>
+	
+	<decision-state id="updateMedicalWaiverDecision">
+		<if test="${flowScope.accountBean.hasInsurance}" then="saveMemberInfo" else="updateMedicalWaiver"/>
+	</decision-state>
+
+	<view-state id="updateMedicalWaiver" view="medicalWaiver">
+		<transition on="back" to="updateMedicalInfo"/>
+		<transition on="next" to="saveMemberInfo">
+			<action bean="accountBean" method="bindAndValidate">
+				<attribute name="validator" value="validatorMedicalWaiver"/>
+			</action>
+			<action bean="registrationAction" method="handleReleaseWaiver"/>
 		</transition>
 	</view-state>
 

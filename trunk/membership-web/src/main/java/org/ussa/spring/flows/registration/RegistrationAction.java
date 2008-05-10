@@ -168,6 +168,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		try
 		{
 			memberLegal = memberLegalDao.get(memberSeasonPk);
+			accountBean.setHasInsurance(memberLegal.hasInsurance());
 			accountBean.setMemberLegal(memberLegal);
 		}
 		catch (ObjectRetrievalFailureException e)

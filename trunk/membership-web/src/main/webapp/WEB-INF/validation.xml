@@ -529,7 +529,7 @@
 		</form>
 
 		<form name="medical">
-			<field property="memberLegal.insuranceCompany" depends="validWhen, mask">
+			<field property="memberLegal.insuranceCompany" depends="mask">
 				<msg name="validWhen" key="errors.required"/>
 				<arg0 key="label.insurance.company.name" />
 				<var>
