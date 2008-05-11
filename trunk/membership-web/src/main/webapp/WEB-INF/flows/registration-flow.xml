@@ -24,7 +24,7 @@
 
 	<view-state id="contactInfo" view="contactInfo">
 		<transition on="back" to="endState"/>
-		<transition on="next" to="updateContactInfo">
+		<transition on="next" to="handleContactInfo">
 			<action bean="accountBean" method="bindAndValidate">
 				<attribute name="validator" value="validatorContactInfo"/>
 			</action>

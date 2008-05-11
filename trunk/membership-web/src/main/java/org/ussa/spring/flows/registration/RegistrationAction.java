@@ -128,7 +128,7 @@ public class RegistrationAction extends FormAction implements Serializable
 	public void setUniversalDao(UniversalDao universalDao) {
 		this.universalDao = universalDao;
 	}
-	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId) {
+	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId, boolean isForUpdate) {
 		Member member = memberDao.get(memberId);
 		member.setEmail(user.getEmail());
 		accountBean.setMember(member);
@@ -173,9 +173,11 @@ public class RegistrationAction extends FormAction implements Serializable
 		}
 		catch (ObjectRetrievalFailureException e)
 		{
-			memberLegal = new MemberLegal();
-			memberLegal.setMemberSeasonPk(memberSeasonPk);
-			accountBean.setMemberLegal(memberLegal);
+			if (isForUpdate) { 
+				memberLegal = new MemberLegal();
+				memberLegal.setMemberSeasonPk(memberSeasonPk);
+				accountBean.setMemberLegal(memberLegal);
+			}
 		}
 	}
 	
@@ -198,7 +200,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		accountBean.setUsStates(stateDao.getAllUsStatesOrderedByCode());
 		accountBean.setAllStates(stateDao.getAllStatesOrderedByCode());
 
-		initExistingAccountBean(accountBean, user, id);
+		initExistingAccountBean(accountBean, user, id, true);
 		
 		return result("updateContactInfo");
 	}
@@ -288,7 +290,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		// renewals
 		else
 		{
-			initExistingAccountBean(accountBean, user, id);
+			initExistingAccountBean(accountBean, user, id, false);
 
 			if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
 			{
@@ -305,6 +307,10 @@ public class RegistrationAction extends FormAction implements Serializable
 				errors.reject("errors.already.registered");
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 				return result("registrationError");
+			} else {
+				MemberLegal memberLegal = new MemberLegal();
+				memberLegal.setMemberSeasonPk(memberLegal.getMemberSeasonPk());
+				accountBean.setMemberLegal(memberLegal);
 			}
 
 			// prepopulate cart
