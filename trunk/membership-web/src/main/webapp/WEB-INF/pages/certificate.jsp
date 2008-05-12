@@ -70,10 +70,11 @@
 		<p>Sincerely,</p>
 		<p>USSA Member Services</p>
 		<div class="footer"><img src="<c:url value='images/ussa/ussa-footer-icon.png'/>"/></div>
+
+		<script type="text/javascript" defer="defer">
+			window.print();
+		</script>
 	</c:otherwise>
 </c:choose>
 
-<script type="text/javascript" defer="defer">
-	window.print();
-</script>
 </body>
