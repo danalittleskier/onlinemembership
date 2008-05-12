@@ -33,7 +33,7 @@
 	        <list>
 	            <ref bean="rememberMeServices"/>
 	            <ref bean="crowdLogoutHandler"/>
-	            <bean class="org.acegisecurity.ui.logout.SecurityContextLogoutwebRedirectorHandler"/>
+	            <bean class="org.acegisecurity.ui.logout.SecurityContextLogoutHandler"/>
 	        </list>
 	    </constructor-arg>
 	</bean>
