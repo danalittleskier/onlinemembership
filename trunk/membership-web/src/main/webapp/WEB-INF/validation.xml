@@ -550,7 +550,7 @@
 				</var>
 				<var>
 					<var-name>mask</var-name>
-					<var-value>${name}</var-value>
+					<var-value>${alphaNumeric}</var-value>
 				</var>
 			</field>
 			<field property="memberLegal.insurancePhone" depends="mask">
