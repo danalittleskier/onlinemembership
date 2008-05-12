@@ -76,6 +76,7 @@
 
 		<form name="contactInfo">
 			<field property="member.firstName" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="registration.firstName" />
 				<var>
 					<var-name>mask</var-name>
@@ -91,6 +92,7 @@
 				</var>
 			</field>
 			<field property="member.lastName" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="registration.lastName" />
 				<var>
 					<var-name>mask</var-name>
@@ -98,6 +100,7 @@
 				</var>
 			</field>
 			<field property="member.suffixName" depends="mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="label.suffix" />
 				<var>
 					<var-name>mask</var-name>
@@ -120,6 +123,7 @@
 				</var>
 			</field>
 			<field property="address.company" depends="mask">
+				<msg name="mask" key="errors.alphaNumeric"/>
 				<arg0 key="label.company" />
 				<var>
 					<var-name>mask</var-name>
@@ -127,6 +131,7 @@
 				</var>
 			</field>
 			<field property="address.deliveryAddress" depends="required, mask">
+				<msg name="mask" key="errors.alphaNumeric"/>
 				<arg0 key="user.address.address" />
 				<var>
 					<var-name>mask</var-name>
@@ -134,6 +139,7 @@
 				</var>
 			</field>
 			<field property="address.city" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="user.address.city" />
 				<var>
 					<var-name>mask</var-name>
@@ -148,6 +154,7 @@
 				</var>
 			</field>
 			<field property="address.country" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="user.address.country" />
 				<var>
 					<var-name>mask</var-name>
@@ -223,6 +230,7 @@
 		<form name="parentInfo">
 			<field property="member.parentInfo.parent1First" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="label.parent.guardian.firstName" />
 				<var>
 					<var-name>test</var-name>
@@ -235,6 +243,7 @@
 			</field>
 			<field property="member.parentInfo.parent1Last" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="label.parent.guardian.lastName" />
 				<var>
 					<var-name>test</var-name>
@@ -262,6 +271,7 @@
 				</var>
 			</field>
 			<field property="member.parentInfo.parent1First" depends="mask">
+				<msg name="mask" key="errors.name"/>
 				<arg0 key="label.parent.guardian.firstName" />
 				<var>
 					<var-name>mask</var-name>
@@ -545,6 +555,7 @@
 		<form name="medical">
 			<field property="memberLegal.insuranceCompany" depends="mask">
 				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.alphaNumeric"/>
 				<arg0 key="label.insurance.company.name" />
 				<var>
 					<var-name>test</var-name>
@@ -557,6 +568,7 @@
 			</field>
 			<field property="memberLegal.insurancePolicy" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.alphaNumeric"/>
 				<arg0 key="label.policy.id.number" />
 				<var>
 					<var-name>test</var-name>
@@ -609,6 +621,7 @@
 				</var>
 			</field>
 			<field property="memberLegal.guardianName" depends="validWhen, mask">
+				<msg name="mask" key="errors.name"/>
 				<msg name="validWhen" key="errors.guardian.name.required"/>
 				<arg0 key="label.parent.guardian.name" />
 				<var>
