@@ -40,8 +40,8 @@
     </context-param>
     
     <filter>
-    	<filter-name>sessionMonitorFilter</filter-name>
-    	<filter-class>org.ussa.web.filter.SessionMonitorFilter</filter-class>
+    	<filter-name>savedUrlFilter</filter-name>
+    	<filter-class>org.ussa.web.filter.SavedUrlFilter</filter-class>
     </filter>
 
     <filter>
@@ -115,7 +115,7 @@
     </filter>
 
 	<filter-mapping>
-		<filter-name>sessionMonitorFilter</filter-name>
+		<filter-name>savedUrlFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
@@ -209,8 +209,8 @@
     </servlet>
     
     <servlet>
-    	<servlet-name>webRedirector</servlet-name>
-        <servlet-class>org.ussa.web.servlet.WebRedirectorServlet</servlet-class>
+    	<servlet-name>savedUrlServlet</servlet-name>
+        <servlet-class>org.ussa.web.servlet.SavedUrlServlet</servlet-class>
         <load-on-startup>3</load-on-startup>
     	
     </servlet>
@@ -240,8 +240,8 @@
     </servlet-mapping>
     
     <servlet-mapping>
-        <servlet-name>webRedirector</servlet-name>
-        <url-pattern>/webRedirector</url-pattern>
+        <servlet-name>savedUrlServlet</servlet-name>
+        <url-pattern>/savedUrlServlet</url-pattern>
     </servlet-mapping>
     
     <!-- Dispatching handled by StaticFilter -->

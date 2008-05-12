@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * 
  * See org.ussa.web.servlet.WebRedirectServlet for additional info.
  */
-public class SessionMonitorFilter implements Filter {
+public class SavedUrlFilter implements Filter {
 	public static final String SESSION_ACTIVATED = "sessionActivated";
 	public static final String SAVED_URI_KEY = "savedURI";
 	public static final String SAVED_QUERY_STRING_KEY = "savedQueryString";
