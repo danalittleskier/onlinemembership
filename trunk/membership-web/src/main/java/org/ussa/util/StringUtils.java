@@ -27,4 +27,32 @@ public class StringUtils extends org.apache.commons.lang.StringUtils
 		}
 		return result;
 	}
+
+	public static String formatPostalCode(String code)
+	{
+		String result = null;
+		if(code != null)
+		{
+			StringBuffer characters = new StringBuffer();
+			for (char aChar : code.toCharArray())
+			{
+				if (Character.isLetterOrDigit(aChar))
+				{
+					characters.append(aChar);
+				}
+			}
+			int length = characters.length();
+			// Canadian postal code
+			if(length == 6)
+			{
+				result = characters.substring(0, 3)+" "+characters.substring(3, 6);
+			}
+			// nine digit US postal code
+			if(length == 9)
+			{
+				result = characters.substring(0, 5)+"-"+characters.substring(5, 9);
+			}
+		}
+		return result;
+	}
 }
