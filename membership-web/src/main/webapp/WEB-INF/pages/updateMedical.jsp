@@ -20,11 +20,10 @@
 </fieldset>
 
 </form:form>
-	</div>
+</div>
 
 <%@ include file="fragments/medicalInfoInstructions.jspf"%>
 
-</div>
 <div class="clear"></div>
 
 </body>
