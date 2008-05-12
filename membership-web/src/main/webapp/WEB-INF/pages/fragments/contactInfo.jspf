@@ -11,7 +11,7 @@
 	<label for="">* First Name</label>
 	<form:input path="member.firstName" size="30" maxlength="30" /><br />
 	<label for="">MI</label>
-	<form:input path="member.middleName" size="3" maxlength="1" /><br />
+	<form:input path="member.middleName" size="2" maxlength="1" /><br />
 	<label for="">* Last Name</label>
 	<form:input path="member.lastName" size="30" maxlength="30"/><br />
 	<label for="">Suffix</label>
