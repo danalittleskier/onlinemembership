@@ -1035,4 +1035,8 @@ public class RulesBLImpl implements RulesBL
 
 		return null;
 	}
+	
+	public boolean isMemberInactive(Member member) {
+		return member.getInactiveStatus() != null;
+	}
 }

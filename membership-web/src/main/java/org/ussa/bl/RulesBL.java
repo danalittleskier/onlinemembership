@@ -5,8 +5,9 @@ import java.util.List;
 
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.MessageBean;
-import org.ussa.model.Inventory;
 import org.ussa.model.Division;
+import org.ussa.model.Inventory;
+import org.ussa.model.Member;
 
 public interface RulesBL
 {
@@ -49,4 +50,6 @@ public interface RulesBL
 	public boolean isCountryUsOrCanada(String country);
 
 	public Division determineDivision(String nationCode, String stateCode, Long clubId, String zipCode);
+
+	public boolean isMemberInactive(Member member);
 }

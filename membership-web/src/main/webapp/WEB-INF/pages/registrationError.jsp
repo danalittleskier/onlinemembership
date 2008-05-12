@@ -20,8 +20,7 @@
 		</c:if>
 	</spring:bind>
 	<fieldset id="buttonFieldSet" class="buttons">
-		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		<input type="submit" class="btn-green" name="_eventId_back" value="Go to Account Home">
+		<input type="submit" class="btn-green" name="backToAccounts" value="Go to Account Home" onclick="window.location.href='/accounts/dashboard.html'"/>
 	</fieldset>
 </div>
 
