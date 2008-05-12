@@ -291,6 +291,13 @@ public class RegistrationAction extends FormAction implements Serializable
 		{
 			initExistingAccountBean(accountBean, user, id, false);
 
+			if (rulesBL.isMemberInactive(accountBean.getMember())) {
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.inactive");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return result("registrationError");
+			}
+			
 			if(!rulesBL.isCountryUs(accountBean.getAddress().getCountry()))
 			{
 				BindException errors = new BindException(accountBean, "accountBean");
