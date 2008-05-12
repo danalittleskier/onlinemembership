@@ -3,19 +3,7 @@
 <div id="stg-header">
 	<!------------------------------------------- Advertisment ----------------------------------------------->
 	<div class="page_advertise_wrapper">
-		<script type="text/javascript" src="http://ad.doubleclick.net/adj/a.site102.tmus;tile=1;dcopt=ist;abr=!webtv;sz=728x90;ord=' + ord + '?"></script>
-		<script type="text/javascript">
-			<!--
-			if ((!document.images && navigator.userAgent.indexOf('Mozilla/2.') >= 0) || navigator.userAgent.indexOf("WebTV") >= 0) {
-				document.write('<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=1;sz=728x90;ord=' + ord + '?" target="_blank">');
-				document.write('<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=1;sz=728x90;ord=' + ord + '?" width="728" height="90" border="0" alt=""></a>');
-			}
-			//-->
-		</script>
-		<noscript>
-			<a href="http://ad.doubleclick.net/jump/a.site102.tmus;tile=1;sz=728x90;ord=123456789?" target="_blank">
-				<img src="http://ad.doubleclick.net/ad/a.site102.tmus;tile=1;sz=728x90;ord=123456789?" width="728" height="90" border="0" alt=""></a>
-		</noscript>
+		<a href="http://www.backcountry.com/?avad=4480_2574_ml_0" target="_blank"><img src="<c:url value='/images/ussa/ad1.gif'/>" border="none"></a>
 		<img src="<c:url value='/images/ussa/TV_TuneIn.jpg'/>" border="0" ismap usemap="#topAdMap">
 	</div>
 	<map name="topAdMap">
