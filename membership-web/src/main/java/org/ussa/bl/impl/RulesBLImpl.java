@@ -930,10 +930,13 @@ public class RulesBLImpl implements RulesBL
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
 		List<MemberTransaction> memberTransactions = memberTransactionDao.getMemberTransactionsForSeason(ussaId, currentSeason);
-		Set<String> items = new HashSet<String>();
+		Set<String> memberships = new HashSet<String>();
 		for (MemberTransaction memberTransaction : memberTransactions)
 		{
-			items.add(memberTransaction.getInventory().getId());
+			if(Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(memberTransaction.getInventory().getInventoryType()))
+			{
+				memberships.add(memberTransaction.getInventory().getId());
+			}
 		}
 
 		if(!isBackgroundCheckCurrent(ussaId))
@@ -941,7 +944,7 @@ public class RulesBLImpl implements RulesBL
 			Set<String> coachesAndOfficials = new HashSet<String>();
 			coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
 			coachesAndOfficials.addAll(RuleAssociations.officialMemberships);
-			if(containsOnly(items, coachesAndOfficials))
+			if(containsOnly(memberships, coachesAndOfficials))
 			{
 				return true;
 			}
@@ -951,9 +954,9 @@ public class RulesBLImpl implements RulesBL
 
 	private boolean containsOnly(Set<String> set, Collection<String> items)
 	{
-		for (String s : items)
+		for (String s : set)
 		{
-			if (!set.contains(s))
+			if (!items.contains(s))
 			{
 				return false;
 			}
