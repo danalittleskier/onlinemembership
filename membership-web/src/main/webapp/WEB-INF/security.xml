@@ -33,7 +33,7 @@
 	        <list>
 	            <ref bean="rememberMeServices"/>
 	            <ref bean="crowdLogoutHandler"/>
-	            <bean class="org.acegisecurity.ui.logout.SecurityContextLogoutHandler"/>
+	            <bean class="org.acegisecurity.ui.logout.SecurityContextLogoutwebRedirectorHandler"/>
 	        </list>
 	    </constructor-arg>
 	</bean>
@@ -42,10 +42,9 @@
         <property name="httpAuthenticator" ref="httpAuthenticator"/>
         <property name="authenticationManager" ref="authenticationManager"/>
         <property name="authenticationFailureUrl" value="/accounts/login.html?error=true"/>
-        <property name="defaultTargetUrl" value="/dashboardRedirect.html"/>
+        <property name="defaultTargetUrl" value="/webRedirector"/>
 		<property name="filterProcessesUrl" value="/j_security_check"/>
         <property name="rememberMeServices" ref="rememberMeServices"/>
-		<property name="alwaysUseDefaultTargetUrl" value="false"/>
 	</bean>
 
     <bean id="securityContextHolderAwareRequestFilter" class="org.acegisecurity.wrapper.SecurityContextHolderAwareRequestFilter"/>
