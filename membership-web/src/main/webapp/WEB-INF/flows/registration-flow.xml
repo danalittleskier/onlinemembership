@@ -128,7 +128,7 @@
 
 	<action-state id="processClubInfo">
 		<action bean="registrationAction" method="processClubInfo"/>
-		<transition on="foreign" to="foreign"/>
+		<transition on="registrationError" to="registrationError"/>
 		<transition on="success" to="sportMembership"/>
 	</action-state>
 

@@ -488,7 +488,10 @@ public class RegistrationAction extends FormAction implements Serializable
 		// if they are foreign then they can't do foreign at this time
 		if(!rulesBL.isCountryUs(accountBean.getMember().getNationCode()))
 		{
-			return result("foreign");
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.foreign");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return result("registrationError");
 		}
 
 		if(StringUtils.isNotBlank(accountBean.getDivisionCode()))
