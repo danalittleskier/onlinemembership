@@ -160,7 +160,7 @@
 				</td>
 				<td valign="top" width="100%">
 					<label for="privateAddressControl" class="checkbox" style="text-align:left; width:auto;">
-					Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.
+					<font size="10px">Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.</font>
 					</label>
 				</td>
 			</tr>
