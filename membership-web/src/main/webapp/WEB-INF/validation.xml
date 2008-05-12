@@ -49,11 +49,11 @@
 		</constant>
 		<constant>
 			<constant-name>name</constant-name>
-			<constant-value>^[A-Za-z\s\'\-\.áéëñóúí]*$</constant-value>
+			<constant-value>^[A-Za-z\s\'\-\.]*$</constant-value>
 		</constant>
 		<constant>
 			<constant-name>alphaNumeric</constant-name>
-			<constant-value>^[0-9A-Za-z\s\'\-\.áéëñóúí]*$</constant-value>
+			<constant-value>^[0-9A-Za-z\s\'\-\.#,//]*$</constant-value>
 		</constant>
 	</global>
 	<formset>
@@ -87,7 +87,7 @@
 				<arg0 key="registration.middleName" />
 				<var>
 					<var-name>mask</var-name>
-					<var-value>${name}</var-value>
+					<var-value>${alpha}</var-value>
 				</var>
 			</field>
 			<field property="member.lastName" depends="required, mask">
@@ -117,6 +117,13 @@
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="address.company" depends="mask">
+				<arg0 key="label.company" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
 				</var>
 			</field>
 			<field property="address.deliveryAddress" depends="required, mask">
@@ -545,7 +552,7 @@
 				</var>
 				<var>
 					<var-name>mask</var-name>
-					<var-value>${name}</var-value>
+					<var-value>${alphaNumeric}</var-value>
 				</var>
 			</field>
 			<field property="memberLegal.insurancePolicy" depends="validWhen, mask">

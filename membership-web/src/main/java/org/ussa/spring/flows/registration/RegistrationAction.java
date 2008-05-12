@@ -1,12 +1,11 @@
 package org.ussa.spring.flows.registration;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
@@ -331,6 +330,9 @@ public class RegistrationAction extends FormAction implements Serializable
 		address.setPhoneWork(StringUtils.formatPhone(address.getPhoneWork()));
 		address.setPhoneOther(StringUtils.formatPhone(address.getPhoneOther()));
 		address.setPhoneFax(StringUtils.formatPhone(address.getPhoneFax()));
+
+		// force postal code to the spcified format
+		address.setPostalCode(StringUtils.formatPostalCode(address.getPostalCode()));
 
 		// force title case for the following
 		member.setFirstName(WordUtils.capitalizeFully(member.getFirstName()));
