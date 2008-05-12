@@ -26,7 +26,6 @@
 
 	<%@ include file="fragments/contactInfoInstructions.jspf"%>
 
-</div>
 <div class="clear"></div>
 
 </body>

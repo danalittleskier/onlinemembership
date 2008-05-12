@@ -97,6 +97,13 @@
 					<var-value>${name}</var-value>
 				</var>
 			</field>
+			<field property="member.suffixName" depends="mask">
+				<arg0 key="label.suffix" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
 			<field property="birthDate" depends="required, date">
 				<arg0 key="user.birth.date" />
 				<var>
@@ -596,6 +603,7 @@
 			</field>
 			<field property="memberLegal.guardianName" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.guardian.name.required"/>
+				<arg0 key="label.parent.guardian.name" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</var-value>
