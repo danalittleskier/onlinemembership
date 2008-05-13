@@ -78,7 +78,7 @@
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<label></label>
-			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">			
+			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">
 		</c:if>
 		<br/>
 		Note: Athletes may choose more than one sport. 
