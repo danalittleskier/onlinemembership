@@ -185,8 +185,8 @@
 				</includes>
 			</testResource>
 		</testResources>
-	  <finalName>membership-web</finalName>
 	</build>
+
 
 	<repositories>
 		<repository>
@@ -596,6 +596,13 @@
 	</profiles>
 
 	<properties>
+	
+		<!-- Crowd SSO Development settings -->
+		<crowd.application.name>accounts-ussa</crowd.application.name>
+		<crowd.application.password>password</crowd.application.password>
+		<crowd.application.login.url>http://localhost:8080/accounts</crowd.application.login.url>
+		<crowd.server.url>http://devweb.hq.ussa.org:9080/crowd/services/</crowd.server.url>
+		
 		<!-- Application settings -->
 		<copyright.year>2007</copyright.year>
 		<dao.framework>hibernate</dao.framework>
