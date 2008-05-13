@@ -33,6 +33,8 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			" Values (?, ?, ?, ?, ?, ?)";
 	private String INSERT_BATCHSEQUENCE_SQL = "Insert Into BatchSequence (Batch_Id, Sequence, Receive_Date)" +
 			" Values (?, ?, getDate())";
+
+	// TABLOCKX takes an exclusive lock on the table that is held until the end of the command or transaction.
 	private String SELECT_MAX_SQL = "Select max(Sequence) as MaxSeq from BatchSequence with (tablockx) where Batch_Id=? ";
 	private String LOCK_BATCH_SQL = "Select * from BatchSequence with (tablockx) where Batch_Id=0 ";
 
