@@ -21,15 +21,6 @@
 <p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping
 	Nordic Combined and Snowboarding. <strong>Bonus Packs available to U.S.
 	residents only.</strong> </p>
-<!-- T-shirt popup -->
-<div style="display: none;" id="bonus-popup">
-	<div class="popup-title"><span id="title-text">Cross Country</span><span class="popup-subtitle">Bonus
-          Pack</span>
-		<input name="close" value="Close" class="btn-green-sm" onclick="document.getElementById('bonus-popup').style.display = 'none';" type="button">
-	</div>
-	<div class="crosscountry" id="popup-content"></div>
-	<!--[if lte IE 6.5]><iframe></iframe><![endif]-->
-</div>
 <div class="tshirt-row">
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
