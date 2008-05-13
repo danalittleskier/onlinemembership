@@ -36,7 +36,6 @@ public class BatchDaoImpl extends GenericDaoHibernate<Batch, Long> implements Ba
 	}
 
 	@Override
-	@Transactional(propagation = Propagation.SUPPORTS)
 	public Batch save(Batch batch)
 	{
 		if (batch.getBatchId() == null)
@@ -53,7 +52,7 @@ public class BatchDaoImpl extends GenericDaoHibernate<Batch, Long> implements Ba
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
-	public synchronized Batch getMostRecentBatch()
+	public Batch getMostRecentBatch()
 	{
 		List results = getHibernateTemplate().find("from Batch b where b.batchId = (select max(bt.batchId) from Batch bt where bt.batchId >= 10000)");
 		if(results.size() > 0)

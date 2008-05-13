@@ -378,8 +378,13 @@ public class RegistrationAction extends FormAction implements Serializable
 			hundredsBack.add(Calendar.YEAR, -150);
 			if(birthDate.after(now) || birthDate.before(hundredsBack))
 			{
+				/*
+				   The birthday field is read only if there is any value in the field, the only exception to this is if
+				   the field didn't pass validation, so it is important that the birthdate error gets set in the correct
+				   way so that the user can edit the incorrect value.
+				 */
 				BindException errors = new BindException(accountBean, "accountBean");
-				ObjectError error = new FieldError("accountBean", "member.birthDate", accountBean.getBirthDate(), 
+				ObjectError error = new FieldError("accountBean", "birthDate", accountBean.getBirthDate(),
 						false, new String[]{"errors.invalid.birthdate"},
 						new Object[]{new DefaultMessageSourceResolvable("label.birth.date")}, "errors.invalid.birthdate");
 				errors.addError(error);
