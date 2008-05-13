@@ -33,7 +33,8 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			" Values (?, ?, ?, ?, ?, ?)";
 	private String INSERT_BATCHSEQUENCE_SQL = "Insert Into BatchSequence (Batch_Id, Sequence, Receive_Date)" +
 			" Values (?, ?, getDate())";
-	private String SELECT_MAX_SQL = "Select max(Sequence) as MaxSeq from BatchSequence where Batch_Id=? ";
+	private String SELECT_MAX_SQL = "Select max(Sequence) as MaxSeq from BatchSequence with (tablockx) where Batch_Id=? ";
+	private String LOCK_BATCH_SQL = "Select * from BatchSequence with (tablockx) where Batch_Id=0 ";
 
 	public void setDataSource(final DataSource dataSource)
 	{
@@ -84,10 +85,24 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 
 	}
 
+	/**
+	 * This give you an exclusive lock on the batch table until the current transaction is complete.
+	 */
 	@Transactional(propagation = Propagation.REQUIRED)
-	public Long getNextBatchSequence(Batch batch)
+	public void aquireLockOnBatchTable()
 	{
-		SelectMaxSeq maxSeq = new SelectMaxSeq(getDataSource());
+		LockBatchTableQuery lockQuery = new LockBatchTableQuery(getDataSource());
+		lockQuery.execute();
+	}
+
+	/**
+	 * This gets the max sequence id + 1 and locks the table until the current transaction is complete to ensure that
+	 * no one else gets the same sequence id that you got.
+	 */
+	@Transactional(propagation = Propagation.REQUIRED)
+	public Long getNextBatchSequenceAndLockTable(Batch batch)
+	{
+		SelectMaxSeqAndLock maxSeq = new SelectMaxSeqAndLock(getDataSource());
 		List results = maxSeq.execute(new Object[]{batch.getBatchId()});
 		Long seq = (Long) results.get(0);
 
@@ -113,9 +128,22 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		return null;
 	}
 
-	private class SelectMaxSeq extends MappingSqlQuery
+	private class LockBatchTableQuery extends MappingSqlQuery
 	{
-		SelectMaxSeq(DataSource dataSource)
+		LockBatchTableQuery(DataSource dataSource)
+		{
+			super(dataSource, LOCK_BATCH_SQL);
+		}
+
+		public Object mapRow(ResultSet resultSet, int rowNum) throws SQLException
+		{
+			return 0;
+		}
+	}
+
+	private class SelectMaxSeqAndLock extends MappingSqlQuery
+	{
+		SelectMaxSeqAndLock(DataSource dataSource)
 		{
 			super(dataSource, SELECT_MAX_SQL);
 			declareParameter(new SqlParameter(Types.VARCHAR));

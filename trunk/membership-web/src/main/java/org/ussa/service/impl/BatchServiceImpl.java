@@ -32,20 +32,17 @@ public class BatchServiceImpl implements BatchService
 	{
 		Batch batch = getOrOpenBatch(currentSeason);
 
-		// we don't want a batch to ever get bigger than 150. if so then close out the current batch and create a new one.
 		Long batchSequence;
-		synchronized(Batch.class)
+		batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
+		// we don't want a batch to ever get bigger than 150. if so then close out the current batch and create a new one.
+		if(batchSequence >= 150)
 		{
-			batchSequence = batchTransactionDao.getNextBatchSequence(batch);
-			if(batchSequence >= 150)
-			{
-				closeBatch(batch);
-				batch = createNewBatch(currentSeason);
-				batchSequence = batchTransactionDao.getNextBatchSequence(batch);
-			}
-
-			batchTransactionDao.doBatchInsert(batch, batchSequence, accountBean, inventoryAddLineItems);
+			closeBatch(batch);
+			batch = createNewBatch(currentSeason);
+			batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
 		}
+
+		batchTransactionDao.doBatchInsert(batch, batchSequence, accountBean, inventoryAddLineItems);
 
 		return batch;
 	}
@@ -53,16 +50,16 @@ public class BatchServiceImpl implements BatchService
 	@Transactional(propagation = Propagation.REQUIRED)
 	public Batch getOrOpenBatch(String currentSeason)
 	{
-		synchronized(BatchServiceImpl.class)
-		{
-			Batch batch = batchDao.getMostRecentBatch();
+		// start by aquiring a lock on the batch table so that we can make sure that we don't create double batches
+		batchTransactionDao.aquireLockOnBatchTable();
 
-			if(batch == null || batch.getCloseDate() != null)
-			{
-				batch = createNewBatch(currentSeason);
-			}
-			return batch;
+		Batch batch = batchDao.getMostRecentBatch();
+
+		if(batch == null || batch.getCloseDate() != null)
+		{
+			batch = createNewBatch(currentSeason);
 		}
+		return batch;
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
@@ -87,13 +84,13 @@ public class BatchServiceImpl implements BatchService
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void closeCurrentlyOpenBatch()
 	{
-		synchronized(BatchServiceImpl.class)
+		// start by aquiring a lock on the batch table so that we can make sure that we are actually closing the most recent batch
+		batchTransactionDao.aquireLockOnBatchTable();
+
+		Batch batch = batchDao.getMostRecentBatch();
+		if(batch != null)
 		{
-			Batch batch = batchDao.getMostRecentBatch();
-			if(batch != null)
-			{
-				closeBatch(batch);
-			}
+			closeBatch(batch);
 		}
 	}
 

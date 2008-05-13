@@ -10,5 +10,7 @@ public interface BatchTransactionDao
 {
 	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddLineItems);
 
-	public Long getNextBatchSequence(Batch batch);
+	public void aquireLockOnBatchTable();
+
+	public Long getNextBatchSequenceAndLockTable(Batch batch);
 }

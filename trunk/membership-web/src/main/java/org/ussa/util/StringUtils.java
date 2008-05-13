@@ -41,16 +41,22 @@ public class StringUtils extends org.apache.commons.lang.StringUtils
 					characters.append(aChar);
 				}
 			}
+
 			int length = characters.length();
-			// Canadian postal code
-			if(length == 6)
+			if(length > 0)
 			{
-				result = characters.substring(0, 3)+" "+characters.substring(3, 6);
-			}
-			// nine digit US postal code
-			if(length == 9)
-			{
-				result = characters.substring(0, 5)+"-"+characters.substring(5, 9);
+				result = characters.toString().toUpperCase();
+
+				// Canadian postal code
+				if(length == 6)
+				{
+					result = result.substring(0, 3)+" "+result.substring(3, 6);
+				}
+				// nine digit US postal code
+				if(length == 9)
+				{
+					result = result.substring(0, 5)+"-"+result.substring(5, 9);
+				}
 			}
 		}
 		return result;

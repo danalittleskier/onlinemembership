@@ -176,8 +176,13 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 				saveMemberTransaction(lineItem, member, currentSeason);
 			}
 
+			StopWatch cardSw = new StopWatch();
+			cardSw.start();
+
 			// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
 			creditCardProcessingService.processCard(accountBean);
+
+			cardSw.stop();
 
 			// BATCH TABLES
 			batchService.doBatchTableInsert(accountBean, inventoryAddLineItems, currentSeason);
@@ -188,7 +193,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			User user = userManager.getUserByUsername(userDetails.getUsername());
 			user.setUssaId(member.getId());
 			userManager.saveUser(user);
+			sw.stop();
 			log.trace("Member registration completed in (" + sw.getTotalTimeMillis() + ") milliseconds");
+			log.trace("Processing the credit card took (" + cardSw.getTotalTimeMillis() + ") milliseconds");
 		}
 		catch (Exception e)
 		{
