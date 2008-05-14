@@ -313,6 +313,9 @@
 	</view-state>
 
 	<view-state id="registrationComplete" view="registrationComplete">
+		<entry-actions>
+			<action bean="registrationAction" method="loadRegistrationComplete"/>
+		</entry-actions>
 		<transition on="next" to="endState"/>
 	</view-state>
 

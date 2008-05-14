@@ -24,11 +24,31 @@
 			<strong><c:out value="${accountBean.cartBean.totalFormatted}"/></strong>
 		</p>
 	</fieldset>
-	<fieldset>
-		<legend>Your Membership Certificate</legend>
-		<p>Please print your Membership Certificate and store it in a safe place for future use as proof of membership for USSA event participation.</p>
-		<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
-	</fieldset>
+	<c:if test="${not empty accountBean.membershipsBean.unrestrictedMemberships}">
+		<fieldset>
+			<legend>Your Membership Certificate</legend>
+			<p>Please print your Membership Certificate and store it in a safe place for future use as proof of membership for USSA event participation.</p>
+			<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
+			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
+				<p>Membership verifications will only display memberships not requiring screening until positive results are received by USSA.</p>
+			</c:if>
+		</fieldset>
+	</c:if>
+
+	<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
+		<fieldset>
+			<legend>Background Screening Required</legend>
+			<%@ include file="/includes/backgroundScreeningText.jsp"%>
+
+			<br/>
+			<c:url var="ncsiUrl" value="https://www.ncsisafe.com/members/selfregbatchcodelanding.aspx">
+				<c:param name="srb" value="11392848"/>
+				<c:param name="id" value="${accountBean.member.id}"/>
+			</c:url>
+			<p><a href="${ncsiUrl}" target="_BLANK">Go here to complete your backgound screening.</a></p>
+		</fieldset>
+	</c:if>
+
 </div>
 <div id="stg-twocol-secondary">
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr">

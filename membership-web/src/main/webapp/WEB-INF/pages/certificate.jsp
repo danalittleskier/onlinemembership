@@ -6,9 +6,13 @@
 </head>
 <body>
 <c:choose>
-	<c:when test="${restricted}">
+	<c:when test="${empty membershipsBean.unrestrictedMemberships and not empty membershipsBean.restrictedMemberships}">
 		<%@ include file="/includes/backgroundScreeningText.jsp"%>
-		<p><a href="https://www.ncsisafe.com" target="_BLANK">Go here to complete your backgound screening.</a></p>
+		<c:url var="ncsiUrl" value="https://www.ncsisafe.com/members/selfregbatchcodelanding.aspx">
+			<c:param name="srb" value="11392848"/>
+			<c:param name="id" value="${member.id}"/>
+		</c:url>
+		<p><a href="${ncsiUrl}" target="_BLANK">Go here to complete your backgound screening.</a></p>
 	</c:when>
 	<c:otherwise>
 		<div class="closeWindowLink"><a href="#" onclick="window.close();">Close Window</a></div>
@@ -50,8 +54,8 @@
 			<tr>
 				<td class="data-label">Membership Type(s):</td>
 				<td>
-					<c:forEach var="memberTransaction" items="${membershipTransactions}">
-						<c:out value="${memberTransaction.inventory.renewDescription}"/><br/>
+					<c:forEach var="inventory" items="${membershipsBean.unrestrictedMemberships}">
+						<c:out value="${inventory.renewDescription}"/><br/>
 					</c:forEach>
 				</td>
 			</tr>

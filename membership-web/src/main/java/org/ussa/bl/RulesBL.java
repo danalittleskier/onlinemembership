@@ -5,9 +5,11 @@ import java.util.List;
 
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.MessageBean;
+import org.ussa.beans.MembershipsBean;
 import org.ussa.model.Division;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
+import org.ussa.model.MemberTransaction;
 
 public interface RulesBL
 {
@@ -43,7 +45,9 @@ public interface RulesBL
 
 	public boolean needsBackgroundCheck(AccountBean accountBean);
 
-	public boolean certificateIsRestricted(Long ussaId);
+	public MembershipsBean getPurchasedMemberships(Long ussaId);
+
+	public MembershipsBean populateMembershipsBean(Long ussaId, List<MemberTransaction> memberTransactions);
 
 	public boolean isCountryUs(String country);
 
