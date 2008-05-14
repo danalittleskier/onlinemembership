@@ -17,6 +17,7 @@
                 /registration.html=registrationController
                 /certificate.html=certificateController
                 /updateContactInfo.html=registrationController
+                /handleFlowTimeout.html=handleFlowTimeoutController
                 /*.html=filenameController
 
             </value>
@@ -67,6 +68,8 @@
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
 		<property name="clubDao" ref="clubDao"/>
 	</bean>
+	
+	<bean id="handleFlowTimeoutController" class="org.ussa.spring.controller.HandleFlowTimeoutController"/>
 
 	<!-- ====================================== Web Flows ============================================== -->
 	<bean name="registrationController" class="org.springframework.webflow.executor.mvc.FlowController">
