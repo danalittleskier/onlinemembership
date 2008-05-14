@@ -28,7 +28,7 @@
 	</bean>
 
 	<bean id="logoutFilter" class="org.acegisecurity.ui.logout.LogoutFilter">
-	    <constructor-arg value="/dashboardRedirect.html"/>
+	    <constructor-arg value="/dashboard.html"/>
 	    <constructor-arg>
 	        <list>
 	            <ref bean="rememberMeServices"/>
@@ -62,7 +62,7 @@
     <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
         <property name="authenticationEntryPoint">
             <bean class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
-                <property name="loginFormUrl" value="/dashboardRedirect.html"/>
+                <property name="loginFormUrl" value="/dashboard.html"/>
                 <property name="forceHttps" value="false"/>
             </bean>
         </property>
@@ -77,7 +77,7 @@
         <property name="objectDefinitionSource">
             <value>
                 PATTERN_TYPE_APACHE_ANT
-                /dashboardRedirect.html*=ROLE_ANONYMOUS,ROLE_USER
+                /dashboard.html*=ROLE_ANONYMOUS,ROLE_USER
                 /**/*.html*=ROLE_ADMIN,ROLE_USER
             </value>
         </property>
