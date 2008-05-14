@@ -26,7 +26,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 	private DataSource dataSource;
 	private String INSERT_BATCHPAYMENT_SQL = "insert into BatchPayment (Batch_id,Sequence,Payment_Type, " +
 			" Check_Number,cc_number, CC_EXP,Amount,Account_Code, Transaction_Id) " +
-			" Values (?, ?, 'CREDIT', NULL, ?, ?, ?, NULL, ?)";
+			" Values (?, ?, ?, NULL, ?, ?, ?, NULL, ?)";
 	private String INSERT_BATCHMEMBER_SQL = "Insert Into BatchMember (Batch_Id, Sequence, USSA_Id, Processed)" +
 			" Values (?, ?, ?, 'Y')";
 	private String INSERT_BATCHDETAIL_SQL = "Insert Into BatchDetail (Batch_id, Sequence, USSA_ID, Inv_Id, Qty, Amount)" +
@@ -60,7 +60,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		InsertBatchPayment bp = new InsertBatchPayment(getDataSource());
 		String expireYear = payment.getExpireYear();
 		expireYear = expireYear.substring(expireYear.length()-2, expireYear.length()); // only take the last 2 digits.
-		Object[] bpParams = {batchId, batchSequence, lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + expireYear,
+		Object[] bpParams = {batchId, batchSequence, payment.getPaymentType(),lastFour(payment.getCardNumber()), payment.getExpireMonth() + "/" + expireYear,
 				cart.getTotal(), payment.getCompletedTransactionId()};
 		bp.update(bpParams);
 
@@ -165,6 +165,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			super(ds, INSERT_BATCHPAYMENT_SQL);
 			declareParameter(new SqlParameter(Types.NUMERIC));
 			declareParameter(new SqlParameter(Types.NUMERIC));
+			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));
 			declareParameter(new SqlParameter(Types.VARCHAR));
