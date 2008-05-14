@@ -888,8 +888,8 @@ public class RulesBLImpl implements RulesBL
 			MemberSeason memberSeason = memberSeasonDao.getMostRecentBackgroundCheck(ussaId);
 			if(memberSeason != null)
 			{
-				int bacgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
-				if(dateBL.calculateCurrentRenewSeason() <= (bacgroundCheckSeason + 3))
+				int backgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
+				if(dateBL.calculateCurrentRenewSeason() <= (backgroundCheckSeason + 3))
 				{
 					return true;
 				}
