@@ -6,6 +6,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 import java.io.Serializable;
 import java.math.BigDecimal;
 
@@ -15,6 +19,9 @@ import java.math.BigDecimal;
         @NamedQuery(name=Inventory.QUERY_BY_TYPE_AND_SPORT_CODE,
         query="select i from Inventory i where i.active = 'Y' and i.inventoryType = :inventoryType and i.sportCode = :sportCode")
         })
+@org.hibernate.annotations.Cache(usage =
+	org.hibernate.annotations.CacheConcurrencyStrategy.NONSTRICT_READ_WRITE
+)
 public class Inventory implements Serializable
 {
     public static final String QUERY_BY_TYPE_AND_SPORT_CODE = "Inventory.QUERY_BY_TYPE_AND_SPORT_CODE";
@@ -285,5 +292,23 @@ public class Inventory implements Serializable
 	public void setAmount(BigDecimal amount)
 	{
 		this.amount = amount;
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return new HashCodeBuilder(11,31)
+		.append(id)
+		.toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object other)
+	{
+		if (!(other instanceof Inventory)) {
+			return false;
+		}
+		Inventory otherObj = (Inventory) other;
+		return new EqualsBuilder().append(this.id, otherObj.id).isEquals();
 	}
 }

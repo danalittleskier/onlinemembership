@@ -48,6 +48,22 @@
         timeToLiveSeconds="120"
         diskPersistent="false"
         diskExpiryThreadIntervalSeconds="120"/>
+    
+    <cache name="org.ussa.model.Inventory" 
+		maxElementsInMemory="1000"
+		eternal="true"
+		timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400"
+		overflowToDisk="false"
+		/>
+		
+	<cache name="org.ussa.model.ParameterTable" 
+		maxElementsInMemory="1000"
+		eternal="true"
+		timeToIdleSeconds="86400"
+		timeToLiveSeconds="86400"
+		overflowToDisk="false"
+		/>
         
     <!-- See http://ehcache.sourceforge.net/documentation/#mozTocId258426 for how to configure caching for your objects -->
 </ehcache>
