@@ -35,7 +35,7 @@
 			<form:select path="paymentBean.paymentType">
 				<form:option value=""></form:option>
 				<form:option value="Visa">Visa</form:option>
-				<form:option value="MasterCard">MasterCard</form:option>
+				<form:option value="Mastercard">MasterCard</form:option>
 			</form:select><br/>
 		</span>
 		<label for="">* Credit Card Number:</label>
