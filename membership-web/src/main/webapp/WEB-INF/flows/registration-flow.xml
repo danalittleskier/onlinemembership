@@ -316,7 +316,7 @@
 		<transition on="next" to="endState"/>
 	</view-state>
 
-	<end-state id="endState" view="dashboardRedirect"/>
+	<end-state id="endState" view="dashboard"/>
 
 	<import resource="registration-beans.xml"/>
 </flow>
