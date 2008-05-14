@@ -19,6 +19,7 @@ import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.beans.MessageBean;
+import org.ussa.beans.MembershipsBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
@@ -921,47 +922,38 @@ public class RulesBLImpl implements RulesBL
 		return false;
 	}
 
-	/**
-	 * The certificate is restricted if the member has only coach and official memberships and their background check is not current
-	 * @param ussaId the member's ussa id
-	 * @return whether or not the member can get his/her membership verification certificate
-	 */
-	public boolean certificateIsRestricted(Long ussaId)
+	public MembershipsBean getPurchasedMemberships(Long ussaId)
 	{
 		String currentSeason = dateBL.getCurrentRenewSeason();
 		List<MemberTransaction> memberTransactions = memberTransactionDao.getMemberTransactionsForSeason(ussaId, currentSeason);
-		Set<String> memberships = new HashSet<String>();
-		for (MemberTransaction memberTransaction : memberTransactions)
-		{
-			if(Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(memberTransaction.getInventory().getInventoryType()))
-			{
-				memberships.add(memberTransaction.getInventory().getId());
-			}
-		}
-
-		if(!isBackgroundCheckCurrent(ussaId))
-		{
-			Set<String> coachesAndOfficials = new HashSet<String>();
-			coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
-			coachesAndOfficials.addAll(RuleAssociations.officialMemberships);
-			if(containsOnly(memberships, coachesAndOfficials))
-			{
-				return true;
-			}
-		}
-		return false;
+		return populateMembershipsBean(ussaId, memberTransactions);
 	}
 
-	private boolean containsOnly(Set<String> set, Collection<String> items)
+	public MembershipsBean populateMembershipsBean(Long ussaId, List<MemberTransaction> memberTransactions)
 	{
-		for (String s : set)
+		boolean isBackgroundCheckCurrent = isBackgroundCheckCurrent(ussaId);
+
+		MembershipsBean membershipsBean = new MembershipsBean();
+		Set<String> coachesAndOfficials = new HashSet<String>();
+		coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
+		coachesAndOfficials.addAll(RuleAssociations.officialMemberships);
+		for (MemberTransaction memberTransaction : memberTransactions)
 		{
-			if (!items.contains(s))
+			Inventory inventory = memberTransaction.getInventory();
+			if(Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(inventory.getInventoryType()))
 			{
-				return false;
+				boolean isCoachOrOfficial = coachesAndOfficials.contains(inventory.getId());
+				if(! isCoachOrOfficial || isCoachOrOfficial && isBackgroundCheckCurrent)
+				{
+					membershipsBean.addUnrestrictedMembership(inventory);
+				}
+				else
+				{
+					membershipsBean.addRestrictedMembership(inventory);
+				}
 			}
 		}
-		return true;
+		return membershipsBean;
 	}
 
 	public boolean isCountryUs(String country)

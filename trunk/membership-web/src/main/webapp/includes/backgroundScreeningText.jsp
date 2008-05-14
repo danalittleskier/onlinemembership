@@ -3,6 +3,7 @@
 <ul>
 	<li>All Coaches and Officials are required to undergo background screening.</li>
 	<li>Coach and official memberships are not valid until positive background screening results are received by USSA.</li>
+	<li>Membership verifications will only display memberships not requiring screening until positive results are received by USSA.</li>
 	<li>Background screening registration must be complete within 30 days of membership registration.</li>
 	<li>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</li>
 	<li>Please allow several weeks for screening process to be completed. Individual screening times will vary.</li>

@@ -1,12 +1,11 @@
 package org.ussa.spring.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.acegisecurity.Authentication;
 import org.acegisecurity.context.SecurityContextHolder;
@@ -59,44 +58,37 @@ public class CertificateController extends AbstractController
 		Member member = null;
 		if(id != null)
 		{
-			if(rulesBL.certificateIsRestricted(id))
+			member = memberDao.get(id);
+			String lastSeason = dateBL.getLastSeason();
+			String currentSeason = dateBL.getCurrentRenewSeason();
+			MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
+			memberSeasonPk.setMember(member);
+			memberSeasonPk.setSeason(currentSeason);
+			MemberSeason memberSeason = memberSeasonDao.get(memberSeasonPk);
+			if(memberSeason == null)
 			{
-				request.setAttribute("restricted", Boolean.TRUE);
+				return new ModelAndView("redirect:errorNotRegistered.html");
 			}
-			else
+
+			request.setAttribute("member", member);
+			request.setAttribute("memberSeason", memberSeason);
+			Calendar birthday = DateTimeUtils.getCalendar(member.getBirthDate());
+			request.setAttribute("yearOfBirth",  birthday.get(Calendar.YEAR));
+			request.setAttribute("lastSeason", lastSeason);
+			request.setAttribute("currentSeason", currentSeason);
+
+			List<MemberTransaction> items = memberTransactionDao.getMemberTransactionsForSeason(id, currentSeason);
+			request.setAttribute("hasFis", filterByInventoryType(items, Inventory.INVENTORY_TYPE_FIS).size() > 0);
+			request.setAttribute("membershipsBean", rulesBL.populateMembershipsBean(member.getId(), items));
+
+			List<MemberTransaction> divisionDues = filterByInventoryType(items, Inventory.INVENTORY_TYPE_DIVISION_DUES);
+			BigDecimal divisionDueTotal = new BigDecimal(0);
+			for (MemberTransaction memberTransaction : divisionDues)
 			{
-				member = memberDao.get(id);
-				String lastSeason = dateBL.getLastSeason();
-				String currentSeason = dateBL.getCurrentRenewSeason();
-				MemberSeasonPk memberSeasonPk = new MemberSeasonPk();
-				memberSeasonPk.setMember(member);
-				memberSeasonPk.setSeason(currentSeason);
-				MemberSeason memberSeason = memberSeasonDao.get(memberSeasonPk);
-				if(memberSeason == null)
-				{
-					return new ModelAndView("redirect:errorNotRegistered.html");
-				}
-
-				request.setAttribute("member", member);
-				request.setAttribute("memberSeason", memberSeason);
-				Calendar birthday = DateTimeUtils.getCalendar(member.getBirthDate());
-				request.setAttribute("yearOfBirth",  birthday.get(Calendar.YEAR));
-				request.setAttribute("lastSeason", lastSeason);
-				request.setAttribute("currentSeason", currentSeason);
-
-				List<MemberTransaction> items = memberTransactionDao.getMemberTransactionsForSeason(id, currentSeason);
-				request.setAttribute("hasFis", filterByInventoryType(items, Inventory.INVENTORY_TYPE_FIS).size() > 0);
-				request.setAttribute("membershipTransactions", filterByInventoryType(items, Inventory.INVENTORY_TYPE_MEMBERSHIP));
-
-				List<MemberTransaction> divisionDues = filterByInventoryType(items, Inventory.INVENTORY_TYPE_DIVISION_DUES);
-				BigDecimal divisionDueTotal = new BigDecimal(0);
-				for (MemberTransaction memberTransaction : divisionDues)
-				{
-					divisionDueTotal = divisionDueTotal.add(memberTransaction.getAmount());
-				}
-				request.setAttribute("divisionDues", divisionDueTotal.toString());
-				request.setAttribute("memberClubs", getMemberClubsAsStr(member));
+				divisionDueTotal = divisionDueTotal.add(memberTransaction.getAmount());
 			}
+			request.setAttribute("divisionDues", divisionDueTotal.toString());
+			request.setAttribute("memberClubs", getMemberClubsAsStr(member));
 		}
 		else
 		{

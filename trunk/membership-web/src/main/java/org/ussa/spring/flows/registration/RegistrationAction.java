@@ -23,6 +23,7 @@ import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
 import org.ussa.beans.MessageBean;
+import org.ussa.beans.MembershipsBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
 import org.ussa.common.dao.UniversalDao;
@@ -677,6 +678,16 @@ public class RegistrationAction extends FormAction implements Serializable
 
 		// force title case for guardian name
 		memberLegal.setGuardianName(WordUtils.capitalizeFully(memberLegal.getGuardianName()));
+
+		return success();
+	}
+
+	public Event loadRegistrationComplete(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		MembershipsBean membershipsBean = rulesBL.getPurchasedMemberships(accountBean.getMember().getId());
+		accountBean.setMembershipsBean(membershipsBean);
 
 		return success();
 	}

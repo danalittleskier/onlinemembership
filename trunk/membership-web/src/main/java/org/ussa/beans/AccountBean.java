@@ -20,6 +20,7 @@ public class AccountBean
 	private CartBean cartBean = new CartBean();
 	private PaymentBean paymentBean = new PaymentBean();
 	private ExtrasBean extrasBean = new ExtrasBean();
+	private MembershipsBean membershipsBean = new MembershipsBean();
 
 	//Helper fields for binding, not persisited...
 	private Boolean parentInfoRequired;
@@ -374,17 +375,27 @@ public class AccountBean
 		this.extrasBean = extrasBean;
 	}
 
-    public List<Member> getDuplicateMembers() 
-    {
-        return duplicateMembers;
-    }
+	public MembershipsBean getMembershipsBean()
+	{
+		return membershipsBean;
+	}
 
-    public void setDuplicateUsers(List<Member> duplicateMembers) 
-    {
-        this.duplicateMembers = duplicateMembers;
-    }
+	public void setMembershipsBean(MembershipsBean membershipsBean)
+	{
+		this.membershipsBean = membershipsBean;
+	}
 
-    public String getContributionAmount()
+	public List<Member> getDuplicateMembers()
+	{
+		return duplicateMembers;
+	}
+
+	public void setDuplicateUsers(List<Member> duplicateMembers)
+	{
+		this.duplicateMembers = duplicateMembers;
+	}
+
+	public String getContributionAmount()
 	{
 		return contributionAmount;
 	}
