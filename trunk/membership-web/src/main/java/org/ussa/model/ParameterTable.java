@@ -4,11 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Id;
+
+import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang.builder.HashCodeBuilder;
+
 import java.io.Serializable;
 
 @Entity
 @Table(name = "PARAMETERTABLE")
-
+@org.hibernate.annotations.Cache(usage =
+	org.hibernate.annotations.CacheConcurrencyStrategy.NONSTRICT_READ_WRITE
+)
 public class ParameterTable implements Serializable
 {
 	public static final String IPC_LATE_DATE = "IPC_LATE_DATE";
@@ -59,5 +65,23 @@ public class ParameterTable implements Serializable
 	public void setParameterDescription(String parameterDescription)
 	{
 		this.parameterDescription = parameterDescription;
+	}
+	
+	@Override
+	public int hashCode()
+	{
+		return new HashCodeBuilder(11,31)
+		.append(parameterCode)
+		.toHashCode();
+	}
+
+	@Override
+	public boolean equals(Object other)
+	{
+		if (!(other instanceof ParameterTable)) {
+			return false;
+		}
+		ParameterTable otherObj = (ParameterTable) other;
+		return new EqualsBuilder().append(this.parameterCode, otherObj.parameterCode).isEquals();
 	}
 }
