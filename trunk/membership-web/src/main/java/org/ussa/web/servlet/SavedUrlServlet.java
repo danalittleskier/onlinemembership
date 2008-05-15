@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.ussa.web.filter.SavedUrlFilter;
 
 /**
@@ -17,6 +19,10 @@ import org.ussa.web.filter.SavedUrlFilter;
  * neither be confirmed nor denied and is the reason for this servlet / filter work around.  See org.ussa.web.filter.SessionMonitorFilter.
  */
 public class SavedUrlServlet extends HttpServlet {
+	/**
+     * Log variable for all child classes. Uses LogFactory.getLog(getClass()) from Commons Logging
+     */
+    protected final Log log = LogFactory.getLog(getClass());
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -34,6 +40,10 @@ public class SavedUrlServlet extends HttpServlet {
 			
 			req.getSession().setAttribute(SavedUrlFilter.SAVED_URI_KEY, null);
 			req.getSession().setAttribute(SavedUrlFilter.SAVED_QUERY_STRING_KEY, null);
+			
+			if (log.isDebugEnabled()) {
+				log.debug("redirecting to URL: " + url.toString());
+			}
 			
 			resp.sendRedirect(url.toString());
 		} else {
