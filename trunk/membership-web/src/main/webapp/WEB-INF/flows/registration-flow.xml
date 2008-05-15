@@ -89,6 +89,7 @@
 		<transition on="parentInfo" to="parentInfo"/>
 		<transition on="findClubInfo" to="stateClub"/>
 		<transition on="duplicateAccount" to="duplicateAccount"/>
+		<transition on="registrationError" to="registrationError"/>
 	</action-state>
 
 	<view-state id="duplicateAccount" view="duplicateAccount">

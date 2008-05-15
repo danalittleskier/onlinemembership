@@ -399,9 +399,17 @@ public class RegistrationAction extends FormAction implements Serializable
 		if (member.getId() == null)
 		{
 			List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
-			if (dups != null && !dups.isEmpty()) {
+			if (dups != null && !dups.isEmpty())
+			{
 				accountBean.setDuplicateUsers(dups);
 				return result("duplicateAccount");
+			}
+			else if(accountBean.getAlreadyAMember() != null && accountBean.getAlreadyAMember())
+			{
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.membership.not.found");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return result("registrationError");
 			}
 		}
 
