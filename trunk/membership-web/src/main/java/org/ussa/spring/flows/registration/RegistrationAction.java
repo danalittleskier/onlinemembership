@@ -24,6 +24,7 @@ import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
 import org.ussa.beans.MessageBean;
 import org.ussa.beans.MembershipsBean;
+import org.ussa.beans.PaymentBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
 import org.ussa.common.dao.UniversalDao;
@@ -50,6 +51,9 @@ import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
 import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
+import org.ussa.service.MemberRegistrationService;
+import org.ussa.exception.CreditCardDeclinedException;
+import org.ussa.exception.CreditCardException;
 
 
 public class RegistrationAction extends FormAction implements Serializable
@@ -68,6 +72,7 @@ public class RegistrationAction extends FormAction implements Serializable
 	private UserManager userManager;
 	private SecurityContext securityContext;
 	private UniversalDao universalDao;
+	private MemberRegistrationService memberRegistrationService;
 
 	private static String DATE_FORMAT = "MM/dd/yyyy";
 	private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -125,9 +130,15 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		this.securityContext = securityContext;
 	}
-	public void setUniversalDao(UniversalDao universalDao) {
+	public void setUniversalDao(UniversalDao universalDao)
+	{
 		this.universalDao = universalDao;
 	}
+	public void setMemberRegistrationService(MemberRegistrationService memberRegistrationService)
+	{
+		this.memberRegistrationService = memberRegistrationService;
+	}
+
 	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId, boolean isForUpdate) {
 		Member member = memberDao.get(memberId);
 		member.setEmail(user.getEmail());
@@ -686,6 +697,68 @@ public class RegistrationAction extends FormAction implements Serializable
 
 		// force title case for guardian name
 		memberLegal.setGuardianName(WordUtils.capitalizeFully(memberLegal.getGuardianName()));
+
+		return success();
+	}
+
+	public Event loadPayment(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+
+		List<Integer> years = new ArrayList<Integer>();
+		Calendar cal = Calendar.getInstance();
+		for(int i=0; i<10; i++)
+		{
+			years.add(cal.get(Calendar.YEAR));
+			cal.add(Calendar.YEAR, 1);
+		}
+
+		accountBean.setYears(years);
+
+		return success();
+	}
+
+	public Event processOrder(RequestContext context) throws Exception
+	{
+		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		Address address = accountBean.getAddress();
+		PaymentBean paymentBean = accountBean.getPaymentBean();
+
+		try
+		{
+			if(org.apache.commons.lang.StringUtils.isBlank(paymentBean.getAddress()))
+			{
+				paymentBean.setAddress(address.getDeliveryAddress());
+			}
+			if(org.apache.commons.lang.StringUtils.isBlank(paymentBean.getZip()))
+			{
+				paymentBean.setZip(address.getPostalCode());
+			}
+
+			memberRegistrationService.processRegistration(accountBean);
+		}
+		catch (CreditCardDeclinedException e)
+		{
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.card.declined");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
+		catch (CreditCardException e)
+		{
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.card.not.approved");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			BindException errors = new BindException(accountBean, "accountBean");
+			errors.reject("errors.problem.registering.user");
+			getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			return error();
+		}
 
 		return success();
 	}

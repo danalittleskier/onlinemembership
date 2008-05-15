@@ -18,9 +18,6 @@
 		<property name="userManager" ref="userManager"/>
 		<property name="securityContext" ref="securityContext"/>
 		<property name="universalDao" ref="universalDao"/>
-	</bean>
-
-	<bean id="paymentAction" class="org.ussa.spring.flows.registration.PaymentAction">
 		<property name="memberRegistrationService" ref="memberRegistrationService"/>
 	</bean>
 
@@ -29,60 +26,11 @@
 		<property name="formObjectName" value="accountBean"/>
 		<property name="formObjectClass" value="org.ussa.beans.AccountBean"/>
 		<property name="formObjectScope" value="FLOW"/>
-		<property name="validators">
-			<map>
-				<entry key="validatorContactInfo" value-ref="validatorContactInfo"/>
-				<entry key="validatorParentInfo" value-ref="validatorParentInfo"/>
-				<entry key="validatorSportMembership" value-ref="validatorSportMembership"/>
-				<entry key="validatorSportMembershipNext" value-ref="validatorSportMembershipNext"/>
-				<entry key="validatorFisWaiver" value-ref="validatorFisWaiver"/>
-				<entry key="validatorFisWaiverDisabled" value-ref="validatorFisWaiverDisabled"/>
-				<entry key="validatorAddExtras" value-ref="validatorAddExtras"/>
-				<entry key="validatorStateClub" value-ref="validatorStateClub"/>
-				<entry key="validatorMedical" value-ref="validatorMedical"/>
-				<entry key="validatorMedicalWaiver" value-ref="validatorMedicalWaiver"/>
-				<entry key="validatorReleaseWaiver" value-ref="validatorReleaseWaiver"/>
-				<entry key="validatorPayment" value-ref="validatorPayment"/>
-			</map>
-		</property>
+		<property name="validator" ref="blankValidator"/>
 	</bean>
 
-	<!-- Validators -->
-	<bean id="validatorContactInfo" parent="validatorTemplate">
-		<property name="formName" value="contactInfo"/>
-	</bean>
-	<bean id="validatorParentInfo" parent="validatorTemplate">
-		<property name="formName" value="parentInfo"/>
-	</bean>
-	<bean id="validatorStateClub" parent="validatorTemplate">
-		<property name="formName" value="stateClub"/>
-	</bean>
-	<bean id="validatorSportMembership" parent="validatorTemplate">
-		<property name="formName" value="sportMembership"/>
-	</bean>
-	<bean id="validatorSportMembershipNext" parent="validatorTemplate">
-		<property name="formName" value="sportMembershipNext"/>
-	</bean>
-	<bean id="validatorAddExtras" parent="validatorTemplate">
-		<property name="formName" value="extras"/>
-	</bean>
-	<bean id="validatorFisWaiver" parent="validatorTemplate">
-		<property name="formName" value="fisWaiver"/>
-	</bean>
-	<bean id="validatorFisWaiverDisabled" parent="validatorTemplate">
-		<property name="formName" value="fisWaiverDisabled"/>
-	</bean>
-	<bean id="validatorMedical" parent="validatorTemplate">
-		<property name="formName" value="medical"/>
-	</bean>
-	<bean id="validatorMedicalWaiver" parent="validatorTemplate">
-		<property name="formName" value="medicalWaiver"/>
-	</bean>
-	<bean id="validatorReleaseWaiver" parent="validatorTemplate">
-		<property name="formName" value="releaseWaiver"/>
-	</bean>
-	<bean id="validatorPayment" parent="validatorTemplate">
-		<property name="formName" value="payment"/>
+	<bean id="blankValidator" parent="validatorTemplate">
+		<property name="formName" value=""/>
 	</bean>
 
 </beans>
