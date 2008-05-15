@@ -91,7 +91,7 @@
 	<br/>
 
 	<label for="">* Zip/Postal Code</label>
-	<form:input path="address.postalCode" size="30" maxlength="30"/><br />
+	<form:input path="address.postalCode" size="30" maxlength="7"/><br />
 	<label for="">* Country</label>
 	<form:input path="address.country" size="30" maxlength="30"/><br />
 	<label for="">* Home/Primary Phone</label>
