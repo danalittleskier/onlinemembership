@@ -16,7 +16,7 @@
 	</c:when>
 	<c:otherwise>
 		<div class="closeWindowLink"><a href="#" onclick="window.close();">Close Window</a></div>
-		<div class="header"><img src="<c:url value='images/ussa/ussa-header-icon.png'/>"/> </div>
+		<div class="header"><img src="<c:url value='images/ussa_lh_top.jpg'/>"/> </div>
 		<p><strong>To Whom It May Concern:</strong></p>
 
 		<p>This letter is to verify that the USSA membership dues have been paid for the <c:out value="${lastSeason}"/>/<c:out value="${currentSeason}"/> season for:</p>
