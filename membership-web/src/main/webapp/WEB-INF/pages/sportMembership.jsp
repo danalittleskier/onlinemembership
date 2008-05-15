@@ -146,21 +146,21 @@
 				</td>
 				<td valign="top" width="100%">
 					<label for="receiveEmailControl" class="checkbox" style="text-align:left; width:auto;">
-					Subscribe to the email list of your division and/or state organization for important member communications.
+					Subscribe to your division or state email list for important communications such as schedule and event information.
 					</label>
 				</td>
 			</tr>
+		</table>
+		<table>
 			<tr>
-				<td valign="top" class="checkbox">
+				<td class="checkbox">
 					<form:hidden id="privateAddress" path="member.privateAddress"/>
-					<input id="privateAddressControl" type="checkbox" onclick="updateCheckboxHidden('privateAddress', this)"/>
-					<script type="text/javascript" defer="defer">
-						updateCheckboxControl('privateAddress');
-					</script>
-				</td>
-				<td valign="top" width="100%">
-					<label for="privateAddressControl" class="checkbox" style="text-align:left; width:auto;">
-					Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.
+					<label for="privateAddressControl" class="checkbox" style="text-align:left; width:auto; font-size:9px;">
+						<input id="privateAddressControl" type="checkbox" onclick="updateCheckboxHidden('privateAddress', this)"/>
+						<script type="text/javascript" defer="defer">
+							updateCheckboxControl('privateAddress');
+						</script>
+						Request Mail Privacy Status. By doing so you will not receive special offers from our carefully screened list of vendors.
 					</label>
 				</td>
 			</tr>
