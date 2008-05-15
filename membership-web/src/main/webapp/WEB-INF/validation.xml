@@ -75,6 +75,14 @@
 		  -->
 
 		<form name="contactInfo">
+			<field property="alreadyAMember" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.im.a.ussa.member"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
 			<field property="member.firstName" depends="required, mask">
 				<msg name="mask" key="errors.name"/>
 				<arg0 key="registration.firstName" />

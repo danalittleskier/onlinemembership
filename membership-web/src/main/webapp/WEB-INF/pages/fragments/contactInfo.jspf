@@ -3,11 +3,22 @@
 <fieldset>
 	<legend>Personal Information</legend>
 
-	<c:if test="${!empty accountBean.member.id }">
-		<label>USSA Member #</label>
-		<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
-		<div class="clear"></div>
-	</c:if>
+	<c:choose>
+		<c:when test="${!empty accountBean.member.id }">
+			<label>USSA Member #</label>
+			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
+			<div class="clear"></div>
+		</c:when>
+		<c:otherwise>
+			<label for="">* I'm a USSA member</label>
+			<div class="radios">
+				<form:radiobutton id="member1" path="alreadyAMember" value="${true}"/>
+				<label class="radio" for="member1">Yes</label>
+				<form:radiobutton id="member2" path="alreadyAMember" value="${false}"/>
+				<label class="radio" for="member2">No</label>
+			</div><br/>
+		</c:otherwise>
+	</c:choose>
 	<label for="">* First Name</label>
 	<form:input path="member.firstName" size="30" maxlength="30" /><br />
 	<label for="">MI</label>

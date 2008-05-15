@@ -23,6 +23,7 @@ public class AccountBean
 	private MembershipsBean membershipsBean = new MembershipsBean();
 
 	//Helper fields for binding, not persisited...
+	private Boolean alreadyAMember;
 	private Boolean parentInfoRequired;
 	private Boolean usCitizen;
 	private String birthDate;
@@ -83,6 +84,16 @@ public class AccountBean
 	public void setMemberLegal(MemberLegal memberLegal)
 	{
 		this.memberLegal = memberLegal;
+	}
+
+	public Boolean getAlreadyAMember()
+	{
+		return alreadyAMember;
+	}
+
+	public void setAlreadyAMember(Boolean alreadyAMember)
+	{
+		this.alreadyAMember = alreadyAMember;
 	}
 
 	public Boolean getParentInfoRequired()
