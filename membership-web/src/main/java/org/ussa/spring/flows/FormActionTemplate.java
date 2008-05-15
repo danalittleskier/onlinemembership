@@ -2,8 +2,8 @@ package org.ussa.spring.flows;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.Map;
 import java.util.Date;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -12,18 +12,16 @@ import org.springframework.beans.propertyeditors.CustomBooleanEditor;
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.validation.DataBinder;
-import org.springframework.validation.Validator;
 import org.springframework.webflow.action.FormAction;
-import org.springframework.webflow.core.collection.AttributeMap;
 import org.springframework.webflow.execution.Event;
 import org.springframework.webflow.execution.RequestContext;
+import org.springframework.webflow.core.collection.AttributeMap;
+import org.springmodules.validation.commons.ConfigurableBeanValidator;
 import org.ussa.spring.util.CustomSqlDateEditor;
 
 
 public class FormActionTemplate extends FormAction
 {
-
-    private static final String VALIDATOR = "validator";
     private final Log log = LogFactory.getLog(FormActionTemplate.class);
 
     private Map validators;
@@ -45,24 +43,22 @@ public class FormActionTemplate extends FormAction
         binder.registerCustomEditor(Date.class, new CustomSqlDateEditor(new SimpleDateFormat("MM/dd/yyyy"), true));
     }
 
-    public Event bindAndValidate(RequestContext ctx) throws Exception
-    {
-        AttributeMap propMap = ctx.getAttributes();
-        if (propMap.contains("validator"))
-        {
-            String validatorName = (String)propMap.get("validator");
-            if (!validators.containsKey(validatorName))
-            {
-                throw new Exception("Invalid validator name");
-            }
-            Validator validatorInstance = (Validator)validators.get(validatorName);
-            setValidator(validatorInstance);
-        }
-        return super.bindAndValidate(ctx);
-    }
-    public Event bind(RequestContext ctx) throws Exception
-    {
-        AttributeMap propMap = ctx.getAttributes();
-        return super.bind(ctx);
-    }
+	public Event bindAndValidate(RequestContext ctx) throws Exception
+	{
+		ConfigurableBeanValidator validatorInstance = (ConfigurableBeanValidator) getValidator();
+		validatorInstance.setFormName(ctx.getCurrentState().getId());
+
+		AttributeMap propMap = ctx.getAttributes();
+		if (propMap.contains("validator"))
+		{
+			String validatorName = (String)propMap.get("validator");
+			validatorInstance.setFormName(validatorName);
+		}
+		else
+		{
+			validatorInstance.setFormName(ctx.getCurrentState().getId());
+		}
+
+		return super.bindAndValidate(ctx);
+	}
 }
