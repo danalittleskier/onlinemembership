@@ -2,20 +2,25 @@ package org.ussa.service.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.text.SimpleDateFormat;
 
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.mail.SimpleMailMessage;
+import org.ussa.beans.AccountBean;
+import org.ussa.beans.LineItemBean;
 import org.ussa.dao.BatchDao;
 import org.ussa.dao.BatchTransactionDao;
 import org.ussa.model.Batch;
 import org.ussa.service.BatchService;
-import org.ussa.beans.AccountBean;
-import org.ussa.beans.LineItemBean;
+import org.ussa.util.UssaJavaMailer;
 
 public class BatchServiceImpl implements BatchService
 {
 	private BatchDao batchDao;
 	private BatchTransactionDao batchTransactionDao;
+	private UssaJavaMailer ussaJavaMailer;
+
 
 	public void setBatchDao(BatchDao batchDao)
 	{
@@ -25,6 +30,11 @@ public class BatchServiceImpl implements BatchService
 	public void setBatchTransactionDao(BatchTransactionDao batchTransactionDao)
 	{
 		this.batchTransactionDao = batchTransactionDao;
+	}
+
+	public void setUssaJavaMailer(UssaJavaMailer ussaJavaMailer)
+	{
+		this.ussaJavaMailer = ussaJavaMailer;
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
@@ -79,6 +89,8 @@ public class BatchServiceImpl implements BatchService
 		batch.setCloseDate(new Date());
 		batch.setCloseUserId("MembershipWeb");
 		batchDao.save(batch);
+
+		sendBatchCloseEmail(batch);
 	}
 
 	@Transactional(propagation = Propagation.REQUIRED)
@@ -94,4 +106,22 @@ public class BatchServiceImpl implements BatchService
 		}
 	}
 
+	private static SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss a");
+
+	private void sendBatchCloseEmail(Batch batch)
+	{
+		SimpleMailMessage message = new SimpleMailMessage();
+		message.setFrom("support@ussa.org");
+		message.setTo("membership@ussa.org");
+		message.setCc(new String[] {"lbenevento@ussa.org", "sbarnes@ussa.org"});
+		message.setSubject("Membership Web - Batch Closed");
+
+		StringBuffer body = new StringBuffer();
+		body.append("Web Batch Completed.\n");
+		body.append("Batch ID: "+batch.getBatchId()+"\n");
+		body.append("Opened: "+format.format(batch.getOpenDate())+"\n");
+		body.append("Closed: "+format.format(batch.getCloseDate())+"\n");
+		message.setText(body.toString());
+		ussaJavaMailer.safeSend(message);
+	}
 }

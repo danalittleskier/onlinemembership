@@ -61,7 +61,7 @@
 	<jee:jndi-lookup id="mailProperties" jndi-name="java:comp/env/mail/properties"/>
 	<jee:jndi-lookup id="mailEnabled" jndi-name="java:comp/env/mail/enabled"/>
 	
-	<bean id="UssaJavaMailer" class="org.ussa.util.UssaJavaMailer">
+	<bean id="ussaJavaMailer" class="org.ussa.util.UssaJavaMailer">
 		<constructor-arg ref="mailProperties"/>
 		<property name="host" ref="mailServer"/>
 		<property name="port" ref="mailServerPort"/>
