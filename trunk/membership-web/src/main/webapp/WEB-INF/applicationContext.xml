@@ -38,6 +38,7 @@
 	<bean id="batchService" class="org.ussa.service.impl.BatchServiceImpl">
 		<property name="batchDao" ref="batchDao"/>
 		<property name="batchTransactionDao" ref="batchTransactionDao"/>
+		<property name="ussaJavaMailer" ref="ussaJavaMailer"/>
 	</bean>
 	<bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
