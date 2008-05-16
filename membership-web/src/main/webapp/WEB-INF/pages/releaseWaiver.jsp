@@ -48,6 +48,7 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 </script>
 
 <c:if test="${accountBean.parentInfoRequired}">
+	<br/>
 	<h2>Parent Release</h2>
 	<p>
 		As the parent or guardian of the minor child Member indicated above, I hereby make and enter into each and every agreement,
@@ -62,7 +63,7 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 	<table width="100%">
 		<tr>
 			<td width="30px"><input id="releaseWaiverParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiverParentalConsent', this)"/></td>
-			<td>* I, <form:input path="memberLegal.guardianName"/>, CERTIFY AS PARENT OR GUARDIAN OF THE MEMBER INDICATED to the waiver as noted above.</td>
+			<td><span style="float:left;">* I, &nbsp;</span><form:input path="memberLegal.guardianName" cssStyle="float:left;"/><span style="float:left;">, CERTIFY AS PARENT OR GUARDIAN OF THE MEMBER INDICATED to the waiver as noted above.</span></td>
 		</tr>
 	</table>
 	<script type="text/javascript" defer="defer">

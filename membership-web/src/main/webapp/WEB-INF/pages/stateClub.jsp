@@ -58,6 +58,8 @@
 				span.appendChild(document.createTextNode('Undetermined'));
 				divisionSpan.appendChild(span);
 			}
+
+			document.getElementById('continueButton').disabled = false;
 		};
 
 		function updateDivision() {
@@ -79,6 +81,8 @@
 
 				rulesBL.determineDivision(nationCode, stateCode, clubId, zipCode, handleDivision);
 				document.getElementById('zipCode').value = '';
+
+				document.getElementById('continueButton').disabled = true;
 			}
 		}
 
@@ -189,7 +193,7 @@
 			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 			<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
-			<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+			<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue">
 		</fieldset>
 
 	</form:form>

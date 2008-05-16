@@ -26,11 +26,11 @@
 		<property name="formObjectName" value="accountBean"/>
 		<property name="formObjectClass" value="org.ussa.beans.AccountBean"/>
 		<property name="formObjectScope" value="FLOW"/>
-		<property name="validator" ref="blankValidator"/>
+		<property name="validator" ref="dummyValidator"/>
 	</bean>
 
-	<bean id="blankValidator" parent="validatorTemplate">
-		<property name="formName" value="contactInfo"/>
+	<bean id="dummyValidator" parent="validatorTemplate">
+		<property name="formName" value="dummyValidator"/>
 	</bean>
 
 </beans>

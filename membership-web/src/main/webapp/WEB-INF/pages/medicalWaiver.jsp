@@ -50,6 +50,7 @@ THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGL
 </table>
 
 <c:if test="${accountBean.parentInfoRequired}">
+	<br/>
 	<h2>Parent Release</h2>
 	<p>
 		As the parent or guardian of the minor child Member indicated above, I hereby make and enter into each and every agreement,

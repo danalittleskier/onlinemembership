@@ -193,15 +193,11 @@
 	<view-state id="extras" view="extras">
 		<transition on="back" to="loadFisWaiverDisabledBack"/>
 		<transition on="next" to="verification">
-			<action bean="accountBean" method="bindAndValidate">
-				<attribute name="validator" value="addExtras"/>
-			</action>
+			<action bean="accountBean" method="bindAndValidate"/>
 			<action bean="registrationAction" method="addExtras"/>
 		</transition>
 		<transition on="add" to="extras">
-			<action bean="accountBean" method="bindAndValidate">
-				<attribute name="validator" value="addExtras"/>
-			</action>
+			<action bean="accountBean" method="bindAndValidate"/>
 			<action bean="registrationAction" method="addExtras"/>
 		</transition>
 		<transition on="remove" to="extras">
