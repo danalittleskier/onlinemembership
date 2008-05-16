@@ -30,7 +30,7 @@
 	</bean>
 
 	<bean id="blankValidator" parent="validatorTemplate">
-		<property name="formName" value=""/>
+		<property name="formName" value="contactInfo"/>
 	</bean>
 
 </beans>
