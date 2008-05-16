@@ -15,11 +15,7 @@
 	</div>
 	<div id="stg-onecol-primary">
 		<p>
-			<fmt:message key="404.message">
-				<fmt:param>
-					<c:url value="/"/>
-				</fmt:param>
-			</fmt:message>
+			<fmt:message key="404.message"/>
 		</p>
 	</div>
 	</body>

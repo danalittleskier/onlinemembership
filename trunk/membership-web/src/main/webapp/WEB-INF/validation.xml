@@ -37,7 +37,7 @@
 		</constant>
 		<constant>
 			<constant-name>validWhenNoInsurance</constant-name>
-			<constant-value>((hasInsurance == 'false') or (*this* != null))</constant-value>
+			<constant-value>((hasInsurance != 'true') or (*this* != null))</constant-value>
 		</constant>
 		<constant>
 			<constant-name>validWhenTrueOrParentInfoNotRequired</constant-name>
@@ -73,6 +73,11 @@
 		<!--
 			Define form validation config in validation-forms.xml
 		  -->
+
+		<!-- This is used. Do not delete. This is needed just for setup reasons-->
+		<form name="dummyValidator">
+			<field property="member"/>
+		</form>
 
 		<form name="contactInfo">
 			<field property="alreadyAMember" depends="validWhen">
@@ -561,7 +566,10 @@
 		</form>
 
 		<form name="medical">
-			<field property="memberLegal.insuranceCompany" depends="mask">
+			<field property="hasInsurance" depends="required">
+				<arg0 key="label.has.medical.insurance" />
+			</field>
+			<field property="memberLegal.insuranceCompany" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
 				<msg name="mask" key="errors.alphaNumeric"/>
 				<arg0 key="label.insurance.company.name" />
