@@ -3,7 +3,7 @@
 
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_4.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">United State Ski and Snowboard Assumption of Risk and Release of Liability</div>
+<div id="stg-pagetitle">United States Ski and Snowboard Assumption of Risk and Release of Liability</div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">

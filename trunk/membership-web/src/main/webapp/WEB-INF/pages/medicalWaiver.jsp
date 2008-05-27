@@ -2,7 +2,7 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="917" height="53" /></div>
-<div id="stg-pagetitle">Medical Insurance Waiver</div>
+<div id="stg-pagetitle">Primary Medical Insurance Exception Agreement</div>
 
 <!-- LEFT column -->
 <div id="stg-onecol-primary">

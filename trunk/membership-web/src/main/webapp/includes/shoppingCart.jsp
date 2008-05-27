@@ -1,5 +1,5 @@
 <%@ include file="/includes/taglibs.jsp"%>
-<p class="stg-omr-header">Your Membership Fees</p>
+<p class="stg-omr-header">Your Membership Cart</p>
 
 <c:set var="cart" value="${accountBean.cartBean}"/>
 

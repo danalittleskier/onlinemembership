@@ -204,6 +204,10 @@
 <div id="stg-twocol-secondary">
 	<!-- BOX (START) -->
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+		<p class="stg-omr-header">About Your State</p>
+		<p>Please indicate your primary state of competition and training.</p>
+		<p class="stg-omr-header">About Your Club</p>
+		<p>Please indicate your club affiliation.  If you do not belong to a club, please choose "No Club Affiliation."</p>
 		<p class="stg-omr-header">About Your Division</p>
 		<p>Based on the information provided, you will be in the division shown. Division or state dues may apply and will be automatically added to your cart when applicable.</p>
 		<%--
