@@ -54,7 +54,7 @@ public class BatchDaoImpl extends GenericDaoHibernate<Batch, Long> implements Ba
 	@Transactional(propagation = Propagation.REQUIRED)
 	public Batch getMostRecentBatch()
 	{
-		List results = getHibernateTemplate().find("from Batch b where b.batchId = (select max(bt.batchId) from Batch bt where bt.batchId >= 10000)");
+		List results = getHibernateTemplate().find("from Batch b where b.closeDate is null and b.batchId = (select max(bt.batchId) from Batch bt where bt.batchId >= 10000)");
 		if(results.size() > 0)
 		{
 			return (Batch) results.get(0);
