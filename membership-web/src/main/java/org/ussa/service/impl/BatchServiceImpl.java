@@ -45,7 +45,7 @@ public class BatchServiceImpl implements BatchService
 		Long batchSequence;
 		batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
 		// we don't want a batch to ever get bigger than 150. if so then close out the current batch and create a new one.
-		if(batchSequence >= 150)
+		if(batchSequence >= 100)
 		{
 			closeBatch(batch);
 			batch = createNewBatch(currentSeason);
@@ -113,7 +113,7 @@ public class BatchServiceImpl implements BatchService
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setFrom("support@ussa.org");
 		message.setTo("membership@ussa.org");
-		message.setCc(new String[] {"lbenevento@ussa.org", "sbarnes@ussa.org"});
+		message.setCc(new String[] {"lbenevento@ussa.org"});
 		message.setSubject("Membership Web - Batch Closed");
 
 		StringBuffer body = new StringBuffer();
