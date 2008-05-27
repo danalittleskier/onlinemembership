@@ -15,6 +15,9 @@
 </head>
 
 <body>
+	<div align="right">
+		<a href="" onclick="window.close();"><img src="/membership-web/scripts/greybox/w_close.gif" alt="" border="none"> Close</a>
+	</div>
 	<h1>USSA</h1>
 	<div id="nav-container">
 		<ul>
