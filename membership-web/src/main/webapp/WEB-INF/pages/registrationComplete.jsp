@@ -26,9 +26,9 @@
 	</fieldset>
 	<c:if test="${not empty accountBean.membershipsBean.unrestrictedMemberships}">
 		<fieldset>
-			<legend>Your Membership Certificate</legend>
-			<p>Please print your Membership Certificate and store it in a safe place for future use as proof of membership for USSA event participation.</p>
-			<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Certificate" name="button"/>
+			<legend>Your Membership Confirmation</legend>
+			<p>Please print your Membership confirmation and store it in a safe place for future use as proof of membership for USSA event participation.</p>
+			<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Verification" name="button"/>
 			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
 				<p>Membership verifications will only display memberships not requiring screening until positive results are received by USSA.</p>
 			</c:if>

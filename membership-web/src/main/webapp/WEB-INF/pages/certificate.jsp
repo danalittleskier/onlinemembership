@@ -1,6 +1,6 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
-	<title>USSA Membership Certificate</title>
+	<title>USSA Membership Confirmation</title>
 
 	<link type="text/css" href="<c:url value='/styles/certificate.css'/>" rel="stylesheet"/>
 </head>

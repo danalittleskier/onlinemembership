@@ -80,8 +80,7 @@
 			<label></label>
 			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">
 		</c:if>
-		<br/>
-		Note: Athletes may choose more than one sport. 
+		<label style="width:300px;">Note: Athletes may choose more than one sport.</label>
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">
 		<fieldset>
