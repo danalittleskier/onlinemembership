@@ -32,7 +32,8 @@ public class SavedUrlServlet extends HttpServlet {
 			// redirect to *original* URL
 			String uri = (String)req.getSession().getAttribute(SavedUrlFilter.SAVED_URI_KEY);
 			String queryParams = (String)req.getSession().getAttribute(SavedUrlFilter.SAVED_QUERY_STRING_KEY);
-			
+			log.warn("uri = " + uri);
+			log.warn("queryParams inside if = " + queryParams);
 			StringBuffer url = new StringBuffer(uri);
 			if (StringUtils.isNotBlank(queryParams)) {
 				url.append("?").append(queryParams);
@@ -44,11 +45,15 @@ public class SavedUrlServlet extends HttpServlet {
 			if (log.isDebugEnabled()) {
 				log.debug("redirecting to URL: " + url.toString());
 			}
-			
+			log.warn("inside if statement");
 			resp.sendRedirect(url.toString());
 		} else {
 			// Forward on subsequent requests
-			req.getRequestDispatcher(req.getRequestURL().toString()).forward(req, resp);
+			// This is a work around to handle the 404 error page that is returned when renewal link is clicked and the 404 error page is returned
+			StringBuffer url = new StringBuffer("/membership-web/registration.html");
+			log.warn("THIS IS THE WORK AROUND FOR 404 ERROR PAGE ON RENEWALS");
+			resp.sendRedirect(url.toString());
+			//req.getRequestDispatcher(req.getRequestURL().toString()).forward(req, resp);
 		}
 		
 	}
