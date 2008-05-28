@@ -588,7 +588,7 @@
 			</build>
 				<properties>
 					<crowd.application.name>accounts-ussa</crowd.application.name>
-					<crowd.application.password>835t1nw0rld</crowd.application.password>
+					<crowd.application.password>%sk1utah?</crowd.application.password>
 					<crowd.application.login.url>https://webapps.ussa.org/accounts</crowd.application.login.url>
 					<crowd.server.url>http://crowd.ussa.org:10080/crowd/services/</crowd.server.url>
 				</properties>
