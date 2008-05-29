@@ -32,8 +32,6 @@ public class SavedUrlServlet extends HttpServlet {
 			// redirect to *original* URL
 			String uri = (String)req.getSession().getAttribute(SavedUrlFilter.SAVED_URI_KEY);
 			String queryParams = (String)req.getSession().getAttribute(SavedUrlFilter.SAVED_QUERY_STRING_KEY);
-			log.warn("uri = " + uri);
-			log.warn("queryParams inside if = " + queryParams);
 			StringBuffer url = new StringBuffer(uri);
 			if (StringUtils.isNotBlank(queryParams)) {
 				url.append("?").append(queryParams);
@@ -45,7 +43,6 @@ public class SavedUrlServlet extends HttpServlet {
 			if (log.isDebugEnabled()) {
 				log.debug("redirecting to URL: " + url.toString());
 			}
-			log.warn("inside if statement");
 			resp.sendRedirect(url.toString());
 		} else {
 			// Forward on subsequent requests
