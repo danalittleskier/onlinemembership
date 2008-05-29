@@ -178,7 +178,7 @@
 	<strong>ADDED BONUS!</strong><br/>
 	A one-year subscription to SKI Magazine (7-issues, a $9 value) or Transworld
 	Snowboarding Magazine (9-issues, a $5 value) is included with your bonus
-	Pack purchase. Offer is refundable. Instructions will be mailed.</p>
+	pack purchase. Offer is refundable. Instructions will be mailed.</p>
 <p>* One per household. Valid in the U.S. only.</p>
 
 <fieldset class="buttons">
@@ -213,7 +213,7 @@
 	</div>
 	<p>
 		Choose the U.S. Ski Team and/or U.S. Snowboarding packs.<br />
-		<strong>Decals are $5 for a pack of 5</strong> bumper strips each with multiple decals.
+		<strong>Decals are $5 for a pack of 5</strong> bumper strips, each with multiple decals.
 	</p>
 	<div class="decal-row">
 		<div class="decal">
