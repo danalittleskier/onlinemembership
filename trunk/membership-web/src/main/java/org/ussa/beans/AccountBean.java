@@ -38,6 +38,7 @@ public class AccountBean
 	private String magazineOption;
 	private Boolean hasInsurance;
 	private boolean wasBgScreeningInfoAlreadyShown;
+	private boolean needsBackground;
 	private String fisWaiverParentalConsent;
 	private String fisWaiverDisabledParentalConsent;
 	private String medicalWaiverParentalConsent;
@@ -414,5 +415,13 @@ public class AccountBean
 	public void setContributionAmount(String contributionAmount)
 	{
 		this.contributionAmount = contributionAmount;
+	}
+
+	public boolean isNeedsBackground() {
+		return needsBackground;
+	}
+
+	public void setNeedsBackground(boolean needsBackground) {
+		this.needsBackground = needsBackground;
 	}
 }

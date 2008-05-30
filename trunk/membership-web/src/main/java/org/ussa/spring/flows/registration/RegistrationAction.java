@@ -560,6 +560,13 @@ public class RegistrationAction extends FormAction implements Serializable
 		accountBean.setFisItems(rulesBL.getApplicableFisItems(accountBean));
 		accountBean.setMagazineItems(rulesBL.getValidMagazineOptions(accountBean));
 
+		//this is to set the background screening flag to no if they need to do a background check
+		if(rulesBL.needsBackgroundCheck(accountBean)){
+			accountBean.setNeedsBackground(true);
+		}else{
+			accountBean.setNeedsBackground(false);
+		}
+		
 		// this is needed to determine whether or not to show the backgroundScreeningPopup
 		HttpServletRequest request = ((ServletExternalContext)context.getExternalContext()).getRequest();
 		request.getSession().removeAttribute("showBackgroundScreening");
