@@ -149,6 +149,9 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			memberSeason.setProvisionalFis("N");
 			memberSeason.setAppProcessDate(appProcessDate);
 			memberSeason.setAppReceiveDate(appProcessDate);
+			memberSeason.setTeamAgreement("N");
+			memberSeason.setDivMedicalRelease("N");
+			memberSeason.setPrep("N");
 			universalDao.save(memberSeason);
 
 			// MEMBERTRANSACTION
