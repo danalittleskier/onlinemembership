@@ -68,7 +68,7 @@
 	</view-state>
 	
 	<decision-state id="updateMedicalWaiverDecision">
-		<if test="${flowScope.accountBean.hasInsurance}" then="saveMedicalInfo" else="medicalWaiver"/>
+		<if test="${flowScope.accountBean.hasInsurance}" then="saveMedicalInfo" else="updateMedicalWaiver"/>
 	</decision-state>
 
 	<view-state id="updateMedicalWaiver" view="medicalWaiver">

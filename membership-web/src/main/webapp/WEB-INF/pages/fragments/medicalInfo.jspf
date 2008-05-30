@@ -9,11 +9,11 @@
 		</div><br />
 		<div id="insurance" style="display:none;">
 			<label>* Insurance Company Name:</label>
-			<form:input path="memberLegal.insuranceCompany" maxlength="50"/><br />
+			<form:input path="memberLegal.insuranceCompany" maxlength="50" id="insuranceCompany"/><br />
 			<label>* Policy/ID Number:</label>
-			<form:input path="memberLegal.insurancePolicy" maxlength="20"/><br />
+			<form:input path="memberLegal.insurancePolicy" maxlength="20" id="insurancePolicy"/><br />
 			<label>Phone Number:</label>
-			<form:input path="memberLegal.insurancePhone" maxlength="15"/><br />
+			<form:input path="memberLegal.insurancePhone" maxlength="15" id="insurancePhone"/><br />
 		</div>
 	</fieldset>
 
@@ -22,7 +22,7 @@
 		{
 			var hasInsuranceYes = document.getElementById('hasInsurance1');
 			var insuranceDiv = document.getElementById('insurance');
-
+			
 			if(hasInsuranceYes.checked)
 			{
 				insuranceDiv.style.display = 'block';
@@ -30,6 +30,9 @@
 			else
 			{
 				insuranceDiv.style.display = 'none';
+				document.getElementById('insuranceCompany').value = '';
+				document.getElementById('insurancePolicy').value = '';
+				document.getElementById('insurancePhone').value = '';
 			}
 		}
 

@@ -1,11 +1,13 @@
 package org.ussa.spring.flows.registration;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.acegisecurity.context.SecurityContext;
 import org.acegisecurity.userdetails.UserDetails;
@@ -22,8 +24,8 @@ import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
-import org.ussa.beans.MessageBean;
 import org.ussa.beans.MembershipsBean;
+import org.ussa.beans.MessageBean;
 import org.ussa.beans.PaymentBean;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
@@ -39,6 +41,8 @@ import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.StateDao;
+import org.ussa.exception.CreditCardDeclinedException;
+import org.ussa.exception.CreditCardException;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
@@ -47,13 +51,12 @@ import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberClub;
 import org.ussa.model.MemberLegal;
+import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
+import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
-import org.ussa.service.MemberRegistrationService;
-import org.ussa.exception.CreditCardDeclinedException;
-import org.ussa.exception.CreditCardException;
 
 
 public class RegistrationAction extends FormAction implements Serializable
@@ -226,8 +229,20 @@ public class RegistrationAction extends FormAction implements Serializable
 	
 	public Event saveMedicalInfo(RequestContext context) throws Exception {
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+		MemberLegal memberLegal = accountBean.getMemberLegal();
+		MemberSeason memberSeason = new MemberSeason();
+		memberSeason.setMemberSeasonPk(new MemberSeasonPk(accountBean.getMember(), dateBL.getCurrentRenewSeason()));
 		
-		memberLegalDao.save(accountBean.getMemberLegal());
+		
+		if(!memberLegal.hasInsurance()){
+			memberLegal.setInsuranceWaiverDate(new Date());
+			memberSeason.setMedicalException("Y");
+		}else{
+			memberSeason.setMedicalException("N");
+		}
+		
+		memberLegalDao.save(memberLegal);
+		universalDao.save(memberSeason);
 		return result("complete");
 	}
 	
