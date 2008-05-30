@@ -137,6 +137,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			MemberSeason memberSeason = new MemberSeason();
 			memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
 			memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
+			//memberSeason.setMedicalException("N");
+			memberSeason.setCurrentFlag("Y");
+			memberSeason.setWaiverSigned("Y");
+			memberSeason.setProvisionalFis("N");
 			memberSeason.setAppProcessDate(appProcessDate);
 			memberSeason.setAppReceiveDate(appProcessDate);
 			universalDao.save(memberSeason);
