@@ -1032,6 +1032,6 @@ public class RulesBLImpl implements RulesBL
 	}
 	
 	public boolean isMemberInactive(Member member) {
-		return member.getInactiveStatus() != null;
+		return member.getInactiveStatus() != null && !member.getInactiveStatus().trim().equals("");
 	}
 }
