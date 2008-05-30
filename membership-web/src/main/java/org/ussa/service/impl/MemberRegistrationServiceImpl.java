@@ -137,6 +137,12 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			MemberSeason memberSeason = new MemberSeason();
 			memberSeason.setMemberSeasonPk(new MemberSeasonPk(member, season));
 			memberSeason.setMedicalException(accountBean.getHasInsurance()?"N":"Y");
+			
+			//Checks to see if a background check is needed.  This field is set in the RegistrationAction.java -> loadSportMemberships()
+			if(accountBean.isNeedsBackground()){
+				memberSeason.setBackgroundCheckFlag("N");
+			}
+			
 			//memberSeason.setMedicalException("N");
 			memberSeason.setCurrentFlag("Y");
 			memberSeason.setWaiverSigned("Y");
