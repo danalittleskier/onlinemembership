@@ -30,7 +30,7 @@ public class UssaIdGeneratorDaoImpl extends HibernateDaoSupport implements UssaI
 	private Long appendSingleRandomDigit(Long ussaId)
 	{
 		String ussaIdStr = String.valueOf(ussaId);
-
+/*
 		int total = 0;
 		for(int i=0; i<ussaIdStr.length(); i++)
 		{
@@ -70,10 +70,15 @@ public class UssaIdGeneratorDaoImpl extends HibernateDaoSupport implements UssaI
 		{
 			randomDigit = String.valueOf(10 - lastdigitInTotal);
 		}
-
+		
 		return new Long(ussaIdStr + randomDigit);
+*/
+		//Changed the Weird algorithm to a simple add random nr between 1 and 10 to UssaId
+		String random = Integer.toString((int)(Math.random()*10)+1);
+		return new Long(ussaIdStr + random);
 	}
 
+	
 	/*
 	THIS IS THE OLD PASCAL FUNCTION THAT WAS USED TO DERIVE appendSingleRandomDigit() above
 
