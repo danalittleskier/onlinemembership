@@ -360,11 +360,18 @@ public class RegistrationAction extends FormAction implements Serializable
 		Member member = accountBean.getMember();
 
 		// force all phone numbers to the spcified format
+		/*
 		address.setPhoneHome(StringUtils.formatPhone(address.getPhoneHome()));
 		address.setPhoneWork(StringUtils.formatPhone(address.getPhoneWork()));
 		address.setPhoneOther(StringUtils.formatPhone(address.getPhoneOther()));
 		address.setPhoneFax(StringUtils.formatPhone(address.getPhoneFax()));
-
+	   */
+		//We use only digits for phone nrs in the db, not like the above format
+		address.setPhoneHome(address.getPhoneHome());
+		address.setPhoneWork(address.getPhoneWork());
+		address.setPhoneOther(address.getPhoneOther());
+		address.setPhoneFax(address.getPhoneFax());
+		
 		// force postal code to the spcified format
 		address.setPostalCode(StringUtils.formatPostalCode(address.getPostalCode()));
 
@@ -372,6 +379,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		member.setFirstName(WordUtils.capitalizeFully(member.getFirstName()));
 		member.setMiddleName(WordUtils.capitalizeFully(member.getMiddleName()));
 		member.setLastName(WordUtils.capitalizeFully(member.getLastName()));
+		address.setDeliveryAddress(WordUtils.capitalizeFully(address.getDeliveryAddress()));
 		address.setCity(WordUtils.capitalizeFully(address.getCity()));
 
 		// force upper case for the country
@@ -707,7 +715,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		MemberLegal memberLegal = accountBean.getMemberLegal();
 
 		// format phone for insurance company
-		memberLegal.setInsurancePhone(StringUtils.formatPhone(memberLegal.getInsurancePhone()));
+		memberLegal.setInsurancePhone(memberLegal.getInsurancePhone());
 
 		return success();
 	}
