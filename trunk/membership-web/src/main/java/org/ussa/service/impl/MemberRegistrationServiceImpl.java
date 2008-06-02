@@ -143,15 +143,17 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 				memberSeason.setBackgroundCheckFlag("N");
 			}
 			
+			
+			//These are now being set in MemberSeason.java
 			//memberSeason.setMedicalException("N");
-			memberSeason.setCurrentFlag("Y");
-			memberSeason.setWaiverSigned("Y");
-			memberSeason.setProvisionalFis("N");
+			//memberSeason.setCurrentFlag("Y");
+			//memberSeason.setWaiverSigned("Y");
+			//memberSeason.setProvisionalFis("N");
 			memberSeason.setAppProcessDate(appProcessDate);
 			memberSeason.setAppReceiveDate(appProcessDate);
-			memberSeason.setTeamAgreement("N");
-			memberSeason.setDivMedicalRelease("N");
-			memberSeason.setPrep("N");
+			//memberSeason.setTeamAgreement("N");
+			//memberSeason.setDivMedicalRelease("N");
+			//memberSeason.setPrep("N");
 			universalDao.save(memberSeason);
 
 			// MEMBERTRANSACTION
