@@ -54,7 +54,7 @@
 		<p><strong>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
 		
 	</div>
 	<div id="div1">
@@ -75,7 +75,7 @@
 		<p><strong>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
 		
 	</div>
 	<div id="div2">
@@ -99,7 +99,7 @@
 		<p><strong>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
 		
 	</div>
 	<div id="div3">
@@ -119,7 +119,7 @@
 		<p><strong>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
 		
 	</div>
 	<div id="div4">
@@ -139,7 +139,7 @@
 		<p><strong>Failure to register within 30 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
 		
 	</div>
 </body>

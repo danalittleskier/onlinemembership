@@ -12,7 +12,11 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import org.ussa.util.DateTimeUtils;
+
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 
 @Entity
@@ -26,9 +30,12 @@ public class Member implements Serializable
 {
 	//Setting default values in case nothing gets changed we don't want to enter Null
 	public Member(){
+		Calendar now = Calendar.getInstance();
+		Date today = DateTimeUtils.moveToStartOfDay(now).getTime();
 		this.privateAddress = "N";
 		this.receiveEmail = "Y";
 		this.lifetimeMember = "N";
+		this.modifiedDate = today;
 	}
 	
     public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
@@ -106,6 +113,9 @@ public class Member implements Serializable
 
 	@Column(name = "CARD_PRINT_FLAG", nullable = true, length=1, unique=false)
 	private String cardPrintFlag;
+	
+	@Column(name = "MODIFIED_DATE", nullable = true, unique = false)
+	private Date modifiedDate;
 
 //	@ManyToMany(mappedBy="members", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 //	private Set<Club> clubs;
@@ -360,4 +370,12 @@ public class Member implements Serializable
     public int hashCode() {
         return (id != null ? id.hashCode() : 0);
     }
+
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
 }
