@@ -74,7 +74,7 @@ public class UssaIdGeneratorDaoImpl extends HibernateDaoSupport implements UssaI
 		return new Long(ussaIdStr + randomDigit);
 */
 		//Changed the Weird algorithm to a simple add random nr between 1 and 10 to UssaId
-		String random = Integer.toString((int)(Math.random()*10)+1);
+		String random = Integer.toString((int)(Math.random()*10));
 		return new Long(ussaIdStr + random);
 	}
 
