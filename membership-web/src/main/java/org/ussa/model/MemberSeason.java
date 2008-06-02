@@ -12,6 +12,16 @@ import java.util.Date;
 
 public class MemberSeason implements Serializable
 {
+	//default values
+	public MemberSeason(){
+		this.currentFlag = "Y";
+		this.waiverSigned = "Y";
+		this.provisionalFis = "N";
+		this.teamAgreement = "N";
+		this.divMedicalRelease = "N";
+		this.prep = "N";
+	}
+	
 	@EmbeddedId
 	MemberSeasonPk memberSeasonPk;
 

@@ -24,6 +24,12 @@ import java.util.Date;
 })
 public class Member implements Serializable
 {
+	
+	public Member(){
+		this.privateAddress = "N";
+		this.receiveEmail = "Y";
+	}
+	
     public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
     
     public static final String MEMBER_TYPE_INDIVIDUAL = "I";
