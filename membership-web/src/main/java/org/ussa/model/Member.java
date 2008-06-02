@@ -24,10 +24,11 @@ import java.util.Date;
 })
 public class Member implements Serializable
 {
-	
+	//Setting default values in case nothing gets changed we don't want to enter Null
 	public Member(){
 		this.privateAddress = "N";
 		this.receiveEmail = "Y";
+		this.lifetimeMember = "N";
 	}
 	
     public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
