@@ -498,12 +498,15 @@ public class RegistrationAction extends FormAction implements Serializable
 		// determine which clubs to display in the select list based on the state affiliation
 		loadClubOptions(accountBean);
 
-		Division division = rulesBL.determineDivision(nationCode, member.getStateCode(), null, null);
+		//Division division = rulesBL.determineDivision(nationCode, member.getStateCode(), null, null);
+		Division division = rulesBL.determineDivision(nationCode, member.getStateCode(), accountBean.getClubId(), accountBean.getClubZipCode());
 		if(division != null)
 		{
 			member.setDivision(division);
 			accountBean.setDivisionCode(division.getDivisionCode());
 			accountBean.setDivisionDescription(division.getDescription());
+		}else{
+			accountBean.setClubId(Long.parseLong("-1"));
 		}
 
 		return success();
