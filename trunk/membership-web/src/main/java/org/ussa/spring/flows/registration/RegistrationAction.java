@@ -680,21 +680,44 @@ public class RegistrationAction extends FormAction implements Serializable
 	{
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 		ExtrasBean extrasBean = accountBean.getExtrasBean();
-		CartBean cartBean = accountBean.getCartBean();
+		
+		//Bonus Packs available to U.S. residents only
+		if(rulesBL.isCountryUs(accountBean.getAddress().getCountry())){
+			CartBean cartBean = accountBean.getCartBean();
 
-		handleOption(cartBean, extrasBean.getAlpineOption(), extrasBean.getAlpineQty());
-		handleOption(cartBean, extrasBean.getFreestyleOption(), extrasBean.getFreestyleQty());
-		handleOption(cartBean, extrasBean.getCrossCountryOption(), extrasBean.getCrossCountryQty());
-		handleOption(cartBean, extrasBean.getJumpingOption(), extrasBean.getJumpingQty());
-		handleOption(cartBean, extrasBean.getBoardingOption(), extrasBean.getBoardingQty());
-		handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
-		handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
-		handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
+			handleOption(cartBean, extrasBean.getAlpineOption(), extrasBean.getAlpineQty());
+			handleOption(cartBean, extrasBean.getFreestyleOption(), extrasBean.getFreestyleQty());
+			handleOption(cartBean, extrasBean.getCrossCountryOption(), extrasBean.getCrossCountryQty());
+			handleOption(cartBean, extrasBean.getJumpingOption(), extrasBean.getJumpingQty());
+			handleOption(cartBean, extrasBean.getBoardingOption(), extrasBean.getBoardingQty());
+			handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
+			handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
+			handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
 
-		// clear the extras bean the quick and dirty way
-		accountBean.setExtrasBean(new ExtrasBean());
-
-		return success();
+			// clear the extras bean the quick and dirty way
+			accountBean.setExtrasBean(new ExtrasBean());
+			return success();
+			
+		}else{//Foreign Address
+			//Only display error message if they have actually tried to pick a bonus pack
+			if(StringUtils.isNotBlank(extrasBean.getAlpineQty()) ||
+					StringUtils.isNotBlank(extrasBean.getFreestyleQty()) ||
+					StringUtils.isNotBlank(extrasBean.getCrossCountryQty()) ||
+					StringUtils.isNotBlank(extrasBean.getJumpingQty()) ||
+					StringUtils.isNotBlank(extrasBean.getBoardingQty()) ||
+					StringUtils.isNotBlank(extrasBean.getGeneralQty()) ||
+					StringUtils.isNotBlank(extrasBean.getDecalSkiQty()) ||
+					StringUtils.isNotBlank(extrasBean.getDecalBoardQty())){
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("error.foreign.bonuspack");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+			}
+			
+			//return success instead of error so that it moves to the next page automatically
+			return success();
+		}
+		
+		
 	}
 
 	private void handleOption(CartBean cartBean, String invId, String qty)
