@@ -137,7 +137,7 @@
 		<table style="margin-left:195px;">
 			<tr>
 				<td valign="top" class="checkbox">
-					<form:hidden id="receiveEmail" path="member.receiveEmail"/>
+					<form:hidden id="receiveEmail" path="member.receiveDivisionEmail"/>
 					<input id="receiveEmailControl" type="checkbox" onclick="updateCheckboxHidden('receiveEmail', this)"/>
 					<script type="text/javascript" defer="defer">
 						updateCheckboxControl('receiveEmail');

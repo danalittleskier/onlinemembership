@@ -33,6 +33,7 @@ public class Member implements Serializable
 		Calendar now = Calendar.getInstance();
 		this.privateAddress = "N";
 		this.receiveEmail = "Y";
+		this.receiveDivisionEmail = "Y";
 		this.lifetimeMember = "N";
 		this.modifiedDate = now.getTime();;
 	}
@@ -102,6 +103,9 @@ public class Member implements Serializable
 
 	@Column(name = "RECEIVE_EMAIL", nullable = true, length=1, unique=false)
 	private String receiveEmail;
+	
+	@Column(name = "RECEIVE_DIVISION_EMAIL", nullable = true, length=1, unique=false)
+	private String receiveDivisionEmail;
 
 	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "DIVISION_CODE", nullable = true, unique=false)
@@ -376,5 +380,14 @@ public class Member implements Serializable
 
 	public void setModifiedDate(Date modifiedDate) {
 		this.modifiedDate = modifiedDate;
+	}
+
+
+	public String getReceiveDivisionEmail() {
+		return receiveDivisionEmail;
+	}
+
+	public void setReceiveDivisionEmail(String receiveDivisionEmail) {
+		this.receiveDivisionEmail = receiveDivisionEmail;
 	}
 }
