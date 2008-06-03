@@ -167,7 +167,7 @@
 			<br/>
 			<label style="width: 100px;">* Club:</label>
 			<form:select id="clubSelect" path="clubId" onchange="updateDivision();">
-				<form:option value="-1">&nbsp;</form:option>
+				<form:option value="-1">Please Select</form:option>
 				<form:option value="0">No Club Affiliation</form:option>
 				<form:options items="${accountBean.clubsForState}" itemValue="id" itemLabel="name"/>
 			</form:select>
