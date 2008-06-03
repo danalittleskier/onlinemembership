@@ -4,7 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+
+import org.ussa.util.DateTimeUtils;
+
 import java.io.Serializable;
+import java.util.Calendar;
+import java.util.Date;
 
 
 @Entity
@@ -55,8 +60,18 @@ public class Address implements Serializable
 	@Column(name = "BAD_ADDRESS", nullable = true, length = 1, unique = false)
 	private String badAddress;
 
-    public Address() {
-        // empty constructor required for Hibernate
+	@Column(name = "USERID", nullable = true, length = 15, unique = false)
+	private String userId;
+	
+	@Column(name = "CHANGE_DATE", nullable = true, unique = false)
+	private Date changeDate;
+    
+	public Address() {
+      // empty constructor required for Hibernate
+		Calendar now = Calendar.getInstance();
+		this.userId = "MembershipWeb";
+		//this.changeDate = today;//try now.getTime();
+		this.changeDate = now.getTime();
     }
 
     public Address(Member member, String type) {
@@ -205,6 +220,22 @@ public class Address implements Serializable
     public int hashCode() {
         return (addressPk != null ? addressPk.hashCode() : 0);
     }
+
+	public String getUserId() {
+		return userId;
+	}
+
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+
+	public Date getChangeDate() {
+		return changeDate;
+	}
+
+	public void setChangeDate(Date changeDate) {
+		this.changeDate = changeDate;
+	}
 
 	
 }

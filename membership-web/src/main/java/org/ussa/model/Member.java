@@ -31,11 +31,10 @@ public class Member implements Serializable
 	//Setting default values in case nothing gets changed we don't want to enter Null
 	public Member(){
 		Calendar now = Calendar.getInstance();
-		Date today = DateTimeUtils.moveToStartOfDay(now).getTime();
 		this.privateAddress = "N";
 		this.receiveEmail = "Y";
 		this.lifetimeMember = "N";
-		this.modifiedDate = today;
+		this.modifiedDate = now.getTime();;
 	}
 	
     public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
