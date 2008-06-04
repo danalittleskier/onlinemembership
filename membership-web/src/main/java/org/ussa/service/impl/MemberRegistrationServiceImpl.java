@@ -196,12 +196,11 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 
 			// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
 			creditCardProcessingService.processCard(accountBean);
-
 			cardSw.stop();
 
 			// BATCH TABLES
 			batchService.doBatchTableInsert(accountBean, inventoryAddLineItems, currentSeason);
-
+			
 			// moving this to the end until we get the transaction manager working with multiple datasources.
 			// USER ACCOUNT
 			UserDetails userDetails = (UserDetails) securityContext.getAuthentication().getPrincipal();

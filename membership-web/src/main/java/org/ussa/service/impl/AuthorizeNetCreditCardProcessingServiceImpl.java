@@ -182,7 +182,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		private long responseSubCode;
 		private long responseReasonCode;
 		private String responseDescription;
-		private long approvalCode;
+		private String approvalCode;
 		private String avsResultCode;
 		private long transId;
 
@@ -193,7 +193,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 			responseSubCode = Long.parseLong(splitResponse.get(1));
 			responseReasonCode = Long.parseLong(splitResponse.get(2));
 			responseDescription = splitResponse.get(3);
-			approvalCode = Long.parseLong(splitResponse.get(4));
+			approvalCode = splitResponse.get(4);
 			avsResultCode = splitResponse.get(5);
 			transId = Long.parseLong(splitResponse.get(6));
 		}
@@ -218,7 +218,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 			return responseDescription;
 		}
 
-		long getApprovalCode()
+		String getApprovalCode()
 		{
 			return approvalCode;
 		}
