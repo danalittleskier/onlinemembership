@@ -15,7 +15,15 @@
 	</div>
 
 	<div class=dotted_separator></div>
-	<img src="<c:url value='/images/ussa/combined_logos_color.gif'/>" alt="" height="37" ismap usemap="#teamMap" border="0">
+	<!-- (c) 2006. Authorize.Net is a registered trademark of Lightbridge, Inc. --> 
+	 <div align="center">
+	 	<div class="AuthorizeNetSeal"> 
+	 		<script type="text/javascript" language="javascript">var ANS_customer_id="3a0e38c0-5d67-44d6-b6a8-15d7d5e87549";</script> 
+	 		<script type="text/javascript" language="javascript" src="//VERIFY.AUTHORIZE.NET/anetseal/seal.js" ></script> 
+	 		<a href="http://www.authorize.net/" id="AuthorizeNetText" target="_blank" style="font-size: 8px;">Credit Card Processing</a> 
+	 	</div>
+	 </div>
+	<img src="<c:url value='/images/ussa/combined_logos_color.gif'/>" alt="" height="37" ismap usemap="#teamMap" border="0" style="padding-top:5px;">
 	<!-- Image Maps -->
 	<map name="bottomAdMap">
 		<area shape="rect" coords="64,34,104,71" href="http://www.usskiteam.com/public/tv.php?&dId=6" target="_blank">
