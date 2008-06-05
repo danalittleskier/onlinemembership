@@ -61,6 +61,15 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 	@Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
 	public void processRegistration(AccountBean accountBean) throws Exception
 	{
+		
+		StopWatch cardSw = new StopWatch();
+		cardSw.start();
+
+		// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
+		creditCardProcessingService.processCard(accountBean);
+		cardSw.stop();
+		
+		
 		StopWatch sw = new StopWatch();
 		sw.start();
 		String currentSeason = dateBL.getCurrentRenewSeason();
@@ -191,12 +200,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 				saveMemberTransaction(lineItem, member, currentSeason);
 			}
 
-			StopWatch cardSw = new StopWatch();
-			cardSw.start();
-
-			// PROCESS THE CARD. if the card completes without throwing exception then the transaction completed
-			creditCardProcessingService.processCard(accountBean);
-			cardSw.stop();
+			
 
 			// BATCH TABLES
 			batchService.doBatchTableInsert(accountBean, inventoryAddLineItems, currentSeason);
