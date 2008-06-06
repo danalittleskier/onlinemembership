@@ -570,18 +570,18 @@
 			<field property="hasInsurance" depends="required">
 				<arg0 key="label.has.medical.insurance" />
 			</field>
-			<field property="memberLegal.insuranceCompany" depends="validWhen, mask">
+			<field property="memberLegal.insuranceCompany" depends="validWhen">
 				<msg name="validWhen" key="errors.required"/>
-				<msg name="mask" key="errors.alphaNumeric"/>
+				<!--  <msg name="mask" key="errors.alphaNumeric"/> -->
 				<arg0 key="label.insurance.company.name" />
 				<var>
 					<var-name>test</var-name>
 					<var-value>${validWhenNoInsurance}</var-value>
 				</var>
-				<var>
+				<!--  <var>
 					<var-name>mask</var-name>
 					<var-value>${alphaNumeric}</var-value>
-				</var>
+				</var> -->
 			</field>
 			<field property="memberLegal.insurancePolicy" depends="validWhen, mask">
 				<msg name="validWhen" key="errors.required"/>
