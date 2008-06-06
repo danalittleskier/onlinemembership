@@ -86,8 +86,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 				member.setSinceSeason(currentSeason);
 			}
 			
-			Calendar now = Calendar.getInstance();
-			member.setModifiedDate(now.getTime());
+			Calendar today = Calendar.getInstance();
+			member.setModifiedDate(today.getTime());
 			member.setExpireSeason(currentSeason);
 			member.setCardPrintFlag("Y");
 			member = memberDao.save(member);
