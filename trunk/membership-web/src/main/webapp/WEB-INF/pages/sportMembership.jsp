@@ -4,7 +4,8 @@
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">Member Information</div>
-<p class="req-fields"><em>* Required Fields</em></p>
+<p class="req-fields"><em>* Required Fields</em><br>
+<strong>&nbsp;If you are renewing, please check your cart on the right before adding other memberships.</strong></p>
 
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
@@ -134,18 +135,17 @@
 	</c:if>
 	<fieldset>
 		<legend>Member Communication</legend>
-		<table style="margin-left:195px;">
+		<table>
 			<tr>
-				<td valign="top" class="checkbox">
+				<td class="checkbox">
 					<form:hidden id="receiveEmail" path="member.receiveDivisionEmail"/>
-					<input id="receiveEmailControl" type="checkbox" onclick="updateCheckboxHidden('receiveEmail', this)"/>
-					<script type="text/javascript" defer="defer">
-						updateCheckboxControl('receiveEmail');
-					</script>
-				</td>
-				<td valign="top" width="100%">
 					<label for="receiveEmailControl" class="checkbox" style="text-align:left; width:auto;">
-					Subscribe to your division or state email list for important communications such as schedule and event information.
+						<input id="receiveEmailControl" type="checkbox" onclick="updateCheckboxHidden('receiveEmail', this)"/>
+						<script type="text/javascript" defer="defer">
+							updateCheckboxControl('receiveEmail');
+						</script>
+						Subscribe to your division or state email list for important communications such as schedule and event information.<br>
+						<span style="padding-left:15px; font-size:11px;">(Only applies for divisions and states participating in USSA's dues management program)</span>
 					</label>
 				</td>
 			</tr>
