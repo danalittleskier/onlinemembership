@@ -191,6 +191,8 @@ public class RegistrationAction extends FormAction implements Serializable
 				memberLegal = new MemberLegal();
 				memberLegal.setMemberSeasonPk(memberSeasonPk);
 				accountBean.setMemberLegal(memberLegal);
+			}else{//null out member legal so this person can now renew
+				accountBean.setMemberLegal(null);
 			}
 		}
 	}
