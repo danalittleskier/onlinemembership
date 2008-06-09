@@ -223,7 +223,9 @@ public class RegistrationAction extends FormAction implements Serializable
 	
 	public Event saveMemberInfo(RequestContext context) throws Exception { 
 		AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-		
+		Calendar now = Calendar.getInstance();
+		accountBean.getMember().setModifiedDate(now.getTime());
+		accountBean.getAddress().setChangeDate(now.getTime());
 		memberDao.save(accountBean.getMember());
 		universalDao.save(accountBean.getAddress());
 		return result("complete");

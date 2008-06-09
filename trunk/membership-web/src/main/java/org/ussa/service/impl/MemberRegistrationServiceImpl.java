@@ -120,6 +120,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService
 			// MEMBERADDRESS
 			Address address = accountBean.getAddress();
 			address.setBadAddress("N");
+			address.setUserId("MembershipWeb");
+			address.setChangeDate(today.getTime());
 			address.setAddressPk(new AddressPk(member, Address.ADDRESS_TYPE_PRIMARY));
 			universalDao.save(address);
 
