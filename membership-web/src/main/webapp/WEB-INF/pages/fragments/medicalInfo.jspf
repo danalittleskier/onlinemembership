@@ -13,7 +13,8 @@
 			<label>* Policy/ID Number:</label>
 			<form:input path="memberLegal.insurancePolicy" maxlength="20" id="insurancePolicy"/><br />
 			<label>Phone Number:</label>
-			<form:input path="memberLegal.insurancePhone" maxlength="15" id="insurancePhone"/><br />
+			<form:input path="memberLegal.insurancePhone" maxlength="15" id="insurancePhone"/>
+			<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
 		</div>
 	</fieldset>
 
