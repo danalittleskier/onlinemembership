@@ -568,6 +568,7 @@
 
 		<form name="medical">
 			<field property="hasInsurance" depends="required">
+				<msg name="required" key="errors.required.medical"/>
 				<arg0 key="label.has.medical.insurance" />
 			</field>
 			<field property="memberLegal.insuranceCompany" depends="validWhen">
