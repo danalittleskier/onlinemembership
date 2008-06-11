@@ -29,7 +29,14 @@
 		</ul>
 	</div>
 	<div id="div0">
-		<h2>Alpine Skiing<span class="information"> Information</span></h2>
+		<h2>Alpine Skiing<span class="information"> Information</span><br>
+		<span style="font-weight:normal;font-size:12px;">ALPINE SKIING includes the following disciplines:
+		<strong>Downhill,&nbsp;Slalom,&nbsp;Super G,&nbsp;Giant Slalom,&nbsp;Super Combined</strong>
+		</span><br>
+		<span style="font-weight:normal;font-size:12px;">DISABLED ALPINE includes the following disciplines:
+		<strong>Downhill,&nbsp;Slalom,&nbsp;Super G,&nbsp;Giant Slalom,&nbsp;Super Combined</strong>
+		</span>
+		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Multiple athlete memberships may be applicable, please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 		<p><strong>Competitor:</strong> For ages 13 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list.<br> 
@@ -58,7 +65,11 @@
 		
 	</div>
 	<div id="div1">
-		<h2>Freestyle <span class="information">Information</span></h2>
+		<h2>Freestyle <span class="information">Information</span><br>
+		<span style="font-weight:normal;font-size:12px;">FREESTYLE includes the following disciplines:
+		<strong>Aerials,&nbsp;Moguls,&nbsp;Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross</strong>
+		</span>
+		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA freestyle ranking list. </p>
 		<p><strong>Rookie:</strong> Available to first time freestyle members only. For those 13 years of age and older prior to Dec. 31. Access to division level competition only. Membership also includes access to the USSA freestyle ranking list. Non-renewable, but upgradeable.</p>
@@ -79,7 +90,14 @@
 		
 	</div>
 	<div id="div2">
-		<h2>Cross Country <span class="information">Information</span></h2>
+		<h2>Cross Country <span class="information">Information</span><br>
+		<span style="font-weight:normal;font-size:12px;">CROSS COUNTRY includes the following disciplines:
+		<strong>Distance,&nbsp;Sprint</strong>
+		</span><br>
+		<span style="font-weight:normal;font-size:12px;">DISABLED CROSS COUNTRY includes the following disciplines:
+		<strong>Distance,&nbsp;Sprint</strong>
+		</span>
+		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
 		<p><strong>Disabled Competitor: </strong>For athletes participating primarily in disabled events. </p>
@@ -103,7 +121,11 @@
 		
 	</div>
 	<div id="div3">
-		<h2>Jumping/Nordic Combined <span class="information">Information</span></h2>
+		<h2>Jumping/Nordic Combined <span class="information">Information</span><br>
+		<span style="font-weight:normal;font-size:12px;">JUMPING/NORIDC COMBINED includes the following disciplines:
+		<strong>Large Hill,&nbsp;Normal Hill</strong>
+		</span>
+		</h2>
 		<h3>Athletes: Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA jumping/nordic &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA jumping/nordic ranking list.</p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.</p>
@@ -123,7 +145,11 @@
 		
 	</div>
 	<div id="div4">
-		<h2>Snowboarding <span class="information">Information</span></h2>
+		<h2>Snowboarding <span class="information">Information</span><br>
+		<span style="font-weight:normal;font-size:12px;">SNOWBOARDING includes the following disciplines:
+		<strong>Halfpipe,&nbsp;Gate:&nbsp;PGS&nbsp;(parallel giant slalom)/PSL&nbsp;(parallel slalom),&nbsp;SBX:&nbsp;Boarder Cross,&nbsp;Slopestyle</strong>
+		</span>
+		</h2>
 		<h3>Athletes: You may choose one of the memberships from below</h3>
 		<p><strong>National Competitor:</strong> Access to all levels of competition within the USSA snowboarding &quot;development pipeline.&quot;. Membership also includes access to the USSA snowboarding ranking list. Required for FIS level competitions. </p>
 		<p><strong>Regional Competitor:</strong> Not eligible for elite level events or FIS registration. Includes access to the USSA Snowboard Ranking List. May be upgraded to national level membership during the competitive season.</p>
