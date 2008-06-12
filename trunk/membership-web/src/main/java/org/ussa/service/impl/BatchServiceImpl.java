@@ -44,13 +44,13 @@ public class BatchServiceImpl implements BatchService
 
 		Long batchSequence;
 		batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
-		// we don't want a batch to ever get bigger than 150. if so then close out the current batch and create a new one.
-		if(batchSequence >= 100)
-		{
-			closeBatch(batch);
-			batch = createNewBatch(currentSeason);
-			batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
-		}
+		// we don't want a batch to ever get bigger than 100. if so then close out the current batch and create a new one.
+		//if(batchSequence >= 100)
+		//{
+		//	closeBatch(batch);
+		//	batch = createNewBatch(currentSeason);
+		//	batchSequence = batchTransactionDao.getNextBatchSequenceAndLockTable(batch);
+		//}
 
 		batchTransactionDao.doBatchInsert(batch, batchSequence, accountBean, inventoryAddLineItems);
 
