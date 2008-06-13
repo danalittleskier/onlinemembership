@@ -40,11 +40,16 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		if (response.getResponseCode() == GatewayResponse.RESPONSE_CODE_DECLINED)
 		{
 			log.debug(response.toString());
+			log.warn("CREDIT CARD DECLINE ERROR: " + response.getResponseDescription());
+			log.warn("RESPONSE REASON CODE = " + response.getResponseReasonCode());
 			throw new CreditCardDeclinedException(response.getResponseDescription());
 		}
 
-		if (response.getResponseCode() != GatewayResponse.RESPONSE_CODE_APPROVE)
+		if (response.getResponseCode() != GatewayResponse.RESPONSE_CODE_APPROVE){
+			log.warn("CREDIT CARD DECLINE ERROR: " + response.getResponseDescription());
+			log.warn("RESPONSE REASON CODE = " + response.getResponseReasonCode());
 			throw new CreditCardException(response.getResponseDescription());
+		}
 	}
 
 	private GatewayResponse sendGatewayRequest(AccountBean accountBean) throws Exception
@@ -71,6 +76,7 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		appendParam(params, "x_first_name", member.getFirstName(), 50);
 		appendParam(params, "x_last_name", member.getLastName(), 50);
 		appendParam(params, "x_address", paymentBean.getAddress(), 60);
+		appendParam(params, "x_email", member.getEmail(), 60);
 //		appendParam(params, "x_city", address.getCity(), 40);
 //		appendParam(params, "x_state", address.getStateCode(), 40);
 		appendParam(params, "x_zip", paymentBean.getZip(), 20);
@@ -85,9 +91,10 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		appendParam(params, "x_card_num", paymentBean.getCardNumber(), 22);
 		appendParam(params, "x_exp_date", paymentBean.getExpireMonth() + paymentBean.getExpireYear());
 		appendParam(params, "x_card_code", paymentBean.getSecurityCode(), 6);
+		appendParam(params, "x_duplicate_window", "0", 5);
 
 		// not required...but my testMode account is set up to require it
-		appendParam(params, "x_description", "Java Transaction");
+		appendParam(params, "x_description", "USSA Membership");
 
 		if (log.isDebugEnabled()) log.debug("Gateway Request: " + params.toString());
 
