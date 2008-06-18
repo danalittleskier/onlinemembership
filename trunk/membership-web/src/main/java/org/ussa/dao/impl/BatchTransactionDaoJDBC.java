@@ -7,6 +7,9 @@ import java.sql.ResultSet;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 import org.springframework.jdbc.core.SqlParameter;
 import org.springframework.jdbc.object.SqlUpdate;
 import org.springframework.jdbc.object.MappingSqlQuery;
@@ -23,6 +26,7 @@ import org.ussa.model.Member;
 
 public class BatchTransactionDaoJDBC implements BatchTransactionDao
 {
+	protected final Log log = LogFactory.getLog(getClass());
 	private DataSource dataSource;
 	private String INSERT_BATCHPAYMENT_SQL = "insert into BatchPayment (Batch_id,Sequence,Payment_Type, " +
 			" Check_Number,cc_number, CC_EXP,Amount,Account_Code, Transaction_Id) " +
@@ -77,6 +81,13 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
+			log.warn("Batch Id = " + batchId);
+			log.warn("Batch Sequence = " + batchSequence);
+			log.warn("ussa Id = " + member.getId());
+			log.warn("Inventory Id = " + inventory.getId());
+			log.warn("quantity = " + lineItem.getQty());
+			log.warn("Discount amount = " + lineItem.getDiscountedAmount());
+			log.warn("");
 			Object[] detailParams = {batchId, batchSequence, member.getId(), inventory.getId(), lineItem.getQty(), lineItem.getDiscountedAmount()};
 			bd.update(detailParams);
 		}
