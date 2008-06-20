@@ -50,6 +50,14 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 			log.warn("RESPONSE REASON CODE = " + response.getResponseReasonCode());
 			throw new CreditCardException(response.getResponseDescription());
 		}
+		
+		//Doing this to determine if visa or mastercard
+		String cardNumber = paymentBean.getCardNumber().substring(0,1);
+		if(cardNumber.equals("4")){
+			paymentBean.setPaymentType("Visa");
+		}else if(cardNumber.equals("5")){
+			paymentBean.setPaymentType("Mastercard");
+		}
 	}
 
 	private GatewayResponse sendGatewayRequest(AccountBean accountBean) throws Exception
