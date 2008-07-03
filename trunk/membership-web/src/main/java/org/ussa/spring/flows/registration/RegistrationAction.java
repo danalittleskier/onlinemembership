@@ -150,7 +150,7 @@ public class RegistrationAction extends FormAction implements Serializable
 
 	private void initExistingAccountBean(AccountBean accountBean, User user, Long memberId, boolean isForUpdate) {
 		Member member = memberDao.get(memberId);
-		member.setEmail(user.getEmail());
+//		member.setEmail(user.getEmail());
 		accountBean.setMember(member);
 
 		if(member.getBirthDate() != null)
@@ -299,6 +299,9 @@ public class RegistrationAction extends FormAction implements Serializable
 		accountBean.setUsStates(stateDao.getAllUsStatesOrderedByCode());
 		accountBean.setAllStates(stateDao.getAllStatesOrderedByCode());
 
+		//Set confirmation email to the account email for authorize.net receipt
+		accountBean.setConfirmationEmail(user.getEmail());
+		
 		accountBean.setCartBean(new CartBean());
 
 		// new registration
@@ -308,7 +311,7 @@ public class RegistrationAction extends FormAction implements Serializable
 			accountBean.setMember(member);
 			member.setFirstName(user.getFirstName());
 			member.setLastName(user.getLastName());
-			member.setEmail(user.getEmail());
+			//member.setEmail(user.getEmail());
 			member.setParentInfo(new ParentInfo());
 			if(StringUtils.isNotBlank(user.getBirthDate()))
 			{

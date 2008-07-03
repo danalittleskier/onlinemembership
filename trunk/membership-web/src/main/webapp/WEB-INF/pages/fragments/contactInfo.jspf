@@ -56,7 +56,10 @@
 		</c:choose>
 	</spring:bind>
 	<br/>
-
+	
+	<label for="email">* Member Email:</label>
+	<form:input path="member.email" maxlength="200" /><br />
+	
 	<c:if test="${empty accountBean.member.id}">
 		<label for="gender">* Gender:</label>
 		<div class="radios">

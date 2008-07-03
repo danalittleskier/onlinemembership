@@ -77,14 +77,14 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		params.append("x_delim_data=TRUE&");
 		params.append("x_delim_char=").append(DELIMITER).append("&");
 		params.append("x_relay_response=FALSE&");
-
+		
 		Member member = accountBean.getMember();
 		Address address = accountBean.getAddress();
 		// address values. these are not optional
 		appendParam(params, "x_first_name", member.getFirstName(), 50);
 		appendParam(params, "x_last_name", member.getLastName(), 50);
 		appendParam(params, "x_address", paymentBean.getAddress(), 60);
-		appendParam(params, "x_email", member.getEmail(), 60);
+		appendParam(params, "x_email", accountBean.getConfirmationEmail(), 60);
 //		appendParam(params, "x_city", address.getCity(), 40);
 //		appendParam(params, "x_state", address.getStateCode(), 40);
 		appendParam(params, "x_zip", paymentBean.getZip(), 20);
