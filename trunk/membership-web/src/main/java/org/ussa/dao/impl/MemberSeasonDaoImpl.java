@@ -30,4 +30,16 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 			return null;
 		}
 	}
+	
+	public MemberSeason hasMemberSeasonForCurrentSeason(MemberSeasonPk memberSeasonPk){
+		List<MemberSeason> season = (List<MemberSeason>) getHibernateTemplate()
+		     	.find("from MemberSeason s where s.memberSeasonPk.member.id = ? and s.memberSeasonPk.season = ?",
+		     	new Object[]{memberSeasonPk.getMember().getId(), memberSeasonPk.getSeason()});
+		
+		if(season != null && season.size() > 0){
+			return season.get(0);
+		}else{
+			return null;
+		}
+	}
 }

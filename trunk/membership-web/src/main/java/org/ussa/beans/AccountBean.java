@@ -7,6 +7,7 @@ import org.ussa.model.Club;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberLegal;
+import org.ussa.model.MemberSeason;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
 
@@ -16,6 +17,7 @@ public class AccountBean
 	private Member member;
 	private Address address;
 	private MemberLegal memberLegal;
+	private MemberSeason memberSeason;
 
 	private CartBean cartBean = new CartBean();
 	private PaymentBean paymentBean = new PaymentBean();
@@ -423,5 +425,13 @@ public class AccountBean
 
 	public void setNeedsBackground(boolean needsBackground) {
 		this.needsBackground = needsBackground;
+	}
+
+	public MemberSeason getMemberSeason() {
+		return memberSeason;
+	}
+
+	public void setMemberSeason(MemberSeason memberSeason) {
+		this.memberSeason = memberSeason;
 	}
 }

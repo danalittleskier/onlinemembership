@@ -13,6 +13,7 @@
 		<property name="nationDao" ref="nationDao"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
 		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="userManager" ref="userManager"/>
