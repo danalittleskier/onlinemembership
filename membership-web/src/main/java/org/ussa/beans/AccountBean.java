@@ -45,6 +45,7 @@ public class AccountBean
 	private String fisWaiverDisabledParentalConsent;
 	private String medicalWaiverParentalConsent;
 	private String releaseWaiverParentalConsent;
+	private String confirmationEmail;
 
 	//Reference Data fields.
 	private List<State> usStates;
@@ -433,5 +434,13 @@ public class AccountBean
 
 	public void setMemberSeason(MemberSeason memberSeason) {
 		this.memberSeason = memberSeason;
+	}
+
+	public String getConfirmationEmail() {
+		return confirmationEmail;
+	}
+
+	public void setConfirmationEmail(String confirmationEmail) {
+		this.confirmationEmail = confirmationEmail;
 	}
 }
