@@ -48,6 +48,12 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 			<c:out value="${accountBean.member.suffixName}"/>
 		</td>
 	</tr>
+	<tr>
+		<td class="data-label" scope="row">Member Email:</td>
+		<td class="data-text-none" scope="row">
+			<c:out value="${accountBean.member.email}"/>
+		</td>
+	</tr>
 </table>
 <table id="stg-data-review">
 	<tr>
@@ -100,6 +106,12 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		<td class="data-label" scope="row">Home Phone:</td>
 		<td class="data-text" scope="row">
 			<c:out value="${accountBean.address.phoneHome}"/>
+		</td>
+	</tr>
+	<tr>
+		<td class="data-label" scope="row">Work Phone:</td>
+		<td class="data-text" scope="row">
+			<c:out value="${accountBean.address.phoneWork}"/>
 		</td>
 	</tr>
 	<tr>
