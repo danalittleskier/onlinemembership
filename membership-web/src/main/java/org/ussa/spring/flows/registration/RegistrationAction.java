@@ -39,6 +39,7 @@ import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
+import org.ussa.dao.MemberSeasonDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.StateDao;
 import org.ussa.exception.CreditCardDeclinedException;
@@ -70,6 +71,7 @@ public class RegistrationAction extends FormAction implements Serializable
 	private DivisionDao divisionDao;
 	private InventoryDao inventoryDao;
 	private MemberLegalDao memberLegalDao;
+	private MemberSeasonDao memberSeasonDao;
 	private RulesBL rulesBL;
 	private DateBL dateBL;
 	private UserManager userManager;
@@ -108,6 +110,10 @@ public class RegistrationAction extends FormAction implements Serializable
 	public void setMemberLegalDao(MemberLegalDao memberLegalDao)
 	{
 		this.memberLegalDao = memberLegalDao;
+	}
+	public void setMemberSeasonDao(MemberSeasonDao memberSeasonDao) 
+	{
+		this.memberSeasonDao = memberSeasonDao;
 	}
 	public void setRulesBL(RulesBL rulesBL)
 	{
@@ -195,6 +201,10 @@ public class RegistrationAction extends FormAction implements Serializable
 				accountBean.setMemberLegal(null);
 			}
 		}
+		
+		//MemberSeason
+		MemberSeason memberSeason = memberSeasonDao.hasMemberSeasonForCurrentSeason(memberSeasonPk);
+		accountBean.setMemberSeason(memberSeason);
 	}
 	
 	public Event loadContactInfoForUpdate(RequestContext context) throws Exception {
@@ -336,10 +346,24 @@ public class RegistrationAction extends FormAction implements Serializable
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 				return result("registrationError");
 			}
+			
+			if(accountBean.getMemberLegal() == null){
+				MemberLegal memberLegal = new MemberLegal();
+				memberLegal.setMemberSeasonPk(memberLegal.getMemberSeasonPk());
+				accountBean.setMemberLegal(memberLegal);
+			}
 
+			if(accountBean.getMemberSeason() != null){
+			// the person has already processed a registration for this year.
+				BindException errors = new BindException(accountBean, "accountBean");
+				errors.reject("errors.already.registered");
+				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+				return result("registrationError");
+			}
+			
+			/*
 			if(accountBean.getMemberLegal() != null)
 			{
-				// the person has already processed a registration for this year.
 				BindException errors = new BindException(accountBean, "accountBean");
 				errors.reject("errors.already.registered");
 				getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
@@ -349,6 +373,7 @@ public class RegistrationAction extends FormAction implements Serializable
 				memberLegal.setMemberSeasonPk(memberLegal.getMemberSeasonPk());
 				accountBean.setMemberLegal(memberLegal);
 			}
+			*/
 
 			// prepopulate cart
 			rulesBL.prepopulateCart(accountBean);
@@ -832,5 +857,6 @@ public class RegistrationAction extends FormAction implements Serializable
 
 		return success();
 	}
+	
 
 }

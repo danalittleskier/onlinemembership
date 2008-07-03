@@ -7,5 +7,6 @@ import org.ussa.model.MemberSeason;
 public interface MemberSeasonDao extends GenericDao<MemberSeason, MemberSeasonPk>
 {
 	public MemberSeason getMostRecentBackgroundCheck(Long ussaId);
+	public MemberSeason hasMemberSeasonForCurrentSeason(MemberSeasonPk memberSeasonPk);
 
 }
