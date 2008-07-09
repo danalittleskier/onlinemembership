@@ -548,7 +548,7 @@
 			</field>
 			<field property="extrasBean.decalSkiQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
