@@ -435,11 +435,11 @@
 			</field>
 			<field property="extrasBean.alpineQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -455,11 +455,11 @@
 			</field>
 			<field property="extrasBean.freestyleQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -475,11 +475,11 @@
 			</field>
 			<field property="extrasBean.crossCountryQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -495,11 +495,11 @@
 			</field>
 			<field property="extrasBean.jumpingQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -515,11 +515,11 @@
 			</field>
 			<field property="extrasBean.boardingQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -535,11 +535,11 @@
 			</field>
 			<field property="extrasBean.generalQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -552,7 +552,7 @@
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
@@ -561,11 +561,11 @@
 			</field>
 			<field property="extrasBean.decalBoardQty" depends="intRange">
 				<arg0 key="label.quantity" />
-				<arg1 key="0" resource="false"/>
+				<arg1 key="1" resource="false"/>
 				<arg2 key="1000" resource="false"/>
 				<var>
 					<var-name>min</var-name>
-					<var-value>0</var-value>
+					<var-value>1</var-value>
 				</var>
 				<var>
 					<var-name>max</var-name>
