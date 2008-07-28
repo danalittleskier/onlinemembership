@@ -256,7 +256,7 @@ public class RegistrationAction extends FormAction implements Serializable
 		}
 		
 		memberLegalDao.save(memberLegal);
-		universalDao.save(memberSeason);
+		//universalDao.save(memberSeason);
 		return result("complete");
 	}
 	
