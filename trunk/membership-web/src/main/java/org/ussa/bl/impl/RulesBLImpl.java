@@ -453,6 +453,10 @@ public class RulesBLImpl implements RulesBL
 			 */
 			addRemoveSecondMembershipDiscounts(accountBean);
 			addRemoveDivisionDuesAndLateFees(accountBean);
+			
+			/*MAKE SURE FIS IS BEING TAKEN OFF IF NECESSARY*/
+			
+			resetFisOptions(accountBean);
 		}
 
 		return messages;
