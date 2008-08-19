@@ -89,7 +89,8 @@
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<input id="backButton" type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();">
-		<br>(Only click once)
+		<br><br><br>DO NOT press Continue multiple times.
+		If you receive a decline message please call USSA Member Services for assistance at 435.647.2666
 	</fieldset>
 </form:form>
 </div>
