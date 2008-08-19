@@ -23,6 +23,8 @@ import org.ussa.dao.BatchTransactionDao;
 import org.ussa.model.Batch;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
+import java.util.Calendar;
+
 
 public class BatchTransactionDaoJDBC implements BatchTransactionDao
 {
@@ -55,6 +57,8 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 	@Transactional(propagation = Propagation.MANDATORY)
 	public void doBatchInsert(Batch batch, Long batchSequence, AccountBean accountBean, List<LineItemBean> inventoryAddLineItems)
 	{
+		Calendar now = Calendar.getInstance();
+		
 		Member member = accountBean.getMember();
 		PaymentBean payment = accountBean.getPaymentBean();
 		CartBean cart = accountBean.getCartBean();
@@ -81,6 +85,7 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		for (LineItemBean lineItem : lineItems)
 		{
 			Inventory inventory = lineItem.getInventory();
+			log.warn("Time: "+ now.getTime());
 			log.warn("Batch Id = " + batchId);
 			log.warn("Batch Sequence = " + batchSequence);
 			log.warn("ussa Id = " + member.getId());
