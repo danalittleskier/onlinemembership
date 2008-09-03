@@ -277,7 +277,7 @@ public class RulesBLImpl implements RulesBL
 		{
 			lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
 		}
-		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(fisInvId) && now.after(dateBL.getAlpineFisLateDate()))
+		else if(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(fisInvId) && now.after(dateBL.getIpcAsLateDate()))
 		{
 			lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
 		}
