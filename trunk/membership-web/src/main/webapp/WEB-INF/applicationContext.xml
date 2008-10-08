@@ -100,7 +100,7 @@
 
 	<!-- Add service classes here-->
 	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
-		<property name="testMode" value="false"/>
+		<property name="testMode" value="true"/>
 		<property name="login" value="3M7s8eKK6"/>
 		<property name="tranKey" value="57wHJDb4865yc935"/>
 	</bean>
