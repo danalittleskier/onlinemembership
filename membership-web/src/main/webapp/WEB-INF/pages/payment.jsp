@@ -75,7 +75,7 @@
 		<label for="">* Last Name:</label>
 		<form:input path="paymentBean.lastName" maxlength="50"/><br/>
 --%>
-		<label for="">Street Address:</label>
+		<label for="">Street Address (enter only the NUMBER portion):</label>
 		<form:input path="paymentBean.address" maxlength="60"/><br/>
 <%--
 		<label for="">* City:</label>
