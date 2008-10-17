@@ -97,6 +97,9 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			bd.update(detailParams);
 		}
 
+		log.warn("After batchdetail table Batch sequence = " + batchSequence);
+		log.warn("Ussa Id = " + member.getId());
+		
 		InsertBatchSequence bs = new InsertBatchSequence(getDataSource());
 		Object[] seqParams = {batchId, batchSequence};
 		bs.update(seqParams);
