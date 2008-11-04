@@ -778,7 +778,8 @@ public class RulesBLImpl implements RulesBL
 			if((member.getId() == null || member.getId() == 0)
 				|| cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0
 				|| hasOnlyYouthMemberships(accountBean)
-				|| hasOnlyOfficialMemberships(accountBean))
+				|| hasOnlyOfficialMemberships(accountBean)
+				|| (member.getId()!= null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() == 0))
 			{
 				cart.removeLineItem(Inventory.INV_ID_MEMBER_LATE_FEE);
 			}
