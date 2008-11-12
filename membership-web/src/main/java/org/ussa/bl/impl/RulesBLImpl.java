@@ -713,7 +713,8 @@ public class RulesBLImpl implements RulesBL
 				cart.addItem(mostExpensive);
 
 				// state late fees if any
-				if(now.after(lateRenewDate))
+				if(now.after(lateRenewDate)&& 
+					(member.getId()!= null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() != 0))
 				{
 					List<Inventory> stateLateFees = stateDuesRulesDao.getStateDues(stateCode, age, membershipIds, true);
 					for (Inventory lateFee : stateLateFees)
@@ -760,7 +761,8 @@ public class RulesBLImpl implements RulesBL
 				}
 
 				// division late fees if any
-				if(now.after(lateRenewDate))
+				if(now.after(lateRenewDate)&& 
+					 (member.getId()!= null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() != 0))
 				{
 					List<Inventory> divisionLateFees = divDuesRulesDao.getDivisionDues(member.getDivision().getDivisionCode(), age, membershipIds, true);
 					for (Inventory lateFee : divisionLateFees)
