@@ -1,5 +1,5 @@
 <%@ include file="/includes/taglibs.jsp"%>
-
+<p class="req-fields"><em>* Required Fields</em><br>
 	<fieldset>
 		<legend>Primary Medical Insurance</legend>
 		<label>* Do you have medical insurance?</label>
