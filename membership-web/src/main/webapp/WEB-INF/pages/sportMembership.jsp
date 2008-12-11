@@ -5,7 +5,6 @@
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" height="53" /></div>
 <div id="stg-pagetitle">Member Information</div>
 <p class="req-fields"><em>* Required Fields</em><br>
-<strong>&nbsp;If you are renewing, please check your cart on the right before adding other memberships.</strong></p>
 
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
@@ -81,7 +80,7 @@
 			<label></label>
 			<input type="button" class="btn-green-sm" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);">
 		</c:if>
-		<label style="width:300px;">Note: Athletes may choose more than one sport.</label>
+		<label style="width:300px;">Note: Members may choose more than one sport.</label>
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">
 		<fieldset>
