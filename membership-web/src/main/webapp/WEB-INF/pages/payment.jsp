@@ -75,7 +75,7 @@
 		<label for="">* Last Name:</label>
 		<form:input path="paymentBean.lastName" maxlength="50"/><br/>
 --%>
-		<label for="">Street Address (enter only the NUMBER portion):</label>
+		<label for="">Street Address (enter only the NUMERIC portion):</label>
 		<form:input path="paymentBean.address" maxlength="60"/><br/>
 <%--
 		<label for="">* City:</label>
@@ -89,7 +89,9 @@
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<input id="backButton" type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();">
-		<br><br><br>DO NOT press Continue multiple times.
+		<br><br><br>DO NOT press Continue multiple times.<br>
+		Doing so may result in your bank placing a hold on these funds.  Your bank may take a few 
+		days to clear these holds on your account.<br>
 		If you receive a decline message please call USSA Member Services for assistance at 435.647.2666
 	</fieldset>
 </form:form>
