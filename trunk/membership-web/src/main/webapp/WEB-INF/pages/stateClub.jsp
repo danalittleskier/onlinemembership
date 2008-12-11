@@ -113,10 +113,9 @@
 		<!-- only asking this for new registrations -->
 		<c:choose>
 			<c:when test="${empty accountBean.member.id}">
-				<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
 				<fieldset>
 					<legend>Ethnicity</legend>
-					<br/>
+					<p><em>USSA is required to report on the participation of minorities in our athletic programs.</em></p>
 					<label for="">* What is your ethnicity?</label>
 					<%-- TODO: pull these from the categorycode table where category='ETHNICITY' and Active = 'Y' order by sort_order --%>
 					<form:select path="member.ethnicity">
