@@ -27,10 +27,10 @@
 	<c:if test="${not empty accountBean.membershipsBean.unrestrictedMemberships}">
 		<fieldset>
 			<legend>Your Membership Verification</legend>
-			<p>Please print your membership verification. This document may be used as proof of membership in place of your membership card. Membership cards are mailed beginning the first week of July each season.</p>
+			<p>Please print your digital membership card.</p>
 			<input class="btn-green" type="button" onclick="window.open('<c:url value="/certificate.html"><c:param name="id" value="${accountBean.member.id}"/></c:url>');" value="Print Verification" name="button"/>
 			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
-				<p>Membership verifications will only display memberships not requiring screening until positive results are received by USSA.</p>
+				<p>Your digital membership card will only display memberships not requiring screening until positive results are received by USSA.</p>
 			</c:if>
 		</fieldset>
 	</c:if>

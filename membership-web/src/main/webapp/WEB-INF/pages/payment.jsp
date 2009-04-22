@@ -89,17 +89,21 @@
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<input id="backButton" type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 		<input id="continueButton" type="submit" class="btn-green" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();">
-		<br><br><br>DO NOT press Continue multiple times.<br>
-		Doing so may result in your bank placing a hold on these funds.  Your bank may take a few 
-		days to clear these holds on your account.<br>
-		If you receive a decline message please call USSA Member Services for assistance at 435.647.2666
+		<br><br><br>
 	</fieldset>
 </form:form>
 </div>
 
 <!-- RIGHT column -->
 <div id="stg-twocol-secondary">
-
+<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
+<p>DO NOT press Continue multiple times.<br>
+<p>Doing so may result in your bank placing a hold on these funds.  Your bank may take a few 
+		days to clear these holds on your account.<br>
+		If you receive a decline message please call USSA Member Services for assistance at 435.647.2666
+		</p>
+		
+</div></div></div></div>
 </div>
 <div class="clear"></div>
 
