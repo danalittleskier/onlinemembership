@@ -893,12 +893,25 @@ public class RulesBLImpl implements RulesBL
 		if(ussaId != null)
 		{
 			MemberSeason memberSeason = memberSeasonDao.getMostRecentBackgroundCheck(ussaId);
+			
 			if(memberSeason != null)
 			{
 				int backgroundCheckSeason = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
-				if(dateBL.calculateCurrentRenewSeason() <= (backgroundCheckSeason + 3))
+				if(dateBL.calculateCurrentRenewSeason() < (backgroundCheckSeason + 3) )//If check was less than 3 yrs ago than background check is current
 				{
 					return true;
+				}else{//due for background check-
+					
+					//Check the renewal flag set by membership to see if we send or ignore this year
+					MemberSeason memberBackground = memberSeasonDao.getOnlyRenewalNeededBackgroundFlag(ussaId,dateBL.getCurrentRenewSeason());
+					
+					//memberBackground is not empty if need backgrnd check
+					if(memberBackground!=null){
+						return false;
+					}else{
+						return true;
+					}
+					
 				}
 			}
 		}

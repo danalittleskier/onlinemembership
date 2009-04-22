@@ -13,9 +13,10 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 	{
 		super(MemberSeason.class);
 	}
-
+  
 	public MemberSeason getMostRecentBackgroundCheck(Long ussaId)
 	{
+		
 		List<MemberSeason> seasons = (List<MemberSeason>) getHibernateTemplate()
 				.find("from MemberSeason s where s.memberSeasonPk.member.id = ? and s.memberSeasonPk.season = " +
 						"(select max(ms.memberSeasonPk.season) from MemberSeason ms where ms.memberSeasonPk.member.id = ? and ms.backgroundCheckFlag = 'Y')",
@@ -31,6 +32,22 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 		}
 	}
 	
+	public MemberSeason getOnlyRenewalNeededBackgroundFlag(Long ussaId,String season){
+		
+		List<MemberSeason> seasons = (List<MemberSeason>) getHibernateTemplate()
+				.find("from MemberSeason s where s.memberSeasonPk.member.id = ? " +
+						"and background_check_renewal_season = ?))",
+						new Object[]{ussaId, season});
+		
+		if(seasons != null && seasons.size() > 0)
+		{
+			return seasons.get(0);
+		}
+		else
+		{
+			return null;
+		}
+	}
 	public MemberSeason hasMemberSeasonForCurrentSeason(MemberSeasonPk memberSeasonPk){
 		List<MemberSeason> season = (List<MemberSeason>) getHibernateTemplate()
 		     	.find("from MemberSeason s where s.currentFlag='Y' and s.memberSeasonPk.member.id = ? and s.memberSeasonPk.season = ?",

@@ -63,6 +63,17 @@ public class MemberSeason implements Serializable
 
 	@Column(name = "BACKGROUND_CHECK_RECEIVE_DATE", nullable = true, unique = false)
 	private Date backgroundCheckReceiveDate;
+	
+	@Column(name = "BACKGROUND_CHECK_RENEWAL_SEASON",  nullable = true, unique = false)
+	private String backgroundRenewalSeason;
+
+	public String getBackgroundRenewalSeason() {
+		return backgroundRenewalSeason;
+	}
+
+	public void setBackgroundRenewalSeason(String backgroundRenewalSeason) {
+		this.backgroundRenewalSeason = backgroundRenewalSeason;
+	}
 
 	public MemberSeasonPk getMemberSeasonPk()
 	{
