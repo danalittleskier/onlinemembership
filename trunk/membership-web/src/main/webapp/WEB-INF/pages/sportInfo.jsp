@@ -51,8 +51,6 @@
 		<p><strong>Official: </strong>Access to clinics, certification programs and educational materials supporting event officiating.</p>
 		<p><strong>Coach: </strong>Includes both USSA alpine coach and official memberships, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event.</font></em></p>  
-		<p><strong> Coach: </strong>Includes both USSA  alpine coach and alpine official memberships including access to USSA coaches programs, clinics, certification programs and educational materials.<br>
-		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event.</font></em></p>  		
 		<h3>Attention Coaches and Officials</h3>
 		<p>All coaches and officials are required to undergo periodic background screening.</p>
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
@@ -100,7 +98,7 @@
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
-		<p><strong>Adaptive Competitor: </strong>For athletes participating primarily in  events. </p>
+		<p><strong>Adaptive Competitor: </strong>For athletes participating primarily in adaptive events. </p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.<br> 
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA cross country ranking list.</font></em></p>
 		<h3>Coaches & Officials: You may choose one of the memberships from below if 15 years of age or older.</h3>

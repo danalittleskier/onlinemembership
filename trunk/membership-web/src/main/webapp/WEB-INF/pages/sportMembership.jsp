@@ -107,16 +107,7 @@
 		<fieldset>
 			<legend>Magazine Options</legend>
 			<table style="margin-left:195px;">
-					<tr>
-						<td valign="top" class="checkbox">
-							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value=""/>
-						</td>
-						<td valign="top" width="100%">
-							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
-								None
-							</label>
-						</td>
-					</tr>
+					
 				<c:forEach var="magazineItem" items="${accountBean.magazineItems}" varStatus="varStatus">
 					<tr>
 						<td valign="top" class="checkbox">
@@ -129,6 +120,16 @@
 						</td>
 					</tr>
 				</c:forEach>
+				<tr>
+						<td valign="top" class="checkbox">
+							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value=""/>
+						</td>
+						<td valign="top" width="100%">
+							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
+								None
+							</label>
+						</td>
+					</tr>
 			</table>
 		</fieldset>
 	</c:if>
