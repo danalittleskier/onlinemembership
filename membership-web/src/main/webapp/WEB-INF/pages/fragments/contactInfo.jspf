@@ -50,7 +50,7 @@
 		<c:choose>
 			<c:when test="${empty accountBean.birthDate or not empty status.errorMessages}">
 				<form:input id="birthDate" path="birthDate" size="13" maxlength="10"/>
-				<span style="padding-left:5px;" class="data-input">(MM/DD/YYYY)</span>
+				<span style="padding-left:5px;" class="data-input">Birthdate must be formatted as MM/DD/YYYY</span>
 
 				<%--
 				<a title="Select Date" href="#" id="birthDateCalendar">
