@@ -98,7 +98,7 @@
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
-		<p><strong>Adaptive Competitor: </strong>For athletes participating primarily in adaptive events. </p>
+		<p><strong>Adaptive Cross Country Competitor: </strong>For athletes participating primarily in adaptive events. </p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.<br> 
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA cross country ranking list.</font></em></p>
 		<h3>Coaches & Officials: You may choose one of the memberships from below if 15 years of age or older.</h3>
