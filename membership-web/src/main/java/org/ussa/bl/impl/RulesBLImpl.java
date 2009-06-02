@@ -314,16 +314,16 @@ public class RulesBLImpl implements RulesBL
 
 			if(cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() > 0)
 			{
-				if(hasOnlyYouthMemberships(accountBean))
-				{
-					magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES);
-				}
-				else
-				{
+				//if(hasOnlyYouthMemberships(accountBean))
+				//{
+				//	magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES);
+				//}
+				//else
+				//{
 					magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
 					magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
 					magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
-				}
+				//}
 			}
 
 			Integer age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
