@@ -115,6 +115,12 @@
 						<td valign="top" class="checkbox">
 							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value="${magazineItem.id}"/>
 						</td>
+						<script type="text/javascript" defer="defer">
+							if('MRCE' == document.getElementById('mag0').value)
+							{
+								document.getElementById('mag0').checked = "checked";
+							}
+						</script>
 						<td valign="top" width="100%">
 							<label for="mag${varStatus.index}" class="checkbox" style="text-align:left; width:auto;">
 								<c:out value="${magazineItem.renewDescription}"/>
