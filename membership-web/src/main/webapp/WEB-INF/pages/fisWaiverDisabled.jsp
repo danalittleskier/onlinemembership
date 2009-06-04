@@ -25,35 +25,48 @@ This is a waiver of certain legal rights.  Please read carefully before signing.
 
 <p>
 
-I make the following declaration:
+I understand that as an athlete licensed to compete in IPC Competitions, that I am participating in events which have ongoing international and historical significance, and as a condition of being licensed to compete and in consideration of the acceptance of my participation in IPC competitions I agree as follows; 
 <br/>
-1. Identification of Risk
+1.	to be filmed, televised, photographed, identified and otherwise recorded during any IPC Competition, the IPC and anyone authorized by the IPC shall be entitled to keep these images and to use them for any purpose in relation to the promotion of the Paralympic Movement;
 <br/>
-I am fully aware and conscious of the dangers involved in the performance of all IPC – Winter Sports calendared sports and of the dangers caused by gravitational forces, be it during training runs or during the actual competition. I recognize that there is a risk in reaching excellent results which requires me to stretch my physical abilities to the absolute limit. I know andaccept, that by engaging in such competitive sports, life and physical safety could be en-dangered.Furthermore, I know and accept that the above mentioned dangers may threaten anyone within the com-petition and training area, and may include environmental conditions, technical equipment, and atmospheric influen-ces as well as natural or manmade obstacles. I am aware that certain movements or actions cannot always be anti-cipated or controlled and therefore cannot be avoided or prevented through safety measures.
+2.	that all photographs and moving images taken by me at any IPC Competition, including those of athletes competing within any official venue during these competitions, shall be used solely for personal and non-commercial purposes, unless prior written consent is obtained from the IPC;
 <br/>
-2. Acknowledgment of Risk
+3.	to comply with the IPC Handbook, the IPC Anti-Doping Code, the IPC Sports Technical Rules of the sport in which I am participating, and any other rules or regulations that apply to my participation at an IPC Competition (hereinafter referred to as 'the IPC Sport Rules').  These documents can be found on or linked through the IPC website or can be obtained upon written request to the IPC Headquarters and I understand that I am deemed to have read and understood them;
 <br/>
-I acknowledge that it is up to me personally to assess whether any competition or training course is too difficult for me. I agree that I will conduct my own inspection and I will immediately notify the jury of any obvious safety concerns I may have. By star-ting in a competition, or taking part in training I acknowledge acceptance of the suitability and condition of the courses. I also agree that I am responsible for the choice of the equipment Ihave used and for the selection of my line through the course and my ability to handle this line .
+4.	that my entries to IPC Competitions will be administered through my National Paralympic Committee (NPC) or IPC recognized National Sport Federation (if applicable);<br/>
 <br/>
-3. Personal Liability
+5.	to accept the criteria of eligibility, qualification and participation laid down by the IPC for the various IPC Competitions;
 <br/>
-I understand that I may be found personally liable to third parties for damages arising from bodily injury or property damage they have suffered as a result of my participation in training or competition. I agree that it is not the responsibility
-of the organizer to inspect or supervise my equipment. I agree that I will make myself familiar with the aplicable competition regulations before taking part in such competition.
+6.	to abide by the principles of fair-play and non-violence and to behave myself accordingly during the IPC Competition;<br/>
 <br/>
-4. Dispute Resolution
+7.	not to take any substance or use methods prohibited by the IPC Anti-Doping Code;
 <br/>
-I agree that prior to commencing a claim in any court of competent jurisdiction, I shall first submit my claim before an Arbitration Court which is constituted in accordance with the Statutes and Regulations of the Court of Arbitration for Sport (CAS). In case I am not in agreement with the decision of this Court, I am free to bring or re-institute any such claim before any Court of compe-tent jurisdiction.
-This Athlete's Declaration is also binding on any relatives, personal representatives, heirs, successors, beneficiaries, next of kin or assigns who might pursue any legal action.
+8.	not to participate or assist in any gambling or betting activities associated with any IPC event;
 <br/>
+9.	not to allow my image and/or name in relation to my sport performance(s) during the IPC Competition to be exploited by third parties for commercial purposes without prior approval by the IPC;
 <br/>
+10.	not to condition my participation in any IPC Competition on any financial return whatsoever;
+<br/>
+11.	to abide by the IPC rules and regulations for manufacturer trademarks on clothing and equipment for the IPC Competition; and
+<br/>
+12.	to abide by the classification rules and regulations of the IPC and the sport. 
+<br/>
+<u>ACCEPTANCE OF SPORTS TECHNICAL SUPREME AUTHORITY</u>
+<br/>
+I recognize and accept that the sports technical rules, being all rules which relate to competition, field-of-play and classification, for my sport during any IPC Competition are under the authority of the IPC and that any disputes which arise shall be resolved by the IPC whose decision on such matters is final and enforceable.
+<br/>
+I acknowledge and accept that decisions relating to the sports technical rules are not subject to further appeal beyond the decision made in the sport-specific appeal processes as set out in the respective sports technical rules or classification appeal processes as set out in the sport rules applicable to the respective IPC Competition for which I am competing.  I shall not institute any claim, arbitration or litigation, or seek any other form of relief in any other court or tribunal in relation to such decisions.
+<br/>
+<u>ACCEPTANCE OF BINDING ARBITRATION</u>
+<br/>
+I acknowledge and accept that any dispute outside the realm of the sports technical rules arising during the IPC Competitions shall be submitted exclusively to the Court of Arbitration for Sport (CAS). Any such dispute shall be determined in accordance with the CAS Code for Sports-Related Arbitration, save for competitions covered by the CAS Ad hoc arbitration rules where I agree that the Ad hoc rules shall govern the procedure for dispute resolution. The decisions of CAS are final, non-appealable and enforceable.
+<br/>
+<u>ACCEPTANCE OF RISK AND RELEASE OF CLAIMS</u>
+<br/>
+I acknowledge that I participate in the IPC Competitions at my own risk; I will take all reasonable measures to protect myself and other competitors, officials and spectators from suffering injury or other harm. I also acknowledge that I am responsible for all property I bring on to all IPC Competition sites and that the Local Organizing Committees and the IPC accept no responsibility for any loss or damage to such properties.
+</br>
 
-I have read the above Athlete's Declaration.
-<br/>
-<br/>
-
-CAN/USA:
-Notwithstanding anything contained herein to the contrary, I agree that for all activities organized by my National Federation or affiliated club, the National Federation may elect to enforce any waiver, release of liability, indem-nity or hold harmless agreement made with me that is more restrictive than this Athlete's Declaration and I agree to bound by that election.
-<br/>
+I release the LOCs, the IPC and the IPSF(s) governing my sport(s),and their respective executive members, directors, officers, employees, volunteers, contractors or agents, from any liability (to the extent permitted by law) for any loss, injury or damage suffered by me in relation to my participation in any IPC Competitions.<br/>
 <br/>
 
 For Athletes of minority age (according to national laws):
