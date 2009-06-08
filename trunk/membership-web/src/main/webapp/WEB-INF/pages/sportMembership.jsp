@@ -128,7 +128,7 @@
 						</td>
 					</tr>
 				</c:forEach>
-				<tr>
+				  <tr>
 						<td valign="top" class="checkbox">
 							<form:radiobutton id="mag${varStatus.index}" path="magazineOption" value=""/>
 						</td>
@@ -138,6 +138,7 @@
 							</label>
 						</td>
 					</tr>
+					
 			</table>
 		</fieldset>
 	</c:if>
