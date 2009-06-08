@@ -33,11 +33,11 @@ I understand that as an athlete licensed to compete in IPC Competitions, that I 
 <br/>
 3.	to comply with the IPC Handbook, the IPC Anti-Doping Code, the IPC Sports Technical Rules of the sport in which I am participating, and any other rules or regulations that apply to my participation at an IPC Competition (hereinafter referred to as 'the IPC Sport Rules').  These documents can be found on or linked through the IPC website or can be obtained upon written request to the IPC Headquarters and I understand that I am deemed to have read and understood them;
 <br/>
-4.	that my entries to IPC Competitions will be administered through my National Paralympic Committee (NPC) or IPC recognized National Sport Federation (if applicable);<br/>
+4.	that my entries to IPC Competitions will be administered through my National Paralympic Committee (NPC) or IPC recognized National Sport Federation (if applicable);
 <br/>
 5.	to accept the criteria of eligibility, qualification and participation laid down by the IPC for the various IPC Competitions;
 <br/>
-6.	to abide by the principles of fair-play and non-violence and to behave myself accordingly during the IPC Competition;<br/>
+6.	to abide by the principles of fair-play and non-violence and to behave myself accordingly during the IPC Competition;
 <br/>
 7.	not to take any substance or use methods prohibited by the IPC Anti-Doping Code;
 <br/>
