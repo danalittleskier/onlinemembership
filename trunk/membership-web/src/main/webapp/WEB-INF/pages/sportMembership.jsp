@@ -140,6 +140,7 @@
 					</tr>
 					
 			</table>
+			*By opting in to Ski Racing, you are agreeing to receive both printed and emailed issues.
 		</fieldset>
 	</c:if>
 	<fieldset>
