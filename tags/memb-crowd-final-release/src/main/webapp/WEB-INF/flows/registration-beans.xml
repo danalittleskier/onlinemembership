@@ -1,0 +1,37 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+		"http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+
+	<bean id="registrationAction" class="org.ussa.spring.flows.registration.RegistrationAction">
+		<property name="addressDao" ref="addressDao"/>
+		<property name="clubDao" ref="clubDao"/>
+		<property name="memberClubDao" ref="memberClubDao"/>
+		<property name="divisionDao" ref="divisionDao"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="stateDao" ref="stateDao"/>
+		<property name="nationDao" ref="nationDao"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="memberLegalDao" ref="memberLegalDao"/>
+		<property name="memberSeasonDao" ref="memberSeasonDao"/>
+		<property name="rulesBL" ref="rulesBL"/>
+		<property name="dateBL" ref="dateBL"/>
+		<property name="userManager" ref="userManager"/>
+		<property name="securityContext" ref="securityContext"/>
+		<property name="universalDao" ref="universalDao"/>
+		<property name="memberRegistrationService" ref="memberRegistrationService"/>
+	</bean>
+
+	<!-- Form objects -->
+	<bean id="accountBean" class="org.ussa.spring.flows.FormActionTemplate">
+		<property name="formObjectName" value="accountBean"/>
+		<property name="formObjectClass" value="org.ussa.beans.AccountBean"/>
+		<property name="formObjectScope" value="FLOW"/>
+		<property name="validator" ref="dummyValidator"/>
+	</bean>
+
+	<bean id="dummyValidator" parent="validatorTemplate">
+		<property name="formName" value="dummyValidator"/>
+	</bean>
+
+</beans>

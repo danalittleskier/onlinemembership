@@ -1,0 +1,13 @@
+.layout_wrapper
+{
+	width:100%;
+	background-image: url(../../images/ussa/layout_bg.png);
+	background-repeat:repeat-x;
+	background-color:#F6F6F6;
+}
+
+	.layout_wrapper .layout
+	{
+		width:960px;
+		height:100%;
+	}

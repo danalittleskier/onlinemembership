@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1.dtd">
+
+<form-validation>
+	<global>
+		<constant>
+			<constant-name>phone</constant-name>
+			<!-- <constant-value>^\(?(\d{3})\)?[-| ]?(\d{3})[-| ]?(\d{4})$</constant-value> -->
+			<constant-value>^\d{10}\d*$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>zip</constant-name>
+			<constant-value>^\d{5}\d*$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>postalCode</constant-name>
+			<constant-value>^[A-Za-z\s\d\-]{5,12}$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>currency</constant-name>
+			<constant-value>^\$?\d{1,3}(,?\d{1,3})*\.?(\d{1,2})?$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>currencyNoCents</constant-name>
+			<constant-value>^\$?\d{1,3}(,?\d{1,3})*\.?(0{1,2})?$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenParentInfoNotRequired</constant-name>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenParentInfoNotRequiredOrUssaIdIsNull</constant-name>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((member.id == null) or (*this* != null)))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenMemberIdNotPresent</constant-name>
+			<constant-value>((member.id != null) or (*this* != null))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenNoInsurance</constant-name>
+			<constant-value>((hasInsurance != 'true') or (*this* != null))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>validWhenTrueOrParentInfoNotRequired</constant-name>
+			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* == 'Y'))</constant-value>
+		</constant>
+		<constant>
+			<constant-name>alpha</constant-name>
+			<constant-value>^[A-Za-z\s]*$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>name</constant-name>
+			<constant-value>^[A-Za-z\s\'\-\.]*$</constant-value>
+		</constant>
+		<constant>
+			<constant-name>alphaNumeric</constant-name>
+			<constant-value>^[0-9A-Za-z\s\'\-\.#,//]*$</constant-value>
+		</constant>
+	</global>
+	<formset>
+		<form name="fileUpload">
+			<field property="name" depends="required">
+				<arg0 key="uploadForm.name"/>
+			</field>
+			<!-- Client-side Javascript won't catch this in IE, but server-side will -->
+			<field property="file" depends="required">
+				<arg0 key="uploadForm.file"/>
+			</field>
+		</form>
+
+	</formset>
+
+	<formset>
+		<!--
+			Define form validation config in validation-forms.xml
+		  -->
+
+		<!-- This is used. Do not delete. This is needed just for setup reasons-->
+		<form name="dummyValidator">
+			<field property="member"/>
+		</form>
+
+		<form name="contactInfo">
+			<field property="alreadyAMember" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.im.a.ussa.member"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="member.firstName" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="registration.firstName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.middleName" depends="mask">
+				<msg name="mask" key="errors.alpha"/>
+				<arg0 key="registration.middleName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alpha}</var-value>
+				</var>
+			</field>
+			<field property="member.lastName" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="registration.lastName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.suffixName" depends="mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="label.suffix" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="birthDate" depends="required, date">
+				<arg0 key="user.birth.date" />
+				<var>
+					<var-name>datePatternStrict</var-name>
+					<var-value>MM/dd/yyyy</var-value>
+				</var>
+			</field>
+			<field property="member.email" depends="required, email">
+				<msg name="mask" key="errors.email"/>
+                <arg0 key="registration.email"/>
+                <var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+            </field>
+			<field property="member.gender" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="user.gender" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="address.company" depends="mask">
+				<msg name="mask" key="errors.alphaNumeric"/>
+				<arg0 key="label.company" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
+				</var>
+			</field>
+			<field property="address.deliveryAddress" depends="required, mask">
+				<msg name="mask" key="errors.alphaNumeric"/>
+				<arg0 key="user.address.address" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
+				</var>
+			</field>
+			<field property="address.city" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="user.address.city" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="address.postalCode" depends="required, mask">
+				<arg0 key="user.address.postalCode" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${postalCode}</var-value>
+				</var>
+			</field>
+			<field property="address.country" depends="required, mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="user.address.country" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneHome" depends="required, mask">
+				<arg0 key="user.home.primary.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneWork" depends="mask">
+				<arg0 key="user.work.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneOther" depends="mask">
+				<arg0 key="user.other.phone" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="address.phoneFax" depends="mask">
+				<arg0 key="user.fax" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1First" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.firstName" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Last" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.lastName" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Relation" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.relationship" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Email" depends="validWhen, email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequiredOrUssaIdIsNull}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent2Email" depends="email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+			</field>
+		</form>
+
+		<form name="parentInfo">
+			<field property="member.parentInfo.parent1First" depends="validWhen, mask">
+				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="label.parent.guardian.firstName" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Last" depends="validWhen, mask">
+				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="label.parent.guardian.lastName" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Relation" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.relationship" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Email" depends="validWhen, email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1First" depends="mask">
+				<msg name="mask" key="errors.name"/>
+				<arg0 key="label.parent.guardian.firstName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent1Last" depends="mask">
+				<arg0 key="label.parent.guardian.lastName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+			<field property="member.parentInfo.parent2Email" depends="email">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.parent.guardian.email.address" />
+			</field>
+		</form>
+
+		<form name="stateClub">
+			<field property="member.ethnicity" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.ethnicity" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="usCitizen" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.citizenship" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="member.nationCode" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="label.nation" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenMemberIdNotPresent}</var-value>
+				</var>
+			</field>
+			<field property="member.stateCode" depends="required">
+				<arg0 key="user.address.province" />
+			</field>
+			<field property="clubId" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<arg0 key="registration.club" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* != -1)</var-value>
+				</var>
+			</field>
+			<field property="divisionCode" depends="required">
+				<arg0 key="errors.division.code.problem" />
+			</field>
+		</form>
+
+		<form name="sportMembership">
+			<field property="membershipId" depends="required">
+				<arg0 key="registration.membership" />
+			</field>
+			<field property="sportId" depends="required">
+				<arg0 key="registration.sport" />
+			</field>
+			<field property="contributionSportId" depends="validWhen">
+				<msg name="validWhen" key="errors.donation.both.required"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>((((*this* == null) and (contributionAmount == null)) or ((*this* != null) and (contributionAmount != null))) or ((*this* != null) and (contributionAmount == null)))</var-value>
+				</var>
+			</field>
+			<field property="contributionAmount" depends="mask">
+				<msg name="mask" key="errors.currency.no.cents"/>
+				<arg0 key="label.contribution.amount" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${currencyNoCents}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="sportMembershipNext">
+			<field property="cartBean.lineItems" depends="membershipRequired">
+				<msg name="membershipRequired" key="errors.membership.required"/>
+			</field>
+			<field property="contributionSportId" depends="validWhen">
+				<msg name="validWhen" key="errors.donation.both.required"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>((((*this* == null) and (contributionAmount == null)) or ((*this* != null) and (contributionAmount != null))) or ((*this* != null) and (contributionAmount == null)))</var-value>
+				</var>
+			</field>
+			<field property="contributionAmount" depends="mask">
+				<msg name="mask" key="errors.currency.no.cents"/>
+				<arg0 key="label.contribution.amount" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${currencyNoCents}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="fisWaiver">
+			<field property="memberLegal.fisReleaseForm" depends="required">
+				<msg name="required" key="errors.must.accept.or.reject"/>
+			</field>
+			<field property="fisWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((*this* == 'Y') or (memberLegal.fisReleaseForm == 'N')))</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="fisWaiverDisabled">
+			<field property="memberLegal.ipcReleaseForm" depends="required">
+				<msg name="required" key="errors.must.accept.or.reject"/>
+			</field>
+			<field property="fisWaiverDisabledParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or ((*this* == 'Y') or (memberLegal.ipcReleaseForm == 'N')))</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="extras">
+			<field property="extrasBean.alpineOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.alpineQty == null)) or ((*this* != null) and (extrasBean.alpineQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.alpineQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.freestyleOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.freestyleQty == null)) or ((*this* != null) and (extrasBean.freestyleQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.freestyleQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.crossCountryOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.crossCountryQty == null)) or ((*this* != null) and (extrasBean.crossCountryQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.crossCountryQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.jumpingOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.jumpingQty == null)) or ((*this* != null) and (extrasBean.jumpingQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.jumpingQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.boardingOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.boardingQty == null)) or ((*this* != null) and (extrasBean.boardingQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.boardingQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.generalOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.generalQty == null)) or ((*this* != null) and (extrasBean.generalQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.generalQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.decalSkiQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.decalBoardQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="medical">
+			<field property="hasInsurance" depends="required">
+				<msg name="required" key="errors.required.medical"/>
+				<arg0 key="label.has.medical.insurance" />
+			</field>
+			<field property="memberLegal.insuranceCompany" depends="validWhen">
+				<msg name="validWhen" key="errors.required"/>
+				<!--  <msg name="mask" key="errors.alphaNumeric"/> -->
+				<arg0 key="label.insurance.company.name" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenNoInsurance}</var-value>
+				</var>
+				<!--  <var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
+				</var> -->
+			</field>
+			<field property="memberLegal.insurancePolicy" depends="validWhen, mask">
+				<msg name="validWhen" key="errors.required"/>
+				<msg name="mask" key="errors.alphaNumeric"/>
+				<arg0 key="label.policy.id.number" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenNoInsurance}</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${alphaNumeric}</var-value>
+				</var>
+			</field>
+			<field property="memberLegal.insurancePhone" depends="mask">
+				<arg0 key="user.phoneNumber" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${phone}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="medicalWaiver">
+			<field property="memberLegal.insuranceWaiver" depends="validWhen">
+				<msg name="validWhen" key="errors.must.agree.to.terms"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+			<field property="medicalWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="releaseWaiver">
+			<field property="memberLegal.releaseWaiver" depends="validWhen">
+				<msg name="validWhen" key="errors.must.agree.to.terms"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+			<field property="releaseWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+			<field property="memberLegal.guardianName" depends="validWhen, mask">
+				<msg name="mask" key="errors.name"/>
+				<msg name="validWhen" key="errors.guardian.name.required"/>
+				<arg0 key="label.parent.guardian.name" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+		</form>
+
+		<form name="payment">
+			<field property="paymentBean.paymentType" depends="required">
+				<arg0 key="label.credit.card.type" />
+			</field>
+			<field property="paymentBean.cardNumber" depends="required, creditCard">
+				<arg0 key="label.credit.card.number" />
+			</field>
+			<field property="paymentBean.expireMonth" depends="required">
+				<arg0 key="label.expiration.month" />
+			</field>
+			<field property="paymentBean.expireYear" depends="required">
+				<arg0 key="label.expiration.year" />
+			</field>
+			<field property="paymentBean.securityCode" depends="required">
+				<arg0 key="label.security.code" />
+			</field>
+		</form>
+	</formset>
+</form-validation>

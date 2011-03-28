@@ -1,0 +1,222 @@
+/*---------------------------------------------------------------------*/
+/* USSA Membership Registration MAIN Cascading Style Sheet */
+/* Author: Erik Pettee, Sugar House Creative */
+/* www.SugarHouseCreative.com */
+/*---------------------------------------------------------------------*/
+
+/* Notes
+-------------------------------------------------------------------------
+The USSA.org base template styles are stored and referenced in the 
+/styles/ussa-base/ directory. They represent the base template styles 
+created by USSA. All content-related styles created by STG (Erik, Sugar 
+House Creative) reside up one level in the root of the /styles/ directory. 
+
+The same applies to images and scripts - USSA base template images are 
+located in /images/ussa-base/ and USSA base scripts are located in 
+/scripts/ussa-base/ respectively. All STG-created images and scripts 
+reside in the roots of these too directories (/images/ and /scripts/).
+*/
+
+/* USSA Base Style Fixes / Updates
+---------------------------------------------------------------------- */
+.page_advertise_wrapper {margin:0 auto; text-align:center;} 
+.page_header_wrapper {margin:0 auto; text-align:center;}
+.topmenu_wrapper .topmenu {margin:0 auto; text-align:center;padding-left:0;}
+.bottom_wrapper  {margin:0 auto; text-align:center;}
+.dotted_separator {width:980px; margin:0 auto;}
+
+.link-submit {background:none; color:#4800FF; border:0; cursor:pointer;}
+
+/* General
+---------------------------------------------------------------------- */
+.clear {clear:both;}
+p {margin:0 0 15px 0;}
+ul {margin-left:20px;}
+a img {border:0;}
+
+/* Header
+---------------------------------------------------------------------- */
+#stg-header {background:#fff;}
+
+/* Content
+---------------------------------------------------------------------- */
+#stg-pagetitle {
+	font:bold 18px arial,verdana,sans-serif;
+	width:100%;
+	border-bottom:1px solid #ccc;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+#stg-content {
+	width:920px;
+	margin:0 auto;
+	min-height:400px;
+  	height:auto !important;
+	height:400px;
+	background:#fff;
+	padding:20px 20px 0 20px;
+}
+
+#stg-onecol-primary {
+	float:left;
+	width:100%;
+}
+
+#stg-twocol-primary {
+	float:left;
+	width:490px;
+	margin-right:20px;
+}
+
+#stg-twocol-secondary {
+	float:left;
+	width:410px;
+}
+
+#stg-progress {
+	width:100%;
+	height:53px;
+	text-align:center;
+	margin-bottom:20px;
+}
+
+/* Content Extras
+---------------------------------------------------------------------- */
+.labelmatch {margin-left:175px;} /* Positions element in line vertically with form inputs */
+.error-text{
+	color:#b22;
+	font-weight:bold;
+}
+
+#center-notice {margin:0 20%;}
+#center-notice table {width:400px; background:#fff; border:1px solid #ccc; border-collapse:collapse;}
+#center-notice th {padding:3px; text-align:left;}
+#center-notice td {padding:3px; border:1px solid #eee;}
+#center-notice td.short {width:20px;}
+#center-notice table input {width:20px;}
+
+.hello {font-size:14px;}
+.stg-mem-links ul {margin-bottom:10px;}
+.stg-mem-links li {list-style-type:none; margin-left:-20px;}
+.stg-calendar-icon {display:block; float:left;}
+
+/* Callout Box
+---------------------------------------------------------------------- */
+.stg-bl {background: url(../images/bl.gif) 0 100% no-repeat #e6e6e6; margin:15px 0;}
+.stg-br {background: url(../images/br.gif) 100% 100% no-repeat;}
+.stg-tl {background: url(../images/tl.gif) 0 0 no-repeat;}
+.stg-tr {background: url(../images/tr.gif) 100% 0 no-repeat;}
+.stg-tr {padding:10px 20px !important; padding:10px 20px 5px 20px;} /* IE 6 hack for bottom padding */
+* + html .stg-tr {padding:10px 20px 5px 20px !important;} /* IE hack for bottom padding */
+.stg-bl {line-height:150%;}
+
+.stg-tr p {clear:both; margin:10px 0;}
+
+/* Callout styles */
+.stg-omr-header {
+	font:24px georgia,"times new roman",serif;
+	margin:0 0 20px 0;
+}
+ul#stg-omr {margin:20px 20px 0 20px;}
+ul#stg-omr li{margin:0 0 7px 0;}
+
+/* Shopping Cart
+---------------------------------------------------------------------- */
+#cart {
+	width:100%;
+	background:#fff;
+	border-collapse:collapse;
+	border:1px solid #666; 
+	margin:0;
+}
+#cart th {border-bottom:1px solid #666; font-weight:bold; padding:5px;}
+#cart tr.alt {background:#eee;}
+#cart td {padding:5px 10px;}
+#cart td.item, #cart th.item {
+	width:80%;
+}
+#cart td.price {text-align:right;}
+#cart td.indent {text-indent:20px;}
+#cart td.item-remove {white-space:nowrap; border-right:1px solid #666;}
+#cart td.item-remove a, #cart td.item-remove a:visited {color:#990000;}
+
+#carttotal {
+	width:100%;
+	border-collapse:collapse;
+	margin:10px 0 0 0;
+}
+#carttotal td {padding:5px 10px;}
+#carttotal td.total {
+	text-align:right; 
+	border:0; 
+	background:none; 
+	font-weight:bold; 
+	width:80%; 
+	padding-right:10px;
+}	
+#carttotal td.price {
+	text-align:right; 
+	font-weight:bold;
+	background:#fff;
+	border:1px solid #666; 
+}
+
+#stg-data-review {
+	width:100%;
+	background:#fff;
+	border-collapse:collapse;
+	margin:20px 0;
+}
+#stg-data-review th {
+	text-align:left;
+	border-bottom:1px solid #666;
+	font-size:14px;
+}
+#stg-data-review th.edit {text-align:right; font-weight:normal;}
+#stg-data-review td {
+	padding:7px 10px 0 0;
+}
+#stg-data-review .data-label {width:40%; text-align:right; white-space:nowrap;}
+#stg-data-review .data-text {}
+#stg-data-review .data-text-none {color:#999;}
+
+/* T-Shirts & Decals
+---------------------------------------------------------------------- */
+
+.extras-header {width:100%; background:url(../images/tile-extras-header.gif) repeat-x;}
+.extras-header p {
+	width:50px; 
+	margin:0 auto;
+	margin-bottom:15px; 
+	background:white; 
+	padding:0 20px; 
+	text-align:center;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.tshirt-row {width:480px;}
+.tshirt-row p {font-weight:bold;}
+.tshirt-row label {width:50px; text-align:left; padding-bottom:20px;}
+.tshirt-row input {width:30px; height:17px;}
+
+.tshirt-1, .tshirt-2, .tshirt-3 {width:160px; float:left; text-align:center;}
+
+.tshirt-menu-1, .tshirt-menu-2, .tshirt-menu-3 {
+	width:110px !important; 
+	width:120px; 
+	margin-left:35px !important; 
+	margin-left:15px; 
+	float:left;
+	}
+.tshirt-menu-2, .tshirt-menu-3 {margin-left:50px !important; margin-left:40px;}
+.tshirt-size, .tshirt-qty {float:left;}
+
+.decal-row {width:410px; margin:0 auto;}
+.decal-row p {font-weight:bold;}
+.decal-row label {width:20px; text-align:left;}
+.decal-row input {width:30px; height:17px;}
+
+.decal-qty {text-align:left;}
+.packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
+.decal {width:195px; float:left; text-align:center; padding:0 5px;}

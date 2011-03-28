@@ -1,0 +1,58 @@
+/*---------------------------------------------------------------------*/
+/* USSA Membership Registration MAIN Cascading Style Sheet */
+/* Author: Erik Pettee, Sugar House Creative */
+/* www.SugarHouseCreative.com */
+/*---------------------------------------------------------------------*/
+
+/* General
+---------------------------------------------------------------------- */
+body {
+	font:85% arial,verdana,sans-serif;
+}
+.clear {clear:both;}
+p {margin-bottom:20px; line-height:100%;}
+
+/* Layout
+---------------------------------------------------------------------- */
+#container {
+	width:500px;
+	padding:50px;
+	/*border:1px solid #ccc;*/
+}
+
+/* Content
+---------------------------------------------------------------------- */
+h1 {
+	width:240px;
+	height:74px;
+	background:url(../images/ussa.gif) no-repeat;
+	text-indent:-5000px;
+}
+
+.header {
+	height: 90px;
+	
+}
+
+@media screen {
+	.footer {
+		height: 60px;
+	}
+	.closeWindowLink {
+		display: block;
+		text-align: right;
+	}
+}
+@media print {
+	.footer {
+		padding-top: 200px;
+		height: 60px;
+	}
+	.closeWindowLink {
+		display: none;
+	}
+}
+#member-data {border:0; margin-collapse:collapse; margin-left:50px;}
+#member-data td {
+	padding:3px 3px 3px 3px;}
+.data-label {font-weight:bold;}

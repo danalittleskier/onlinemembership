@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	   default-lazy-init="true">
+
+	<!-- Add DAOs here -->
+
+	<bean id="addressDao" class="org.ussa.dao.impl.AddressDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="clubDao" class="org.ussa.dao.impl.ClubDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="memberClubDao" class="org.ussa.dao.impl.MemberClubDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="divisionDao" class="org.ussa.dao.impl.DivisionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="divisionAffiliationDao" class="org.ussa.dao.impl.DivisionAffiliationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="ussaIdGeneratorDao" class="org.ussa.dao.impl.UssaIdGeneratorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="memberDao" class="org.ussa.dao.impl.MemberDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="ussaIdGeneratorDao" ref="ussaIdGeneratorDao"/>
+	</bean>
+	<bean id="batchIdGeneratorDao" class="org.ussa.dao.impl.BatchIdGeneratorDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="batchDao" class="org.ussa.dao.impl.BatchDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="batchIdGeneratorDao" ref="batchIdGeneratorDao"/>
+	</bean>
+	<bean id="batchService" class="org.ussa.service.impl.BatchServiceImpl">
+		<property name="batchDao" ref="batchDao"/>
+		<property name="batchTransactionDao" ref="batchTransactionDao"/>
+		<property name="ussaJavaMailer" ref="ussaJavaMailer"/>
+	</bean>
+	<bean id="stateDao" class="org.ussa.dao.impl.StateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="nationDao" class="org.ussa.dao.impl.NationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="parameterTableDao" class="org.ussa.dao.impl.ParameterTableDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="inventoryDao" class="org.ussa.dao.impl.InventoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="renewRuleInvDao" class="org.ussa.dao.impl.RenewRuleInvDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="divDuesRulesDao" class="org.ussa.dao.impl.DivDuesRulesDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="stateDuesRulesDao" class="org.ussa.dao.impl.StateDuesRulesDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+	</bean>
+	<bean id="memberLegalDao" class="org.ussa.dao.impl.MemberLegalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="memberSeasonDao" class="org.ussa.dao.impl.MemberSeasonDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	<bean id="inventoryAddDao" class="org.ussa.dao.impl.InventoryAddDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<!-- Add business logic classes here-->
+	<bean id="dateBL" class="org.ussa.bl.impl.DateBLImpl">
+		<property name="parameterTableDao" ref="parameterTableDao"/>
+	</bean>
+	<bean id="rulesBL" class="org.ussa.bl.impl.RulesBLImpl">
+		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
+		<property name="dateBL" ref="dateBL"/>
+		<property name="divDuesRulesDao" ref="divDuesRulesDao"/>
+		<property name="stateDuesRulesDao" ref="stateDuesRulesDao"/>
+		<property name="memberTransactionDao" ref="memberTransactionDao"/>
+		<property name="memberSeasonDao" ref="memberSeasonDao"/>
+		<property name="clubDao" ref="clubDao"/>
+		<property name="divisionDao" ref="divisionDao"/>
+		<property name="divisionAffiliationDao" ref="divisionAffiliationDao"/>
+	</bean>
+
+	<!-- Add service classes here-->
+	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
+		<property name="testMode" value="false"/>
+		<property name="login" value="3M7s8eKK6"/>
+		<property name="tranKey" value="57wHJDb4865yc935"/>
+	</bean>
+
+	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
+		<property name="dateBL" ref="dateBL"/>
+		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
+		<property name="memberDao" ref="memberDao"/>
+		<property name="memberClubDao" ref="memberClubDao"/>
+		<property name="batchService" ref="batchService"/>
+		<property name="universalDao" ref="universalDao"/>
+		<property name="inventoryAddDao" ref="inventoryAddDao"/>
+		<property name="inventoryDao" ref="inventoryDao"/>
+		<property name="userManager" ref="userManager"/>
+		<property name="securityContext" ref="securityContext"/>
+	</bean>
+
+	<bean id="TimerFactoryBean" class="org.springframework.scheduling.timer.TimerFactoryBean">
+		<property name="scheduledTimerTasks">
+			<list>
+				<!-- Batches need to be closed daily at 4PM -->
+				<bean class="org.ussa.app.TimerTaskScheduler">
+					<property name="timerTask" ref="batchCloseTimerTask"/>
+					<property name="startTime" value="16:00"/><!--  24 hour clock 0:00 - 23:59 -->
+					<property name="period" value="86400000"/><!--  millis between refreshes, 86400000 millis = 24 hours-->
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="batchCloseTimerTask" class="org.ussa.app.BatchCloseTimerTask">
+		<property name="batchService" ref="batchService"/>
+	</bean>
+
+</beans>

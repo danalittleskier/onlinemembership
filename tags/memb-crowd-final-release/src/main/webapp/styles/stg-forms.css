@@ -1,0 +1,151 @@
+/* Forms - General
+---------------------------------------------------------------------- */
+.req-fields {color:#666;}
+
+form {width:100%;}
+
+fieldset {
+	position:relative;
+	border:1px solid #ccc; 
+	padding:10px;
+	margin:0 0 20px 0;
+	clear:both;
+}
+
+fieldset.buttons {border:0;margin-top:-10px !important; margin-top:0; clear:both;}
+
+legend {
+	font:18px tahoma,arial,verdana,sans-serif; 
+	margin-bottom:15px; 
+	padding:0 10px;
+	color:#000;
+}
+
+label {
+	text-align:right;
+	width:190px;
+	float:left;
+	margin-right:5px;
+	margin-top:4px; 
+	margin-bottom:5px;
+	clear:left;
+}
+
+label.radio {display:inline; float:none; width:auto; margin:0; padding:0;}
+
+input {
+	float:left;
+	margin-bottom:5px;
+	height:20px;
+	font-size:12px;
+	line-height:20px;
+}
+
+select, textarea {
+	float:left;
+	margin-bottom:5px;
+	margin-right:5px;
+	width:200px;
+	font-size:12px;
+}
+
+.radios input {display:inline; float:none; width:auto; height:auto; border-style:none; margin-bottom:-1px; padding:0;}
+.radios {float:left;}
+
+.checkbox input {width:15px; margin:1px 4px 0 0;}
+.checkbox label {width:100px; margin:0; text-align:left;}
+
+.textfield-short input {width:30px;}
+
+select {margin-bottom:5px;width:auto;}
+
+input.btn-green, input.btn-green-sm, input.btn-red {
+	padding:3px;
+	margin-right:5px;
+	color:#006600;
+	border:1px outset #ccc;
+	background:url(../images/tile_button_green.gif) repeat-x bottom left;
+	font:14px tahoma,arial,verdana,sans-serif;
+	width:auto;
+	height:30px;
+	margin-bottom:10px;
+}
+input.btn-green-sm {
+	padding:1px 3px 4px 3px;
+	margin-left:5px;
+	font:12px tahoma,arial,verdana,sans-serif;
+	width:auto;
+	height:21px;
+}
+input.btn-red {color:#a91c1c; background:url(../images/tile_button_red.gif) repeat-x bottom left;}
+
+.data-input {
+	display:block;
+	padding:4px 0 11px 0;
+	float:left;
+}
+
+.stg-data-entered {
+	border-collapse:collapse;
+}
+.stg-data-entered td.label {
+	width:160px;
+	text-align:right;
+	padding:5px 0;
+}
+.stg-data-entered td.data {
+	padding:5px 0 5px 5px;
+}
+
+#nation-code {
+	display:none;
+}
+
+.feo {color:#999;}
+
+/* Errors
+---------------------------------------------------------------------- */
+.stg-error-tl {
+	height:28px;
+	float:left;
+	width:95%;
+	background:#ce0021 url(../images/error-head-left.gif) no-repeat;
+	position:relative;
+}
+.stg-error-tl p {position:absolute; top:6px; left:10px; font-weight:bold; font-size:12px; color:#fff;}
+.stg-error-tr {
+	height:28px;
+	width:4.9%;
+	float:left;
+	background:#ce0021 url(../images/error-head-right.gif) no-repeat top right;
+}
+.stg-error-content {
+	background:url(../images/tile-error.gif) repeat-x;
+	clear:both;
+	min-height:35px;
+	padding:10px;
+}
+.stg-error-content li {margin:0 15px 5px 15px;}
+
+/* Success
+---------------------------------------------------------------------- */
+.stg-success-tl {
+	height:28px;
+	float:left;
+	width:95%;
+	background:#349b65 url(../images/success-head-left.gif) no-repeat;
+	position:relative;
+}
+.stg-success-tl p {position:absolute; top:6px; left:10px; font-weight:bold; font-size:12px; color:#fff;}
+.stg-success-tr {
+	height:28px;
+	width:4.9%;
+	float:left;
+	background:#349b65 url(../images/success-head-right.gif) no-repeat top right;
+}
+.stg-success-content {
+	background:url(../images/tile-success.gif) repeat-x;
+	min-height:35px;
+	padding:10px;
+	clear:both;
+}

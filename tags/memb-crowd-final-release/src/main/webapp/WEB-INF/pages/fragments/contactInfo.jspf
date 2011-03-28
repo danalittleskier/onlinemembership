@@ -1,0 +1,129 @@
+<%@ include file="/includes/taglibs.jsp"%>
+
+<fieldset>
+	<legend>Personal Information</legend>
+
+	<c:choose>
+		<c:when test="${!empty accountBean.member.id }"> 
+			<label>USSA Member #</label>
+			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
+			<div class="clear"></div>
+		</c:when>
+		<c:otherwise>
+			<label for="">* I'm a USSA member</label>
+			<div class="radios">
+				<form:radiobutton id="member1" path="alreadyAMember" value="${true}"/>
+				<label class="radio" for="member1">Yes</label>
+				<form:radiobutton id="member2" path="alreadyAMember" value="${false}"/>
+				<label class="radio" for="member2">No</label>
+			</div><br/>
+		</c:otherwise>
+	</c:choose>
+	<c:choose>
+		<c:when test="${!empty accountBean.member.id }">
+		<p>If you wish to change your name please contact Member Services - 435.647.2666</p>
+	<label for="">* First Name</label>
+	<form:input disabled="true" path="member.firstName" size="30" maxlength="30" /><br />
+	<label for="">MI</label>
+	<form:input disabled="true" path="member.middleName" size="2" maxlength="1" /><br />
+	<label for="">* Last Name</label>
+	<form:input disabled="true" path="member.lastName" size="30" maxlength="30" /><br />
+	<label for="">Suffix</label>
+	<form:input path="member.suffixName" size="30" maxlength="30" /><br />
+	</c:when>
+	<c:otherwise>
+	<label for="">* First Name</label>
+	<form:input path="member.firstName" size="30" maxlength="30" /><br />
+	<label for="">MI</label>
+	<form:input path="member.middleName" size="2" maxlength="1" /><br />
+	<label for="">* Last Name</label>
+	<form:input path="member.lastName" size="30" maxlength="30"/><br />
+	<label for="">Suffix</label>
+	<form:input path="member.suffixName" size="30" maxlength="30"/><br />
+	
+	</c:otherwise>
+	</c:choose>
+	
+	
+	<label for="birthDate">* Birth Date:</label>
+	<spring:bind path="accountBean.birthDate">
+		<c:choose>
+			<c:when test="${empty accountBean.birthDate or not empty status.errorMessages}">
+				<form:input id="birthDate" path="birthDate" size="13" maxlength="10"/>
+				<span style="padding-left:5px;" class="data-input">Birthdate must be formatted as MM/DD/YYYY</span>
+
+				<%--
+				<a title="Select Date" href="#" id="birthDateCalendar">
+					<img class="stg-calendar-icon" width="23" height="24" border="0" name="calendar" src="<c:url value="/images/icon_calendar.gif"/>"/>
+				</a>
+				<script type="text/javascript" defer="defer">
+					Calendar.setup(
+						{
+							inputField : "birthDate", // ID of the input field
+							ifFormat : "%m/%d/%Y", // the date format
+							button : "birthDateCalendar" // ID of the button
+						}
+					);
+				</script>
+				--%>
+			</c:when>
+			<c:otherwise>
+				<span class="data-input"><c:out value="${accountBean.birthDate}"/></span>
+			</c:otherwise>
+		</c:choose>
+	</spring:bind>
+	<br/>
+	
+	<label for="email">* Member Email:</label>
+	<form:input path="member.email" maxlength="200" /><br />
+	
+	<c:if test="${empty accountBean.member.id}">
+		<label for="gender">* Gender:</label>
+		<div class="radios">
+			<form:radiobutton id="gender1" path="member.gender" value="M"/>
+			<label class="radio" for="gender1">Male</label>
+			<form:radiobutton id="gender2" path="member.gender" value="F"/>
+			<label class="radio" for="gender2">Female</label>
+		</div><br/>
+	</c:if>
+</fieldset>
+
+<c:if test="${accountBean.parentInfoRequired && not empty accountBean.member.id}">
+	<%@ include file="/includes/parentInfoFields.jsp"%>
+</c:if>
+
+<fieldset>
+	<legend>Mailing Address &amp; Phone</legend>
+	<label for="">Company</label>
+	<form:input path="address.company" size="30" maxlength="30"/><br />
+	<label for="">* Address 1</label>
+	<form:input path="address.deliveryAddress" size="30" maxlength="40"/><br />
+	<label for="">Address 2</label>
+	<form:input path="address.secondaryAddress" size="30" maxlength="40"/><br />
+	<label for="">* City</label>
+	<form:input path="address.city" size="30" maxlength="30"/><br />
+	<label for="">State/Province</label>
+
+	<form:select path="address.stateCode">
+		<form:option value=""></form:option>
+		<form:options items="${accountBean.allStates}" itemValue="id" itemLabel="description"/>
+	</form:select>
+	<br/>
+
+	<label for="">* Zip/Postal Code</label>
+	<form:input path="address.postalCode" size="30" maxlength="7"/><br />
+	<label for="">* Country</label>
+	<form:input path="address.country" size="30" maxlength="30"/><br />
+	<label for="">* Home/Primary Phone</label>
+	<form:input path="address.phoneHome" size="20" maxlength="30"/>
+	<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
+	<label for="">Work Phone</label>
+	<form:input path="address.phoneWork" size="20" maxlength="30"/>
+	<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
+	<label for="">Other Phone</label>
+	<form:input path="address.phoneOther" size="20" maxlength="30"/>
+	<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
+	<label for="">Fax</label>
+	<form:input path="address.phoneFax" size="20" maxlength="30"/>
+	<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
+</fieldset>

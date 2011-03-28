@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd"
+       default-lazy-init="true">
+
+    <!-- ======================== FILTER CHAIN ======================= -->
+    <bean id="filterChainProxy" class="org.acegisecurity.util.FilterChainProxy">
+        <property name="filterInvocationDefinitionSource">
+            <value>
+                CONVERT_URL_TO_LOWERCASE_BEFORE_COMPARISON
+                PATTERN_TYPE_APACHE_ANT
+                /images/**=#NONE#
+                /scripts/**=#NONE#
+                /styles/**=#NONE#
+                /**=httpSessionContextIntegrationFilter,logoutFilter,authenticationProcessingFilter,channelProcessingFilter,securityContextHolderAwareRequestFilter,rememberMeProcessingFilter,anonymousProcessingFilter,exceptionTranslationFilter,filterInvocationInterceptor
+            </value>
+            <!-- Put channelProcessingFilter before securityContextHolderAwareRequestFilter to turn on SSL switching -->
+            <!-- It's off by default b/c Canoo WebTest doesn't support SSL out-of-the-box -->
+        </property>
+    </bean>
+
+    <bean id="httpSessionContextIntegrationFilter" class="org.acegisecurity.context.HttpSessionContextIntegrationFilter"/>
+
+    <bean id="crowdLogoutHandler" class="com.atlassian.crowd.integration.acegi.CrowdLogoutHandler">
+	    <property name="httpAuthenticator" ref="httpAuthenticator"/>
+	</bean>
+
+	<bean id="logoutFilter" class="org.acegisecurity.ui.logout.LogoutFilter">
+	    <constructor-arg value="/dashboard.html"/>
+	    <constructor-arg>
+	        <list>
+	            <ref bean="rememberMeServices"/>
+	            <ref bean="crowdLogoutHandler"/>
+	            <bean class="org.acegisecurity.ui.logout.SecurityContextLogoutHandler"/>
+	        </list>
+	    </constructor-arg>
+	</bean>
+
+    <bean id="authenticationProcessingFilter" class="com.atlassian.crowd.integration.acegi.CrowdAuthenticationProcessingFilter">
+        <property name="httpAuthenticator" ref="httpAuthenticator"/>
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="authenticationFailureUrl" value="/accounts/login.html?error=true"/>
+        <property name="defaultTargetUrl" value="/savedUrlServlet"/>
+		<property name="filterProcessesUrl" value="/j_security_check"/>
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+	</bean>
+
+    <bean id="securityContextHolderAwareRequestFilter" class="org.acegisecurity.wrapper.SecurityContextHolderAwareRequestFilter"/>
+
+    <bean id="rememberMeProcessingFilter" class="org.acegisecurity.ui.rememberme.RememberMeProcessingFilter">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+    </bean>
+
+    <bean id="anonymousProcessingFilter" class="org.acegisecurity.providers.anonymous.AnonymousProcessingFilter">
+        <property name="key" value="anonymous"/>
+        <property name="userAttribute" value="anonymous,ROLE_ANONYMOUS"/>
+    </bean>
+
+    <bean id="exceptionTranslationFilter" class="org.acegisecurity.ui.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint">
+            <bean class="org.acegisecurity.ui.webapp.AuthenticationProcessingFilterEntryPoint">
+                <property name="loginFormUrl" value="/dashboard.html"/>
+                <property name="forceHttps" value="false"/>
+            </bean>
+        </property>
+        <property name="accessDeniedHandler">
+            <bean class="org.acegisecurity.ui.AccessDeniedHandlerImpl"/>
+        </property>
+    </bean>
+
+    <bean id="filterInvocationInterceptor" class="org.acegisecurity.intercept.web.FilterSecurityInterceptor">
+        <property name="authenticationManager" ref="authenticationManager"/>
+        <property name="accessDecisionManager" ref="accessDecisionManager"/>
+        <property name="objectDefinitionSource">
+            <value>
+                PATTERN_TYPE_APACHE_ANT
+                /dashboard.html*=ROLE_ANONYMOUS,ROLE_USER
+                /**/*.html*=ROLE_ADMIN,ROLE_USER
+            </value>
+        </property>
+    </bean>
+
+    <bean id="accessDecisionManager" class="org.acegisecurity.vote.AffirmativeBased">
+        <property name="allowIfAllAbstainDecisions" value="false"/>
+        <property name="decisionVoters">
+            <list>
+                <bean class="org.acegisecurity.vote.RoleVoter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="rememberMeServices" class="org.acegisecurity.ui.rememberme.TokenBasedRememberMeServices">
+        <property name="userDetailsService" ref="crowdUserDetailsService"/>
+        <property name="key" value="23_*!cdU='612./e;NrI"/>
+        <property name="parameter" value="rememberMe"/>
+		<property name="tokenValiditySeconds" value="1800"/>
+	</bean>
+
+    <bean id="authenticationManager" class="org.acegisecurity.providers.ProviderManager">
+        <property name="providers">
+            <list>
+                <ref local="crowdAuthenticationProvider"/>
+                <ref local="anonymousAuthenticationProvider"/>
+                <ref local="rememberMeAuthenticationProvider"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="anonymousAuthenticationProvider" class="org.acegisecurity.providers.anonymous.AnonymousAuthenticationProvider">
+        <property name="key" value="anonymous"/>
+    </bean>
+
+    <bean id="rememberMeAuthenticationProvider" class="org.acegisecurity.providers.rememberme.RememberMeAuthenticationProvider">
+        <property name="key" value="23_*!cdU='612./e;NrI"/>
+    </bean>
+ 
+    
+    <bean id="crowdUserDetailsService" class="com.atlassian.crowd.integration.acegi.CrowdUserDetailsService">
+    	<property name="securityServerClient" ref="securityServerClient"/>
+	</bean>
+
+    <bean id="crowdAuthenticationProvider" class="com.atlassian.crowd.integration.acegi.CrowdAuthenticationProvider">
+    	<property name="userDetailsService" ref="crowdUserDetailsService"/>
+    	<property name="httpAuthenticator" ref="httpAuthenticator"/>
+    	<property name="securityServerClient" ref="securityServerClient"/>
+	</bean>
+
+    
+
+    <!-- Uncomment to disabling password encryption -->
+    <bean id="passwordEncoder" class="org.acegisecurity.providers.encoding.PlaintextPasswordEncoder"/>
+
+    <!-- This bean is optional; it isn't used by any other bean as it only listens and logs -->
+    <bean id="loggerListener" class="org.acegisecurity.event.authentication.LoggerListener"/>
+
+    <!-- SSL Switching: to use this, configure it in the filterChainProxy bean -->
+    <bean id="channelProcessingFilter" class="org.acegisecurity.securechannel.ChannelProcessingFilter">
+        <property name="channelDecisionManager" ref="channelDecisionManager"/>
+        <property name="filterInvocationDefinitionSource">
+            <value>
+                PATTERN_TYPE_APACHE_ANT
+                /*=REQUIRES_SECURE_CHANNEL
+            </value>
+        </property>
+    </bean>
+
+    <bean id="channelDecisionManager" class="org.acegisecurity.securechannel.ChannelDecisionManagerImpl">
+        <property name="channelProcessors">
+            <list>
+                <ref bean="secureChannelProcessor"/>
+                <ref bean="insecureChannelProcessor"/>
+            </list>
+        </property>
+    </bean>
+
+	<bean id="secureChannelProcessor" class="org.acegisecurity.securechannel.SecureChannelProcessor">
+		<property name="entryPoint">
+			<bean class="org.acegisecurity.securechannel.RetryWithHttpsEntryPoint">
+				<property name="portMapper" ref="portMapper"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="insecureChannelProcessor" class="org.acegisecurity.securechannel.InsecureChannelProcessor">
+		<property name="entryPoint">
+			<bean class="org.acegisecurity.securechannel.RetryWithHttpEntryPoint">
+				<property name="portMapper" ref="portMapper"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="portMapper" class="org.acegisecurity.util.PortMapperImpl">
+		<property name="portMappings">
+			<map>
+				<entry key="80" value="443"/>
+				<entry key="8080" value="8443"/>
+				<entry key="11080" value="11443"/>
+				<entry key="12080" value="12443"/>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="securityContext" class="org.acegisecurity.context.SecurityContextHolder" factory-method="getContext" scope="prototype">
+		<aop:scoped-proxy/>
+	</bean>
+</beans>
