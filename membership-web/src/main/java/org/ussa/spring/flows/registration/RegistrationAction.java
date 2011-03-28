@@ -602,6 +602,8 @@ public class RegistrationAction extends FormAction implements Serializable
 		accountBean.setMemberships(rulesBL.getApplicableSportMemberships(accountBean));
 		accountBean.setFisItems(rulesBL.getApplicableFisItems(accountBean));
 		accountBean.setMagazineItems(rulesBL.getValidMagazineOptions(accountBean));
+		//Adding to pop up disciplines for tracking
+		accountBean.setValidDisciplines(rulesBL.getValidDisciplines(accountBean.getSportId())); 
 
 		//this is to set the background screening flag to no if they need to do a background check
 		if(rulesBL.needsBackgroundCheck(accountBean)){

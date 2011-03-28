@@ -24,6 +24,7 @@ import org.ussa.bl.DateBL;
 import org.ussa.bl.RuleAssociations;
 import org.ussa.bl.RulesBL;
 import org.ussa.dao.ClubDao;
+import org.ussa.dao.DisciplineTrackingDao;
 import org.ussa.dao.DivDuesRulesDao;
 import org.ussa.dao.DivisionAffiliationDao;
 import org.ussa.dao.DivisionDao;
@@ -55,6 +56,7 @@ public class RulesBLImpl implements RulesBL
 	private ClubDao clubDao;
 	private DivisionDao divisionDao;
 	private DivisionAffiliationDao divisionAffiliationDao;
+	private DisciplineTrackingDao diciplineTrackingDao;
 
 	public void setInventoryDao(InventoryDao inventoryDao)
 	{
@@ -99,6 +101,10 @@ public class RulesBLImpl implements RulesBL
 	public void setDivisionDao(DivisionDao divisionDao)
 	{
 		this.divisionDao = divisionDao;
+	}
+	public void setDiciplineTrackingDao(DisciplineTrackingDao disciplineTrackingDao){
+			
+		this.diciplineTrackingDao = diciplineTrackingDao;
 	}
 
 	public void setDivisionAffiliationDao(DivisionAffiliationDao divisionAffiliationDao)
@@ -300,6 +306,15 @@ public class RulesBLImpl implements RulesBL
 			return null;
 		}
 	}
+
+	public List<String> getValidDisciplines(String sportCode){
+		
+		List<String> validDisciplines = new ArrayList<String>();
+		validDisciplines = diciplineTrackingDao.getDisciplines(sportCode);
+		
+		return validDisciplines;
+	}
+	
 
 	public List<Inventory> getValidMagazineOptions(AccountBean accountBean)
 	{

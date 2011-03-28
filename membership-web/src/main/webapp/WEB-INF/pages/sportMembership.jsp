@@ -86,7 +86,7 @@
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">
 		<fieldset>
-			<legend>FIS/IPC Registrations</legend>
+			<legend>FIS Registrations</legend>
 			<table style="margin-left:195px;">
 				<c:forEach var="fisItem" items="${accountBean.fisItems}" varStatus="varStatus">
 					<tr>
@@ -102,7 +102,7 @@
 				</c:forEach>
 			</table>
 			<br/>
-			*FIS/IPC AS waivers will be required for FIS and IPC AS registrations.
+			*FIS AS waivers will be required for FIS AS registrations.
 		</fieldset>
 	</c:if>
 	<c:if test="${not empty accountBean.magazineItems}">
@@ -140,7 +140,7 @@
 					</tr>
 					
 			</table>
-			*By opting in to Ski Racing, you agree to receive both printed and emailed issues.
+			*By opting in to Ski Racing, you agree to receive digital issues by email.
 		</fieldset>
 	</c:if>
 	<fieldset>
@@ -177,7 +177,7 @@
 	</fieldset>
 	<fieldset>
 		<legend>Contribution <i>(optional)</i></legend>
-		<p>Your generous contribution will help support U.S. Ski Team and U.S. Snowboarding athletes in their quest for victory. Thank you!</p>
+		<p>Your generous contribution will help support U.S. Ski Team, U.S. Freeride and U.S. Snowboarding athletes in their quest for victory. Thank you!</p>
 		<label for="">Sport:</label>
 		<form:select path="contributionSportId">
 			<form:option value="">Select a Sport</form:option>

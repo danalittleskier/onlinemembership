@@ -29,7 +29,7 @@
 			<legend>Your Membership Verification</legend>
 			<p>Please print your digital membership card.</p>
 			<input class="btn-green" type="button" onclick="window.open('<c:url value="http://webapps.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}"></c:url>');" value="Print Verification" name="button"/>
-			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
+			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">]
 				<p>Your digital membership card will only display memberships not requiring screening until positive results are received by USSA.</p>
 			</c:if>
 		</fieldset>
@@ -45,7 +45,7 @@
 				<c:param name="srb" value="11392848"/>
 				<c:param name="id" value="${accountBean.member.id}"/>
 			</c:url>
-			<p><a href="${ncsiUrl}" target="_BLANK">Go here to complete your backgound screening.</a></p>
+			<p><font size="2" ><a href="${ncsiUrl}" target="_BLANK">Go here to complete your background screening.</a></font></p>
 		</fieldset>
 	</c:if>
 

@@ -8,4 +8,5 @@
 	<li>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</li>
 	<li>Please allow several weeks for screening process to be completed. Individual screening times will vary.</li>
 	<li>Coaches and officials under age 18, click <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here</a> for requirements in lieu of background screening</li>
+	<li>A link to registerfor background screening will be provided on the final registration page <b>if screening is required.</b></li>
 </ul>

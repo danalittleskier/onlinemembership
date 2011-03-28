@@ -39,7 +39,8 @@
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Multiple athlete memberships may be applicable, please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
-		<p><strong>Competitor:</strong> For ages 13 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list.<br> 
+		<p><strong>Competitor:</strong> For ages 13 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
+		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Adaptive Alpine Competitor:</strong> For athletes ages 13 and over participating primarily in adaptive events.
 		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31. <br>
@@ -122,7 +123,8 @@
 		<strong>Large Hill,&nbsp;Normal Hill</strong>
 		</span>
 		</h2>
-		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA jumping/nordic &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA jumping/nordic ranking list.</p>
+		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA jumping/nordic &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. 
+		Membership also includes access to the USSA jumping/nordic ranking list.  Required for FIS registration.</p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.  </p>
@@ -145,7 +147,7 @@
 		<strong>Halfpipe,&nbsp;Gate:&nbsp;PGS&nbsp;(parallel giant slalom)/PSL&nbsp;(parallel slalom),&nbsp;SBX:&nbsp;Boarder Cross,&nbsp;Slopestyle</strong>
 		</span>
 		</h2>
-		<p><strong>National Competitor:</strong> Access to all levels of competition within the USSA snowboarding &quot;development pipeline.&quot;. Membership also includes access to the USSA snowboarding ranking list. Required for FIS level competitions. </p>
+		<p><strong>National Competitor:</strong> Access to all levels of competition within the USSA snowboarding &quot;development pipeline.&quot;. Membership also includes access to the USSA snowboarding ranking list. Required for FIS registration. </p>
 		<p><strong>Regional Competitor:</strong> Not eligible for elite level events or FIS registration. Includes access to the USSA Snowboard Ranking List. May be upgraded to national level membership during the competitive season.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.</p> 

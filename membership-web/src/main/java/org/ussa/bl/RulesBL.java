@@ -56,4 +56,6 @@ public interface RulesBL
 	public Division determineDivision(String nationCode, String stateCode, Long clubId, String zipCode);
 
 	public boolean isMemberInactive(Member member);
+	
+	public List<String> getValidDisciplines(String sportCode);
 }
