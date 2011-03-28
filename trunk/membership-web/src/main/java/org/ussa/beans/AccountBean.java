@@ -57,8 +57,17 @@ public class AccountBean
 	private List<Inventory> magazineItems;
 	private List<Integer> years;
     private List<Member> duplicateMembers;
+    private List<String> validDisciplines;
 
-    private String contributionAmount;
+    public List<String> getValidDisciplines() {
+		return validDisciplines;
+	}
+
+	public void setValidDisciplines(List<String> validDisciplines) {
+		this.validDisciplines = validDisciplines;
+	}
+
+	private String contributionAmount;
 
 	public Member getMember()
 	{
