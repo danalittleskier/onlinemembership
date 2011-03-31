@@ -33,9 +33,9 @@
             classpath:/applicationContext-resources.xml
             classpath:/applicationContext-service-membership.xml
 			/WEB-INF/applicationContext*.xml
-            /WEB-INF/xfire-servlet.xml
-            /WEB-INF/security.xml
-            /WEB-INF/applicationContext-CrowdClient.xml
+            <!-- /WEB-INF/xfire-servlet.xml -->
+            <!-- /WEB-INF/security.xml -->
+            <!--  /WEB-INF/applicationContext-CrowdClient.xml -->
         </param-value>
     </context-param>
     
@@ -73,6 +73,7 @@
             <param-value>log4j</param-value>
         </init-param>
     </filter>
+    <!-- 
     <filter>
         <filter-name>securityFilter</filter-name>
         <filter-class>org.acegisecurity.util.FilterToBeanProxy</filter-class>
@@ -81,6 +82,7 @@
             <param-value>org.acegisecurity.util.FilterChainProxy</param-value>
         </init-param>
     </filter>
+    -->
     <filter>
         <filter-name>sitemesh</filter-name>
         <filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
@@ -97,7 +99,37 @@
             <param-value>dispatcher</param-value>
         </init-param>
     </filter>
+    <filter>
+		<filter-name>CAS Filter</filter-name>
+		<filter-class>
+			edu.yale.its.tp.cas.client.filter.CASFilter
+		</filter-class>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.loginUrl
+			</param-name>
+			<param-value>https://my.dev.ussa.org:9443/cas/login</param-value>
+		</init-param>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.validateUrl
+			</param-name>
+			<param-value>
+				https://my.dev.ussa.org:9443/cas/proxyValidate
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>
+				edu.yale.its.tp.cas.client.filter.serverName
+			</param-name>
+			<param-value>my.dev.ussa.org:9443</param-value>
+		</init-param>
+	</filter>
 
+	<filter-mapping>
+		<filter-name>CAS Filter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<filter-mapping>
 		<filter-name>savedUrlFilter</filter-name>
 		<url-pattern>/*</url-pattern>
@@ -107,10 +139,12 @@
         <filter-name>encodingFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    <!-- 
     <filter-mapping>
         <filter-name>securityFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+    -->
     <!-- Commented out for 2 reasons: 1) it's a pain when developing JSPs, and
                                       2) it causes the Signup webtest to fail -->
     <!--<filter-mapping>
@@ -182,20 +216,24 @@
         </init-param>
     </servlet>
     
+    <!-- 
     <servlet>
         <servlet-name>xfire</servlet-name>
         <servlet-class>org.codehaus.xfire.spring.XFireSpringServlet</servlet-class>
     </servlet>
-
+	-->
+	
     <servlet-mapping>
         <servlet-name>dwr-invoker</servlet-name>
         <url-pattern>/dwr/*</url-pattern>
     </servlet-mapping>
     
+    <!-- 
     <servlet-mapping>
         <servlet-name>xfire</servlet-name>
         <url-pattern>/services/*</url-pattern>
     </servlet-mapping>
+    -->
     
     <servlet-mapping>
         <servlet-name>savedUrlServlet</servlet-name>

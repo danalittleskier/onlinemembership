@@ -60,13 +60,14 @@
     </bean>
 
 	<bean id="certificateController" class="org.ussa.spring.controller.CertificateController">
-		<property name="userManager" ref="userManager"/>
+		<!-- <property name="userManager" ref="userManager"/> -->
 		<property name="memberDao" ref="memberDao"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
 		<property name="clubDao" ref="clubDao"/>
+		<property name="casLdap" ref="casLdap"/>
 	</bean>
 	
 	<bean id="handleFlowTimeoutController" class="org.ussa.spring.controller.HandleFlowTimeoutController"/>

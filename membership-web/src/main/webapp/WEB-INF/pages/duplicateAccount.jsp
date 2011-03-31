@@ -20,7 +20,7 @@
 					</tr>
                     <c:forEach items="${accountBean.duplicateMembers}" var="member">
                         <tr>
-                            <td class="short"><input type="radio" name="id" value="${member.id}"/></td>
+                            <td class="short"><input type="radio" name="dupId" value="${member.id}"/></td>
                             <td><c:out value="${member.firstName}"/>&nbsp;<c:out value="${member.lastName}"/></td>
                             <td><fmt:formatDate value="${member.birthDate}" pattern="MM/dd/yyyy"/></td>
                         </tr>
@@ -28,7 +28,7 @@
 				</table>
 				<br />
                 <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-				<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
+                <input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
 				<input type="submit" name="_eventId_next" value="Continue" class="btn-green"/>
 				<em><p>If you believe your account is not shown, please call USSA Member Services at <br />
 				(435) 647-2666 to complete your registration.</p></em>

@@ -1,21 +1,20 @@
 package org.ussa.spring.controller;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import org.acegisecurity.Authentication;
-import org.acegisecurity.context.SecurityContextHolder;
-import org.acegisecurity.userdetails.UserDetails;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.AbstractController;
+import org.ussa.beans.UserBean;
+import org.ussa.bl.CasLdap;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
-import org.ussa.common.model.User;
 import org.ussa.common.service.UserManager;
 import org.ussa.dao.ClubDao;
 import org.ussa.dao.MemberDao;
@@ -31,13 +30,14 @@ import org.ussa.util.DateTimeUtils;
 
 public class CertificateController extends AbstractController
 {
-	private UserManager userManager;
+	//private UserManager userManager;
 	private MemberDao memberDao;
 	private DateBL dateBL;
 	private RulesBL rulesBL;
 	private MemberSeasonDao memberSeasonDao;
 	private MemberTransactionDao memberTransactionDao;
 	private ClubDao clubDao;
+	private CasLdap casLdap;
 
 	@Override
 	protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception
@@ -49,10 +49,27 @@ public class CertificateController extends AbstractController
 		}
 		else
 		{
+		    /*
 			Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 			UserDetails userDetails = (UserDetails) authentication.getPrincipal();
 			User user = userManager.getUserByUsername(userDetails.getUsername());
-			id = user.getUssaId();
+		   */
+		    
+		 // Hard coded username for now
+			// TODO: integrate with cas filter
+			String username = "sammy";
+			
+			// For testing purposes - Remove once integrated with LDAP
+			UserBean userBean = casLdap.getUserInfo(username);
+			/*
+			userBean.setFirstName("Sam");
+			userBean.setLastName("Haas");
+			userBean.setEmail("shaas@ussa.org");
+			userBean.setUsername(username);
+			userBean.setZipCode("84032");
+			userBean.setBirthDate("10/04/1981");
+			*/
+			id = userBean.getUssaId();
 		}
 
 		Member member = null;
@@ -129,12 +146,12 @@ public class CertificateController extends AbstractController
 		}
 		return result;
 	}
-
+/*
 	public void setUserManager(UserManager userManager)
 	{
 		this.userManager = userManager;
 	}
-
+*/
 	public void setMemberDao(MemberDao memberDao)
 	{
 		this.memberDao = memberDao;
@@ -166,6 +183,11 @@ public class CertificateController extends AbstractController
 
 	public void setClubDao(ClubDao clubDao) {
 		this.clubDao = clubDao;
+	}
+
+
+	public void setCasLdap(CasLdap casLdap) {
+	    this.casLdap = casLdap;
 	}
 	
 	
