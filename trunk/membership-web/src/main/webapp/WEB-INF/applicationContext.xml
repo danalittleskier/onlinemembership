@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	   xmlns:jee="http://www.springframework.org/schema/jee"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+            http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-2.0.xsd"
 	   default-lazy-init="true">
 
 	<!-- Add DAOs here -->
@@ -97,10 +99,13 @@
 		<property name="divisionDao" ref="divisionDao"/>
 		<property name="divisionAffiliationDao" ref="divisionAffiliationDao"/>
 	</bean>
+	
+	<!-- Credit Card Test Mode setting - now located in context.xml -->
+	<jee:jndi-lookup id="testMode" jndi-name="java:comp/env/authorize/testMode"/>
 
 	<!-- Add service classes here-->
 	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
-		<property name="testMode" value="false"/>
+		<property name="testMode" ref="testMode"/>
 		<property name="login" value="3M7s8eKK6"/>
 		<property name="tranKey" value="57wHJDb4865yc935"/>
 	</bean>
@@ -114,8 +119,9 @@
 		<property name="universalDao" ref="universalDao"/>
 		<property name="inventoryAddDao" ref="inventoryAddDao"/>
 		<property name="inventoryDao" ref="inventoryDao"/>
-		<property name="userManager" ref="userManager"/>
-		<property name="securityContext" ref="securityContext"/>
+		<property name="casLdap" ref="casLdap"/>
+		<!--  <property name="userManager" ref="userManager"/>-->
+		<!--  <property name="securityContext" ref="securityContext"/> -->
 	</bean>
 
 	<bean id="TimerFactoryBean" class="org.springframework.scheduling.timer.TimerFactoryBean">
@@ -130,6 +136,16 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- Credit Card Test Mode setting - now located in context.xml -->
+	<jee:jndi-lookup id="currentMemberGroupName" jndi-name="java:comp/env/ldap/currentMember"/>
+	
+	<bean name="casLdap" class="org.ussa.bl.impl.CasLdapImpl">
+		<property name="ussaLdap" ref="ussaLdap" />
+		<property name="currentMemberGroupName" ref="currentMemberGroupName"/>
+	</bean>
+	
+	<bean id="ussaLdap" class="org.ussa.ldap.impl.UssaLdapImpl" />
 
 	<bean id="batchCloseTimerTask" class="org.ussa.app.BatchCloseTimerTask">
 		<property name="batchService" ref="batchService"/>

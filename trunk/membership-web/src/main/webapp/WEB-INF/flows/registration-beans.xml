@@ -16,10 +16,11 @@
 		<property name="memberSeasonDao" ref="memberSeasonDao"/>
 		<property name="rulesBL" ref="rulesBL"/>
 		<property name="dateBL" ref="dateBL"/>
-		<property name="userManager" ref="userManager"/>
-		<property name="securityContext" ref="securityContext"/>
+		<!--  <property name="userManager" ref="userManager"/>-->
+		<!--  <property name="securityContext" ref="securityContext"/> -->
 		<property name="universalDao" ref="universalDao"/>
 		<property name="memberRegistrationService" ref="memberRegistrationService"/>
+		<property name="casLdap" ref="casLdap"/>
 	</bean>
 
 	<!-- Form objects -->

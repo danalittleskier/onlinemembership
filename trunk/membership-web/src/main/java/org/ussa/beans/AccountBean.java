@@ -1,5 +1,6 @@
 package org.ussa.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.ussa.model.Address;
@@ -11,8 +12,12 @@ import org.ussa.model.MemberSeason;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
 
-public class AccountBean
+public class AccountBean implements Serializable
 {
+	/**
+     * 
+     */
+    private static final long serialVersionUID = -6421993006262894040L;
 	//Fields to save when done
 	private Member member;
 	private Address address;
@@ -23,6 +28,7 @@ public class AccountBean
 	private PaymentBean paymentBean = new PaymentBean();
 	private ExtrasBean extrasBean = new ExtrasBean();
 	private MembershipsBean membershipsBean = new MembershipsBean();
+    private UserBean userBean = new UserBean();
 
 	//Helper fields for binding, not persisited...
 	private Boolean alreadyAMember;
@@ -407,6 +413,14 @@ public class AccountBean
 	public void setMembershipsBean(MembershipsBean membershipsBean)
 	{
 		this.membershipsBean = membershipsBean;
+	}
+
+	public UserBean getUserBean() {
+	    return userBean;
+	}
+
+	public void setUserBean(UserBean userBean) {
+	    this.userBean = userBean;
 	}
 
 	public List<Member> getDuplicateMembers()
