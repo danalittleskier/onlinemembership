@@ -69,7 +69,7 @@ public class CertificateController extends AbstractController
 			userBean.setZipCode("84032");
 			userBean.setBirthDate("10/04/1981");
 			*/
-			id = userBean.getUssaId();
+			id = Long.parseLong(userBean.getUssaId());
 		}
 
 		Member member = null;
