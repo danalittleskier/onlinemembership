@@ -191,8 +191,7 @@
 	<repositories>
 		<repository>
 			<id>central</id>
-			<url>http://repo1.maven.org/maven2</url>
-			<!--  <url>http://artifactory.hq.ussa.org:8080/artifactory/repo</url>-->
+			<url>http://artifactory.hq.ussa.org:8080/artifactory/repo</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -508,9 +507,9 @@
 		
 		<!-- USSA Ldap Dependency -->
 		<dependency>
-			<groupId>ussaldap</groupId>
-			<artifactId>ussaldap</artifactId>
-			<version>1.0</version>
+			<groupId>org.ussa</groupId>
+			<artifactId>USSALdap</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 
