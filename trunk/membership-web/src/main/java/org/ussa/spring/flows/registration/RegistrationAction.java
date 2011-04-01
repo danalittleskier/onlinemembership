@@ -61,6 +61,9 @@ import org.ussa.util.StringUtils;
 import edu.yale.its.tp.cas.client.filter.CASFilter;
 
 public class RegistrationAction extends FormAction implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
+    
     private MemberDao memberDao;
     private AddressDao addressDao;
     private StateDao stateDao;
@@ -78,6 +81,8 @@ public class RegistrationAction extends FormAction implements Serializable {
     private UniversalDao universalDao;
     private MemberRegistrationService memberRegistrationService;
     private CasLdap casLdap;
+    
+    private ServletExternalContext externalContext;
 
     private static String DATE_FORMAT = "MM/dd/yyyy";
     private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -838,9 +843,8 @@ public class RegistrationAction extends FormAction implements Serializable {
     }
     
     private String getUsernameFromSession(RequestContext context) throws Exception{
-	ServletExternalContext externalContext = (ServletExternalContext)context.getExternalContext();
-	HttpSession session = externalContext.getRequest().getSession();
-	return (String) session.getAttribute(CASFilter.CAS_FILTER_USER);
+	externalContext = (ServletExternalContext)context.getExternalContext();
+	return (String) externalContext.getRequest().getSession().getAttribute(CASFilter.CAS_FILTER_USER);
 	
     }
 

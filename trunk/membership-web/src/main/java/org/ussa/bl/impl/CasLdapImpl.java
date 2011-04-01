@@ -2,7 +2,6 @@ package org.ussa.bl.impl;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Map;
 
@@ -10,7 +9,6 @@ import org.ussa.beans.AccountBean;
 import org.ussa.beans.UserBean;
 import org.ussa.bl.CasLdap;
 import org.ussa.ldap.UssaLdap;
-import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
 
 public class CasLdapImpl implements CasLdap {
