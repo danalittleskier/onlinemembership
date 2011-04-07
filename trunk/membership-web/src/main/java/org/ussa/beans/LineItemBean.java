@@ -1,11 +1,12 @@
 package org.ussa.beans;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 import org.ussa.model.Inventory;
 
-public class LineItemBean
+public class LineItemBean implements Serializable
 {
 	Inventory inventory;
 	String description;

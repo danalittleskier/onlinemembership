@@ -1,6 +1,8 @@
 package org.ussa.beans;
 
-public class UserBean {
+import java.io.Serializable;
+
+public class UserBean implements Serializable{
     
     private String ussaId;
     private String ussaIdAlternates;

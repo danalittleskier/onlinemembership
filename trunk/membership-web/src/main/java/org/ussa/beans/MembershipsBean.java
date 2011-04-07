@@ -1,11 +1,12 @@
 package org.ussa.beans;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
 
 import org.ussa.model.Inventory;
 
-public class MembershipsBean
+public class MembershipsBean implements Serializable
 {
 	private List<Inventory> unrestrictedMemberships = new ArrayList<Inventory>();
 	private List<Inventory> restrictedMemberships = new ArrayList<Inventory>();

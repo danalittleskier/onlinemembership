@@ -14,14 +14,15 @@
 </head>
 
 <body>
-	<%@ include file="/includes/ussaHeaderAndNavigation.jsp" %>
-
+	
 	<!-------------------------------------------- Content ------------------------------------------------->
 	<!-- Container -->
-	<div id="stg-content">
-		<decorator:body/>
+	<div class="scroll-membership">
+		<div id="stg-content">
+			<decorator:body/>
+		</div>
 	</div>
 
-	<%@ include file="/includes/ussaFooter.jsp" %>
+	
 </body>
 </html>

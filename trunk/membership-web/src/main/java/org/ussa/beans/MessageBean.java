@@ -1,6 +1,8 @@
 package org.ussa.beans;
 
-public class MessageBean
+import java.io.Serializable;
+
+public class MessageBean implements Serializable
 {
 	private String resourceKey;
 	private Object[] params;
