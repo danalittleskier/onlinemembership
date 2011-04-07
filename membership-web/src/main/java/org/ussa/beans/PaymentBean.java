@@ -1,6 +1,8 @@
 package org.ussa.beans;
 
-public class PaymentBean
+import java.io.Serializable;
+
+public class PaymentBean implements Serializable
 {
 	private String paymentType;
 	private String amount;

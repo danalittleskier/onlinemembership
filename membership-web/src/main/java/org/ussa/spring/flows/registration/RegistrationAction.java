@@ -8,9 +8,10 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.WordUtils;
+import org.jasig.cas.client.authentication.AuthenticationFilter;
+import org.jasig.cas.client.validation.Assertion;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.orm.ObjectRetrievalFailureException;
 import org.springframework.validation.BindException;
@@ -58,8 +59,6 @@ import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
 
-import edu.yale.its.tp.cas.client.filter.CASFilter;
-
 public class RegistrationAction extends FormAction implements Serializable {
     
     private static final long serialVersionUID = 1L;
@@ -82,8 +81,6 @@ public class RegistrationAction extends FormAction implements Serializable {
     private MemberRegistrationService memberRegistrationService;
     private CasLdap casLdap;
     
-    private ServletExternalContext externalContext;
-
     private static String DATE_FORMAT = "MM/dd/yyyy";
     private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
 
@@ -304,8 +301,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	}
 
 	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
-
-	//String username = "sammy";
+	
 	String username = getUsernameFromSession(context);
 	
 	UserBean userBean = casLdap.getUserInfo(username);
@@ -843,8 +839,11 @@ public class RegistrationAction extends FormAction implements Serializable {
     }
     
     private String getUsernameFromSession(RequestContext context) throws Exception{
-	externalContext = (ServletExternalContext)context.getExternalContext();
-	return (String) externalContext.getRequest().getSession().getAttribute(CASFilter.CAS_FILTER_USER);
+	ServletExternalContext externalContext = (ServletExternalContext)context.getExternalContext();
+	
+	// Either of these will work
+	//return externalContext.getRequest().getRemoteUser();
+	return externalContext.getRequest().getUserPrincipal().getName();
 	
     }
 

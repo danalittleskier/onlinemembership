@@ -1,6 +1,8 @@
 package org.ussa.beans;
 
-public class ExtrasBean
+import java.io.Serializable;
+
+public class ExtrasBean implements Serializable
 {
 	private String alpineOption;
 	private String alpineQty;

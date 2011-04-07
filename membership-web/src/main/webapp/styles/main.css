@@ -42,19 +42,20 @@ a img {border:0;}
 ---------------------------------------------------------------------- */
 #stg-pagetitle {
 	font:bold 18px arial,verdana,sans-serif;
-	width:100%;
+	width: 720px;
 	border-bottom:1px solid #ccc;
 	padding-bottom:5px;
 	margin-bottom:10px;
+	margin-left: 10px;
 }
 #stg-content {
-	width:920px;
+	width:740px;
 	margin:0 auto;
 	min-height:400px;
   	height:auto !important;
 	height:400px;
 	background:#fff;
-	padding:20px 20px 0 20px;
+	padding:10px 0px 0 20px;
 }
 
 #stg-onecol-primary {
@@ -65,12 +66,13 @@ a img {border:0;}
 #stg-twocol-primary {
 	float:left;
 	width:490px;
-	margin-right:20px;
+	margin-right:10px;
+	margin-left: 10px;
 }
 
 #stg-twocol-secondary {
-	float:left;
-	width:410px;
+	float: left;
+	width: 230px;
 }
 
 #stg-progress {
@@ -106,7 +108,7 @@ a img {border:0;}
 .stg-br {background: url(../images/br.gif) 100% 100% no-repeat;}
 .stg-tl {background: url(../images/tl.gif) 0 0 no-repeat;}
 .stg-tr {background: url(../images/tr.gif) 100% 0 no-repeat;}
-.stg-tr {padding:10px 20px !important; padding:10px 20px 5px 20px;} /* IE 6 hack for bottom padding */
+.stg-tr {padding:5px 5px !important; padding:5px 5px 5px 20px;} /* IE 6 hack for bottom padding */
 * + html .stg-tr {padding:10px 20px 5px 20px !important;} /* IE hack for bottom padding */
 .stg-bl {line-height:150%;}
 
@@ -220,3 +222,11 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .decal-qty {text-align:left;}
 .packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
 .decal {width:195px; float:left; text-align:center; padding:0 5px;}
+
+.scroll-membership {
+width: 745px; 
+height: 630px;
+padding-left: 0px;
+padding-right: 0px; 
+overflow: auto;
+}

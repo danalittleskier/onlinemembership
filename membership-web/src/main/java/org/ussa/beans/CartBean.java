@@ -1,5 +1,6 @@
 package org.ussa.beans;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -12,8 +13,10 @@ import java.text.DecimalFormat;
 import org.ussa.model.Inventory;
 
 
-public class CartBean
+public class CartBean implements Serializable
 {
+	private static final long serialVersionUID = 2661951274039469973L;
+	
 	List<LineItemBean> lineItems = new ArrayList<LineItemBean>();
 
 	public void addItem(Inventory inventory)

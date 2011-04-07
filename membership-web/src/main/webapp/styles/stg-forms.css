@@ -1,6 +1,9 @@
 /* Forms - General
 ---------------------------------------------------------------------- */
-.req-fields {color:#666;}
+.req-fields {
+	color: #666666;
+	margin-left: 10px;
+}
 
 form {width:100%;}
 
