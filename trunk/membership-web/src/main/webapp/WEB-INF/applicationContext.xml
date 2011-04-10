@@ -75,6 +75,9 @@
 	<bean id="batchTransactionDao" class="org.ussa.dao.impl.BatchTransactionDaoJDBC">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	<bean id="disciplineTrackingDao" class="org.ussa.dao.impl.DisciplineTrackingDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 	<bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 		<property name="dataSource" ref="dataSource"/>
@@ -98,6 +101,7 @@
 		<property name="clubDao" ref="clubDao"/>
 		<property name="divisionDao" ref="divisionDao"/>
 		<property name="divisionAffiliationDao" ref="divisionAffiliationDao"/>
+		<property name="disciplineTrackingDao" ref="disciplineTrackingDao"/>
 	</bean>
 	
 	<!-- Credit Card Test Mode setting - now located in context.xml -->
