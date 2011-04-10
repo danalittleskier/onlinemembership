@@ -19,7 +19,7 @@ public class DisciplineTrackingDaoImpl implements DisciplineTrackingDao {
 	
 	private DataSource dataSource;
 
-	private String DISCIPLINES_SQL = "select * from disipline where active='Y' and sport_code=?";
+	private String DISCIPLINES_SQL = "select * from discipline where active='Y' and sport_code=?";
 	private String INSERT_DISCIPLINES_SQL="insert into disciplinetracking (ussa_id, discipline_code,sport_code) values (?,?,?)";
 	
 	/* (non-Javadoc)
