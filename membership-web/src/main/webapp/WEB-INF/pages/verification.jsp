@@ -2,6 +2,9 @@
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_2.gif'/>" width="917" height="53"/></div>
+
+<div style="float:right;margin-top:-20px;margin-left:0px;margin-right:5px;"><script>showChatButton('membership@workgroup.im.ussa.org');</script></div>
+
 <div id="stg-pagetitle">Confirm Member Information</div>
 
 <form:form commandName="accountBean" name="accountBean">

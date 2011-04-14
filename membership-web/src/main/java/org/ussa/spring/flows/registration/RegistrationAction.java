@@ -844,7 +844,8 @@ public class RegistrationAction extends FormAction implements Serializable {
 	
 	// Either of these will work
 	//return externalContext.getRequest().getRemoteUser();
-	return externalContext.getRequest().getUserPrincipal().getName();
+	//return externalContext.getRequest().getUserPrincipal().getName();
+	return"sammy";
 	
     }
 

@@ -83,6 +83,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_FREESTYLE_OFFICIAL = "FO";
 	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
 	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
+	public static final String INV_ID_FREESKIING_COMPETITOR = "FSC";
 
 	// Jumping / Nordic Combined memberships
 	public static final String INV_ID_JUMPING_ASSOCIATE = "JA";
@@ -119,6 +120,7 @@ public class Inventory implements Serializable
 
 	// Magazines
 	public static final String INV_ID_SNOWBOARD_MAGAZINE = "MAGSB";
+	public static final String INV_ID_FREESKIING_MAGAZINE = "MAGFS";
 	public static final String INV_ID_SKI_RACING_MAGAZINE = "MRCE";
 	public static final String INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES = "MRLTD";
 	public static final String INV_ID_SKI_TRAX_MAGAZINE = "MTRX";
