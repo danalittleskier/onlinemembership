@@ -263,6 +263,7 @@ public class RulesBLImpl implements RulesBL {
     }
 
     public List<Inventory> getValidMagazineOptions(AccountBean accountBean) {
+    Boolean freMembership = false;
 	Address member = accountBean.getAddress();
 	CartBean cart = accountBean.getCartBean();
 	List<Inventory> magazineItems = new ArrayList<Inventory>();
@@ -270,17 +271,35 @@ public class RulesBLImpl implements RulesBL {
 	// only give magazines to people with addresses in the US
 	if (isCountryUs(member.getCountry())) {
 	    List<String> magazineInvIds = new ArrayList<String>();
-
-	    if (cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() > 0) {
+	    List<LineItemBean> items = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+	    if (items.size() > 0) {
 		// if(hasOnlyYouthMemberships(accountBean))
 		// {
 		// magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES);
 		// }
 		// else
 		// {
-		magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
-		magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
-		magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
+		
+		//if(cart.contains(Inventory.INV_ID_FREESKIING_COMPETITOR)){
+	    	for (LineItemBean lineItem : items) {
+	    		if(lineItem.getInventory().getSportCode().equalsIgnoreCase("FRE")){
+	    			freMembership = true;
+	    		}
+	    	}
+	    	//List<LineItemBean> freestyleMembership = cart.getLineItems(Inventory.SPORT_CODE_FRE);
+			if(freMembership) {
+			
+			magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+			magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
+			magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
+			magazineInvIds.add(Inventory.INV_ID_FREESKIING_MAGAZINE);
+		}
+		else{
+			magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+			magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
+			magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
+		}
+		
 		// }
 	    }
 

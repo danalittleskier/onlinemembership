@@ -48,6 +48,7 @@ public class RuleAssociations
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_YOUTH});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_CROSS_COUNTRY_YOUTH});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR, Inventory.INV_ID_FREESTYLE_YOUTH});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COMPETITOR, Inventory.INV_ID_JUMPING_YOUTH});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_COMPETITOR, Inventory.INV_ID_SNOWBOARD_COMPETITOR_REGIONAL});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR});
@@ -56,6 +57,7 @@ public class RuleAssociations
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_STUDENT});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_ROOKIE});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR, Inventory.INV_ID_FREESTYLE_ROOKIE});
 
 		mutuallyExclusiveMemberships = new HashMap<String, Set<String>>();
 		for (String[] invIds : mutuallyExclusiveList)
@@ -88,6 +90,7 @@ public class RuleAssociations
 		fisByMembership.put(Inventory.INV_ID_ALPINE_MASTER, new String[]{Inventory.INV_ID_ALPINE_MASTER_FIS});
 		fisByMembership.put(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, new String[]{Inventory.INV_ID_CROSS_COUNTRY_FIS});
 		fisByMembership.put(Inventory.INV_ID_FREESTYLE_COMPETITOR, new String[]{Inventory.INV_ID_FREESTYLE_FIS});
+		fisByMembership.put(Inventory.INV_ID_FREESKIING_COMPETITOR, new String[]{Inventory.INV_ID_FREESTYLE_FIS});
 		fisByMembership.put(Inventory.INV_ID_SNOWBOARD_COMPETITOR, new String[]{Inventory.INV_ID_SNOWBOARD_FIS});
 
 		//TODO: Is there a problem here?
