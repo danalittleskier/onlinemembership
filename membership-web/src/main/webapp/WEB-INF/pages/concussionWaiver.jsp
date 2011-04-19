@@ -6,7 +6,7 @@
 
 <div style="float:right;margin-top:-20px;margin-left:0px;margin-right:5px;"><script>showChatButton('membership@workgroup.im.ussa.org');</script></div>
 
-<div id="stg-pagetitle">United States Ski and Snowboard Concussion Waiver</div>
+<div id="stg-pagetitle">United States Ski and Snowboard Concussion Policy Waiver</div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
@@ -20,13 +20,22 @@ This is a waiver of certain legal rights.  Please read carefully before signing.
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 <p>
+Any USSA athlete under the age of 18 years suspected of having sustained a concussion or traumatic head injury must be removed immediately from participation in USSA sporting event (e.g. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or USSA member coach overseeing such sporting event.  The minor athlete will be prohibited from further participation until evaluated and cleared 
+in writing to resume participation in USSA sporting events by a qualified health care provider trained in the evaluation and management of concussive head injuries.  The health care professional must certify to USSA in the clearance letter that he/she has successfully completed a continuing education course in the evaluation and management of concussive head injuries within three years of the day on which the written statement is made.
+Upon removal of a minor athlete from participation for a suspected concussion or traumatic head injury, the USSA TD or member coach making the removal must inform USSA Competition Services.  Athletes who have subsequently been medically cleared to resume participation must provide such medical clearance (as described above) to USSA Competition Service in order to be permitted to participate in USSA sporting events.
+<br><br>
+About Concussion 
+<br>
+A concussion is a type of traumatic brain injury (TBI) caused by a bump, blow, or jolt to the head. Concussions can also occur from a fall or a blow to the body that causes the head and brain to move quickly back and forth. Doctors may describe a concussion as a "mild" brain injury because concussions are usually not life-threatening. Even so, their effects can be serious.
+<br><br>
+Risk of Continued Participation
+<br>
+A repeat concussion that occurs before the brain recovers from the first-usually within a short period of time (hours, days, or weeks)-can slow recovery or increase the likelihood of having long-term problems. In rare cases, repeat concussions can result in edema (brain swelling), permanent brain damage, and even death.
+<br><br>
+The USSA recommends that Members review the Center for Disease Control's resources on concussion awareness at the following link:
+<br>
+<a href="http://www.cdc.gov/concussion/HeadsUp/online_training.html" target="new">http://www.cdc.gov/concussion/HeadsUp/online_training.html</a>
 
-Any USSA athlete suspected of having sustained a concussion or traumatic head injury will be removed immediately from participation in USSA <br>
-sporting event (eg. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or USSA member coach overseeing <br>
-such sporting event, and will be prohibited from further participation until the athlete is evaluated and cleared to resume participation in USSA <br>
-sporting events by a qualified health care provider who is trained in the evaluation and management of a concussion, and who has successfully <br>
-completed a continuing education course in the evaluation and management of a concussion within three years before the day on which the written <br>
-statement is made, and who notifies USSA of such clearance and that he/she is qualified to authorize such clearance according this USSA's concussion policy.
 </p>
 
 
