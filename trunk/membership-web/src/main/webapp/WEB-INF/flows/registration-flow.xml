@@ -273,6 +273,14 @@
 
 	<view-state id="releaseWaiver" view="releaseWaiver">
 		<transition on="back" to="medicalWaiverDecisionBack"/>
+		<transition on="next" to="concussionWaiver">
+			<action bean="accountBean" method="bindAndValidate"/>
+			<action bean="registrationAction" method="handleConcussionWaiver"/>
+		</transition>
+	</view-state>
+	
+	<view-state id="concussionWaiver" view="concussionWaiver">
+		<transition on="back" to="releaseWaiver"/>
 		<transition on="next" to="payment">
 			<action bean="accountBean" method="bindAndValidate"/>
 		</transition>
@@ -282,7 +290,7 @@
 		<entry-actions>
 			<action bean="registrationAction" method="loadPayment"/>
 		</entry-actions>
-		<transition on="back" to="releaseWaiver"/>
+		<transition on="back" to="concussionWaiver"/>
 		<transition on="next" to="registrationComplete">
 			<action bean="accountBean" method="bindAndValidate"/>
 			<action bean="registrationAction" method="processOrder"/>

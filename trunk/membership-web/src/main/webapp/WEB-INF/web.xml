@@ -158,8 +158,9 @@
 
 	<filter-mapping>
 		<filter-name>CAS Filter</filter-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/fdsfsad*</url-pattern>
 	</filter-mapping>
+	
 	<filter-mapping>
 		<filter-name>CAS Validation Filter</filter-name>
 		<url-pattern>/*</url-pattern>

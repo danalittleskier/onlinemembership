@@ -129,6 +129,11 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 	    }
 	    memberLegal.setReleaseWaiver("Y");
 	    memberLegal.setReleaseWaiverDate(new Date());
+	    
+	    //New concussion waiver
+	    memberLegal.setConcussionWaiver("Y");
+	    memberLegal.setConcussionWaiverDate(new Date());
+	    
 	    universalDao.save(memberLegal);
 
 	    // MEMBERSEASON
