@@ -772,6 +772,18 @@ public class RegistrationAction extends FormAction implements Serializable {
 
 	return success();
     }
+    
+    //Adding new concussion waiver - April 2011
+    public Event handleConcussionWaiver(RequestContext context) throws Exception {
+    	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	MemberLegal memberLegal = accountBean.getMemberLegal();
+
+    	// force title case for guardian name
+    	memberLegal.setConcussionGuardianName(WordUtils.capitalizeFully(memberLegal.getConcussionGuardianName()));
+
+    	return success();
+        }
+
 
     public Event loadPayment(RequestContext context) throws Exception {
 	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");

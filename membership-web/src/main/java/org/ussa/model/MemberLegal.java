@@ -54,6 +54,17 @@ public class MemberLegal implements Serializable
 
 	@Column(name = "IPC_RELEASE_FORM_DATE", nullable = true)
 	private Date ipcReleaseFormDate;
+	
+	@Column(name = "CONCUSSION_WAIVER", nullable = true, length = 1)
+	private String concussionWaiver;
+	
+	@Column(name = "CONCUSSION_WAIVER_DATE", nullable = true)
+	private Date concussionWaiverDate;
+	
+	@Column(name = "CONCUSSION_GUARDIAN_NAME", nullable = true, length = 1)
+	private String concussionGuardianName;
+
+	
 
 	public MemberLegal()
 	{
@@ -194,6 +205,31 @@ public class MemberLegal implements Serializable
 	{
 		this.ipcReleaseFormDate = ipcReleaseFormDate;
 	}
+	
+	public String getConcussionWaiver() {
+		return concussionWaiver;
+	}
+
+	public void setConcussionWaiver(String concussionWaiver) {
+		this.concussionWaiver = concussionWaiver;
+	}
+
+	public Date getConcussionWaiverDate() {
+		return concussionWaiverDate;
+	}
+
+	public void setConcussionWaiverDate(Date concussionWaiverDate) {
+		this.concussionWaiverDate = concussionWaiverDate;
+	}
+
+	public String getConcussionGuardianName() {
+		return concussionGuardianName;
+	}
+
+	public void setConcussionGuardianName(String concussionGuardianName) {
+		this.concussionGuardianName = concussionGuardianName;
+	}
+	
 
 	public boolean hasInsurance() {
 		return (StringUtils.isNotBlank(getInsuranceCompany()) && StringUtils.isNotBlank(getInsurancePolicy()));
