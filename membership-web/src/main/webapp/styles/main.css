@@ -55,7 +55,7 @@ a img {border:0;}
   	height:auto !important;
 	height:400px;
 	background:#fff;
-	padding:10px 0px 0 20px;
+	padding:5px 0px 0 0px;
 }
 
 #stg-onecol-primary {
@@ -224,7 +224,7 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .decal {width:195px; float:left; text-align:center; padding:0 5px;}
 
 .scroll-membership {
-width: 745px; 
+width: 790px; 
 height: 630px;
 padding-left: 0px;
 padding-right: 0px; 
