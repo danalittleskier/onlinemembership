@@ -187,7 +187,7 @@ ul#stg-omr li{margin:0 0 7px 0;}
 
 .extras-header {width:100%; background:url(../images/tile-extras-header.gif) repeat-x;}
 .extras-header p {
-	width:50px; 
+	width:170px; 
 	margin:0 auto;
 	margin-bottom:15px; 
 	background:white; 
@@ -214,14 +214,14 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .tshirt-menu-2, .tshirt-menu-3 {margin-left:50px !important; margin-left:40px;}
 .tshirt-size, .tshirt-qty {float:left;}
 
-.decal-row {width:410px; margin:0 auto;}
+.decal-row {width:210px; margin:0 auto;}
 .decal-row p {font-weight:bold;}
 .decal-row label {width:20px; text-align:left;}
 .decal-row input {width:30px; height:17px;}
 
 .decal-qty {text-align:left;}
 .packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
-.decal {width:195px; float:left; text-align:center; padding:0 5px;}
+.decal {width:195px; float:left; text-align:center; padding:0 5px; margin-bottom:5px; border:1px solid #ccc;}
 
 /* Pop-up Window & Buttons
 ---------------------------------------------------------------------- */
