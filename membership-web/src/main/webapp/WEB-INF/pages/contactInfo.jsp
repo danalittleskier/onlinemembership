@@ -1,15 +1,24 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
 	<link media="screen" rel="stylesheet" href="colorbox/colorbox.css" />
 	<script src="colorbox/jquery.colorbox.js"></script>
+<% 	if(!session.getAttribute("FirstTime").equals("yes")){ %>
 	<script>
 			$(document).ready(function(){
 				$(".membership-application-hidden-link").colorbox({width:"75%", height:"75%", scrolling:true, inline:true, open:true, overlayClose:false, escKey:false, href:"#membership-application-important-text"});
 			});
 	</script>
+<%} %>	
 </head>
 <body>
+<%
+if(!session.getAttribute("FirstTime").equals("yes")){
+   String yes = "yes";
+   session.setAttribute( "FirstTime", yes  );
+}
+%>
 
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="735" /></div>
