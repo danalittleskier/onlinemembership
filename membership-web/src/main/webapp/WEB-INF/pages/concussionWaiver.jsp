@@ -6,16 +6,14 @@
 
 <div style="float:right;margin-top:-20px;margin-left:0px;margin-right:5px;"><script>showChatButton('membership@workgroup.im.ussa.org');</script></div>
 
-<div id="stg-pagetitle">United States Ski and Snowboard Concussion Policy Waiver</div>
+<div id="stg-pagetitle">United States Ski and Snowboard Concussion Policy </div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
 
-<p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
-</p>
+
 
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
