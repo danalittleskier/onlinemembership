@@ -6,6 +6,7 @@
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 		<p class="stg-omr-header">Online Membership Registration</p>
 		<ul id="stg-omr">
+			
 			<li>USSA Memberships and FIS registrations are non-refundable.</li>
 			<li><b>Online registrations are for the 2011-12 competition season.</b></li>
 			<li>Memberships expire annually on June 30.</li>
@@ -17,6 +18,7 @@
 				participate in such programs. I understand that failure to participate in competition
 				drug testing will result in a sanction.
 			</li>
+			
 			<!--  
 			<li><strong>Beginning May 1, all registrations completed online
 				will apply to the next competition season. If you wish to register
@@ -26,6 +28,7 @@
 				or by phone at 435.647.2666.</strong>
 			</li>
 			-->
+			<!-- No longer needed for now. 
 			<li>
 				In order to complete renewal or registration, your primary medical
 				insurance information will be required or you will be required to
@@ -39,7 +42,7 @@
 				fees in addition to those assessed by USSA.
 			</li>
 			<li>If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax.</li>
-			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>
+			<li>If you wish to renew an associate membership you must do so by mail or fax.</li>-->
 		</ul>
 	</div></div></div></div>
 	<!-- BOX (END) -->
