@@ -230,7 +230,8 @@ width: 790px;
 height: 630px;
 padding-left: 0px;
 padding-right: 0px;
-
+overflow: auto;
+}
 /*Start: Global Buttons */
 a.button
 {
@@ -301,5 +302,3 @@ div.gray { background-color: #999;}
 	cursor:pointer;
 }
 /*End: Global Submit Buttons*/
-overflow: auto;
-}
