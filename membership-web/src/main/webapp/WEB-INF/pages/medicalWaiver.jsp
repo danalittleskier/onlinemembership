@@ -3,7 +3,6 @@
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_3.gif'/>" width="735" /></div>
 
-<div style="float:right;margin-top:-20px;margin-left:0px;margin-right:5px;"><script>showChatButton('membership@workgroup.im.ussa.org');</script></div>
 
 <div id="stg-pagetitle">Primary Medical Insurance Exception Agreement</div>
 
