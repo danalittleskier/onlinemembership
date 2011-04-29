@@ -46,15 +46,14 @@
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-         <li style="padding-bottom:8px;">You are registering for the 2011-12 competition season.</li>
-         <li style="padding-bottom:8px;"><strong>USSA and FIS registrations are non-refundable or transferrable. </strong></li>
-         <li style="padding-bottom:8px;">Memberships expire annually on June 30 </li>
-         <li style="padding-bottom:8px;">If registering a minor, parent or legal guardian must complete registration using minor's name and date of birth.</li>
-         <li style="padding-bottom:8px;"> Registration must be submitted by an authorized card-holder only.  </li>
-         <li style="padding-bottom:8px;">If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax. </li>
-         <li>Code of Conduct:<br>
-           I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.</li>
-       </ul><div id="cboxClose" style="display:block" class="">close</div>
+         <li style="padding-bottom:4px;">You are registering for the 2011-12 competition season.</li>
+         <li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferrable. </strong></li>
+         <li style="padding-bottom:4px;">Memberships expire annually on June 30 </li>
+         <li style="padding-bottom:4px;">If registering a minor, parent or legal guardian must complete registration using minor's name and date of birth.</li>
+         <li style="padding-bottom:4px;"> Registration must be submitted by an authorized card-holder only.  </li>
+         <li style="padding-bottom:4px;">If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax. </li>
+         <li>Code of Conduct:<br>I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.</li>
+       </ul><a href="javascript:parent.$.fn.colorbox.close()" class="button blue" ><span>Close Window</span></a>
 		</div>
 	</div>
 <!--End: Code for pop-up text -->
