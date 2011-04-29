@@ -223,10 +223,83 @@ ul#stg-omr li{margin:0 0 7px 0;}
 .packs-of-five {display:block; float:left; margin:2px 0 0 5px;}
 .decal {width:195px; float:left; text-align:center; padding:0 5px;}
 
+/* Pop-up Window & Buttons
+---------------------------------------------------------------------- */
 .scroll-membership {
 width: 790px; 
 height: 630px;
 padding-left: 0px;
-padding-right: 0px; 
+padding-right: 0px;
+
+/*Start: Global Buttons */
+a.button
+{
+	display: inline-block;
+	font: bold 14px Arial, Verdana, Serif;
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+	background: url(images/ButtonBackground.png) no-repeat left top;
+	line-height: 40px;
+	padding-left: 10px;
+}
+a.button:hover { background-color: #1D95D1; }
+a.button span
+{
+	line-height: 40px;
+	display: block;
+	padding-right: 10px;
+	background: url(images/ButtonBackground.png) no-repeat right bottom;
+}
+.button span
+{
+
+}
+/*---Adjustable Color Classes--*/
+
+a.red { background-color: #C80000;}
+a.green { background-color: #2A7D22;}
+a.orange { background-color: #F27612;}
+a.blue { background-color: #08498E;}
+/*End: Global Buttons */
+/*Start: Global Submit Buttons */
+div.button
+{
+	display: inline-block;
+	font: bold 14px Arial, Verdana, Serif;
+	text-decoration: none;
+	color: #fff;
+	outline: none;
+	background: url(images/ButtonBackground.png) no-repeat left top;
+	line-height: 40px;
+	padding-left: 10px;
+}
+div.button:hover { background-color: #1D95D1; }
+div.button span
+{
+	line-height: 40px;
+	display: block;
+	padding-right: 10px;
+	background: url(images/ButtonBackground.png) no-repeat right bottom;
+}
+div.button span
+{
+
+}
+/*---Adjustable Color Classes--*/
+
+div.red { background-color: #C80000;}
+div.green { background-color: #2A7D22;}
+div.orange { background-color: #F27612;}
+div.blue { background-color: #08498E;}
+div.gray { background-color: #999;}
+.btn-submit{
+	color: #FFFFFF;
+	font: bold 14px Arial, Verdana, Serif;
+	background-color:transparent;
+	border: none;
+	cursor:pointer;
+}
+/*End: Global Submit Buttons*/
 overflow: auto;
 }
