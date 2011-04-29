@@ -186,7 +186,7 @@
 			<form:option value="<%=Inventory.SPORT_CODE_ALP%>">Alpine</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_DAL%>">Adaptive Alpine</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_BRD%>">Snowboarding</form:option>
-			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle</form:option>
+			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle/Freeskiing</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
