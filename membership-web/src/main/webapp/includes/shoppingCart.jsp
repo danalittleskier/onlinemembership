@@ -17,7 +17,7 @@
 			<c:set var="category" scope="request" value="Memberships"/>
 			<c:set var="lineItems" scope="request" value="${cart.memberships}"/>
 			<%@ include file="/includes/shoppingCartCategoryInclude.jsp"%>
-			<c:set var="category" scope="request" value="FIS/IPC Registrations"/>
+			<c:set var="category" scope="request" value="FIS Registrations"/>
 			<c:set var="lineItems" scope="request" value="${cart.fis}"/>
 			<%@ include file="/includes/shoppingCartCategoryInclude.jsp"%>
 			<c:set var="category" scope="request" value="Division/State Dues"/>
