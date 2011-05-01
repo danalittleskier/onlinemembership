@@ -20,7 +20,7 @@
 		</c:if>
 	</spring:bind>
 	<fieldset id="buttonFieldSet" class="buttons">
-		<input type="submit" class="btn-green" name="backToAccounts" value="Go to Account Home" onclick="window.location.href='/accounts/dashboard.html'"/>
+		<div class="button blue"><span><input type="submit" class="btn-submit" name="backToAccounts" value="Go to Account Home" onclick="window.location.href='/accounts/dashboard.html'"/></span></div>
 	</fieldset>
 </div>
 

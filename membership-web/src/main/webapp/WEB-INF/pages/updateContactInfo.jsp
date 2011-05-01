@@ -18,8 +18,8 @@
 		<fieldset id="buttonFieldSet" class="buttons">
 			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<input type="button" class="btn-green" name="_eventId_cancel" value="Cancel" onclick="submitFormWithInputButton(this);">
-			<input type="submit" class="btn-green" name="_eventId_update" value="Update">
+			<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_cancel" value="Cancel" onclick="submitFormWithInputButton(this);"></span></div>
+			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_update" value="Update"></span></div>
 		</fieldset>
 
 	</form:form>
