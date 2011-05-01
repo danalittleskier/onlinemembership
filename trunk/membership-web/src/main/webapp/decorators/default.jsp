@@ -11,12 +11,7 @@
 	<%@ include file="/includes/scriptsAndStyles.jsp" %>
 
 	<decorator:head/>
-	<!--Start: Support Files for Live Help-->
-<script language="javascript" type="text/javascript" src="http://im.ussa.org:9090/webchat/js/tooltips/domLib.js"></script>
-<script language="javascript" type="text/javascript" src="http://im.ussa.org:9090/webchat/js/tooltips/domTT.js"></script>
-<script language="JavaScript" type="text/javascript" src="http://im.ussa.org:9090/webchat/common.js"></script>
-<script language="JavaScript" type="text/javascript" src="http://im.ussa.org:9090/webchat/jivelive.jsp"></script>
-<!--End: Support Files for Live Help-->
+
 </head>
 
 <body>
