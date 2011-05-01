@@ -1,1 +1,1 @@
-<%response.sendRedirect("/accounts/dashboard.html");%>
+<%response.sendRedirect("/AccountsProfile/profile/profileManagement.htm");%>

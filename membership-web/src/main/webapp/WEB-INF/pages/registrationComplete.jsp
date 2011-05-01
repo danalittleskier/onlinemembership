@@ -57,14 +57,14 @@
 	<div></div>
 	<p class="stg-omr-header">When You're Finished...</p>
 	<p>
-		<c:url var="continueUrl" value="/registration.html">
+		<c:url var="continueUrl" value="/AccountsProfile/profile/profileManagement.htm">
 			<c:param name="_eventId_next" value="Continue"/>
 			<c:param name="_flowExecutionKey" value="${flowExecutionKey}"/>
 		</c:url>
 
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		You may continue to the <a href="${continueUrl}">USSA Account Dashboard</a>
-		to use your account or <a href="<c:url value="/j_acegi_logout"/>">log out</a> to end your session.
+		You may continue to your <a href="${continueUrl}">USSA Account User Profile</a>
+		to manage your account or <a href="<c:url value="/j_acegi_logout"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>
 </div>
