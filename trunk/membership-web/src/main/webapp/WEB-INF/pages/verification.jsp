@@ -161,8 +161,8 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 <fieldset class="buttons">
 	<label></label>
 	<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-	<input type="button" class="btn-green" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);">
-	<input type="submit" class="btn-green" name="_eventId_next" value="Continue">
+	<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
+	<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 
 </fieldset>
 

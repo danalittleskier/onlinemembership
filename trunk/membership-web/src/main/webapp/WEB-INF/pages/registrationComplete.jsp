@@ -30,7 +30,7 @@
 		<fieldset>
 			<legend>Your Membership Verification</legend>
 			<p>Please print your digital membership card.</p>
-			<input class="btn-green" type="button" onclick="window.open('<c:url value="http://services.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}"></c:url>');" value="Print Verification" name="button"/>
+			<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://services.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}"></c:url>');" value="Print Verification" name="button"/></span></div>
 			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">]
 				<p>Your digital membership card will only display memberships not requiring screening until positive results are received by USSA.</p>
 			</c:if>
