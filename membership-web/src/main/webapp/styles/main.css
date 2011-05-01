@@ -296,5 +296,6 @@ div.gray { background-color: #999;}
 	background-color:transparent;
 	border: none;
 	cursor:pointer;
+	float: none;
 }
 /*End: Global Submit Buttons*/
