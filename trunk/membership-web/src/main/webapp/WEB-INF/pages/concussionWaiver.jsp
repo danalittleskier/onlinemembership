@@ -11,7 +11,7 @@
 
 <%@ include file="/includes/messages.jsp"%>
 
-Please read carefully.
+Please read carefully before signing.
 <br>
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
