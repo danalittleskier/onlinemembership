@@ -2,7 +2,7 @@
 <body>
 
 <!-- Progress bar -->
-<div id="stg-progress"><img src="<c:url value='/images/progress_4.gif'/>" width="735" /></div>
+<div id="stg-progress"><img src="<c:url value='/images/progress_4.gif'/>" width="917" /></div>
 
 <div id="stg-pagetitle">United States Ski and Snowboard Concussion Policy </div>
 <!-- Content -->
