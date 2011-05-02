@@ -18,7 +18,7 @@
 	<p>Bonus Packs</p>
 </div>
 <p>Bonus Packs include a high quality 100% cotton U.S. Ski Team or U.S.
-	Snowboarding t-shirt, decal pack and a 2009 collectors lapel pin (or snowboarding
+	Snowboarding t-shirt, decal pack and a 2012 collectors lapel pin (or snowboarding
 	die-cut decal). <strong>Each pack is $25 including shipping.</strong>&nbsp;&nbsp;Please allow 4-6 weeks for delivery. Each pack is shipped separately.</p>
 <p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping
 	Nordic Combined and Snowboarding. <strong>Bonus Packs available to U.S.
@@ -176,7 +176,7 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<p><img src="<c:url value='/images/magazines.jpg'/>" style="float: right;" height="165" width="176">
+<p><img src="<c:url value='/images/magazines.gif'/>" style="float: right;" height="165" width="176">
 	<strong>ADDED BONUS!</strong><br/>
 	A one-year subscription to SKI Magazine (7-issues, a $9 value) or Transworld
 	Snowboarding Magazine (9-issues, a $5 value) is included with your bonus
