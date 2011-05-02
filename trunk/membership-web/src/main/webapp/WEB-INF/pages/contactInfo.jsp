@@ -21,7 +21,7 @@ if(session.getAttribute("FirstTime") == null){
 %>
 
 <!-- Progress bar -->
-<div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="735" /></div>
+<div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" /></div>
 
 
 <div id="stg-pagetitle">Member Information</div>
