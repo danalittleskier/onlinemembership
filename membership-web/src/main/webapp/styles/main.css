@@ -42,14 +42,14 @@ a img {border:0;}
 ---------------------------------------------------------------------- */
 #stg-pagetitle {
 	font:bold 18px arial,verdana,sans-serif;
-	width: 720px;
+	width: 930px;
 	border-bottom:1px solid #ccc;
 	padding-bottom:5px;
 	margin-bottom:10px;
 	margin-left: 10px;
 }
 #stg-content {
-	width:740px;
+	width:950px;
 	margin:0 auto;
 	min-height:400px;
   	height:auto !important;
@@ -65,14 +65,14 @@ a img {border:0;}
 
 #stg-twocol-primary {
 	float:left;
-	width:490px;
+	width:570px;
 	margin-right:10px;
 	margin-left: 10px;
 }
 
 #stg-twocol-secondary {
 	float: left;
-	width: 230px;
+	width: 350px;
 }
 
 #stg-progress {
