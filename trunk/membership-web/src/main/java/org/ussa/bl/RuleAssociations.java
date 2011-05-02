@@ -86,7 +86,7 @@ public class RuleAssociations
 		fisByMembership = new HashMap<String, String[]>();
 		fisByMembership.put(Inventory.INV_ID_ALPINE_COMPETITOR, new String[]{Inventory.INV_ID_ALPINE_FIS});
 		fisByMembership.put(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR,
-				new String[]{Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS, Inventory.INV_ID_ALPINE_FIS});
+				new String[]{Inventory.INV_ID_ALPINE_FIS});
 		fisByMembership.put(Inventory.INV_ID_ALPINE_MASTER, new String[]{Inventory.INV_ID_ALPINE_MASTER_FIS});
 		fisByMembership.put(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, new String[]{Inventory.INV_ID_CROSS_COUNTRY_FIS});
 		fisByMembership.put(Inventory.INV_ID_FREESTYLE_COMPETITOR, new String[]{Inventory.INV_ID_FREESTYLE_FIS});
