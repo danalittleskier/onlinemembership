@@ -38,7 +38,7 @@ if(session.getAttribute("FirstTime") == null){
 		<fieldset id="buttonFieldSet" class="buttons">
 			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
+			<%--<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>--%>
 			
 			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 		</fieldset>
