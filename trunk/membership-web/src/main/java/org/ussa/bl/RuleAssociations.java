@@ -107,9 +107,9 @@ public class RuleAssociations
 		membershipsExemptFromDues.add(Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COMPETITOR);
 
 		disabledFisMemberships = new HashSet<String>();
-		disabledFisMemberships.add(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS);
+		//disabledFisMemberships.add(Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS);
 		disabledFisMemberships.add(Inventory.INV_ID_ALP_PTS_CONF_FIS);
-		disabledFisMemberships.add(Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS);
+		//disabledFisMemberships.add(Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS);
 
 		youthMemberships = new HashSet<String>();
 		youthMemberships.add(Inventory.INV_ID_ALPINE_YOUTH);

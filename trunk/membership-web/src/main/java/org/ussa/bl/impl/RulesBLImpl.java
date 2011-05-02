@@ -236,8 +236,8 @@ public class RulesBLImpl implements RulesBL {
 	Date now = new Date();
 	if (Inventory.INV_ID_ALPINE_FIS.equals(fisInvId) && now.after(dateBL.getAlpineFisLateDate())) {
 	    lateInvId = Inventory.INV_ID_LATE_ALPINE_FIS;
-	} else if (Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(fisInvId) && now.after(dateBL.getIpcAsLateDate())) {
-	    lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
+	//} else if (Inventory.INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS.equals(fisInvId) && now.after(dateBL.getIpcAsLateDate())) {
+	//    lateInvId = Inventory.INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS;
 	} else if (Inventory.INV_ID_CROSS_COUNTRY_FIS.equals(fisInvId) && now.after(dateBL.getCrossCountryFisLateDate())) {
 	    lateInvId = Inventory.INV_ID_LATE_CROSS_COUNTRY_FIS;
 	} else if (Inventory.INV_ID_FREESTYLE_FIS.equals(fisInvId) && now.after(dateBL.getFreestyleFisLateDate())) {
