@@ -39,10 +39,10 @@ if(session.getAttribute("FirstTime") == null){
 			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 			<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
-			<!--<a class="button blue" href="/AccountsProfile/profile/profileManagement.htm"><span>Return to USSA Profile Manager</span></a>-->
+			
 			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 		</fieldset>
-
+		<a href="/AccountsProfile/profile/profileManagement.htm">Return to USSA Profile Manager</a>
 	</form:form>
 </div>
 
