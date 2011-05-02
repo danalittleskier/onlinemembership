@@ -24,6 +24,9 @@
 		</div>
 	</div>
 
-	
+	<script>
+		parent.$.colorbox.resize({innerWidth:"975", innerHeight:"640", transition:"elastic", speed:100});
+	</script>
+</body>
 </body>
 </html>
