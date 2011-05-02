@@ -176,7 +176,7 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<p><img src="<c:url value='/images/magazines.gif'/>" style="float: right;" height="199" width="126">
+<p><img src="<c:url value='/images/magazines.gif'/>" style="float: right;" height="126" width="199">
 	<strong>ADDED BONUS!</strong><br/>
 	A one-year subscription to SKI Magazine (7-issues, a $9 value) or Transworld
 	Snowboarding Magazine (9-issues, a $5 value) is included with your bonus
