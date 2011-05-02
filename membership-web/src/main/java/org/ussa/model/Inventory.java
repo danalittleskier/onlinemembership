@@ -104,7 +104,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_ALPINE_MASTER_FIS = "FISAM";
 	public static final String INV_ID_SPEED_SKIING_ALPINE_FIS = "FISAPSS";
 	public static final String INV_ID_ALP_PTS_CONF_FIS = "FISAPTC";
-	public static final String INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASD";
+	//public static final String INV_ID_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASD";
 	public static final String INV_ID_SNOWBOARD_FIS = "FISB";
 	public static final String INV_ID_SNOWBOARD_POINTS_CONFIRMATION_FIS = "FISBPTC";
 	public static final String INV_ID_FREESTYLE_FIS = "FISF";
@@ -114,7 +114,7 @@ public class Inventory implements Serializable
 
 	// FIS Late
 	public static final String INV_ID_LATE_ALPINE_FIS = "FISAL";
-	public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASDL";
+	//public static final String INV_ID_LATE_ALPINE_SKIING_DISABLED_LICENSE_FIS = "FISASDL";
 	public static final String INV_ID_LATE_CROSS_COUNTRY_FIS = "FISXL";
 	public static final String INV_ID_LATE_FREESTYLE_FIS = "FISFL";
 

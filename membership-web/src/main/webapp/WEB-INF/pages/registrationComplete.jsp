@@ -63,8 +63,8 @@
 		</c:url>
 
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		You may continue to your <a href="${continueUrl}">USSA Account User Profile</a>
-		to manage your account or <a href="<c:url value="/j_acegi_logout"/>">log out</a> to end your session.
+		You may continue to your <a href="../AccountsProfile/profile/profileManagement.htm">USSA Account User Profile</a>
+		to manage your account or <a href="<c:url value="../cas/logout"/>">log out</a> to end your session.
 	</p>
 	</div></div></div></div>
 </div>
