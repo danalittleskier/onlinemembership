@@ -104,7 +104,7 @@
 				</c:forEach>
 			</table>
 			<br/>
-			*FIS AS waivers will be required for FIS AS registrations.
+			
 		</fieldset>
 	</c:if>
 	<c:if test="${not empty accountBean.magazineItems}">
