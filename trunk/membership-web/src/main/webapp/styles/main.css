@@ -231,6 +231,7 @@ height: 630px;
 padding-left: 0px;
 padding-right: 0px;
 overflow: auto;
+position: relative;
 }
 /*Start: Global Buttons */
 a.button
