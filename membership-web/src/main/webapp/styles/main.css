@@ -300,3 +300,9 @@ div.gray { background-color: #999;}
 	float: none;
 }
 /*End: Global Submit Buttons*/
+/*Start: Possible fix for scrollbar sometimes not appearing */
+html {
+	height: 101%;	
+	margin-bottom: 1px;
+}
+/*End: Possible fix for scrollbar sometimes not appearing */
