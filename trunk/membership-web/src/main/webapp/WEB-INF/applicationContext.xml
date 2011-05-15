@@ -128,11 +128,11 @@
 		<!--  <property name="securityContext" ref="securityContext"/> -->
 	</bean>
 
-	<bean id="TimerFactoryBean" class="org.springframework.scheduling.timer.TimerFactoryBean">
+	<bean id="TimerFactoryBean" class="org.springframework.scheduling.timer.TimerFactoryBean" lazy-init="false">
 		<property name="scheduledTimerTasks">
 			<list>
 				<!-- Batches need to be closed daily at 4PM -->
-				<bean class="org.ussa.app.TimerTaskScheduler">
+				<bean class="org.ussa.app.TimerTaskScheduler" lazy-init="false">
 					<property name="timerTask" ref="batchCloseTimerTask"/>
 					<property name="startTime" value="16:00"/><!--  24 hour clock 0:00 - 23:59 -->
 					<property name="period" value="86400000"/><!--  millis between refreshes, 86400000 millis = 24 hours-->
