@@ -111,9 +111,9 @@ public class BatchServiceImpl implements BatchService
 	private void sendBatchCloseEmail(Batch batch)
 	{
 		SimpleMailMessage message = new SimpleMailMessage();
-		message.setFrom("support@ussa.org");
+		message.setFrom("ussaaccounts@ussa.org");
 		message.setTo("membership@ussa.org");
-		message.setCc(new String[] {"lbenevento@ussa.org"});
+		message.setCc(new String[] {"dana@ussa.org"});
 		message.setSubject("Membership Web - Batch Closed");
 
 		StringBuffer body = new StringBuffer();
