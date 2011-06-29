@@ -78,6 +78,7 @@
 		<br/>
 		</span>
 			<span class="textfield-short" style="margin-left:0px;margin-right:0px;">
+			<br/><br/>
 			<a href="<c:url value='/images/cvv.jpg'/>" title="CVV Code" rel="gb_imageset[images]">
 				<img src="<c:url value='/images/cvv.jpg'/>" alt="Enlarge Image" width="50px">
 			</a>
