@@ -74,7 +74,12 @@
 		</span>
 		<span class="textfield-short">
 		<label for="">* Security Code:</label>
-		<form:input path="paymentBean.securityCode" maxlength="4"/><br/>
+		<form:input path="paymentBean.securityCode" maxlength="4"/>&nbsp;
+		<br/>
+		<a href="<c:url value='/images/cvv.jpg'/>" title="CVV Code" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/cvv.jpg'/>" alt="Enlarge Image" width="50px">
+		</a>
+		
 		</span>
 
 		<br/><br/>
