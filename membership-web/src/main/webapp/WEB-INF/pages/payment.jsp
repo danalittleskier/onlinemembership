@@ -76,12 +76,12 @@
 		<label for="">* Security Code:</label>
 		<form:input path="paymentBean.securityCode" maxlength="4"/>&nbsp;
 		<br/>
-		<a href="<c:url value='/images/cvv.jpg'/>" title="CVV Code" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/cvv.jpg'/>" alt="Enlarge Image" width="50px">
-		</a>
-		
 		</span>
-
+			<span class="textfield-short" style="margin-left:0px;margin-right:0px;">
+			<a href="<c:url value='/images/cvv.jpg'/>" title="CVV Code" rel="gb_imageset[images]">
+				<img src="<c:url value='/images/cvv.jpg'/>" alt="Enlarge Image" width="50px">
+			</a>
+			</span>
 		<br/><br/>
 		<p style="clear: left;">Please note your billing address below if different from your mailing address:</p>
 <%--
