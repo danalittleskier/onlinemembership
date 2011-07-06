@@ -32,18 +32,22 @@ public class EmailUtilityImpl implements EmailUtility  {
 	try {
 	    
 	    StringBuffer message = new StringBuffer();
-	    message.append("US Ski and Snowboard Customer Refund Notification");
+	    message.append("US Ski and Snowboard Customer Ð Notification of Voided Transaction");
 	    message.append("<br/><br/>");
-	    message.append("An error has occurred while processing your membership.  The following transaction has been refunded:");
+	    message.append("An error has occurred while processing your membership. The following transaction has been voided:");
 	    message.append("<br/><br/>");
 	    message.append("Transaction Id: " + accountBean.getPaymentBean().getCompletedTransactionId());
 	    message.append("<br/>");
 	    message.append("Amount: $" + accountBean.getCartBean().getTotal().toString());
 	    message.append("<br/><br/>");
-	    message.append("We apologize for any inconvenience.  Thanks for your patience with us.  Please feel free to contact us at 435.647.2666 or ");
+	    message.append("We apologize for any inconvenience. Please retry your transaction or contact us.");
 	    message.append("email us <a href=\"mailto:membership@ussa.org\">here</a>");
 	    message.append("<br/><br/>");
 	    message.append("USSA Membership Staff");
+	    message.append("<br/>");
+	    message.append("<a href=\"mailto:membership@ussa.org\">membership@ussa.org</a>");
+	    message.append("<br/>");
+	    message.append("435.647.2666");
 	    return sendEmail(accountBean.getConfirmationEmail(), "US Ski and Snowboard Customer Refund Notification", message.toString());
 	} catch (Exception ex) {
 	    ex.printStackTrace();
