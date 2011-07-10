@@ -22,9 +22,9 @@
 	</licenses>
 
 	<scm>
-		<connection></connection>
+		<connection>svn</connection>
 		<developerConnection></developerConnection>
-		<url></url>
+		<url>https://it.ussa.org/svn/membership-web</url>
 	</scm>
 
 	<issueManagement>
@@ -192,8 +192,7 @@
 	<repositories>
 		<repository>
 			<id>central</id>
-			<!--<url>http://repo2.maven.org/maven2/</url>-->
-			 <url>http://artifactory.hq.ussa.org:8080/artifactory/repo</url>
+			 <url>http://it.ussa.org:8081/artifactory/repo</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -201,18 +200,18 @@
 
 		<repository>
 			<id>snapshots</id>
-			<url>http://artifactory.hq.ussa.org:8080/artifactory/repo</url>
+			<url>http://it.ussa.org:8081/artifactory/repo</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
 		</repository>
 
 	</repositories>
-<!-- 
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>central</id>
-			<url>http://artifactory.hq.ussa.org:8080/artifactory/plugins-releases</url>
+			<url>http://it.ussa.org:8081/artifactory/plugins-releases</url>
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
@@ -220,13 +219,13 @@
 
 		<pluginRepository>
 			<id>snapshots</id>
-			<url>http://artifactory.hq.ussa.org:8080/artifactory/plugins-snapshots</url>
+			<url>http://it.ussa.org:8081/artifactory/plugins-snapshots</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
- -->
+
 	<dependencies>
 
 		<!--These are the dependencies from the new archetype-->
