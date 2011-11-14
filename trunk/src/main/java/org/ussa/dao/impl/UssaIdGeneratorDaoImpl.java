@@ -15,8 +15,8 @@ public class UssaIdGeneratorDaoImpl extends HibernateDaoSupport implements UssaI
 	{
 		HibernateTemplate hibernateTemplate = getHibernateTemplate();
 		ParameterTable ussaParam = (ParameterTable) hibernateTemplate.load(ParameterTable.class, ParameterTable.USSAID, LockMode.UPGRADE);
-		Long ussaId = Long.valueOf(ussaParam.getParameterData());
-		ussaParam.setParameterData(String.valueOf(ussaId + 1));
+		Long ussaId = Long.valueOf(ussaParam.getParameterData()) +1;
+		ussaParam.setParameterData(String.valueOf(ussaId));
 		return appendSingleRandomDigit(ussaId);
 	}
 
