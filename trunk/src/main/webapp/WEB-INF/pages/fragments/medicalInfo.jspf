@@ -2,12 +2,15 @@
 <p class="req-fields"><em>* Required Fields</em><br>
 	<fieldset>
 		<legend>Primary Medical Insurance</legend>
-		<label>* Do you have medical insurance?</label>
-		<div class="radios">
-			<form:radiobutton id="hasInsurance1"  path="hasInsurance" value="${true}" onclick="showHideInsurance()"/> <label for="hasInsurance1" class="radio">Yes</label>
+	<!-- 	
+		<div class="radios"  >
+			<form:radiobutton id="hasInsurance1"  path="hasInsurance" value="${true}" disabled="true"/> <label for="hasInsurance1" class="radio">Yes</label>
 			<form:radiobutton id="hasInsurance2"  path="hasInsurance" value="${false}" onclick="showHideInsurance()"/> <label for="hasInsurance2" class="radio">No</label>
 		</div><br />
-		<div id="insurance" style="display:none;">
+	  -->
+		<div id="insurance" >
+		<input type="hidden" name="hasInsurance" id="hasInsurance" value="${true}"/>
+		    
 			<label>* Insurance Company Name:</label>
 			<form:input path="memberLegal.insuranceCompany" maxlength="50" id="insuranceCompany"/><br />
 			<label>* Policy/ID Number:</label>
@@ -17,7 +20,7 @@
 			<span style="padding-left:5px;" class="data-input">(ie:xxxxxxxxxx)</span><br />
 		</div>
 	</fieldset>
-
+ 
 	<script type="text/javascript" defer="defer">
 		function showHideInsurance()
 		{
