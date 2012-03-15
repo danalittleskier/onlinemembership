@@ -44,6 +44,8 @@ public interface RulesBL
 	public boolean needsBackgroundCheck(Long ussaId);
 
 	public boolean needsBackgroundCheck(AccountBean accountBean);
+	
+	public boolean needsSafeSportCourse(AccountBean accountBean);
 
 	public MembershipsBean getPurchasedMemberships(Long ussaId);
 

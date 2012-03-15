@@ -41,6 +41,7 @@ import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
+import org.ussa.dao.CoachesEducationDao;
 
 public class RulesBLImpl implements RulesBL {
     private static Log log = LogFactory.getLog(RulesBLImpl.class);
@@ -56,6 +57,7 @@ public class RulesBLImpl implements RulesBL {
     private DivisionDao divisionDao;
     private DivisionAffiliationDao divisionAffiliationDao;
     private DisciplineTrackingDao disciplineTrackingDao;
+    private CoachesEducationDao coachesEducationDao;
 
     public void setInventoryDao(InventoryDao inventoryDao) {
 	this.inventoryDao = inventoryDao;
@@ -91,6 +93,10 @@ public class RulesBLImpl implements RulesBL {
 
     public void setDivisionDao(DivisionDao divisionDao) {
 	this.divisionDao = divisionDao;
+    }
+    
+    public void setcoachesEducationDao(CoachesEducationDao coachesEducationDao){
+    	this.coachesEducationDao = coachesEducationDao;
     }
 
     public void setDisciplineTrackingDao(DisciplineTrackingDao disciplineTrackingDao) {
@@ -138,7 +144,7 @@ public class RulesBLImpl implements RulesBL {
 	    Integer currentSeasonAge = getAgeForCurrentRenewSeason(member.getBirthDate());
 	    List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
 	    for (Inventory inventory : recommendedMemberships) {
-		addMembershipToCart(accountBean, inventory);
+	    	addMembershipToCart(accountBean, inventory);
 	    }
 	}
     }
@@ -190,7 +196,7 @@ public class RulesBLImpl implements RulesBL {
 	if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT) && (age != null && age >= 18 && age <= 22)) {
 	    return true;
 	}
-
+	
 	// Can't be a freestyle rookie if you have ever been a freestyle competitor
 	if (invIdAdding.equals(Inventory.INV_ID_FREESTYLE_ROOKIE) && memberTransactionDao.hasEverHeldIventoryInSport(accountBean.getMember().getId(), Inventory.SPORT_CODE_FRE)) {
 	    return true;
@@ -380,6 +386,14 @@ public class RulesBLImpl implements RulesBL {
 		    cartBean.removeLineItem(officialInvId);
 		}
 	    }
+	  //If a member is trying to add Coaches Membership to the cart then check if they need to add Fast Start Coaching Course
+	  //  Set<String> coachInvIds = RuleAssociations.coachMemberships;
+	 //   if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && accountBean.isNeedsSafeSportCourse()){
+	 //   	cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
+	//	    messages.add(new MessageBean("messages.membership.mandatoryCoachesCourse", "Fast Start Coaching Course "));
+
+	 //   }
+
 
 	    // If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
 	    if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && (Inventory.INV_ID_ALPINE_COMPETITOR.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId()))) {
@@ -395,11 +409,23 @@ public class RulesBLImpl implements RulesBL {
 		cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
 	    }
 
+	 // If a member is trying to add a Alpine Competitor membership and is between 12 and 13 yrs old, should be advised that they only need it if doing scored races
+	    if ((Inventory.INV_ID_ALPINE_COMPETITOR.equals(inventory.getId())) && age >= 12 && age <= 13 ) {
+		messages.add(new MessageBean("messages.membership.competitor.youth", inventory.getRenewDescription()));
+	    }
+	    
+	 // If a member is trying to add a Alpine Youth membership and is between 12 and 13 yrs old, should be advised that they need Alpine Competitor if doing scored races
+	    if ((Inventory.INV_ID_ALPINE_YOUTH.equals(inventory.getId())) && age >= 12 && age <= 13 ) {
+		messages.add(new MessageBean("messages.membership.youth.competitor", inventory.getRenewDescription()));
+	    }
+	    
+	
 	    /*
 	     * THEN ADD ITEM TO CART
 	     */
 	    cartBean.addItem(inventory);
 
+	    
 	    /*
 	     * THEN APPLY DISCOUNTS AND ADD FEES
 	     */
@@ -766,7 +792,45 @@ public class RulesBLImpl implements RulesBL {
 	}
 	return false;
     }
+    
+    //New rule to check for Safe Sport Course
+    public boolean needsSafeSportCourse(AccountBean accountBean){
+    	CartBean cartBean= accountBean.getCartBean();
+ 
+    	if(cartBean.containsAny(RuleAssociations.coachMemberships)  && !isSafeSportCourseCurrent(accountBean.getMember().getId())){       
+    		log.warn("I am a coach with no safe sport...I am adding it");
+    		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
+    			cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
+    		}   		
+    		return true;
+    	}    	
+    	else{
+    		return false;
+    	}
+    	//return ((cartBean.containsAny(RuleAssociations.coachMemberships)  && !isSafeSportCourseCurrent(accountBean.getMember().getId())) || ((cartBean.containsAny(RuleAssociations.officialMemberships)) && !cartBean.containsAny(RuleAssociations.coachMemberships)));
+    	    }
 
+    private boolean isSafeSportCourseCurrent(Long ussaId){
+    if(ussaId != null){
+    	List<String> level = coachesEducationDao.getCoachLevel(ussaId);
+      if(!level.isEmpty()){
+    	  for(int i = 0; i < level.size(); i++){
+    		  String levelName = (String) level.get(i);
+    	  log.warn("Level is not empty "+levelName);
+    	  }
+    	  return true;
+      }
+      else{
+    	  log.warn("Level is empty");
+    	  return false;
+      }
+    }
+    else{
+    	return false;
+    }
+    }
+    
+    
     private boolean containsAny(Set<String> set, Collection<String> items) {
 	for (String s : items) {
 	    if (set.contains(s)) {

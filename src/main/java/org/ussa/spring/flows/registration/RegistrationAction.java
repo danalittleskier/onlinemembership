@@ -9,6 +9,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.commons.lang.WordUtils;
 import org.jasig.cas.client.authentication.AuthenticationFilter;
 import org.jasig.cas.client.validation.Assertion;
@@ -31,6 +33,7 @@ import org.ussa.beans.UserBean;
 import org.ussa.bl.CasLdap;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
+import org.ussa.bl.impl.RulesBLImpl;
 import org.ussa.common.dao.UniversalDao;
 import org.ussa.dao.AddressDao;
 import org.ussa.dao.ClubDao;
@@ -60,7 +63,8 @@ import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
 
 public class RegistrationAction extends FormAction implements Serializable {
-    
+ 
+    private static Log log = LogFactory.getLog(RulesBLImpl.class);
     private static final long serialVersionUID = 1L;
     
     private MemberDao memberDao;
@@ -624,13 +628,28 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    accountBean.setNeedsBackground(false);
 	}
 
+	if (rulesBL.needsSafeSportCourse(accountBean)){
+		accountBean.setNeedsSafeSportCourse(true);
+	} else {
+		accountBean.setNeedsSafeSportCourse(false);
+	}
 	// this is needed to determine whether or not to show the backgroundScreeningPopup
 	HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
+	
 	request.getSession().removeAttribute("showBackgroundScreening");
+	request.getSession().removeAttribute("showSafeSportCourse");
+	
 	if (!accountBean.getWasBgScreeningInfoAlreadyShown() && rulesBL.needsBackgroundCheck(accountBean)) {
 	    request.getSession().setAttribute("showBackgroundScreening", true);
 
 	    accountBean.setWasBgScreeningInfoAlreadyShown(true);
+	}
+	
+	if (!accountBean.isSafeSportInfoAlreadyShown() && rulesBL.needsSafeSportCourse(accountBean)){
+		log.warn("needs the popup");
+		request.getSession().setAttribute("showSafeSportCourse", true);
+		
+		accountBean.setSafeSportInfoAlreadyShown(true);
 	}
 
 	return success();

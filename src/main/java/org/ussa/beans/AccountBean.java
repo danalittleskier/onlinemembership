@@ -46,12 +46,15 @@ public class AccountBean implements Serializable
 	private String magazineOption;
 	private Boolean hasInsurance;
 	private boolean wasBgScreeningInfoAlreadyShown;
+	private boolean safeSportInfoAlreadyShown;
 	private boolean needsBackground;
 	private String fisWaiverParentalConsent;
 	private String fisWaiverDisabledParentalConsent;
 	private String medicalWaiverParentalConsent;
 	private String releaseWaiverParentalConsent;
 	private String confirmationEmail;
+	private boolean needsSafeSportCourse;
+
 
 	//Reference Data fields.
 	private List<State> usStates;
@@ -173,6 +176,14 @@ public class AccountBean implements Serializable
 	public void setWasBgScreeningInfoAlreadyShown(boolean wasBgScreeningInfoAlreadyShown)
 	{
 		this.wasBgScreeningInfoAlreadyShown = wasBgScreeningInfoAlreadyShown;
+	}
+	
+	public boolean isSafeSportInfoAlreadyShown() {
+		return safeSportInfoAlreadyShown;
+	}
+
+	public void setSafeSportInfoAlreadyShown(boolean safeSportInfoAlreadyShown) {
+		this.safeSportInfoAlreadyShown = safeSportInfoAlreadyShown;
 	}
 
 	public String getFisWaiverParentalConsent()
@@ -466,4 +477,13 @@ public class AccountBean implements Serializable
 	public void setConfirmationEmail(String confirmationEmail) {
 		this.confirmationEmail = confirmationEmail;
 	}
+
+	public boolean isNeedsSafeSportCourse() {
+		return needsSafeSportCourse;
+	}
+
+	public void setNeedsSafeSportCourse(boolean needsSafeSportCourse) {
+		this.needsSafeSportCourse = needsSafeSportCourse;
+	}
+	
 }
