@@ -78,6 +78,9 @@
 	<bean id="disciplineTrackingDao" class="org.ussa.dao.impl.DisciplineTrackingDaoImpl">
 		<property name="dataSource" ref="dataSource"/>
 	</bean>
+	<bean id="coachesEducationDao" class="org.ussa.dao.impl.CoachesEducationDaoImpl">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
 	<bean id="memberTransactionDao" class="org.ussa.dao.impl.MemberTransactionDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 		<property name="dataSource" ref="dataSource"/>
@@ -116,6 +119,7 @@
 		<property name="renewRuleInvDao" ref="renewRuleInvDao"/>
 		<property name="dateBL" ref="dateBL"/>
 		<property name="divDuesRulesDao" ref="divDuesRulesDao"/>
+		<property name="coachesEducationDao" ref="coachesEducationDao"/>
 		<property name="stateDuesRulesDao" ref="stateDuesRulesDao"/>
 		<property name="memberTransactionDao" ref="memberTransactionDao"/>
 		<property name="memberSeasonDao" ref="memberSeasonDao"/>
@@ -165,10 +169,12 @@
 	
 	<!-- Credit Card Test Mode setting - now located in context.xml -->
 	<jee:jndi-lookup id="currentMemberGroupName" jndi-name="java:comp/env/ldap/currentMember"/>
+	<jee:jndi-lookup id="currentSafeSportGroupName" jndi-name="java:comp/env/ldap/currentSafeSport"/>
 	
 	<bean name="casLdap" class="org.ussa.bl.impl.CasLdapImpl">
 		<property name="ussaLdap" ref="ussaLdap" />
 		<property name="currentMemberGroupName" ref="currentMemberGroupName"/>
+		<property name="currentSafeSportGroupName" ref="currentSafeSportGroupName"/>
 	</bean>
 	
 	<bean id="ussaLdap" class="org.ussa.ldap.impl.UssaLdapImpl" />

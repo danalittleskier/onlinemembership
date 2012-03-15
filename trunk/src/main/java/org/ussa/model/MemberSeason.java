@@ -66,6 +66,12 @@ public class MemberSeason implements Serializable
 	
 	@Column(name = "BACKGROUND_CHECK_RENEWAL_SEASON",  nullable = true, unique = false)
 	private String backgroundRenewalSeason;
+	
+	@Column(name = "SAFE_SPORT_CHECK_FLAG", length = 1, nullable = true, unique = false)
+	private String safeSportCheckFlag;
+	
+	@Column(name = "SAFE_SPORT_CHECK_DATE", nullable = true, unique = false)
+	private Date safeSportCheckDate;
 
 	public String getBackgroundRenewalSeason() {
 		return backgroundRenewalSeason;
@@ -214,4 +220,21 @@ public class MemberSeason implements Serializable
 	{
 		this.backgroundCheckReceiveDate = backgroundCheckReceiveDate;
 	}
+
+	public String getSafeSportCheckFlag() {
+		return safeSportCheckFlag;
+	}
+
+	public void setSafeSportCheckFlag(String safeSportCheckFlag) {
+		this.safeSportCheckFlag = safeSportCheckFlag;
+	}
+
+	public Date getSafeSportCheckDate() {
+		return safeSportCheckDate;
+	}
+
+	public void setSafeSportCheckDate(Date safeSportCheckDate) {
+		this.safeSportCheckDate = safeSportCheckDate;
+	}
+	
 }

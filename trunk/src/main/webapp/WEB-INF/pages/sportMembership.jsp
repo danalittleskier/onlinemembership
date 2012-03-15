@@ -226,12 +226,19 @@
 	<!-- BOX (END) -->
 </div>
 <div class="clear"></div>
-
+<!-- 
 <c:if test="${showBackgroundScreening}">
 	<script type="text/javascript" defer="defer">
 		GB_showCenter('USSA Background Screening Information', '<c:url value="/backgroundScreeningPopup.html"/>', 515, 625);
 	</script>
 	<%session.removeAttribute("showBackgroundScreening");%>
+</c:if>
+-->
+<c:if test="${showSafeSportCourse}">
+	<script type="text/javascript" defer="defer">
+		GB_showCenter('USSA Safe Sport Information', '<c:url value="/safeSportCoursePopup.html"/>', 515, 625);
+	</script>
+	<%session.removeAttribute("showSafeSportCourse");%>
 </c:if>
 
 </body>

@@ -150,6 +150,12 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			if (accountBean.isNeedsBackground()) {
 				memberSeason.setBackgroundCheckFlag("N");
 			}
+			
+			//Check to see if they need to complete the safe sport course This field is set
+			// in the RegistrationAction.java -> loadSportMemberships()
+			if(accountBean.isNeedsSafeSportCourse()){
+				memberSeason.setSafeSportCheckFlag("N");
+			}
 
 			// These are now being set in MemberSeason.java
 			// memberSeason.setMedicalException("N");
