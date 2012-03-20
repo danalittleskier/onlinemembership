@@ -177,7 +177,7 @@ public class Inventory implements Serializable
 	
 	//COACHES CLINICS COURSES
 	
-	public static final String INV_ID_CLINIC_FAST_START_COACHING = "CCFSC";
+	public static final String INV_ID_CLINIC_FAST_START_COACHING = "FSCC";
 
 
 

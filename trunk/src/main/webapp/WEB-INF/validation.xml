@@ -691,6 +691,36 @@
 			</field>
 		</form>
 		
+		<form name="safeSportWaiver">
+			<field property="memberLegal.safeSportWaiver" depends="validWhen">
+				<msg name="validWhen" key="errors.must.agree.to.terms"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(*this* == 'Y')</var-value>
+				</var>
+			</field>
+			<field property="releaseWaiverParentalConsent" depends="validWhen">
+				<msg name="validWhen" key="errors.must.have.parental.consent"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>${validWhenTrueOrParentInfoNotRequired}</var-value>
+				</var>
+			</field>
+			<field property="memberLegal.safeSportGuardianName" depends="validWhen, mask">
+				<msg name="mask" key="errors.name"/>
+				<msg name="validWhen" key="errors.guardian.name.required"/>
+				<arg0 key="label.parent.safesportguardian.name" />
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* != null))</var-value>
+				</var>
+				<var>
+					<var-name>mask</var-name>
+					<var-value>${name}</var-value>
+				</var>
+			</field>
+		</form>
+		
 
 		<form name="payment">
 			<field property="paymentBean.paymentType" depends="required">
