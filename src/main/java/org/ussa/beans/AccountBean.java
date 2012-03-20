@@ -46,14 +46,14 @@ public class AccountBean implements Serializable
 	private String magazineOption;
 	private Boolean hasInsurance;
 	private boolean wasBgScreeningInfoAlreadyShown;
-	private boolean safeSportInfoAlreadyShown;
+	private boolean fastStartCourseInfoAlreadyShown;
 	private boolean needsBackground;
 	private String fisWaiverParentalConsent;
 	private String fisWaiverDisabledParentalConsent;
 	private String medicalWaiverParentalConsent;
 	private String releaseWaiverParentalConsent;
 	private String confirmationEmail;
-	private boolean needsSafeSportCourse;
+	private boolean needsFastStartCourse;
 
 
 	//Reference Data fields.
@@ -178,12 +178,12 @@ public class AccountBean implements Serializable
 		this.wasBgScreeningInfoAlreadyShown = wasBgScreeningInfoAlreadyShown;
 	}
 	
-	public boolean isSafeSportInfoAlreadyShown() {
-		return safeSportInfoAlreadyShown;
+	public boolean isFastStartCourseInfoAlreadyShown() {
+		return fastStartCourseInfoAlreadyShown;
 	}
 
-	public void setSafeSportInfoAlreadyShown(boolean safeSportInfoAlreadyShown) {
-		this.safeSportInfoAlreadyShown = safeSportInfoAlreadyShown;
+	public void setFastStartCourseInfoAlreadyShown(boolean fastStartCourseInfoAlreadyShown) {
+		this.fastStartCourseInfoAlreadyShown = fastStartCourseInfoAlreadyShown;
 	}
 
 	public String getFisWaiverParentalConsent()
@@ -478,12 +478,12 @@ public class AccountBean implements Serializable
 		this.confirmationEmail = confirmationEmail;
 	}
 
-	public boolean isNeedsSafeSportCourse() {
-		return needsSafeSportCourse;
+	public boolean isNeedsFastStartCourse() {
+		return needsFastStartCourse;
 	}
 
-	public void setNeedsSafeSportCourse(boolean needsSafeSportCourse) {
-		this.needsSafeSportCourse = needsSafeSportCourse;
+	public void setNeedsFastStartCourse(boolean needsFastStartCourse) {
+		this.needsFastStartCourse = needsFastStartCourse;
 	}
 	
 }

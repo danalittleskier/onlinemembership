@@ -234,11 +234,11 @@
 	<%session.removeAttribute("showBackgroundScreening");%>
 </c:if>
 -->
-<c:if test="${showSafeSportCourse}">
+<c:if test="${showFastStartCourse}">
 	<script type="text/javascript" defer="defer">
-		GB_showCenter('USSA Safe Sport Information', '<c:url value="/safeSportCoursePopup.html"/>', 515, 625);
+		GB_showCenter('USSA Safe Sport Information', '<c:url value="/fastStartCoursePopup.html"/>', 515, 625);
 	</script>
-	<%session.removeAttribute("showSafeSportCourse");%>
+	<%session.removeAttribute("showFastStartCourse");%>
 </c:if>
 
 </body>

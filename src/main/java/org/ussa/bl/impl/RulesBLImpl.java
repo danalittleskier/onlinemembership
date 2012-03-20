@@ -388,7 +388,7 @@ public class RulesBLImpl implements RulesBL {
 	    }
 	  //If a member is trying to add Coaches Membership to the cart then check if they need to add Fast Start Coaching Course
 	  //  Set<String> coachInvIds = RuleAssociations.coachMemberships;
-	 //   if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && accountBean.isNeedsSafeSportCourse()){
+	 //   if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && accountBean.isNeedsFastStartCourse()){
 	 //   	cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
 	//	    messages.add(new MessageBean("messages.membership.mandatoryCoachesCourse", "Fast Start Coaching Course "));
 
@@ -505,6 +505,12 @@ public class RulesBLImpl implements RulesBL {
 	    }
 	}
 
+	if(RuleAssociations.coachMemberships.contains(invId)){
+		if(cart.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
+			cart.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING);
+		}
+	}
+	
 	resetFisOptions(accountBean);
 	resetMagazineOption(accountBean);
 
@@ -794,10 +800,10 @@ public class RulesBLImpl implements RulesBL {
     }
     
     //New rule to check for Safe Sport Course
-    public boolean needsSafeSportCourse(AccountBean accountBean){
+    public boolean needsFastStartCourse(AccountBean accountBean){
     	CartBean cartBean= accountBean.getCartBean();
  
-    	if(cartBean.containsAny(RuleAssociations.coachMemberships)  && !isSafeSportCourseCurrent(accountBean.getMember().getId())){       
+    	if(cartBean.containsAny(RuleAssociations.coachMemberships)  && !isFastStartCourseCurrent(accountBean.getMember().getId())){       
     		log.warn("I am a coach with no safe sport...I am adding it");
     		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
     			cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
@@ -807,10 +813,10 @@ public class RulesBLImpl implements RulesBL {
     	else{
     		return false;
     	}
-    	//return ((cartBean.containsAny(RuleAssociations.coachMemberships)  && !isSafeSportCourseCurrent(accountBean.getMember().getId())) || ((cartBean.containsAny(RuleAssociations.officialMemberships)) && !cartBean.containsAny(RuleAssociations.coachMemberships)));
+    	//return ((cartBean.containsAny(RuleAssociations.coachMemberships)  && !isFastStartCourseCurrent(accountBean.getMember().getId())) || ((cartBean.containsAny(RuleAssociations.officialMemberships)) && !cartBean.containsAny(RuleAssociations.coachMemberships)));
     	    }
 
-    private boolean isSafeSportCourseCurrent(Long ussaId){
+    private boolean isFastStartCourseCurrent(Long ussaId){
     if(ussaId != null){
     	List<String> level = coachesEducationDao.getCoachLevel(ussaId);
       if(!level.isEmpty()){

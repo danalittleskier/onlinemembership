@@ -14,12 +14,12 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 		super(MemberSeason.class);
 	}
   
-	public MemberSeason getMostRecentSafeSportCheck(Long ussaId)
+	public MemberSeason getMostRecentFastStartCheck(Long ussaId)
 	{
 		
 		List<MemberSeason> seasons = (List<MemberSeason>) getHibernateTemplate()
 				.find("from MemberSeason s where s.memberSeasonPk.member.id = ? and s.memberSeasonPk.season = " +
-						"(select max(ms.memberSeasonPk.season) from MemberSeason ms where ms.memberSeasonPk.member.id = ? and ms.safeSportCheckFlag = 'Y')",
+						"(select max(ms.memberSeasonPk.season) from MemberSeason ms where ms.memberSeasonPk.member.id = ? and ms.fastStartCourseCheckFlag = 'Y')",
 						new Object[]{ussaId, ussaId});
 
 		if(seasons != null && seasons.size() > 0)
