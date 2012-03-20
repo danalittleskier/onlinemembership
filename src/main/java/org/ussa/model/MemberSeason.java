@@ -67,11 +67,11 @@ public class MemberSeason implements Serializable
 	@Column(name = "BACKGROUND_CHECK_RENEWAL_SEASON",  nullable = true, unique = false)
 	private String backgroundRenewalSeason;
 	
-	@Column(name = "SAFE_SPORT_CHECK_FLAG", length = 1, nullable = true, unique = false)
-	private String safeSportCheckFlag;
+	@Column(name = "FAST_START_COURSE_CHECK_FLAG", length = 1, nullable = true, unique = false)
+	private String fastStartCourseCheckFlag;
 	
-	@Column(name = "SAFE_SPORT_CHECK_DATE", nullable = true, unique = false)
-	private Date safeSportCheckDate;
+	@Column(name = "FAST_START_COURSE_CHECK_DATE", nullable = true, unique = false)
+	private Date fastStartCourseCheckDate;
 
 	public String getBackgroundRenewalSeason() {
 		return backgroundRenewalSeason;
@@ -221,20 +221,20 @@ public class MemberSeason implements Serializable
 		this.backgroundCheckReceiveDate = backgroundCheckReceiveDate;
 	}
 
-	public String getSafeSportCheckFlag() {
-		return safeSportCheckFlag;
+	public String getFastStartCourseCheckFlag() {
+		return fastStartCourseCheckFlag;
 	}
 
-	public void setSafeSportCheckFlag(String safeSportCheckFlag) {
-		this.safeSportCheckFlag = safeSportCheckFlag;
+	public void setFastStartCourseCheckFlag(String fastStartCourseCheckFlag) {
+		this.fastStartCourseCheckFlag = fastStartCourseCheckFlag;
 	}
 
-	public Date getSafeSportCheckDate() {
-		return safeSportCheckDate;
+	public Date getFastStartCourseCheckDate() {
+		return fastStartCourseCheckDate;
 	}
 
-	public void setSafeSportCheckDate(Date safeSportCheckDate) {
-		this.safeSportCheckDate = safeSportCheckDate;
+	public void setFastStartCourseCheckDate(Date fastStartCourseCheckDate) {
+		this.fastStartCourseCheckDate = fastStartCourseCheckDate;
 	}
 	
 }
