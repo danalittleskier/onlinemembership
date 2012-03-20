@@ -628,16 +628,16 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    accountBean.setNeedsBackground(false);
 	}
 
-	if (rulesBL.needsSafeSportCourse(accountBean)){
-		accountBean.setNeedsSafeSportCourse(true);
+	if (rulesBL.needsFastStartCourse(accountBean)){
+		accountBean.setNeedsFastStartCourse(true);
 	} else {
-		accountBean.setNeedsSafeSportCourse(false);
+		accountBean.setNeedsFastStartCourse(false);
 	}
 	// this is needed to determine whether or not to show the backgroundScreeningPopup
 	HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
 	
 	request.getSession().removeAttribute("showBackgroundScreening");
-	request.getSession().removeAttribute("showSafeSportCourse");
+	request.getSession().removeAttribute("showFastStartCourse");
 	
 	if (!accountBean.getWasBgScreeningInfoAlreadyShown() && rulesBL.needsBackgroundCheck(accountBean)) {
 	    request.getSession().setAttribute("showBackgroundScreening", true);
@@ -645,11 +645,11 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    accountBean.setWasBgScreeningInfoAlreadyShown(true);
 	}
 	
-	if (!accountBean.isSafeSportInfoAlreadyShown() && rulesBL.needsSafeSportCourse(accountBean)){
+	if (!accountBean.isFastStartCourseInfoAlreadyShown() && rulesBL.needsFastStartCourse(accountBean)){
 		log.warn("needs the popup");
-		request.getSession().setAttribute("showSafeSportCourse", true);
+		request.getSession().setAttribute("showFastStartCourse", true);
 		
-		accountBean.setSafeSportInfoAlreadyShown(true);
+		accountBean.setFastStartCourseInfoAlreadyShown(true);
 	}
 
 	return success();
@@ -803,6 +803,16 @@ public class RegistrationAction extends FormAction implements Serializable {
     	return success();
         }
 
+    //Adding new safe sport waiver - April 2012
+    public Event handleSafeSportWaiver(RequestContext context) throws Exception {
+    	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	MemberLegal memberLegal = accountBean.getMemberLegal();
+
+    	// force title case for guardian name
+    	memberLegal.setSafeSportGuardianName(WordUtils.capitalizeFully(memberLegal.getSafeSportGuardianName()));
+
+    	return success();
+        }
 
     public Event loadPayment(RequestContext context) throws Exception {
 	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");

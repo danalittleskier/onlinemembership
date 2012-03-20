@@ -15,7 +15,7 @@ public class CasLdapImpl implements CasLdap {
 
     private UssaLdap ussaLdap;
     private String currentMemberGroupName;
-    private String currentSafeSportGroupName;
+    private String currentFastStartCoachingCourseGroupName;
     
     private static String DATE_FORMAT = "MM/dd/yyyy";
     private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -79,7 +79,7 @@ public class CasLdapImpl implements CasLdap {
 	return false;
     }
     
-   // public void addUssaIdToSafeSportGroup(UserBean userBean, AccountBean accountBean, String ussaId)
+   // public void addUssaIdToFastStartCourseGroup(UserBean userBean, AccountBean accountBean, String ussaId)
 
     public void addUssaIdToAccount(UserBean userBean, AccountBean accountBean, String ussaId) {
 
@@ -92,8 +92,8 @@ public class CasLdapImpl implements CasLdap {
 		List<String> memberGroups = new ArrayList<String>();
 		memberGroups.add(currentMemberGroupName);
 		addGroupsToUser(userBean.getUsername(), memberGroups);
-		if(accountBean.isNeedsSafeSportCourse()){
-			memberGroups.add(currentSafeSportGroupName);
+		if(accountBean.isNeedsFastStartCourse()){
+			memberGroups.add(currentFastStartCoachingCourseGroupName);
 			addGroupsToUser(userBean.getUsername(),memberGroups);
 		}
 		return; // id is found in primary ussa id field; no need to add it
@@ -127,8 +127,8 @@ public class CasLdapImpl implements CasLdap {
 		List<String> memberGroups = new ArrayList<String>();
 		memberGroups.add(currentMemberGroupName);
 		addGroupsToUser(userBean.getUsername(), memberGroups);
-		if(accountBean.isNeedsSafeSportCourse()){
-			memberGroups.add(currentSafeSportGroupName);
+		if(accountBean.isNeedsFastStartCourse()){
+			memberGroups.add(currentFastStartCoachingCourseGroupName);
 			addGroupsToUser(userBean.getUsername(),memberGroups);
 		}
 
@@ -162,8 +162,8 @@ public class CasLdapImpl implements CasLdap {
 	this.ussaLdap = ussaLdap;
     }
 
-    public void setCurrentSafeSportGroupName(String currentSafeSportGroupName) {
-		this.currentSafeSportGroupName = currentSafeSportGroupName;
+    public void setCurrentFastStartCoachingCourseGroupName(String currentFastStartCoachingCourseGroupName) {
+		this.currentFastStartCoachingCourseGroupName = currentFastStartCoachingCourseGroupName;
 	}
 
 	public void setCurrentMemberGroupName(String currentMemberGroupName) {

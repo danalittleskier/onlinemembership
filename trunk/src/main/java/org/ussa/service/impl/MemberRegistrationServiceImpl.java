@@ -136,6 +136,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			memberLegal.setConcussionWaiver("Y");
 			memberLegal.setConcussionWaiverDate(new Date());
 
+			//New safe sport waiver
+	        memberLegal.setSafeSportWaiver("Y");
+	        memberLegal.setSafeSportWaiverDate(new Date());
+	        
 			universalDao.save(memberLegal);
 
 			// MEMBERSEASON
@@ -153,8 +157,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			
 			//Check to see if they need to complete the safe sport course This field is set
 			// in the RegistrationAction.java -> loadSportMemberships()
-			if(accountBean.isNeedsSafeSportCourse()){
-				memberSeason.setSafeSportCheckFlag("N");
+			if(accountBean.isNeedsFastStartCourse()){
+				memberSeason.setFastStartCourseCheckFlag("N");
 			}
 
 			// These are now being set in MemberSeason.java
