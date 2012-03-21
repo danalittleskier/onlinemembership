@@ -638,6 +638,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	
 	request.getSession().removeAttribute("showBackgroundScreening");
 	request.getSession().removeAttribute("showFastStartCourse");
+	request.getSession().setAttribute("showFastStartCourseLink", true);
 	
 	if (!accountBean.getWasBgScreeningInfoAlreadyShown() && rulesBL.needsBackgroundCheck(accountBean)) {
 	    request.getSession().setAttribute("showBackgroundScreening", true);
