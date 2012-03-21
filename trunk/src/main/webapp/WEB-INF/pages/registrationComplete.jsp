@@ -56,6 +56,20 @@
 			<p><font size="2" ><a href="${ncsiUrl}" target="_BLANK">Go here to complete your background screening.</a></font></p>
 		</fieldset>
 	</c:if>
+	
+	<c:if test="${showFastStartCourseLink}">
+		<fieldset>
+			<legend>Fast Start Sport Coaching Course Required</legend>
+			<%@ include file="/includes/fastStartCourseText.jsp"%>
+
+			<br/>
+			<c:url var="ncsiUrl" value="https://www.ncsisafe.com/members/selfregbatchcodelanding.aspx">
+				<c:param name="srb" value="11392848"/>
+				<c:param name="id" value="${accountBean.member.id}"/>
+			</c:url>
+			<p><font size="2" ><a href="${ncsiUrl}" target="_BLANK">Go here to complete your coaching course.</a></font></p>
+		</fieldset>
+	</c:if>
 
 </div>
 <div id="stg-twocol-secondary">
