@@ -45,6 +45,7 @@
                           <li class="last"><a href="http://shop.usskiteam.com" target="_blank">Shop</a></li>
                       </ul>
                   <!--End: Navbar --></div>
+  <div style="position:absolute;top:130px;left:20px;"><a href="http://my.ussa.org" target="_blank">Return to My USSA</a></div>
   <center><h1 style="font-size: 2em; line-height: 1.5em;color:#333333;">Online Membership Registration</h1></center>
                   <!--Start: main-wrapper -->
 <table cellpadding="0" cellspacing="0" border="0" style="width:970px;overflow:hidden;">
