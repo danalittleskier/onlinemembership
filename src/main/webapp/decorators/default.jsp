@@ -240,7 +240,7 @@
                                     </ul>
                     </div>
                   <!--End: Ussa footer -->
-                  
+                  <div style="clear:both;"></div>
                   
                   
         <!--End: page --></div>
