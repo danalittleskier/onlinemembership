@@ -58,7 +58,7 @@ if(session.getAttribute("FirstTime") == null){
 			
 			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 		</fieldset>
-		<a href="/AccountsProfile/profile/profileManagement.htm">Return to USSA Profile Manager</a>
+		<a href="http://my.ussa.org" target="_blank">Return to My USSA</a>
 	</form:form>
 </div>
 
