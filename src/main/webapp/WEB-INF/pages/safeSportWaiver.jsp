@@ -26,31 +26,30 @@ Please read carefully before signing.
 <p>
 <br>
 <b>Purpose of the Guidelines</b>
-<br><br>
+<br>
 As National Governing Body and steward of our sport, USSA has published this document to assist its clubs, coaches, and team leaders in recognizing unacceptable behavior and acting to prevent or correct it.
 These guidelines are not intended to serve as legal advice or to supplant legal definitions of abuse and harassment that vary depending on jurisdiction. Instead these guidelines are designed to raise awareness of areas of concern. If these guidelines raise concerns about behavior you have witnessed, you are advised to notify the child's parents and seek appropriate counsel.
-<br><br>
+<br>
 Definition of a Child
 <br>
 For the purpose of these guidelines, a child is defined as anyone under the age of 18 years.
-<br><br>
+<br>
 Statement
 <br>
 *The welfare of the minor child is paramount. <br>
 *Children must be protected from harm, abuse, and degrading treatments. <br>
 *Parents must be involved in any action taken to intervene in behalf of their child.<br>
-<br><br>
+<br>
 Overview 
 <br>
 These guidelines are intended to raise awareness and:<br>
 *Promote Good Practice. <br>
 *Provide examples of objectionable behavior and assist in recognition of signs of abuse. <br>
 *Urge team leaders to take action.<br>
-<br><br>
-<b>Positions of Trust</b>
-<br><br>
-Good Practice
 <br>
+<b>Positions of Trust</b>
+<br>
+Good Practice
 *The welfare of the child is the primary concern.<br>
 *Be aware that the closeness of the coach/athlete relationship may encourage<br>
 feelings that are not directly related to the sport. <br>
@@ -59,14 +58,14 @@ feelings that are not directly related to the sport. <br>
 *Prevent and correct bullying. <br>
 *Treat all children equally, with dignity and respect. <br>
 *Give enthusiastic and constructive advice rather than criticism.<br>
-<br><br>
+<br>
 Unacceptable Behavior
-<br><br>
+<br>
 *NEVER enter into a sexual relationship with a child under your care/supervision. <br>
 *NEVER use your influence over a child for your own interests.<br>
-<br><br>
+<br>
 <b>Physical Contact</b>
-<br><br>
+<br>
 Good Practice
 <br>
 *Physical contact is recommended only in support of the following purposes:<br>
@@ -77,24 +76,24 @@ Good Practice
 *Physical contact may be appropriate in other circumstances, as in congratulating a child or consoling a child who is upset. However, always ensure that physical contact is carried out in the open, or in the presence of another supervising adult.<br>
 *Remember that interpretations of touching will be affected by factors such as cultural differences, religious implications, relative age, sexual orientation.<br>
 *If a child is uncomfortable with physical contact, stop.<br>
-<br><br>
+<br>
 <b>General Supervision</b>
-<br><br>
+<br>
 Good Practice
-<br><br>
+<br>
 *A supervising adult should never be alone with a child in potentially compromising situations, i.e. in a hotel room, bathroom, changing room, locker rooms, etc.<br>
 *Mixed gender teams must always be accompanied by male and female responsible adults.<br>
 <br>
 Unacceptable Behavior 
-<br><br>
+<br>
 *Do not spend time alone with a child behind closed doors.<br>
 *Do not take a child alone on a trip unless in an emergency and with written parental permission.<br>
 *Do not enter the room of a child without another responsible adult present. <br>
 *Never share a room with a child.<br>
 *Discourage sexually provocative jokes or inappropriate touching or conversation. <br>
-<br><br>
+<br>
 <b>Confidentiality</b>
-<br><br>
+<br>
 Good Practice
 <br> 
 *Where you are close to a child, you may gather very personal information about
@@ -103,11 +102,11 @@ the child. <br>
 he is sharing. Unacceptable Behavior<br>
 *You should never encourage confidences, or intrude into the private life of the child.<br>
 *Maintain appropriate boundaries.<br>
-<br><br>
+<br>
 <b>Integrity</b>
-<br><br>
+<br>
 Good Practice
-<br><br>
+<br>
 *Discourage children from talking offensively about others, but be aware that the child may be trying to describe an instance of abuse.<br>
 *Never talk offensively about others yourself.<br>
 *Encourage children to obey the rules of the sport, and compete in good<br>
@@ -115,49 +114,49 @@ faith, and treat officials and other competitors with respect. <br>
 *Emphasize fair play!<br>
 <br>
 Unacceptable Behavior
-<br> <br>
+<br> 
 *Never advocate measures to gain an unfair advantage or cheat in any way. <br>
 *Never allow children in your care to do this.<br>
-<br><br>
+<br>
 <b>Personal Standards</b>
-<br><br>
+<br>
 Good Practice 
-<br><br>
+<br>
 *Always display high personal standards. <br>
 *Respect USSA's Core Values and live them. <br>
 *Respect USSA's Code of Conduct. <br>
 *Always project a favorable image of the sport, the Olympic movement, USSA,
 and FIS. <br>
 *Always project an image of health, cleanliness and efficiency.
-<br><br>
+<br>
 Unacceptable Behavior
-<br><br>
+<br>
 *Do not smoke, or drink alcohol to excess, when in the company of children. <br>
 *Never use profane, insulting or otherwise offensive language. <br>
 *Never use any form of sexually charged verbal intimacy or innuendoes.<br>
-<br><br>
+<br>
 If you are unsure <br>
 *Always err on the side of protecting the child. Take action. <br>
 *If you are unsure of what is appropriate or necessary in the particular<br>
 circumstance, you should consult local counsel, medical professionals, or contact
 USSA's Legal Counsel for guidance.<br>
 *Always involve the child's parents in any action involving their child.<br>
-<br><br>
+<br>
 <b>Defining Abuse</b>
-<br><br>
+<br>
 *Physical <br>
 *Emotional <br>
 *Neglect <br>
 *Sexual <br>
 *Bullying<br>
-<br><br>
+<br>
 <b>Physical Abuse</b>
 <br>
 *Physical injury of all types when such injury is intentional or results from neglect.<br>
 *Giving a child alcohol or inappropriate medications or drugs. <br>
 *In a sports situation, this may also occur when the nature and intensity of training<br>
 disregard the capacity if the child's immature and growing body.<br>
-<br><br>
+<br>
 <b>Emotional Abuse</b>
 <br>
 *May involve telling a child that he/she is useless, devaluing them. <br>
@@ -165,18 +164,18 @@ disregard the capacity if the child's immature and growing body.<br>
 *Shouting threats or taunts. <br>
 *Unrealistic expectation of performance at levels<br>
 above a child's capability.<br>
-<br><br>
+<br>
 <b>Neglect</b>
 <br>
 *Failure to provide adequate food or shelter.<br>
 *Prolonged unnecessary exposure to cold or heat. <br>
 *Unnecessary risk of injury.<br>
-<br><br>
+<br>
 <b>Sexual Abuse</b>
 <br>
 *In sport, activities which might involve physical contact with children may create situations where sexual abuse may go unnoticed.<br>
 *The power of the coach over the athlete could, if misused, lead to abusive situations developing.<br>
-<br><br>
+<br>
 <b>Bullying</b>
 <br>
 *May be physical, verbal or emotional. <br>
@@ -184,7 +183,7 @@ above a child's capability.<br>
 *May involve staff, other athletes, or parents. <br>
 *Signs may include a drop in performance, behavioral changes, mood swings,<br>
 reluctance to train/compete, frequent loss of possessions, physical injuries (bruising, scratches, etc), poor sleep, loss of appetite/weight.<br>
-<br><br>
+<br>
 <b>Be Vigilant</b>
 <br>
 *Ensure coaches and those in positions of trust are screened pursuant to USSA's criminal background screening policy.<br>
@@ -192,7 +191,7 @@ reluctance to train/compete, frequent loss of possessions, physical injuries (br
 *Note changes in behavior. <br>
 *Drop in performance. <br>
 *Physical symptoms and signs.<br>
-<br><br>
+<br>
 <b>Action</b>
 <br>
 *It is NOT your responsibility to decide if abuse is taking place. <br>
@@ -200,20 +199,20 @@ reluctance to train/compete, frequent loss of possessions, physical injuries (br
 authorities. <br>
 *Seek counsel from qualified individuals to assist your club in addressing
 objectionable behaviors.<br>
-<br><br>
+<br>
 <b>Remember</b>
 <br>
 *The effects of abuse may have very long-lasting consequences for the child.<br>
 *The welfare of the child is paramount.<br>
 *Children must be protected from harm, discrimination and degrading treatments.<br>
-<br><br>
+<br>
 <b>Documents</b>
 <br>
 These guidelines are intended to complement:<br>
 *The USSA Code of Conduct <br>
 *The USSA Policy on Sexual Abuse and Harassment <br>
 *The USSA Criminal Background Screening Policy FIS and WADA Anti-Doping Policies<br>
-<br><br>
+<br>
 <b>Acknowledgments:</b>
 <br>
 This document was derived in large part from the good work done by Snowsport Great Britain and disseminated by the International Ski Federation.
@@ -228,7 +227,7 @@ This document was derived in large part from the good work done by Snowsport Gre
 	</tr>
 </table>
 <script type="text/javascript" defer="defer">
-	updateCheckboxControl('concussionWaiver');
+	updateCheckboxControl('safeSportWaiver');
 </script>
 
 <c:if test="${accountBean.parentInfoRequired}">

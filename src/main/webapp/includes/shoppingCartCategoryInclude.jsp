@@ -4,6 +4,7 @@
 <c:set var="divisionDues"><%=Inventory.INVENTORY_TYPE_DIVISION_DUES%></c:set>
 <c:set var="stateDues"><%=Inventory.INVENTORY_TYPE_STATE_DUES%></c:set>
 <c:set var="ussaLate"><%=Inventory.INV_ID_MEMBER_LATE_FEE%></c:set>
+<c:set var="fastStartCourse"><%=Inventory.INV_ID_CLINIC_FAST_START_COACHING %></c:set>
 
 <c:if test="${not empty lineItems}">
 	<tr>
@@ -21,7 +22,7 @@
 				</c:if>
 			</td>
 			<td class="item-remove">
-				<c:if test="${empty param.readOnly and !(lineItem.inventory.inventoryType eq divisionDues) and !(lineItem.inventory.inventoryType eq stateDues) and !(lineItem.inventory.id eq ussaLate)}">
+				<c:if test="${empty param.readOnly and !(lineItem.inventory.inventoryType eq divisionDues) and !(lineItem.inventory.inventoryType eq stateDues) and !(lineItem.inventory.id eq ussaLate) and !(lineItem.inventory.id eq fastStartCourse)}">
 					<c:url var="deleteUrl" value="/registration.html">
 						<c:param name="id" value="${lineItem.inventory.id}"/>
 						<c:param name="_eventId_remove" value="Remove"/>
