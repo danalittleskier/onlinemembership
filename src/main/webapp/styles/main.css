@@ -225,7 +225,7 @@ ul#stg-omr li{margin:0 0 7px 0;}
 
 /* Pop-up Window & Buttons
 ---------------------------------------------------------------------- */
-.scroll-membership {
+/*.scroll-membership {
 width: 965px; 
 height: 630px;
 padding-left: 0px;
@@ -233,7 +233,7 @@ padding-right: 0px;
 overflow: auto;
 overflow-y: scroll;
 position: relative;
-}
+}*/
 /*Start: Global Buttons */
 a.button
 {
