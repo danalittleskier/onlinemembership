@@ -27,6 +27,7 @@ if(session.getAttribute("FirstTime") == null){
 <!-- BEGIN ProvideSupport.com Graphics Chat Button Code -->
 <div id="ciYq2A" style="z-index:100;position:absolute"></div><div id="scYq2A" style="display:inline"></div><div id="sdYq2A" style="display:none"></div><script type="text/javascript">var seYq2A=document.createElement("script");seYq2A.type="text/javascript";var seYq2As=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/ussa/safe-standard.js?ps_h=Yq2A&ps_t="+new Date().getTime();setTimeout("seYq2A.src=seYq2As;document.getElementById('sdYq2A').appendChild(seYq2A)",1)</script><noscript><div style="display:inline"><a href="http://www.providesupport.com?messenger=ussa">Live Customer Support</a></div></noscript>
 <!-- END ProvideSupport.com Graphics Chat Button Code -->
+	<%-- No longer need the Full Page View link since we no longer run the app in a popup window.
 	<c:choose>
 	<c:when test="${!empty accountBean.member.id }"> 
 			<a href="https://login.dev.ussa.org/membership-web/registration.html?id=<c:out value="${accountBean.member.id}" />" target="new">Full Page View</a></span>			
@@ -35,6 +36,7 @@ if(session.getAttribute("FirstTime") == null){
 		<a href="https://login.dev.ussa.org/membership-web/registration.html?add=new" target="new">Full Page View</a></span>			
 	</c:otherwise>
 	</c:choose>
+	--%>
 </div>
 <!-- End: Live Chat Support -->
 
