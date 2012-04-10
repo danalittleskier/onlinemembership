@@ -192,7 +192,7 @@
 
 	<view-state id="extras" view="extras">
 		<transition on="back" to="loadFisWaiverDisabledBack"/>
-		<transition on="next" to="verification">
+		<transition on="next" to="globalRescue">
 			<action bean="accountBean" method="bindAndValidate"/>
 			<action bean="registrationAction" method="addExtras"/>
 		</transition>
@@ -204,9 +204,24 @@
 			<action bean="registrationAction" method="removeItemFromCart"/>
 		</transition>
 	</view-state>
+	
+	<view-state id="globalRescue" view="globalRescue">
+		<transition on="back" to="extras"/>
+		<transition on="next" to="verification">
+			<action bean="accountBean" method="bindAndValidate"/>
+			<action bean="registrationAction" method="addGlobalRescue"/>
+		</transition>
+		<transition on="add" to="globalRescue">
+			<action bean="accountBean" method="bindAndValidate"/>
+			<action bean="registrationAction" method="addGlobalRescue"/>
+		</transition>
+		<transition on="remove" to="globalRescue">
+			<action bean="registrationAction" method="removeItemFromCart"/>
+		</transition>
+	</view-state>
 
 	<view-state id="verification" view="verification">
-		<transition on="back" to="extras"/>
+		<transition on="back" to="globalRescue"/>
 		<transition on="next" to="medical"/>
 		<transition on="editContactInfo" to="editContactInfo"/>
 		<transition on="editSportMembership" to="editSportMembership"/>
