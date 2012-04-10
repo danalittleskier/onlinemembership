@@ -683,6 +683,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 	return success();
     }
 
+    public Event addGlobalRescue(RequestContext context) throws Exception {
+    	//AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	
+    	return success();
+    }
+    
     public Event removeItemFromCart(RequestContext context) throws Exception {
 	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
