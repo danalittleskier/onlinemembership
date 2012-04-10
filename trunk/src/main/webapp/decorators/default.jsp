@@ -73,155 +73,16 @@
                           <tbody><tr>
                               <td width="250">&nbsp;&nbsp;&nbsp;&nbsp;In partnership with</td>
                               <td>Proud sponsors</td>
-                              <td width="28" align="right"><a href="http://ussa.org/ussa/ussa-partners-suppliers" target="_blank"><img width="23" height="22" alt="" src="/styles/images/core/footer/snowconnect_icon.png"></a></td>
-                              <td width="28" align="right"><a target="_blank" href="http://www.facebook.com/pages/USSA-Membership/245655722126152"><img width="23" height="22" alt="" src="/styles/images/core/footer/facebook_icon.png"></a></td>
-                              <td width="28" align="right"><a target="_blank" href="http://twitter.com/usskiteam"><img width="22" height="22" alt="" src="/styles/images/core/footer/twitter_icon.png"></a></td>
-                              <td width="28" align="right"><a href="http://ussa.org/rss" target="_blank"><img width="22" height="22" alt="" src="/styles/images/core/footer/rss_icon.png"></a></td>
-                              <td width="28" align="right"><a href="http://ussa.org/tv" target="_blank"><img width="22" height="22" alt="" src="/styles/images/core/footer/tv_icon.png"></a></td>
+                              <td width="28" align="right"><a href="http://ussa.org/ussa/ussa-partners-suppliers" target="_blank"><img width="23" height="22" alt="" src="./styles/images/core/footer/snowconnect_icon.png"></a></td>
+                              <td width="28" align="right"><a target="_blank" href="http://www.facebook.com/pages/USSA-Membership/245655722126152"><img width="23" height="22" alt="" src="./styles/images/core/footer/facebook_icon.png"></a></td>
+                              <td width="28" align="right"><a target="_blank" href="http://twitter.com/usskiteam"><img width="22" height="22" alt="" src="./styles/images/core/footer/twitter_icon.png"></a></td>
+                              <td width="28" align="right"><a href="http://ussa.org/rss" target="_blank"><img width="22" height="22" alt="" src="./styles/images/core/footer/rss_icon.png"></a></td>
+                              <td width="28" align="right"><a href="http://ussa.org/tv" target="_blank"><img width="22" height="22" alt="" src="./styles/images/core/footer/tv_icon.png"></a></td>
                           </tr>
                       </tbody></table>
                   <!--End: footer-social-bar --></div>
                   
-                  <!--Start: footer-sponsor-bar -->
-                            <ul id="footer-sponsor-bar">
-                                    <li><script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=236005");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a79d608a&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=236005&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a79d608a' border='0' alt='' /></a></noscript>
-                                  </li>
-                                              
-                                              
-                                   <li>  <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=236006");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=aafd1a4c&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=236006&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=aafd1a4c' border='0' alt='' /></a></noscript>
-                                  </li>
-                                  
-                                  <li>   <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229587");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a0ed96b3&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229587&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a0ed96b3' border='0' alt='' /></a></noscript>
-                                  </li>
-                                  
-                                  <li>  <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229588");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a4a62773&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229588&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a4a62773' border='0' alt='' /></a></noscript>
-                                  </li>
-                                  
-                                  <li>   <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229589");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a6cbe31f&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229589&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a6cbe31f' border='0' alt='' /></a></noscript>
-                                </li>
-                                
-                                 <li> <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229590");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a04077f3&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229590&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a04077f3' border='0' alt='' /></a></noscript>
-                                 </li>
-                                 
-                                 <li>   <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229591");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a1dad4c4&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229591&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a1dad4c4' border='0' alt='' /></a></noscript>
-                                </li>
-                                
-                                <li>  <script type='text/javascript'><!--//<![CDATA[
-                                     var m3_u = (location.protocol=='https:'?'https://d1.openx.org/ajs.php':'http://d1.openx.org/ajs.php');
-                                     var m3_r = Math.floor(Math.random()*99999999999);
-                                     if (!document.MAX_used) document.MAX_used = ',';
-                                     document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
-                                     document.write ("?zoneid=229592");
-                                     document.write ('&amp;cb=' + m3_r);
-                                     if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
-                                     document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
-                                     document.write ("&amp;loc=" + escape(window.location));
-                                     if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
-                                     if (document.context) document.write ("&context=" + escape(document.context));
-                                     if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
-                                     document.write ("'><\/scr"+"ipt>");
-                                  //]]>--></script><noscript><a href='http://d1.openx.org/ck.php?n=a21b202b&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://d1.openx.org/avw.php?zoneid=229592&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a21b202b' border='0' alt='' /></a></noscript>
-                                </li>
-                         </ul>
-                  <!--End: footer-sponsor-bar -->
+                  
                   
                   <!--Start: Ussa footer -->
                     <div style="clear:both;"></div>
