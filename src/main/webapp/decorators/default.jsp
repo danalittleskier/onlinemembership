@@ -21,16 +21,16 @@
         
                   <!--Start: Socialbar --><div id="Socialbar">
                    <ul>
-                      <li class="last"><img src="css/images/logos/ussa_sub-logo.png" width="101" height="29" border="0"></li>
-                      <li><a href="http://my.ussa.org" target="_blank"><img src="/styles/images/social-icons/my_ussa_blue.png" width="29" height="28"></a></li>
-                      <li><a href="http://ussa.org/rss" target="_blank"><img src="/styles/images/social-icons/rss_icon.png" width="29" height="28"></a></li>
-                      <li><a href="http://ussa.org/rss" target="_blank"><img src="/styles/images/social-icons/tv_icon.png" width="31" height="29"></a></li>
-                      <li><a href="http://twitter.com/usskiteam" target="_blank"><img src="/styles/images/social-icons/twitter_icon.png" width="29" height="28"></a></li>
-                      <li><a href="http://www.facebook.com/pages/USSA-Membership/245655722126152" target="_blank"><img src="/styles/images/social-icons/facebook_icon.png" width="29" height="29"></a></li>
+                      <li class="last"><img src="./styles/images/logos/ussa_sub-logo.png" width="101" height="29" border="0"></li>
+                      <li><a href="http://my.ussa.org" target="_blank"><img src="./styles/images/social-icons/my_ussa_blue.png" width="29" height="28"></a></li>
+                      <li><a href="http://ussa.org/rss" target="_blank"><img src="./styles/images/social-icons/rss_icon.png" width="29" height="28"></a></li>
+                      <li><a href="http://ussa.org/rss" target="_blank"><img src="./styles/images/social-icons/tv_icon.png" width="31" height="29"></a></li>
+                      <li><a href="http://twitter.com/usskiteam" target="_blank"><img src="./styles/images/social-icons/twitter_icon.png" width="29" height="28"></a></li>
+                      <li><a href="http://www.facebook.com/pages/USSA-Membership/245655722126152" target="_blank"><img src="./styles/images/social-icons/facebook_icon.png" width="29" height="29"></a></li>
                    </ul>
                   <!--End: Socialbar --></div>
         
-                  <!--Start: Logo --><div id="MainLogoUSSA"> <a href="http://ussa.org" target="_blank"><img src="/styles/images/logos/ussa_logo.png" width="207" height="80"></a>
+                  <!--Start: Logo --><div id="MainLogoUSSA"> <a href="http://ussa.org" target="_blank"><img src="./styles/images/logos/ussa_logo.png" width="207" height="80"></a>
                   <!--End: Logo --></div>
         
                   <!--Start: Navbar --><div id="Navbar">
@@ -45,7 +45,7 @@
                           <li class="last"><a href="http://shop.usskiteam.com" target="_blank">Shop</a></li>
                       </ul>
                   <!--End: Navbar --></div>
-                  
+  <center><h1 style="font-size: 2em; line-height: 1.5em;color:#333333;">Online Membership Registration</h1></center>
                   <!--Start: main-wrapper -->
 <table cellpadding="0" cellspacing="0" border="0" style="width:970px;overflow:hidden;">
                     	<tr><td>
