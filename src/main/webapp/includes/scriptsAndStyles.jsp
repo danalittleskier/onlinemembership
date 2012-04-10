@@ -27,6 +27,7 @@
 
 <%-- Project Styles - MUST FOLLOW USSA STYLES --%>
 <link type="text/css" href="<c:url value='/styles/main.css'/>" rel="stylesheet"/>
+<link type="text/css" href="<c:url value='/styles/newmain.css'/>" rel="stylesheet"/>
 <link type="text/css" href="<c:url value='/styles/stg-forms.css'/>" rel="stylesheet"/>
 
 <%-- JQuery --%>
