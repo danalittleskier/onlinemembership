@@ -34,6 +34,10 @@ public class AccountBean implements Serializable
 	public GlobalRescueBean getGlobalRescueBean() {
 		return grBean;
 	}
+	
+	public String getTestMessage(){
+		return "xxxyyyzzz";
+	}
 
 	//Helper fields for binding, not persisited...
 	private Boolean alreadyAMember;
