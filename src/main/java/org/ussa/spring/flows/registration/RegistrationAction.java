@@ -46,6 +46,8 @@ import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.MemberSeasonDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.StateDao;
+import org.ussa.dao.impl.InventoryAddDaoImpl;
+import org.ussa.dao.impl.InventoryDaoImpl;
 import org.ussa.exception.CreditCardDeclinedException;
 import org.ussa.exception.CreditCardException;
 import org.ussa.model.Address;
@@ -688,6 +690,11 @@ public class RegistrationAction extends FormAction implements Serializable {
 
     public Event addGlobalRescue(RequestContext context) throws Exception {
     	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	
+    	InventoryDaoImpl inventoryDao = new InventoryDaoImpl();
+    	List<Inventory> sponsors = inventoryDao.getIventoryByType("SPONSORS");
+    	
+    	accountBean.getCartBean().addItem(sponsors.get(0));
     	
     	return success();
     }

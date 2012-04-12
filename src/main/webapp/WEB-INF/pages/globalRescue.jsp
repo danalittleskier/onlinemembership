@@ -67,7 +67,7 @@
 	<div>
 		<p>${accountBean.globalRescueBean.globalRescueMessage }xxxxxxxxxxxxxxxx
 		</p>
-		<p>${accountBean.testMessage }aaaaa
+		<p>${accountBean.testMessage}aaaaa
 		</p>
 	</div>
 	
