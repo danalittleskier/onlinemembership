@@ -187,3 +187,24 @@ body{
 #footer-text-bar ul .last a {
     background-image: none;
 }
+.ussa-standard-table {
+    border: 1px solid #CCCCCC;
+    width: 100%;
+}
+.ussa-standard-table td {
+	padding:7px;
+}
+.ussa-standard-table th {
+    background-color: #E1E2DC;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+	text-align: left;
+}
+.ussa-standard-table tr.odd {
+    background-color: #FFFFFF;
+}
+.ussa-standard-table tr.even {
+    background-color: #F3F4EE;
+}
