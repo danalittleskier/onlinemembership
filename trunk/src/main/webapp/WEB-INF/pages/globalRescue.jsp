@@ -85,17 +85,17 @@
         <th>Price</th>
 	    </tr>
 	  <tr class="odd">
-	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="radio" /></td>
+	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" /></td>
 	    <td>Annual Student Medical Membership</td>
 	    <td><strong>$239.00</strong></td>
 	    </tr>
 	  <tr class="even">
-	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="radio" /></td>
+	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" /></td>
 	    <td>Annual Individual Medical Membership</td>
 	    <td><strong>$309.00</strong></td>
 	    </tr>
 	  <tr class="odd">
-	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="radio" /></td>
+	    <td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" /></td>
 	    <td>Annual Family Medical Membership</td>
 	    <td><strong>$559.00</strong></td>
 	    </tr>
