@@ -29,6 +29,11 @@ public class AccountBean implements Serializable
 	private ExtrasBean extrasBean = new ExtrasBean();
 	private MembershipsBean membershipsBean = new MembershipsBean();
     private UserBean userBean = new UserBean();
+    private GlobalRescueBean grBean = new GlobalRescueBean();
+
+	public GlobalRescueBean getGlobalRescueBean() {
+		return grBean;
+	}
 
 	//Helper fields for binding, not persisited...
 	private Boolean alreadyAMember;

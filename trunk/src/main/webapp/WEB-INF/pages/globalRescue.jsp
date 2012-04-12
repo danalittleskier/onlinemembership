@@ -64,6 +64,10 @@
 		<input type="button" class="button" id="update" name="_eventId_change" value="Update" onclick="submitFormWithInputButton(this);">
 	</div>
 
+	<div>
+		<p>${accoutBean.globalRescueBean.globalRescueMessage }xxxxxxxxxxxxxxxx
+		</p>
+	</div>
 	
 	<fieldset class="buttons">
 		<label></label>
