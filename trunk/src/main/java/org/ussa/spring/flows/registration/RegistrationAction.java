@@ -691,7 +691,6 @@ public class RegistrationAction extends FormAction implements Serializable {
     public Event addGlobalRescue(RequestContext context) throws Exception {
     	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
     	
-    	InventoryDaoImpl inventoryDao = new InventoryDaoImpl();
     	List<Inventory> sponsors = inventoryDao.getIventoryByType("SPONSORS");
     	
     	accountBean.getCartBean().addItem(sponsors.get(0));
