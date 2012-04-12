@@ -26,6 +26,7 @@ import org.springframework.webflow.execution.RequestContext;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.CartBean;
 import org.ussa.beans.ExtrasBean;
+import org.ussa.beans.GlobalRescueBean;
 import org.ussa.beans.MembershipsBean;
 import org.ussa.beans.MessageBean;
 import org.ussa.beans.PaymentBean;
@@ -358,6 +359,8 @@ public class RegistrationAction extends FormAction implements Serializable {
 	accountBean.setConfirmationEmail(userBean.getEmail());
 
 	accountBean.setCartBean(new CartBean());
+	
+	
 
 	// new registration
 	if (id == null) {
@@ -684,7 +687,7 @@ public class RegistrationAction extends FormAction implements Serializable {
     }
 
     public Event addGlobalRescue(RequestContext context) throws Exception {
-    	//AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
     	
     	return success();
     }
