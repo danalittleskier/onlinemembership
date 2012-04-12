@@ -64,13 +64,6 @@
 		<input type="button" class="button" id="update" name="_eventId_change" value="Update" onclick="submitFormWithInputButton(this);">
 	</div>
 
-	<div>
-		<p>${accountBean.globalRescueBean.globalRescueMessage }xxxxxxxxxxxxxxxx
-		</p>
-		<p>${accountBean.testMessage}aaaaa
-		</p>
-	</div>
-	
 	<!-- Start: Global Rescue HTML -->
 			<table border="0" cellpadding="0" cellspacing="0" width="560">
 <tr>
@@ -321,7 +314,7 @@
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
-		<input class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_event_add"/>
+		<input class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add"/>
 		<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 		<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 	</fieldset>
