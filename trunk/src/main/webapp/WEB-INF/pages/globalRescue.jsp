@@ -68,7 +68,7 @@
 			<table border="0" cellpadding="0" cellspacing="0" width="560">
 <tr>
   <td>&nbsp;</td>
-  <td><img src="/images/GlobalRescueLogo.png" width="560" ></td>
+  <td><img src="./images/GlobalRescueLogo.png" width="560" ></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
