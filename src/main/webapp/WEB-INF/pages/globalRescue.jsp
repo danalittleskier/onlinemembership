@@ -109,7 +109,7 @@
 <tr>
   <td>&nbsp;</td>
 	<td> <br>
-    	<div id="GlobalRescueFamilyMembership">
+    	<div id="GlobalRescueFamilyMembership" style="display:none">
         <span style="font-weight:bold;">Fill-in the first name, last name, and date of birth for each family member you would like on the Family Membership plan.</span>
     	<table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
