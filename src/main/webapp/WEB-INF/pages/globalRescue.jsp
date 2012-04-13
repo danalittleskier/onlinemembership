@@ -17,6 +17,7 @@
 <!-- LEFT column -->
 <div id="stg-twocol-primary">
 <form:form commandName="accountBean" name="accountBean">
+	<spring:bind path="accountBean.*">
 
 	<%@ include file="/includes/messages.jsp" %>
 
@@ -120,7 +121,12 @@
         </tr>
 	  <tr class="odd">
 	    <td>You</td>
-	    <td><input name="firstname1" type="text" disabled="disabled" id="firstname1" value="Jonathan" readonly="readonly" /></td>
+		<td>
+			<form:input disabled="true" path="member.firstName" size="30" maxlength="30"/>
+				<%--
+			<input name="firstname1" type="text" disabled="disabled" id="firstname1" value="Jonathan" readonly="readonly" />
+				--%>
+		</td>
 	    <td><input name="lastname1" type="text" disabled="disabled" id="lastname1" value="Larson" readonly="readonly" /></td>
 	    <td>10/05/1980</td>
 	    </tr>
@@ -318,6 +324,7 @@
 		<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 		<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 	</fieldset>
+	</spring:bind>
 </form:form>
 </div>
 
