@@ -705,6 +705,34 @@ public class RegistrationAction extends FormAction implements Serializable {
     	
     	if(thisSponsor != null){
 	    	accountBean.getCartBean().addItem(thisSponsor);
+	    	
+	    	GlobalRescueBean grb = new GlobalRescueBean();
+	    	grb.setParent2(grb.new Person(context.getRequestParameters().get("firstname2"),
+	    			context.getRequestParameters().get("lastname2"),
+	    			context.getRequestParameters().get("month2"),
+	    			context.getRequestParameters().get("day2"),
+	    			context.getRequestParameters().get("year2")));
+	    	grb.setDependent1(grb.new Person(context.getRequestParameters().get("firstname3"),
+	    			context.getRequestParameters().get("lastname3"),
+	    			context.getRequestParameters().get("month3"),
+	    			context.getRequestParameters().get("day3"),
+	    			context.getRequestParameters().get("year3")));
+	    	grb.setDependent2(grb.new Person(context.getRequestParameters().get("firstname4"),
+	    			context.getRequestParameters().get("lastname4"),
+	    			context.getRequestParameters().get("month4"),
+	    			context.getRequestParameters().get("day4"),
+	    			context.getRequestParameters().get("year4")));
+	    	grb.setDependent3(grb.new Person(context.getRequestParameters().get("firstname5"),
+	    			context.getRequestParameters().get("lastname5"),
+	    			context.getRequestParameters().get("month5"),
+	    			context.getRequestParameters().get("day5"),
+	    			context.getRequestParameters().get("year5")));
+	    	grb.setDependent4(grb.new Person(context.getRequestParameters().get("firstname6"),
+	    			context.getRequestParameters().get("lastname6"),
+	    			context.getRequestParameters().get("month6"),
+	    			context.getRequestParameters().get("day6"),
+	    			context.getRequestParameters().get("year6")));
+	    	
     	}
     	
     	return success();

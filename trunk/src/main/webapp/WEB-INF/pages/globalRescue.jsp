@@ -123,12 +123,11 @@
 	    <td>You</td>
 		<td>
 			<form:input disabled="true" path="member.firstName" size="30" maxlength="30"/>
-				<%--
-			<input name="firstname1" type="text" disabled="disabled" id="firstname1" value="Jonathan" readonly="readonly" />
-				--%>
 		</td>
-	    <td><input name="lastname1" type="text" disabled="disabled" id="lastname1" value="Larson" readonly="readonly" /></td>
-	    <td>10/05/1980</td>
+		<td>
+			<form:input disabled="true" path="member.lastName" size="30" maxlength="30"/>
+		</td>
+		<td>${accountBean.birthDate}</td>
 	    </tr>
 	  <tr class="even">
 	    <td>Parent 2</td>
