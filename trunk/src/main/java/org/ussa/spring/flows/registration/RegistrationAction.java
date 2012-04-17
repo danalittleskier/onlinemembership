@@ -205,6 +205,9 @@ public class RegistrationAction extends FormAction implements Serializable {
 	// MemberSeason
 	MemberSeason memberSeason = memberSeasonDao.hasMemberSeasonForCurrentSeason(memberSeasonPk);
 	accountBean.setMemberSeason(memberSeason);
+	
+	GlobalRescueBean grb = new GlobalRescueBean(accountBean,rulesBL);
+	accountBean.setGlobalRescueBean(grb);
     }
 
     public Event loadContactInfoForUpdate(RequestContext context) throws Exception {
@@ -708,7 +711,7 @@ public class RegistrationAction extends FormAction implements Serializable {
     	if(thisSponsor != null){
 	    	accountBean.getCartBean().addItem(thisSponsor);
 	    	
-	    	GlobalRescueBean grb = new GlobalRescueBean();
+	    	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
 	    	grb.setParent2(grb.new Person(context.getRequestParameters().get("firstname2"),
 	    			context.getRequestParameters().get("lastname2"),
 	    			context.getRequestParameters().get("month2"),

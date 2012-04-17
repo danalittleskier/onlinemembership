@@ -3,18 +3,65 @@ package org.ussa.beans;
 import java.io.Serializable;
 import java.math.BigDecimal;
 
+import org.ussa.bl.RulesBL;
+import org.ussa.bl.impl.RulesBLImpl;
+
+/**
+ * This bean contains session information necessary to create a 
+ * GlobalRescue account.  As it grows it may be best to refactor into 
+ * subtypes
+ * 
+ * @author admin
+ *
+ */
 public class GlobalRescueBean implements Serializable {
 
+	public static final int MAXAGE = 85;
+
+	private AccountBean accountBean;
+	private RulesBL rulesBL;
+	
 	private Person parent2;
 	private Person dependent1;
 	private Person dependent2;
 	private Person dependent3;
 	private Person dependent4;
 	
+	public GlobalRescueBean(){ }
+	public GlobalRescueBean(AccountBean accountBean,RulesBL rulesBL){
+		this.accountBean = accountBean;
+		this.rulesBL = rulesBL;
+	}
+	
+	public AccountBean getAccountBean() {
+		return accountBean;
+	}
+
+	public void setAccountBean(AccountBean accountBean) {
+		this.accountBean = accountBean;
+	}
+	
+	
+	/**
+	 * true if age less than 85
+	 * 
+	 * @return
+	 */
+	public boolean getEligible(){
+		return getAge() < MAXAGE ? true : false;
+	}
+	
+	public Integer getAge(){
+		//RulesBL rules = new RulesBLImpl();
+		return rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+	}
+
+	//TODO debug
 	public String getGlobalRescueMessage() {
 		return "Global Rescue Memeber";
 	}
 	
+	//TODO debug
 	public BigDecimal getAmount(){
 		BigDecimal retval = new BigDecimal(325.12);
 		return retval;
@@ -62,6 +109,14 @@ public class GlobalRescueBean implements Serializable {
 
 	public void setDependent4(Person dependent4) {
 		this.dependent4 = dependent4;
+	}
+
+	public RulesBL getRulesBL() {
+		return rulesBL;
+	}
+
+	public void setRulesBL(RulesBL rulesBL) {
+		this.rulesBL = rulesBL;
 	}
 
 	public class Person {

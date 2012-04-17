@@ -11,6 +11,9 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
+import org.ussa.spring.flows.registration.RegistrationAction;
+
+import com.sun.media.jai.codec.SeekableOutputStream;
 
 public class AccountBean implements Serializable
 {
@@ -29,12 +32,17 @@ public class AccountBean implements Serializable
 	private ExtrasBean extrasBean = new ExtrasBean();
 	private MembershipsBean membershipsBean = new MembershipsBean();
     private UserBean userBean = new UserBean();
-    private GlobalRescueBean grBean = new GlobalRescueBean();
+    private GlobalRescueBean globalRescueBean = null;
 
 	public GlobalRescueBean getGlobalRescueBean() {
-		return grBean;
+		return globalRescueBean;
 	}
 	
+	public void setGlobalRescueBean(GlobalRescueBean globalRescueBean) {
+		this.globalRescueBean = globalRescueBean;
+	}
+
+	//TODO debug 
 	public String getTestMessage(){
 		return "xxxyyyzzz";
 	}
@@ -142,11 +150,17 @@ public class AccountBean implements Serializable
 		return birthDate;
 	}
 
+	/**
+	 * Normally set from {@link Member#getBirthDate()}
+	 * see also {@link RegistrationAction#initexistingAccountBean}
+	 * 
+	 * @param birthDate
+	 */
 	public void setBirthDate(String birthDate)
 	{
 		this.birthDate = birthDate;
 	}
-
+	
 	public Boolean getUsCitizen()
 	{
 		return usCitizen;
