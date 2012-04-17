@@ -88,6 +88,11 @@
 	<bean id="inventoryAddDao" class="org.ussa.dao.impl.InventoryAddDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<!-- 
+	<bean id="globalRescueBean" class="org.ussa.beans.GlobalRescueBean" scope="prototype">
+		<property name="rulesBL" ref="rulesBL"/>
+	</bean>
+	 -->
 	
 	<!-- USSA EmailUtility -->
 	<jee:jndi-lookup id="mailServer" jndi-name="java:comp/env/mail/serverName"/>
