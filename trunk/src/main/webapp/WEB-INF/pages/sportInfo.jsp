@@ -39,13 +39,13 @@
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Multiple athlete memberships may be applicable, please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
-		<p><strong>Competitor:</strong> For ages 13 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
+		<p><strong>Competitor:</strong> For ages 12 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
 		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Adaptive Alpine Competitor:</strong> For athletes ages 13 and over participating primarily in adaptive events.
 		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
-		<p><strong>Non-Scored Student:</strong> Designed for students 13 and older, prior to Dec. 31, primarily for interscholastic and intercollegiate racing only.<br>
+		<p><strong>Non-Scored Student:</strong> Designed for students 14 and older, prior to Dec. 31, primarily for interscholastic and intercollegiate racing only.<br>
 		<em><font class="style1"><b>Note:</b> Does not include access to USSA alpine points list. Alpine non-scored students age 18-22 may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Master:</strong> Access to USSA Masters events for competitors 21 and older. </p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
