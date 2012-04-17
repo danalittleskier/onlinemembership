@@ -82,18 +82,20 @@
   <td>
 	  <!-- age ${accountBean.globalRescueBean.age} age -->
 	  <c:if test="${accountBean.globalRescueBean.eligible}">
-	  
+	  <c:if test="${accountBean.globalRescueBean.age < 75}">
 		  <table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 			<th width="50">&nbsp;</th>
 			<th>Global Rescue Membership Type</th>
 			<th>Price</th>
 		  </tr>
+		  <c:if test="${accountBean.globalRescueBean.age < 35}">
 		  <tr class="odd">
 			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" onclick="javascript:ShowFamilyMembershipsTableHide()" /></td>
 			<td>Annual Student Medical Membership</td>
 			<td><strong>$239.00</strong></td>
 		  </tr>
+		  </c:if>
 		  <tr class="even">
 			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" onclick="javascript:ShowFamilyMembershipsTableHide()" /></td>
 			<td>Annual Individual Medical Membership</td>
@@ -110,6 +112,20 @@
 			<td></td>
 		  </tr>
 		  </table>
+		  </c:if> <!-- 75 -->
+		  <c:if test="${accountBean.globalRescueBean.age >= 75}">
+		  <b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b>
+
+		  <p>Global Rescue is the USST Official Provider of medical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuation home for injuries or illnesses requiring hospitalization.
+
+		  <p><a href="https://www.globalrescue.com/benefits.cfm?view=Medical">View more Global Rescue Membership Information </a>
+
+Extended Global Rescue Membership pricing is for travelers 75 or older. Travelers in this age range must complete and submit the short medical questionnaire attached to this form.
+
+		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
+	Click here to download the application form.</a> 
+		  	
+		  </c:if>
 	  </c:if>
   </td>
 </tr>
@@ -309,6 +325,7 @@
     </div>
     </td>
 </tr>
+<c:if test="${accountBean.globalRescueBean.age < 75}">
 <tr>
   <td>&nbsp;</td>
 	<td><br />	  
@@ -318,6 +335,7 @@
 	<td width="25" valign="top"><input type="checkbox" name="agreetoglobalrescue" id="agreetoglobalrescue" /></td>
 	<td>I have read and agree to the <a href="https://www.globalrescue.com/assets/pdf/GlobalRescue-MSA.pdf" target="_blank">Member Services Agreement</a>. I attest that as of the date of enrollment, I am in good health, am not hospitalized or anticipating hospitalization, travel abroad less than 45 days continuously each trip and am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
 </tr>
+</c:if>
 </table>
 	<!-- End: Global Rescue HTML -->
 	
@@ -325,7 +343,9 @@
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
+		<c:if test="${accountBean.globalRescueBean.age < 75}">
 		<input class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add"/>
+		</c:if>
 		<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 		<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 	</fieldset>
