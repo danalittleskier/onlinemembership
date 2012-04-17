@@ -643,7 +643,8 @@ public class RegistrationAction extends FormAction implements Serializable {
 	
 	request.getSession().removeAttribute("showBackgroundScreening");
 	request.getSession().removeAttribute("showFastStartCourse");
-	request.getSession().setAttribute("showFastStartCourseLink", true);
+	request.getSession().removeAttribute("showFastStartCourseLink");
+	
 	
 	if (!accountBean.getWasBgScreeningInfoAlreadyShown() && rulesBL.needsBackgroundCheck(accountBean)) {
 	    request.getSession().setAttribute("showBackgroundScreening", true);
@@ -654,6 +655,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	if (!accountBean.isFastStartCourseInfoAlreadyShown() && rulesBL.needsFastStartCourse(accountBean)){
 		log.warn("needs the popup");
 		request.getSession().setAttribute("showFastStartCourse", true);
+		request.getSession().setAttribute("showFastStartCourseLink", true);
 		
 		accountBean.setFastStartCourseInfoAlreadyShown(true);
 	}

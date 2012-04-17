@@ -32,6 +32,7 @@
 			<strong><c:out value="${accountBean.cartBean.totalFormatted}"/></strong>
 		</p>
 	</fieldset>
+	<!-- 
 	<c:if test="${not empty accountBean.membershipsBean.unrestrictedMemberships}">
 		<fieldset>
 			<legend>Your Membership Verification</legend>
@@ -42,7 +43,7 @@
 			</c:if>
 		</fieldset>
 	</c:if>
-
+	-->
 	<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">
 		<fieldset>
 			<legend>Background Screening Required</legend>
@@ -70,12 +71,15 @@
 			<p><font size="2" ><a href="${fastStartCourseUrl}" target="_BLANK">Go here to complete your coaching course.</a></font></p>
 		</fieldset>
 	</c:if>
+	
+	<div class="button red"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
+			
 
 </div>
 <div id="stg-twocol-secondary">
 	<div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr">
 	<div></div>
-	<p class="stg-omr-header">When You're Finished...</p>
+	<p class="stg-omr-header">What next</p>
 	<p>
 		<c:url var="continueUrl" value="/AccountsProfile/profile/profileManagement.htm">
 			<c:param name="_eventId_next" value="Continue"/>
@@ -83,8 +87,16 @@
 		</c:url>
 
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		You may continue to your <a href="../AccountsProfile/profile/profileManagement.htm">USSA Account User Profile</a>
-		to manage your account or <a href="<c:url value="../cas/logout"/>">log out</a> to end your session.
+		<c:url var="membershipCardUrl" value="http://services.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}">
+		<c:param name="id" value="${accountBean.member.id}"/>
+		</c:url>
+		<br>
+		Click <a href="${membershipCardUrl}" target="blank">Here</a> to print your digital USSA Digital Membership Card 
+		<br>
+		Click <a href="http://my.ussa.org/tools/linked-member-accounts">Here</a> to link additional USSA membership accounts to your My USSA account
+		<br>
+		Click <a href="http://my.ussa.org/portal">Here</a> to get started with your personalized My USSA member tools 
+		<br>
 	</p>
 	</div></div></div></div>
 </div>
@@ -93,3 +105,4 @@
 </form:form>
 
 </body>
+
