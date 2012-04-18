@@ -1,0 +1,1481 @@
+<programs>
+			
+				<program id="1">
+					
+					<coverage_period id="1">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>329.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="2">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>638.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="3">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>937.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="4">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>1226.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="5">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>1495.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="69">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>655.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="70">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>1275.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="71">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>1870.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="72">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>2450.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="73">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>2990.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="138">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>987.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="145">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>1313.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="152">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>658.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="158">
+						<name><![CDATA[Individual]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>984.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="2">
+					
+					<coverage_period id="6">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>429.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="7">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>838.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="8">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>1237.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="9">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>1626.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="10">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>1995.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="74">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>855.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="75">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>1675.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="76">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>2470.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="77">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>3250.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="78">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>3990.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="139">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>1287.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="146">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>1713.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="153">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>1287.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="159">
+						<name><![CDATA[Individual 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>1713.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="3">
+					
+					<coverage_period id="11">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>514.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="12">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>1008.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="13">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>1492.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="14">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>1966.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="15">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>2420.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="79">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>1025.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="80">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>2015.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="81">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>2980.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="82">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>3930.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="83">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>4840.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="140">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>1542.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="147">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>2053.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="154">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>2056.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="160">
+						<name><![CDATA[Individual 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>2567.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="4">
+					
+					<coverage_period id="16">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>639.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="17">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>1258.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="18">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>1867.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="19">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>2466.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="20">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>3045.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="84">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>1275.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="85">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>2515.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="86">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>3730.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="87">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>4930.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="88">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>6090.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="141">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>1917.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="148">
+						<name><![CDATA[Individual Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>2553.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="5">
+					
+					<coverage_period id="21">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>579.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="22">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>1138.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="23">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>1687.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="24">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>2226.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="25">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>2745.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="89">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>1155.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="90">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>2275.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="91">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>3370.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="92">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>4450.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="93">
+						<name><![CDATA[Family]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>5490.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="6">
+					
+					<coverage_period id="26">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>729.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="27">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>1438.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="28">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>2137.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="29">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>2826.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="30">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>3495.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="94">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>1455.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="95">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>2875.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="96">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>4270.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="97">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>5650.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="98">
+						<name><![CDATA[Family 1/4 Year Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>6990.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="7">
+					
+					<coverage_period id="31">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>854.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="32">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>1688.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="33">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>2512.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="34">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>3326.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="35">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>4120.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="99">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>1705.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="100">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>3375.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="101">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>5020.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="102">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>6650.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="103">
+						<name><![CDATA[Family 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>8240.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="8">
+					
+					<coverage_period id="36">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>1029.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="37">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>2038.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="38">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>3037.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="39">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>4026.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="40">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>4995.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="104">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>2055.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="105">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>4075.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="106">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>6070.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="107">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>8050.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="108">
+						<name><![CDATA[Family Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>9990.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="9">
+					
+					<coverage_period id="41">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>259.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="42">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>498.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="43">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>727.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="44">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>946.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="45">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>1145.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="109">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>1</years>
+						
+						<cost>515.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="110">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>2</years>
+						
+						<cost>995.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="111">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>3</years>
+						
+						<cost>1450.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="112">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>4</years>
+						
+						<cost>1890.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="113">
+						<name><![CDATA[Student]]></name>
+						
+							<daysAbroad>45</daysAbroad>
+							<years>5</years>
+						
+						<cost>2290.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="10">
+					
+					<coverage_period id="46">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>359.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="47">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>698.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="48">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>1027.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="49">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>1346.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="50">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>1645.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="114">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>1</years>
+						
+						<cost>715.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="115">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>2</years>
+						
+						<cost>1395.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="116">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>3</years>
+						
+						<cost>2050.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="117">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>4</years>
+						
+						<cost>2690.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="118">
+						<name><![CDATA[Student Semester Abroad]]></name>
+						
+							<daysAbroad>90</daysAbroad>
+							<years>5</years>
+						
+						<cost>3290.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="11">
+					
+					<coverage_period id="51">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>444.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="52">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>868.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="53">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>1282.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="54">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>1686.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="55">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>2070.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="119">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>1</years>
+						
+						<cost>885.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="120">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>2</years>
+						
+						<cost>1735.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="121">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>3</years>
+						
+						<cost>2560.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="122">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>4</years>
+						
+						<cost>3370.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="123">
+						<name><![CDATA[Student 1/2 Year Abroad]]></name>
+						
+							<daysAbroad>180</daysAbroad>
+							<years>5</years>
+						
+						<cost>4140.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="12">
+					
+					<coverage_period id="56">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>594.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="57">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>1168.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="58">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>1732.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="60">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>2286.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="61">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>2820.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="124">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>1</years>
+						
+						<cost>1185.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="125">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>2</years>
+						
+						<cost>2335.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="126">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>3</years>
+						
+						<cost>3460.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="127">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>4</years>
+						
+						<cost>4570.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="128">
+						<name><![CDATA[Student Full Year Abroad]]></name>
+						
+							<daysAbroad>365</daysAbroad>
+							<years>5</years>
+						
+						<cost>5640.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="13">
+					
+					<coverage_period id="62">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>119.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="63">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>159.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="64">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>229.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="129">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>225.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="130">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>315.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="131">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>455.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="135">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>357.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="136">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>477.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="137">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>687.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="142">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>463.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="143">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>633.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="144">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>913.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="149">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>238.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="150">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>318.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="151">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>458.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="155">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>344.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="156">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>474.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="157">
+						<name><![CDATA[Individual Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>684.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+				<program id="16">
+					
+					<coverage_period id="65">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>199.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="66">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>289.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="67">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>389.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="132">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>7</daysAbroad>
+							<years>1</years>
+						
+						<cost>395.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="133">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>14</daysAbroad>
+							<years>1</years>
+						
+						<cost>575.0000</cost>
+					</coverage_period>
+					
+					<coverage_period id="134">
+						<name><![CDATA[Family Short Term]]></name>
+						
+							<daysAbroad>30</daysAbroad>
+							<years>1</years>
+						
+						<cost>775.0000</cost>
+					</coverage_period>
+					
+				</program>
+			
+			</programs>

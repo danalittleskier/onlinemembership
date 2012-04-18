@@ -1,0 +1,1168 @@
+<countries>
+				
+				<country id="233">
+					<name><![CDATA[Afghanistan]]></name>
+					<abbreviation><![CDATA[AG]]></abbreviation>
+				</country>
+				
+				<country id="3">
+					<name><![CDATA[Albania]]></name>
+					<abbreviation><![CDATA[AL]]></abbreviation>
+				</country>
+				
+				<country id="4">
+					<name><![CDATA[Algeria]]></name>
+					<abbreviation><![CDATA[DZ]]></abbreviation>
+				</country>
+				
+				<country id="5">
+					<name><![CDATA[American Samoa]]></name>
+					<abbreviation><![CDATA[AS]]></abbreviation>
+				</country>
+				
+				<country id="6">
+					<name><![CDATA[Andorra]]></name>
+					<abbreviation><![CDATA[AD]]></abbreviation>
+				</country>
+				
+				<country id="7">
+					<name><![CDATA[Angola]]></name>
+					<abbreviation><![CDATA[AO]]></abbreviation>
+				</country>
+				
+				<country id="8">
+					<name><![CDATA[Anguilla]]></name>
+					<abbreviation><![CDATA[AI]]></abbreviation>
+				</country>
+				
+				<country id="9">
+					<name><![CDATA[Antigua And Barduda]]></name>
+					<abbreviation><![CDATA[AG]]></abbreviation>
+				</country>
+				
+				<country id="10">
+					<name><![CDATA[Argentina]]></name>
+					<abbreviation><![CDATA[AR]]></abbreviation>
+				</country>
+				
+				<country id="11">
+					<name><![CDATA[Armenia]]></name>
+					<abbreviation><![CDATA[AM]]></abbreviation>
+				</country>
+				
+				<country id="12">
+					<name><![CDATA[Aruba]]></name>
+					<abbreviation><![CDATA[AW]]></abbreviation>
+				</country>
+				
+				<country id="13">
+					<name><![CDATA[Australia]]></name>
+					<abbreviation><![CDATA[AU]]></abbreviation>
+				</country>
+				
+				<country id="14">
+					<name><![CDATA[Austria]]></name>
+					<abbreviation><![CDATA[AT]]></abbreviation>
+				</country>
+				
+				<country id="15">
+					<name><![CDATA[Azerbaijan]]></name>
+					<abbreviation><![CDATA[AZ]]></abbreviation>
+				</country>
+				
+				<country id="16">
+					<name><![CDATA[Bahamas]]></name>
+					<abbreviation><![CDATA[BS]]></abbreviation>
+				</country>
+				
+				<country id="17">
+					<name><![CDATA[Bahrain]]></name>
+					<abbreviation><![CDATA[BH]]></abbreviation>
+				</country>
+				
+				<country id="18">
+					<name><![CDATA[Bangladesh]]></name>
+					<abbreviation><![CDATA[BD]]></abbreviation>
+				</country>
+				
+				<country id="19">
+					<name><![CDATA[Barbados]]></name>
+					<abbreviation><![CDATA[BB]]></abbreviation>
+				</country>
+				
+				<country id="20">
+					<name><![CDATA[Belarus]]></name>
+					<abbreviation><![CDATA[BY]]></abbreviation>
+				</country>
+				
+				<country id="21">
+					<name><![CDATA[Belgium]]></name>
+					<abbreviation><![CDATA[BE]]></abbreviation>
+				</country>
+				
+				<country id="22">
+					<name><![CDATA[Belize]]></name>
+					<abbreviation><![CDATA[BZ]]></abbreviation>
+				</country>
+				
+				<country id="23">
+					<name><![CDATA[Benin]]></name>
+					<abbreviation><![CDATA[BJ]]></abbreviation>
+				</country>
+				
+				<country id="24">
+					<name><![CDATA[Bermuda]]></name>
+					<abbreviation><![CDATA[BM]]></abbreviation>
+				</country>
+				
+				<country id="25">
+					<name><![CDATA[Bhtan]]></name>
+					<abbreviation><![CDATA[BT]]></abbreviation>
+				</country>
+				
+				<country id="26">
+					<name><![CDATA[Bolivia]]></name>
+					<abbreviation><![CDATA[BO]]></abbreviation>
+				</country>
+				
+				<country id="27">
+					<name><![CDATA[Bosnia and Herzegovina]]></name>
+					<abbreviation><![CDATA[BA]]></abbreviation>
+				</country>
+				
+				<country id="28">
+					<name><![CDATA[Botswana]]></name>
+					<abbreviation><![CDATA[BW]]></abbreviation>
+				</country>
+				
+				<country id="29">
+					<name><![CDATA[Brazil]]></name>
+					<abbreviation><![CDATA[BR]]></abbreviation>
+				</country>
+				
+				<country id="30">
+					<name><![CDATA[British Virgin Islands]]></name>
+					<abbreviation><![CDATA[VG]]></abbreviation>
+				</country>
+				
+				<country id="31">
+					<name><![CDATA[Brunei Darussalam]]></name>
+					<abbreviation><![CDATA[BN]]></abbreviation>
+				</country>
+				
+				<country id="32">
+					<name><![CDATA[Bulgaria]]></name>
+					<abbreviation><![CDATA[BG]]></abbreviation>
+				</country>
+				
+				<country id="33">
+					<name><![CDATA[Burkina Faso]]></name>
+					<abbreviation><![CDATA[BF]]></abbreviation>
+				</country>
+				
+				<country id="34">
+					<name><![CDATA[Burma]]></name>
+					<abbreviation><![CDATA[MM]]></abbreviation>
+				</country>
+				
+				<country id="35">
+					<name><![CDATA[Burundi]]></name>
+					<abbreviation><![CDATA[BI]]></abbreviation>
+				</country>
+				
+				<country id="36">
+					<name><![CDATA[Cambodia]]></name>
+					<abbreviation><![CDATA[KH]]></abbreviation>
+				</country>
+				
+				<country id="37">
+					<name><![CDATA[Cameroon]]></name>
+					<abbreviation><![CDATA[CM]]></abbreviation>
+				</country>
+				
+				<country id="2">
+					<name><![CDATA[Canada]]></name>
+					<abbreviation><![CDATA[CA]]></abbreviation>
+				</country>
+				
+				<country id="38">
+					<name><![CDATA[Cape Verde]]></name>
+					<abbreviation><![CDATA[CV]]></abbreviation>
+				</country>
+				
+				<country id="39">
+					<name><![CDATA[Cayman Islands]]></name>
+					<abbreviation><![CDATA[KY]]></abbreviation>
+				</country>
+				
+				<country id="40">
+					<name><![CDATA[Central African Republic]]></name>
+					<abbreviation><![CDATA[CF]]></abbreviation>
+				</country>
+				
+				<country id="41">
+					<name><![CDATA[Chad]]></name>
+					<abbreviation><![CDATA[TD]]></abbreviation>
+				</country>
+				
+				<country id="42">
+					<name><![CDATA[Chile]]></name>
+					<abbreviation><![CDATA[CL]]></abbreviation>
+				</country>
+				
+				<country id="43">
+					<name><![CDATA[China]]></name>
+					<abbreviation><![CDATA[CN]]></abbreviation>
+				</country>
+				
+				<country id="44">
+					<name><![CDATA[Christmas Island]]></name>
+					<abbreviation><![CDATA[CX]]></abbreviation>
+				</country>
+				
+				<country id="45">
+					<name><![CDATA[Cocos Islands]]></name>
+					<abbreviation><![CDATA[CC]]></abbreviation>
+				</country>
+				
+				<country id="46">
+					<name><![CDATA[Colombia]]></name>
+					<abbreviation><![CDATA[CO]]></abbreviation>
+				</country>
+				
+				<country id="47">
+					<name><![CDATA[Comoros]]></name>
+					<abbreviation><![CDATA[KM]]></abbreviation>
+				</country>
+				
+				<country id="48">
+					<name><![CDATA[Congo, Democratic Republic]]></name>
+					<abbreviation><![CDATA[CD]]></abbreviation>
+				</country>
+				
+				<country id="49">
+					<name><![CDATA[Congo, Repulic]]></name>
+					<abbreviation><![CDATA[CG]]></abbreviation>
+				</country>
+				
+				<country id="50">
+					<name><![CDATA[Cook Islands]]></name>
+					<abbreviation><![CDATA[CK]]></abbreviation>
+				</country>
+				
+				<country id="51">
+					<name><![CDATA[Costa Rica]]></name>
+					<abbreviation><![CDATA[CR]]></abbreviation>
+				</country>
+				
+				<country id="52">
+					<name><![CDATA[Cote D'Ivoire]]></name>
+					<abbreviation><![CDATA[CI]]></abbreviation>
+				</country>
+				
+				<country id="53">
+					<name><![CDATA[Croatia]]></name>
+					<abbreviation><![CDATA[HR]]></abbreviation>
+				</country>
+				
+				<country id="54">
+					<name><![CDATA[Cuba]]></name>
+					<abbreviation><![CDATA[CU]]></abbreviation>
+				</country>
+				
+				<country id="55">
+					<name><![CDATA[Cyprus]]></name>
+					<abbreviation><![CDATA[CY]]></abbreviation>
+				</country>
+				
+				<country id="56">
+					<name><![CDATA[Czech Republic]]></name>
+					<abbreviation><![CDATA[CZ]]></abbreviation>
+				</country>
+				
+				<country id="57">
+					<name><![CDATA[Denmark]]></name>
+					<abbreviation><![CDATA[DK]]></abbreviation>
+				</country>
+				
+				<country id="58">
+					<name><![CDATA[Djibouti]]></name>
+					<abbreviation><![CDATA[DJ]]></abbreviation>
+				</country>
+				
+				<country id="59">
+					<name><![CDATA[Dominica]]></name>
+					<abbreviation><![CDATA[DM]]></abbreviation>
+				</country>
+				
+				<country id="60">
+					<name><![CDATA[Dominican Republic]]></name>
+					<abbreviation><![CDATA[DO]]></abbreviation>
+				</country>
+				
+				<country id="61">
+					<name><![CDATA[East Timor]]></name>
+					<abbreviation><![CDATA[TP]]></abbreviation>
+				</country>
+				
+				<country id="63">
+					<name><![CDATA[East Timor]]></name>
+					<abbreviation><![CDATA[TP]]></abbreviation>
+				</country>
+				
+				<country id="64">
+					<name><![CDATA[Ecuador]]></name>
+					<abbreviation><![CDATA[EC]]></abbreviation>
+				</country>
+				
+				<country id="62">
+					<name><![CDATA[Ecuador]]></name>
+					<abbreviation><![CDATA[EC]]></abbreviation>
+				</country>
+				
+				<country id="65">
+					<name><![CDATA[Egypt]]></name>
+					<abbreviation><![CDATA[EG]]></abbreviation>
+				</country>
+				
+				<country id="66">
+					<name><![CDATA[El Salvador]]></name>
+					<abbreviation><![CDATA[SV]]></abbreviation>
+				</country>
+				
+				<country id="67">
+					<name><![CDATA[Equatorial Guinea]]></name>
+					<abbreviation><![CDATA[GQ]]></abbreviation>
+				</country>
+				
+				<country id="68">
+					<name><![CDATA[Eritrea]]></name>
+					<abbreviation><![CDATA[ER]]></abbreviation>
+				</country>
+				
+				<country id="69">
+					<name><![CDATA[Estonia]]></name>
+					<abbreviation><![CDATA[EE]]></abbreviation>
+				</country>
+				
+				<country id="70">
+					<name><![CDATA[Ethiopia]]></name>
+					<abbreviation><![CDATA[ET]]></abbreviation>
+				</country>
+				
+				<country id="71">
+					<name><![CDATA[Falkland Islands]]></name>
+					<abbreviation><![CDATA[FK]]></abbreviation>
+				</country>
+				
+				<country id="72">
+					<name><![CDATA[Faroe Islands]]></name>
+					<abbreviation><![CDATA[FO]]></abbreviation>
+				</country>
+				
+				<country id="73">
+					<name><![CDATA[Fiji]]></name>
+					<abbreviation><![CDATA[FJ]]></abbreviation>
+				</country>
+				
+				<country id="74">
+					<name><![CDATA[Finland]]></name>
+					<abbreviation><![CDATA[FI]]></abbreviation>
+				</country>
+				
+				<country id="75">
+					<name><![CDATA[France]]></name>
+					<abbreviation><![CDATA[FR]]></abbreviation>
+				</country>
+				
+				<country id="76">
+					<name><![CDATA[French Guiana]]></name>
+					<abbreviation><![CDATA[GF]]></abbreviation>
+				</country>
+				
+				<country id="77">
+					<name><![CDATA[French Polynesia]]></name>
+					<abbreviation><![CDATA[PF]]></abbreviation>
+				</country>
+				
+				<country id="78">
+					<name><![CDATA[Gabon]]></name>
+					<abbreviation><![CDATA[GA]]></abbreviation>
+				</country>
+				
+				<country id="79">
+					<name><![CDATA[Gambia]]></name>
+					<abbreviation><![CDATA[GM]]></abbreviation>
+				</country>
+				
+				<country id="80">
+					<name><![CDATA[Georgia]]></name>
+					<abbreviation><![CDATA[GE]]></abbreviation>
+				</country>
+				
+				<country id="81">
+					<name><![CDATA[Germany]]></name>
+					<abbreviation><![CDATA[DE]]></abbreviation>
+				</country>
+				
+				<country id="82">
+					<name><![CDATA[Ghana]]></name>
+					<abbreviation><![CDATA[GH]]></abbreviation>
+				</country>
+				
+				<country id="83">
+					<name><![CDATA[Gibraltar]]></name>
+					<abbreviation><![CDATA[GI]]></abbreviation>
+				</country>
+				
+				<country id="84">
+					<name><![CDATA[Greece]]></name>
+					<abbreviation><![CDATA[GR]]></abbreviation>
+				</country>
+				
+				<country id="85">
+					<name><![CDATA[Greenland]]></name>
+					<abbreviation><![CDATA[GL]]></abbreviation>
+				</country>
+				
+				<country id="86">
+					<name><![CDATA[Grenada]]></name>
+					<abbreviation><![CDATA[GD]]></abbreviation>
+				</country>
+				
+				<country id="87">
+					<name><![CDATA[Guadeloupe]]></name>
+					<abbreviation><![CDATA[GP]]></abbreviation>
+				</country>
+				
+				<country id="88">
+					<name><![CDATA[Guam]]></name>
+					<abbreviation><![CDATA[GU]]></abbreviation>
+				</country>
+				
+				<country id="89">
+					<name><![CDATA[Guatemala]]></name>
+					<abbreviation><![CDATA[GT]]></abbreviation>
+				</country>
+				
+				<country id="90">
+					<name><![CDATA[Guinea]]></name>
+					<abbreviation><![CDATA[GN]]></abbreviation>
+				</country>
+				
+				<country id="91">
+					<name><![CDATA[Guinea-Bissau]]></name>
+					<abbreviation><![CDATA[GW]]></abbreviation>
+				</country>
+				
+				<country id="92">
+					<name><![CDATA[Guyana]]></name>
+					<abbreviation><![CDATA[GY]]></abbreviation>
+				</country>
+				
+				<country id="93">
+					<name><![CDATA[Haiti]]></name>
+					<abbreviation><![CDATA[HT]]></abbreviation>
+				</country>
+				
+				<country id="94">
+					<name><![CDATA[Holy See (Vatican City)]]></name>
+					<abbreviation><![CDATA[VA]]></abbreviation>
+				</country>
+				
+				<country id="95">
+					<name><![CDATA[Honduras]]></name>
+					<abbreviation><![CDATA[HN]]></abbreviation>
+				</country>
+				
+				<country id="96">
+					<name><![CDATA[Hong Kong]]></name>
+					<abbreviation><![CDATA[HK]]></abbreviation>
+				</country>
+				
+				<country id="97">
+					<name><![CDATA[Hungary]]></name>
+					<abbreviation><![CDATA[HU]]></abbreviation>
+				</country>
+				
+				<country id="98">
+					<name><![CDATA[Iceland]]></name>
+					<abbreviation><![CDATA[IS]]></abbreviation>
+				</country>
+				
+				<country id="99">
+					<name><![CDATA[India]]></name>
+					<abbreviation><![CDATA[IN]]></abbreviation>
+				</country>
+				
+				<country id="100">
+					<name><![CDATA[Indonesia]]></name>
+					<abbreviation><![CDATA[ID]]></abbreviation>
+				</country>
+				
+				<country id="101">
+					<name><![CDATA[Iran]]></name>
+					<abbreviation><![CDATA[IR]]></abbreviation>
+				</country>
+				
+				<country id="102">
+					<name><![CDATA[Iraq]]></name>
+					<abbreviation><![CDATA[IQ]]></abbreviation>
+				</country>
+				
+				<country id="103">
+					<name><![CDATA[Ireland]]></name>
+					<abbreviation><![CDATA[IE]]></abbreviation>
+				</country>
+				
+				<country id="104">
+					<name><![CDATA[Israel]]></name>
+					<abbreviation><![CDATA[IL]]></abbreviation>
+				</country>
+				
+				<country id="105">
+					<name><![CDATA[Italy]]></name>
+					<abbreviation><![CDATA[IT]]></abbreviation>
+				</country>
+				
+				<country id="106">
+					<name><![CDATA[Jamaica]]></name>
+					<abbreviation><![CDATA[JM]]></abbreviation>
+				</country>
+				
+				<country id="107">
+					<name><![CDATA[Japan]]></name>
+					<abbreviation><![CDATA[JP]]></abbreviation>
+				</country>
+				
+				<country id="108">
+					<name><![CDATA[Jordan]]></name>
+					<abbreviation><![CDATA[JO]]></abbreviation>
+				</country>
+				
+				<country id="109">
+					<name><![CDATA[Kazakhstan]]></name>
+					<abbreviation><![CDATA[KZ]]></abbreviation>
+				</country>
+				
+				<country id="110">
+					<name><![CDATA[Kenya]]></name>
+					<abbreviation><![CDATA[KE]]></abbreviation>
+				</country>
+				
+				<country id="111">
+					<name><![CDATA[Kiribati]]></name>
+					<abbreviation><![CDATA[KI]]></abbreviation>
+				</country>
+				
+				<country id="114">
+					<name><![CDATA[Kuwait]]></name>
+					<abbreviation><![CDATA[KW]]></abbreviation>
+				</country>
+				
+				<country id="115">
+					<name><![CDATA[Kyrgyzstan]]></name>
+					<abbreviation><![CDATA[KG]]></abbreviation>
+				</country>
+				
+				<country id="116">
+					<name><![CDATA[Laos]]></name>
+					<abbreviation><![CDATA[LA]]></abbreviation>
+				</country>
+				
+				<country id="117">
+					<name><![CDATA[Latvia]]></name>
+					<abbreviation><![CDATA[LV]]></abbreviation>
+				</country>
+				
+				<country id="118">
+					<name><![CDATA[Lebanon]]></name>
+					<abbreviation><![CDATA[LB]]></abbreviation>
+				</country>
+				
+				<country id="119">
+					<name><![CDATA[Lesotho]]></name>
+					<abbreviation><![CDATA[LS]]></abbreviation>
+				</country>
+				
+				<country id="120">
+					<name><![CDATA[Liberia]]></name>
+					<abbreviation><![CDATA[LR]]></abbreviation>
+				</country>
+				
+				<country id="121">
+					<name><![CDATA[Libya]]></name>
+					<abbreviation><![CDATA[LY]]></abbreviation>
+				</country>
+				
+				<country id="122">
+					<name><![CDATA[Liechtenstein]]></name>
+					<abbreviation><![CDATA[LI]]></abbreviation>
+				</country>
+				
+				<country id="123">
+					<name><![CDATA[Lithuania]]></name>
+					<abbreviation><![CDATA[LT]]></abbreviation>
+				</country>
+				
+				<country id="124">
+					<name><![CDATA[Luxembourg]]></name>
+					<abbreviation><![CDATA[LU]]></abbreviation>
+				</country>
+				
+				<country id="125">
+					<name><![CDATA[Macau]]></name>
+					<abbreviation><![CDATA[MO]]></abbreviation>
+				</country>
+				
+				<country id="126">
+					<name><![CDATA[Macedonia]]></name>
+					<abbreviation><![CDATA[MK]]></abbreviation>
+				</country>
+				
+				<country id="127">
+					<name><![CDATA[Madagascar]]></name>
+					<abbreviation><![CDATA[MG]]></abbreviation>
+				</country>
+				
+				<country id="128">
+					<name><![CDATA[Malawi]]></name>
+					<abbreviation><![CDATA[MW]]></abbreviation>
+				</country>
+				
+				<country id="129">
+					<name><![CDATA[Malaysia]]></name>
+					<abbreviation><![CDATA[MY]]></abbreviation>
+				</country>
+				
+				<country id="130">
+					<name><![CDATA[Maldives]]></name>
+					<abbreviation><![CDATA[MV]]></abbreviation>
+				</country>
+				
+				<country id="131">
+					<name><![CDATA[Mali]]></name>
+					<abbreviation><![CDATA[ML]]></abbreviation>
+				</country>
+				
+				<country id="132">
+					<name><![CDATA[Malta]]></name>
+					<abbreviation><![CDATA[MT]]></abbreviation>
+				</country>
+				
+				<country id="133">
+					<name><![CDATA[Marshall Islands]]></name>
+					<abbreviation><![CDATA[MH]]></abbreviation>
+				</country>
+				
+				<country id="134">
+					<name><![CDATA[Martinique]]></name>
+					<abbreviation><![CDATA[MQ]]></abbreviation>
+				</country>
+				
+				<country id="135">
+					<name><![CDATA[Mauritania]]></name>
+					<abbreviation><![CDATA[MR]]></abbreviation>
+				</country>
+				
+				<country id="136">
+					<name><![CDATA[Mauritius]]></name>
+					<abbreviation><![CDATA[MU]]></abbreviation>
+				</country>
+				
+				<country id="137">
+					<name><![CDATA[Mayotte]]></name>
+					<abbreviation><![CDATA[YT]]></abbreviation>
+				</country>
+				
+				<country id="138">
+					<name><![CDATA[Mexico]]></name>
+					<abbreviation><![CDATA[MX]]></abbreviation>
+				</country>
+				
+				<country id="139">
+					<name><![CDATA[Micronesia]]></name>
+					<abbreviation><![CDATA[FM]]></abbreviation>
+				</country>
+				
+				<country id="140">
+					<name><![CDATA[Moldova]]></name>
+					<abbreviation><![CDATA[MD]]></abbreviation>
+				</country>
+				
+				<country id="141">
+					<name><![CDATA[Monaco]]></name>
+					<abbreviation><![CDATA[MC]]></abbreviation>
+				</country>
+				
+				<country id="142">
+					<name><![CDATA[Mongolia]]></name>
+					<abbreviation><![CDATA[MN]]></abbreviation>
+				</country>
+				
+				<country id="143">
+					<name><![CDATA[Montserrat]]></name>
+					<abbreviation><![CDATA[MS]]></abbreviation>
+				</country>
+				
+				<country id="144">
+					<name><![CDATA[Morocco]]></name>
+					<abbreviation><![CDATA[MA]]></abbreviation>
+				</country>
+				
+				<country id="145">
+					<name><![CDATA[Mozambique]]></name>
+					<abbreviation><![CDATA[MZ]]></abbreviation>
+				</country>
+				
+				<country id="146">
+					<name><![CDATA[Namibia]]></name>
+					<abbreviation><![CDATA[NA]]></abbreviation>
+				</country>
+				
+				<country id="147">
+					<name><![CDATA[Nauru]]></name>
+					<abbreviation><![CDATA[NR]]></abbreviation>
+				</country>
+				
+				<country id="148">
+					<name><![CDATA[Nepal]]></name>
+					<abbreviation><![CDATA[NP]]></abbreviation>
+				</country>
+				
+				<country id="149">
+					<name><![CDATA[Netherlands]]></name>
+					<abbreviation><![CDATA[NL]]></abbreviation>
+				</country>
+				
+				<country id="150">
+					<name><![CDATA[Netherlands Antilles]]></name>
+					<abbreviation><![CDATA[AN]]></abbreviation>
+				</country>
+				
+				<country id="151">
+					<name><![CDATA[New Caledonia]]></name>
+					<abbreviation><![CDATA[NC]]></abbreviation>
+				</country>
+				
+				<country id="152">
+					<name><![CDATA[New Zealand]]></name>
+					<abbreviation><![CDATA[NZ]]></abbreviation>
+				</country>
+				
+				<country id="153">
+					<name><![CDATA[Nicaragua]]></name>
+					<abbreviation><![CDATA[NI]]></abbreviation>
+				</country>
+				
+				<country id="154">
+					<name><![CDATA[Niger]]></name>
+					<abbreviation><![CDATA[NE]]></abbreviation>
+				</country>
+				
+				<country id="155">
+					<name><![CDATA[Nigeria]]></name>
+					<abbreviation><![CDATA[NG]]></abbreviation>
+				</country>
+				
+				<country id="156">
+					<name><![CDATA[Niue]]></name>
+					<abbreviation><![CDATA[NU]]></abbreviation>
+				</country>
+				
+				<country id="157">
+					<name><![CDATA[Norfolk Island]]></name>
+					<abbreviation><![CDATA[NF]]></abbreviation>
+				</country>
+				
+				<country id="112">
+					<name><![CDATA[North Korea]]></name>
+					<abbreviation><![CDATA[KP]]></abbreviation>
+				</country>
+				
+				<country id="158">
+					<name><![CDATA[Northern Mariana Islands]]></name>
+					<abbreviation><![CDATA[MP]]></abbreviation>
+				</country>
+				
+				<country id="159">
+					<name><![CDATA[Norway]]></name>
+					<abbreviation><![CDATA[NO]]></abbreviation>
+				</country>
+				
+				<country id="160">
+					<name><![CDATA[Oman]]></name>
+					<abbreviation><![CDATA[OM]]></abbreviation>
+				</country>
+				
+				<country id="161">
+					<name><![CDATA[Pakistan]]></name>
+					<abbreviation><![CDATA[PK]]></abbreviation>
+				</country>
+				
+				<country id="162">
+					<name><![CDATA[Palau]]></name>
+					<abbreviation><![CDATA[PW]]></abbreviation>
+				</country>
+				
+				<country id="163">
+					<name><![CDATA[Panama]]></name>
+					<abbreviation><![CDATA[PA]]></abbreviation>
+				</country>
+				
+				<country id="164">
+					<name><![CDATA[Papua New Guinea]]></name>
+					<abbreviation><![CDATA[PG]]></abbreviation>
+				</country>
+				
+				<country id="165">
+					<name><![CDATA[Paraguay]]></name>
+					<abbreviation><![CDATA[PY]]></abbreviation>
+				</country>
+				
+				<country id="166">
+					<name><![CDATA[Peru]]></name>
+					<abbreviation><![CDATA[PE]]></abbreviation>
+				</country>
+				
+				<country id="167">
+					<name><![CDATA[Philippines]]></name>
+					<abbreviation><![CDATA[PH]]></abbreviation>
+				</country>
+				
+				<country id="168">
+					<name><![CDATA[Pitcaim Islands]]></name>
+					<abbreviation><![CDATA[PN]]></abbreviation>
+				</country>
+				
+				<country id="169">
+					<name><![CDATA[Poland]]></name>
+					<abbreviation><![CDATA[PL]]></abbreviation>
+				</country>
+				
+				<country id="170">
+					<name><![CDATA[Portugal]]></name>
+					<abbreviation><![CDATA[PT]]></abbreviation>
+				</country>
+				
+				<country id="171">
+					<name><![CDATA[Puerto Rico]]></name>
+					<abbreviation><![CDATA[PR]]></abbreviation>
+				</country>
+				
+				<country id="172">
+					<name><![CDATA[Qatar]]></name>
+					<abbreviation><![CDATA[QA]]></abbreviation>
+				</country>
+				
+				<country id="173">
+					<name><![CDATA[Reunion]]></name>
+					<abbreviation><![CDATA[RE]]></abbreviation>
+				</country>
+				
+				<country id="174">
+					<name><![CDATA[Romania]]></name>
+					<abbreviation><![CDATA[RO]]></abbreviation>
+				</country>
+				
+				<country id="175">
+					<name><![CDATA[Russia]]></name>
+					<abbreviation><![CDATA[RU]]></abbreviation>
+				</country>
+				
+				<country id="176">
+					<name><![CDATA[Rwanda]]></name>
+					<abbreviation><![CDATA[RW]]></abbreviation>
+				</country>
+				
+				<country id="177">
+					<name><![CDATA[Saint Helena]]></name>
+					<abbreviation><![CDATA[SH]]></abbreviation>
+				</country>
+				
+				<country id="178">
+					<name><![CDATA[Saint Kitts and Nevis]]></name>
+					<abbreviation><![CDATA[KN]]></abbreviation>
+				</country>
+				
+				<country id="179">
+					<name><![CDATA[Saint Lucia]]></name>
+					<abbreviation><![CDATA[LC]]></abbreviation>
+				</country>
+				
+				<country id="180">
+					<name><![CDATA[Saint Pierre & Miquelon]]></name>
+					<abbreviation><![CDATA[PM]]></abbreviation>
+				</country>
+				
+				<country id="181">
+					<name><![CDATA[Saint Vincent and the Grenadines]]></name>
+					<abbreviation><![CDATA[VC]]></abbreviation>
+				</country>
+				
+				<country id="182">
+					<name><![CDATA[Samoa]]></name>
+					<abbreviation><![CDATA[WS]]></abbreviation>
+				</country>
+				
+				<country id="183">
+					<name><![CDATA[San Marino]]></name>
+					<abbreviation><![CDATA[SM]]></abbreviation>
+				</country>
+				
+				<country id="184">
+					<name><![CDATA[Sao Tome and Principe]]></name>
+					<abbreviation><![CDATA[ST]]></abbreviation>
+				</country>
+				
+				<country id="185">
+					<name><![CDATA[Saudi Arabia]]></name>
+					<abbreviation><![CDATA[SA]]></abbreviation>
+				</country>
+				
+				<country id="186">
+					<name><![CDATA[Senegal]]></name>
+					<abbreviation><![CDATA[SN]]></abbreviation>
+				</country>
+				
+				<country id="187">
+					<name><![CDATA[Serbia and Montenegro]]></name>
+					<abbreviation><![CDATA[CS]]></abbreviation>
+				</country>
+				
+				<country id="188">
+					<name><![CDATA[Seychelles]]></name>
+					<abbreviation><![CDATA[SC]]></abbreviation>
+				</country>
+				
+				<country id="189">
+					<name><![CDATA[Sierra Leone]]></name>
+					<abbreviation><![CDATA[SL]]></abbreviation>
+				</country>
+				
+				<country id="190">
+					<name><![CDATA[Singapore]]></name>
+					<abbreviation><![CDATA[SG]]></abbreviation>
+				</country>
+				
+				<country id="191">
+					<name><![CDATA[Slovakia]]></name>
+					<abbreviation><![CDATA[SK]]></abbreviation>
+				</country>
+				
+				<country id="192">
+					<name><![CDATA[Slovenia]]></name>
+					<abbreviation><![CDATA[SI]]></abbreviation>
+				</country>
+				
+				<country id="193">
+					<name><![CDATA[Solomon Islands]]></name>
+					<abbreviation><![CDATA[SB]]></abbreviation>
+				</country>
+				
+				<country id="194">
+					<name><![CDATA[Somalia]]></name>
+					<abbreviation><![CDATA[SO]]></abbreviation>
+				</country>
+				
+				<country id="195">
+					<name><![CDATA[South Africa]]></name>
+					<abbreviation><![CDATA[ZA]]></abbreviation>
+				</country>
+				
+				<country id="196">
+					<name><![CDATA[South Georgia & South Sandwich Islands]]></name>
+					<abbreviation><![CDATA[GS]]></abbreviation>
+				</country>
+				
+				<country id="113">
+					<name><![CDATA[South Korea]]></name>
+					<abbreviation><![CDATA[KR]]></abbreviation>
+				</country>
+				
+				<country id="197">
+					<name><![CDATA[Spain]]></name>
+					<abbreviation><![CDATA[ES]]></abbreviation>
+				</country>
+				
+				<country id="198">
+					<name><![CDATA[Sri Lanka]]></name>
+					<abbreviation><![CDATA[LK]]></abbreviation>
+				</country>
+				
+				<country id="199">
+					<name><![CDATA[Sudan]]></name>
+					<abbreviation><![CDATA[SD]]></abbreviation>
+				</country>
+				
+				<country id="200">
+					<name><![CDATA[Suriname]]></name>
+					<abbreviation><![CDATA[SR]]></abbreviation>
+				</country>
+				
+				<country id="201">
+					<name><![CDATA[Swaziland]]></name>
+					<abbreviation><![CDATA[SZ]]></abbreviation>
+				</country>
+				
+				<country id="202">
+					<name><![CDATA[Sweden]]></name>
+					<abbreviation><![CDATA[SE]]></abbreviation>
+				</country>
+				
+				<country id="203">
+					<name><![CDATA[Switzerland]]></name>
+					<abbreviation><![CDATA[CH]]></abbreviation>
+				</country>
+				
+				<country id="204">
+					<name><![CDATA[Syria]]></name>
+					<abbreviation><![CDATA[SY]]></abbreviation>
+				</country>
+				
+				<country id="205">
+					<name><![CDATA[Taiwan]]></name>
+					<abbreviation><![CDATA[TW]]></abbreviation>
+				</country>
+				
+				<country id="206">
+					<name><![CDATA[Tajikistan]]></name>
+					<abbreviation><![CDATA[TJ]]></abbreviation>
+				</country>
+				
+				<country id="207">
+					<name><![CDATA[Tanzania]]></name>
+					<abbreviation><![CDATA[TZ]]></abbreviation>
+				</country>
+				
+				<country id="208">
+					<name><![CDATA[Thailand]]></name>
+					<abbreviation><![CDATA[TH]]></abbreviation>
+				</country>
+				
+				<country id="209">
+					<name><![CDATA[Togo]]></name>
+					<abbreviation><![CDATA[TG]]></abbreviation>
+				</country>
+				
+				<country id="210">
+					<name><![CDATA[Tokelau]]></name>
+					<abbreviation><![CDATA[TK]]></abbreviation>
+				</country>
+				
+				<country id="211">
+					<name><![CDATA[Tonga]]></name>
+					<abbreviation><![CDATA[TO]]></abbreviation>
+				</country>
+				
+				<country id="212">
+					<name><![CDATA[Trinidad and Tobago]]></name>
+					<abbreviation><![CDATA[TT]]></abbreviation>
+				</country>
+				
+				<country id="213">
+					<name><![CDATA[Tunisia]]></name>
+					<abbreviation><![CDATA[TN]]></abbreviation>
+				</country>
+				
+				<country id="214">
+					<name><![CDATA[Turkey]]></name>
+					<abbreviation><![CDATA[TR]]></abbreviation>
+				</country>
+				
+				<country id="215">
+					<name><![CDATA[Turkmenistan]]></name>
+					<abbreviation><![CDATA[TM]]></abbreviation>
+				</country>
+				
+				<country id="216">
+					<name><![CDATA[Turks and Caicos Islands]]></name>
+					<abbreviation><![CDATA[TC]]></abbreviation>
+				</country>
+				
+				<country id="217">
+					<name><![CDATA[Tuvalu]]></name>
+					<abbreviation><![CDATA[TV]]></abbreviation>
+				</country>
+				
+				<country id="218">
+					<name><![CDATA[Uganda]]></name>
+					<abbreviation><![CDATA[UG]]></abbreviation>
+				</country>
+				
+				<country id="219">
+					<name><![CDATA[Ukraine]]></name>
+					<abbreviation><![CDATA[UA]]></abbreviation>
+				</country>
+				
+				<country id="220">
+					<name><![CDATA[United Arab Emirates]]></name>
+					<abbreviation><![CDATA[AE]]></abbreviation>
+				</country>
+				
+				<country id="221">
+					<name><![CDATA[United Kingdom]]></name>
+					<abbreviation><![CDATA[GB]]></abbreviation>
+				</country>
+				
+				<country id="1">
+					<name><![CDATA[United States]]></name>
+					<abbreviation><![CDATA[US]]></abbreviation>
+				</country>
+				
+				<country id="222">
+					<name><![CDATA[Uruguay]]></name>
+					<abbreviation><![CDATA[UY]]></abbreviation>
+				</country>
+				
+				<country id="223">
+					<name><![CDATA[Uzbekistan]]></name>
+					<abbreviation><![CDATA[UZ]]></abbreviation>
+				</country>
+				
+				<country id="224">
+					<name><![CDATA[Vanuatu]]></name>
+					<abbreviation><![CDATA[VU]]></abbreviation>
+				</country>
+				
+				<country id="225">
+					<name><![CDATA[Venezuela]]></name>
+					<abbreviation><![CDATA[VE]]></abbreviation>
+				</country>
+				
+				<country id="226">
+					<name><![CDATA[Vietnam]]></name>
+					<abbreviation><![CDATA[VN]]></abbreviation>
+				</country>
+				
+				<country id="227">
+					<name><![CDATA[Virgin Islands]]></name>
+					<abbreviation><![CDATA[VI]]></abbreviation>
+				</country>
+				
+				<country id="228">
+					<name><![CDATA[Wallis and Futuna]]></name>
+					<abbreviation><![CDATA[WF]]></abbreviation>
+				</country>
+				
+				<country id="229">
+					<name><![CDATA[Western Sahara]]></name>
+					<abbreviation><![CDATA[EH]]></abbreviation>
+				</country>
+				
+				<country id="230">
+					<name><![CDATA[Yemen]]></name>
+					<abbreviation><![CDATA[YE]]></abbreviation>
+				</country>
+				
+				<country id="231">
+					<name><![CDATA[Zambia]]></name>
+					<abbreviation><![CDATA[ZM]]></abbreviation>
+				</country>
+				
+				<country id="232">
+					<name><![CDATA[Zimbabwe]]></name>
+					<abbreviation><![CDATA[ZW]]></abbreviation>
+				</country>
+				
+			</countries>

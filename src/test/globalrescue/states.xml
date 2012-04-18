@@ -1,0 +1,350 @@
+<states>
+				
+				<country id="0">
+					
+					<state id="0">
+						<name><![CDATA[- Non US/Canada -]]></name>
+						<abbreviation><![CDATA[  ]]></abbreviation>
+					</state>
+					
+				</country>
+				
+				<country id="1">
+					
+					<state id="-1">
+						<name><![CDATA[---United States---]]></name>
+						<abbreviation><![CDATA[  ]]></abbreviation>
+					</state>
+					
+					<state id="1">
+						<name><![CDATA[Alabama]]></name>
+						<abbreviation><![CDATA[AL]]></abbreviation>
+					</state>
+					
+					<state id="2">
+						<name><![CDATA[Alaska]]></name>
+						<abbreviation><![CDATA[AK]]></abbreviation>
+					</state>
+					
+					<state id="3">
+						<name><![CDATA[Arizona]]></name>
+						<abbreviation><![CDATA[AZ]]></abbreviation>
+					</state>
+					
+					<state id="4">
+						<name><![CDATA[Arkansas]]></name>
+						<abbreviation><![CDATA[AR]]></abbreviation>
+					</state>
+					
+					<state id="5">
+						<name><![CDATA[California]]></name>
+						<abbreviation><![CDATA[CA]]></abbreviation>
+					</state>
+					
+					<state id="6">
+						<name><![CDATA[Colorado]]></name>
+						<abbreviation><![CDATA[CO]]></abbreviation>
+					</state>
+					
+					<state id="7">
+						<name><![CDATA[Connecticut]]></name>
+						<abbreviation><![CDATA[CT]]></abbreviation>
+					</state>
+					
+					<state id="8">
+						<name><![CDATA[Delaware]]></name>
+						<abbreviation><![CDATA[DE]]></abbreviation>
+					</state>
+					
+					<state id="9">
+						<name><![CDATA[District of Columbia]]></name>
+						<abbreviation><![CDATA[DC]]></abbreviation>
+					</state>
+					
+					<state id="10">
+						<name><![CDATA[Florida]]></name>
+						<abbreviation><![CDATA[FL]]></abbreviation>
+					</state>
+					
+					<state id="11">
+						<name><![CDATA[Georgia]]></name>
+						<abbreviation><![CDATA[GA]]></abbreviation>
+					</state>
+					
+					<state id="12">
+						<name><![CDATA[Hawaii]]></name>
+						<abbreviation><![CDATA[HI]]></abbreviation>
+					</state>
+					
+					<state id="13">
+						<name><![CDATA[Idaho]]></name>
+						<abbreviation><![CDATA[ID]]></abbreviation>
+					</state>
+					
+					<state id="14">
+						<name><![CDATA[Illinois]]></name>
+						<abbreviation><![CDATA[IL]]></abbreviation>
+					</state>
+					
+					<state id="15">
+						<name><![CDATA[Indiana]]></name>
+						<abbreviation><![CDATA[IN]]></abbreviation>
+					</state>
+					
+					<state id="16">
+						<name><![CDATA[Iowa]]></name>
+						<abbreviation><![CDATA[IA]]></abbreviation>
+					</state>
+					
+					<state id="17">
+						<name><![CDATA[Kansas]]></name>
+						<abbreviation><![CDATA[KS]]></abbreviation>
+					</state>
+					
+					<state id="18">
+						<name><![CDATA[Kentucky]]></name>
+						<abbreviation><![CDATA[KY]]></abbreviation>
+					</state>
+					
+					<state id="19">
+						<name><![CDATA[Louisiana]]></name>
+						<abbreviation><![CDATA[LA]]></abbreviation>
+					</state>
+					
+					<state id="20">
+						<name><![CDATA[Maine]]></name>
+						<abbreviation><![CDATA[ME]]></abbreviation>
+					</state>
+					
+					<state id="21">
+						<name><![CDATA[Maryland]]></name>
+						<abbreviation><![CDATA[MD]]></abbreviation>
+					</state>
+					
+					<state id="22">
+						<name><![CDATA[Massachusetts]]></name>
+						<abbreviation><![CDATA[MA]]></abbreviation>
+					</state>
+					
+					<state id="23">
+						<name><![CDATA[Michigan]]></name>
+						<abbreviation><![CDATA[MI]]></abbreviation>
+					</state>
+					
+					<state id="24">
+						<name><![CDATA[Minnesota]]></name>
+						<abbreviation><![CDATA[MN]]></abbreviation>
+					</state>
+					
+					<state id="25">
+						<name><![CDATA[Mississippi]]></name>
+						<abbreviation><![CDATA[MS]]></abbreviation>
+					</state>
+					
+					<state id="26">
+						<name><![CDATA[Missouri]]></name>
+						<abbreviation><![CDATA[MO]]></abbreviation>
+					</state>
+					
+					<state id="27">
+						<name><![CDATA[Montana]]></name>
+						<abbreviation><![CDATA[MT]]></abbreviation>
+					</state>
+					
+					<state id="28">
+						<name><![CDATA[Nebraska]]></name>
+						<abbreviation><![CDATA[NE]]></abbreviation>
+					</state>
+					
+					<state id="29">
+						<name><![CDATA[Nevada]]></name>
+						<abbreviation><![CDATA[NV]]></abbreviation>
+					</state>
+					
+					<state id="30">
+						<name><![CDATA[New  Hampshire]]></name>
+						<abbreviation><![CDATA[NH]]></abbreviation>
+					</state>
+					
+					<state id="31">
+						<name><![CDATA[New Jersey]]></name>
+						<abbreviation><![CDATA[NJ]]></abbreviation>
+					</state>
+					
+					<state id="32">
+						<name><![CDATA[New Mexico]]></name>
+						<abbreviation><![CDATA[NM]]></abbreviation>
+					</state>
+					
+					<state id="33">
+						<name><![CDATA[New York]]></name>
+						<abbreviation><![CDATA[NY]]></abbreviation>
+					</state>
+					
+					<state id="34">
+						<name><![CDATA[North Carolina]]></name>
+						<abbreviation><![CDATA[NC]]></abbreviation>
+					</state>
+					
+					<state id="35">
+						<name><![CDATA[North Dakota]]></name>
+						<abbreviation><![CDATA[ND]]></abbreviation>
+					</state>
+					
+					<state id="36">
+						<name><![CDATA[Ohio]]></name>
+						<abbreviation><![CDATA[OH]]></abbreviation>
+					</state>
+					
+					<state id="37">
+						<name><![CDATA[Oklahoma]]></name>
+						<abbreviation><![CDATA[OK]]></abbreviation>
+					</state>
+					
+					<state id="38">
+						<name><![CDATA[Oregon]]></name>
+						<abbreviation><![CDATA[OR]]></abbreviation>
+					</state>
+					
+					<state id="39">
+						<name><![CDATA[Pennsylvania]]></name>
+						<abbreviation><![CDATA[PA]]></abbreviation>
+					</state>
+					
+					<state id="40">
+						<name><![CDATA[Rhode Island]]></name>
+						<abbreviation><![CDATA[RI]]></abbreviation>
+					</state>
+					
+					<state id="41">
+						<name><![CDATA[South Carolina]]></name>
+						<abbreviation><![CDATA[SC]]></abbreviation>
+					</state>
+					
+					<state id="42">
+						<name><![CDATA[South Dakota]]></name>
+						<abbreviation><![CDATA[SD]]></abbreviation>
+					</state>
+					
+					<state id="43">
+						<name><![CDATA[Tennessee]]></name>
+						<abbreviation><![CDATA[TN]]></abbreviation>
+					</state>
+					
+					<state id="44">
+						<name><![CDATA[Texas]]></name>
+						<abbreviation><![CDATA[TX]]></abbreviation>
+					</state>
+					
+					<state id="45">
+						<name><![CDATA[Utah]]></name>
+						<abbreviation><![CDATA[UT]]></abbreviation>
+					</state>
+					
+					<state id="46">
+						<name><![CDATA[Vermont]]></name>
+						<abbreviation><![CDATA[VT]]></abbreviation>
+					</state>
+					
+					<state id="47">
+						<name><![CDATA[Virginia]]></name>
+						<abbreviation><![CDATA[VA]]></abbreviation>
+					</state>
+					
+					<state id="48">
+						<name><![CDATA[Washington]]></name>
+						<abbreviation><![CDATA[WA]]></abbreviation>
+					</state>
+					
+					<state id="49">
+						<name><![CDATA[West Virginia]]></name>
+						<abbreviation><![CDATA[WV]]></abbreviation>
+					</state>
+					
+					<state id="50">
+						<name><![CDATA[Wisconsin]]></name>
+						<abbreviation><![CDATA[WI]]></abbreviation>
+					</state>
+					
+					<state id="51">
+						<name><![CDATA[Wyoming]]></name>
+						<abbreviation><![CDATA[WY]]></abbreviation>
+					</state>
+					
+				</country>
+				
+				<country id="2">
+					
+					<state id="-2">
+						<name><![CDATA[---Canadian Provinces/Territories--]]></name>
+						<abbreviation><![CDATA[  ]]></abbreviation>
+					</state>
+					
+					<state id="52">
+						<name><![CDATA[Alberta]]></name>
+						<abbreviation><![CDATA[AB]]></abbreviation>
+					</state>
+					
+					<state id="53">
+						<name><![CDATA[British Columbia]]></name>
+						<abbreviation><![CDATA[BC]]></abbreviation>
+					</state>
+					
+					<state id="54">
+						<name><![CDATA[Manitoba]]></name>
+						<abbreviation><![CDATA[MB]]></abbreviation>
+					</state>
+					
+					<state id="55">
+						<name><![CDATA[New Brunswick]]></name>
+						<abbreviation><![CDATA[NB]]></abbreviation>
+					</state>
+					
+					<state id="56">
+						<name><![CDATA[Newfoundland/Labrador]]></name>
+						<abbreviation><![CDATA[NL]]></abbreviation>
+					</state>
+					
+					<state id="57">
+						<name><![CDATA[Northwest Territories]]></name>
+						<abbreviation><![CDATA[NT]]></abbreviation>
+					</state>
+					
+					<state id="58">
+						<name><![CDATA[Nova Scotia]]></name>
+						<abbreviation><![CDATA[NS]]></abbreviation>
+					</state>
+					
+					<state id="59">
+						<name><![CDATA[Nunavut]]></name>
+						<abbreviation><![CDATA[NU]]></abbreviation>
+					</state>
+					
+					<state id="60">
+						<name><![CDATA[Ontario]]></name>
+						<abbreviation><![CDATA[ON]]></abbreviation>
+					</state>
+					
+					<state id="61">
+						<name><![CDATA[Prince Edward Island]]></name>
+						<abbreviation><![CDATA[PE]]></abbreviation>
+					</state>
+					
+					<state id="62">
+						<name><![CDATA[Quebec]]></name>
+						<abbreviation><![CDATA[QC]]></abbreviation>
+					</state>
+					
+					<state id="63">
+						<name><![CDATA[Saskatchewan]]></name>
+						<abbreviation><![CDATA[SK]]></abbreviation>
+					</state>
+					
+					<state id="64">
+						<name><![CDATA[Yukon]]></name>
+						<abbreviation><![CDATA[YT]]></abbreviation>
+					</state>
+					
+				</country>
+				
+			</states>
