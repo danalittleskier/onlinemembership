@@ -365,6 +365,8 @@ public class RegistrationAction extends FormAction implements Serializable {
 
 	accountBean.setCartBean(new CartBean());
 	
+	GlobalRescueBean grb = new GlobalRescueBean(accountBean,rulesBL);
+	accountBean.setGlobalRescueBean(grb);
 	
 
 	// new registration
@@ -713,6 +715,8 @@ public class RegistrationAction extends FormAction implements Serializable {
     	}
     	
     	if(thisSponsor != null){
+    		String iAgree = context.getRequestParameters().get("agreetoglobalrescue");
+    		
 	    	accountBean.getCartBean().addItem(thisSponsor);
 	    	
 	    	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
