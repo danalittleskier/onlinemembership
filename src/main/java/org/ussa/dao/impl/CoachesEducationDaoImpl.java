@@ -46,7 +46,7 @@ public class CoachesEducationDaoImpl implements CoachesEducationDao{
 		
 public List<String> getCoachLevel(Long ussaId){
 		
-		CoachesClinicsQuery sq = new CoachesClinicsQuery(getDataSource());
+		CoachLevelQuery sq = new CoachLevelQuery(getDataSource());
 		Object [] parameters = {ussaId};
 		List<String> level= sq.execute(parameters);		
 		//return (courses.isEmpty() ? courses : null);
