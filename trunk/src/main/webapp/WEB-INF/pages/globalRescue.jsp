@@ -119,7 +119,7 @@
 		  <p>Global Rescue is the USST Official Provider of medical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuation home for injuries or illnesses requiring hospitalization.
 
 		  <p><a href="https://www.globalrescue.com/benefits.cfm?view=Medical">View more Global Rescue Membership Information </a>
-
+<br>
 Extended Global Rescue Membership pricing is for travelers 75 or older. Travelers in this age range must complete and submit the short medical questionnaire attached to this form.
 
 		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
@@ -136,7 +136,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
         <span style="font-weight:bold;">Fill-in the first name, last name, and date of birth for each family member you would like on the Family Membership plan.</span>
     	<table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
-	    <th>Description</ths
+	    <th>Description</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Date of Birth</th>
@@ -165,7 +165,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	      <option value="June">June</option>
 	      <option value="July">July</option>
 	      <option value="August">August</option>
-	      <option value="September">Septemeber</option>
+	      <option value="September">September</option>
 	      <option value="October">October</option>
 	      <option value="November">November</option>
 	      <option value="December">December</option>
@@ -186,7 +186,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
           </select></td>
 	    </tr>
 	  <tr class="odd">
-	    <td>Dependant 1</td>
+	    <td>Dependent 1</td>
 	    <td><input type="text" name="firstname3" id="firstname3" /></td>
 	    <td><input type="text" name="lastname3" id="lastname3" /></td>
 	    <td><select name="month3" id="month3">
@@ -199,7 +199,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	      <option value="June">June</option>
 	      <option value="July">July</option>
 	      <option value="August">August</option>
-	      <option value="September">Septemeber</option>
+	      <option value="September">September</option>
 	      <option value="October">October</option>
 	      <option value="November">November</option>
 	      <option value="December">December</option>
@@ -220,7 +220,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
           </select></td>
 	    </tr>
         <tr class="even">
-          <td>Dependant 2</td>
+          <td>Dependent 2</td>
           <td><input type="text" name="firstname4" id="firstname4" /></td>
           <td><input type="text" name="lastname4" id="lastname4" /></td>
           <td><select name="month4" id="month4">
@@ -254,7 +254,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
           </select></td>
         </tr>
         <tr class="even">
-          <td>Dependant 3</td>
+          <td>Dependent 3</td>
           <td><input type="text" name="firstname5" id="firstname5" /></td>
           <td><input type="text" name="lastname5" id="lastname5" /></td>
           <td><select name="month5" id="month5">
@@ -267,7 +267,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
             <option value="June">June</option>
             <option value="July">July</option>
             <option value="August">August</option>
-            <option value="September">Septemeber</option>
+            <option value="September">September</option>
             <option value="October">October</option>
             <option value="November">November</option>
             <option value="December">December</option>
@@ -288,7 +288,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
           </select></td>
         </tr>
         <tr class="even">
-	    <td>Dependant 4</td>
+	    <td>Dependent 4</td>
 	    <td><input type="text" name="firstname6" id="firstname6" /></td>
 	    <td><input type="text" name="lastname6" id="lastname6" /></td>
 	    <td><select name="month6" id="month6">
@@ -301,7 +301,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	      <option value="June">June</option>
 	      <option value="July">July</option>
 	      <option value="August">August</option>
-	      <option value="September">Septemeber</option>
+	      <option value="September">September</option>
 	      <option value="October">October</option>
 	      <option value="November">November</option>
 	      <option value="December">December</option>
