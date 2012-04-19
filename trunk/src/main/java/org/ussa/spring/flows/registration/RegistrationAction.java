@@ -206,6 +206,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	MemberSeason memberSeason = memberSeasonDao.hasMemberSeasonForCurrentSeason(memberSeasonPk);
 	accountBean.setMemberSeason(memberSeason);
 	
+	//TODO ZTS next 2 lines should go away.  LoadContactInfo also initializes GlobalRescueBean
 	GlobalRescueBean grb = new GlobalRescueBean(accountBean,rulesBL);
 	accountBean.setGlobalRescueBean(grb);
     }
