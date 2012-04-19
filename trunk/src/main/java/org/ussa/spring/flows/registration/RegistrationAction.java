@@ -663,6 +663,10 @@ public class RegistrationAction extends FormAction implements Serializable {
 		accountBean.setFastStartCourseInfoAlreadyShown(true);
 	}
 
+	if(request.getSession().getAttribute("showFastStartCourse") != null && request.getSession().getAttribute("showBackgroundScreening") != null && request.getSession().getAttribute("showFastStartCourse").equals(true) && request.getSession().getAttribute("showBackgroundScreening").equals(true) ){
+		request.getSession().setAttribute("showBothWarnings", true);
+	}
+	
 	return success();
     }
 

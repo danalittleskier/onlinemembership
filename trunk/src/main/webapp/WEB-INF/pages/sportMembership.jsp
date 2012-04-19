@@ -226,6 +226,26 @@
 	<!-- BOX (END) -->
 </div>
 <div class="clear"></div>
+<c:choose>
+<c:when test="${showBothWarnings}">
+	<script type="text/javascript" defer="defer">
+		GB_showCenter('USSA Coaches and Officials Information', '<c:url value="/coachesWarningsPopup.html"/>', 515, 625);
+	</script>
+	<%session.removeAttribute("showBackgroundScreening");%>
+</c:when>
+<c:when test="${showBackgroundScreening}">
+	<script type="text/javascript" defer="defer">
+		GB_showCenter('USSA Background Screening Information', '<c:url value="/backgroundScreeningPopup.html"/>', 515, 625);
+	</script>
+	<%session.removeAttribute("showBackgroundScreening");%>
+</c:when>
+<c:when test="${showFastStartCourse}">
+	<script type="text/javascript" defer="defer">
+		GB_showCenter('USSA Safe Sport Information', '<c:url value="/fastStartCoursePopup.html"/>', 515, 625);
+	</script>
+	<%session.removeAttribute("showFastStartCourse");%>
+</c:when>
+</c:choose>
 <!-- 
 <c:if test="${showBackgroundScreening}">
 	<script type="text/javascript" defer="defer">
@@ -233,14 +253,14 @@
 	</script>
 	<%session.removeAttribute("showBackgroundScreening");%>
 </c:if>
--->
+
 <c:if test="${showFastStartCourse}">
 	<script type="text/javascript" defer="defer">
 		GB_showCenter('USSA Safe Sport Information', '<c:url value="/fastStartCoursePopup.html"/>', 515, 625);
 	</script>
 	<%session.removeAttribute("showFastStartCourse");%>
 </c:if>
-
+-->
 </body>
 
 

@@ -72,7 +72,7 @@
 		</fieldset>
 	</c:if>
 	
-	<div class="button red"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
+	<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
 			
 
 </div>
@@ -87,13 +87,13 @@
 		</c:url>
 
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-		<c:url var="membershipCardUrl" value="http://services.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}">
-		<c:param name="id" value="${accountBean.member.id}"/>
+		<c:url var="membershipCardUrl" value="http://my.ussa.org/tools/membership-card/${accountBean.member.id}">
+		
 		</c:url>
 		<br>
 		Click <a href="${membershipCardUrl}" target="blank">Here</a> to print your digital USSA Digital Membership Card 
 		<br>
-		Click <a href="http://my.ussa.org/tools/linked-member-accounts">Here</a> to link additional USSA membership accounts to your My USSA account
+		Click <a href="http://my.ussa.org/tools/linked-member-accounts">Here</a> to link additional USSA members to your My USSA account
 		<br>
 		Click <a href="http://my.ussa.org/portal">Here</a> to get started with your personalized My USSA member tools 
 		<br>
