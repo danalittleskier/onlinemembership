@@ -119,7 +119,7 @@
 		  <p>Global Rescue is the USST Official Provider of medical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuation home for injuries or illnesses requiring hospitalization.
 
 		  <p><a href="https://www.globalrescue.com/benefits.cfm?view=Medical">View more Global Rescue Membership Information </a>
-<br>
+
 Extended Global Rescue Membership pricing is for travelers 75 or older. Travelers in this age range must complete and submit the short medical questionnaire attached to this form.
 
 		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
@@ -144,10 +144,16 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	  <tr class="odd">
 	    <td>You</td>
 		<td>
+			<%--
 			<form:input disabled="true" path="member.firstName" size="30" maxlength="30"/>
+				--%>
+			<input type="text" name="firstname2" id="firstname2" />
 		</td>
 		<td>
+			<%--
 			<form:input disabled="true" path="member.lastName" size="30" maxlength="30"/>
+				--%>
+			<input type="text" name="lastname2" id="lastname2" /><
 		</td>
 		<td>${accountBean.birthDate}</td>
 	    </tr>
