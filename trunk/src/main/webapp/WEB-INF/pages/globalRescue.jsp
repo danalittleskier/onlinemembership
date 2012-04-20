@@ -105,10 +105,7 @@
 	  <!-- eligible: ${accountBean.globalRescueBean.eligible} -->
 	  <!-- isInCart: ${accountBean.globalRescueBean.isInCart} -->
 	  <!-- age < 75: ${accountBean.globalRescueBean.age < 75} -->
-	  <c:if test="${accountBean.globalRescueBean.isInCart }">
-	  	<!-- incart -->
-	  </c:if>
-	  <c:if test="${accountBean.globalRescueBean.eligible}">
+	  <c:if test="${accountBean.globalRescueBean.eligible && !accountBean.globalRescueBean.isInCart}">
 	  	<!-- eligible -->
 	  <c:choose>
 	  <c:when test="${accountBean.globalRescueBean.age < 75}">
@@ -370,7 +367,10 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
     <br /></td>
 </tr><tr>
 	<td width="25" valign="top">
-		<input type="checkbox" name="agreetoglobalrescue" id="agreetoglobalrescue" onclick="agreeClicked()"/>
+	<!-- 
+		<input type="checkbox" name="agreetoglobalrescue" id="agreetoglobalrescue" onclick="agreeClicked()" checked="false"/>
+	 -->
+	 <form:checkbox path="globalRescueBean.iagree" id="agreetoglobalrescue" onclick="agreeClicked()"/>
 	</td>
 	<td>I have read and agree to the <a href="https://www.globalrescue.com/assets/pdf/GlobalRescue-MSA.pdf" target="_blank">Member Services Agreement</a>. I attest that as of the date of enrollment, I am in good health, am not hospitalized or anticipating hospitalization, travel abroad less than 45 days continuously each trip and am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
 </tr>
@@ -382,8 +382,8 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
-		<c:if test="${accountBean.globalRescueBean.age < 75}">
-		<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" disabled="true" title="Must agree to Member Services Agreement before adding to cart" />
+		<c:if test="${(accountBean.globalRescueBean.age < 75) && !accountBean.globalRescueBean.isInCart}">
+			<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" disabled="true" title="Must agree to Member Services Agreement before adding to cart" />
 		</c:if>
 	</fieldset>
 	<center>

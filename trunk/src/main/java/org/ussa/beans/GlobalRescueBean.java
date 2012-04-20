@@ -22,8 +22,7 @@ public class GlobalRescueBean implements Serializable {
 
 	private AccountBean accountBean;
 	private RulesBL rulesBL;
-	
-	private int age;
+	private boolean iagree = false;
 	
 	private Person parent2;
 	private Person dependent1;
@@ -67,7 +66,7 @@ public class GlobalRescueBean implements Serializable {
 	
 	public Integer getAge(){
 		//RulesBL rules = new RulesBLImpl();
-		age= rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+		int age= rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
 		return age;
 	}
 
@@ -84,6 +83,14 @@ public class GlobalRescueBean implements Serializable {
 	
 	public String getPolicyDescription(){
 		return "Policy 325.12";
+	}
+	
+	public boolean getiagree(){
+		return this.iagree;
+	}
+	
+	public void setiagree(boolean iagree){
+		this.iagree = iagree;
 	}
 	
 	public Person getParent2() {
