@@ -2,9 +2,11 @@ package org.ussa.beans;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.ussa.bl.RulesBL;
 import org.ussa.bl.impl.RulesBLImpl;
+import org.ussa.model.Inventory;
 
 /**
  * This bean contains session information necessary to create a 
@@ -43,6 +45,16 @@ public class GlobalRescueBean implements Serializable {
 		this.accountBean = accountBean;
 	}
 	
+	
+	/**
+	 * true if a Global Rescue product is in the cart
+	 * @return
+	 */
+	public boolean getIsInCart(){
+		CartBean cart = getAccountBean().getCartBean();
+		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_SPONSORS);
+		return lineItems.size() > 0 ? true : false;
+	}
 	
 	/**
 	 * true if age less than 85
