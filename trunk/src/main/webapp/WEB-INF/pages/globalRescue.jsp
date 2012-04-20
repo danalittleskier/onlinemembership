@@ -101,12 +101,18 @@
 <tr>
   <td>&nbsp;</td>
   <td>
-	  <!-- age ${accountBean.globalRescueBean.age} age -->
-	  <c:if test="${accountBean.globalRescueBean.isInCart }"
+	  <!-- age: ${accountBean.globalRescueBean.age} -->
+	  <!-- eligible: ${accountBean.globalRescueBean.eligible} -->
+	  <!-- isInCart: ${accountBean.globalRescueBean.isInCart} -->
+	  <!-- age < 75: ${accountBean.globalRescueBean.age < 75} -->
+	  <c:if test="${accountBean.globalRescueBean.isInCart }">
 	  	<!-- incart -->
 	  </c:if>
-	  <c:if test="${accountBean.globalRescueBean.eligible} ">
-	  <c:if test="${accountBean.globalRescueBean.age < 75}">
+	  <c:if test="${accountBean.globalRescueBean.eligible}">
+	  	<!-- eligible -->
+	  <c:choose>
+	  <c:when test="${accountBean.globalRescueBean.age < 75}">
+	  		<!-- Product Table -->
 		  <table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 			<th width="50">&nbsp;</th>
@@ -136,8 +142,8 @@
 			<td></td>
 		  </tr>
 		  </table>
-		  </c:if> <!-- 75 -->
-		  <c:if test="${accountBean.globalRescueBean.age >= 75}">
+		  </c:when> 
+		  <c:otherwise>
 		  <b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b>
 
 		  <p>Global Rescue is the USST Official Provider of medical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuation home for injuries or illnesses requiring hospitalization.
@@ -149,8 +155,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
 	Click here to download the application form.</a> 
 		  	
-		  </c:if>
-	  </c:if>
+		  </c:otherwise> 
+	  </c:choose>
+	  </c:if> <!--   eligible -->
   </td>
 </tr>
 <tr>
