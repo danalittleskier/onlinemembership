@@ -20,6 +20,8 @@ public class MemberSeason implements Serializable
 		this.teamAgreement = "N";
 		this.divMedicalRelease = "N";
 		this.prep = "N";
+		//this.sentConfirmationEmail = 0;
+		
 	}
 	
 	@EmbeddedId
@@ -72,6 +74,9 @@ public class MemberSeason implements Serializable
 	
 	@Column(name = "FAST_START_COURSE_CHECK_DATE", nullable = true, unique = false)
 	private Date fastStartCourseCheckDate;
+	
+	//@Column(name = "SENT_CONFIRMATION_EMAILS", length = 1, nullable = true, unique = false)
+	//private Long sentConfirmationEmail;
 
 	public String getBackgroundRenewalSeason() {
 		return backgroundRenewalSeason;
@@ -236,5 +241,16 @@ public class MemberSeason implements Serializable
 	public void setFastStartCourseCheckDate(Date fastStartCourseCheckDate) {
 		this.fastStartCourseCheckDate = fastStartCourseCheckDate;
 	}
+
+	//public Long getSentConfirmationEmail() {
+	//	return sentConfirmationEmail;
+	//}
+
+	//public void setSentConfirmationEmail(Long sentConfirmationEmail) {
+	//	this.sentConfirmationEmail = sentConfirmationEmail;
+	//}
+
+	
+
 	
 }
