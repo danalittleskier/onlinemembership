@@ -705,8 +705,7 @@ public class RegistrationAction extends FormAction implements Serializable {
     	
     	String radiobutton = context.getRequestParameters().get("globalrescueradiobutton");
     	
-    	//TODO SPONSORS -> Inventory constant
-    	List<Inventory> sponsors = inventoryDao.getIventoryByType("SPONSORS");
+    	List<Inventory> sponsors = inventoryDao.getIventoryByType(Inventory.INVENTORY_TYPE_SPONSORS);
     	Inventory thisSponsor = null;
     	for(Inventory sponsor : sponsors){
     		if(sponsor.getId().equals(radiobutton)){

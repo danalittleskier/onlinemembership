@@ -102,7 +102,10 @@
   <td>&nbsp;</td>
   <td>
 	  <!-- age ${accountBean.globalRescueBean.age} age -->
-	  <c:if test="${accountBean.globalRescueBean.eligible}">
+	  <c:if test="${accountBean.globalRescueBean.isInCart }"
+	  	<!-- incart -->
+	  </c:if>
+	  <c:if test="${accountBean.globalRescueBean.eligible} ">
 	  <c:if test="${accountBean.globalRescueBean.age < 75}">
 		  <table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 		  <tr>
