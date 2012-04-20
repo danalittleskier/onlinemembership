@@ -21,6 +21,8 @@ public class GlobalRescueBean implements Serializable {
 	private AccountBean accountBean;
 	private RulesBL rulesBL;
 	
+	private int age;
+	
 	private Person parent2;
 	private Person dependent1;
 	private Person dependent2;
@@ -53,7 +55,8 @@ public class GlobalRescueBean implements Serializable {
 	
 	public Integer getAge(){
 		//RulesBL rules = new RulesBLImpl();
-		return rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+		age= rulesBL.getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
+		return age;
 	}
 
 	//TODO debug
