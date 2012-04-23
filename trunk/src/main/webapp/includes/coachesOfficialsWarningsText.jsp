@@ -1,6 +1,4 @@
-<%@ include file="/includes/taglibs.jsp"%>
 
-<p>COACHES AND OFFICIALS</p>
 <ul>
 	<li>All Coaches and Officials are required to undergo background screening.</li>
 	<li>Coach and official memberships are not valid until positive background screening results are received by USSA.</li>
@@ -17,6 +15,4 @@
 	<li>All Coaches are required to take the safe sport course.</li>
 	<li>Coach memberships are not valid until the safe sport course is completed.</li>
 
-	
 </ul>
-

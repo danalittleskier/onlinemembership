@@ -33,6 +33,11 @@ function ShowFamilyMembershipsTableHide(){
 	jQuery("#GlobalRescueFamilyMembership").hide();
 }
 </script>
+<script>
+			$(document).ready(function(){
+				$("#CoachInfo").colorbox({width:"75%", height:"75%", scrolling:true, inline:true, open:true, overlayClose:false, escKey:false, href:"#CoachInfoText"});
+			});
+	</script>
 </head>
 
 <body>

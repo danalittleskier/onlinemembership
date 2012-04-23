@@ -1,5 +1,9 @@
 <%@ include file="/includes/taglibs.jsp"%>
-<p>COACHES AND OFFICIALS</p>
+
+
+<div style='display:none'>
+		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
+		<div style="font-size:18px;font-weight:bold;text-align:center;">COACHES AND OFFICIALS</div>
 <ul>
 	<li>All Coaches and Officials are required to undergo background screening.</li>
 	<li>Coach and official memberships are not valid until positive background screening results are received by USSA.</li>
@@ -10,3 +14,6 @@
 	<li>Coaches and officials under age 18, click <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here</a> for requirements in lieu of background screening</li>
 	<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
 </ul>
+
+	</div>
+	</div>
