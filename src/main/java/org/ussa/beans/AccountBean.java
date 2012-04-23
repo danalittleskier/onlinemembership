@@ -42,11 +42,6 @@ public class AccountBean implements Serializable
 		this.globalRescueBean = globalRescueBean;
 	}
 
-	//TODO debug 
-	public String getTestMessage(){
-		return "xxxyyyzzz";
-	}
-
 	//Helper fields for binding, not persisited...
 	private Boolean alreadyAMember;
 	private Boolean parentInfoRequired;

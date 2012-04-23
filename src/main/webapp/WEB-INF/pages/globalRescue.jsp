@@ -13,22 +13,42 @@
 
 <script>
 
-	var iAgree = false;
+	var iAgree = ${accountBean.globalRescueBean.iagree};
+	var radioSelection = ${accountBean.globalRescueBean.isInCart};
 	
 	function agreeClicked() {
 		iAgree = !iAgree
 		setAgreement();
 	}
 	function setAgreement(){
-		var selection = jQuery("#iAgree");
-		if(iAgree){
-			selection.removeAttr("disabled");
-			selection.removeAttr("title");
+		var button = jQuery("#iAgree")
+		var selection = jQuery("#iAgree_select");
+		if(iAgree && radioSelection){
+			button.show();
+			//button.removeAttr("disabled");
+			selection.hide();
 		//<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" disabled="true" title="Must agree to Member Services Agreement before adding to cart" />
 		} else {
-			selection.attr("disabled","disabled");
-			selection.attr("title")
+			button.hide();
+			//button.attr("disable","disable");
+			selection.show();
 		}
+	}
+
+	function productRadioClicked(showFamilyForm){
+		radioSelection = true;
+		if(showFamilyForm){
+			ShowFamilyMembershipsTableShow();
+		}else {
+			ShowFamilyMembershipsTableHide();
+		}
+		setAgreement();
+	}
+
+	function productRadioNone(){
+		radioSelection = false;
+		ShowFamilyMembershipsTableHide();
+		setAgreement();
 	}
 </script>
 
@@ -118,23 +138,23 @@
 		  </tr>
 		  <c:if test="${accountBean.globalRescueBean.age < 35}">
 		  <tr class="odd">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" onclick="javascript:ShowFamilyMembershipsTableHide()" /></td>
+			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" onclick="javascript:productRadioClicked(false)" /></td>
 			<td>Annual Student Medical Membership</td>
 			<td><strong>$239.00</strong></td>
 		  </tr>
 		  </c:if>
 		  <tr class="even">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" onclick="javascript:ShowFamilyMembershipsTableHide()" /></td>
+			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" onclick="javascript:productRadioClicked(false)" /></td>
 			<td>Annual Individual Medical Membership</td>
 			<td><strong>$309.00</strong></td>
 		  </tr>
 		  <tr class="odd">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:ShowFamilyMembershipsTableShow()" /></td>
+			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:productRadioClicked(true)" /></td>
 			<td>Annual Family Medical Membership</td>
 			<td><strong>$559.00</strong></td>
 		  </tr>
 		  <tr class="even">
-			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:ShowFamilyMembershipsTableHide()" /></td>
+			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:productRadioNone()" /></td>
 			<td>None</td>
 			<td></td>
 		  </tr>
@@ -175,15 +195,44 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 			<%--
 			<form:input disabled="true" path="member.firstName" size="30" maxlength="30"/>
 				--%>
-			<input type="text" name="firstname2" id="firstname2" />
+			<input type="text" name="firstname1" id="firstname1" />
 		</td>
 		<td>
 			<%--
 			<form:input disabled="true" path="member.lastName" size="30" maxlength="30"/>
 				--%>
-			<input type="text" name="lastname2" id="lastname2" /><
+			<input type="text" name="lastname1" id="lastname1" />
 		</td>
-		<td>${accountBean.birthDate}</td>
+	    <td><select name="month1" id="month1">
+	      <option value="Month..." selected="selected">Month...</option>
+	      <option value="January">January</option>
+	      <option value="February">February</option>
+	      <option value="March">March</option>
+	      <option value="April">April</option>
+	      <option value="May">May</option>
+	      <option value="June">June</option>
+	      <option value="July">July</option>
+	      <option value="August">August</option>
+	      <option value="September">September</option>
+	      <option value="October">October</option>
+	      <option value="November">November</option>
+	      <option value="December">December</option>
+	      </select>
+	      <br />
+	      <select name="day1" id="day1">
+	        <option value="Day..." selected="selected">Day...</option>
+	        <option value="1">1</option>
+	        <option value="2">2</option>
+	        <option value="3">3</option>
+	        <option value="4">4</option>
+	        <option value="5">5</option>
+          </select>
+	      <br />
+	      <select name="year1" id="year1">
+	        <option value="Year...">Year...</option>
+	        <option value="1980">1980</option>
+          </select></td>
+	    </tr>
 	    </tr>
 	  <tr class="even">
 	    <td>Parent 2</td>
@@ -383,7 +432,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
 		<c:if test="${(accountBean.globalRescueBean.age < 75) && !accountBean.globalRescueBean.isInCart}">
-			<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" disabled="true" title="Must agree to Member Services Agreement before adding to cart" />
+			<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" />
+			<input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  />
+
 		</c:if>
 	</fieldset>
 	<center>

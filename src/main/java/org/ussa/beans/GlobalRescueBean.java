@@ -2,6 +2,8 @@ package org.ussa.beans;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.ussa.bl.RulesBL;
@@ -23,12 +25,7 @@ public class GlobalRescueBean implements Serializable {
 	private AccountBean accountBean;
 	private RulesBL rulesBL;
 	private boolean iagree = false;
-	
-	private Person parent2;
-	private Person dependent1;
-	private Person dependent2;
-	private Person dependent3;
-	private Person dependent4;
+	private HashMap<String,Person> people = new LinkedHashMap<String,Person>();
 	
 	public GlobalRescueBean(){ }
 	public GlobalRescueBean(AccountBean accountBean,RulesBL rulesBL){
@@ -92,45 +89,24 @@ public class GlobalRescueBean implements Serializable {
 	public void setiagree(boolean iagree){
 		this.iagree = iagree;
 	}
-	
+	 public Person getParent1() { return people.get("parent1"); } public void setParent1(Person parent1) { people.put("parent1", parent1);
+	}
+
+
 	public Person getParent2() {
-		return parent2;
+		return people.get("parent2");
 	}
 
 	public void setParent2(Person parent2) {
-		this.parent2 = parent2;
+		people.put("parent2", parent2);
 	}
 
-	public Person getDependent1() {
-		return dependent1;
+	public Person getPerson(String descKey) {
+		return people.get(descKey);
 	}
 
-	public void setDependent1(Person dependent1) {
-		this.dependent1 = dependent1;
-	}
-
-	public Person getDependent2() {
-		return dependent2;
-	}
-
-	public void setDependent2(Person dependent2) {
-		this.dependent2 = dependent2;
-	}
-
-	public Person getDependent3() {
-		return dependent3;
-	}
-
-	public void setDependent3(Person dependent3) {
-		this.dependent3 = dependent3;
-	}
-
-	public Person getDependent4() {
-		return dependent4;
-	}
-
-	public void setDependent4(Person dependent4) {
-		this.dependent4 = dependent4;
+	public void setPerson(Person dependent) {
+		people.put(dependent.descKey, dependent);
 	}
 
 	public RulesBL getRulesBL() {
@@ -140,6 +116,22 @@ public class GlobalRescueBean implements Serializable {
 	public void setRulesBL(RulesBL rulesBL) {
 		this.rulesBL = rulesBL;
 	}
+	
+	public boolean getAre2People(){
+		boolean parent = false;
+		int slots = 0;
+		for(Person person: people.values()){
+			if((person.getLastName().length() > 0) && (person.getFirstName().length() > 0)){
+				if(person.getDescKey().startsWith("parent")){
+					parent = true;
+				}
+				if(slots++ > 2 && parent){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	public class Person {
 		private String firstName;
@@ -147,16 +139,19 @@ public class GlobalRescueBean implements Serializable {
 		private String birthMonth;
 		private String birthDay;
 		private String birthYear;
+		private String descKey;
 		
 		public Person(String firstName, String lastName,
 				String birthMonth,
 				String birthDay,
-				String birthYear){
+				String birthYear,
+				String descKey){
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.birthMonth = birthMonth;
 			this.birthDay = birthDay;
 			this.birthYear = birthYear;
+			this.descKey = descKey;
 		}
 
 		public String getFirstName() {
@@ -197,6 +192,10 @@ public class GlobalRescueBean implements Serializable {
 
 		public void setBirthYear(String birthYear) {
 			this.birthYear = birthYear;
+		}
+		
+		public String getDescKey(){
+			return descKey;
 		}
 	}
 }
