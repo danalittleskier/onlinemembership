@@ -190,17 +190,11 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
         <th>Date of Birth</th>
         </tr>
 	  <tr class="odd">
-	    <td>You</td>
+	    <td>Parent 1</td>
 		<td>
-			<%--
-			<form:input disabled="true" path="member.firstName" size="30" maxlength="30"/>
-				--%>
 			<input type="text" name="firstname1" id="firstname1" />
 		</td>
 		<td>
-			<%--
-			<form:input disabled="true" path="member.lastName" size="30" maxlength="30"/>
-				--%>
 			<input type="text" name="lastname1" id="lastname1" />
 		</td>
 	    <td><select name="month1" id="month1">
