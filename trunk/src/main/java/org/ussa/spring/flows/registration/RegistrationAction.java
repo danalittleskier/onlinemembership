@@ -737,16 +737,16 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    			context.getRequestParameters().get("day1"),
 	    			context.getRequestParameters().get("year1"),
 	    			"parent1"));
+	    			*/
+    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("month1"));
+    		grb.getParent1().setBirthDay(context.getRequestParameters().get("day1"));
+    		grb.getParent1().setBirthYear(context.getRequestParameters().get("year1"));
 	    	grb.setParent2(grb.new Person(context.getRequestParameters().get("firstname2"),
 	    			context.getRequestParameters().get("lastname2"),
 	    			context.getRequestParameters().get("month2"),
 	    			context.getRequestParameters().get("day2"),
 	    			context.getRequestParameters().get("year2"),
 	    			"parent2"));
-	    			*/
-    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("month1"));
-    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("day1"));
-    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("year1"));
 	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname3"),
 	    			context.getRequestParameters().get("lastname3"),
 	    			context.getRequestParameters().get("month3"),
