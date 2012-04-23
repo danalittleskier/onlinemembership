@@ -174,13 +174,17 @@ public class GlobalRescueBean implements Serializable {
 		boolean parent = false;
 		int slots = 0;
 		for(Person person: people.values()){
-			if((person.getLastName().length() > 0) && (person.getFirstName().length() > 0)){
-				if(person.getDescKey().startsWith("parent")){
-					parent = true;
+			try {
+				if((person.getLastName().length() > 0) && (person.getFirstName().length() > 0)){
+					if(person.getDescKey().startsWith("parent")){
+						parent = true;
+					}
+					if(++slots >= 2 && parent){
+						return true;
+					}
 				}
-				if(++slots >= 2 && parent){
-					return true;
-				}
+			} catch (NullPointerException npe){
+				continue;
 			}
 		}
 		return false;
