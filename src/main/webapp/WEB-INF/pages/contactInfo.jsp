@@ -1,9 +1,10 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-	<link media="screen" rel="stylesheet" href="colorbox/colorbox.css" />
-	<script src="colorbox/jquery.colorbox.js"></script>
+	
+	
+	<!-- <script src="colorbox/jquery.colorbox.js"></script>-->
+	
 <% 	if(session.getAttribute("FirstTime") == null){ %>
 	<script>
 			$(document).ready(function(){

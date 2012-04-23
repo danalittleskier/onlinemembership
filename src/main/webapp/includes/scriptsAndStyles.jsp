@@ -47,3 +47,6 @@
 <script type="text/javascript" src="<c:url value='/scripts/greybox/AJS_fx.js'/>"></script>
 <script type="text/javascript" src="<c:url value='/scripts/greybox/gb_scripts.js'/>"></script>
 <link type="text/css" href="<c:url value='/scripts/greybox/gb_styles.css'/>" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="./colorbox/jquery.colorbox.js"></script>
+<link media="screen" rel="stylesheet" href="./colorbox/colorbox.css" />
