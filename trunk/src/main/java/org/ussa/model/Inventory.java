@@ -176,6 +176,11 @@ public class Inventory implements Serializable
 	public static final String INV_ID_BONUS_DECALS_SNOWBOARD = "DECSB";
 	public static final String INV_ID_BONUS_DECALS_SKI_TEAM = "DECSKI";
 	
+	// Global Rescueo
+	public static final String INV_ID_SPONSORS_FAMILY="GRF";
+	public static final String INV_ID_SPONSORS_INDIVIDUAL="GRI";
+	public static final String INV_ID_SPONSORS_STUDENT="GRS";
+	
 	//COACHES CLINICS COURSES
 	
 	public static final String INV_ID_CLINIC_FAST_START_COACHING = "FSCC";
