@@ -718,8 +718,19 @@ public class RegistrationAction extends FormAction implements Serializable {
     	
     	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
     	if(thisSponsor != null){
-    		String iAgree = context.getRequestParameters().get("agreetoglobalrescue");
+    		//String iAgree = context.getRequestParameters().get("agreetoglobalrescue");
     		
+    		if(!grb.getiagree()){
+	    		List<MessageBean> messages = new ArrayList<MessageBean>();
+	    		MessageBean mb = new MessageBean("error.globalrescue.iagree",null);
+	    		messages.add(mb);
+				HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
+				request.getSession().setAttribute("messages", messages);
+	    		
+		    	return error();
+	    	}
+    		
+    		/*
 	    	grb.setParent1(grb.new Person(context.getRequestParameters().get("firstname1"),
 	    			context.getRequestParameters().get("lastname1"),
 	    			context.getRequestParameters().get("month1"),
@@ -732,6 +743,10 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    			context.getRequestParameters().get("day2"),
 	    			context.getRequestParameters().get("year2"),
 	    			"parent2"));
+	    			*/
+    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("month1"));
+    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("day1"));
+    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("year1"));
 	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname3"),
 	    			context.getRequestParameters().get("lastname3"),
 	    			context.getRequestParameters().get("month3"),

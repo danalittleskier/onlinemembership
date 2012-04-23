@@ -192,10 +192,16 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	  <tr class="odd">
 	    <td>Parent 1</td>
 		<td>
+			<!-- 
 			<input type="text" name="firstname1" id="firstname1" />
+			-->
+			<form:input path="globalRescueBean.parent1.firstName"/>
 		</td>
 		<td>
+			<!-- 
 			<input type="text" name="lastname1" id="lastname1" />
+			-->
+			<form:input path="globalRescueBean.parent1.lastName"/>
 		</td>
 	    <td><select name="month1" id="month1">
 	      <option value="Month..." selected="selected">Month...</option>

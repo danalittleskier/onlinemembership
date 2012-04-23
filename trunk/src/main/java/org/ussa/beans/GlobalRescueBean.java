@@ -27,10 +27,20 @@ public class GlobalRescueBean implements Serializable {
 	private boolean iagree = false;
 	private HashMap<String,Person> people = new LinkedHashMap<String,Person>();
 	
-	public GlobalRescueBean(){ }
+	public GlobalRescueBean(){ initialize();}
 	public GlobalRescueBean(AccountBean accountBean,RulesBL rulesBL){
 		this.accountBean = accountBean;
 		this.rulesBL = rulesBL;
+		initialize();
+	}
+	
+	protected void initialize() {
+		setPerson("parent1",new Person("","","","","",""));
+		setPerson("parent2",new Person("","","","","",""));
+		setPerson("dependent1",new Person("","","","","",""));
+		setPerson("dependent2",new Person("","","","","",""));
+		setPerson("dependent3",new Person("","","","","",""));
+		setPerson("dependent4",new Person("","","","","",""));
 	}
 	
 	public AccountBean getAccountBean() {
@@ -89,7 +99,13 @@ public class GlobalRescueBean implements Serializable {
 	public void setiagree(boolean iagree){
 		this.iagree = iagree;
 	}
-	 public Person getParent1() { return people.get("parent1"); } public void setParent1(Person parent1) { people.put("parent1", parent1);
+	
+	public Person getParent1() { 
+		return people.get("parent1"); 
+	} 
+	
+	public void setParent1(Person parent1) { 
+		people.put("parent1", parent1);
 	}
 
 
@@ -108,6 +124,43 @@ public class GlobalRescueBean implements Serializable {
 	public void setPerson(Person dependent) {
 		people.put(dependent.descKey, dependent);
 	}
+	
+	public void setPerson(String descKey, Person person){
+		person.setDescKey(descKey);
+		setPerson(person);
+	}
+	
+	public Person getDependent1() {
+		return getPerson("dependent1");
+	}
+
+	public void setDependent1(Person dependent1) {
+		setPerson("dependent1",dependent1);
+	}
+
+	public Person getDependent2() {
+		return getPerson("dependent2");
+	}
+
+	public void setDependent2(Person dependent2) {
+		setPerson("dependent2",dependent2);
+	}
+
+	public Person getDependent3() {
+		return getPerson("dependent3");
+	}
+
+	public void setDependent3(Person dependent3) {
+		setPerson("dependent3",dependent3);
+	}
+
+	public Person getDependent4() {
+		return getPerson("dependent4");
+	}
+
+	public void setDependent4(Person dependent4) {
+		setPerson("dependent4", dependent4);
+	}
 
 	public RulesBL getRulesBL() {
 		return rulesBL;
@@ -125,7 +178,7 @@ public class GlobalRescueBean implements Serializable {
 				if(person.getDescKey().startsWith("parent")){
 					parent = true;
 				}
-				if(slots++ > 2 && parent){
+				if(++slots >= 2 && parent){
 					return true;
 				}
 			}
@@ -192,6 +245,10 @@ public class GlobalRescueBean implements Serializable {
 
 		public void setBirthYear(String birthYear) {
 			this.birthYear = birthYear;
+		}
+		
+		public void setDescKey(String descKey){
+			this.descKey = descKey;
 		}
 		
 		public String getDescKey(){
