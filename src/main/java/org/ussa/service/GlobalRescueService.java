@@ -129,8 +129,9 @@ public class GlobalRescueService {
 	 * This is hardcoded for US.  Only US residents will be allowed to get to the GlobalRescue page
 	 * 
 	 * @param accountBean
+	 * @throws GlobalRescueException 
 	 */
-	public void createPrepaidAccount(AccountBean accountBean){
+	public void createPrepaidAccount(AccountBean accountBean) throws GlobalRescueException{
 		PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
 		method.addParameter("partner_guid", PARTNERGUID);
 		method.addParameter("action","createPrePaidAccount");
@@ -150,13 +151,18 @@ public class GlobalRescueService {
 		method.addParameter("country_id","1");
 		method.addParameter("purchase_price",accountBean.getGlobalRescueBean().getPurchasedProduct().getInventory().getAmount().toPlainString());
 		
-		Document result = doPost(method);
-		//TODO implement GlobalRescueException
-		/*
-		if(isError(result)){
-			throw new GlobalRescueException(extractError(result));
+		Document doc = doPost(method);
+		
+		GRResult result = new GRResult(doc);
+		if(result.isError()){
+			List<String> details = result.getErrorDetailsList();
+			throw new GlobalRescueException(details.get(0));
 		}
-		*/
+		else if(result.isSuccess()){
+			String guid = result.getSuccessGuid();
+			System.out.println("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
+			//TODO store guid in db;
+		}
 	}
 	
 	
@@ -213,7 +219,7 @@ public class GlobalRescueService {
 		return dateFormat.format(tomorrow).toString();
 	}
 	
-	public static void main(String args[]) {
+	public static void main(String args[]) throws Exception {
 
 		HttpClient client = new HttpClient();
 		//client.getParams().setParameter("http.useragent", "Test Client");
@@ -229,9 +235,23 @@ public class GlobalRescueService {
 		
 		Document doc = grs.doPost(method);
 		
-		NodeList elements = doc.getElementsByTagName("result/errors/error/details");
+		NodeList elements = doc.getElementsByTagName("result");
 		
 		System.out.println(elements);
+		elements.item(0).getAttributes().getNamedItem("status").getNodeValue();
+		
+		GRResult result = grs.new GRResult(doc);
+		System.out.println("GRResult error:" + result.isError());
+		List<String> errorDetails = result.getErrorDetailsList();
+		for(String edetail : errorDetails){
+			System.out.println(edetail);
+		}
+		
+		String successString = "<result status=\"success\" > <account id=\"new guid\"/> <errors/> </result>";
+		doc = GlobalRescueService.loadXMLFromString(successString);
+		result = grs.new GRResult(doc);
+		System.out.println("GRResult success:" + result.isSuccess());
+		System.out.println("GRResult guid:" + result.getSuccessGuid());
 		
 		//List<GRCountry> countries = grs.getCountries();
 		
@@ -340,6 +360,55 @@ public class GlobalRescueService {
 		}
 		protected void setAbbreviation(String abbreviation) {
 			this.abbreviation = abbreviation;
+		}
+	}
+	
+	public class GRResult {
+		private Document doc;
+		
+		public GRResult(Document doc){
+			this.doc = doc;
+		}
+		
+		public Document getDocument(){
+			return doc;
+		}
+		
+		public boolean isError(){
+			NodeList elements = doc.getElementsByTagName("result");
+			String status = elements.item(0).getAttributes().getNamedItem("status").getNodeValue();
+			return "error".equals(status) ? true : false;
+		}
+		
+		public boolean isSuccess(){
+			NodeList elements = doc.getElementsByTagName("result");
+			String status = elements.item(0).getAttributes().getNamedItem("status").getNodeValue();
+			return "success".equals(status) ? true : false;
+		}
+		
+		public String getSuccessGuid(){
+			if(!isSuccess()){
+				return "";
+			}
+			NodeList elements = doc.getElementsByTagName("account");
+			String id = elements.item(0).getAttributes().getNamedItem("id").getNodeValue();
+			return id;
+		}
+		
+		public NodeList getErrorDetails() {
+			NodeList elements = doc.getElementsByTagName("details");
+			return elements;
+		}
+		
+		public List<String> getErrorDetailsList() {
+			List<String> retlist = new ArrayList<String>();
+			NodeList elements = doc.getElementsByTagName("details");
+			for(int elementsI = 0; elementsI < elements.getLength(); elementsI++){
+				Node element = elements.item(elementsI);
+				String detail = element.getFirstChild().getNodeValue();
+				retlist.add(detail);
+			}
+			return retlist;
 		}
 	}
 
