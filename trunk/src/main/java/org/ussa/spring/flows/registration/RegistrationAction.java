@@ -50,6 +50,7 @@ import org.ussa.dao.impl.InventoryAddDaoImpl;
 import org.ussa.dao.impl.InventoryDaoImpl;
 import org.ussa.exception.CreditCardDeclinedException;
 import org.ussa.exception.CreditCardException;
+import org.ussa.exception.GlobalRescueException;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Club;
@@ -963,8 +964,10 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    }
 
 	    memberRegistrationService.processRegistration(accountBean);
-	    GlobalRescueService grs = new GlobalRescueService();
-	    grs.createPrepaidAccount(accountBean);
+	    if(accountBean.getGlobalRescueBean().getIsInCart()){
+		    GlobalRescueService grs = new GlobalRescueService();
+		    grs.createPrepaidAccount(accountBean);
+	    }
 	} catch (CreditCardDeclinedException e) {
 	    BindException errors = new BindException(accountBean, "accountBean");
 	    errors.reject("errors.card.declined");
@@ -975,7 +978,14 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    errors.reject("errors.card.not.approved");
 	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 	    return error();
-	} catch (Exception e) {
+	} catch (GlobalRescueException gre){
+	    BindException errors = new BindException(accountBean, "accountBean");
+	    errors.reject("errors.globalrescue.createaccount");
+	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+	    return error();
+		
+	}
+	catch (Exception e) {
 	    e.printStackTrace();
 	    BindException errors = new BindException(accountBean, "accountBean");
 	    errors.reject("errors.problem.registering.user");
