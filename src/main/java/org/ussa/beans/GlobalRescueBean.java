@@ -63,6 +63,21 @@ public class GlobalRescueBean implements Serializable {
 	}
 	
 	/**
+	 * get purchased product from cart.  Assumes that cart will
+	 * only have one SPONSOR type product.
+	 * 
+	 * @return null if nothing in cart
+	 */
+	public LineItemBean getPurchasedProduct(){
+		CartBean cart = getAccountBean().getCartBean();
+		List<LineItemBean> lineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_SPONSORS);
+		if(lineItems.size() == 0){
+			return null;
+		}
+		return lineItems.get(0);
+	}
+	
+	/**
 	 * true if age less than 85
 	 * 
 	 * @return

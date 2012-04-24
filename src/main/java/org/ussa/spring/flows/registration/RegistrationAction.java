@@ -61,6 +61,7 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.ParentInfo;
+import org.ussa.service.GlobalRescueService;
 import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
@@ -962,6 +963,8 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    }
 
 	    memberRegistrationService.processRegistration(accountBean);
+	    GlobalRescueService grs = new GlobalRescueService();
+	    grs.createPrepaidAccount(accountBean);
 	} catch (CreditCardDeclinedException e) {
 	    BindException errors = new BindException(accountBean, "accountBean");
 	    errors.reject("errors.card.declined");
