@@ -75,8 +75,8 @@ public class MemberSeason implements Serializable
 	@Column(name = "FAST_START_COURSE_CHECK_DATE", nullable = true, unique = false)
 	private Date fastStartCourseCheckDate;
 	
-	//@Column(name = "SENT_CONFIRMATION_EMAILS", length = 1, nullable = true, unique = false)
-	//private Long sentConfirmationEmail;
+	@Column(name = "GLOBAL_RESCUE_GUID", nullable = true, unique = false)
+	private Long globalRescueGUID;
 
 	public String getBackgroundRenewalSeason() {
 		return backgroundRenewalSeason;
@@ -242,14 +242,15 @@ public class MemberSeason implements Serializable
 		this.fastStartCourseCheckDate = fastStartCourseCheckDate;
 	}
 
-	//public Long getSentConfirmationEmail() {
-	//	return sentConfirmationEmail;
-	//}
+	public Long getGlobalRescueGUID() {
+		return globalRescueGUID;
+	}
 
-	//public void setSentConfirmationEmail(Long sentConfirmationEmail) {
-	//	this.sentConfirmationEmail = sentConfirmationEmail;
-	//}
+	public void setGlobalRescueGUID(Long globalRescueGUID) {
+		this.globalRescueGUID = globalRescueGUID;
+	}
 
+	
 	
 
 	
