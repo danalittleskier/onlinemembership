@@ -979,6 +979,9 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 	    return error();
 	} catch (GlobalRescueException gre){
+		List<String> details = new ArrayList<String>();
+		details.add(gre.getMessage());
+		accountBean.getGlobalRescueBean().setMessages(details);
 		/*
 	    BindException errors = new BindException(accountBean, "accountBean");
 	    errors.reject("errors.globalrescue.createaccount");
