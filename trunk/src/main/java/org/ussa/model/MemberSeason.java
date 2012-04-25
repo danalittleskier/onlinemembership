@@ -76,7 +76,7 @@ public class MemberSeason implements Serializable
 	private Date fastStartCourseCheckDate;
 	
 	@Column(name = "GLOBAL_RESCUE_GUID", nullable = true, unique = false)
-	private Long globalRescueGUID;
+	private String globalRescueGUID;
 
 	public String getBackgroundRenewalSeason() {
 		return backgroundRenewalSeason;
@@ -242,11 +242,11 @@ public class MemberSeason implements Serializable
 		this.fastStartCourseCheckDate = fastStartCourseCheckDate;
 	}
 
-	public Long getGlobalRescueGUID() {
+	public String getGlobalRescueGUID() {
 		return globalRescueGUID;
 	}
 
-	public void setGlobalRescueGUID(Long globalRescueGUID) {
+	public void setGlobalRescueGUID(String globalRescueGUID) {
 		this.globalRescueGUID = globalRescueGUID;
 	}
 
