@@ -16,6 +16,7 @@ import org.ussa.beans.AccountBean;
 import org.ussa.beans.LineItemBean;
 import org.ussa.exception.GlobalRescueException;
 import org.ussa.model.Inventory;
+import org.ussa.model.MemberSeason;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
@@ -26,16 +27,23 @@ import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 public class GlobalRescueService {
 
-	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
+	//TODO bad guid - cause failure on purpose
+	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F";
+	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
 	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
 	/**
 	 * return US States
-	 * @return
+	 * @return null on error
 	 */
 	public GRCountry getCountry(){
 		List<GRCountry> countries = getCountries();
-		return countries.get(1);
+		GRCountry localCountry = null;
+		if(countries != null){
+			localCountry = countries.get(1);
+		}
+		return localCountry;
 	}
+	
 	private List<GRCountry> countries = null;
 	private List<GRCountry> getCountries() {
 		if(countries == null){
@@ -79,11 +87,18 @@ public class GlobalRescueService {
 		return countries;
 	}
 	
+	/**
+	 * Post method, read & parse response
+	 * 
+	 * @param method
+	 * @return null if any kind of exception
+	 */
 	protected Document doPost(PostMethod method){
 		HttpClient client = new HttpClient();
 		BufferedReader br = null;
 		Document doc = null;
 		
+		StringBuilder xmlb = null;
 		try {
 			int returnCode = client.executeMethod(method);
 
@@ -96,7 +111,7 @@ public class GlobalRescueService {
 				br = new BufferedReader(new InputStreamReader(
 						method.getResponseBodyAsStream()));
 				String readLine;
-				StringBuilder xmlb = new StringBuilder();
+				xmlb = new StringBuilder();
 				while (((readLine = br.readLine()) != null)) {
 					String dataLine = readLine.trim();
 					if(dataLine.length() == 0){
@@ -113,6 +128,7 @@ public class GlobalRescueService {
 			}
 		} catch (Exception e) {
 			System.err.println(e);
+			System.err.print(xmlb.toString());
 		} finally {
 			method.releaseConnection();
 			if (br != null)
@@ -146,25 +162,40 @@ public class GlobalRescueService {
 		method.addParameter("dob",accountBean.getBirthDate());
 		method.addParameter("address_1", accountBean.getAddress().getDeliveryAddress());
 		method.addParameter("city",accountBean.getAddress().getCity());
-		method.addParameter("state_id",mapStateToGlobalRescueState(accountBean.getAddress().getStateCode()));
+		method.addParameter("state_id",nullToEmpty(mapStateToGlobalRescueState(accountBean.getAddress().getStateCode())));
 		method.addParameter("zip",accountBean.getAddress().getPostalCode());
 		method.addParameter("country_id","1");
 		method.addParameter("purchase_price",accountBean.getGlobalRescueBean().getPurchasedProduct().getInventory().getAmount().toPlainString());
 		
 		Document doc = doPost(method);
 		
-		GRResult result = new GRResult(doc);
-		if(result.isError()){
-			List<String> details = result.getErrorDetailsList();
-			throw new GlobalRescueException(details.get(0));
-		}
-		else if(result.isSuccess()){
-			String guid = result.getSuccessGuid();
-			System.out.println("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
-			//TODO store guid in db;
+		if(doc == null) {
+			throw new GlobalRescueException("Error during post");
+		} else {
+			GRResult result = new GRResult(doc);
+			if(result.isError()){
+				List<String> details = result.getErrorDetailsList();
+				accountBean.getGlobalRescueBean().setMessages(details);
+				throw new GlobalRescueException(details.get(0));
+			}
+			else if(result.isSuccess()){
+				String guid = result.getSuccessGuid();
+				System.out.println("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
+				MemberSeason mseas = accountBean.getMemberSeason();
+				//TODO test that column is persisted to DB
+				mseas.setGlobalRescueGUID(guid);
+			}
 		}
 	}
 	
+	/**
+	 * 
+	 * @param thing
+	 * @return  return empty string ("") if thing is null
+	 */
+	private static String nullToEmpty(String thing){
+		return (thing == null) ? "" : thing;
+	}
 	
 	
 	protected String mapProductToProgramId(LineItemBean lineItem){
@@ -193,11 +224,19 @@ public class GlobalRescueService {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @param stateCode
+	 * @return null if any kind of error
+	 */
 	protected String mapStateToGlobalRescueState(String stateCode){
 		if(stateCode == null){
 			return null;
 		}
 		GRCountry us = getCountry();
+		if(us == null){
+			return null;
+		}
 		String retval = null;
 		for(GRState state : us.getStates()){
 			if(state.getAbbreviation().equals(stateCode)){
@@ -235,16 +274,23 @@ public class GlobalRescueService {
 		
 		Document doc = grs.doPost(method);
 		
-		NodeList elements = doc.getElementsByTagName("result");
+		GRResult result = null;
+		if(doc != null) {
 		
-		System.out.println(elements);
-		elements.item(0).getAttributes().getNamedItem("status").getNodeValue();
-		
-		GRResult result = grs.new GRResult(doc);
-		System.out.println("GRResult error:" + result.isError());
-		List<String> errorDetails = result.getErrorDetailsList();
-		for(String edetail : errorDetails){
-			System.out.println(edetail);
+			NodeList elements = doc.getElementsByTagName("result");
+			
+			System.out.println(elements);
+			elements.item(0).getAttributes().getNamedItem("status").getNodeValue();
+			
+			result = grs.new GRResult(doc);
+			System.out.println("GRResult error:" + result.isError());
+			List<String> errorDetails = result.getErrorDetailsList();
+			for(String edetail : errorDetails){
+				System.out.println(edetail);
+			}
+		}
+		else {
+			System.out.println("DOC is null");
 		}
 		
 		String successString = "<result status=\"success\" > <account id=\"new guid\"/> <errors/> </result>";

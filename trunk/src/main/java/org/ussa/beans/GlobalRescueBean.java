@@ -25,6 +25,7 @@ public class GlobalRescueBean implements Serializable {
 	private AccountBean accountBean;
 	private RulesBL rulesBL;
 	private boolean iagree = false;
+	private List<String> messages;
 	private HashMap<String,Person> people = new LinkedHashMap<String,Person>();
 	
 	public GlobalRescueBean(){ initialize();}
@@ -203,6 +204,13 @@ public class GlobalRescueBean implements Serializable {
 			}
 		}
 		return false;
+	}
+
+	public List<String> getMessages() {
+		return messages;
+	}
+	public void setMessages(List<String> messages) {
+		this.messages = messages;
 	}
 
 	public class Person {

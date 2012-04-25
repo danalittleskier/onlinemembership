@@ -74,16 +74,33 @@
 	<c:if test="${accountBean.globalRescueBean.isInCart }">
 		<fieldset>
 			<legend>Your Global Rescue Information</legend>
-			<p>You will receive a confirmation email with the details of your annual medical evacuation membership and your Global Rescue login information.  For Global Rescue help call 1-617-459-4200 or visit <a href="http://.www.globalrescue.com">www.globalrescue.com</a>	</p>
-			<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }</br>
-			Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
-			</p>
-	
-			
-		</fieldset>
-	</c:if>
-	
-	<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
+			<c:choose>
+				<c:when test="${empty accountBean.globalRescueBean.messages }">
+					<p>You will receive a confirmation email with the details of your annual medical evacuation membership and your Global Rescue login information.  For Global Rescue help call 1-617-459-4200 or visit <a href="http://.www.globalrescue.com">www.globalrescue.com</a>	</p>
+					<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }<br/>
+					Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
+					</p>
+				</c:when>
+				<c:when test="${not empty accountBean.globalRescueBean.messages }">
+					There has been a problem while creating your account with Global Rescue.  Please call XXX-XXX-XXXX.<br/>
+					<br/>
+					When you call please report the following notes:<br/>
+					<ul>
+					<c:forEach var="messageString" items="${accountBean.globalRescueBean.messages }" }
+						<li>${messageString} 
+					</c:forEach>
+					</ul>
+					<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }</br>
+					Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
+					</p>
+				</c:when>
+			</c:choose>
+		
+		
+	</fieldset>
+</c:if>
+
+<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
 			
 
 </div>
