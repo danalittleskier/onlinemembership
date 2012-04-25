@@ -74,11 +74,11 @@
 	<c:if test="${accountBean.globalRescueBean.isInCart }">
 		<fieldset>
 			<legend>Your Global Rescue Information</legend>
-			<p>You will receive confirmation emails with the details of your annual medical evacuation membership and your Global Rescue login information.  For Global Rescue help call 1-617-459-4200 or visit <a href="http://.www.globalrescue.com">www.globalrescue.com</a>	</p>
+			<p>You will receive a confirmation email with the details of your annual medical evacuation membership and your Global Rescue login information.  For Global Rescue help call 1-617-459-4200 or visit <a href="http://.www.globalrescue.com">www.globalrescue.com</a>	</p>
 			<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }</br>
 			Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
 			</p>
-			
+	
 			
 		</fieldset>
 	</c:if>
