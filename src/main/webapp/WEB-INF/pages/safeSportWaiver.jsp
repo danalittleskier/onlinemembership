@@ -213,10 +213,6 @@ These guidelines are intended to complement:<br>
 *The USSA Policy on Sexual Abuse and Harassment <br>
 *The USSA Criminal Background Screening Policy FIS and WADA Anti-Doping Policies<br>
 <br>
-<b>Acknowledgments:</b>
-<br>
-This document was derived in large part from the good work done by Snowsport Great Britain and disseminated by the International Ski Federation.
-<a href="http://www.cdc.gov/concussion/HeadsUp/online_training.html" target="new">http://www.cdc.gov/concussion/HeadsUp/online_training.html</a>
 
 </p>
 <form:hidden id="safeSportWaiver" path="memberLegal.safeSportWaiver"/>
