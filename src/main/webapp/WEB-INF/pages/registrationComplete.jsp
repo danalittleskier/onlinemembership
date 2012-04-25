@@ -83,7 +83,7 @@
 				</c:when>
 				<c:when test="${not empty accountBean.globalRescueBean.messages }">
 					There has been a problem while creating your account with Global Rescue.  Please call XXX-XXX-XXXX.<br/>
-					<br/>
+			<br/>
 					When you call please report the following notes:<br/>
 					<ul>
 					<c:forEach var="messageString" items="${accountBean.globalRescueBean.messages }" }
