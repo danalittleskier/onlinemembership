@@ -35,7 +35,7 @@ function ShowFamilyMembershipsTableHide(){
 </script>
 <script>
 			$(document).ready(function(){
-				$("#CoachInfo").colorbox({width:"75%", height:"75%", scrolling:true, inline:true, open:true, overlayClose:false, escKey:false, href:"#CoachInfoText"});
+				$("#CoachInfo").colorbox({width:"50%", height:"75%", scrolling:true, inline:true, open:true, overlayClose:false, escKey:false, href:"#CoachInfoText"});
 			});
 	</script>
 </head>
