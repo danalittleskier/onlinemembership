@@ -86,7 +86,7 @@
 			<br/>
 					When you call please report the following notes:<br/>
 					<ul>
-					<c:forEach var="messageString" items="${accountBean.globalRescueBean.messages }" }
+					<c:forEach var="messageString" items="${accountBean.globalRescueBean.messages }">
 						<li>${messageString} 
 					</c:forEach>
 					</ul>
