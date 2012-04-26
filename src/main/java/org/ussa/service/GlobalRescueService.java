@@ -166,6 +166,7 @@ public class GlobalRescueService {
 		method.addParameter("country_id","1");
 		method.addParameter("purchase_price",accountBean.getGlobalRescueBean().getPurchasedProduct().getInventory().getAmount().toPlainString());
 		method.addParameter("reference_employee",accountBean.getMember().getId().toString());
+		method.addParameter("corp_discount_code","ussaapi");
 		
 		Document doc = doPost(method);
 		
