@@ -119,11 +119,13 @@
 		
 		</c:url>
 		<br>
-		Click <a href="${membershipCardUrl}" target="blank">Here</a> to print your digital USSA Digital Membership Card 
+		Click <a href="http://my.ussa.org/portal" target="blank">Here</a> to go to your My USSA account home to do the following: 
 		<br>
-		Click <a href="http://my.ussa.org/tools/linked-member-accounts">Here</a> to link additional USSA members to your My USSA account
+		1. Print your USSA membership card.
 		<br>
-		Click <a href="http://my.ussa.org/portal">Here</a> to get started with your personalized My USSA member tools 
+		2. Link additional members to your account.
+		<br>
+		3. Use your personalized members tools.
 		<br>
 	</p>
 	</div></div></div></div>
