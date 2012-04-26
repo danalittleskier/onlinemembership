@@ -184,9 +184,6 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
     	<div id="GlobalRescueFamilyMembership" style="display:none">
         <span style="font-weight:bold;">Fill-in the first name, last name, and date of birth for each family member you would like on the Family Membership plan.</span>
     	<table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
-	<!-- isInCart -->
-	<c:choose> 
-	<c:when test="!${accountBean.globalRescueBean.isInCart}">
 	  <tr>
 	    <th>Description</th>
         <th>First Name</th>
@@ -428,15 +425,11 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	<td>I have read and agree to the <a href="https://www.globalrescue.com/assets/pdf/GlobalRescue-MSA.pdf" target="_blank">Member Services Agreement</a>. I attest that as of the date of enrollment, (i)I am in good health, (ii)am not hospitalized or anticipating hospitalization, (iii) I plan to travel abroad for less than 45 days continuously each trip and (iv) I am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
 </tr>
 </c:if>
-</c:when>
-<c:when test="${accountBean.globalRescueBean.isInCart}">
 <tr>
 	<td>
 		Your Global Rescue Membership has been added to your cart on the right.
 	</td>
 </tr>
-</c:when>
-</c:choose>
 </table>
 	<!-- End: Global Rescue HTML -->
 	
