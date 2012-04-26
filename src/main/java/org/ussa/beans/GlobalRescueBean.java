@@ -219,6 +219,7 @@ public class GlobalRescueBean implements Serializable {
 		private String birthMonth;
 		private String birthDay;
 		private String birthYear;
+		private String birthdate;
 		private String descKey;
 		
 		public Person(String firstName, String lastName,
@@ -272,6 +273,17 @@ public class GlobalRescueBean implements Serializable {
 
 		public void setBirthYear(String birthYear) {
 			this.birthYear = birthYear;
+		}
+		
+		public String getBirthdate(){
+			//StringBuilder sb = new StringBuilder();
+			//sb.append(birthMonth).append("/").append(birthDay).append("/").append(birthYear);
+			//birthdate = sb.toString();
+			return birthdate;
+		}
+		
+		public void setBirthdate(String birthdate){
+			this.birthdate = birthdate;
 		}
 		
 		public void setDescKey(String descKey){
