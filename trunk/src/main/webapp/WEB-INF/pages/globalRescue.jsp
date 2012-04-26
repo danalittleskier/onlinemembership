@@ -58,7 +58,7 @@
 	cal.showYearNavigationInput();
 </script>
 
-<div id="stg-pagetitle">Global Rescue Medical Evacuation and Travel Assistance</div>
+<div id="stg-pagetitle">Global Rescue Medical Evacuation</div>
 <p class="req-fields"><em>* Required Fields</em><br>
 
 <!-- LEFT column -->
@@ -121,7 +121,8 @@
 <tr>
   <td>&nbsp;</td>
 	<td><br />
-		<b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b>
+		<b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b><br/>
+		</br>
 		<p>Global Rescue is the USST Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
 		<br/>
 		View more <a href="https://www.globalrescue.com/plans.cfm" target="_blank">Global Rescue Membership Information</a>.
@@ -184,9 +185,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 </tr>
 <tr>
   <td>&nbsp;</td>
-	<td> <br>
+	<td> <br/>
     	<div id="GlobalRescueFamilyMembership" style="display:none">
-        <span style="font-weight:bold;">Fill-in the first name, last name, and date of birth for each family member you would like on the Family Membership plan.</span>
+			<span style="font-weight:bold;">Fill-in the first name, last name, and date of birth for each family member you would like on the Family Membership plan.<br/><br/></span>
     	<table class="ussa-standard-table" width="100%" border="0" cellspacing="0" cellpadding="0">
 	  <tr>
 	    <th>Description</th>
@@ -195,7 +196,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
         <th>Date of Birth</th>
         </tr>
 	  <tr class="odd">
-	    <td>Parent 1</td>
+	    <td>*Parent 1</td>
 		<td>
 			<!-- 
 			<input type="text" name="firstname1" id="firstname1" />
@@ -264,7 +265,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 			<form:input path="globalRescueBean.dependent1.lastName"/></td>
 		<td>
 			<form:input id="birthdate3" path="globalRescueBean.dependent1.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate3,'calendar3','MM/dd/yyyy');return false;"/>
-				<a href="#" name="calendar3" id="calendar3" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar3','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+				<a href="#" name="calendar3" id="calendar3" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate3,'calendar3','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
 </td>
 	    </tr>
         <tr class="even">
@@ -275,7 +276,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 			<form:input path="globalRescueBean.dependent2.lastName"/></td>
 			<td>
 			<form:input id="birthdate4" path="globalRescueBean.dependent2.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate4,'calendar4','MM/dd/yyyy');return false;"/>
-				<a href="#" name="calendar4" id="calendar1" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar4','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+				<a href="#" name="calendar4" id="calendar1" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate4,'calendar4','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
 </td>
         </tr>
         <tr class="even">
@@ -311,6 +312,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	  <br />	  
 		<i>Note: This special pricing is offered as part of USSA registration only. Please be aware that the Annual Global Rescue Evacuation Memberships do not provide any form of medical insurance. </i>
 		<br />
+		<br/>
 	</td>
 </tr>
 <tr>
