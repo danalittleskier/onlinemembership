@@ -152,13 +152,11 @@
 			<td>Individual Medical Evacuation Membership</td>
 			<td><strong>$309.00</strong></td>
 		  </tr>
-		  <%-- 
 		  <tr class="odd">
 			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:productRadioClicked(true)" /></td>
 			<td>Family Medical Evacuation Membership</td>
 			<td><strong>$559.00</strong></td>
 		  </tr>
-		  --%>
 		  <tr class="even">
 			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:productRadioNone()" /></td>
 			<td>None</td>
@@ -168,9 +166,10 @@
 		  </c:when> 
 		  <c:otherwise>
 Extended Global Rescue Membership pricing is for travelers 75 or older. Travelers in this age range must complete and submit the short medical questionnaire attached to this form.
+<br/>
+<br/>
 
-		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
-	Click here to download the application form.</a> 
+<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">Click here to download the application form.</a> </p>
 		  	
 		  </c:otherwise> 
 	  </c:choose>
