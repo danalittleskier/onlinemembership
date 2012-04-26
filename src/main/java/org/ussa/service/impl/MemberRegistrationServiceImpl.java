@@ -172,6 +172,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			// memberSeason.setDivMedicalRelease("N");
 			// memberSeason.setPrep("N");
 			universalDao.save(memberSeason);
+			accountBean.setMemberSeason(memberSeason);
 
 			// MEMBERTRANSACTION
 			CartBean cartBean = accountBean.getCartBean();
