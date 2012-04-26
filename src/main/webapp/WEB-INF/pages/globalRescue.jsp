@@ -410,7 +410,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
     </div>
     </td>
 </tr>
-<c:if test="${accountBean.globalRescueBean.age < 75}">
+<c:if test="${accountBean.globalRescueBean.age < 75 && !accountBean.globalRescueBean.isInCart}">
 <tr>
   <td>&nbsp;</td>
 	<td><br />	  
@@ -439,6 +439,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 
 		</c:if>
 	</fieldset>
+	<c:if test="${accountBean.globalRescueBean.isInCart}">
+		Your Global Rescue Membership has been added to your cart on the right.
+	</c:if>
 	<center>
 		<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 		<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
