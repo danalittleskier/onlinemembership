@@ -115,21 +115,21 @@
 <tr>
   <td>&nbsp;</td>
 	<td><br />
-	  <b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b>
-	  <p>Global Rescue is the USST Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
-	  <br/>
-	  View more <a href="https://www.globalrescue.com/plans.cfm" target="_blank">Global Rescue Membership Information</a>.
-	  </p>
+		<b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b>
+		<p>Global Rescue is the USST Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
+		<br/>
+		View more <a href="https://www.globalrescue.com/plans.cfm" target="_blank">Global Rescue Membership Information</a>.
+		</p>
     </td>
 </tr>
+<tr>
+  <td>&nbsp;</td>
+  <td>
 	  <!-- age: ${accountBean.globalRescueBean.age} -->
 	  <!-- eligible: ${accountBean.globalRescueBean.eligible} -->
 	  <!-- isInCart: ${accountBean.globalRescueBean.isInCart} -->
 	  <!-- age < 75: ${accountBean.globalRescueBean.age < 75} -->
-<c:if test="${accountBean.globalRescueBean.eligible && !accountBean.globalRescueBean.isInCart}">
-<tr>
-  <td>&nbsp;</td>
-  <td>
+	  <c:if test="${accountBean.globalRescueBean.eligible && !accountBean.globalRescueBean.isInCart}">
 	  	<!-- eligible -->
 	  <c:choose>
 	  <c:when test="${accountBean.globalRescueBean.age < 75}">
@@ -167,7 +167,6 @@
 		  </table>
 		  </c:when> 
 		  <c:otherwise>
-
 Extended Global Rescue Membership pricing is for travelers 75 or older. Travelers in this age range must complete and submit the short medical questionnaire attached to this form.
 
 		<p><a href="https://www.globalrescue.com/assets/pdf/applicationForm.pdf">
@@ -175,9 +174,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		  	
 		  </c:otherwise> 
 	  </c:choose>
+	  </c:if> <!--   eligible -->
   </td>
 </tr>
-</c:if> <!--   eligible -->
 <tr>
   <td>&nbsp;</td>
 	<td> <br>
@@ -412,28 +411,31 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 <c:if test="${accountBean.globalRescueBean.age < 75}">
 <tr>
   <td>&nbsp;</td>
-	<td><br />	  
+  <td>
+	  <br />	  
 		<i>Note: This special pricing is offered as part of USSA registration only. Please be aware that the Annual Global Rescue Evacuation Memberships do not provide any form of medical insurance. </i>
-    </td>
-</tr><tr>
+		<br />
+	</td>
+</tr>
+<tr>
 	<td width="25" valign="top">
 	<!-- 
 		<input type="checkbox" name="agreetoglobalrescue" id="agreetoglobalrescue" onclick="agreeClicked()" checked="false"/>
 	 -->
 	 <form:checkbox path="globalRescueBean.iagree" id="agreetoglobalrescue" onclick="agreeClicked()"/>
 	</td>
-	<td>I have read and agree to the <a href="https://www.globalrescue.com/assets/pdf/GlobalRescue-MSA.pdf" target="_blank">Member Services Agreement</a>. I attest that as of the date of enrollment, (i)I am in good health, (ii)am not hospitalized or anticipating hospitalization, (iii) I plan to travel abroad for less than 45 days continuously each trip and (iv) I am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
+	<td>I have read and agree to the Member Services Agreement.
+		<!--<a href="https://www.globalrescue.com/assets/pdf/GlobalRescue-MSA.pdf" target="_blank">Member Services Agreement</a>.
+		-->	
+		I attest that as of the date of enrollment, (i)I am in good health, (ii)I am not hospitalized or anticipating hospitalization, (iii) I plan to travel abroad for less than 45 days continuously each trip and (iv) I am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
+		
 </tr>
 </c:if>
-<tr>
-	<td>
-		Your Global Rescue Membership has been added to your cart on the right.
-	</td>
-</tr>
 </table>
 	<!-- End: Global Rescue HTML -->
 	
 	<fieldset class="buttons">
+		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
 		<c:if test="${(accountBean.globalRescueBean.age < 75) && !accountBean.globalRescueBean.isInCart}">
@@ -442,6 +444,9 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 
 		</c:if>
 	</fieldset>
+	<c:if test="${accountBean.globalRescueBean.isInCart}">
+		Your Global Rescue Membership has been added to your cart on the right.
+	</c:if>
 	<center>
 		<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 		<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
