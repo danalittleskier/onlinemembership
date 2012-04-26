@@ -740,6 +740,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    			context.getRequestParameters().get("year1"),
 	    			"parent1"));
 	    			*/
+    		/*
     		grb.getParent1().setBirthMonth(context.getRequestParameters().get("month1"));
     		grb.getParent1().setBirthDay(context.getRequestParameters().get("day1"));
     		grb.getParent1().setBirthYear(context.getRequestParameters().get("year1"));
@@ -773,6 +774,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    			context.getRequestParameters().get("day6"),
 	    			context.getRequestParameters().get("year6"),
 	    			"dependent4"));
+	    			*/
 	    	
 	    	if(Inventory.INV_ID_SPONSORS_FAMILY.equals(thisSponsor.getId()) && !grb.getAre2People()){
 	    		List<MessageBean> messages = new ArrayList<MessageBean>();

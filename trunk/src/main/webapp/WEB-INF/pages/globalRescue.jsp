@@ -1,5 +1,6 @@
 <%@ page import="org.ussa.model.Inventory" %>
 <%@ include file="/includes/taglibs.jsp"%>
+<script type="text/javascript" src="scripts/CalendarPopup.js"></script>
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" /></div>
@@ -50,6 +51,11 @@
 		ShowFamilyMembershipsTableHide();
 		setAgreement();
 	}
+
+	var cal = new CalendarPopup();
+	cal.showNavigationDropdowns();
+	cal.setYearSelectStartOffset(100);
+	cal.showYearNavigationInput();
 </script>
 
 <div id="stg-pagetitle">Global Rescue Medical Evacuation and Travel Assistance</div>
@@ -199,10 +205,14 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<td>
 			<!-- 
 			<input type="text" name="lastname1" id="lastname1" />
-			-->
+		-->
 			<form:input path="globalRescueBean.parent1.lastName"/>
 		</td>
-	    <td><select name="month1" id="month1">
+		<td>
+			<form:input id="birthdate1" path="globalRescueBean.parent1.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar1','MM/dd/yyyy');return false;"/>
+				<a href="#" name="calendar1" id="calendar1" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar1','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+				<!--
+			<select name="month1" id="month1">
 	      <option value="Month..." selected="selected">Month...</option>
 	      <option value="January">January</option>
 	      <option value="February">February</option>
@@ -230,178 +240,65 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	      <select name="year1" id="year1">
 	        <option value="Year...">Year...</option>
 	        <option value="1980">1980</option>
-          </select></td>
+	</select>
+	-->
+</td>
 	    </tr>
 	    </tr>
 	  <tr class="even">
 	    <td>Parent 2</td>
-	    <td><input type="text" name="firstname2" id="firstname2" /></td>
-	    <td><input type="text" name="lastname2" id="lastname2" /></td>
-	    <td><select name="month2" id="month2">
-	      <option value="Month..." selected="selected">Month...</option>
-	      <option value="January">January</option>
-	      <option value="February">February</option>
-	      <option value="March">March</option>
-	      <option value="April">April</option>
-	      <option value="May">May</option>
-	      <option value="June">June</option>
-	      <option value="July">July</option>
-	      <option value="August">August</option>
-	      <option value="September">September</option>
-	      <option value="October">October</option>
-	      <option value="November">November</option>
-	      <option value="December">December</option>
-	      </select>
-	      <br />
-	      <select name="day2" id="day2">
-	        <option value="Day..." selected="selected">Day...</option>
-	        <option value="1">1</option>
-	        <option value="2">2</option>
-	        <option value="3">3</option>
-	        <option value="4">4</option>
-	        <option value="5">5</option>
-          </select>
-	      <br />
-	      <select name="year2" id="year2">
-	        <option value="Year...">Year...</option>
-	        <option value="1980">1980</option>
-          </select></td>
+				<td>
+					<form:input path="globalRescueBean.parent2.firstName"/></td>
+				<td>
+					<form:input path="globalRescueBean.parent2.lastName"/></td>
+				<td>
+					<form:input id="birthdate2" path="globalRescueBean.parent2.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate2,'calendar2','MM/dd/yyyy');return false;"/>
+						<a href="#" name="calendar2" id="calendar2" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate2,'calendar2','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+			</td>
 	    </tr>
 	  <tr class="odd">
 	    <td>Dependent 1</td>
-	    <td><input type="text" name="firstname3" id="firstname3" /></td>
-	    <td><input type="text" name="lastname3" id="lastname3" /></td>
-	    <td><select name="month3" id="month3">
-	      <option value="Month..." selected="selected">Month...</option>
-	      <option value="January">January</option>
-	      <option value="February">February</option>
-	      <option value="March">March</option>
-	      <option value="April">April</option>
-	      <option value="May">May</option>
-	      <option value="June">June</option>
-	      <option value="July">July</option>
-	      <option value="August">August</option>
-	      <option value="September">September</option>
-	      <option value="October">October</option>
-	      <option value="November">November</option>
-	      <option value="December">December</option>
-	      </select>
-	      <br />
-	      <select name="day3" id="day3">
-	        <option value="Day..." selected="selected">Day...</option>
-	        <option value="1">1</option>
-	        <option value="2">2</option>
-	        <option value="3">3</option>
-	        <option value="4">4</option>
-	        <option value="5">5</option>
-          </select>
-	      <br />
-	      <select name="year3" id="year3">
-	        <option value="Year...">Year...</option>
-	        <option value="1980">1980</option>
-          </select></td>
+		<td>
+			<form:input path="globalRescueBean.dependent1.firstName"/></td>
+		<td>
+			<form:input path="globalRescueBean.dependent1.lastName"/></td>
+		<td>
+			<form:input id="birthdate3" path="globalRescueBean.dependent1.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate3,'calendar3','MM/dd/yyyy');return false;"/>
+				<a href="#" name="calendar3" id="calendar3" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar3','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+</td>
 	    </tr>
         <tr class="even">
           <td>Dependent 2</td>
-          <td><input type="text" name="firstname4" id="firstname4" /></td>
-          <td><input type="text" name="lastname4" id="lastname4" /></td>
-          <td><select name="month4" id="month4">
-            <option value="Month..." selected="selected">Month...</option>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">Septemeber</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-          </select>
-          <br />
-          <select name="day4" id="day4">
-            <option value="Day..." selected="selected">Day...</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <br />
-          <select name="year4" id="year4">
-            <option value="Year...">Year...</option>
-            <option value="1980">1980</option>
-          </select></td>
+		  <td>
+			<form:input path="globalRescueBean.dependent2.firstName"/></td>
+		  <td>
+			<form:input path="globalRescueBean.dependent2.lastName"/></td>
+			<td>
+			<form:input id="birthdate4" path="globalRescueBean.dependent2.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate4,'calendar4','MM/dd/yyyy');return false;"/>
+				<a href="#" name="calendar4" id="calendar1" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate1,'calendar4','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+</td>
         </tr>
         <tr class="even">
           <td>Dependent 3</td>
-          <td><input type="text" name="firstname5" id="firstname5" /></td>
-          <td><input type="text" name="lastname5" id="lastname5" /></td>
-          <td><select name="month5" id="month5">
-            <option value="Month..." selected="selected">Month...</option>
-            <option value="January">January</option>
-            <option value="February">February</option>
-            <option value="March">March</option>
-            <option value="April">April</option>
-            <option value="May">May</option>
-            <option value="June">June</option>
-            <option value="July">July</option>
-            <option value="August">August</option>
-            <option value="September">September</option>
-            <option value="October">October</option>
-            <option value="November">November</option>
-            <option value="December">December</option>
-          </select>
-          <br />
-          <select name="day5" id="day5">
-            <option value="Day..." selected="selected">Day...</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <br />
-          <select name="year5" id="year5">
-            <option value="Year...">Year...</option>
-            <option value="1980">1980</option>
-          </select></td>
+		  <td>
+			<form:input path="globalRescueBean.dependent3.firstName"/></td>
+		  <td>
+			<form:input path="globalRescueBean.dependent3.lastName"/></td>
+			<td>
+			<form:input id="birthdate5" path="globalRescueBean.dependent3.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate5,'calendar5','MM/dd/yyyy');return false;"/>
+				<a href="#" name="calendar5" id="calendar5" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate5,'calendar5','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+</td>
         </tr>
         <tr class="even">
 	    <td>Dependent 4</td>
-	    <td><input type="text" name="firstname6" id="firstname6" /></td>
-	    <td><input type="text" name="lastname6" id="lastname6" /></td>
-	    <td><select name="month6" id="month6">
-	      <option value="Month..." selected="selected">Month...</option>
-	      <option value="January">January</option>
-	      <option value="February">February</option>
-	      <option value="March">March</option>
-	      <option value="April">April</option>
-	      <option value="May">May</option>
-	      <option value="June">June</option>
-	      <option value="July">July</option>
-	      <option value="August">August</option>
-	      <option value="September">September</option>
-	      <option value="October">October</option>
-	      <option value="November">November</option>
-	      <option value="December">December</option>
-	      </select>
-	      <br />
-	      <select name="day6" id="day6">
-	        <option value="Day..." selected="selected">Day...</option>
-	        <option value="1">1</option>
-	        <option value="2">2</option>
-	        <option value="3">3</option>
-	        <option value="4">4</option>
-	        <option value="5">5</option>
-          </select>
-	      <br />
-	      <select name="year6" id="year6">
-	        <option value="Year...">Year...</option>
-	        <option value="1980">1980</option>
-          </select></td>
+		<td>
+			<form:input path="globalRescueBean.dependent4.firstName"/></td>
+		<td>
+			<form:input path="globalRescueBean.dependent4.lastName"/></td>
+			<td>
+			<form:input id="birthdate6" path="globalRescueBean.dependent4.birthdate" onclick="cal.select(document.forms['accountBean'].birthdate6,'calendar6','MM/dd/yyyy');return false;"/>
+				<a href="#" name="calendar6" id="calendar6" title="View Calendar" onclick="cal.select(document.forms['accountBean'].birthdate6,'calendar6','MM/dd/yyyy');return false;"><img class="popupCalendarImage" src="images/icon_calendar.gif"></a>
+</td>
 	    </tr>
     </table>
     </div>
