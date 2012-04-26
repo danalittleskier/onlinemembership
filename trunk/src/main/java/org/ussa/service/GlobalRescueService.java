@@ -27,9 +27,8 @@ import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 public class GlobalRescueService {
 
-	//TODO bad guid - cause failure on purpose
-	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F";
-	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
+	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F"; // bad guid to cause errors
+	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
 	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
 	/**
 	 * return US States
