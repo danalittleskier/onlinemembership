@@ -967,6 +967,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    if(accountBean.getGlobalRescueBean().getIsInCart()){
 		    GlobalRescueService grs = new GlobalRescueService();
 		    grs.createPrepaidAccount(accountBean);
+		    universalDao.save(accountBean.getMemberSeason());
 	    }
 	} catch (CreditCardDeclinedException e) {
 	    BindException errors = new BindException(accountBean, "accountBean");
