@@ -6,7 +6,6 @@ import java.io.StringReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Formatter;
 import java.util.List;
 
 import org.apache.commons.httpclient.HttpClient;
@@ -411,7 +410,7 @@ public class GlobalRescueService {
 	
 	public class GRCountry {
 		private Integer id;
-		private List<GRState> states = new ArrayList();
+		private List<GRState> states = new ArrayList<GRState>();
 		
 		public GRCountry(Integer id){
 			this.id = id;
