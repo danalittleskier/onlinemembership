@@ -42,8 +42,8 @@
 		<p><strong>Competitor:</strong> For ages 12 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
 		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
-		<p><strong>Adaptive Alpine Competitor:</strong> For athletes ages 13 and over participating primarily in adaptive events.
-		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31. <br>
+		<p><strong>Adaptive Alpine Competitor:</strong> For athletes ages 12 and over participating primarily in adaptive events.
+		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
 		<p><strong>Non-Scored Student:</strong> Designed for students 14 and older, prior to Dec. 31, primarily for interscholastic and intercollegiate racing only.<br>
 		<em><font class="style1"><b>Note:</b> Does not include access to USSA alpine points list. Alpine non-scored students age 18-22 may race in Alpine Masters races (excluding championships).</font></em></p>
@@ -57,10 +57,16 @@
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
-		<p><strong>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
+		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p><strong>Attention Coaches</strong></p>
+		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
+		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
+		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
+		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
+		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
 		
 	</div>
 	<div id="div1">
@@ -86,10 +92,15 @@
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
-		<p><strong>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
+		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
+		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
+		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
+		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
+		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
 		
 	</div>
 	<div id="div2">
@@ -115,10 +126,15 @@
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
-		<p><strong>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
+		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
+		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
+		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
+		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
+		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
 		
 	</div>
 	<div id="div3">
@@ -139,10 +155,15 @@
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
-		<p><strong>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
+		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
+		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
+		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
+		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
+		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
 		
 	</div>
 	<div id="div4">
@@ -162,10 +183,15 @@
 		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
-		<p><strong>Failure to register within 10 days will result in inactivation of membership. A $25 fee will be required for reactivation.</strong></p>
+		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
+		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
+		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
+		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
+		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
 		
 	</div>
 </body>
