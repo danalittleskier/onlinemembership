@@ -704,10 +704,13 @@ public class RegistrationAction extends FormAction implements Serializable {
 
     public Event addGlobalRescue(RequestContext context) throws Exception {
     	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
+    	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
+    	
     	String addModeParameter = context.getRequestParameters().get("_eventId_add");
     	boolean addMode = (addModeParameter != null);
     	
-    	String radiobutton = context.getRequestParameters().get("globalrescueradiobutton");
+    	//String radiobutton = context.getRequestParameters().get("globalrescueradiobutton");
+    	String radiobutton =  grb.getSelectedProduct();
     	
     	List<Inventory> sponsors = inventoryDao.getIventoryByType(Inventory.INVENTORY_TYPE_SPONSORS);
     	Inventory thisSponsor = null;
@@ -718,7 +721,6 @@ public class RegistrationAction extends FormAction implements Serializable {
     		}
     	}
     	
-    	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
     	if(thisSponsor != null){
     		//String iAgree = context.getRequestParameters().get("agreetoglobalrescue");
     		

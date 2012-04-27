@@ -149,23 +149,43 @@
 		  </tr>
 		  <c:if test="${accountBean.globalRescueBean.age < 35}">
 		  <tr class="odd">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" onclick="javascript:productRadioClicked(false)" /></td>
+			<td align="center">
+		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="GRS" onclick="javascript:productRadioClicked(false)"/>
+		  	<!-- 
+			<input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton" value="GRS" onclick="javascript:productRadioClicked(false)" />
+		  	 -->
+		  	 </td>
 			<td>Student Medical Evacuation Membership</td>
 			<td><strong>$239.00</strong></td>
 		  </tr>
 		  </c:if>
 		  <tr class="even">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" onclick="javascript:productRadioClicked(false)" /></td>
+			<td align="center">
+		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="GRI" onclick="javascript:productRadioClicked(false)"/>
+		  	<!-- 
+			<input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton2" value="GRI" onclick="javascript:productRadioClicked(false)" />
+		  	 -->
+		  	 </td>
 			<td>Individual Medical Evacuation Membership</td>
 			<td><strong>$309.00</strong></td>
 		  </tr>
 		  <tr class="odd">
-			<td align="center"><input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:productRadioClicked(true)" /></td>
+			<td align="center">
+		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="GRF" onclick="javascript:productRadioClicked(true)"/>
+		  	<!--
+			<input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:productRadioClicked(true)" />
+		  	 -->
+		  	 </td>
 			<td>Family Medical Evacuation Membership</td>
 			<td><strong>$559.00</strong></td>
 		  </tr>
 		  <tr class="even">
-			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:productRadioNone()" /></td>
+		    <td>
+		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="none" onclick="javascript:productRadioClicked(false)"/>
+		  	<!-- 
+			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:productRadioNone()" />
+		  	 -->
+		  	 </td>
 			<td>None</td>
 			<td></td>
 		  </tr>
