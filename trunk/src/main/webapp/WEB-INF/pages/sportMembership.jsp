@@ -251,8 +251,7 @@
 		<li>Coach memberships are not valid until required the safe sport course is completed.</li>
 		<li>A link to the Fast Start Coaching course will be provided on the confirmation page. </li>
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-
+		
 		</ul>
 		<br><a href="javascript:$('CoachInfo').colorbox.close()" class="button blue" ><span>Close Window</span></a>
 		
@@ -292,8 +291,7 @@
 		<li>Coach memberships are not valid until required the safe sport course is completed.</li>
 		<li>A link to the Fast Start Coaching course will be provided on the confirmation page. </li>
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-
+		
 		</ul>
 		<br><a href="javascript:$('CoachInfo').colorbox.close()" class="button blue" ><span>Close Window</span></a>
 		
