@@ -19,7 +19,7 @@
 		//${accountBean.globalRescueBean.isInCart};
 	$(document).ready(function() {
 		setAgreement();
-	<c:if test="${accountBean.globalRescueBean.selectedProduct == 'GRF'}">
+	<c:if test="${accountBean.globalRescueBean.selectedProduct == 'GRF' && !accountBean.globalRescueBean.isInCart}">
 		ShowFamilyMembershipsTableShow();
 	</c:if>
 	});
