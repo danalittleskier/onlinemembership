@@ -15,7 +15,8 @@
 <script>
 
 	var iAgree = ${accountBean.globalRescueBean.iagree};
-	var radioSelection = ${accountBean.globalRescueBean.isInCart};
+	var radioSelection = ${accountBean.globalRescueBean.selectedProduct != 'none'};
+		//${accountBean.globalRescueBean.isInCart};
 	$(document).ready(function() {
 		setAgreement();
 	<c:if test="${accountBean.globalRescueBean.selectedProduct == 'GRF'}">
