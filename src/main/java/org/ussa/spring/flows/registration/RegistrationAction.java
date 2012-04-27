@@ -731,59 +731,28 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    		
 		    	return error();
 	    	}
-    		
-    		/*
-	    	grb.setParent1(grb.new Person(context.getRequestParameters().get("firstname1"),
-	    			context.getRequestParameters().get("lastname1"),
-	    			context.getRequestParameters().get("month1"),
-	    			context.getRequestParameters().get("day1"),
-	    			context.getRequestParameters().get("year1"),
-	    			"parent1"));
-	    			*/
-    		/*
-    		grb.getParent1().setBirthMonth(context.getRequestParameters().get("month1"));
-    		grb.getParent1().setBirthDay(context.getRequestParameters().get("day1"));
-    		grb.getParent1().setBirthYear(context.getRequestParameters().get("year1"));
-	    	grb.setParent2(grb.new Person(context.getRequestParameters().get("firstname2"),
-	    			context.getRequestParameters().get("lastname2"),
-	    			context.getRequestParameters().get("month2"),
-	    			context.getRequestParameters().get("day2"),
-	    			context.getRequestParameters().get("year2"),
-	    			"parent2"));
-	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname3"),
-	    			context.getRequestParameters().get("lastname3"),
-	    			context.getRequestParameters().get("month3"),
-	    			context.getRequestParameters().get("day3"),
-	    			context.getRequestParameters().get("year3"),
-	    			"dependent1"));
-	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname4"),
-	    			context.getRequestParameters().get("lastname4"),
-	    			context.getRequestParameters().get("month4"),
-	    			context.getRequestParameters().get("day4"),
-	    			context.getRequestParameters().get("year4"),
-	    			"dependent2"));
-	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname5"),
-	    			context.getRequestParameters().get("lastname5"),
-	    			context.getRequestParameters().get("month5"),
-	    			context.getRequestParameters().get("day5"),
-	    			context.getRequestParameters().get("year5"),
-	    			"dependent3"));
-	    	grb.setPerson(grb.new Person(context.getRequestParameters().get("firstname6"),
-	    			context.getRequestParameters().get("lastname6"),
-	    			context.getRequestParameters().get("month6"),
-	    			context.getRequestParameters().get("day6"),
-	    			context.getRequestParameters().get("year6"),
-	    			"dependent4"));
-	    			*/
 	    	
-	    	if(Inventory.INV_ID_SPONSORS_FAMILY.equals(thisSponsor.getId()) && !grb.getAre2People()){
-	    		List<MessageBean> messages = new ArrayList<MessageBean>();
-	    		MessageBean mb = new MessageBean("error.globalrescue.parentform",null);
-	    		messages.add(mb);
-				HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
-				request.getSession().setAttribute("messages", messages);
-	    		
-		    	return error();
+	    	if(Inventory.INV_ID_SPONSORS_FAMILY.equals(thisSponsor.getId())){
+	    		List<String> badDateKeys = grb.getBadDateKeys();
+	    		if(badDateKeys.size() > 0){
+	    			List<MessageBean> messages = new ArrayList<MessageBean>();
+	    			for(String badDateKey : badDateKeys){
+	    				MessageBean mb = new MessageBean("error.globalrescue.birthdate",new String [] {badDateKey});
+	    				messages.add(mb);
+	    			}
+					HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
+					request.getSession().setAttribute("messages", messages);
+					return error();
+	    		}
+	    		if(!grb.getAre2People()){
+		    		List<MessageBean> messages = new ArrayList<MessageBean>();
+		    		MessageBean mb = new MessageBean("error.globalrescue.parentform",null);
+		    		messages.add(mb);
+					HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();
+					request.getSession().setAttribute("messages", messages);
+		    		
+			    	return error();
+	    		}
 	    	}
 	    	
 	    	if(addMode){

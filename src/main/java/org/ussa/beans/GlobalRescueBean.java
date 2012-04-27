@@ -2,6 +2,7 @@ package org.ussa.beans;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -29,6 +30,16 @@ public class GlobalRescueBean implements Serializable {
 	private boolean iagree = false;
 	private List<String> messages;
 	private HashMap<String,Person> people = new LinkedHashMap<String,Person>();
+	static private HashMap<String,String> labels= new HashMap<String,String>();
+	
+	static {
+		labels.put("parent1", "Parent 1");
+		labels.put("parent2", "Parent 2");
+		labels.put("dependent1", "Dependent 1");
+		labels.put("dependent2", "Dependent 2");
+		labels.put("dependent3", "Dependent 3");
+		labels.put("dependent4", "Dependent 4");
+	}
 	
 	public GlobalRescueBean(){ initialize();}
 	public GlobalRescueBean(AccountBean accountBean,RulesBL rulesBL){
@@ -225,6 +236,54 @@ public class GlobalRescueBean implements Serializable {
 		}
 		return true;
 	}
+	
+	public List<String> getBadDateKeys(){
+		List<String> retval = new ArrayList<String>(); 
+		for(Person person : people.values()){
+			if(!person.getIsValid()){
+				continue;
+			}
+			if(!validDate(person.getBirthdate())){
+				retval.add(labels.get(person.descKey));
+			}
+		}
+		return retval;
+	}
+	
+	private boolean validDate(String date){
+		if(date == null){
+			return false;
+		}
+		if(date.length() != 10){
+			return false;
+		}
+		String [] tokens = date.split("/");
+		if(tokens.length != 3){
+			return false;
+		}
+		if(tokens[0].length() != 2){
+			return false;
+		}
+		if(tokens[1].length() != 2){
+			return false;
+		}
+		if(tokens[2].length() != 4){
+			return false;
+		}
+		int month = Integer.parseInt(tokens[0]);
+		if(month == 0 || month > 12){
+			return false;
+		}
+		int day = Integer.parseInt(tokens[1]);
+		if(day == 0 || day > 31){
+			return false;
+		}
+		int year = Integer.parseInt(tokens[2]);
+		if(year == 0 || year < 1900){
+			return false;
+		}
+		return true;
+	}
 
 	public class Person implements Serializable{
 		private static final long serialVersionUID = 1L;
@@ -258,6 +317,11 @@ public class GlobalRescueBean implements Serializable {
 			this.birthdate = birthdate;
 		}
 		
+		/**
+		 * Person is considered valid if a first and last name have been entered
+		 * 
+		 * @return
+		 */
 		public boolean getIsValid(){
 			if((StringUtils.isBlank(firstName)) && StringUtils.isBlank(lastName)){
 				return false;
