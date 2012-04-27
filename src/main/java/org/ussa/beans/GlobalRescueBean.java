@@ -31,6 +31,7 @@ public class GlobalRescueBean implements Serializable {
 	private List<String> messages;
 	private HashMap<String,Person> people = new LinkedHashMap<String,Person>();
 	static private HashMap<String,String> labels= new HashMap<String,String>();
+	private String selectedProduct = "none";
 	
 	static {
 		labels.put("parent1", "Parent 1");
@@ -226,6 +227,12 @@ public class GlobalRescueBean implements Serializable {
 		this.messages = messages;
 	}
 	
+	public String getSelectedProduct() {
+		return selectedProduct;
+	}
+	public void setSelectedProduct(String selectedProduct) {
+		this.selectedProduct = selectedProduct;
+	}
 	public boolean getIsFamilyProduct(){
 		if(!getIsInCart()){
 			return false;
