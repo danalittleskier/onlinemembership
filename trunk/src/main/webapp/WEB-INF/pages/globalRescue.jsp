@@ -16,6 +16,12 @@
 
 	var iAgree = ${accountBean.globalRescueBean.iagree};
 	var radioSelection = ${accountBean.globalRescueBean.isInCart};
+	$(document).ready(function() {
+		setAgreement();
+	<c:if test="${accountBean.globalRescueBean.selectedProduct == 'GRF'}">
+		ShowFamilyMembershipsTableShow();
+	</c:if>
+	});
 	
 	function agreeClicked() {
 		iAgree = !iAgree
@@ -181,7 +187,7 @@
 		  </tr>
 		  <tr class="even">
 		    <td>
-		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="none" onclick="javascript:productRadioClicked(false)"/>
+		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="none" onclick="javascript:productRadioNone()"/>
 		  	<!-- 
 			<td align="center"><input name="globalrescueradiobutton" type="radio" id="globalrescueradiobutton4" value="radio" checked="checked" onclick="javascript:productRadioNone()" />
 		  	 -->
