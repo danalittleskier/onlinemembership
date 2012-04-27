@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.ussa.bl.RulesBL;
 import org.ussa.bl.impl.RulesBLImpl;
 import org.ussa.model.Inventory;
@@ -212,6 +213,17 @@ public class GlobalRescueBean implements Serializable {
 	public void setMessages(List<String> messages) {
 		this.messages = messages;
 	}
+	
+	public boolean getIsFamilyProduct(){
+		if(!getIsInCart()){
+			return false;
+		}
+		LineItemBean purchase = getPurchasedProduct();
+		if(!purchase.getInventory().getId().equals(Inventory.INV_ID_SPONSORS_FAMILY)){
+			return false;
+		}
+		return true;
+	}
 
 	public class Person {
 		private String firstName;
@@ -222,6 +234,7 @@ public class GlobalRescueBean implements Serializable {
 		private String birthdate;
 		private String descKey;
 		
+		@Deprecated
 		public Person(String firstName, String lastName,
 				String birthMonth,
 				String birthDay,
@@ -233,6 +246,20 @@ public class GlobalRescueBean implements Serializable {
 			this.birthDay = birthDay;
 			this.birthYear = birthYear;
 			this.descKey = descKey;
+		}
+		
+		public Person(String firstName, String lastName, String birthdate, String descKey){
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.descKey = descKey;
+			this.birthdate = birthdate;
+		}
+		
+		public boolean getIsValid(){
+			if((StringUtils.isBlank(firstName)) && StringUtils.isBlank(lastName)){
+				return false;
+			}
+			return true;
 		}
 
 		public String getFirstName() {

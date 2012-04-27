@@ -13,6 +13,8 @@ import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.ussa.beans.AccountBean;
+import org.ussa.beans.GlobalRescueBean;
+import org.ussa.beans.GlobalRescueBean.Person;
 import org.ussa.beans.LineItemBean;
 import org.ussa.exception.GlobalRescueException;
 import org.ussa.model.Inventory;
@@ -30,6 +32,8 @@ public class GlobalRescueService {
 	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F"; // bad guid to cause errors
 	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
 	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
+	private static final String [] familyKeys = {"parent1","parent2","dependent1","dependent2","dependent3","dependent4"};
+	
 	/**
 	 * return US States
 	 * @return null on error
@@ -170,6 +174,7 @@ public class GlobalRescueService {
 		
 		Document doc = doPost(method);
 		
+		String guid = null;
 		if(doc == null) {
 			throw new GlobalRescueException("Error during post");
 		} else {
@@ -180,13 +185,53 @@ public class GlobalRescueService {
 				throw new GlobalRescueException(details.get(0));
 			}
 			else if(result.isSuccess()){
-				String guid = result.getSuccessGuid();
+				guid = result.getSuccessGuid();
 				System.out.println("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
 				MemberSeason mseas = accountBean.getMemberSeason();
-				//TODO test that column is persisted to DB
 				mseas.setGlobalRescueGUID(guid);
 			}
 		}
+		if(accountBean.getGlobalRescueBean().getIsFamilyProduct()){
+			GlobalRescueBean grb = accountBean.getGlobalRescueBean();
+			for(String familyKey : familyKeys){
+				Person person = grb.getPerson(familyKey);
+				if(!person.getIsValid()){
+					continue;
+				}
+				try {
+					addFamilyMember(guid,person);
+				} catch (GlobalRescueException gre){
+					List<String> details = new ArrayList<String>();
+					details.add(gre.getMessage());
+					accountBean.getGlobalRescueBean().setMessages(details);
+					throw gre;
+				}
+			}
+		}
+	}
+	
+	public void addFamilyMember(String guid, Person person) throws GlobalRescueException{
+		PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
+		method.addParameter("partner_guid", PARTNERGUID);
+		method.addParameter("action","addFamilyMember");
+		method.addParameter("account_guid",guid);
+		method.addParameter("first_name",person.getFirstName());
+		method.addParameter("last_name",person.getLastName());
+		String relationship = (person.getDescKey().startsWith("parent")) ? "adult" : "child";
+		method.addParameter("family_relationship",relationship);
+		method.addParameter("dob",person.getBirthdate());
+		
+		Document doc = doPost(method);
+		
+		if(doc == null){
+			throw new GlobalRescueException("Global Rescue Account created, Error during post of " + person.getFirstName() + " " + person.getLastName());
+		}
+		GRResult result = new GRResult(doc);
+		if(result.isError()){
+			List<String> details = result.getErrorDetailsList();
+			throw new GlobalRescueException(details.get(0));
+		}
+		System.out.println("Global Rescue Family Member create on " + guid + " - " + person.getFirstName() + " " + person.getLastName() + " " + person.getBirthdate());
 	}
 	
 	/**
@@ -261,17 +306,23 @@ public class GlobalRescueService {
 	
 	public static void main(String args[]) throws Exception {
 
-		HttpClient client = new HttpClient();
-		//client.getParams().setParameter("http.useragent", "Test Client");
+		GlobalRescueService grs = new GlobalRescueService();
+		
+		// test addFamilyMember
+		// run createPrepaidAccount from command line to get guid
+		
+		String guid = "F4B47FBC-DA15-4BBA-1FB231D0B6120E99";
+		GlobalRescueBean grb = new GlobalRescueBean();
+		Person person = grb.new Person("first","last","01/01/1990","dependent1");
+		grs.addFamilyMember(guid, person);
+		
 
-		//BufferedReader br = null;
-
+		/* testing result
 		PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
 		method.addParameter("partner_guid", PARTNERGUID);
 		method.addParameter("action","createPrepaidAccount");
 		
 
-		GlobalRescueService grs = new GlobalRescueService();
 		
 		Document doc = grs.doPost(method);
 		
@@ -299,6 +350,7 @@ public class GlobalRescueService {
 		result = grs.new GRResult(doc);
 		System.out.println("GRResult success:" + result.isSuccess());
 		System.out.println("GRResult guid:" + result.getSuccessGuid());
+		*/
 		
 		//List<GRCountry> countries = grs.getCountries();
 		
