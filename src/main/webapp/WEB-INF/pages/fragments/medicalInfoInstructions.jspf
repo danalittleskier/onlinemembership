@@ -10,16 +10,24 @@
 					<div></div>
 					<p class="stg-omr-header">Medical Insurance</p>
 					<ul id="stg-omr">
-						<p><b>Accepted policies include:</b> Any policy considered primary medical/accident insurance including military or government 
-						policies.<br>
-						<b>Polices not accepted: </b> Any policy that doesn't is not considered primary medical/accident insurance such as 
-						Workers Compensation insurance.
+						<p>
+						Members must have and maintain primary Medical/Accident insurance for duration of membership year. Failure to provide accurate information demonstrating the existence of such insurance coverage for Member will prevent processing of this application and cause termination of membership and suspension of all rights to participate in U.S. Ski & Snowboard Association activities.
+						<br>
+						Primary insurance means the plan is NOT written to apply excess of other applicable policies.
 						</p>
-						<p><b>Accepted policies include:</b> Any policy considered primary medical/accident insurance including military or government 
-						policies.<br>
-						<b>Polices not accepted: </b> Any policy that doesn't is not considered primary medical/accident insurance such as 
-						Workers Compensation insurance.
+						<p><b>Policies accepted:</b> 
+						<li>Primary medical/health insurance that covers athletic injuries.</li>
+						<li>Any government sponsored health plan including Tricare, Medicare, Medicaid.</li>
+						<li>Catastrophic health plan which is a primary health insurance policy that covers athletic injuries.</li>
+						<br>
+						
+						<b>Policies not accepted: </b> 
+						<li> Any policy that is not considered "primary".</li>
+						<li> Worker's Compensation</li>
+						<li>Excess accident medical policies</li>
+
 						</p>
+					
                         
                     
                     </ul>
