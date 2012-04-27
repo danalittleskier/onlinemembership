@@ -783,6 +783,7 @@ public class RulesBLImpl implements RulesBL {
 		    return true;
 		} else {// due for background check-
 
+			/*
 		    // Check the renewal flag set by membership to see if we send or ignore this year
 		    MemberSeason memberBackground = memberSeasonDao.getOnlyRenewalNeededBackgroundFlag(ussaId, dateBL.getCurrentRenewSeason());
 
@@ -792,7 +793,9 @@ public class RulesBLImpl implements RulesBL {
 		    } else {
 			return true;
 		    }
-
+		    */
+			//Just removed the tag check so it catches anyone who has not had a check in more than 3 years.
+			return false;
 		}
 	    }
 	}
