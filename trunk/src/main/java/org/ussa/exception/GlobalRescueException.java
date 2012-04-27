@@ -6,4 +6,7 @@ public class GlobalRescueException extends Exception
 	{
 		super(message);
 	}
+	
+	//TODO make space to hold all of the errors that may come back from a post
+	// see GlobalRescueService
 }
