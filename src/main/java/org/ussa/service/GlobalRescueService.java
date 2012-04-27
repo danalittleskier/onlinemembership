@@ -12,6 +12,8 @@ import java.util.List;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.methods.PostMethod;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.GlobalRescueBean;
 import org.ussa.beans.GlobalRescueBean.Person;
@@ -28,6 +30,7 @@ import org.xml.sax.InputSource;
 import com.sun.org.apache.xerces.internal.parsers.DOMParser;
 
 public class GlobalRescueService {
+    private static Log log = LogFactory.getLog(GlobalRescueBean.class);
 
 	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F"; // bad guid to cause errors
 	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
@@ -106,8 +109,7 @@ public class GlobalRescueService {
 			int returnCode = client.executeMethod(method);
 
 			if (returnCode == HttpStatus.SC_NOT_IMPLEMENTED) {
-				System.err
-						.println("The Post method is not implemented by this URI");
+				log.error("The Post method is not implemented by this URI");
 				// still consume the response body
 				method.getResponseBodyAsString();
 			} else {
@@ -120,18 +122,17 @@ public class GlobalRescueService {
 					if(dataLine.length() == 0){
 						continue;
 					}
-					System.err.println(readLine);
+					log.debug(readLine);
 					xmlb.append(dataLine);
 				}
 				doc = loadXMLFromString(xmlb.toString() );
 				
-				System.out.println(doc.toString());
-				System.out.println("--------------");
-				System.out.print(domString(doc.getDocumentElement(), ""));
+				log.debug("Doc to String:" + doc.toString());
+				log.debug("DomString:" + domString(doc.getDocumentElement(), ""));
 			}
 		} catch (Exception e) {
-			System.err.println(e);
-			System.err.print(xmlb.toString());
+			log.error(e);
+			log.error(xmlb.toString());
 		} finally {
 			method.releaseConnection();
 			if (br != null)
@@ -186,7 +187,7 @@ public class GlobalRescueService {
 			}
 			else if(result.isSuccess()){
 				guid = result.getSuccessGuid();
-				System.out.println("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
+				log.warn("GlobalRescue added guid:" + guid + ":" + accountBean.getMember().getId());
 				MemberSeason mseas = accountBean.getMemberSeason();
 				mseas.setGlobalRescueGUID(guid);
 			}
@@ -231,7 +232,7 @@ public class GlobalRescueService {
 			List<String> details = result.getErrorDetailsList();
 			throw new GlobalRescueException(details.get(0));
 		}
-		System.out.println("Global Rescue Family Member create on " + guid + " - " + person.getFirstName() + " " + person.getLastName() + " " + person.getBirthdate());
+		log.warn("Global Rescue Family Member create on " + guid + " - " + person.getFirstName() + " " + person.getLastName() + " " + person.getBirthdate());
 	}
 	
 	/**
