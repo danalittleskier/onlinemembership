@@ -7,6 +7,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.ussa.bl.RulesBL;
 import org.ussa.bl.impl.RulesBLImpl;
 import org.ussa.model.Inventory;
@@ -20,6 +22,8 @@ import org.ussa.model.Inventory;
  *
  */
 public class GlobalRescueBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	public static final int MAXAGE = 85;
 
@@ -225,7 +229,9 @@ public class GlobalRescueBean implements Serializable {
 		return true;
 	}
 
-	public class Person {
+	public class Person implements Serializable{
+		private static final long serialVersionUID = 1L;
+		
 		private String firstName;
 		private String lastName;
 		private String birthMonth;
