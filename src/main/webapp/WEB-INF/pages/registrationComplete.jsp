@@ -100,7 +100,7 @@
 	</fieldset>
 </c:if>
 
-<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
+<div class="ussa-button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://my.ussa.org/portal"></c:url>');" value="Return to My USSA" name="button"/></span></div>
 			
 
 </div>

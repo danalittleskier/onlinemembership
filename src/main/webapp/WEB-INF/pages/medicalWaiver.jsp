@@ -87,8 +87,9 @@ THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGL
 	<p>
 		<fieldset class="buttons">
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
-			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
+			
+			<div class="ussa-button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
+			<div class="ussa-button green"><span><input type="submit" class="btn-submit" name="_eventId_next" value="Continue"></span></div>
 		</fieldset>
 	</p>
 
