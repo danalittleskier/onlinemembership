@@ -73,7 +73,7 @@
 		<h2>Freestyle/Freesking <span class="information">Information</span><br>
 		<span style="font-weight:normal;font-size:12px;">FREESTYLE includes the following disciplines:
 		<strong>Aerials,&nbsp;Moguls,&nbsp;Big Air</strong>
-		</span>
+		</span><br>
 		<span style="font-weight:normal;font-size:12px;">FREESKIING includes the following disciplines:
 		<strong> Skier Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross</strong>
 		</span>
