@@ -61,7 +61,7 @@
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
-		<p><strong>Attention Coaches</strong></p>
+		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
 		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
@@ -72,7 +72,7 @@
 	<div id="div1">
 		<h2>Freestyle/Freesking <span class="information">Information</span><br>
 		<span style="font-weight:normal;font-size:12px;">FREESTYLE includes the following disciplines:
-		<strong>Aerials,&nbsp;Moguls</strong>
+		<strong>Aerials,&nbsp;Moguls,&nbsp;Big Air</strong>
 		</span>
 		<span style="font-weight:normal;font-size:12px;">FREESKIING includes the following disciplines:
 		<strong> Skier Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross</strong>
@@ -96,6 +96,7 @@
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
 		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
@@ -130,6 +131,7 @@
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
 		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
@@ -159,6 +161,7 @@
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
 		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
@@ -187,6 +190,7 @@
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
 		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
