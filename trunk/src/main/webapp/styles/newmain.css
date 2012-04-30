@@ -208,3 +208,88 @@ body{
 .ussa-standard-table tr.even {
     background-color: #F3F4EE;
 }
+
+/*Buttons*/
+div.ussa-button {
+	background: url(images/core/buttons/buttonmask_left.png) no-repeat scroll left top;
+	height: 42px;
+	display: inline-block;
+	outline: medium none;
+	text-decoration: none;
+	padding-left: 10px;
+}
+div.ussa-button span{
+	background: url(images/core/buttons/buttonmask_right.png) no-repeat scroll right bottom;
+	display:block;
+	line-height:42px;
+	padding-right:10px;
+	font-size: 14px;
+	color:#FFF;
+	font-weight:bold;
+}
+div.ussa-button-red {
+	background: url(images/core/buttons/redbutton_left.png) no-repeat scroll left top;
+	height: 42px;
+	display: inline-block;
+	outline: medium none;
+	text-decoration: none;
+	padding-left: 10px;
+}
+div.ussa-button-red span{
+	background: url(images/core/buttons/redbutton_right.png) no-repeat scroll right bottom;
+	display:block;
+	line-height:42px;
+	padding-right:10px;
+	font-size: 14px;
+	color:#FFF;
+	font-weight:bold;
+}
+div.ussa-button-blue {
+	background: url(images/core/buttons/bluebutton_left.png) no-repeat scroll left top;
+	height: 42px;
+	display: inline-block;
+	outline: medium none;
+	text-decoration: none;
+	padding-left: 10px;
+}
+div.ussa-button-blue span{
+	background: url(images/core/buttons/bluebutton_right.png) no-repeat scroll right bottom;
+	display:block;
+	line-height:42px;
+	padding-right:10px;
+	font-size: 14px;
+	color:#FFF;
+	font-weight:bold;
+}
+div.ussa-button input{
+	background-color: transparent;
+	border: medium none;
+    color: #FFFFFF;
+    cursor: pointer;
+	font-size: 14px;
+	font-weight:bold;
+}
+div.green {
+    background-color: #2A7D22;
+}
+div.orange {
+    background-color: #F27612;
+}
+div.gray {
+    background-color: #999999;
+}
+
+div.ussa-button a:link {color:#FFFFFF ; text-decoration: none;} 
+div.ussa-button a:visited {color:#FFFFFF ; text-decoration: none;}  
+div.ussa-button a:hover {color:#FFFFFF ; text-decoration: underline;}  
+div.ussa-button a:active {color:#FFFFFF ; text-decoration: none;} 
+
+div.ussa-button-red a:link {color:#FFFFFF ; text-decoration: none;} 
+div.ussa-button-red a:visited {color:#FFFFFF ; text-decoration: none;}  
+div.ussa-button-red a:hover {color:#FFFFFF ; text-decoration: underline;}  
+div.ussa-button-red a:active {color:#FFFFFF ; text-decoration: none;} 
+
+div.ussa-button-blue a:link {color:#FFFFFF ; text-decoration: none;} 
+div.ussa-button-blue a:visited {color:#FFFFFF ; text-decoration: none;}  
+div.ussa-button-blue a:hover {color:#FFFFFF ; text-decoration: underline;}  
+div.ussa-button-blue a:active {color:#FFFFFF ; text-decoration: none;} 
