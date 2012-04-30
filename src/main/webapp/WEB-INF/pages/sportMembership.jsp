@@ -88,7 +88,7 @@
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<label></label>
-			<div class="button blue"><span><input type="button" class="btn-submit" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);"></span></div>
+			<div class="ussa-button-blue"><span><input type="button" class="btn-submit" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);"></span></div>
 		</c:if>
 		<label style="width:300px;">Note: Members may choose more than one sport.</label>
 	</fieldset>
@@ -253,7 +253,8 @@
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
 		
 		</ul>
-		<br><a href="javascript:$('CoachInfo').colorbox.close()" class="button blue" ><span>Close Window</span></a>
+		<br>
+		<div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
 		
 	</div>
 </div>
@@ -274,7 +275,7 @@
 	<li>Coaches and officials under age 18, click <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here</a> for requirements in lieu of background screening</li>
 	<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
 	</ul>
-		<br><a href="javascript:$('CoachInfo').colorbox.close()" class="button blue" ><span>Close Window</span></a>
+		<br><div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
 		
 	</div>
 </div>
@@ -293,7 +294,7 @@
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
 		
 		</ul>
-		<br><a href="javascript:$('CoachInfo').colorbox.close()" class="button blue" ><span>Close Window</span></a>
+		<br><div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
 		
 	</div>
 </div>

@@ -79,7 +79,8 @@ if(session.getAttribute("FirstTime") == null){
 <li style="padding-bottom:4px;"> Registration must be submitted by an authorized card-holder only.</li>
 <li style="padding-bottom:4px;">If you are not a U.S. citizen and wish to register or renew your membership, you must do so by mail or fax.</li>
 <li>Code of Conduct:<br>I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.<br><br></li>
-</ul><br><a href="javascript:$('membership-application-hidden-link').colorbox.close()" class="button blue" ><span>Close Window</span></a>
+</ul><br>
+		<div class="ussa-button-blue"><span><a href="javascript:$('membership-application-hidden-link').colorbox.close()">Close Window</a></span></div>
 		</div>
 	</div>
 <!--End: Code for pop-up text -->
