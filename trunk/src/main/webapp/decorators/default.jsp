@@ -79,7 +79,7 @@ function ShowFamilyMembershipsTableHide(){
                         	<!--Start: Content -->
 	<!-------------------------------------------- Content ------------------------------------------------->
 	<!-- Container -->
-	<div class="scroll-membership">
+	<div class="scroll-membership-old">
 		<div id="stg-content">
 			<decorator:body/>
 		</div>
