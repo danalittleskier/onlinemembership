@@ -17,7 +17,7 @@
 
 	<p>
 		<fieldset class="buttons">
-			<div class="button blue"><span><input type="button" class="btn-submit" name="button" value="Return to My USSA" onclick="location.href='<c:url value="http://my.ussa.org/portal"/>'"></span></div>
+			<div class="ussa-button-blue"><input type="button" class="btn-submit" name="button" value="Return to My USSA" onclick="location.href='<c:url value="http://my.ussa.org/portal"/>'"></span></div>
 		</fieldset>
 	</p>
 
