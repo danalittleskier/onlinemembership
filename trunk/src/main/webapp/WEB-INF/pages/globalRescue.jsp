@@ -366,7 +366,10 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<c:if test="${(accountBean.globalRescueBean.age < 75) && !accountBean.globalRescueBean.isInCart}">
 			<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" />
 			<input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  />
-
+			<!-- Start: New Buttons -->
+			<div class="ussa-button-blue"><span><input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" /></span></div>
+			<div class="ussa-button-blue"><span><input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  /></span></div>
+			<!-- End: New Buttons -->
 		</c:if>
 	</fieldset>
 	<c:if test="${accountBean.globalRescueBean.isInCart}">
