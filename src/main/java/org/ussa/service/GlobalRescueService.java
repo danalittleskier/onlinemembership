@@ -32,8 +32,10 @@ public class GlobalRescueService {
     private static Log log = LogFactory.getLog(GlobalRescueBean.class);
 
 	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F"; // bad guid to cause errors
-	private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
-	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
+	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
+	private static final String PARTNERGUID = "23969682-15C5-AD6F-9917-11D300B64954";
+	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
+	private static final String HTTP_PRODUCTION_GLOBALRESCUE_COM_API_INDEX_CFM = "https://www.globalrescue.com/api/index.cfm";
 	private static final String [] familyKeys = {"parent1","parent2","dependent1","dependent2","dependent3","dependent4"};
 	
 	/**
@@ -52,7 +54,7 @@ public class GlobalRescueService {
 	private List<GRCountry> countries = null;
 	private List<GRCountry> getCountries() {
 		if(countries == null){
-			PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
+			PostMethod method = new PostMethod(HTTP_PRODUCTION_GLOBALRESCUE_COM_API_INDEX_CFM);
 			method.addParameter("partner_guid", PARTNERGUID);
 			method.addParameter("action","getStates");
 			
@@ -151,7 +153,7 @@ public class GlobalRescueService {
 	 * @throws GlobalRescueException 
 	 */
 	public void createPrepaidAccount(AccountBean accountBean) throws GlobalRescueException{
-		PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
+		PostMethod method = new PostMethod(HTTP_PRODUCTION_GLOBALRESCUE_COM_API_INDEX_CFM);
 		method.addParameter("partner_guid", PARTNERGUID);
 		method.addParameter("action","createPrePaidAccount");
 		method.addParameter("first_name",accountBean.getMember().getFirstName());
@@ -211,7 +213,7 @@ public class GlobalRescueService {
 	}
 	
 	public void addFamilyMember(String guid, Person person) throws GlobalRescueException{
-		PostMethod method = new PostMethod(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM);
+		PostMethod method = new PostMethod(HTTP_PRODUCTION_GLOBALRESCUE_COM_API_INDEX_CFM);
 		method.addParameter("partner_guid", PARTNERGUID);
 		method.addParameter("action","addFamilyMember");
 		method.addParameter("account_guid",guid);
@@ -311,7 +313,8 @@ public class GlobalRescueService {
 		// test addFamilyMember
 		// run createPrepaidAccount from command line to get guid
 		
-		String guid = "F4B47FBC-DA15-4BBA-1FB231D0B6120E99";
+		//String guid = "F4B47FBC-DA15-4BBA-1FB231D0B6120E99";
+		String guid = "23969682-15C5-AD6F-9917-11D300B64954";
 		GlobalRescueBean grb = new GlobalRescueBean();
 		Person person = grb.new Person("first","last","01/01/1990","dependent1");
 		grs.addFamilyMember(guid, person);
