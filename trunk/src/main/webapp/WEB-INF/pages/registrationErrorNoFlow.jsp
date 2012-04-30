@@ -19,7 +19,7 @@
 			</div>
 		</c:if>
 	<fieldset id="buttonFieldSet" class="buttons">
-		<div class="button green"><span><input type="submit" class="btn-submit" name="backToAccounts" value="Return to My USSA" onclick="window.location.href='http://my.ussa.org/portal'"/></span></div>
+		<div class="ussa-button green"><span><input type="submit" class="btn-submit" name="backToAccounts" value="Return to My USSA" onclick="window.location.href='http://my.ussa.org/portal'"/></span></div>
 	</fieldset>
 </div>
 

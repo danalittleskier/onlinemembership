@@ -24,8 +24,9 @@
 		<fieldset id="buttonFieldSet" class="buttons">
 			<label></label>
 			<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
-			<div class="button gray"><span><input type="button" class="btn-submit" name="_eventId_cancel" value="Cancel" onclick="submitFormWithInputButton(this);"></span></div>
-			<div class="button green"><span><input type="submit" class="btn-submit" name="_eventId_update" value="Update"></span></div>
+			
+			<div class="ussa-button gray"><span><input type="button" class="btn-submit" name="_eventId_cancel" value="Cancel" onclick="submitFormWithInputButton(this);"></span></div>
+			<div class="ussa-button green"><span><input type="submit" class="btn-submit" name="_eventId_update" value="Update"></span></div>
 		</fieldset>
 
 	</form:form>
