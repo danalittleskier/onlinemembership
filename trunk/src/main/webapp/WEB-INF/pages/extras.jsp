@@ -39,7 +39,7 @@
 	</div>
 	<div class="tshirt-2">
 		<p>Freestyle</p>
-		<a href="<c:url value='/images/freestyleTee_Lrg'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
+		<a href="<c:url value='/images/freestyleTee_Lrg.jpg'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/freestyleTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
@@ -116,14 +116,14 @@
 	</div>
 	<div class="tshirt-2">
 		<p>US Ski Team General</p>
-		<a href="<c:url value='/images/popup-skigeneral.gif'/>" title="US Ski Team General Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-skigeneral.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/generalTee_Lrg.jpg'/>" title="US Ski Team General Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/generalTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
 		<p>Snowboarding</p>
-		<a href="<c:url value='/images/popup-snowboarding.gif'/>" title="Snowboarding Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-snowboarding.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/snowboardingTee_Lrg.jpg'/>" title="Snowboarding Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/snowboardingTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-menu-1">
