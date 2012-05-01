@@ -80,8 +80,8 @@
 		<div class="stg-error-tl">
 			<p>Please correct the following:</p>
 		</div>
-		<div class="stg-success-tr"></div>
-		<div class="stg-success-content">
+		<div class="stg-error-tr"></div>
+		<div class="stg-error-content">
 			<ul>
 			<c:forEach var="messageBean" items="${messages}">
 				<li>
