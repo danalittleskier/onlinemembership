@@ -88,7 +88,8 @@
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<label></label>
-			<div class="ussa-button-blue"><span><input type="button" class="btn-submit" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);"></span></div>
+			<div style="clear:both"></div>
+			<div class="ussa-button-blue" style="margin-left:190px;margin-top:0px;margin-bottom:10px;"><span><input type="button" class="btn-submit" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);"></span></div>
 		</c:if>
 		<label style="width:300px;">Note: Members may choose more than one sport.</label>
 	</fieldset>
