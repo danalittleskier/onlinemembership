@@ -369,8 +369,8 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 			<input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  />
 		-->
 			<!-- Start: New Buttons -->
-			<div id="iAgree" class="ussa-button-blue"><span><input id="iAgree1" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="background-color: transparent;border: medium none;color: #FFFFFF;cursor: pointer;font-size: 14px;font-weight:bold;float:none; display:none;" /></span></div>
-			<div id="iAgree_select" class="ussa-button-blue"><span><input id="iAgree_select1" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true" style="background-color: transparent;border: medium none;color: #FFFFFF;cursor: pointer;font-size: 14px;font-weight:bold;float:none;"  /></span></div>
+			<div id="iAgree" class="ussa-button-blue"><span><input id="iAgree1" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="background-color: transparent;border: medium none;color: #FFFFFF;cursor: pointer;font-size: 14px;font-weight:bold;float:none;" /></span></div>
+			<div id="iAgree_select" class="ussa-button-blue"><span><input id="iAgree_select1" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true" style="background-color: transparent;border: medium none;color: #FFFFFF;font-size: 14px;font-weight:bold;float:none;"  /></span></div>
 			<!-- End: New Buttons -->
 		</c:if>
 	</fieldset>
