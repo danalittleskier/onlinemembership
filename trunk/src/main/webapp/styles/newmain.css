@@ -278,6 +278,9 @@ div.orange {
 div.gray {
     background-color: #999999;
 }
+div.darkblue {
+    background-color: #003B99;
+}
 
 div.ussa-button a:link {color:#FFFFFF ; text-decoration: none;} 
 div.ussa-button a:visited {color:#FFFFFF ; text-decoration: none;}  
