@@ -364,11 +364,13 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		<!--<input type="submit" class="btn-green" name="_eventId_update" value="Update Cart">-->
 		<c:if test="${(accountBean.globalRescueBean.age < 75) && !accountBean.globalRescueBean.isInCart}">
+		<!--
 			<input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" />
 			<input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  />
+		-->
 			<!-- Start: New Buttons -->
-			<div class="ussa-button-blue"><span><input id="iAgree" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" /></span></div>
-			<div class="ussa-button-blue"><span><input id="iAgree_select" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  /></span></div>
+			<div id="iAgree" class="ussa-button-blue"><span><input id="iAgree1" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Add Selection to Cart" name="_eventId_add" title="Must agree to Member Services Agreement before adding to cart" style="display:none" /></span></div>
+			<div id="iAgree_select" class="ussa-button-blue"><span><input id="iAgree_select1" class="btn-green" type="button" onclick="submitFormWithInputButton(this);" value="Select Product and check Member Service Agreement" name="_eventId_add" disabled="true"  /></span></div>
 			<!-- End: New Buttons -->
 		</c:if>
 	</fieldset>
