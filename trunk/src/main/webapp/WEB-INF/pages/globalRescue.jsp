@@ -77,8 +77,8 @@
 
 	<%-- Yes, this messages thing is a bit of a hack... need to learn more about Spring MVC messages. Hopefully there is a better way to do this. --%>
 	<c:if test="${not empty messages}">
-		<div class="stg-success-tl">
-			<p>Just so you know...</p>
+		<div class="stg-error-tl">
+			<p>Please correct the following:</p>
 		</div>
 		<div class="stg-success-tr"></div>
 		<div class="stg-success-content">
