@@ -39,8 +39,8 @@
 	</div>
 	<div class="tshirt-2">
 		<p>Freestyle</p>
-		<a href="<c:url value='/images/popup-freestyle.gif'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-freestyle.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/freestyleTee_Lrg'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/freestyleTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
