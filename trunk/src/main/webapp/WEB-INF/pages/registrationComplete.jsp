@@ -64,7 +64,7 @@
 			<%@ include file="/includes/fastStartCourseText.jsp"%>
 
 			<br/>
-			<c:url var="fastStartCourseUrl" value="http://my.ussa.org/tools/courses/status/${accountBean.member.id}">
+			<c:url var="fastStartCourseUrl" value="http://my.ussa.org/ussec/course/view.php?id=6">
 				
 			</c:url>
 			<p><font size="2" ><a href="${fastStartCourseUrl}" target="_BLANK">Go here to complete your coaching course.</a></font></p>
