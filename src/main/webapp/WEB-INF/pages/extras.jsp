@@ -33,8 +33,8 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Alpine</p>
-		<a href="<c:url value='/images/popup-alpine.gif'/>" title="Alpine Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-alpine.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/AlpineTee_Lrg.jpg'/>" title="Alpine Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/AlpineTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
@@ -45,8 +45,8 @@
 	</div>
 	<div class="tshirt-3">
 		<p>Cross Country</p>
-		<a href="<c:url value='/images/popup-crosscountry.gif'/>" title="Cross Country Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-crosscountry.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/XC_Lrg.jpg'/>" title="Cross Country Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/XC_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 			</a>
 	</div>
 	<div class="tshirt-menu-1">
@@ -110,8 +110,8 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Jumping N/C</p>
-		<a href="<c:url value='/images/popup-jumpingnc.gif'/>" title="Jumping N/C Bonus Pack" rel="gb_imageset[images]">
-			<img src="<c:url value='/images/bp-jumpingnc.gif'/>" height="141" width="145" alt="Enlarge Image">
+		<a href="<c:url value='/images/Jump-NC_Lrg.jpg'/>" title="Jumping N/C Bonus Pack" rel="gb_imageset[images]">
+			<img src="<c:url value='/images/Jump-NC_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
