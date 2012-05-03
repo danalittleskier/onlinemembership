@@ -60,7 +60,7 @@
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
@@ -95,7 +95,7 @@
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
@@ -130,7 +130,7 @@
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
@@ -160,7 +160,7 @@
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
@@ -189,7 +189,7 @@
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://www.ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening/underagescreening.html" target="_blank">here.</a></p>
+		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
 		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
