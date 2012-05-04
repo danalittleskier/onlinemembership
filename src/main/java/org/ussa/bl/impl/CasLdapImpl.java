@@ -112,8 +112,9 @@ public class CasLdapImpl implements CasLdap {
 	if (StringUtils.isBlank(userBean.getUssaId())) {
 	    // Compare to the ldap account
 	    if (userBean.getLastName().equalsIgnoreCase(accountBean.getMember().getLastName()) && 
-		    userBean.getBirthDate().equals(accountBean.getBirthDate()) &&		    
-		    userBean.getZipCode().equals(accountBean.getAddress().getPostalCode())) {
+		    userBean.getBirthDate().equals(accountBean.getBirthDate()) ){
+		    //&&		    
+		    //userBean.getZipCode().equals(accountBean.getAddress().getPostalCode())) {
 		
 		Map<String, String> updateUser = ussaLdap.update(userBean.getUsername(), "ussaId", ussaId);
 
