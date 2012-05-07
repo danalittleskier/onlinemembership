@@ -72,15 +72,15 @@
 	<div id="div1">
 		<h2>Freestyle/Freesking <span class="information">Information</span><br>
 		<span style="font-weight:normal;font-size:12px;">FREESTYLE includes the following disciplines:
-		<strong>Aerials,&nbsp;Moguls,&nbsp;Big Air</strong>
+		<strong>Aerials,&nbsp;Moguls,&nbsp;Big Air,&nbsp;Skier Halfpipe,&nbsp;Slpestyle,&nbsp; Skier Cross</strong>
 		</span><br>
 		<span style="font-weight:normal;font-size:12px;">FREESKIING includes the following disciplines:
-		<strong> Skier Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross</strong>
+		<strong> Skier Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross,&nbsp;Big Air</strong>
 		</span>
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Freeskiing Competitor:</strong> Access to all levels of competition within the USSA Freeskiing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Required for qualification to Jr. Nationals.  Membership also includes access to the USSA Freeskiing/Freestyle ranking list. <b>Provides for access to skier halfpipe, slopestyle and skicross events only.</b></p>
-		<p><strong>Freestyle/Freesking Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle and skicross events.</b> </p>
+		<p><strong>Freestyle/Freesking Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
 		<p><strong>Freestyle Rookie:</strong> Available to first time freestyle members only. For those 13 years of age and older prior to Dec. 31. Access to division level competition only. Membership also includes access to the USSA Freesking/Freestyle ranking list. Non-renewable, but upgradeable.</p>
 		<p><strong>Freestyle Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
