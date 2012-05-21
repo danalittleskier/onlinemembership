@@ -253,7 +253,7 @@
 		<li>Coach memberships are not valid until required the safe sport course is completed.</li>
 		<li>A link to the Fast Start Coaching course will be provided on the confirmation page. </li>
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-		
+		<li>Coaches who complete this course will receive a $20 credit to be used in the same season toward a USSA coaching clinic or any of the educational CDs and DVDs offered by USSA Sport Education at the Education Shop.</li>
 		</ul>
 		<br>
 		<div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
@@ -294,7 +294,7 @@
 		<li>Coach memberships are not valid until required the safe sport course is completed.</li>
 		<li>A link to the Fast Start Coaching course will be provided on the confirmation page. </li>
 		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
-		
+		<li>Coaches who complete this course will receive a $20 credit to be used in the same season toward a USSA coaching clinic or any of the educational CDs and DVDs offered by USSA Sport Education at the Education Shop.</li>
 		</ul>
 		<br><div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
 		
