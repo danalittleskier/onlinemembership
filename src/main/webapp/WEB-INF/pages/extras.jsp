@@ -185,7 +185,7 @@
 <p><img src="<c:url value='/images/13BP_MagWebFile.jpg'/>" style="float: right;" height="126" width="199">
 	<strong>ADDED BONUS!</strong><br/>
 	A one-year subscription to SKI Magazine (6-issues, a $9 value) or Transworld
-	Snowboarding Magazine (9-issues, a $5 value) is included with your bonus
+	Snowboarding Magazine (8-issues, a $5 value) is included with your bonus
 	pack purchase. Offer is refundable. Instructions will be mailed.</p>
 <p>* One per household. Valid in the U.S. only.</p>
 
