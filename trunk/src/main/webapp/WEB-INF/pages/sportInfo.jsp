@@ -62,11 +62,13 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
-		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
-		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
-		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
-		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
+		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
+		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
+		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
 		
 	</div>
 	<div id="div1">
@@ -97,11 +99,13 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
-		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
-		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
-		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
-		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
+		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
+		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
+		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
 		
 	</div>
 	<div id="div2">
@@ -132,11 +136,13 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
-		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
-		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
-		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
-		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
+		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
+		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
+		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
 		
 	</div>
 	<div id="div3">
@@ -162,11 +168,13 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
-		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
-		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
-		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
-		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
+		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
+		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
+		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
 		
 	</div>
 	<div id="div4">
@@ -191,11 +199,13 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All Coaches without certifications are required to take the Fast Start Coaching course.<br>
-		  The mandatory $10 Fast Start Coaching Course will be added to your cart where required<br>
-		  Coach memberships are not valid until required the Safe Sport Course is completed<br>
-		  A link to the Fast Start Coaching course will be provided on the confirmation page.<br>
-		  Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</p>
+		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
+		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
+		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
 		
 	</div>
 </body>
