@@ -62,8 +62,8 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
 		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
@@ -99,8 +99,8 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
 		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
@@ -136,8 +136,8 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
 		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
@@ -168,8 +168,8 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
 		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
@@ -199,8 +199,8 @@
 		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the USSA Fast Start on-line coaching course.</p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or call 435.647.2050 before completing your USSA member registration.</strong></p>
+		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
+		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
 		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
