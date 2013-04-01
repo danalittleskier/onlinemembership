@@ -805,10 +805,19 @@ public class RulesBLImpl implements RulesBL {
     //New rule to check for Safe Sport Course
     public boolean needsFastStartCourse(AccountBean accountBean){
     	CartBean cartBean= accountBean.getCartBean();
- 
-    	if(cartBean.containsAny(RuleAssociations.coachMemberships)  && !isFastStartCourseCurrent(accountBean.getMember().getId())){       
-    		log.warn("I am a coach with no safe sport...I am adding it");
-    		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
+    	    	
+    	if(cartBean.containsAny(RuleAssociations.coachMemberships)  && !isFastStartCourseCurrent(accountBean.getMember().getId()) ){     
+    		String needsFastStart = "Y";
+        	//Check if most recent fast start course is less than 3 years
+        	MemberSeason memberSeason = memberSeasonDao.getMostRecentFastStartCheck(accountBean.getMember().getId());
+        	if(memberSeason != null){
+            	int lastFastStartCheck = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
+        		if(dateBL.calculateCurrentRenewSeason() < lastFastStartCheck + 3){
+        			needsFastStart="N";
+        		}
+        		
+        	}       	    		
+    		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && needsFastStart.equals("Y")){
     			cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
     		}   		
     		return true;
