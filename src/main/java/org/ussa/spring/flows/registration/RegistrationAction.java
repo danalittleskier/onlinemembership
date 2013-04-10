@@ -158,9 +158,8 @@ public class RegistrationAction extends FormAction implements Serializable {
     private void initExistingAccountBean(AccountBean accountBean, UserBean userBean, Long memberId, boolean isForUpdate) {
 	Member member = memberDao.get(memberId);
 
-	// We don't want to set email to registered account just in case
-	// it is a different user who is registering them
-	// member.setEmail(userBean.getEmail());
+	// Reset the email to blank so they have to update their email each year
+	member.setEmail("");
 	accountBean.setMember(member);
 
 	if (member.getBirthDate() != null) {
@@ -383,7 +382,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    if (userBean.getUssaId() == null) {
 		member.setFirstName(userBean.getFirstName());
 		member.setLastName(userBean.getLastName());
-		member.setEmail(userBean.getEmail());
+		//member.setEmail(userBean.getEmail());
 		
 		if (StringUtils.isNotBlank(userBean.getBirthDate())) {
 		    member.setBirthDate(formatter.parse(userBean.getBirthDate()));
