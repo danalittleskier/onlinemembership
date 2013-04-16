@@ -144,7 +144,10 @@ public class RulesBLImpl implements RulesBL {
 	    Integer currentSeasonAge = getAgeForCurrentRenewSeason(member.getBirthDate());
 	    List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
 	    for (Inventory inventory : recommendedMemberships) {
-	    	addMembershipToCart(accountBean, inventory);
+	    	//Outdated memberships
+	    	if(!Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId()) && !Inventory.SPORT_CODE_DAL.equals(inventory.getSportCode()) && !Inventory.SPORT_CODE_DXC.equals(inventory.getSportCode())){
+	    		addMembershipToCart(accountBean, inventory);
+	    	}
 	    }
 	}
     }
