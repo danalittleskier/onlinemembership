@@ -73,7 +73,7 @@ if(session.getAttribute("FirstTime") == null){
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-<li style="padding-bottom:4px;">You are registering for the 2012-13 competition season.</li>
+<li style="padding-bottom:4px;">You are registering for the 2013-14 competition season.</li>
 <li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferrable.</strong></li>
 <li style="padding-bottom:4px;">Memberships expire annually on June 30 </li>
 <li style="padding-bottom:4px;">If registering a minor, parent or legal guardian must complete registration using minor's name and date of birth.</li>
