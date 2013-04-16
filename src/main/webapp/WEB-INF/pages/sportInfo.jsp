@@ -33,8 +33,6 @@
 		<span style="font-weight:normal;font-size:12px;">ALPINE SKIING includes the following disciplines:
 		<strong>Downhill,&nbsp;Slalom,&nbsp;Super G,&nbsp;Giant Slalom,&nbsp;Super Combined</strong>
 		</span><br>
-		<span style="font-weight:normal;font-size:12px;">ADAPTIVE ALPINE includes the following disciplines:
-		<strong>Downhill,&nbsp;Slalom,&nbsp;Super G,&nbsp;Giant Slalom,&nbsp;Super Combined</strong>
 		</span>
 		</h2>
 		<h3>Athletes</h3>
@@ -42,11 +40,8 @@
 		<p><strong>Competitor:</strong> For ages 12 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
 		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
-		<p><strong>Adaptive Alpine Competitor:</strong> For athletes ages 12 and over participating primarily in adaptive events.
 		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
-		<p><strong>Non-Scored Student:</strong> Designed for students 14 and older, prior to Dec. 31, primarily for interscholastic and intercollegiate racing only.<br>
-		<em><font class="style1"><b>Note:</b> Does not include access to USSA alpine points list. Alpine non-scored students age 18-22 may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Master:</strong> Access to USSA Masters events for competitors 21 and older. </p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certification programs and educational materials supporting event officiating.</p>
@@ -59,13 +54,13 @@
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
+		<p>A secure link will be provided at the end of the membership registration process.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
 		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
 		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
 		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
@@ -81,8 +76,8 @@
 		</span>
 		</h2>
 		<h3>Athletes</h3>
-		<p><strong>Freeskiing Competitor:</strong> Access to all levels of competition within the USSA Freeskiing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Required for qualification to Jr. Nationals.  Membership also includes access to the USSA Freeskiing/Freestyle ranking list. <b>Provides for access to skier halfpipe, slopestyle and skicross events only.</b></p>
-		<p><strong>Freestyle/Freesking Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
+		<p><strong>Freeskiing Competitor:</strong> Access to all levels of competition within the USSA Freeskiing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Required for qualification to Jr. Nationals.  Membership also includes access to the USSA Freeskiing/Freestyle ranking list. <b>Provides for access to skier halfpipe, slopestyle, big air and skicross events only.</b></p>
+		<p><strong>Freestyle Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
 		<p><strong>Freestyle Rookie:</strong> Available to first time freestyle members only. For those 13 years of age and older prior to Dec. 31. Access to division level competition only. Membership also includes access to the USSA Freesking/Freestyle ranking list. Non-renewable, but upgradeable.</p>
 		<p><strong>Freestyle Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
@@ -96,13 +91,13 @@
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
+		<p>A secure link will be provided at the end of the membership registration process.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
 		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
 		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
 		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
@@ -113,13 +108,10 @@
 		<span style="font-weight:normal;font-size:12px;">CROSS COUNTRY includes the following disciplines:
 		<strong>Distance,&nbsp;Sprint</strong>
 		</span><br>
-		<span style="font-weight:normal;font-size:12px;">ADAPTIVE CROSS COUNTRY includes the following disciplines:
-		<strong>Distance,&nbsp;Sprint</strong>
 		</span>
 		</h2>
 		<h3>Athletes</h3>
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
-		<p><strong>Adaptive Cross Country Competitor: </strong>For athletes participating primarily in adaptive events. </p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.<br> 
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA cross country ranking list.</font></em></p>
 		<h3>Coaches & Officials: You may choose one of the memberships from below if 15 years of age or older.</h3>
@@ -133,13 +125,13 @@
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
+		<p>A secure link will be provided at the end of the membership registration process.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
 		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
 		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
 		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
@@ -165,13 +157,13 @@
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
+		<p>A secure link will be provided at the end of the membership registration process.</p>
 		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
 		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
 		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
 		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
@@ -196,13 +188,13 @@
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the screening process and will also be available on the member dashboard if required.</p>
+		<p>A secure link will be provided at the end of the membership registration process.</p>
 		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		<h3>Attention Coaches</h3>
 		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
 		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
 		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on the confirmation page.</p>
+		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
 		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
 		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
 		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
