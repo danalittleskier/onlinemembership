@@ -77,6 +77,7 @@
 			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle/Freesking</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
+
 		</form:select> 
 		<br/>
 		<c:if test="${fn:length(accountBean.memberships) != 0}">
