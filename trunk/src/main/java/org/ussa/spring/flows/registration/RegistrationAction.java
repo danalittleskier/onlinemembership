@@ -828,6 +828,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
 	    handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
 	    handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
+	    handleOption(cartBean, extrasBean.getNoBonusPackMag(), extrasBean.getNoBonusPackMagQty());
 
 	    // clear the extras bean the quick and dirty way
 	    accountBean.setExtrasBean(new ExtrasBean());

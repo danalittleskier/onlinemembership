@@ -24,7 +24,7 @@
 	<p>Bonus Packs</p>
 </div>
 <p>Bonus Packs include a high quality 100% cotton U.S. Ski Team or U.S.
-	Snowboarding t-shirt, decal pack and a 2012 collectors lapel pin (or snowboarding
+	Snowboarding t-shirt, decal pack and a 2014 collectors lapel pin (or snowboarding
 	die-cut decal). <strong>Each pack is $25 including shipping.</strong>&nbsp;&nbsp;Please allow 4-6 weeks for delivery. Each pack is shipped separately.</p>
 <p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping
 	Nordic Combined and Snowboarding. <strong>Bonus Packs available to U.S.
@@ -188,6 +188,14 @@
 	Snowboarding Magazine (8-issues, a $5 value) is included with your bonus
 	pack purchase. Offer is refundable. Instructions will be mailed.</p>
 <p>* One per household. Valid in the U.S. only.</p>
+
+<p> Opt out of Free Magazine <br>
+<form:select path="extrasBean.noBonusPackMag">
+	<form:option value=""></form:option>
+	<form:option value="<%=Inventory.INV_ID_BONUS_PACK_NOMAG %>">NO MAGAZINE</form:option>
+</form:select>
+<input type="hidden" name="extrasBean.noBonusPackMagQty" value="1"/>
+</p>
 
 <fieldset class="buttons" style="padding-left:200px;">
 	<br>

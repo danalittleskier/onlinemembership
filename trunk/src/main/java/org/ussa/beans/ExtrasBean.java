@@ -27,6 +27,9 @@ public class ExtrasBean implements Serializable
 
 	private String decalBoardOption;
 	private String decalBoardQty;
+	
+	private String noBonusPackMag;
+	private String noBonusPackMagQty;
 
 
 	public String getAlpineOption()
@@ -188,4 +191,21 @@ public class ExtrasBean implements Serializable
 	{
 		this.decalBoardQty = decalBoardQty;
 	}
+
+	public String getNoBonusPackMag() {
+		return noBonusPackMag;
+	}
+
+	public void setNoBonusPackMag(String noBonusPackMag) {
+		this.noBonusPackMag = noBonusPackMag;
+	}
+
+	public String getNoBonusPackMagQty() {
+		return noBonusPackMagQty;
+	}
+
+	public void setNoBonusPackMagQty(String noBonusPackMagQty) {
+		this.noBonusPackMagQty = noBonusPackMagQty;
+	}
+	
 }
