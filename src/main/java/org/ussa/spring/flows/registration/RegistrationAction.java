@@ -31,6 +31,7 @@ import org.ussa.beans.MembershipsBean;
 import org.ussa.beans.MessageBean;
 import org.ussa.beans.PaymentBean;
 import org.ussa.beans.UserBean;
+import org.ussa.beans.LineItemBean;
 import org.ussa.bl.CasLdap;
 import org.ussa.bl.DateBL;
 import org.ussa.bl.RulesBL;
@@ -828,8 +829,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
 	    handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
 	    handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
-	    handleOption(cartBean, extrasBean.getNoBonusPackMag(), extrasBean.getNoBonusPackMagQty());
-
+	    
+	    List<LineItemBean> extras = cartBean.getLineItems(Inventory.INVENTORY_TYPE_BONUS_PACK);
+	    if(extras.size() > 0 || StringUtils.isNotBlank(extrasBean.getAlpineQty()) || StringUtils.isNotBlank(extrasBean.getFreestyleQty()) || StringUtils.isNotBlank(extrasBean.getCrossCountryQty()) || StringUtils.isNotBlank(extrasBean.getJumpingQty()) || StringUtils.isNotBlank(extrasBean.getBoardingQty()) || StringUtils.isNotBlank(extrasBean.getGeneralQty()) || StringUtils.isNotBlank(extrasBean.getDecalSkiQty()) || StringUtils.isNotBlank(extrasBean.getDecalBoardQty())){
+	    	handleOption(cartBean, extrasBean.getNoBonusPackMag(), extrasBean.getNoBonusPackMagQty());
+	    }
+	    
 	    // clear the extras bean the quick and dirty way
 	    accountBean.setExtrasBean(new ExtrasBean());
 	    return success();
