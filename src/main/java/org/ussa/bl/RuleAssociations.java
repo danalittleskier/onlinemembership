@@ -29,12 +29,12 @@ public class RuleAssociations
 	static {
 		List<String[]> coachesAndOfficials = new ArrayList<String[]>();
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
-		coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
+		//coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_ALPINE_COACH, Inventory.INV_ID_ALPINE_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
-		coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
+		//coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
 
 		officialsByCoach = new HashMap<String, Set<String>>();
 		coachesByOfficial = new HashMap<String, Set<String>>();

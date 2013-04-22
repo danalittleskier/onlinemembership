@@ -140,12 +140,19 @@ public class RulesBLImpl implements RulesBL {
 	// don't prepopulate the cart for non members
 	if (!Member.MEMBER_TYPE_NON_MEMBER.equals(member.getType())) {
 	    // for renewals prepopulate the cart with the recommended membership options
+		String hasAbilityMembership = "N";
 	    String lastSeason = dateBL.getLastSeason();
 	    Integer currentSeasonAge = getAgeForCurrentRenewSeason(member.getBirthDate());
 	    List<Inventory> recommendedMemberships = renewRuleInvDao.getRecommendedMemberships(member.getId(), currentSeasonAge, lastSeason);
 	    for (Inventory inventory : recommendedMemberships) {
 	    	//Outdated memberships
-	    	if(!Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId()) && !Inventory.SPORT_CODE_DAL.equals(inventory.getSportCode()) && !Inventory.SPORT_CODE_DXC.equals(inventory.getSportCode())){
+	    	if(Inventory.SPORT_CODE_DAL.equals(inventory.getSportCode()) || Inventory.SPORT_CODE_DXC.equals(inventory.getSportCode())){
+	    		hasAbilityMembership = "Y";
+	    	}
+	    }
+	    for (Inventory inventory : recommendedMemberships) {	
+	    	//if(!Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId()) && !Inventory.SPORT_CODE_DAL.equals(inventory.getSportCode()) && !Inventory.SPORT_CODE_DXC.equals(inventory.getSportCode())){
+	    	if(!Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId()) && hasAbilityMembership.equals("N")){
 	    		addMembershipToCart(accountBean, inventory);
 	    	}
 	    }
