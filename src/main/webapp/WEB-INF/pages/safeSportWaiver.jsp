@@ -212,6 +212,20 @@ These guidelines are intended to complement:<br>
 *The USSA Code of Conduct <br>
 *The USSA Policy on Sexual Abuse and Harassment <br>
 *The USSA Criminal Background Screening Policy FIS and WADA Anti-Doping Policies<br>
+*FIS and WADA Anti-Doping Policies<br>
+<br>
+In the event you have any questions about these guidelines or wish to discuss or report any a suspected violation of these guidelines please contact USSA's Legal Counsel at anatt@joneswaldo.com.
+<br><br>
+<u>Hotline</u><br>
+This no-cost, confidential service helps athletes manage crisis situations and other misconduct-related issues that they may face. The hotline is staffed by professionals who will listen to concerns and quickly connect callers with resources in the community. Any USSA athlete may call the hotline at any time, which is staffed 24/7.
+<br><br>
+The hotline services are currently available:
+<br>
+Call: 855.665.5473<br>
+TDD: 800.697.0353
+<br><br>
+<u>SafeSport Training</u><br>
+Additional training is available at <a href="http://training.safesport.org" target="new">training.safesport.org</a> and USSA members can access at no cost using the code SAFESPORTUSA.  All Coaches, Officials, and the parents of minor Competitors and Youth members are strongly encouraged to take this course.  Please take note of this website and code so you can complete the training after finalizing your membership.  The code is intended for use by USSA members and their parents only, and is not intended for re-distribution.
 <br>
 
 </p>
@@ -249,7 +263,9 @@ These guidelines are intended to complement:<br>
 		updateCheckboxControl('releaseWaiverParentalConsent');
 	</script>
 </c:if>
-
+<br><b>
+THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGLIGENCE.  DO NOT SIGN AND INITIAL IT UNLESS YOU HAVE READ IT IN ITS ENTIRETY.  SEEK THE ADVICE OF LEGAL COUNSEL IF YOU ARE UNSURE OF ITS EFFECT.
+</b>
 </div></div></div></div>
 <!-- BOX (END) -->
 
