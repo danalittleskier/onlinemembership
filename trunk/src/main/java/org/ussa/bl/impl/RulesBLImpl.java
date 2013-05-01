@@ -425,9 +425,9 @@ public class RulesBLImpl implements RulesBL {
 	    }
 	    
 	 // If a member is trying to add a Alpine Youth membership and is between 12 and 13 yrs old, should be advised that they need Alpine Competitor if doing scored races
-	    if ((Inventory.INV_ID_ALPINE_YOUTH.equals(inventory.getId())) && age >= 12 && age <= 13 ) {
-		messages.add(new MessageBean("messages.membership.youth.competitor", inventory.getRenewDescription()));
-	    }
+	 //   if ((Inventory.INV_ID_ALPINE_YOUTH.equals(inventory.getId())) && age >= 12 && age <= 13 ) {
+	//	messages.add(new MessageBean("messages.membership.youth.competitor", inventory.getRenewDescription()));
+	 //   }
 	    
 	
 	    /*
