@@ -824,6 +824,7 @@ public class RulesBLImpl implements RulesBL {
             	int lastFastStartCheck = Integer.parseInt(memberSeason.getMemberSeasonPk().getSeason());
         		if(dateBL.calculateCurrentRenewSeason() < lastFastStartCheck + 3){
         			needsFastStart="N";
+        			return false;
         		}
         		
         	}       	    		
