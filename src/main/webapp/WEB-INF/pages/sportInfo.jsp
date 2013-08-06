@@ -42,7 +42,8 @@
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
-		<p><strong>Master:</strong> Access to USSA Masters events for competitors 21 and older. </p>
+		<p><strong>Master:</strong> Access to USSA Masters events for 18 and older including masters championships. </p>
+		<em><font class="style1"><b>Note:</b> Does not include participation in junior events.</font></em>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certification programs and educational materials supporting event officiating.</p>
 		<p><strong>Coach: </strong>Includes both USSA alpine coach and official memberships, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
