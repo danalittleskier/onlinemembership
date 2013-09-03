@@ -158,7 +158,7 @@
 						<br/>
 					</div>
 				</fieldset>
-			</c:when>
+			</c:when> 
 			<c:otherwise>
 				<form:hidden id="nationCode" path="member.nationCode"/>
 			</c:otherwise>

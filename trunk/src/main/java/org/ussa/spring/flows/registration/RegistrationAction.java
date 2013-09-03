@@ -416,12 +416,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 		return result("registrationError");
 	    }
 
-	    if (!rulesBL.isCountryUs(accountBean.getAddress().getCountry())) {
-		BindException errors = new BindException(accountBean, "accountBean");
-		errors.reject("errors.foreign");
-		getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-		return result("registrationError");
-	    }
+//	    if (!rulesBL.isCountryUs(accountBean.getAddress().getCountry())) {
+//		BindException errors = new BindException(accountBean, "accountBean");
+//		errors.reject("errors.foreign");
+//		getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+//		return result("registrationError");
+//	    }
 
 	    if (accountBean.getMemberLegal() == null) {
 		MemberLegal memberLegal = new MemberLegal();
@@ -607,12 +607,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
 
 	// if they are foreign then they can't do foreign at this time
-	if (!rulesBL.isCountryUs(accountBean.getMember().getNationCode())) {
-	    BindException errors = new BindException(accountBean, "accountBean");
-	    errors.reject("errors.foreign");
-	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-	    return result("registrationError");
-	}
+//	if (!rulesBL.isCountryUs(accountBean.getMember().getNationCode())) {
+//	    BindException errors = new BindException(accountBean, "accountBean");
+//	    errors.reject("errors.foreign");
+//	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+//	    return result("registrationError");
+//	}
 
 	if (StringUtils.isNotBlank(accountBean.getDivisionCode())) {
 	    accountBean.getMember().setDivision(divisionDao.get(accountBean.getDivisionCode()));
