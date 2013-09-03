@@ -221,7 +221,7 @@ public class RulesBLImpl implements RulesBL {
 	List<String> fisInvIds = new ArrayList<String>();
 	for (LineItemBean lineItem : lineItems) {
 	    String[] fises = RuleAssociations.fisByMembership.get(lineItem.getInventory().getId());
-	    if (fises != null) {
+	    if (fises != null && (accountBean.getUsCitizen()!= null && accountBean.getUsCitizen())) {
 		for (String fis : fises) {
 		    if (!fisInvIds.contains(fis)) {
 			fisInvIds.add(fis);
