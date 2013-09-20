@@ -10,9 +10,7 @@
 
 <h4>Can I register online as a foreign athlete?</h4>
 <p>
-	We are currently not accepting online registration for foreign members.  Please mail or fax in your application to
-	USSA Member Services.  Address and fax information is provided on our applications.  For additional information,
-	please contact USSA Member Services at (435) 647-2666 or email membership@ussa.org.
+	Yes.  Online registration is now available for foreign athletes.
 </p>
 
 <%--
