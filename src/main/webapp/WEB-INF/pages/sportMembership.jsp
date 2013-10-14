@@ -190,12 +190,10 @@
 		<form:select path="contributionSportId">
 			<form:option value="">Select a Sport</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_ALP%>">Alpine</form:option>
-			<form:option value="<%=Inventory.SPORT_CODE_DAL%>">Adaptive Alpine</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_BRD%>">Snowboarding</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_FRE%>">Freestyle/Freeskiing</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_JNC%>">Jumping/Nordic Combined</form:option>
 			<form:option value="<%=Inventory.SPORT_CODE_XC%>">Cross Country</form:option>
-			<form:option value="<%=Inventory.SPORT_CODE_DXC%>">Disabled Cross Country</form:option>
 		</form:select><br/>
 		<label for="contributionAmount">Contribution Amount:</label>
 		<form:input id="contributionAmount" path="contributionAmount" maxlength="10"/>
