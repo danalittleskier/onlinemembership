@@ -78,7 +78,8 @@ public class UssaJavaMailer extends JavaMailSenderImpl {
 			try {
 				super.send(simpleMessage);
 			} catch (MailException e) {
-				log.error("An error occured while sending an email", e);
+				//log.error("An error occured while sending an email", e);
+				log.warn("An error occured while sending an email (maybe for batch closing)");
 			}
 		}
 	}
