@@ -39,18 +39,20 @@
 		<p><strong>Multiple athlete memberships may be applicable, please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 		<p><strong>Competitor:</strong> For ages 12 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
 		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
-		<em><font class="style1"><b>Note:</b> Alpine competitors 18 and older may race in Alpine Masters races (excluding championships).</font></em></p>
+		<em><font class="style1"><b>Note:</b> Alpine competitors 18 - 24 may race in Alpine Masters races (excluding championships).</font></em></p>
 		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
+		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
 		<p><strong>Master:</strong> Access to USSA Masters events for 18 and older including masters championships. <br>
 		<em><font class="style1"><b>Note:</b> Does not include participation in junior events.</font></em></p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certification programs and educational materials supporting event officiating.</p>
+		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
 		<p><strong>Coach: </strong>Includes both USSA alpine coach and official memberships, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event.</font></em></p>  
 		<h3>Attention Coaches and Officials</h3>
-		<p>All coaches and officials are required to undergo periodic background screening.</p>
-		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
+		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
+		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
@@ -81,13 +83,15 @@
 		<p><strong>Freestyle Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
 		<p><strong>Freestyle Rookie:</strong> Available to first time freestyle members only. For those 13 years of age and older prior to Dec. 31. Access to division level competition only. Membership also includes access to the USSA Freesking/Freestyle ranking list. Non-renewable, but upgradeable.</p>
 		<p><strong>Freestyle Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31.</p>
+		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.</p>
+		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
 		<p><strong>Coach: </strong>Includes both USSA freestyle coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br> 
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
 		<h3>Attention Coaches and Officials</h3>
-		<p>All coaches and officials are required to undergo periodic background screening.</p>
-		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
+		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
+		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
@@ -115,13 +119,15 @@
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.<br> 
 		<em><font class="style1"><b>Note:</b> Does not include participation in USSA cross country ranking list.</font></em></p>
+		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships from below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating. </p>
+		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
 		<p><strong>Coach: </strong>Includes both USSA cross country coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
 		<h3>Attention Coaches and Officials</h3>
-		<p>All coaches and officials are required to undergo periodic background screening.</p>
-		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
+		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
+		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
@@ -147,13 +153,15 @@
 		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA jumping/nordic &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. 
 		Membership also includes access to the USSA jumping/nordic ranking list.  Required for FIS registration.</p>
 		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.</p>
+		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.  </p>
+		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
 		<p><strong>Coach: </strong>Includes both USSA jumping/nordic combined coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event.  </font></em></p>		
 		<h3>Attention Coaches and Officials</h3>
-		<p>All coaches and officials are required to undergo periodic background screening.</p>
-		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
+		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
+		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
@@ -178,13 +186,15 @@
 		</h2>
 		<p><strong>National Competitor:</strong> Access to all levels of competition within the USSA snowboarding &quot;development pipeline.&quot;. Membership also includes access to the USSA snowboarding ranking list. Required for FIS registration. </p>
 		<p><strong>Regional Competitor:</strong> Not eligible for elite level events or FIS registration. Includes access to the USSA Snowboard Ranking List. May be upgraded to national level membership during the competitive season.</p>
+		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
 		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.</p> 
+		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
 		<p><strong>Coach: </strong>Includes both USSA snowboarding coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>		
 		<h3>Attention Coaches and Officials</h3>
-		<p>All coaches and officials are required to undergo periodic background screening.</p>
-		<p>Coach and official memberships are not valid until positive background screening results are received by the USSA.</p>
+		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
+		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
