@@ -6,4 +6,5 @@
 <body>
 	<h1>USSA</h1>
 	<%@ include file="/includes/backgroundScreeningText.jsp"%>
+	
 </body>

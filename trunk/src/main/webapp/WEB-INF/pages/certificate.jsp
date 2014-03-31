@@ -8,6 +8,7 @@
 <c:choose>
 	<c:when test="${empty membershipsBean.unrestrictedMemberships and not empty membershipsBean.restrictedMemberships}">
 		<%@ include file="/includes/backgroundScreeningText.jsp"%>
+		
 		<c:url var="ncsiUrl" value="https://www.ncsisafe.com/members/selfregbatchcodelanding.aspx">
 			<c:param name="srb" value="11392848"/>
 			<c:param name="id" value="${member.id}"/>

@@ -48,7 +48,6 @@
 		<fieldset>
 			<legend>Background Screening Required</legend>
 			<%@ include file="/includes/backgroundScreeningText.jsp"%>
-
 			<br/>
 			<c:url var="ncsiUrl" value="https://www.ncsisafe.com/members/selfregbatchcodelanding.aspx">
 				<c:param name="srb" value="11392848"/>

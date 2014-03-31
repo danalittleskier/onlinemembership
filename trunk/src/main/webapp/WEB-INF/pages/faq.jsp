@@ -68,7 +68,7 @@
 
 <h4>Who is required to undergo a background screening?</h4>
 <p>
-	All coaches and officials are required to undergo a background screening.  For more information regarding background
+	All coaches, officials and volunteers are required to undergo a background screening.  For more information regarding background
 	screenings, please see our website: Note: http://ussa.org/magnoliaPublic/ussa/en/formembers/membership/backgroundscreening.html
 </p>
 

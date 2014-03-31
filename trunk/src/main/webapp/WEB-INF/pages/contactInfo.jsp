@@ -73,11 +73,16 @@ if(session.getAttribute("FirstTime") == null){
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-<li style="padding-bottom:4px;">You are registering for the 2013-14 competition season.</li>
-<li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferrable.</strong></li>
-<li style="padding-bottom:4px;">Memberships expire annually on June 30 </li>
-<li style="padding-bottom:4px;">If registering a minor, parent or legal guardian must complete registration using minor's name and date of birth.</li>
-<li style="padding-bottom:4px;"> Registration must be submitted by an authorized card-holder only.</li>
+<li style="padding-bottom:4px;">You are registering for the 2014-15 competition season, which runs from July 1, 2014 through June 30, 2015. 
+			Memberships expire annually on June 30, regardless of the date of registration. </li>
+<li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferable.</strong></li>
+<li style="padding-bottom:4px;">Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
+			Contact your coach, club and/or USSA Member Services before continuing if you are unsure. 
+			Absolutely no refunds or downgrades of memberships will be issued for any reason. </li>
+<li style="padding-bottom:4px;">The USSA does not transfer memberships from person to person, season to season or one sport to another. 
+			Members must hold a membership in the sport(s) in which they'll participate.</li>
+<li style="padding-bottom:4px;"> An authorized cardholder must submit registration. 
+			If registering a minor, the parent or legal guardian must complete the registration using the minor's name and date of birth as the member..</li>
 
 <li>Code of Conduct:<br>I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.<br><br></li>
 </ul><br>
