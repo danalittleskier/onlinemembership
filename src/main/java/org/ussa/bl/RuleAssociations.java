@@ -15,6 +15,8 @@ public class RuleAssociations
 	public static final Map<String, Set<String>> officialsByCoach;
 	public static final Map<String, Set<String>> coachesByOfficial;
 	public static final Set<String> restrictedMemberships;
+	public static final Set<String> volunteerMemberships;
+	public static final Set<String> nonCompetingMemberships;
 	public static final Set<String> twentyFiveDollarDiscountGroup;
 	public static final Map<String, String[]> fisByMembership;
 	public static final Set<String> disabledFisMemberships;
@@ -35,6 +37,7 @@ public class RuleAssociations
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_OFFICIAL});
 		coachesAndOfficials.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
 		//coachesAndOfficials.add(new String[] {Inventory.INV_ID_DISABLED_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL});
+		
 
 		officialsByCoach = new HashMap<String, Set<String>>();
 		coachesByOfficial = new HashMap<String, Set<String>>();
@@ -59,13 +62,63 @@ public class RuleAssociations
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESKIING_COMPETITOR});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_ROOKIE});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR, Inventory.INV_ID_FREESTYLE_ROOKIE});
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COMPETITOR, Inventory.INV_ID_ALPINE_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COMPETITOR, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_COMPETITOR, Inventory.INV_ID_SNOWBOARD_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COMPETITOR, Inventory.INV_ID_JUMPING_NON_COMPETING});		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_MASTER, Inventory.INV_ID_ALPINE_NON_COMPETING});
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_VOLUNTEER, Inventory.INV_ID_ALPINE_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_VOLUNTEER, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_VOLUNTEER, Inventory.INV_ID_SNOWBOARD_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_VOLUNTEER, Inventory.INV_ID_JUMPING_NON_COMPETING});
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_OFFICIAL, Inventory.INV_ID_ALPINE_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_OFFICIAL, Inventory.INV_ID_FREESTYLE_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_OFFICIAL, Inventory.INV_ID_SNOWBOARD_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL, Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_OFFICIAL, Inventory.INV_ID_JUMPING_VOLUNTEER});
 
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_VOLUNTEER});
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESTYLE_ROOKIE});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESKIING_COMPETITOR});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_NON_COMPETING, Inventory.INV_ID_SNOWBOARD_COMPETITOR_REGIONAL});
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_NON_COMPETING, Inventory.INV_ID_ALPINE_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESTYLE_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_NON_COMPETING, Inventory.INV_ID_JUMPING_YOUTH});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING, Inventory.INV_ID_CROSS_COUNTRY_YOUTH});
+
+		
+		
 		mutuallyExclusiveMemberships = new HashMap<String, Set<String>>();
 		for (String[] invIds : mutuallyExclusiveList)
 		{
 			addMembership(mutuallyExclusiveMemberships, invIds[0], invIds[1]);
 			addMembership(mutuallyExclusiveMemberships, invIds[1], invIds[0]);
 		}
+		
+		volunteerMemberships = new HashSet<String>();
+		volunteerMemberships.add(Inventory.INV_ID_ALPINE_VOLUNTEER);
+		volunteerMemberships.add(Inventory.INV_ID_FREESTYLE_VOLUNTEER);
+		volunteerMemberships.add(Inventory.INV_ID_SNOWBOARD_VOLUNTEER);
+		volunteerMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER);
+		volunteerMemberships.add(Inventory.INV_ID_JUMPING_VOLUNTEER);
+		
+		nonCompetingMemberships = new HashSet<String>();
+		nonCompetingMemberships.add(Inventory.INV_ID_ALPINE_NON_COMPETING);
+		nonCompetingMemberships.add(Inventory.INV_ID_FREESTYLE_NON_COMPETING);
+		nonCompetingMemberships.add(Inventory.INV_ID_SNOWBOARD_NON_COMPETING);
+		nonCompetingMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING);
+		nonCompetingMemberships.add(Inventory.INV_ID_JUMPING_NON_COMPETING);
 
 		restrictedMemberships = new HashSet<String>();
 		restrictedMemberships.add(Inventory.INV_ID_ALPINE_ASSOCIATE);
@@ -121,6 +174,7 @@ public class RuleAssociations
 
 		officialMemberships = RuleAssociations.coachesByOfficial.keySet();
 		coachMemberships = RuleAssociations.officialsByCoach.keySet();
+
 
 		onlyOneDivisionDuePerSport = new HashSet<String>();
 		onlyOneDivisionDuePerSport.add(Division.DIVISION_FAR_WEST);

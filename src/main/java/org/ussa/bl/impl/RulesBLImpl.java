@@ -383,6 +383,12 @@ public class RulesBLImpl implements RulesBL {
 			LineItemBean lineItem = cartBean.getLineItem(excludedInvId);
 			messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
 			cartBean.removeLineItem(excludedInvId);
+			//added to remove fast start coaching course if coach membership removed
+			if(RuleAssociations.coachMemberships.contains(excludedInvId)){
+				if(cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
+					cartBean.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING);
+				}
+			}
 		    }
 		}
 	    }
@@ -461,12 +467,15 @@ public class RulesBLImpl implements RulesBL {
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
 
-	    if (fullPriceMembership.getInventory().getId().equals(invId)) {
+	    if (fullPriceMembership.getInventory().getId().equals(invId) ) {
 		// This is your full price membership. The rest are discounted.
 		membership.setDiscount(null);
 	    } else {
+	    if(RuleAssociations.nonCompetingMemberships.contains(invId)){
+	    	membership.setDiscount(null);
+	    }
 		// If you are adding or have a membership from the 25 dollar group then the discount is 25 otherwise 35.
-		if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
+	    else if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
 		    membership.setDiscount(new BigDecimal(25));
 		} else {
 		    membership.setDiscount(new BigDecimal(35));
@@ -663,11 +672,15 @@ public class RulesBLImpl implements RulesBL {
 		}
 	    } else {
 		String divisionCode = member.getDivision().getDivisionCode();
+		
+		if(divisionCode.equalsIgnoreCase("X")){
+			divisionCode = divisionAffiliationDao.getDivisionAffiliations(stateCode).get(0).getDivision().getDivisionCode();
+		}
 
 		List<Inventory> allDues = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, false);
 		List<Inventory> applicableDues = new ArrayList<Inventory>();
 
-		if (RuleAssociations.onlyOneDivisionDuePerSport.contains(member.getDivision().getDivisionCode())) {
+		if (RuleAssociations.onlyOneDivisionDuePerSport.contains(divisionCode)) {
 		    Set<String> applicableSportCodes = getApplicableSportCodes(allDues);
 		    for (String sportCode : applicableSportCodes) {
 			Inventory mostExpensive = getMostExpensive(allDues, sportCode);
@@ -675,7 +688,7 @@ public class RulesBLImpl implements RulesBL {
 			    applicableDues.add(mostExpensive);
 			}
 		    }
-		} else if (RuleAssociations.onlyOneDivisionDue.contains(member.getDivision().getDivisionCode())) {
+		} else if (RuleAssociations.onlyOneDivisionDue.contains(divisionCode)) {
 		    Inventory mostExpensive = getMostExpensive(allDues);
 		    if (mostExpensive != null) {
 			applicableDues.add(mostExpensive);
@@ -690,7 +703,7 @@ public class RulesBLImpl implements RulesBL {
 
 		// division late fees if any
 		if (now.after(lateRenewDate) && (member.getId() != null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() != 0)) {
-		    List<Inventory> divisionLateFees = divDuesRulesDao.getDivisionDues(member.getDivision().getDivisionCode(), age, membershipIds, true);
+		    List<Inventory> divisionLateFees = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, true);
 		    for (Inventory lateFee : divisionLateFees) {
 			cart.addItem(lateFee);
 		    }
@@ -779,7 +792,7 @@ public class RulesBLImpl implements RulesBL {
 
     public boolean needsBackgroundCheck(AccountBean accountBean) {
 	CartBean cartBean = accountBean.getCartBean();
-	return (cartBean.containsAny(RuleAssociations.coachMemberships) || cartBean.containsAny(RuleAssociations.officialMemberships)) && !isBackgroundCheckCurrent(accountBean.getMember().getId());
+	return (cartBean.containsAny(RuleAssociations.coachMemberships) || cartBean.containsAny(RuleAssociations.officialMemberships) || cartBean.containsAny(RuleAssociations.volunteerMemberships)) && !isBackgroundCheckCurrent(accountBean.getMember().getId());
     }
 
     private boolean isBackgroundCheckCurrent(Long ussaId) {
