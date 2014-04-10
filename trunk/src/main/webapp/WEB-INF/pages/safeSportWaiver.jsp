@@ -214,7 +214,7 @@ These guidelines are intended to complement:<br>
 *The USSA Criminal Background Screening Policy FIS and WADA Anti-Doping Policies<br>
 *FIS and WADA Anti-Doping Policies<br>
 <br>
-In the event you have any questions about these guidelines or wish to discuss or report any a suspected violation of these guidelines please contact USSA's Legal Counsel at anatt@joneswaldo.com.
+In the event you have any questions about these guidelines or wish to discuss or report any a suspected violation of these guidelines please contact USSA's Legal Counsel at <a href="mailto:anatt@ussa.org">anatt@ussa.org</a>.
 <br><br>
 <u>Hotline</u><br>
 This no-cost, confidential service helps athletes manage crisis situations and other misconduct-related issues that they may face. The hotline is staffed by professionals who will listen to concerns and quickly connect callers with resources in the community. Any USSA athlete may call the hotline at any time, which is staffed 24/7.
