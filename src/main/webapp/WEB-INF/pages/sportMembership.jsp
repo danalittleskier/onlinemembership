@@ -66,8 +66,8 @@
 
 	<fieldset>
 		<legend>Sport & Membership Type</legend>
-		<p>If renewing, please check the membership cart to the right as your membership may already be in your cart. 
-		Be certain you are choosing the appropriate membership prior to completing your registration.</p>
+		<p><font color="blue">If renewing, please check the membership cart to the right as your membership may already be in your cart. 
+		Be certain you are choosing the appropriate membership prior to completing your registration.</font></p>
 		<p><a href="<c:url value="/sportInfo.html"/>" target="_BLANK" style="display:block; margin-top:3px;">View Membership Descriptions...</a></p>
 		<label for="">* Sport:</label>
 		<form:select path="sportId" onchange="document.getElementById('update').click();">

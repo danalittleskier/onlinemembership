@@ -10,8 +10,9 @@
 	<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
 </ul>
 <br><br>
+
+<p> COACHES </p>
 <ul>
-<p>COACHES </p>
 	<li>All Coaches are required to take the safe sport course.</li>
 	<li>Coach memberships are not valid until the safe sport course is completed.</li>
 

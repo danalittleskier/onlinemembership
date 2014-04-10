@@ -23,9 +23,9 @@
 <div class="extras-header">
 	<p>Bonus Packs</p>
 </div>
-<p>Bonus Packs include a high quality 100% cotton U.S. Ski Team or U.S.
-	Snowboarding t-shirt, decal pack and a 2014 collectors lapel pin (or snowboarding
-	die-cut decal). <strong>Each pack is $25 including shipping.</strong>&nbsp;&nbsp;Please allow 4-6 weeks for delivery. Each pack is shipped separately.</p>
+<p>Bonus Packs include a high quality 100% cotton shirt ~ The U.S. Ski Team packs include a decal strip 
+	 and a 2015 collectors pin ~ The U.S. Snowboarding pack includes a decal strip and 2 die cut logo decals.
+	T-shirts available in <strong>Adult</strong> sizes only: S, M, L, and XL. &nbsp;&nbsp;Packs are $25 each (includes shipping) multiple bonus packs are shipped separately.</p>
 <p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping
 	Nordic Combined and Snowboarding. <strong>Bonus Packs available to U.S.
 	residents only.</strong> </p>
@@ -184,10 +184,9 @@
 </div>
 <p><img src="<c:url value='/images/13BP_MagWebFile.jpg'/>" style="float: right;" height="126" width="199">
 	<strong>ADDED BONUS!</strong><br/>
-	A one-year subscription to SKI Magazine (6-issues, a $9 value) or TransWorld
-	Snowboarding Magazine (8-issues, a $9 value) is included with your bonus
-	pack purchase. Those ordering one of the five skiing packs will receive Ski Magazine. The snowboarding pack will include TransWorld Snowboarding Magazine.
-	Magazine and refund instructions will be sent via postcard.</p>
+	A one-year subscription to SKI Magazine (6-issues, a $9 value) is included with any ski Bonus
+	Pack purchase. </p>
+<p>	Magazine and refund instructions will be sent via postcard.</p>
 <p>* One per household. Valid in the U.S. only.</p>
 
 <p> No Bonus Pack Magazine <br>
