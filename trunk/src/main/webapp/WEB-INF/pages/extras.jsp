@@ -239,14 +239,14 @@
 				<input type="hidden" name="extrasBean.decalSkiOption" value="<%=Inventory.INV_ID_BONUS_DECALS_SKI_TEAM%>"/>
 				<form:input path="extrasBean.decalSkiQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
-			<img src="<c:url value='/images/13_USST_DecalSheet.jpg'/>" width="195" height="101" /> </div>
+			<img src="<c:url value='/images/15_USST_DecalSheet.jpg'/>" width="195" height="101" /> </div>
 		<div class="decal">
 			<div class="decal-qty">
 				<label>Qty:</label>
 				<input type="hidden" name="extrasBean.decalBoardOption" value="<%=Inventory.INV_ID_BONUS_DECALS_SNOWBOARD%>"/>
 				<form:input path="extrasBean.decalBoardQty" maxlength="3"/>
 				<span class="packs-of-five">Pack(s) of 5</span> </div>
-			<img src="<c:url value='/images/13_USS_DecalSheet_SB.jpg'/>" width="195" height="101" />
+			<img src="<c:url value='/images/15_USS_DecalSheet_SB.jpg'/>" width="195" height="101" />
 		</div>
 	</div>
 
