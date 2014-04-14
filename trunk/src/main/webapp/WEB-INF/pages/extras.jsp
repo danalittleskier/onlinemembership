@@ -10,7 +10,7 @@
 </div>
 <!-- End: Live Chat Support -->
 
-<div id="stg-pagetitle">Bonus Packs & Decals </div>
+<div id="stg-pagetitle">Bonus Packs and Decals </div>
 
 <form:form commandName="accountBean" name="accountBean">
 
@@ -23,12 +23,11 @@
 <div class="extras-header">
 	<p>Bonus Packs</p>
 </div>
-<p>Bonus Packs include a high quality 100% cotton shirt ~ The U.S. Ski Team packs include a decal strip 
-	 and a 2015 collectors pin ~ The U.S. Snowboarding pack includes a decal strip and 2 die cut logo decals.
-	T-shirts available in <strong>Adult</strong> sizes only: S, M, L, and XL. &nbsp;&nbsp;Packs are $25 each (includes shipping) multiple bonus packs are shipped separately.</p>
-<p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping
-	Nordic Combined and Snowboarding. <strong>Bonus Packs available to U.S.
-	residents only.</strong> </p>
+<p>Bonus Packs include a high quality 100% cotton shirt. The U.S. Ski Team packs include a decal strip 
+	 and a 2015 collectors pin. The U.S. Snowboarding pack includes a decal strip and two die cut logo decals.
+	T-shirts available in <strong>adult</strong> sizes only: S, M, L and XL. Packs are $25 each (includes shipping). Each pack is shipped separately.</p>
+<p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping/Nordic Combined and Snowboarding. 
+<strong>Bonus Packs available to U.S. residents only.</strong> </p>
 <div class="tshirt-row">
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
@@ -109,13 +108,13 @@
 <div class="tshirt-row">
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
-		<p>Jumping N/C</p>
+		<p>Jumping/Nordic Combined</p>
 		<a href="<c:url value='/images/Jump-NC_Lrg.jpg'/>" title="Jumping N/C Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/Jump-NC_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
-		<p>US Ski Team General</p>
+		<p>U.S. Ski Team General</p>
 		<a href="<c:url value='/images/generalTee_Lrg.jpg'/>" title="US Ski Team General Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/generalTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
@@ -182,10 +181,10 @@
 	</div>
 	<div class="clear"></div>
 </div>
-<p><img src="<c:url value='/images/13BP_MagWebFile.jpg'/>" style="float: right;" height="126" width="199">
+<p><img src="<c:url value='/images/SkiMagazine.jpg'/>" style="float: right;" height="126" width="100">
 	<strong>ADDED BONUS!</strong><br/>
-	A one-year subscription to SKI Magazine (6-issues, a $9 value) is included with any ski Bonus
-	Pack purchase. </p>
+	A one-year subscription to SKI Magazine (six issues, a $9 value) is included with any ski Bonus
+	Pack purchase. Click below to opt out the bonus pack magazine.</p>
 <p>	Magazine and refund instructions will be sent via postcard.</p>
 <p>* One per household. Valid in the U.S. only.</p>
 
