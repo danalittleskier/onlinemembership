@@ -62,7 +62,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_ALPINE_OFFICIAL = "AO";
 	public static final String INV_ID_ALPINE_YOUTH = "AY";
 	public static final String INV_ID_ALPINE_VOLUNTEER = "AV";
-	public static final String INV_ID_ALPINE_NON_COMPETING = "AN";
+	public static final String INV_ID_ALPINE_NON_COMPETING = "AP";
 
 	// Cross country memberships
 	public static final String INV_ID_CROSS_COUNTRY_ASSOCIATE = "XA";
@@ -71,7 +71,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_CROSS_COUNTRY_YOUTH = "XY";
 	public static final String INV_ID_CROSS_COUNTRY_OFFICIAL = "XO";
 	public static final String INV_ID_CROSS_COUNTRY_VOLUNTEER = "XV";
-	public static final String INV_ID_CROSS_COUNTRY_NON_COMPETING = "XN";
+	public static final String INV_ID_CROSS_COUNTRY_NON_COMPETING = "XP";
 
 	// Disabled Alpine memberships
 	public static final String INV_ID_DISABLED_ALPINE_ASSOCIATE = "DAA";
@@ -90,7 +90,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
 	public static final String INV_ID_FREESKIING_COMPETITOR = "FSC";
 	public static final String INV_ID_FREESTYLE_VOLUNTEER ="FV";
-	public static final String INV_ID_FREESTYLE_NON_COMPETING = "FN";
+	public static final String INV_ID_FREESTYLE_NON_COMPETING = "FP";
 
 	// Jumping / Nordic Combined memberships
 	public static final String INV_ID_JUMPING_ASSOCIATE = "JA";
@@ -99,7 +99,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_JUMPING_YOUTH = "JY";
 	public static final String INV_ID_JUMPING_OFFICIAL = "JO";
 	public static final String INV_ID_JUMPING_VOLUNTEER = "JV";
-	public static final String INV_ID_JUMPING_NON_COMPETING ="JN";
+	public static final String INV_ID_JUMPING_NON_COMPETING ="JP";
 
 	// Snowboarding memberships
 	public static final String INV_ID_SNOWBOARD_ASSOCIATE = "BA";
@@ -108,7 +108,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_SNOWBOARD_COMPETITOR_REGIONAL = "BCR";
 	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
 	public static final String INV_ID_SNOWBOARD_VOLUNTEER = "BV";
-	public static final String INV_ID_SNOWBOARD_NON_COMPETING = "BN";
+	public static final String INV_ID_SNOWBOARD_NON_COMPETING = "BP";
 
 	// FIS
 	public static final String INV_ID_ALPINE_FIS = "FISA";

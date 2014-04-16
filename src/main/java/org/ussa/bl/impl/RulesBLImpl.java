@@ -289,12 +289,12 @@ public class RulesBLImpl implements RulesBL {
 	    List<String> magazineInvIds = new ArrayList<String>();
 	    List<LineItemBean> items = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
 	    if (items.size() > 0) {
-		// if(hasOnlyYouthMemberships(accountBean))
-		// {
-		// magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE_LIMITED_ISSUES);
-		// }
-		// else
-		// {
+		 if(hasOnlyNonCompetingMemberships(accountBean))
+		 {
+		 magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+		 }
+		 else
+		 {
 		
 		//if(cart.contains(Inventory.INV_ID_FREESKIING_COMPETITOR)){
 	    	for (LineItemBean lineItem : items) {
@@ -316,7 +316,7 @@ public class RulesBLImpl implements RulesBL {
 			magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
 		}
 		
-		// }
+		 }
 	    }
 
 	    Integer age = getAgeForCurrentRenewSeason(accountBean.getMember().getBirthDate());
@@ -330,6 +330,22 @@ public class RulesBLImpl implements RulesBL {
 	}
 
 	return magazineItems;
+    }
+    
+    private boolean hasOnlyNonCompetingMemberships(AccountBean accountBean) {
+    	CartBean cart = accountBean.getCartBean();
+    	List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+    	if (membershipItems.size() > 0) {
+    	    for (LineItemBean lineItem : membershipItems) {
+    		if (!RuleAssociations.nonCompetingMemberships.contains(lineItem.getInventory().getId())) {
+    		    return false;
+    		}
+    	    }
+    	} else {
+    	    return false;
+    	}
+    	
+    	return true;
     }
 
     private boolean hasOnlyYouthMemberships(AccountBean accountBean) {
@@ -713,8 +729,8 @@ public class RulesBLImpl implements RulesBL {
 
 	// USSA LATE FEE
 	if (now.after(lateRenewDate)) {
-	    // new registrants are exempt from late fee if they have only youth or official memberships
-	    if ((member.getId() == null || member.getId() == 0) || cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0 || hasOnlyYouthMemberships(accountBean) || hasOnlyOfficialMemberships(accountBean) || (member.getId() != null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() == 0)) {
+	    // new registrations are exempt from late fee and if they have only youth/official/non-competing membership
+	    if ((member.getId() == null || member.getId() == 0) || cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0 || hasOnlyYouthMemberships(accountBean) || hasOnlyOfficialMemberships(accountBean)|| hasOnlyNonCompetingMemberships(accountBean) || (member.getId() != null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() == 0)) {
 		cart.removeLineItem(Inventory.INV_ID_MEMBER_LATE_FEE);
 	    } else if (!cart.contains(Inventory.INV_ID_MEMBER_LATE_FEE)) {
 		Inventory memberLateFee = inventoryDao.get(Inventory.INV_ID_MEMBER_LATE_FEE);
