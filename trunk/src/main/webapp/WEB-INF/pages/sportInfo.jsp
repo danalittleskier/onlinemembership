@@ -29,186 +29,233 @@
 		</ul>
 	</div>
 	<div id="div0">
-		<h2>Alpine Skiing<span class="information"> Information</span><br>
-		<span style="font-weight:normal;font-size:12px;">ALPINE SKIING includes the following disciplines:
-		<strong>Downhill,&nbsp;Slalom,&nbsp;Super G,&nbsp;Giant Slalom,&nbsp;Super Combined</strong>
-		</span><br>
-		</span>
-		</h2>
-		<h3>Athletes</h3>
-		<p><strong>Multiple athlete memberships may be applicable, please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
-		<p><strong>Competitor:</strong> For ages 12 and older prior to Dec. 31, access to all levels of competition within the USSA alpine ski racing &quot;development pipeline&quot;, including eligibility 
-		to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA alpine ranking list. Required for FIS registration.<br> 
+		<h2>Alpine Skiing<span class="information"> Information</span><br></h2>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
+	
+		<h3>USSA Athletes: You may choose one of the memberships from below</h3>
+		<p><strong>USSA Competitor:</strong> For ages 12 and older prior to Dec. 31. The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as International Ski Federation 
+		ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 - 24 may race in Alpine Masters races (excluding championships).</font></em></p>
-		<p><strong>Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31. <br>
-		<em><font class="style1"><b>Note:</b> Does not include participation in USSA ranking lists.</font></em></p>
-		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
-		<p><strong>Master:</strong> Access to USSA Masters events for 18 and older including masters championships. <br>
-		<em><font class="style1"><b>Note:</b> Does not include participation in junior events.</font></em></p>
-		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>Official: </strong>Access to clinics, certification programs and educational materials supporting event officiating.</p>
-		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
-		<p><strong>Coach: </strong>Includes both USSA alpine coach and official memberships, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
-		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event.</font></em></p>  
-		<h3>Attention Coaches and Officials</h3>
+		
+		<p><strong>USSA Youth Competitor:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
+		These members are not eligible for participation in USSA ranking lists <br></p>
+		
+		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe 
+		even competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong> </p>
+		
+		<p><strong>USSA Master:</strong> For ages 18 and over prior to Dec. 31. The USSA Masters membership gives alpine athletes over the age of 18 access to alpine masters events, including Masters Championships and its qualifying events. 
+		This membership is perfect for adult athletes who are interested in competing with other adults domestically. Required for alpine masters FIS registration.</p>
+		
+		<h3>USSA Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		
+		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
+		
+		<p><strong>USSA Club Volunteer</strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications.</p> 
+		
+		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, coaches are required to take a short online education program on important coaching guidelines. 
+		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport. <br>
+		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>  
+		
+		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
 		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the membership registration process.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
-		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
-		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
-		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
-		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
-		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
+		<p>A secure link will be provided at the end of the membership registration process and will also be available on the member dashboard if required.</p>
+		<p>Coaches, Officials and Volunteer members age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
 		
+		<h3>Attention Coaches</h3>
+		<p>All coaches without certifications are required to take the Fast Start Coaching course.</p>
+		<p>The mandatory $10 Fast Start Coaching Course will be added to your cart where required</p>
+		<p>Coach memberships is not valid until the required Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided the confirmation page.</p>
+		<p><strong>NOTE:</strong> For memberships requiring screening and/or the Fast Start Coaching Course, these memberships will remain on pending status until all requirements are complete.</p>
+	
 	</div>
 	<div id="div1">
-		<h2>Freestyle/Freesking <span class="information">Information</span><br>
-		<span style="font-weight:normal;font-size:12px;">FREESTYLE includes the following disciplines:
-		<strong>Aerials,&nbsp;Moguls,&nbsp;Big Air,&nbsp;Skier Halfpipe,&nbsp;Slpestyle,&nbsp; Skier Cross</strong>
-		</span><br>
-		<span style="font-weight:normal;font-size:12px;">FREESKIING includes the following disciplines:
-		<strong> Skier Halfpipe,&nbsp;Slopestyle,&nbsp;Skier Cross,&nbsp;Big Air</strong>
-		</span>
-		</h2>
-		<h3>Athletes</h3>
-		<p><strong>Freeskiing Competitor:</strong> Access to all levels of competition within the USSA Freeskiing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Required for qualification to Jr. Nationals.  Membership also includes access to the USSA Freeskiing/Freestyle ranking list. <b>Provides for access to skier halfpipe, slopestyle, big air and skicross events only.</b></p>
-		<p><strong>Freestyle Competitor:</strong> Access to all levels of competition within the USSA Freestyle &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA Freesking/Freestyle ranking list. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
-		<p><strong>Freestyle Rookie:</strong> Available to first time freestyle members only. For those 13 years of age and older prior to Dec. 31. Access to division level competition only. Membership also includes access to the USSA Freesking/Freestyle ranking list. Non-renewable, but upgradeable.</p>
-		<p><strong>Freestyle Youth Competitor:</strong> Access to entry-level/non-scored competitions for ages 12 and younger, prior to Dec. 31.</p>
-		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
-		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.</p>
-		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
-		<p><strong>Coach: </strong>Includes both USSA freestyle coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br> 
+		<h2>Freestyle/Freesking <span class="information">Information</span><br></h2>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
+	
+		<h3>USSA Athletes: You may choose one of the memberships from below</h3>		
+		<p><strong>USSA Freeskiing Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.  <b>Provides for access to skier halfpipe, slopestyle, big air and skicross events only.</b></p>
+		
+		<p><strong>USSA Freestyle/Freeskiing Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
+		
+		<p><strong>USSA Rookie:</strong> : For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
+		
+		<p><strong>USSA Youth Competitor:</strong> For ages 12 and younger. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
+		These members are not eligible for participation in USSA ranking lists. </p>
+		
+		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events.<strong>Not intended for those in a position of authority over minors.</strong> </p>
+		
+		<h3>Coaches, Officials, and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
+		
+		<p><strong>USSA Club Volunteer</strong>(with screening); ): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		
+		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br> 
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
-		<h3>Attention Coaches and Officials</h3>
+		
+		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
 		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the membership registration process.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		<p>A secure link will be provided at the end of the membership registration process and will also be available on the member dashboard if required.</p>
+		<p>Coaches, Officials and Volunteer members age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
-		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
-		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
-		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
-		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
+		<p>All coaches without certifications are required to take the Fast Start Coaching course.</p>
+		<p>The mandatory $10 Fast Start Coaching Course will be added to your cart where required</p>
+		<p>Coach memberships is not valid until the required Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided the confirmation page.</p>
+		<p><strong>NOTE:</strong> For memberships requiring screening and/or the Fast Start Coaching Course, these memberships will remain on pending status until all requirements are complete.</p>
 		
 	</div>
 	<div id="div2">
-		<h2>Cross Country <span class="information">Information</span><br>
-		<span style="font-weight:normal;font-size:12px;">CROSS COUNTRY includes the following disciplines:
-		<strong>Distance,&nbsp;Sprint</strong>
-		</span><br>
-		</span>
-		</h2>
-		<h3>Athletes</h3>
-		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA cross country ski racing &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. Membership also includes access to the USSA cross country ranking list.</p>
-		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.<br> 
-		<em><font class="style1"><b>Note:</b> Does not include participation in USSA cross country ranking list.</font></em></p>
-		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
-		<h3>Coaches & Officials: You may choose one of the memberships from below if 15 years of age or older.</h3>
-		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating. </p>
-		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
-		<p><strong>Coach: </strong>Includes both USSA cross country coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials. <br>
+		<h2>Cross Country <span class="information">Information</span><br></h2>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
+	
+		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
+		
+		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.</p>
+		
+		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
+		These members are not eligible for participation in USSA ranking lists. <br> 
+
+		<p><strong>USSA Club Participant:</strong> AThe new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
+		
+		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships from below if 15 years of age or older.</h3>
+		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000  events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		Officials are also able to achieve various levels of certification through educational programs offered by the USSA. </p>
+		
+		<p><strong>USSA Club Volunteer </strong> (with background screening) The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications.<strong>Applicable for those in a position of authority over minors. </strong></p> 
+		
+		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
-		<h3>Attention Coaches and Officials</h3>
+		
+		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
 		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the membership registration process.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		<p>A secure link will be provided at the end of the membership registration process and will also be available on the member dashboard if required.</p>
+		<p>Coaches, Officials and Volunteer members age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
-		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
-		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
-		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
-		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
+		<p>All coaches without certifications are required to take the Fast Start Coaching course.</p>
+		<p>The mandatory $10 Fast Start Coaching Course will be added to your cart where required</p>
+		<p>Coach memberships is not valid until the required Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided the confirmation page.</p>
+		<p><strong>NOTE:</strong> For memberships requiring screening and/or the Fast Start Coaching Course, these memberships will remain on pending status until all requirements are complete.</p>
 		
 	</div>
 	<div id="div3">
-		<h2>Jumping/Nordic Combined <span class="information">Information</span><br>
-		<span style="font-weight:normal;font-size:12px;">JUMPING/NORIDC COMBINED includes the following disciplines:
-		<strong>Large Hill,&nbsp;Normal Hill</strong>
-		</span>
-		</h2>
-		<p><strong>Competitor:</strong> Access to all levels of competition within the USSA jumping/nordic &quot;development pipeline&quot;, including eligibility to qualify for national and regional events where qualifying is required. 
-		Membership also includes access to the USSA jumping/nordic ranking list.  Required for FIS registration.</p>
-		<p><strong>Nordic Kid:</strong> Access to entry-level/non-scored competitions for ages 13 and younger, prior to Dec. 31.</p>
-		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
-		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.  </p>
-		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
-		<p><strong>Coach: </strong>Includes both USSA jumping/nordic combined coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br>
+		<h2>Jumping/Nordic Combined <span class="information">Information</span><br></h2>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
+	
+		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
+		
+		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions. </p>
+		
+		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
+		These members are not eligible for participation in USSA ranking lists. </p>
+		
+		<p><strong>USSA Club Participant:</strong>The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors</strong></p>
+		
+		<h3>Coaches, Officials And Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
+		
+		<p><strong>USSA Club Volunteer</strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		
+		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event.  </font></em></p>		
-		<h3>Attention Coaches and Officials</h3>
+		
+		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
 		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the membership registration process.</p>
-		<p>Coaches and officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		<p>A secure link will be provided at the end of the membership registration process and will also be available on the member dashboard if required.</p>
+		<p>Coaches, Officials and Volunteer members age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
-		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
-		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
-		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
-		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
+		<p>All coaches without certifications are required to take the Fast Start Coaching course.</p>
+		<p>The mandatory $10 Fast Start Coaching Course will be added to your cart where required</p>
+		<p>Coach memberships is not valid until the required Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided the confirmation page.</p>
+		<p><strong>NOTE:</strong> For memberships requiring screening and/or the Fast Start Coaching Course, these memberships will remain on pending status until all requirements are complete.</p>
 		
 	</div>
 	<div id="div4">
-		<h2>Snowboarding <span class="information">Information</span><br>
-		<span style="font-weight:normal;font-size:12px;">SNOWBOARDING includes the following disciplines:
-		<strong>Halfpipe,&nbsp;Gate:&nbsp;PGS&nbsp;(parallel giant slalom)/PSL&nbsp;(parallel slalom),&nbsp;SBX:&nbsp;Boarder Cross,&nbsp;Slopestyle</strong>
-		</span>
-		</h2>
-		<p><strong>National Competitor:</strong> Access to all levels of competition within the USSA snowboarding &quot;development pipeline.&quot;. Membership also includes access to the USSA snowboarding ranking list. Required for FIS registration. </p>
-		<p><strong>Regional Competitor:</strong> Not eligible for elite level events or FIS registration. Includes access to the USSA Snowboard Ranking List. May be upgraded to national level membership during the competitive season.</p>
-		<p><strong>Non-Competing Member:</strong> Appropriate for athletes who may be a member of a USSA club participating in inter club events.  Does not include participation in USSA events or USSA Alpine ranking list.  Done not pay USSA late fee.</p>
-		<h3>Coaches & Officials: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>Official: </strong>Access to clinics, certifications programs and educational materials supporting event officiating.</p> 
-		<p><strong>Volunteer with Screening:</strong> For those 15 years of age and up participating/volunteering at the bluc level.  Background screening required. Does not pay USSA late fee if this the only membership held.</p> 
-		<p><strong>Coach: </strong>Includes both USSA snowboarding coach and official membership, including access to USSA coaches programs, clinics, certification programs and educational materials.<br>
+		<h2>Snowboarding <span class="information">Information</span><br></h2>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
+	
+		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
+		
+		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		International Snowboard Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.</p>
+
+		<p><strong>USSA Club Participant:</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
+		
+		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p> 
+		
+		<p><strong>USSA Club Volunteer:</strong> (with screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		
+		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>		
-		<h3>Attention Coaches and Officials</h3>
+		
+		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
 		<p>Coach, official, and volunteer memberships are not valid until positive background screening results are received by the USSA.</p>
 		<p>Membership verifications will only display memberships not requiring screening until positive results are received by the USSA.</p>
 		<p>If background screening is required, screening registration must be complete within 10 days of membership registration.</p>
 		<p><strong>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your background screening.</strong></p>
 		<p>Please allow several weeks for screening process to be completed. Individual screening times will vary. </p>
-		<p>A secure link will be provided at the end of the membership registration process.</p>
-		<p>Coaches and Officials age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		<p>A secure link will be provided at the end of the membership registration process and will also be available on the member dashboard if required.</p>
+		<p>Coaches, Officials and Volunteer members age 15 to 18 years of age must provide two letters of recommendation in lieu of completing screening detailed above. Detailed instructions are available <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here.</a></p>
+		
 		<h3>Attention Coaches</h3>
-		<p>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></p>
-		<p><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></p>
-		<p>Your coach membership is not valid until the Fast Start coaching course has been completed.</p>
-		<p>A link to the Fast Start coaching course will be provided on both the confirmation page and your MyUSSA account.</p>
-		<p>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</p>
-		<p>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</p>
-		<p>Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop.</p>
+		<p>All coaches without certifications are required to take the Fast Start Coaching course.</p>
+		<p>The mandatory $10 Fast Start Coaching Course will be added to your cart where required</p>
+		<p>Coach memberships is not valid until the required Fast Start coaching course has been completed.</p>
+		<p>A link to the Fast Start coaching course will be provided the confirmation page.</p>
+		<p><strong>NOTE:</strong> For memberships requiring screening and/or the Fast Start Coaching Course, these memberships will remain on pending status until all requirements are complete.</p>
 		
 	</div>
 </body>

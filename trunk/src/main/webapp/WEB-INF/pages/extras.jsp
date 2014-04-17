@@ -19,15 +19,12 @@
 
 <%@ include file="/includes/messages.jsp"%>
 
-
-<div class="extras-header">
-	<p>Bonus Packs</p>
-</div>
 <p>Bonus Packs include a high quality 100% cotton shirt. The U.S. Ski Team packs include a decal strip 
 	 and a 2015 collectors pin. The U.S. Snowboarding pack includes a decal strip and two die cut logo decals.
 	T-shirts available in <strong>adult</strong> sizes only: S, M, L and XL. Packs are $25 each (includes shipping). Each pack is shipped separately.</p>
 <p>Choose from 6 styles: U.S. Ski Team, Alpine, Freestyle, Cross Country, Jumping/Nordic Combined and Snowboarding. 
 <strong>Bonus Packs available to U.S. residents only.</strong> </p>
+<p>Click for larger view.</p>
 <div class="tshirt-row">
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
