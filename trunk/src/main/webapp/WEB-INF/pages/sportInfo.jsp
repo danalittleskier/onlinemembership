@@ -30,7 +30,7 @@
 	</div>
 	<div id="div0">
 		<h2>Alpine Skiing<span class="information"> Information</span><br></h2>
-		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the USSA does not downgrade or transfer memberships.</strong></p>
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships from below</h3>
@@ -41,21 +41,21 @@
 		<p><strong>USSA Youth Competitor:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists <br></p>
 		
-		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe 
-		even competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong> </p>
+		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be 
+		competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong> </p>
 		
 		<p><strong>USSA Master:</strong> For ages 18 and over prior to Dec. 31. The USSA Masters membership gives alpine athletes over the age of 18 access to alpine masters events, including Masters Championships and its qualifying events. 
 		This membership is perfect for adult athletes who are interested in competing with other adults domestically. Required for alpine masters FIS registration.</p>
 		
 		<h3>USSA Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
 		
-		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
 		
-		<p><strong>USSA Club Volunteer</strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications.</p> 
+		<p><strong>USSA Club Volunteer</strong> (with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
 		
-		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, coaches are required to take a short online education program on important coaching guidelines. 
+		<p><strong>USSA Coach </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, coaches are required to take a short online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions. Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>  
 		
@@ -79,7 +79,7 @@
 	</div>
 	<div id="div1">
 		<h2>Freestyle/Freesking <span class="information">Information</span><br></h2>
-		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the USSA does not downgrade or transfer memberships.</strong></p>
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships from below</h3>		
@@ -87,24 +87,24 @@
 		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.  <b>Provides for access to skier halfpipe, slopestyle, big air and skicross events only.</b></p>
 		
 		<p><strong>USSA Freestyle/Freeskiing Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
-		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
+		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
 		
-		<p><strong>USSA Rookie:</strong> : For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
+		<p><strong>USSA Rookie:</strong> For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
 		
 		<p><strong>USSA Youth Competitor:</strong> For ages 12 and younger. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists. </p>
 		
-		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
-		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events.<strong>Not intended for those in a position of authority over minors.</strong> </p>
+		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events.<strong> Not intended for those in a position of authority over minors.</strong> </p>
 		
 		<h3>Coaches, Officials, and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
 		
-		<p><strong>USSA Club Volunteer</strong>(with screening); ): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		<p><strong>USSA Club Volunteer </strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
 		
-		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		<p><strong>USSA Coach </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br> 
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
 		
@@ -128,7 +128,7 @@
 	</div>
 	<div id="div2">
 		<h2>Cross Country <span class="information">Information</span><br></h2>
-		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the USSA does not downgrade or transfer memberships.</strong></p>
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
@@ -139,17 +139,17 @@
 		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists. <br> 
 
-		<p><strong>USSA Club Participant:</strong> AThe new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA Club Participant:</strong> AThe new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
 		
 		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships from below if 15 years of age or older.</h3>
-		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000  events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000  events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA. </p>
 		
-		<p><strong>USSA Club Volunteer </strong> (with background screening) The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications.<strong>Applicable for those in a position of authority over minors. </strong></p> 
+		<p><strong>USSA Club Volunteer </strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
 		
-		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		<p><strong>USSA Coach </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport. <br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>
 		
@@ -173,7 +173,7 @@
 	</div>
 	<div id="div3">
 		<h2>Jumping/Nordic Combined <span class="information">Information</span><br></h2>
-		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the USSA does not downgrade or transfer memberships.</strong></p>
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
@@ -184,17 +184,17 @@
 		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists. </p>
 		
-		<p><strong>USSA Club Participant:</strong>The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA Club Participant:</strong>The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors</strong></p>
 		
 		<h3>Coaches, Officials And Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
 		
-		<p><strong>USSA Club Volunteer</strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		<p><strong>USSA Club Volunteer </strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
 		
-		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		<p><strong>USSA Coach </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event.  </font></em></p>		
 		
@@ -218,7 +218,7 @@
 	</div>
 	<div id="div4">
 		<h2>Snowboarding <span class="information">Information</span><br></h2>
-		<p><strong>USSA memberships may be upgraded during the same season.  However, the UsSA does not downgrade or transfer memberships.</strong></p>
+		<p><strong>USSA memberships may be upgraded during the same season.  However, the USSA does not downgrade or transfer memberships.</strong></p>
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships from below</h3>	
@@ -226,17 +226,17 @@
 		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
 		International Snowboard Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.</p>
 
-		<p><strong>USSA Club Participant:</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and maybe even competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA Club Participant:</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
 		
 		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
-		<p><strong>USSA Official: </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
+		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p> 
 		
-		<p><strong>USSA Club Volunteer:</strong> (with screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a USSA Coach or Official. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		<p><strong>USSA Club Volunteer </strong>(with background screening): The new USSA Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in USSA clubs, divisions, regions, competitions and club training sessions. Each USSA Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
+		This membership is a good stepping stone to becoming a USSA Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
 		
-		<p><strong>USSA Coach: </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
+		<p><strong>USSA Coach </strong>(with background screening): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br>
 		<em><font class="style1"><b>Note:</b> Required for access to coaching credentials at all USSA competitions.  Issuance of credentials to appropriate working coaches is the responsibility of the event. </font></em></p>		
 		
