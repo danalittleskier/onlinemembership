@@ -920,6 +920,7 @@ public class RulesBLImpl implements RulesBL {
 	Set<String> coachesAndOfficials = new HashSet<String>();
 	coachesAndOfficials.addAll(RuleAssociations.coachMemberships);
 	coachesAndOfficials.addAll(RuleAssociations.officialMemberships);
+	coachesAndOfficials.addAll(RuleAssociations.volunteerMemberships);
 	for (MemberTransaction memberTransaction : memberTransactions) {
 	    Inventory inventory = memberTransaction.getInventory();
 	    if (Inventory.INVENTORY_TYPE_MEMBERSHIP.equals(inventory.getInventoryType())) {
