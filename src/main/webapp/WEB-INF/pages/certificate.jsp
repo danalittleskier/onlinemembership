@@ -13,7 +13,7 @@
 			<c:param name="srb" value="11392848"/>
 			<c:param name="id" value="${member.id}"/>
 		</c:url>
-		<p><a href="${ncsiUrl}" target="_BLANK">Go here to complete your backgound screening.</a></p>
+		<p><a href="${ncsiUrl}" target="_BLANK">Go here to complete your background screening.</a></p>
 	</c:when>
 	<c:otherwise>
 		<div class="closeWindowLink"><a href="#" onclick="window.close();">Close Window</a></div>
