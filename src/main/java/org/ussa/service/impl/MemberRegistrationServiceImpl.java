@@ -27,6 +27,7 @@ import org.ussa.dao.InventoryAddDao;
 import org.ussa.dao.InventoryDao;
 import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
+import org.ussa.dao.ClubAffiliationHistoryDao;
 import org.ussa.model.Address;
 import org.ussa.model.AddressPk;
 import org.ussa.model.Inventory;
@@ -37,6 +38,7 @@ import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
 import org.ussa.model.MemberTransaction;
+import org.ussa.model.ClubAffiliationHistory;
 import org.ussa.service.BatchService;
 import org.ussa.service.CreditCardProcessingService;
 import org.ussa.service.MemberRegistrationService;
@@ -47,6 +49,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 	private DateBL dateBL;
 	private MemberDao memberDao;
 	private MemberClubDao memberClubDao;
+	private ClubAffiliationHistoryDao clubAffiliationDao;
 	private BatchService batchService;
 	private CreditCardProcessingService creditCardProcessingService;
 	private UniversalDao universalDao;
@@ -92,6 +95,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 
 			// MEMBERCLUB
 			MemberClub memberClub;
+			
 			try {
 				memberClub = memberClubDao.get(member.getId());
 			} catch (ObjectRetrievalFailureException e) {
@@ -108,6 +112,17 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 				memberClubDao.remove(memberClub);
 			}
 
+			//CLUBAFFILIATIONHISTORY
+			ClubAffiliationHistory clubAffiliationHistory = new ClubAffiliationHistory();
+			if (accountBean.getClubId() != null && accountBean.getClubId() > 0) {
+				clubAffiliationHistory.setIndUssaId(member.getId());
+				clubAffiliationHistory.setClubUssaId(accountBean.getClubId());
+				clubAffiliationHistory.setProcessDate(today.getTime());
+				clubAffiliationHistory.setChangedBy("OnlineMembership");
+				//universalDao.save(clubAffiliationHistory);
+				clubAffiliationDao.save(clubAffiliationHistory);
+			}
+			
 			// MEMBERADDRESS
 			Address address = accountBean.getAddress();
 			address.setBadAddress("N");
@@ -277,6 +292,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 
 	public void setMemberClubDao(MemberClubDao memberClubDao) {
 		this.memberClubDao = memberClubDao;
+	}
+	
+	public void setClubAffiliationHistoryDao(ClubAffiliationHistoryDao clubAffiliationDao){
+		this.clubAffiliationDao = clubAffiliationDao;
 	}
 
 	public void setDateBL(DateBL dateBL) {

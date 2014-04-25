@@ -16,6 +16,9 @@
 	<bean id="memberClubDao" class="org.ussa.dao.impl.MemberClubDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
+	<bean id="clubAffiliationHistoryDao" class="org.ussa.dao.impl.ClubAffiliationHistoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 	<bean id="divisionDao" class="org.ussa.dao.impl.DivisionDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
@@ -149,6 +152,7 @@
 		<property name="creditCardProcessingService" ref="creditCardProcessingService"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="memberClubDao" ref="memberClubDao"/>
+		<property name="clubAffiliationHistoryDao" ref="clubAffiliationHistoryDao"/>
 		<property name="batchService" ref="batchService"/>
 		<property name="universalDao" ref="universalDao"/>
 		<property name="inventoryAddDao" ref="inventoryAddDao"/>
