@@ -45,6 +45,7 @@ import org.ussa.dao.MemberClubDao;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.MemberLegalDao;
 import org.ussa.dao.MemberSeasonDao;
+import org.ussa.dao.ClubAffiliationHistoryDao;
 import org.ussa.dao.NationDao;
 import org.ussa.dao.StateDao;
 import org.ussa.dao.impl.InventoryAddDaoImpl;
@@ -59,6 +60,7 @@ import org.ussa.model.Division;
 import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberClub;
+import org.ussa.model.ClubAffiliationHistory;
 import org.ussa.model.MemberLegal;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberSeasonPk;
@@ -79,6 +81,7 @@ public class RegistrationAction extends FormAction implements Serializable {
     private NationDao nationDao;
     private ClubDao clubDao;
     private MemberClubDao memberClubDao;
+    private ClubAffiliationHistoryDao clubAffiliationHistoryDao;
     private DivisionDao divisionDao;
     private InventoryDao inventoryDao;
     private MemberLegalDao memberLegalDao;
@@ -110,6 +113,10 @@ public class RegistrationAction extends FormAction implements Serializable {
 	this.memberClubDao = memberClubDao;
     }
 
+    public void setClubAffiliationHistoryDao(ClubAffiliationHistoryDao clubAffiliationHistoryDao){
+    this.clubAffiliationHistoryDao = clubAffiliationHistoryDao;
+    }
+    
     public void setDivisionDao(DivisionDao divisionDao) {
 	this.divisionDao = divisionDao;
     }

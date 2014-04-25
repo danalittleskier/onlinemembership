@@ -7,6 +7,7 @@
 		<property name="addressDao" ref="addressDao"/>
 		<property name="clubDao" ref="clubDao"/>
 		<property name="memberClubDao" ref="memberClubDao"/>
+		<property name="clubAffiliationHistoryDao" ref="clubAffiliationHistoryDao"/>
 		<property name="divisionDao" ref="divisionDao"/>
 		<property name="memberDao" ref="memberDao"/>
 		<property name="stateDao" ref="stateDao"/>
