@@ -40,7 +40,7 @@ Statement
 *Children must be protected from harm, abuse, and degrading treatments. <br>
 *Parents must be involved in any action taken to intervene in behalf of their child.<br>
 <br>
-Overview 
+<b>Overview </b>
 <br>
 These guidelines are intended to raise awareness and:<br>
 *Promote Good Practice. <br>
@@ -49,12 +49,12 @@ These guidelines are intended to raise awareness and:<br>
 <br>
 <b>Positions of Trust</b>
 <br>
-Good Practice
+Good Practice<br>
 *The welfare of the child is the primary concern.<br>
 *Be aware that the closeness of the coach/athlete relationship may encourage<br>
 feelings that are not directly related to the sport. <br>
 *Set out and maintain appropriate boundaries.<br>
-*Promote fairness,<br>
+*Promote fairness.<br>
 *Prevent and correct bullying. <br>
 *Treat all children equally, with dignity and respect. <br>
 *Give enthusiastic and constructive advice rather than criticism.<br>
@@ -99,7 +99,8 @@ Good Practice
 *Where you are close to a child, you may gather very personal information about
 the child. <br>
 *Try to make the child aware of the importance and implications of the information
-he is sharing. Unacceptable Behavior<br>
+he is sharing.<br> 
+<br>Unacceptable Behavior<br>
 *You should never encourage confidences, or intrude into the private life of the child.<br>
 *Maintain appropriate boundaries.<br>
 <br>
@@ -128,7 +129,7 @@ Good Practice
 *Always project a favorable image of the sport, the Olympic movement, USSA,
 and FIS. <br>
 *Always project an image of health, cleanliness and efficiency.
-<br>
+<br><br>
 Unacceptable Behavior
 <br>
 *Do not smoke, or drink alcohol to excess, when in the company of children. <br>
@@ -162,7 +163,7 @@ disregard the capacity if the child's immature and growing body.<br>
 *May involve telling a child that he/she is useless, devaluing them. <br>
 *Constant criticism and negative feedback. <br>
 *Shouting threats or taunts. <br>
-*Unrealistic expectation of performance at levels<br>
+*Unrealistic expectation of performance at levels
 above a child's capability.<br>
 <br>
 <b>Neglect</b>
