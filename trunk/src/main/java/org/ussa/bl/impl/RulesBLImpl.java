@@ -482,21 +482,19 @@ public class RulesBLImpl implements RulesBL {
 	// If you purchase more than one membership then subsequent ones should be discounted $35 or $25
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
-
-	    if (fullPriceMembership.getInventory().getId().equals(invId) ) {
+	    
+	    if (RuleAssociations.nonCompetingMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    	
 		// This is your full price membership. The rest are discounted.
-		membership.setDiscount(null);
-	    } else {
-	    if(RuleAssociations.nonCompetingMemberships.contains(invId)){
 	    	membership.setDiscount(null);
-	    }
+	    } else {	    
 		// If you are adding or have a membership from the 25 dollar group then the discount is 25 otherwise 35.
-	    else if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
+	    if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
 		    membership.setDiscount(new BigDecimal(25));
 		} else {
 		    membership.setDiscount(new BigDecimal(35));
 		}
 	    }
+	    
 	}
     }
 
@@ -512,10 +510,10 @@ public class RulesBLImpl implements RulesBL {
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
 	    // as soon as we find a membership from the 35 dollar discount group, return it and we are done.
-	    if (!RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
-		return membership;
+	    if (!RuleAssociations.nonCompetingMemberships.contains(invId) && !RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId) ) {
+	    	return membership;
 	    } else if (firstFrom25DollarDiscoutGroup == null) {
-		firstFrom25DollarDiscoutGroup = membership;
+	    	firstFrom25DollarDiscoutGroup = membership;
 	    }
 	}
 
@@ -663,10 +661,16 @@ public class RulesBLImpl implements RulesBL {
 
 	Date now = new Date();
 	Date lateRenewDate = dateBL.getLateRenewDate();
-
+	String stateCode = member.getStateCode();
+	String divisionCode = member.getDivision().getDivisionCode();
+	
+	if(divisionCode.equalsIgnoreCase("X")){
+		divisionCode = divisionAffiliationDao.getDivisionAffiliations(stateCode).get(0).getDivision().getDivisionCode();
+	}
+	
 	// RE-CALCULATE AND RE-ADD DIVISION AND STATE DUES
 	if (!cart.containsAny(RuleAssociations.membershipsExemptFromDues)) {
-	    String stateCode = member.getStateCode();
+	    
 	    Integer age = getAgeForCurrentRenewSeason(member.getBirthDate());
 	    List<LineItemBean> membershipLineItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
 	    List<String> membershipIds = new ArrayList<String>();
@@ -674,6 +678,7 @@ public class RulesBLImpl implements RulesBL {
 		membershipIds.add(lineItem.getInventory().getId());
 	    }
 	    List<Inventory> stateDues = stateDuesRulesDao.getStateDues(stateCode, age, membershipIds, false);
+	    List<Inventory> divDues = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, false);
 
 	    if (stateDues.size() > 0) {
 		Inventory mostExpensive = getMostExpensive(stateDues);
@@ -686,12 +691,8 @@ public class RulesBLImpl implements RulesBL {
 			cart.addItem(lateFee);
 		    }
 		}
-	    } else {
-		String divisionCode = member.getDivision().getDivisionCode();
-		
-		if(divisionCode.equalsIgnoreCase("X")){
-			divisionCode = divisionAffiliationDao.getDivisionAffiliations(stateCode).get(0).getDivision().getDivisionCode();
-		}
+	    } 
+	    if(divDues.size() > 0){		
 
 		List<Inventory> allDues = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, false);
 		List<Inventory> applicableDues = new ArrayList<Inventory>();
