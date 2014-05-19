@@ -23,9 +23,9 @@ Please read carefully before signing.
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 <p>
 
-Any USSA athlete under the age of 18 years suspected of having sustained a concussion or traumatic head injury must be removed immediately from participation in USSA sporting event (e.g. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or USSA member coach overseeing such sporting event.  The minor athlete will be prohibited from further participation until evaluated and cleared 
+Any USSA athlete suspected of having sustained a concussion or traumatic head injury must be removed immediately from participation in USSA sporting event (e.g. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or USSA member coach overseeing such sporting event.  The athlete will be prohibited from further participation until evaluated and cleared 
 in writing to resume participation in USSA sporting events by a qualified health care provider trained in the evaluation and management of concussive head injuries.  The health care professional must certify to USSA in the clearance letter that he/she has successfully completed a continuing education course in the evaluation and management of concussive head injuries within three years of the day on which the written statement is made.
-Upon removal of a minor athlete from participation for a suspected concussion or traumatic head injury, the USSA TD or member coach making the removal must inform USSA Competition Services.  Athletes who have subsequently been medically cleared to resume participation must provide such medical clearance (as described above) to USSA Competition Service in order to be permitted to participate in USSA sporting events.
+Upon removal of an athlete from participation for a suspected concussion or traumatic head injury, the USSA TD or member coach making the removal must inform USSA Competition Services.  Athletes who have subsequently been medically cleared to resume participation must provide such medical clearance (as described above) to USSA Competition Service in order to be permitted to participate in USSA sporting events.
 <br><br>
 About Concussion 
 <br>
