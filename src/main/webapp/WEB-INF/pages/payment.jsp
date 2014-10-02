@@ -84,21 +84,23 @@
 			</a>
 			</span>
 		<br/><br/>
-		<p style="clear: left;">Please note your billing address below if different from your mailing address:</p>
 <%--
+		<p style="clear: left;">Please note your billing address below if different from your mailing address:</p>
+
 		<label for="">* First Name:</label>
 		<form:input path="paymentBean.firstName" maxlength="50"/><br/>
 		<label for="">* Last Name:</label>
 		<form:input path="paymentBean.lastName" maxlength="50"/><br/>
---%>
+
 		<label for="">Billing Address (enter only the NUMERIC portion):</label>
 		<form:input path="paymentBean.address" maxlength="60"/><br/>
-<%--
+
 		<label for="">* City:</label>
 		<form:input path="paymentBean.city" maxlength="40"/><br/>
---%>
+
 		<label for="">Zip/Postal Code:</label>
 		<form:input path="paymentBean.zip" maxlength="20"/><br/>
+--%>
 	</fieldset>
 	<fieldset class="buttons">
 		<label></label>
