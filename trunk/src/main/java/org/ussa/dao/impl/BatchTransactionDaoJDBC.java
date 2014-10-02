@@ -4,6 +4,7 @@ import javax.sql.DataSource;
 import java.sql.Types;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.text.ParseException;
 import java.util.List;
 
 import org.apache.commons.lang.StringUtils;
@@ -89,6 +90,8 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 			log.warn("Batch Id = " + batchId);
 			log.warn("Batch Sequence = " + batchSequence);
 			log.warn("Ussa Id = " + member.getId());
+			log.warn("First Name = " +member.getFirstName() + " Last Name = "+member.getLastName());
+			log.warn("Email = " + member.getEmail());
 			log.warn("Inventory Id = " + inventory.getId());
 			log.warn("Quantity = " + lineItem.getQty());
 			log.warn("Amount = " + lineItem.getDiscountedAmount());
@@ -100,9 +103,11 @@ public class BatchTransactionDaoJDBC implements BatchTransactionDao
 		log.warn("After batchdetail table Batch sequence = " + batchSequence);
 		log.warn("Ussa Id = " + member.getId());
 		
+		
 		InsertBatchSequence bs = new InsertBatchSequence(getDataSource());
 		Object[] seqParams = {batchId, batchSequence};
 		bs.update(seqParams);
+		
 
 	}
 
