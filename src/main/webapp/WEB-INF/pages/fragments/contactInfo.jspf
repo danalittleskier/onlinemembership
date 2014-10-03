@@ -29,7 +29,7 @@
 	<label for="">* Last Name</label>
 	<form:input disabled="true" path="member.lastName" size="30" maxlength="30" /><br />
 	<label for="">Suffix</label>
-	<form:input path="member.suffixName" size="30" maxlength="30" /><br />
+	<form:input path="member.suffixName" size="8" maxlength="8" /><br />
 	</c:when>
 	<c:otherwise>
 	<label for="">* First Name</label>
@@ -39,7 +39,7 @@
 	<label for="">* Last Name</label>
 	<form:input path="member.lastName" size="30" maxlength="30"/><br />
 	<label for="">Suffix</label>
-	<form:input path="member.suffixName" size="30" maxlength="30"/><br />
+	<form:input path="member.suffixName" size="8" maxlength="8"/><br />
 	
 	</c:otherwise>
 	</c:choose>
