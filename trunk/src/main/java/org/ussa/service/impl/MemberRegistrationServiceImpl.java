@@ -91,6 +91,16 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			member.setModifiedDate(today.getTime());
 			member.setExpireSeason(currentSeason);
 			member.setCardPrintFlag("Y");
+			
+			log.warn("Beginning Member");
+			log.warn("USSA Id: " + member.getId());
+			log.warn("First Name: " + member.getFirstName());
+			log.warn("Middle Initial: " + member.getMiddleName());
+			log.warn("Last Name: " + member.getLastName());
+			log.warn("Suffix: " + member.getSuffixName());
+			log.warn("Birth Date: " + member.getBirthDate());
+			log.warn("Email: " + member.getEmail());
+			log.warn("End Member");
 			member = memberDao.save(member);
 
 			// MEMBERCLUB
