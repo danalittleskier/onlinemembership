@@ -115,7 +115,7 @@
 	</c:if>
 	<c:if test="${not empty accountBean.magazineItems}">
 		<fieldset>
-			<legend>Magazine Options</legend>
+			<legend>Magazine and Digital Content Options</legend>
 			<table style="margin-left:195px;">
 					
 				<c:forEach var="magazineItem" items="${accountBean.magazineItems}" varStatus="varStatus">
@@ -148,7 +148,7 @@
 					</tr>
 					
 			</table>
-			*By opting in to Ski Racing, you agree to receive digital issues by email.
+			*By opting in to Ski Racing, you agree to receive notices by email.
 		</fieldset>
 	</c:if>
 	<fieldset>
