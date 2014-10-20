@@ -29,7 +29,8 @@
 	<label for="">* Last Name</label>
 	<form:input disabled="true" path="member.lastName" size="30" maxlength="30" /><br />
 	<label for="">Suffix</label>
-	<form:input path="member.suffixName" size="8" maxlength="8" /><br />
+	<form:input disabled="true" path="member.suffixName" size="8" maxlength="8"/><br />
+
 	</c:when>
 	<c:otherwise>
 	<label for="">* First Name</label>
@@ -38,9 +39,21 @@
 	<form:input path="member.middleName" size="2" maxlength="1" /><br />
 	<label for="">* Last Name</label>
 	<form:input path="member.lastName" size="30" maxlength="30"/><br />
-	<label for="">Suffix</label>
-	<form:input path="member.suffixName" size="8" maxlength="8"/><br />
 	
+	<label for="">Suffix</label>
+	<form:select path="member.suffixName">
+				<form:option value=""></form:option>
+				<form:option value="Sr">Sr</form:option>
+				<form:option value="Jr">Jr</form:option>
+				<form:option value="I">I</form:option>
+				<form:option value="II">II</form:option>
+				<form:option value="III">III</form:option>
+				<form:option value="IV">IV</form:option>
+				<form:option value="V">V</form:option>
+				<form:option value="Dr">Dr</form:option>
+				<form:option value="PhD">PhD</form:option>
+
+	</form:select>
 	</c:otherwise>
 	</c:choose>
 	
