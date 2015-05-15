@@ -198,7 +198,7 @@ public class RulesBLImpl implements RulesBL {
 	}
 
 	// If a member holds an Alpine Competitor or Disabled Alpine Competior membership and is 18 or over, they may not add an Alpine Master membership.
-	if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR)) && (age != null && age >= 18)) {
+	if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR_U16) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR)) && (age != null && age >= 18)) {
 	    return true;
 	}
 
@@ -404,6 +404,9 @@ public class RulesBLImpl implements RulesBL {
 				if(cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
 					cartBean.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING);
 				}
+				if(cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF)){
+					cartBean.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF);
+				}
 			}
 		    }
 		}
@@ -428,7 +431,7 @@ public class RulesBLImpl implements RulesBL {
 
 
 	    // If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
-	    if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && (Inventory.INV_ID_ALPINE_COMPETITOR.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId()))) {
+	    if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && (Inventory.INV_ID_ALPINE_COMPETITOR_U16.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId()))) {
 		LineItemBean lineItem = cartBean.getLineItem(Inventory.INV_ID_ALPINE_MASTER);
 		messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
 		cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
@@ -488,11 +491,12 @@ public class RulesBLImpl implements RulesBL {
 	    	membership.setDiscount(null);
 	    } else {	    
 		// If you are adding or have a membership from the 25 dollar group then the discount is 25 otherwise 35.
-	    if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
-		    membership.setDiscount(new BigDecimal(25));
-		} else {
-		    membership.setDiscount(new BigDecimal(35));
-		}
+	   // if (RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId)) {
+		    //membership.setDiscount(new BigDecimal(25));
+		    membership.setDiscount(membership.getAmount());
+		//} else {
+		//    membership.setDiscount(new BigDecimal(35));
+		//}
 	    }
 	    
 	}
@@ -507,16 +511,23 @@ public class RulesBLImpl implements RulesBL {
      */
     private LineItemBean chooseTheFullPriceMembership(List<LineItemBean> memberships) {
 	LineItemBean firstFrom25DollarDiscoutGroup = null;
+	Double fullAmount = 0.0;
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
+	    Double membershipAmount = membership.getAmount().doubleValue();
+	    
 	    // as soon as we find a membership from the 35 dollar discount group, return it and we are done.
-	    if (!RuleAssociations.nonCompetingMemberships.contains(invId) && !RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId) ) {
-	    	return membership;
-	    } else if (firstFrom25DollarDiscoutGroup == null) {
+	    //if (!RuleAssociations.nonCompetingMemberships.contains(invId) && !RuleAssociations.twentyFiveDollarDiscountGroup.contains(invId) ) {
+	    //	return membership;
+	    //} else if (firstFrom25DollarDiscoutGroup == null) {
+	    //	firstFrom25DollarDiscoutGroup = membership;
+	    //}
+	    if(membershipAmount > fullAmount){
+	    	fullAmount = membershipAmount;
 	    	firstFrom25DollarDiscoutGroup = membership;
 	    }
+	    
 	}
-
 	return firstFrom25DollarDiscoutGroup;
     }
 
@@ -541,6 +552,9 @@ public class RulesBLImpl implements RulesBL {
 	if(RuleAssociations.coachMemberships.contains(invId)){
 		if(cart.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING)){
 			cart.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING);
+		}
+		if(cart.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF)){
+			cart.removeLineItem(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF);
 		}
 	}
 	
@@ -858,8 +872,14 @@ public class RulesBLImpl implements RulesBL {
         		}
         		
         	}       	    		
-    		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && needsFastStart.equals("Y")){
-    			cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
+    		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && !cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF)  && needsFastStart.equals("Y")){
+    			if(memberSeason != null){
+    				cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF));
+    			}
+    			else{
+    				cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));
+    			}
+    			
     		}   		
     		return true;
     	}    	

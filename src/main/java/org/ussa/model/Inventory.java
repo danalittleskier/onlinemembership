@@ -57,21 +57,30 @@ public class Inventory implements Serializable
 	public static final String INV_ID_ALPINE_ASSOCIATE = "AA";
 	public static final String INV_ID_ALPINE_COACH = "ACO";
 	public static final String INV_ID_ALPINE_COMPETITOR = "AC";
+	public static final String INV_ID_ALPINE_COMPETITOR_U10 = "AC U10";
+	public static final String INV_ID_ALPINE_COMPETITOR_U12 = "AC U12";
+	public static final String INV_ID_ALPINE_COMPETITOR_U14 = "AC U14";
+	public static final String INV_ID_ALPINE_COMPETITOR_U16 = "AC U16";
 	public static final String INV_ID_ALPINE_MASTER = "AM";
 	public static final String INV_ID_ALPINE_STUDENT = "AS";
 	public static final String INV_ID_ALPINE_OFFICIAL = "AO";
 	public static final String INV_ID_ALPINE_YOUTH = "AY";
 	public static final String INV_ID_ALPINE_VOLUNTEER = "AV";
-	public static final String INV_ID_ALPINE_NON_COMPETING = "AP";
+	public static final String INV_ID_ALPINE_NON_COMPETING = "AG";
 
 	// Cross country memberships
 	public static final String INV_ID_CROSS_COUNTRY_ASSOCIATE = "XA";
 	public static final String INV_ID_CROSS_COUNTRY_COACH = "XCO";
 	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR = "XC";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR_U10 = "XC U10";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR_U12 = "XC U12";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR_U14 = "XC U14";
+	public static final String INV_ID_CROSS_COUNTRY_COMPETITOR_U16 = "XC U16";
 	public static final String INV_ID_CROSS_COUNTRY_YOUTH = "XY";
 	public static final String INV_ID_CROSS_COUNTRY_OFFICIAL = "XO";
 	public static final String INV_ID_CROSS_COUNTRY_VOLUNTEER = "XV";
-	public static final String INV_ID_CROSS_COUNTRY_NON_COMPETING = "XP";
+	public static final String INV_ID_CROSS_COUNTRY_NON_COMPETING = "XG";
+	public static final String INV_ID_CROSS_COUNTRY_MASTER = "XM";
 
 	// Disabled Alpine memberships
 	public static final String INV_ID_DISABLED_ALPINE_ASSOCIATE = "DAA";
@@ -85,21 +94,37 @@ public class Inventory implements Serializable
 	public static final String INV_ID_FREESTYLE_ASSOCIATE = "FA";
 	public static final String INV_ID_FREESTYLE_COACH = "FCO";
 	public static final String INV_ID_FREESTYLE_COMPETITOR = "FC";
+	public static final String INV_ID_FREESTYLE_COMPETITOR_U09 = "FC U9";
+	public static final String INV_ID_FREESTYLE_COMPETITOR_U11 = "FC U11";
+	public static final String INV_ID_FREESTYLE_COMPETITOR_U13 = "FC U13";
+	public static final String INV_ID_FREESTYLE_COMPETITOR_U15 = "FC U15";
 	public static final String INV_ID_FREESTYLE_OFFICIAL = "FO";
 	public static final String INV_ID_FREESTYLE_ROOKIE = "FR";
 	public static final String INV_ID_FREESTYLE_YOUTH = "FY";
 	public static final String INV_ID_FREESKIING_COMPETITOR = "FSC";
+	public static final String INV_ID_FREESKIING_COMPETITOR_U09 = "FSC U9";
+	public static final String INV_ID_FREESKIING_COMPETITOR_U11 = "FSC U11";
+	public static final String INV_ID_FREESKIING_COMPETITOR_U13 = "FSC U13";
+	public static final String INV_ID_FREESKIING_COMPETITOR_U15 = "FSC U15";
 	public static final String INV_ID_FREESTYLE_VOLUNTEER ="FV";
-	public static final String INV_ID_FREESTYLE_NON_COMPETING = "FP";
+	public static final String INV_ID_FREESTYLE_NON_COMPETING = "FG";
+	public static final String INV_ID_FREESKIING_OFFICIAL = "FSO";
+	public static final String INV_ID_FREESKIING_VOLUNTEER = "FSV";
+	public static final String INV_ID_FREESKIING_COACH = "FSCO";
 
 	// Jumping / Nordic Combined memberships
 	public static final String INV_ID_JUMPING_ASSOCIATE = "JA";
 	public static final String INV_ID_JUMPING_COACH = "JCO";
 	public static final String INV_ID_JUMPING_COMPETITOR = "JC";
+	public static final String INV_ID_JUMPING_COMPETITOR_U10 = "JC U10";
+	public static final String INV_ID_JUMPING_COMPETITOR_U12 = "JC U12";
+	public static final String INV_ID_JUMPING_COMPETITOR_U14 = "JC U14";
+	public static final String INV_ID_JUMPING_COMPETITOR_U16 = "JC U16";
 	public static final String INV_ID_JUMPING_YOUTH = "JY";
 	public static final String INV_ID_JUMPING_OFFICIAL = "JO";
 	public static final String INV_ID_JUMPING_VOLUNTEER = "JV";
-	public static final String INV_ID_JUMPING_NON_COMPETING ="JP";
+	public static final String INV_ID_JUMPING_NON_COMPETING ="JG";
+	public static final String INV_ID_JUMPING_MASTER = "JM";
 
 	// Snowboarding memberships
 	public static final String INV_ID_SNOWBOARD_ASSOCIATE = "BA";
@@ -108,7 +133,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_SNOWBOARD_COMPETITOR_REGIONAL = "BCR";
 	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
 	public static final String INV_ID_SNOWBOARD_VOLUNTEER = "BV";
-	public static final String INV_ID_SNOWBOARD_NON_COMPETING = "BP";
+	public static final String INV_ID_SNOWBOARD_NON_COMPETING = "BG";
 
 	// FIS
 	public static final String INV_ID_ALPINE_FIS = "FISA";
@@ -186,6 +211,10 @@ public class Inventory implements Serializable
 	public static final String INV_ID_BONUS_DECALS_SNOWBOARD = "DECSB";
 	public static final String INV_ID_BONUS_DECALS_SKI_TEAM = "DECSKI";
 	public static final String INV_ID_BONUS_PACK_NOMAG = "BPNM";
+	public static final String INV_ID_BONUS_FREESKIING_LARGE = "BPRL";
+	public static final String INV_ID_BONUS_FREESKIING_MEDIUM = "BPRM";
+	public static final String INV_ID_BONUS_FREESKIING_SMALL = "BPRS";
+	public static final String INV_ID_BONUS_FREESKIING_EXTRA_LARGE = "BPRX";
 	
 	// Global Rescueo
 	public static final String INV_ID_SPONSORS_FAMILY="GRF";
@@ -195,6 +224,7 @@ public class Inventory implements Serializable
 	//COACHES CLINICS COURSES
 	
 	public static final String INV_ID_CLINIC_FAST_START_COACHING = "FSCC";
+	public static final String INV_ID_CLINIC_FAST_START_COACHING_REF = "FSCC_REF";
 
 
 

@@ -466,6 +466,26 @@
 					<var-value>1000</var-value>
 				</var>
 			</field>
+			<field property="extrasBean.freeskiingOption" depends="validWhen">
+				<msg name="validWhen" key="errors.qty.no.size"/>
+				<var>
+					<var-name>test</var-name>
+					<var-value>(((*this* == null) and (extrasBean.freeskiingQty == null)) or ((*this* != null) and (extrasBean.freeskiingQty != null)))</var-value>
+				</var>
+			</field>
+			<field property="extrasBean.freeskiingQty" depends="intRange">
+				<arg0 key="label.quantity" />
+				<arg1 key="1" resource="false"/>
+				<arg2 key="1000" resource="false"/>
+				<var>
+					<var-name>min</var-name>
+					<var-value>1</var-value>
+				</var>
+				<var>
+					<var-name>max</var-name>
+					<var-value>1000</var-value>
+				</var>
+			</field>
 			<field property="extrasBean.crossCountryOption" depends="validWhen">
 				<msg name="validWhen" key="errors.qty.no.size"/>
 				<var>

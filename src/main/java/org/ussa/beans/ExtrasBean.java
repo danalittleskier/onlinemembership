@@ -30,6 +30,9 @@ public class ExtrasBean implements Serializable
 	
 	private String noBonusPackMag;
 	private String noBonusPackMagQty;
+	
+	private String freeskiingOption;
+	private String freeskiingQty;
 
 
 	public String getAlpineOption()
@@ -207,5 +210,22 @@ public class ExtrasBean implements Serializable
 	public void setNoBonusPackMagQty(String noBonusPackMagQty) {
 		this.noBonusPackMagQty = noBonusPackMagQty;
 	}
+
+	public String getFreeskiingOption() {
+		return freeskiingOption;
+	}
+
+	public void setFreeskiingOption(String freeskiingOption) {
+		this.freeskiingOption = freeskiingOption;
+	}
+
+	public String getFreeskiingQty() {
+		return freeskiingQty;
+	}
+
+	public void setFreeskiingQty(String freeskiingQty) {
+		this.freeskiingQty = freeskiingQty;
+	}
+	
 	
 }

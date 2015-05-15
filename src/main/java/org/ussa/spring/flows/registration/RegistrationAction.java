@@ -831,6 +831,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 
 	    handleOption(cartBean, extrasBean.getAlpineOption(), extrasBean.getAlpineQty());
 	    handleOption(cartBean, extrasBean.getFreestyleOption(), extrasBean.getFreestyleQty());
+	    handleOption(cartBean, extrasBean.getFreeskiingOption(), extrasBean.getFreeskiingQty());
 	    handleOption(cartBean, extrasBean.getCrossCountryOption(), extrasBean.getCrossCountryQty());
 	    handleOption(cartBean, extrasBean.getJumpingOption(), extrasBean.getJumpingQty());
 	    handleOption(cartBean, extrasBean.getBoardingOption(), extrasBean.getBoardingQty());
