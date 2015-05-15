@@ -34,14 +34,13 @@
 		<p><strong>Please contact Member Services with questions at 435.647.2666 or by email at membership@ussa.org.</strong></p>
 	
 		<h3>USSA Athletes: You may choose one of the memberships listed below</h3>
-		<p><strong>USSA Competitor:</strong> For ages 12 and older prior to Dec. 31. The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as International Ski Federation 
-		ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.<br> 
+		<p><strong>USSA Competitor:</strong> For ages 12 and older prior to Dec. 31. The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. This membership is required for FIS registration and FIS level competitions.<br> 
 		<em><font class="style1"><b>Note:</b> Alpine competitors 18 - 24 may race in Alpine Masters races (excluding championships).</font></em></p>
 		
 		<p><strong>USSA Youth Competitor:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists <br></p>
 		
-		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be 
+		<p><strong>USSA General Member:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be 
 		competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong> </p>
 		
 		<p><strong>USSA Master:</strong> For ages 18 and over prior to Dec. 31. The USSA Masters membership gives alpine athletes over the age of 18 access to alpine masters events, including Masters Championships and its qualifying events. 
@@ -86,15 +85,12 @@
 		<p><strong>USSA Freeskiing Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
 		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.  <b>Provides for access to skier halfpipe, slopestyle, big air and skicross events only.</b></p>
 		
-		<p><strong>USSA Freestyle/Freeskiing Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
+		<p><strong>USSA Freestyle/Freeskiing Competitor:</strong>  The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
 		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions. <b>Provides for access to skier aerial and mogul events.  May also participate in skier halfpipe, slopestyle, big air and skicross events.</b> </p>
 		
 		<p><strong>USSA Rookie:</strong> For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
 		
-		<p><strong>USSA Youth Competitor:</strong> For ages 12 and younger. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
-		These members are not eligible for participation in USSA ranking lists. </p>
-		
-		<p><strong>USSA Club Participant:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA General Member:</strong> The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events.<strong> Not intended for those in a position of authority over minors.</strong> </p>
 		
 		<h3>Coaches, Officials, and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
@@ -139,8 +135,10 @@
 		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
 		These members are not eligible for participation in USSA ranking lists. <br> 
 
-		<p><strong>USSA Club Participant:</strong> A the new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA General Member:</strong> A the new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
+		
+		<p><strong>USSA Master</strong> For ages 30 and over prior to Dec. 31. The USSA Masters membership gives cross country athletes  over the age of 30 access to cross country events This membership is perfect for adult athletes who are interested in competing with other adults domestically</p>
 		
 		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships from below if 15 years of age or older.</h3>
 		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000  events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
@@ -181,12 +179,11 @@
 		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
 		International Ski Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions. </p>
 		
-		<p><strong>USSA Nordic Kid:</strong> For ages 13 and younger prior to Dec. 31. The USSA Youth Competitor membership provides access to entry-level/non-scored USSA competitions. USSA Youth Competitor memberships are designed for athletes who have just begun competing but are not yet participating in scored events. 
-		These members are not eligible for participation in USSA ranking lists. </p>
-		
-		<p><strong>USSA Club Participant:</strong>The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA General Member:</strong>The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors</strong></p>
 		
+		<p><strong>USSA Master</strong> For ages 30 and over prior to Dec. 31. The USSA Masters membership gives cross country athletes  over the age of 30 access to cross country events This membership is perfect for adult athletes who are interested in competing with other adults domestically</p>
+			
 		<h3>Coaches, Officials And Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
 		<p><strong>USSA Official </strong>(with background screening): Competitive events are the core of USSA's programs with a network of over 4,000 events, all managed by USSA Officials. Each USSA Official is background screened to help provide a SafeSport environment in clubs. 
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p>
@@ -226,7 +223,7 @@
 		<p><strong>USSA Competitor:</strong> The USSA Competitor membership provides access to all levels of USSA scored and non-scored competitions at the local, divisional, regional and national level. Competitor memberships include scoring on national ranking lists as well as 
 		International Snowboard Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.</p>
 
-		<p><strong>USSA Club Participant:</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA General Member:</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
 		
 		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>

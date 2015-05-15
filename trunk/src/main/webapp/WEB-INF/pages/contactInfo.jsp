@@ -73,7 +73,7 @@ if(session.getAttribute("FirstTime") == null){
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-<li style="padding-bottom:4px;">You are registering for the 2014-15 competition season, which runs from July 1, 2014 through June 30, 2015. 
+<li style="padding-bottom:4px;">You are registering for the 2015-16 competition season, which runs from July 1, 2015 through June 30, 2016. 
 			Memberships expire annually on June 30, regardless of the date of registration. </li>
 <li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferable.</strong></li>
 <li style="padding-bottom:4px;">Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
