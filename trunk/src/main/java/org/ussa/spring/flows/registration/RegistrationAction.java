@@ -649,10 +649,11 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    accountBean.setNeedsBackground(false);
 	}
 
-	if (rulesBL.needsFastStartCourse(accountBean)){
-		accountBean.setNeedsFastStartCourse(true);
-	} else {
-		accountBean.setNeedsFastStartCourse(false);
+	if (rulesBL.needsFastStartCourse(accountBean)){		
+			accountBean.setNeedsFastStartCourse(true);
+		} 
+    else {
+			accountBean.setNeedsFastStartCourse(false);
 	}
 	// this is needed to determine whether or not to show the backgroundScreeningPopup
 	HttpServletRequest request = ((ServletExternalContext) context.getExternalContext()).getRequest();

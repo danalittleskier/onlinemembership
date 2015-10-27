@@ -215,6 +215,23 @@ public class RuleAssociations
 		youthMemberships.add(Inventory.INV_ID_FREESTYLE_ROOKIE);
 		youthMemberships.add(Inventory.INV_ID_JUMPING_YOUTH);
 		youthMemberships.add(Inventory.INV_ID_FREESTYLE_YOUTH);
+		//new memberships
+		youthMemberships.add(Inventory.INV_ID_ALPINE_COMPETITOR_U10);
+		youthMemberships.add(Inventory.INV_ID_ALPINE_COMPETITOR_U12);
+		youthMemberships.add(Inventory.INV_ID_ALPINE_COMPETITOR_U14);
+		youthMemberships.add(Inventory.INV_ID_FREESKIING_COMPETITOR_U09);
+		youthMemberships.add(Inventory.INV_ID_FREESKIING_COMPETITOR_U11);
+		youthMemberships.add(Inventory.INV_ID_FREESKIING_COMPETITOR_U13);
+		youthMemberships.add(Inventory.INV_ID_FREESTYLE_COMPETITOR_U09);
+		youthMemberships.add(Inventory.INV_ID_FREESTYLE_COMPETITOR_U11);
+		youthMemberships.add(Inventory.INV_ID_FREESTYLE_COMPETITOR_U13);
+		youthMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR_U10);
+		youthMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR_U12);
+		youthMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_COMPETITOR_U14);
+		youthMemberships.add(Inventory.INV_ID_JUMPING_COMPETITOR_U10);
+		youthMemberships.add(Inventory.INV_ID_JUMPING_COMPETITOR_U12);
+		youthMemberships.add(Inventory.INV_ID_JUMPING_COMPETITOR_U14);
+		
 
 		officialMemberships = RuleAssociations.coachesByOfficial.keySet();
 		coachMemberships = RuleAssociations.officialsByCoach.keySet();

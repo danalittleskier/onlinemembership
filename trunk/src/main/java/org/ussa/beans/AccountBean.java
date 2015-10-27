@@ -66,6 +66,7 @@ public class AccountBean implements Serializable
 	private String releaseWaiverParentalConsent;
 	private String confirmationEmail;
 	private boolean needsFastStartCourse;
+	private boolean needsFastRefresherCourse;
 
 
 	//Reference Data fields.
@@ -503,5 +504,14 @@ public class AccountBean implements Serializable
 	public void setNeedsFastStartCourse(boolean needsFastStartCourse) {
 		this.needsFastStartCourse = needsFastStartCourse;
 	}
+
+	public boolean isNeedsFastRefresherCourse() {
+		return needsFastRefresherCourse;
+	}
+
+	public void setNeedsFastRefresherCourse(boolean needsFastRefresherCourse) {
+		this.needsFastRefresherCourse = needsFastRefresherCourse;
+	}
+	
 	
 }

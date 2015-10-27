@@ -179,11 +179,14 @@
 	<!-- Credit Card Test Mode setting - now located in context.xml -->
 	<jee:jndi-lookup id="currentMemberGroupName" jndi-name="java:comp/env/ldap/currentMember"/>
 	<jee:jndi-lookup id="currentFastStartCoachingCourseGroupName" jndi-name="java:comp/env/ldap/currentFastStartCoachingCourse"/>
+	<jee:jndi-lookup id="currentFastStartRefresherCoachingCourseGroupName" jndi-name="java:comp/env/ldap/currentFastStartRefresherCoachingCourse"/> 
 	
 	<bean name="casLdap" class="org.ussa.bl.impl.CasLdapImpl">
 		<property name="ussaLdap" ref="ussaLdap" />
 		<property name="currentMemberGroupName" ref="currentMemberGroupName"/>
 		<property name="currentFastStartCoachingCourseGroupName" ref="currentFastStartCoachingCourseGroupName"/>
+		<property name="currentFastStartRefresherCoachingCourseGroupName" ref="currentFastStartRefresherCoachingCourseGroupName"/> 
+		
 	</bean>
 	
 	<bean id="ussaLdap" class="org.ussa.ldap.impl.UssaLdapImpl" />

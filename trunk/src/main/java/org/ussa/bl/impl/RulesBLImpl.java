@@ -875,6 +875,7 @@ public class RulesBLImpl implements RulesBL {
     		if(!cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING) && !cartBean.contains(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF)  && needsFastStart.equals("Y")){
     			if(memberSeason != null){
     				cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING_REF));
+    				accountBean.setNeedsFastRefresherCourse(true);
     			}
     			else{
     				cartBean.addItem(inventoryDao.get(Inventory.INV_ID_CLINIC_FAST_START_COACHING));

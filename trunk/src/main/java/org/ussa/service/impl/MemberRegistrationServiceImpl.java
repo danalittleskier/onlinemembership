@@ -186,6 +186,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 				memberSeason.setFastStartCourseCheckFlag("N");
 			}
 
+
 			// These are now being set in MemberSeason.java
 			// memberSeason.setMedicalException("N");
 			// memberSeason.setCurrentFlag("Y");
