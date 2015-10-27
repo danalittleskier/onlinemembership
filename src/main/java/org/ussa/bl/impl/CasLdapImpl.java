@@ -5,17 +5,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.ussa.beans.AccountBean;
 import org.ussa.beans.UserBean;
 import org.ussa.bl.CasLdap;
 import org.ussa.ldap.UssaLdap;
+import org.ussa.model.Inventory;
 import org.ussa.util.StringUtils;
 
 public class CasLdapImpl implements CasLdap {
 
+	private static Log log = LogFactory.getLog(CasLdap.class);
+	
     private UssaLdap ussaLdap;
     private String currentMemberGroupName;
     private String currentFastStartCoachingCourseGroupName;
+    private String currentFastStartRefresherCoachingCourseGroupName;
     
     private static String DATE_FORMAT = "MM/dd/yyyy";
     private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
@@ -92,7 +98,14 @@ public class CasLdapImpl implements CasLdap {
 		List<String> memberGroups = new ArrayList<String>();
 		memberGroups.add(currentMemberGroupName);
 		addGroupsToUser(userBean.getUsername(), memberGroups);
-		if(accountBean.isNeedsFastStartCourse()){
+		log.warn("loggin warnings");
+		if(accountBean.isNeedsFastRefresherCourse()){
+			log.warn("insert in Refresher group 1");
+			memberGroups.add(currentFastStartRefresherCoachingCourseGroupName);
+			addGroupsToUser(userBean.getUsername(),memberGroups);
+		}
+		else if(accountBean.isNeedsFastStartCourse()){
+			log.warn("insert in FastStart group 1");
 			memberGroups.add(currentFastStartCoachingCourseGroupName);
 			addGroupsToUser(userBean.getUsername(),memberGroups);
 		}
@@ -128,7 +141,13 @@ public class CasLdapImpl implements CasLdap {
 		List<String> memberGroups = new ArrayList<String>();
 		memberGroups.add(currentMemberGroupName);
 		addGroupsToUser(userBean.getUsername(), memberGroups);
-		if(accountBean.isNeedsFastStartCourse()){
+		if(accountBean.isNeedsFastRefresherCourse()){
+			log.warn("insert in Refresher group 2");
+			memberGroups.add(currentFastStartRefresherCoachingCourseGroupName);
+			addGroupsToUser(userBean.getUsername(),memberGroups);
+		}
+		else if(accountBean.isNeedsFastStartCourse()){
+			log.warn("insert in FastStart group 2");
 			memberGroups.add(currentFastStartCoachingCourseGroupName);
 			addGroupsToUser(userBean.getUsername(),memberGroups);
 		}
@@ -170,4 +189,10 @@ public class CasLdapImpl implements CasLdap {
 	public void setCurrentMemberGroupName(String currentMemberGroupName) {
 	this.currentMemberGroupName = currentMemberGroupName;
     }
+
+	public void setCurrentFastStartRefresherCoachingCourseGroupName(
+			String currentFastStartRefresherCoachingCourseGroupName) {
+		this.currentFastStartRefresherCoachingCourseGroupName = currentFastStartRefresherCoachingCourseGroupName;
+	}
+	
 }
