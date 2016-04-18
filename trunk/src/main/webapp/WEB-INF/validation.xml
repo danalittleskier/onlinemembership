@@ -54,7 +54,7 @@
 		</constant>
 		<constant>
 			<constant-name>alphaNumeric</constant-name>
-			<constant-value>^[0-9A-Za-z\s\'\-\.#,//]*$</constant-value>
+			<constant-value>^[0-9A-Za-z\s\'\-\.#//]*$</constant-value>
 		</constant>
 	</global>
 	<formset>

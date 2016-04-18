@@ -19,7 +19,7 @@
 <%@ include file="/includes/messages.jsp"%>
 
 <p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
+This is a waiver of certain legal rights. Please read carefully. You must agree to its terms to complete the registration process.
 </p>
 
 <!-- BOX (START) -->
@@ -69,7 +69,7 @@ With full knowledge and understanding of the RISK OF SEVERE INJURY AND DEATH inv
 	<table width="100%">
 		<tr>
 			<td width="30px"><input id="releaseWaiverParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiverParentalConsent', this)"/></td>
-			<td><span style="float:left;">* I, &nbsp;</span><form:input path="memberLegal.guardianName" cssStyle="float:left;"/><span style="float:left;">, CERTIFY AS PARENT OR GUARDIAN OF THE MEMBER INDICATED to the waiver as noted above.</span></td>
+			<td><span style="float:left;">* I, &nbsp;</span><form:input path="memberLegal.guardianName" cssStyle="float:left;"/><span style="float:left;">CERTIFY, THAT I AM THE PARENT OR GUARDIAN OF THE MEMBER NAMED ABOVE.</span></td>
 		</tr>
 	</table>
 	<script type="text/javascript" defer="defer">

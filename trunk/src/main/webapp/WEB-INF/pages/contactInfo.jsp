@@ -73,12 +73,13 @@ if(session.getAttribute("FirstTime") == null){
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-<li style="padding-bottom:4px;">You are registering for the 2015-16 competition season, which runs from July 1, 2015 through June 30, 2016. 
+<li style="padding-bottom:4px;">You are registering for the 2016-17 competition season, which runs from July 1, 2016 through June 30, 2017. 
 			Memberships expire annually on June 30, regardless of the date of registration. </li>
+<li style="padding-bottom:4px;">We recommend using a pc, laptop or tablet. This tool is not a mobile application.  Recommended browsers - Internet Explorer, Mozilla Firefox, Safari</li>
 <li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferable.</strong></li>
-<li style="padding-bottom:4px;">Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
+<li style="padding-bottom:4px;"><strong>Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
 			Contact your coach, club and/or USSA Member Services before continuing if you are unsure. 
-			Absolutely no refunds or downgrades of memberships will be issued for any reason. </li>
+			Absolutely no refunds or downgrades of memberships will be issued for any reason. </strong></li>
 <li style="padding-bottom:4px;">The USSA does not transfer memberships from person to person, season to season or one sport to another. 
 			Members must hold a membership in the sport(s) in which they'll participate.</li>
 <li style="padding-bottom:4px;"> An authorized cardholder must submit registration. 

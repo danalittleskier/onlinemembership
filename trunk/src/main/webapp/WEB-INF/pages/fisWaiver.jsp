@@ -19,7 +19,7 @@
 <%@ include file="/includes/messages.jsp"%>
 
 <p>
-This is a waiver of certain legal rights.  Please read carefully before signing.
+This is a waiver of certain legal rights. Please read carefully. You must agree to its terms to complete the registration process.
 </p>
 <p>
 	Your USSA and FIS (or IPC) registrations must be received one week
