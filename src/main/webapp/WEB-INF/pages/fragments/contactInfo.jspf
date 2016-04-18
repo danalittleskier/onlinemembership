@@ -10,7 +10,7 @@
 			<div class="clear"></div>
 		</c:when>
 		<c:otherwise>
-			<label for="">* I'm a USSA member</label>
+			<label for="">* Do you have a USSA number?</label>
 			<div class="radios">
 				<form:radiobutton id="member1" path="alreadyAMember" value="${true}"/>
 				<label class="radio" for="member1">Yes</label>

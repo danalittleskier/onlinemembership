@@ -17,7 +17,7 @@
 
 <%@ include file="/includes/messages.jsp"%>
 
-Please read carefully before signing.
+Please read carefully before clicking the box bellow
 <br>
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -69,7 +69,7 @@ The USSA recommends that Members review the Center for Disease Control's resourc
 	<table width="100%">
 		<tr>
 			<td width="30px"><input id="releaseWaiverParentalConsentControl" type="checkbox" onclick="updateCheckboxHidden('releaseWaiverParentalConsent', this)"/></td>
-			<td><span style="float:left;">* I, &nbsp;</span><form:input path="memberLegal.concussionGuardianName" cssStyle="float:left;"/><span style="float:left;">, CERTIFY AS PARENT OR GUARDIAN OF THE MEMBER INDICATED to the waiver as noted above.</span></td>
+			<td><span style="float:left;">* I, &nbsp;</span><form:input path="memberLegal.concussionGuardianName" cssStyle="float:left;"/><span style="float:left;"> CERTIFY, THAT I AM THE PARENT OR GUARDIAN OF THE MEMBER NAMED ABOVE.</span></td>
 		</tr>
 	</table>
 	<script type="text/javascript" defer="defer">
