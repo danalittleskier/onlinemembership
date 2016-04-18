@@ -10,6 +10,7 @@ public class MembershipsBean implements Serializable
 {
 	private List<Inventory> unrestrictedMemberships = new ArrayList<Inventory>();
 	private List<Inventory> restrictedMemberships = new ArrayList<Inventory>();
+	private List<Inventory> shortTermMemberships = new ArrayList<Inventory>();
 
 	public void addUnrestrictedMembership(Inventory inventory)
 	{
@@ -40,4 +41,13 @@ public class MembershipsBean implements Serializable
 	{
 		this.restrictedMemberships = restrictedMemberships;
 	}
+
+	public List<Inventory> getShortTermMemberships() {
+		return shortTermMemberships;
+	}
+
+	public void setShortTermMemberships(List<Inventory> shortTerm) {
+		this.shortTermMemberships = shortTerm;
+	}
+	
 }

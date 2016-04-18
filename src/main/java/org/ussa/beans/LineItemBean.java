@@ -3,6 +3,7 @@ package org.ussa.beans;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.Date;
 
 import org.ussa.model.Inventory;
 
@@ -13,6 +14,8 @@ public class LineItemBean implements Serializable
 	BigDecimal amount;
 	BigDecimal discount;
 	Integer qty;
+	Date validFrom;
+	Date validTo;
 
 	public LineItemBean()
 	{
@@ -116,4 +119,22 @@ public class LineItemBean implements Serializable
 		DecimalFormat format = new DecimalFormat("###,##0.00");
 		return "$"+format.format(getLineItemTotal());
 	}
+
+	public Date getValidFrom() {
+		return validFrom;
+	}
+
+	public void setValidFrom(Date validFrom) {
+		this.validFrom = validFrom;
+	}
+
+	public Date getValidTo() {
+		return validTo;
+	}
+
+	public void setValidTo(Date validTo) {
+		this.validTo = validTo;
+	}
+	
+	
 }
