@@ -21,6 +21,9 @@
 				<c:if test="${lineItem.discount != null}">
 					<c:out value="${lineItem.discountFormatted}"/> Discount
 				</c:if>
+				<c:if test="${lineItem.validFrom != null and lineItem.validTo != null}"><br>
+					<fmt:formatDate value="${lineItem.validFrom}" pattern="MM/dd/yyyy"/> - <fmt:formatDate value="${lineItem.validTo}" pattern="MM/dd/yyyy"/> 
+				</c:if>
 			</td>
 			<td class="item-remove">
 				<c:if test="${empty param.readOnly and !(lineItem.inventory.inventoryType eq divisionDues) and !(lineItem.inventory.inventoryType eq stateDues) and !(lineItem.inventory.id eq ussaLate) and !(lineItem.inventory.id eq fastStartCourse) and !(lineItem.inventory.id eq fastStartCourseRef)}">

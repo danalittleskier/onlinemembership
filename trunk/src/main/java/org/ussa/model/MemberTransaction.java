@@ -44,6 +44,12 @@ public class MemberTransaction implements Serializable
 
 	@Column(name = "PURCHASE_DATE", nullable = true, unique = false)
 	private Date purchaseDate;
+	
+	@Column(name= "VALID_FROM", nullable = true, unique = false)
+	private Date validFrom;
+	
+	@Column(name= "VALID_TO", nullable = true, unique = false)
+	private Date validTo;
 
 	public MemberTransaction()
 	{
@@ -135,4 +141,21 @@ public class MemberTransaction implements Serializable
 	{
 		this.purchaseDate = purchaseDate;
 	}
+
+	public Date getValidFrom() {
+		return validFrom;
+	}
+
+	public void setValidFrom(Date validFrom) {
+		this.validFrom = validFrom;
+	}
+
+	public Date getValidTo() {
+		return validTo;
+	}
+
+	public void setValidTo(Date validTo) {
+		this.validTo = validTo;
+	}
+	
 }

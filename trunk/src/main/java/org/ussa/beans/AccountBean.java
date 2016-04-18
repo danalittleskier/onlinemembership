@@ -2,6 +2,7 @@ package org.ussa.beans;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Date;
 
 import org.ussa.model.Address;
 import org.ussa.model.Club;
@@ -67,6 +68,8 @@ public class AccountBean implements Serializable
 	private String confirmationEmail;
 	private boolean needsFastStartCourse;
 	private boolean needsFastRefresherCourse;
+	private Date membershipFrom;
+	private Date membershipTo;
 
 
 	//Reference Data fields.
@@ -511,6 +514,22 @@ public class AccountBean implements Serializable
 
 	public void setNeedsFastRefresherCourse(boolean needsFastRefresherCourse) {
 		this.needsFastRefresherCourse = needsFastRefresherCourse;
+	}
+
+	public Date getMembershipFrom() {
+		return membershipFrom;
+	}
+
+	public void setMembershipFrom(Date membershipFrom) {
+		this.membershipFrom = membershipFrom;
+	}
+
+	public Date getMembershipTo() {
+		return membershipTo;
+	}
+
+	public void setMembershipTo(Date membershipTo) {
+		this.membershipTo = membershipTo;
 	}
 	
 	

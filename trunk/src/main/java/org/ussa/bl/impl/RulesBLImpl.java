@@ -347,7 +347,22 @@ public class RulesBLImpl implements RulesBL {
     	
     	return true;
     }
-
+    private boolean hasOnlyShortTermMemberships(AccountBean accountBean) {
+    	CartBean cart = accountBean.getCartBean();
+    	List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
+    	if (membershipItems.size() > 0) {
+    	    for (LineItemBean lineItem : membershipItems) {
+    		if (!RuleAssociations.shortTermMemberships.contains(lineItem.getInventory().getId())) {
+    		    return false;
+    		}
+    	    }
+    	} else {
+    	    return false;
+    	}
+    	
+    	return true;
+    }
+    
     private boolean hasOnlyYouthMemberships(AccountBean accountBean) {
 	CartBean cart = accountBean.getCartBean();
 	List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
@@ -458,7 +473,26 @@ public class RulesBLImpl implements RulesBL {
 	    /*
 	     * THEN ADD ITEM TO CART
 	     */
-	    cartBean.addItem(inventory);
+	    if(accountBean.getMembershipFrom() != null && accountBean.getMembershipTo() != null && inventory.getId().startsWith("ST")){
+	    	Calendar startDate = Calendar.getInstance();
+	    	Calendar endDate = Calendar.getInstance();
+	    	startDate.setTime(accountBean.getMembershipFrom());
+	    	endDate.setTime(accountBean.getMembershipTo());
+
+	    	long daysBetween = 0; 
+	    	
+	    	while (startDate.before(endDate)) {  
+	    	    startDate.add(Calendar.DAY_OF_MONTH, 1);  
+	    	    daysBetween++;  
+	    	  }  
+	    	Integer qty = (int)daysBetween;
+
+	    	cartBean.addItem(inventory, qty,  accountBean.getMembershipFrom(), accountBean.getMembershipTo());
+	    }
+	    else{
+	    	cartBean.addItem(inventory);
+	    }
+	    
 
 	    
 	    /*
@@ -486,7 +520,7 @@ public class RulesBLImpl implements RulesBL {
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
 	    
-	    if (RuleAssociations.nonCompetingMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    	
+	    if (RuleAssociations.nonCompetingMemberships.contains(invId) || RuleAssociations.shortTermMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    	
 		// This is your full price membership. The rest are discounted.
 	    	membership.setDiscount(null);
 	    } else {	    
@@ -538,6 +572,10 @@ public class RulesBLImpl implements RulesBL {
 	if (lineItem != null) {
 	    if (Inventory.INVENTORY_TYPE_DONATION.equals(lineItem.getInventory().getInventoryType())) {
 		accountBean.setContributionAmount(null);
+	    }
+	    if(lineItem.getInventory().getId().startsWith("ST")){
+	    accountBean.setMembershipFrom(null);
+	    accountBean.setMembershipTo(null);
 	    }
 	    cart.removeLineItem(invId);
 	}
@@ -745,7 +783,7 @@ public class RulesBLImpl implements RulesBL {
 	// USSA LATE FEE
 	if (now.after(lateRenewDate)) {
 	    // new registrations are exempt from late fee and if they have only youth/official/non-competing membership
-	    if ((member.getId() == null || member.getId() == 0) || cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0 || hasOnlyYouthMemberships(accountBean) || hasOnlyOfficialMemberships(accountBean)|| hasOnlyNonCompetingMemberships(accountBean) || (member.getId() != null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() == 0)) {
+	    if ((member.getId() == null || member.getId() == 0) || cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP).size() == 0 || hasOnlyYouthMemberships(accountBean) || hasOnlyOfficialMemberships(accountBean)|| hasOnlyNonCompetingMemberships(accountBean) || hasOnlyShortTermMemberships(accountBean) || (member.getId() != null && memberTransactionDao.getMemberTransactionsForSeason(member.getId(), dateBL.getLastSeason()).size() == 0)) {
 		cart.removeLineItem(Inventory.INV_ID_MEMBER_LATE_FEE);
 	    } else if (!cart.contains(Inventory.INV_ID_MEMBER_LATE_FEE)) {
 		Inventory memberLateFee = inventoryDao.get(Inventory.INV_ID_MEMBER_LATE_FEE);

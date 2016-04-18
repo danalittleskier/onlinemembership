@@ -9,6 +9,7 @@ import java.util.Collection;
 import java.util.Set;
 import java.util.HashSet;
 import java.text.DecimalFormat;
+import java.util.Date;
 
 import org.ussa.model.Inventory;
 
@@ -21,17 +22,20 @@ public class CartBean implements Serializable
 
 	public void addItem(Inventory inventory)
 	{
-		addItem(inventory, null, null, null);
+		addItem(inventory, null, null, null, null, null);
 	}
 	public void addItem(Inventory inventory, BigDecimal cost)
 	{
-		addItem(inventory, cost, null, null);
+		addItem(inventory, cost, null, null, null, null);
 	}
 	public void addItem(Inventory inventory, Integer qty)
 	{
-		addItem(inventory, null, null, qty);
+		addItem(inventory, null, null, qty, null, null);
 	}
-	public void addItem(Inventory inventory, BigDecimal cost, BigDecimal discount, Integer qty)
+	public void addItem(Inventory inventory, Integer qty, Date validFrom, Date validTo){
+		addItem(inventory, null, null, qty, validFrom, validTo);
+	}
+	public void addItem(Inventory inventory, BigDecimal cost, BigDecimal discount, Integer qty, Date validFrom, Date validTo)
 	{
 		LineItemBean lineItem = new LineItemBean();
 		lineItem.setInventory(inventory);
@@ -54,7 +58,7 @@ public class CartBean implements Serializable
 
 		lineItem.setDiscount(discount);
 
-		if(qty != null)
+		if(qty != null && qty != 0)
 		{
 			lineItem.setQty(qty);
 		}
@@ -63,6 +67,13 @@ public class CartBean implements Serializable
 			lineItem.setQty(1);
 		}
 
+		if(validFrom != null){
+			lineItem.setValidFrom(validFrom);
+		}
+		if(validTo != null){
+			lineItem.setValidTo(validTo);
+		}
+		
 		LineItemBean existingLineItem = getLineItem(inventory.getId());
 		if(existingLineItem != null && existingLineItem.getDiscountedAmount().equals(lineItem.getDiscountedAmount()))
 		{
@@ -81,8 +92,9 @@ public class CartBean implements Serializable
 		for (Iterator<LineItemBean> iterator = lineItems.iterator(); iterator.hasNext();)
 		{
 			LineItemBean lineItemBean = iterator.next();
+
 			if(inventoryId.equals(lineItemBean.getInventory().getId()))
-			{
+			{		
 				iterator.remove();
 			}
 		}

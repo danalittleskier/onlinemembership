@@ -1,5 +1,65 @@
 <%@ page import="org.ussa.model.Inventory" %>
 <%@ include file="/includes/taglibs.jsp"%>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+
+  $(function() {
+    $( "#from" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 2,
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      required: true,
+      minDate: 0,
+      showOn: "focus",
+      onSelect: function(dateText, inst) {
+          var nyd = new Date(dateText);
+          nyd.setDate(nyd.getDate() + 6);
+          $('#to').datepicker("option", {
+              minDate: new Date(dateText),
+              maxDate: nyd
+          });
+      },
+      onClose: function() {
+          $(this).focus();
+      }
+    });
+    $( "#to" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 2,
+      showOtherMonths: true,
+      selectOtherMonths: true,
+      required: true,
+      showOn: "focus",
+      onClose: function() {
+          $(this).focus();
+      }
+    });
+  });
+  
+  function uploadDatePicker(){
+	  var membOption = document.getElementById('membershipOption').value;
+	  var shortTermShow = document.getElementById('shortTermPicker');
+	  if(membOption.indexOf('ST') > -1){
+		  shortTermShow.style.display = 'block';
+	  }
+	  else{
+		  shortTermShow.style.display = 'none';
+	  }
+  }
+  </script>
+
+</head>
 <body>
 <!-- Progress bar -->
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" /></div>
@@ -82,14 +142,24 @@
 		<br/>
 		<c:if test="${fn:length(accountBean.memberships) != 0}">
 			<label for="">* Membership:</label>
-			<form:select path="membershipId">
+			<form:select path="membershipId" id="membershipOption" onchange="uploadDatePicker();">
 				<form:option value=""></form:option>
 				<form:options items="${accountBean.memberships}" itemValue="id" itemLabel="description"/>
 			</form:select>
 			<label></label>
+			<br>
+		
+		<div id="shortTermPicker" <c:if test="${not fn:startsWith(membershipId,'ST')}">style="display:none;</c:if>>
+				<label for="">Pick the race date: </label>
+				<br><label for="from">From</label>
+				<form:input id="from" path="membershipFrom"/>
+				<label for="to">to</label>
+				<form:input id="to" path="membershipTo"/>
+		</div>
 			<div style="clear:both;"></div>
 			<div class="ussa-button-blue" style="margin-left:190px;margin-top:0px;margin-bottom:10px;"><span><input type="button" class="btn-submit" name="_eventId_add" value="Add Membership to Cart" onclick="submitFormWithInputButton(this);"></span></div>
 		</c:if>
+		<br>
 		<label style="width:300px;">Note: Members may choose more than one sport.</label>
 	</fieldset>
 	<c:if test="${not empty accountBean.fisItems}">

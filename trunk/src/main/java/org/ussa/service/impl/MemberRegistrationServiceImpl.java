@@ -273,6 +273,8 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 		memberTransaction.setQty(lineItem.getQty());
 		memberTransaction.setAmount(lineItem.getDiscountedAmount());
 		memberTransaction.setPurchaseDate(new Date());
+		memberTransaction.setValidFrom(lineItem.getValidFrom());
+		memberTransaction.setValidTo(lineItem.getValidTo());
 		universalDao.save(memberTransaction);
 	}
 

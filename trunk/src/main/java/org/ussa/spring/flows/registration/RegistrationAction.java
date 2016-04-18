@@ -505,8 +505,10 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    Calendar birthDate = DateTimeUtils.getCalendar(formatter.parse(birthDateStr));
 	    Calendar now = Calendar.getInstance();
 	    Calendar hundredsBack = DateTimeUtils.getCalendar(now.getTime());
+	    Calendar youngerThan3 = DateTimeUtils.getCalendar(now.getTime());
 	    hundredsBack.add(Calendar.YEAR, -150);
-	    if (birthDate.after(now) || birthDate.before(hundredsBack)) {
+	    youngerThan3.add(Calendar.YEAR, -3);
+	    if (birthDate.after(youngerThan3) || birthDate.before(hundredsBack)) {
 		/*
 		 * The birthday field is read only if there is any value in the field, the only exception to this is if the field didn't pass validation, so it is important that the birthdate error gets set in the correct way so that the user can edit the incorrect value.
 		 */

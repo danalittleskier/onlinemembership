@@ -12,6 +12,7 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name = "INVENTORY")
@@ -67,7 +68,8 @@ public class Inventory implements Serializable
 	public static final String INV_ID_ALPINE_YOUTH = "AY";
 	public static final String INV_ID_ALPINE_VOLUNTEER = "AV";
 	public static final String INV_ID_ALPINE_NON_COMPETING = "AG";
-
+	
+    
 	// Cross country memberships
 	public static final String INV_ID_CROSS_COUNTRY_ASSOCIATE = "XA";
 	public static final String INV_ID_CROSS_COUNTRY_COACH = "XCO";
@@ -134,6 +136,19 @@ public class Inventory implements Serializable
 	public static final String INV_ID_SNOWBOARD_OFFICIAL = "BO";
 	public static final String INV_ID_SNOWBOARD_VOLUNTEER = "BV";
 	public static final String INV_ID_SNOWBOARD_NON_COMPETING = "BG";
+	
+	//Short term memberships
+	public static final String INV_ID_ALPINE_SHORT_TERM_MASTER = "STAM";
+	public static final String INV_ID_ALPINE_SHORT_TERM_MASTER_COMP = "STAMC";
+	public static final String INV_ID_ALPINE_SHORT_TERM_U12 = "STAU12";	
+	public static final String INV_ID_ALPINE_SHORT_TERM_U14 = "STAU14";	
+	public static final String INV_ID_SNOWBOARD_SHORT_TERM = "STB";	
+	public static final String INV_ID_FREESKIING_SHORT_TERM_U11 = "STFSU11";	
+	public static final String INV_ID_FREESKIING_SHORT_TERM_U13 = "STFSU13";
+	public static final String INV_ID_FREESTYLE_SHORT_TERM_U11 = "STFU11";
+	public static final String INV_ID_FREESTYLE_SHORT_TERM_U13 = "STFU13";
+	public static final String INV_ID_NORDIC_SHORT_TERM = "STJ";
+	public static final String INV_ID_CROSS_COUNTRY_SHORT_TERM = "STX";
 
 	// FIS
 	public static final String INV_ID_ALPINE_FIS = "FISA";
@@ -225,7 +240,6 @@ public class Inventory implements Serializable
 	
 	public static final String INV_ID_CLINIC_FAST_START_COACHING = "FSCC";
 	public static final String INV_ID_CLINIC_FAST_START_COACHING_REF = "FSCC_REF";
-
 
 
 	@Id
@@ -364,4 +378,6 @@ public class Inventory implements Serializable
 		Inventory otherObj = (Inventory) other;
 		return new EqualsBuilder().append(this.id, otherObj.id).isEquals();
 	}
+
+	
 }
