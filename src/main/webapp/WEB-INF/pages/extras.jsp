@@ -30,21 +30,21 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Alpine</p>
-		(navy)
+		(black)
 		<a href="<c:url value='/images/AlpineTee_Lrg.jpg'/>" title="Alpine Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/AlpineTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
 		<p>Freestyle</p>
-		(navy)
+		(sport grey)
 		<a href="<c:url value='/images/freestyleTee_Lrg.jpg'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/freestyleTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
 		<p>Cross Country</p>
-		(navy)
+		(black)
 		<a href="<c:url value='/images/XC_Lrg.jpg'/>" title="Cross Country Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/XC_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 			</a>
@@ -110,21 +110,21 @@
 	<!-- Start T-shirt row -->
 	<div class="tshirt-1">
 		<p>Jumping/Nordic Combined</p>
-		(navy)
+		(black)
 		<a href="<c:url value='/images/Jump-NC_Lrg.jpg'/>" title="Jumping N/C Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/Jump-NC_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-2">
 		<p>U.S. Ski Team General</p>
-		(charcoal)
+		(navy)
 		<a href="<c:url value='/images/generalTee_Lrg.jpg'/>" title="US Ski Team General Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/generalTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
 	</div>
 	<div class="tshirt-3">
 		<p>Snowboarding</p>
-		(black)
+		(sport grey)
 		<a href="<c:url value='/images/snowboardingTee_Lrg.jpg'/>" title="Snowboarding Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/snowboardingTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
@@ -194,7 +194,7 @@
 	</div>
 	<div class="tshirt-2">
 		<p>Freeskiing</p>
-		(storm grey)
+		(black)
 		<a href="<c:url value='/images/freeskiingTee_Lrg.jpg'/>" title="Freeskiing Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/freeskiingTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
