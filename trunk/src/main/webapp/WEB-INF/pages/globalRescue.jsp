@@ -349,7 +349,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
 	 -->
 	 <form:checkbox path="globalRescueBean.iagree" id="agreetoglobalrescue" onclick="agreeClicked()"/>
 	</td>
-	<td>I have read and agree to the <a href="https://www.globalrescue.com/agreement.cfm" target="_blank">Member Services Agreement</a>. 
+	<td>I have read and agree to the <a href="https://www.globalrescue.com/assets/resources/grdocuments/GR%20Consumer%20MSA.pdf?v=6" target="_blank">Member Services Agreement</a>. 
 		I attest that as of the date of enrollment, (i)I am in good health, (ii)I am not hospitalized or anticipating hospitalization, (iii) I plan to travel abroad for less than 45 days continuously each trip and (iv) I am not traveling to the polar Arctic (above the 80th parallel North) or Antarctic (below the 60th parallel South). Other Global Rescue memberships are available for these conditions, visit <a href="http://www.globalrescue.com/ussa" target="_blank">www.globalrescue.com/ussa</a> for information on polar and longer-term abroad memberships.</td>
 		
 </tr>
