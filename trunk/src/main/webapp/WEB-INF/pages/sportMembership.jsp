@@ -12,8 +12,9 @@
   });
 
   $(function() {
+
     $( "#from" ).datepicker({
-      defaultDate: "+1w",
+      defaultDate: 0,
       changeMonth: true,
       numberOfMonths: 2,
       showOtherMonths: true,
@@ -224,7 +225,7 @@
 	<fieldset>
 		<legend>Member Communication</legend>
 		<table>
-			<tr>
+			<tr><!-- 
 				<td class="checkbox">
 					<form:hidden id="receiveEmail" path="member.receiveDivisionEmail"/>
 					<label for="receiveEmailControl" class="checkbox" style="text-align:left; width:auto;">
@@ -236,6 +237,7 @@
 						<span style="padding-left:15px; font-size:11px;">(Only applies for divisions and states participating in USSA's dues management program)</span>
 					</label>
 				</td>
+				-->
 			</tr>
 		</table>
 		<table>
