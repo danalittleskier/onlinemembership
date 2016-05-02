@@ -54,7 +54,12 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 			paymentBean.setPaymentType("Visa");
 		} else if (cardNumber.equals("5")) {
 			paymentBean.setPaymentType("Mastercard");
+		} else if(cardNumber.equals("6")){
+			paymentBean.setPaymentType("Discover");
+		} else if(cardNumber.equals("3")){
+			paymentBean.setPaymentType("AMEX");
 		}
+		
 	}
 
 	public void voidTransaction(String transactionId) throws Exception {
