@@ -945,13 +945,13 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    }
 	    
 	    // Make sure it isn't an AMEX or Discover Card
-	    String firstNumber = paymentBean.getCardNumber().substring(0, 1);
-	    if("3".equals(firstNumber) || "6".equals(firstNumber)){
-	    	BindException errors = new BindException(accountBean, "accountBean");
-	 	    errors.reject("errors.card.invalid.type");
-	 	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-	 	    return error();
-	    }
+	    //String firstNumber = paymentBean.getCardNumber().substring(0, 1);
+	    //if("3".equals(firstNumber) || "6".equals(firstNumber)){
+	    	//BindException errors = new BindException(accountBean, "accountBean");
+	 	    //errors.reject("errors.card.invalid.type");
+	 	    //getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+	 	    //return error();
+	    //}
 
 	    memberRegistrationService.processRegistration(accountBean);
 	    if(accountBean.getGlobalRescueBean().getIsInCart()){
