@@ -485,7 +485,7 @@ public class RulesBLImpl implements RulesBL {
 	    	    startDate.add(Calendar.DAY_OF_MONTH, 1);  
 	    	    daysBetween++;  
 	    	  }  
-	    	Integer qty = (int)daysBetween;
+	    	Integer qty = (int)daysBetween +1;
 
 	    	cartBean.addItem(inventory, qty,  accountBean.getMembershipFrom(), accountBean.getMembershipTo());
 	    }
@@ -712,6 +712,7 @@ public class RulesBLImpl implements RulesBL {
 	cart.removeLineItems(Inventory.INVENTORY_TYPE_STATE_DUES);
 
 	Date now = new Date();
+	Integer qty = 0;
 	Date lateRenewDate = dateBL.getLateRenewDate();
 	String stateCode = member.getStateCode();
 	String divisionCode = member.getDivision().getDivisionCode();
@@ -728,6 +729,9 @@ public class RulesBLImpl implements RulesBL {
 	    List<String> membershipIds = new ArrayList<String>();
 	    for (LineItemBean lineItem : membershipLineItems) {
 		membershipIds.add(lineItem.getInventory().getId());
+			if(lineItem.getQty() != null){
+				qty = lineItem.getQty();
+			}
 	    }
 	    List<Inventory> stateDues = stateDuesRulesDao.getStateDues(stateCode, age, membershipIds, false);
 	    List<Inventory> divDues = divDuesRulesDao.getDivisionDues(divisionCode, age, membershipIds, false);
@@ -767,7 +771,11 @@ public class RulesBLImpl implements RulesBL {
 		}
 
 		for (Inventory due : applicableDues) {
-		    cart.addItem(due);
+			if(qty != null){
+				cart.addItem(due, qty);
+			}else{
+		    	cart.addItem(due);
+			}
 		}
 
 		// division late fees if any
