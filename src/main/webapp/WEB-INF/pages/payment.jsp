@@ -46,6 +46,8 @@
 				<form:option value=""></form:option>
 				<form:option value="Visa">Visa</form:option>
 				<form:option value="Mastercard">MasterCard</form:option>
+				<form:option value="AMEX">AMEX</form:option>
+				<form:option value="Discover">Discover</form:option>
 			</form:select><br/>
 		</span>
 		<label for="">* Credit Card Number:</label>
