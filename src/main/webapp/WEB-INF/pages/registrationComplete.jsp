@@ -131,7 +131,7 @@
 	<b>USSA Rewards. It's easy!</b><br>
 
 	<u>USSA Rewards</u> is your one-stop shop to discounts and cash back on thousands of products, services, retailers and restaurants. Get discounts on everything from lodging and movies to insurance! USSA Rewards saves you money and a portion of your purchase goes to support the athletes and programs that make us Best in the World!
-	<li>Access USSA Rewards today at <a href="http://www.ussarewards.com" target="blank" >www.ussarewards.com </a> or through the USSA Rewards button in your My USSA account</li>
+	<li>Access USSA Rewards today at <a href="http://www.simplyrewards.com/d-899.aspx" target="blank" >www.ussarewards.com </a> or through the USSA Rewards button in your My USSA account</li>
 	<li>Create your USSA Rewards account</li>
     <li>Start shopping! Enjoy  special Weekly Deals featuring deep discounts on great products and new offers that come on the site virtually every day.  </li>
 	</p>
