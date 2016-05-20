@@ -6,6 +6,7 @@ import java.util.List;
 import org.ussa.common.dao.hibernate.GenericDaoHibernate;
 import org.ussa.dao.MemberDao;
 import org.ussa.dao.UssaIdGeneratorDao;
+import org.ussa.model.Batch;
 import org.ussa.model.Member;
 
 public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements MemberDao
@@ -56,5 +57,16 @@ public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements 
 	{
 		return getHibernateTemplate().findByNamedQueryAndNamedParam(Member.QUERY_DUPLICATES,
 				new String[]{"lastName", "birthDate"}, new Object[]{lastName, birthDate});
+	}
+	
+	public Member getMaxNensaId()
+	{
+		List results = getHibernateTemplate().findByNamedQuery(Member.QUERY_MAX_NENSA_ID);
+		if(results.size() > 0)
+		{
+			return (Member) results.get(0);
+		}
+
+		return null;
 	}
 }

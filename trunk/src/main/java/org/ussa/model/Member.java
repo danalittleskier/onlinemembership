@@ -24,7 +24,10 @@ import java.util.Date;
 @NamedQueries({
     @NamedQuery(
             name=Member.QUERY_DUPLICATES, 
-            query="select m from Member m where lower(m.lastName) = :lastName and m.birthDate = :birthDate")
+            query="select m from Member m where lower(m.lastName) = :lastName and m.birthDate = :birthDate"),
+    @NamedQuery(
+    		name=Member.QUERY_MAX_NENSA_ID,
+    		query="select m from Member m where m.nensaId is not null and m.nensaId = (select max(m1.nensaId) from Member m1) ")
 })
 public class Member implements Serializable
 {
@@ -39,6 +42,7 @@ public class Member implements Serializable
 	}
 	
     public static final String QUERY_DUPLICATES = "Member.QUERY_DUPLICATES";
+    public static final String QUERY_MAX_NENSA_ID = "Member.QUERY_MAX_NENSA_ID";
     
     public static final String MEMBER_TYPE_INDIVIDUAL = "I";
 	public static final String MEMBER_TYPE_CLUB = "C";
@@ -73,6 +77,9 @@ public class Member implements Serializable
 
 	@Column(name = "FIS_ID", nullable = true, length=7, unique=false)
 	private String fisId;
+	
+	@Column(name = "NENSA_ID", nullable = true, length=7, unique=false)
+	private Long nensaId;
 
 	@Column(name = "EMAIL", nullable = true, length=60, unique=false)
 	private String email;
@@ -317,6 +324,14 @@ public class Member implements Serializable
 	public void setFisId(String fisId)
 	{
 		this.fisId = fisId;
+	}
+
+	public Long getNensaId() {
+		return nensaId;
+	}
+
+	public void setNensaId(Long nensaId) {
+		this.nensaId = nensaId;
 	}
 
 	public Division getDivision()
