@@ -520,7 +520,14 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    }
 	    member.setBirthDate(birthDate.getTime());
 	}
-
+	log.warn("nensa id is "+member.getNensaId());
+	if(member.getNensaId() == null && (accountBean.getMember().getStateCode().equalsIgnoreCase("VT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NH") || accountBean.getMember().getStateCode().equalsIgnoreCase("MA") || accountBean.getMember().getStateCode().equalsIgnoreCase("MD") || accountBean.getMember().getStateCode().equalsIgnoreCase("ME") || accountBean.getMember().getStateCode().equalsIgnoreCase("CT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NJ") || accountBean.getMember().getStateCode().equalsIgnoreCase("NY") || accountBean.getMember().getStateCode().equalsIgnoreCase("PA") || accountBean.getMember().getStateCode().equalsIgnoreCase("RI") || accountBean.getMember().getStateCode().equalsIgnoreCase("DE") || accountBean.getMember().getStateCode().equalsIgnoreCase("WV"))){
+		member.setNensaId(memberDao.getMaxNensaId().getNensaId() +1);
+		log.warn("in the nensa if loop ");
+	}
+	log.warn("state code is "+accountBean.getMember().getStateCode());
+	log.warn("nensa id after max add is "+member.getNensaId());
+	
 	// for new registrations check for dups
 	if (member.getId() == null) {
 	    List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
