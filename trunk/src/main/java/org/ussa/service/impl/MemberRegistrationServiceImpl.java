@@ -101,6 +101,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			log.warn("Birth Date: " + member.getBirthDate());
 			log.warn("Email: " + member.getEmail());
 			log.warn("End Member");
+			
 			member = memberDao.save(member);
 
 			// MEMBERCLUB
@@ -201,11 +202,27 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			accountBean.setMemberSeason(memberSeason);
 
 			// MEMBERTRANSACTION
+			//List<Inventory> xcMemberships = inventoryDao.getIventoryByTypeAndSportCode("Membership", "XC");
+			int addOne = 0;
 			CartBean cartBean = accountBean.getCartBean();
 			List<LineItemBean> lineItemBeans = cartBean.getLineItems();
 			Set<String> invIdsAlreadyAdded = new HashSet<String>();
 			Set<String> inventoryAddInvIds = new HashSet<String>();
 			for (LineItemBean lineItem : lineItemBeans) {
+				//Nensa stuff				
+				log.warn("nensa id is "+member.getNensaId());				
+				log.warn("state code is "+accountBean.getMember().getStateCode());
+				log.warn("sport code is "+lineItem.getInventory().getSportCode());
+				if(member.getNensaId() == null && lineItem.getInventory().getSportCode().contains("XC") && (accountBean.getMember().getStateCode().equalsIgnoreCase("VT")) || accountBean.getMember().getStateCode().equalsIgnoreCase("NH") || accountBean.getMember().getStateCode().equalsIgnoreCase("MA") || accountBean.getMember().getStateCode().equalsIgnoreCase("MD") || accountBean.getMember().getStateCode().equalsIgnoreCase("ME") || accountBean.getMember().getStateCode().equalsIgnoreCase("CT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NJ") || accountBean.getMember().getStateCode().equalsIgnoreCase("NY") || accountBean.getMember().getStateCode().equalsIgnoreCase("PA") || accountBean.getMember().getStateCode().equalsIgnoreCase("RI") || accountBean.getMember().getStateCode().equalsIgnoreCase("DE") || accountBean.getMember().getStateCode().equalsIgnoreCase("WV")){
+					addOne = 1;
+					log.warn("in the nensa if loop ");
+				}
+				if(addOne == 1){
+					member.setNensaId(memberDao.getMaxNensaId().getNensaId() +addOne);
+				}
+				log.warn("nensa id after max add is "+member.getNensaId());
+				/////////
+				
 				saveMemberTransaction(lineItem, member, currentSeason);
 				invIdsAlreadyAdded.add(lineItem.getInventory().getId());
 
