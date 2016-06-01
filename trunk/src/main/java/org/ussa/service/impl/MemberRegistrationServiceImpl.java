@@ -8,6 +8,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -57,6 +59,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 	private InventoryDao inventoryDao;
 	private CasLdap casLdap;
 	private EmailUtility emailUtility;
+	
+	private static String DATE_FORMAT = "MM/dd/yyyy";
+    private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
+
 
 	// private UserManager userManager;
 	// private SecurityContext securityContext;
@@ -216,11 +222,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 				if(member.getNensaId() == null && lineItem.getInventory().getSportCode().contains("XC") && (accountBean.getMember().getStateCode().equalsIgnoreCase("VT")) || accountBean.getMember().getStateCode().equalsIgnoreCase("NH") || accountBean.getMember().getStateCode().equalsIgnoreCase("MA") || accountBean.getMember().getStateCode().equalsIgnoreCase("MD") || accountBean.getMember().getStateCode().equalsIgnoreCase("ME") || accountBean.getMember().getStateCode().equalsIgnoreCase("CT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NJ") || accountBean.getMember().getStateCode().equalsIgnoreCase("NY") || accountBean.getMember().getStateCode().equalsIgnoreCase("PA") || accountBean.getMember().getStateCode().equalsIgnoreCase("RI") || accountBean.getMember().getStateCode().equalsIgnoreCase("DE") || accountBean.getMember().getStateCode().equalsIgnoreCase("WV")){
 					addOne = 1;
 					log.warn("in the nensa if loop ");
-				}
-				if(addOne == 1){
-					member.setNensaId(memberDao.getMaxNensaId().getNensaId() +addOne);
-				}
-				log.warn("nensa id after max add is "+member.getNensaId());
+				}				
 				/////////
 				
 				saveMemberTransaction(lineItem, member, currentSeason);
@@ -229,7 +231,11 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 				// add additional inventory
 				inventoryAddInvIds.addAll(getAdditionalInvIds(lineItem.getInventory().getId(), member.getDivision().getDivisionCode(), invIdsAlreadyAdded));
 			}
-
+			if(member.getNensaId() == null && addOne == 1){
+				member.setNensaId(memberDao.getMaxNensaId().getNensaId() +addOne);
+			}
+			log.warn("nensa id after max add is "+member.getNensaId());
+			
 			// make sure that the competition guide isn't added twice since the
 			// guide/dir includes both
 			for (Iterator<String> iterator = inventoryAddInvIds.iterator(); iterator.hasNext();) {
@@ -283,7 +289,7 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 		}
 	}
 
-	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason) {
+	private void saveMemberTransaction(LineItemBean lineItem, Member member, String currentSeason) throws ParseException {
 		MemberTransaction memberTransaction = new MemberTransaction(member);
 		memberTransaction.setSeason(currentSeason);
 		memberTransaction.setInventory(lineItem.getInventory());

@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.text.SimpleDateFormat;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -41,6 +42,7 @@ import org.ussa.model.Inventory;
 import org.ussa.model.Member;
 import org.ussa.model.MemberSeason;
 import org.ussa.model.MemberTransaction;
+import org.ussa.util.DateTimeUtils;
 import org.ussa.dao.CoachesEducationDao;
 
 public class RulesBLImpl implements RulesBL {
@@ -58,6 +60,9 @@ public class RulesBLImpl implements RulesBL {
     private DivisionAffiliationDao divisionAffiliationDao;
     private DisciplineTrackingDao disciplineTrackingDao;
     private CoachesEducationDao coachesEducationDao;
+    
+    private static String DATE_FORMAT = "MM/dd/yyyy";
+    private static SimpleDateFormat formatter = new SimpleDateFormat(DATE_FORMAT);
 
     public void setInventoryDao(InventoryDao inventoryDao) {
 	this.inventoryDao = inventoryDao;
@@ -476,8 +481,8 @@ public class RulesBLImpl implements RulesBL {
 	    if(accountBean.getMembershipFrom() != null && accountBean.getMembershipTo() != null && inventory.getId().startsWith("ST")){
 	    	Calendar startDate = Calendar.getInstance();
 	    	Calendar endDate = Calendar.getInstance();
-	    	startDate.setTime(accountBean.getMembershipFrom());
-	    	endDate.setTime(accountBean.getMembershipTo());
+			startDate.setTime(accountBean.getMembershipFrom());
+			endDate.setTime(accountBean.getMembershipTo());
 
 	    	long daysBetween = 0; 
 	    	
