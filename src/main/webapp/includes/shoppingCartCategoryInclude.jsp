@@ -22,7 +22,7 @@
 					<c:out value="${lineItem.discountFormatted}"/> Discount
 				</c:if>
 				<c:if test="${lineItem.validFrom != null and lineItem.validTo != null}"><br>
-					<fmt:formatDate value="${lineItem.validFrom}" pattern="MM/dd/yyyy"/> - <fmt:formatDate value="${lineItem.validTo}" pattern="MM/dd/yyyy"/> 
+				 <fmt:formatDate value="${lineItem.validFrom}" pattern="MM/dd/yyyy"/> - <fmt:formatDate value="${lineItem.validTo}" pattern="MM/dd/yyyy"/> 
 				</c:if>
 			</td>
 			<td class="item-remove">
