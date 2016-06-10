@@ -130,6 +130,9 @@ public class GlobalRescueService {
 				
 				log.debug("Doc to String:" + doc.toString());
 				log.debug("DomString:" + domString(doc.getDocumentElement(), ""));
+				
+				//log.warn("Doc to String:" + doc.toString());
+				//log.warn("DomString:" + domString(doc.getDocumentElement(), ""));
 			}
 		} catch (Exception e) {
 			log.error(e);
@@ -173,6 +176,25 @@ public class GlobalRescueService {
 		method.addParameter("purchase_price",accountBean.getGlobalRescueBean().getPurchasedProduct().getInventory().getAmount().toPlainString());
 		method.addParameter("reference_employee",accountBean.getMember().getId().toString());
 		method.addParameter("corp_discount_code","ussaapi");
+		
+		/*--
+		log.warn("first_name " +accountBean.getMember().getFirstName());
+		log.warn("last_name " +accountBean.getMember().getLastName());
+		log.warn("program_id " + programId);
+		log.warn("coverage_period_id " +mapProductToCoverage(accountBean.getGlobalRescueBean().getPurchasedProduct()));
+		log.warn("telephone " +accountBean.getAddress().getPhoneHome());
+		log.warn("email_address " +accountBean.getMember().getEmail());
+		log.warn("start_date " +getStartDate());
+		log.warn("dob " +accountBean.getBirthDate());
+		log.warn("address_1 " + accountBean.getAddress().getDeliveryAddress());
+		log.warn("city " +accountBean.getAddress().getCity());
+		log.warn("state_id " +nullToEmpty(mapStateToGlobalRescueState(accountBean.getAddress().getStateCode())));
+		log.warn("zip " +accountBean.getAddress().getPostalCode());
+		log.warn("country_id 1");
+		log.warn("purchase_price "+accountBean.getGlobalRescueBean().getPurchasedProduct().getInventory().getAmount().toPlainString());
+		log.warn("reference_employee " +accountBean.getMember().getId().toString());
+		log.warn("corp_discount_code ussaapi");
+		--*/
 		
 		Document doc = doPost(method);
 		
@@ -493,7 +515,10 @@ public class GlobalRescueService {
 				return "";
 			}
 			NodeList elements = doc.getElementsByTagName("account");
-			String id = elements.item(0).getAttributes().getNamedItem("id").getNodeValue();
+			String id = "TEMP1234";
+			if(elements.item(0) != null){
+				id = elements.item(0).getAttributes().getNamedItem("id").getNodeValue();
+			}
 			return id;
 		}
 		

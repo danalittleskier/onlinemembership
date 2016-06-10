@@ -1,8 +1,11 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript">
 		function disableButtonsAndSubmit()
 		{
+			jQuery('#FUSB').hide();
+			jQuery('#Processing').show();
 			var backButton = document.getElementById("backButton");
 			backButton.disabled = true;
 
@@ -108,8 +111,23 @@
 		<label></label>
 		<input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 		
-		<div class="ussa-button gray"><span><input id="backButton" type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
-		<div class="ussa-button green"><span><input id="continueButton" type="submit" class="btn-submit" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();"></span></div>
+		<table cellpadding="0" cellspacing="0">
+			<tr>
+				<td>
+					<div class="ussa-button gray"><span><input id="backButton" type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
+				</td>
+				<td>
+					<div id="FUSB">
+						<div class="ussa-button green"><span><input id="continueButton" type="submit" class="btn-submit" name="_eventId_next" value="Continue" onclick="disableButtonsAndSubmit();"></span></div>
+					</div>
+					<div id="Processing" style="display:none;">
+						<div class="ussa-button-red"><span>Processing...</span></div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		
+		
 		<br><br><br>
 	</fieldset>
 </form:form>
