@@ -955,22 +955,15 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    //}
 
 	    memberRegistrationService.processRegistration(accountBean);
+	    
 	    if(accountBean.getGlobalRescueBean().getIsInCart()){
 		    GlobalRescueService grs = new GlobalRescueService();
 		    grs.createPrepaidAccount(accountBean);
 		    universalDao.save(accountBean.getMemberSeason());
 	    }
-	} catch (CreditCardDeclinedException e) {
-	    BindException errors = new BindException(accountBean, "accountBean");
-	    errors.reject("errors.card.declined");
-	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-	    return error();
-	} catch (CreditCardException e) {
-	    BindException errors = new BindException(accountBean, "accountBean");
-	    errors.reject("errors.card.not.approved");
-	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
-	    return error();
-	} catch (GlobalRescueException gre){
+
+	    
+	}  catch (GlobalRescueException gre){
 		List<String> details = new ArrayList<String>();
 		details.add(gre.getMessage());
 		accountBean.getGlobalRescueBean().setMessages(details);
@@ -981,6 +974,16 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    return error();
 	    */
 		
+	}catch (CreditCardDeclinedException e) {
+	    BindException errors = new BindException(accountBean, "accountBean");
+	    errors.reject("errors.card.declined");
+	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+	    return error();
+	} catch (CreditCardException e) {
+	    BindException errors = new BindException(accountBean, "accountBean");
+	    errors.reject("errors.card.not.approved");
+	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
+	    return error();
 	}
 	catch (Exception e) {
 	    e.printStackTrace();
