@@ -400,7 +400,7 @@ public class RulesBLImpl implements RulesBL {
 	return true;
     }
 
-    public List<MessageBean> addMembershipToCart(AccountBean accountBean, Inventory inventory) {
+    public List<MessageBean> addMembershipToCart(AccountBean accountBean, Inventory inventory){
 	CartBean cartBean = accountBean.getCartBean();
 	List<MessageBean> messages = new ArrayList<MessageBean>();
 
@@ -481,9 +481,23 @@ public class RulesBLImpl implements RulesBL {
 	    if(accountBean.getMembershipFrom() != null && accountBean.getMembershipTo() != null && inventory.getId().startsWith("ST")){
 	    	Calendar startDate = Calendar.getInstance();
 	    	Calendar endDate = Calendar.getInstance();
-			startDate.setTime(accountBean.getMembershipFrom());
-			endDate.setTime(accountBean.getMembershipTo());
-
+			//startDate.setTime(accountBean.getMembershipFrom());
+			//endDate.setTime(accountBean.getMembershipTo());
+	    	Date begDate = new Date();
+	    	Date finishDate = new Date();
+	    	if(accountBean.getMembershipFrom() != null){
+	    		try {
+					begDate = formatter.parse(accountBean.getMembershipFrom());
+					finishDate = formatter.parse(accountBean.getMembershipTo());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	}
+	    	
+	    	startDate.setTime(begDate);
+	    	endDate.setTime(finishDate);
+	    	
 	    	long daysBetween = 0; 
 	    	
 	    	while (startDate.before(endDate)) {  
@@ -492,7 +506,9 @@ public class RulesBLImpl implements RulesBL {
 	    	  }  
 	    	Integer qty = (int)daysBetween +1;
 
-	    	cartBean.addItem(inventory, qty,  accountBean.getMembershipFrom(), accountBean.getMembershipTo());
+	    	//cartBean.addItem(inventory, qty,  accountBean.getMembershipFrom(), accountBean.getMembershipTo());
+	    	cartBean.addItem(inventory, qty,  begDate, finishDate);
+
 	    }
 	    else{
 	    	cartBean.addItem(inventory);
