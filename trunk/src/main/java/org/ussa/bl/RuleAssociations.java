@@ -209,7 +209,7 @@ public class RuleAssociations
 		shortTermMemberships.add(Inventory.INV_ID_FREESTYLE_SHORT_TERM_U11);
 		shortTermMemberships.add(Inventory.INV_ID_FREESTYLE_SHORT_TERM_U13);
 		shortTermMemberships.add(Inventory.INV_ID_FREESKIING_SHORT_TERM_U11);
-		shortTermMemberships.add(Inventory.INV_ID_FREESKIING_SHORT_TERM_U11);
+		shortTermMemberships.add(Inventory.INV_ID_FREESKIING_SHORT_TERM_U13);
 		shortTermMemberships.add(Inventory.INV_ID_SNOWBOARD_SHORT_TERM);
 		shortTermMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_SHORT_TERM);
 

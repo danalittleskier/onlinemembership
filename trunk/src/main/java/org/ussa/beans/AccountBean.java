@@ -13,7 +13,6 @@ import org.ussa.model.MemberSeason;
 import org.ussa.model.Nation;
 import org.ussa.model.State;
 import org.ussa.spring.flows.registration.RegistrationAction;
-
 import com.sun.media.jai.codec.SeekableOutputStream;
 
 public class AccountBean implements Serializable
@@ -68,8 +67,10 @@ public class AccountBean implements Serializable
 	private String confirmationEmail;
 	private boolean needsFastStartCourse;
 	private boolean needsFastRefresherCourse;
-	private Date membershipFrom;
-	private Date membershipTo;
+	//private Date membershipFrom;
+	//private Date membershipTo;
+	private String membershipFrom;
+	private String membershipTo;
 
 
 	//Reference Data fields.
@@ -516,19 +517,19 @@ public class AccountBean implements Serializable
 		this.needsFastRefresherCourse = needsFastRefresherCourse;
 	}
 
-	public Date getMembershipFrom() {
+	public String getMembershipFrom() {
 		return membershipFrom;
 	}
 
-	public void setMembershipFrom(Date membershipFrom) {
+	public void setMembershipFrom(String membershipFrom) {
 		this.membershipFrom = membershipFrom;
 	}
 
-	public Date getMembershipTo() {
+	public String getMembershipTo() {
 		return membershipTo;
 	}
 
-	public void setMembershipTo(Date membershipTo) {
+	public void setMembershipTo(String membershipTo) {
 		this.membershipTo = membershipTo;
 	}
 	
