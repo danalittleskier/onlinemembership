@@ -216,13 +216,13 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 			Set<String> inventoryAddInvIds = new HashSet<String>();
 			for (LineItemBean lineItem : lineItemBeans) {
 				//Nensa stuff				
-				log.warn("nensa id is "+member.getNensaId());				
-				log.warn("state code is "+accountBean.getMember().getStateCode());
-				log.warn("sport code is "+lineItem.getInventory().getSportCode());
-				if(member.getNensaId() == null && lineItem.getInventory().getSportCode().contains("XC") && (accountBean.getMember().getStateCode().equalsIgnoreCase("VT")) || accountBean.getMember().getStateCode().equalsIgnoreCase("NH") || accountBean.getMember().getStateCode().equalsIgnoreCase("MA") || accountBean.getMember().getStateCode().equalsIgnoreCase("MD") || accountBean.getMember().getStateCode().equalsIgnoreCase("ME") || accountBean.getMember().getStateCode().equalsIgnoreCase("CT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NJ") || accountBean.getMember().getStateCode().equalsIgnoreCase("NY") || accountBean.getMember().getStateCode().equalsIgnoreCase("PA") || accountBean.getMember().getStateCode().equalsIgnoreCase("RI") || accountBean.getMember().getStateCode().equalsIgnoreCase("DE") || accountBean.getMember().getStateCode().equalsIgnoreCase("WV")){
-					addOne = 1;
-					log.warn("in the nensa if loop ");
-				}				
+				//log.warn("nensa id is "+member.getNensaId());				
+				//log.warn("state code is "+accountBean.getMember().getStateCode());
+				//log.warn("sport code is "+lineItem.getInventory().getSportCode());
+				//if(member.getNensaId() == null && lineItem.getInventory().getSportCode().contains("XC") && (accountBean.getMember().getStateCode().equalsIgnoreCase("VT")) || accountBean.getMember().getStateCode().equalsIgnoreCase("NH") || accountBean.getMember().getStateCode().equalsIgnoreCase("MA") || accountBean.getMember().getStateCode().equalsIgnoreCase("MD") || accountBean.getMember().getStateCode().equalsIgnoreCase("ME") || accountBean.getMember().getStateCode().equalsIgnoreCase("CT") || accountBean.getMember().getStateCode().equalsIgnoreCase("NJ") || accountBean.getMember().getStateCode().equalsIgnoreCase("NY") || accountBean.getMember().getStateCode().equalsIgnoreCase("PA") || accountBean.getMember().getStateCode().equalsIgnoreCase("RI") || accountBean.getMember().getStateCode().equalsIgnoreCase("DE") || accountBean.getMember().getStateCode().equalsIgnoreCase("WV")){
+				//	addOne = 1;
+				//	log.warn("in the nensa if loop ");
+				//}				
 				/////////
 				
 				saveMemberTransaction(lineItem, member, currentSeason);
@@ -231,10 +231,10 @@ public class MemberRegistrationServiceImpl implements MemberRegistrationService 
 				// add additional inventory
 				inventoryAddInvIds.addAll(getAdditionalInvIds(lineItem.getInventory().getId(), member.getDivision().getDivisionCode(), invIdsAlreadyAdded));
 			}
-			if(member.getNensaId() == null && addOne == 1){
-				member.setNensaId(memberDao.getMaxNensaId().getNensaId() +addOne);
-			}
-			log.warn("nensa id after max add is "+member.getNensaId());
+			//if(member.getNensaId() == null && addOne == 1){
+			//	member.setNensaId(memberDao.getMaxNensaId().getNensaId() +addOne);
+			//}
+			//log.warn("nensa id after max add is "+member.getNensaId());
 			
 			// make sure that the competition guide isn't added twice since the
 			// guide/dir includes both
