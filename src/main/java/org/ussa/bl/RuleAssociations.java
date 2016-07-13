@@ -233,6 +233,7 @@ public class RuleAssociations
 
 		//TODO: Is there a problem here?
 		fisByMembership.put(Inventory.INV_ID_JUMPING_COMPETITOR_U16, new String[]{Inventory.INV_ID_JUMPING_FIS, Inventory.INV_ID_NORDIC_COMBINED_FIS});
+		fisByMembership.put(Inventory.INV_ID_JUMPING_COMPETITOR_U14, new String[]{Inventory.INV_ID_JUMPING_FIS, Inventory.INV_ID_NORDIC_COMBINED_FIS});
 		//TODO: is this missing from the db?
 //		fisByMembership.put(Inventory.INV_ID_NORDIC_COMBINED_COMPETITOR, new String[]{Inventory.INV_ID_NORDIC_COMBINED_FIS});
 
