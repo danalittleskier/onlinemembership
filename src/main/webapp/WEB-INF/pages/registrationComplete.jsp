@@ -31,12 +31,14 @@
 			Your amount paid is:
 			<strong><c:out value="${accountBean.cartBean.totalFormatted}"/></strong>
 		</p>
+		<!-- 
 		<c:if test="${not empty accountBean.member.nensaId}">
 		<p>
 			Your NENSA ID is:
 			<strong><c:out value="${accountBean.member.nensaId}"/></strong>
 		</p>
 		</c:if>
+		-->
 	</fieldset>
 	<!-- 
 	<c:if test="${not empty accountBean.membershipsBean.unrestrictedMemberships}">
