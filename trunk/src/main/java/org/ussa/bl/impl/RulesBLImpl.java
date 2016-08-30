@@ -196,16 +196,16 @@ public class RulesBLImpl implements RulesBL {
 	    return true;
 	}
 
-	// If a coach membership is already selected, user may not add an official membership (it’s already included).
+	// If a coach membership is already selected, user may not add an official membership (itï¿½s already included).
 	Set<String> coachInvIds = RuleAssociations.coachesByOfficial.get(invIdAdding);
 	if (coachInvIds != null && cartBean.containsAny(coachInvIds)) {
 	    return true;
 	}
 
 	// If a member holds an Alpine Competitor or Disabled Alpine Competior membership and is 18 or over, they may not add an Alpine Master membership.
-	if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR_U16) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR)) && (age != null && age >= 18)) {
-	    return true;
-	}
+	//if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && (cartBean.contains(Inventory.INV_ID_ALPINE_COMPETITOR_U16) || cartBean.contains(Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR)) && (age != null && age >= 18)) {
+	//    return true;
+	//}
 
 	// If a member holds and Alpine Non-Scored Student memberhip and is between 18-22 years old they may not add an Alpine Masters membership.
 	if (invIdAdding.equals(Inventory.INV_ID_ALPINE_MASTER) && cartBean.contains(Inventory.INV_ID_ALPINE_STUDENT) && (age != null && age >= 18 && age <= 22)) {
@@ -451,11 +451,11 @@ public class RulesBLImpl implements RulesBL {
 
 
 	    // If a member has an alpine master in their cart and is 18 or over, they must still have the option of adding the alpine competitor or disabled alpine competitor. If one of these are chosen, the alpine master must be removed.
-	    if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && (Inventory.INV_ID_ALPINE_COMPETITOR_U16.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId()))) {
-		LineItemBean lineItem = cartBean.getLineItem(Inventory.INV_ID_ALPINE_MASTER);
-		messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
-		cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
-	    }
+	    //if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && (Inventory.INV_ID_ALPINE_COMPETITOR_U16.equals(inventory.getId()) || Inventory.INV_ID_DISABLED_ALPINE_COMPETITOR.equals(inventory.getId()))) {
+		//LineItemBean lineItem = cartBean.getLineItem(Inventory.INV_ID_ALPINE_MASTER);
+		//messages.add(new MessageBean("messages.mutually.exclusive", lineItem.getInventory().getRenewDescription(), inventory.getRenewDescription()));
+		//cartBean.removeLineItem(Inventory.INV_ID_ALPINE_MASTER);
+	    //}
 
 	    // If a member has an alpine master in their cart and is between 18 and 22 yrs old, they must still have the option of adding the alpine non-scored student. If the non-scored student membership is chosen, the alpine master must be removed.
 	    if (cartBean.contains(Inventory.INV_ID_ALPINE_MASTER) && age >= 18 && age <= 22 && (Inventory.INV_ID_ALPINE_STUDENT.equals(inventory.getId()))) {

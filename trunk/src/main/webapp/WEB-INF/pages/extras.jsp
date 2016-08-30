@@ -37,7 +37,7 @@
 	</div>
 	<div class="tshirt-2">
 		<p>Freestyle</p>
-		(sport grey)
+		(black)
 		<a href="<c:url value='/images/freestyleTee_Lrg.jpg'/>" title="Freestyle Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/freestyleTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
@@ -194,7 +194,7 @@
 	</div>
 	<div class="tshirt-2">
 		<p>Freeskiing</p>
-		(black)
+		(sport grey)
 		<a href="<c:url value='/images/freeskiingTee_Lrg.jpg'/>" title="Freeskiing Bonus Pack" rel="gb_imageset[images]">
 			<img src="<c:url value='/images/freeskiingTee_Sm.jpg'/>" height="141" width="145" alt="Enlarge Image">
 		</a>
