@@ -147,10 +147,14 @@
 		<strong>Cross Country Competitor U12 - $25</strong><br>
 		<strong>Cross Country Competitor U14 - $25</strong><br>
 		<strong>Cross Country Competitor U16 and over - $95 (Required for FIS registration)</strong><br>
+		<strong>Cross Country Masters (40 years & over) - $25</strong><br>
 		
 		<p><strong>USSA General Member ($15):</strong> The low-cost USSA General membership is designed for young athletes who are training with a club program and may be competing in both USSA and non-USSA competitions without earning points or ranking on the National Ranking list. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. 
 		<strong>Not intended for those in a position of authority over minors.</strong>
+
+		<p><strong>USSA Master ($25): </strong>For ages 40 and over prior to Dec. 31. The USSA Masters membership gives cross country athletes over the age of 40 access to cross country masters events, 
+		including Masters Championships and its qualifying events. This membership is perfect for adult athletes who are interested in competing with other adults domestically. </p>
 
 		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships from below if 15 years of age or older.</h3>
 
