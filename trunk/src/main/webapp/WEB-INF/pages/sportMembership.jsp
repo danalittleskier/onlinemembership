@@ -152,8 +152,8 @@
 			<label></label>
 			<br>
 		
-		<div id="shortTermPicker" <c:if test="${not fn:startsWith(membershipId,'ST')}">style="display:none;</c:if>>
-				<label for="">Pick the race date: </label>
+		<div id="shortTermPicker">
+				<label for="">Pick the race date:  (only applicable for Short Term memberships)</label>
 				<br><label for="from">From</label>
 				<form:input id="from" path="membershipFrom"/>
 				<label for="to">to</label>
