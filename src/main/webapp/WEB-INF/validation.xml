@@ -45,6 +45,10 @@
 			<constant-value>(((parentInfoRequired == null) or (parentInfoRequired == 'false')) or (*this* == 'Y'))</constant-value>
 		</constant>
 		<constant>
+			<constant-name>shortTermMembership</constant-name>
+			<constant-value>^[ST]*$</constant-value>
+		</constant>
+		<constant>
 			<constant-name>alpha</constant-name>
 			<constant-value>^[A-Za-z\s]*$</constant-value>
 		</constant>
