@@ -342,7 +342,7 @@ public class RulesBLImpl implements RulesBL {
     	List<LineItemBean> membershipItems = cart.getLineItems(Inventory.INVENTORY_TYPE_MEMBERSHIP);
     	if (membershipItems.size() > 0) {
     	    for (LineItemBean lineItem : membershipItems) {
-    		if (!RuleAssociations.nonCompetingMemberships.contains(lineItem.getInventory().getId())) {
+    		if (!RuleAssociations.nonCompetingMemberships.contains(lineItem.getInventory().getId()) && !RuleAssociations.volunteerMemberships.contains(lineItem.getInventory().getId())) {
     		    return false;
     		}
     	    }
@@ -478,14 +478,17 @@ public class RulesBLImpl implements RulesBL {
 	    /*
 	     * THEN ADD ITEM TO CART
 	     */
-	    if(accountBean.getMembershipFrom() != null && accountBean.getMembershipTo() != null && inventory.getId().startsWith("ST")){
+	    if(inventory.getId().startsWith("ST")){
 	    	Calendar startDate = Calendar.getInstance();
 	    	Calendar endDate = Calendar.getInstance();
 			//startDate.setTime(accountBean.getMembershipFrom());
 			//endDate.setTime(accountBean.getMembershipTo());
 	    	Date begDate = new Date();
 	    	Date finishDate = new Date();
-	    	if(accountBean.getMembershipFrom() != null){
+	    	if(accountBean.getMembershipFrom() == null || accountBean.getMembershipTo() == null){
+	    		messages.add(new MessageBean("messages.membership.competitor.shortterm", inventory.getRenewDescription()));
+	    	}
+	    	else{
 	    		try {
 					begDate = formatter.parse(accountBean.getMembershipFrom());
 					finishDate = formatter.parse(accountBean.getMembershipTo());
@@ -493,7 +496,7 @@ public class RulesBLImpl implements RulesBL {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-	    	}
+	    	
 	    	
 	    	startDate.setTime(begDate);
 	    	endDate.setTime(finishDate);
@@ -508,7 +511,7 @@ public class RulesBLImpl implements RulesBL {
 
 	    	//cartBean.addItem(inventory, qty,  accountBean.getMembershipFrom(), accountBean.getMembershipTo());
 	    	cartBean.addItem(inventory, qty,  begDate, finishDate);
-
+	    	}
 	    }
 	    else{
 	    	cartBean.addItem(inventory);
