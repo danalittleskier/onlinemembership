@@ -110,6 +110,7 @@ public class Inventory implements Serializable
 	public static final String INV_ID_FREESKIING_COMPETITOR_U15 = "FSC_U15";
 	public static final String INV_ID_FREESTYLE_VOLUNTEER ="FV";
 	public static final String INV_ID_FREESTYLE_NON_COMPETING = "FG";
+	public static final String INV_ID_FREESKIING_NON_COMPETING = "FSG";
 	public static final String INV_ID_FREESKIING_OFFICIAL = "FSO";
 	public static final String INV_ID_FREESKIING_VOLUNTEER = "FSV";
 	public static final String INV_ID_FREESKIING_COACH = "FSCO";
