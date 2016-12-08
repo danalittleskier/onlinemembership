@@ -104,6 +104,11 @@ public class RuleAssociations
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U11, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U13, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U15, Inventory.INV_ID_FREESTYLE_NON_COMPETING}); 
+		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U09, Inventory.INV_ID_FREESKIING_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U11, Inventory.INV_ID_FREESKIING_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U13, Inventory.INV_ID_FREESKIING_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U15, Inventory.INV_ID_FREESKIING_NON_COMPETING}); 
 		//short term
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U11, Inventory.INV_ID_FREESKIING_SHORT_TERM_U11});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COMPETITOR_U13, Inventory.INV_ID_FREESKIING_SHORT_TERM_U13});
@@ -131,9 +136,11 @@ public class RuleAssociations
 		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_MASTER, Inventory.INV_ID_ALPINE_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_MASTER, Inventory.INV_ID_ALPINE_SHORT_TERM_MASTER});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_MASTER, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
 		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_COACH, Inventory.INV_ID_ALPINE_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_COACH, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
+		//mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_COACH, Inventory.INV_ID_FREESKIING_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_COACH, Inventory.INV_ID_SNOWBOARD_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_NON_COMPETING});		
@@ -141,6 +148,7 @@ public class RuleAssociations
 		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_OFFICIAL, Inventory.INV_ID_ALPINE_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_OFFICIAL, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
+		//mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_OFFICIAL, Inventory.INV_ID_FREESKIING_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_OFFICIAL, Inventory.INV_ID_SNOWBOARD_NON_COMPETING});		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_OFFICIAL, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
@@ -149,6 +157,7 @@ public class RuleAssociations
 		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_VOLUNTEER, Inventory.INV_ID_ALPINE_NON_COMPETING});		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_VOLUNTEER, Inventory.INV_ID_FREESTYLE_NON_COMPETING});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_VOLUNTEER, Inventory.INV_ID_FREESKIING_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_VOLUNTEER, Inventory.INV_ID_SNOWBOARD_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER, Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_VOLUNTEER, Inventory.INV_ID_JUMPING_NON_COMPETING});
@@ -166,8 +175,11 @@ public class RuleAssociations
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_CROSS_COUNTRY_COACH, Inventory.INV_ID_CROSS_COUNTRY_VOLUNTEER});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_JUMPING_COACH, Inventory.INV_ID_JUMPING_VOLUNTEER});
 		
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESKIING_NON_COMPETING});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESTYLE_ROOKIE});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESTYLE_NON_COMPETING, Inventory.INV_ID_FREESKIING_COMPETITOR});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_NON_COMPETING, Inventory.INV_ID_FREESTYLE_ROOKIE});
+		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_FREESKIING_NON_COMPETING, Inventory.INV_ID_FREESKIING_COMPETITOR});
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_SNOWBOARD_NON_COMPETING, Inventory.INV_ID_SNOWBOARD_COMPETITOR_REGIONAL});
 		
 		mutuallyExclusiveList.add(new String[] {Inventory.INV_ID_ALPINE_NON_COMPETING, Inventory.INV_ID_ALPINE_YOUTH});
@@ -196,6 +208,7 @@ public class RuleAssociations
 		nonCompetingMemberships = new HashSet<String>();
 		nonCompetingMemberships.add(Inventory.INV_ID_ALPINE_NON_COMPETING);
 		nonCompetingMemberships.add(Inventory.INV_ID_FREESTYLE_NON_COMPETING);
+		nonCompetingMemberships.add(Inventory.INV_ID_FREESKIING_NON_COMPETING);
 		nonCompetingMemberships.add(Inventory.INV_ID_SNOWBOARD_NON_COMPETING);
 		nonCompetingMemberships.add(Inventory.INV_ID_CROSS_COUNTRY_NON_COMPETING);
 		nonCompetingMemberships.add(Inventory.INV_ID_JUMPING_NON_COMPETING);
