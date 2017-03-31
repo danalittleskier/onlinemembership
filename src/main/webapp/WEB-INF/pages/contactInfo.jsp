@@ -1,7 +1,5 @@
-<%@ include file="/includes/taglibs.jsp"%>
 <head>
-
-	
+<%@ include file="/includes/taglibs.jsp"%>
 	
 	<!-- <script src="colorbox/jquery.colorbox.js"></script>-->
 	
@@ -25,19 +23,10 @@ if(session.getAttribute("FirstTime") == null){
 <div id="stg-progress"><img src="<c:url value='/images/progress_1.gif'/>" width="917" /></div>
 <!-- Start: Live Chat Support -->
 <div style="float:right;margin-right:17px;">
-<!-- BEGIN ProvideSupport.com Graphics Chat Button Code -->
+<!-- BEGIN ProvideSupport.com Graphics Chat Button Code 
 <div id="ciYq2A" style="z-index:100;position:absolute"></div><div id="scYq2A" style="display:inline"></div><div id="sdYq2A" style="display:none"></div><script type="text/javascript">var seYq2A=document.createElement("script");seYq2A.type="text/javascript";var seYq2As=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/ussa/safe-standard.js?ps_h=Yq2A&ps_t="+new Date().getTime();setTimeout("seYq2A.src=seYq2As;document.getElementById('sdYq2A').appendChild(seYq2A)",1)</script><noscript><div style="display:inline"><a href="http://www.providesupport.com?messenger=ussa">Live Customer Support</a></div></noscript>
-<!-- END ProvideSupport.com Graphics Chat Button Code -->
-	<%-- No longer need the Full Page View link since we no longer run the app in a popup window.
-	<c:choose>
-	<c:when test="${!empty accountBean.member.id }"> 
-			<a href="https://login.dev.ussa.org/membership-web/registration.html?id=<c:out value="${accountBean.member.id}" />" target="new">Full Page View</a></span>			
-	</c:when>
-	<c:otherwise>
-		<a href="https://login.dev.ussa.org/membership-web/registration.html?add=new" target="new">Full Page View</a></span>			
-	</c:otherwise>
-	</c:choose>
-	--%>
+END ProvideSupport.com Graphics Chat Button Code -->
+
 </div>
 <!-- End: Live Chat Support -->
 
@@ -73,7 +62,7 @@ if(session.getAttribute("FirstTime") == null){
 		<div id="membership-application-important-text" style="padding:10px; background:#fff;">
 		<div style="font-size:18px;font-weight:bold;text-align:center;">PLEASE READ CAREFULLY</div>
        <ul>
-<li style="padding-bottom:4px;">You are registering for the 2016-17 competition season, which runs from July 1, 2016 through June 30, 2017. 
+<li style="padding-bottom:4px;">You are registering for the 2017-18 competition season, which runs from July 1, 2017 through June 30, 2018. 
 			Memberships expire annually on June 30, regardless of the date of registration. </li>
 <li style="padding-bottom:4px;">We recommend using a pc, laptop or tablet. This tool is not a mobile application.  Recommended browsers - Internet Explorer, Mozilla Firefox, Safari</li>
 <li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferable.</strong></li>
