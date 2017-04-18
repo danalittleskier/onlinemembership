@@ -10,5 +10,6 @@
 	<li>Please allow several weeks for screening process to be completed. Individual screening times will vary. Foreign screening may take a month or more.</li>
 	<li>Coaches, officials, and volunteer members under age 18, click <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here</a> for requirements in lieu of background screening</li>
 	<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
+	<li>Safari isn't compatible with NCSI's application</li>
 </ul>
 
