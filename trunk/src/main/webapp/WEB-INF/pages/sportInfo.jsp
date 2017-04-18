@@ -40,13 +40,13 @@
 		<br>
 		<strong>Alpine Competitor U10 and under - $25 </strong><br>
 		<strong>Alpine Competitor U12 and under - $50 </strong><br>
-		<strong>Alpine Competitor U14 and under - $75 </strong><br>
+		<strong>Alpine Competitor U14 and under - $80 </strong><br>
 		<strong>Alpine Competitor U16 and over - $150 (Required for FIS registration) </strong><br>
 		
-		<p><strong>USSA General Member ($15):</strong>  The low-cost USSA General membership is designed for young athletes who are training with a club program are not yet competing in USSA competitions other than USCSA/USSA dual sanctioned events. 
+		<p><strong>USSA General Member ($20):</strong>  The low-cost USSA General membership is designed for young athletes who are training with a club program are not yet competing in USSA competitions other than USCSA/USSA dual sanctioned events. 
 		Other non-USSA events participation may include USCSA, high school events and forerunning USSA and non-USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. Not intended for those in a position of authority over minors.		
 		
-		<p><strong>USSA Master ($90):</strong> For ages 18 and over prior to Dec. 31. The USSA Masters membership gives alpine athletes over the age of 18 access to alpine masters events, including Masters Championships and its qualifying events. 
+		<p><strong>USSA Master ($100):</strong> For ages 18 and over prior to Dec. 31. The USSA Masters membership gives alpine athletes over the age of 18 access to alpine masters events, including Masters Championships and its qualifying events. 
 		This membership is perfect for adult athletes who are interested in competing with other adults domestically. Required for alpine masters FIS registration.		
 		
 		<h3>USSA Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
@@ -98,7 +98,7 @@
 		
 		<p><strong>USSA Freestyle Rookie ($80):</strong> For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
 		
-		<p><strong>USSA General Member ($15):</strong> The low-cost USSA General membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. 
+		<p><strong>USSA General Member ($20):</strong> The low-cost USSA General membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. 
 		<strong>Not intended for those in a position of authority over minors.	</strong>
 			
 		<h3>Coaches, Officials, and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
@@ -245,10 +245,10 @@
 		Competitor memberships include scoring on national ranking lists as well as International Snowboard Federation ranking lists where appropriate (with additional FIS license). This membership is required for FIS registration and FIS level competitions.
 		<br><b>(Required for FIS registration) Provides for access to halfpipe, slopestyle, boardercoss and gate pgs/psl events only.</b>
 		
-		<p><strong>USSA General Member ($15):</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
+		<p><strong>USSA General Member ($20):</strong>  The new low-cost USSA Club Participant membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. 
 		It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. <strong>Not intended for those in a position of authority over minors.</strong></p>
 		
-		<h3>Coaches, Officials and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		<h3>USSA Snowboard Coaches must be 18 years of age or older. Officials and Volunteer members must be 15 years of age or older.</h3>
 		
 		<p><strong>USSA Coach </strong>with background screening ($115): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br>
@@ -296,10 +296,10 @@
 		
 		<p><strong>USSA Freestyle Rookie ($80):</strong> For ages 13 and older. This membership gives athletes who are just getting started the opportunity to learn and grow within their sport at the division competition level. Athletes also have access to the USSA Freestyle/Freeskiing ranking list.</p>
 		
-		<p><strong>USSA General Member ($15):</strong> The low-cost USSA General membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. 
+		<p><strong>USSA General Member ($20):</strong> The low-cost USSA General membership is designed for young athletes who are training with a club program and may be competing in non-USSA competitions, but not yet participating in USSA events. It's also perfect for club volunteers or parents who are starting to become active in support of club activities and events. 
 		<strong>Not intended for those in a position of authority over minors.	</strong>
 			
-		<h3>Coaches, Officials, and Volunteer members: You may choose one of the memberships below if 15 years of age or older.</h3>
+		<h3>USSA Freeskiing Coaches must be 18 years of age or older. Officials and Volunteer members must be 15 years of age or older.</h3>
 
 		<p><strong>USSA Coach </strong>with background screening ($115): Coaches are the backbone of the USSA's development pipeline, providing leadership to athletes through USSA club programs. Every USSA Coach member undergoes periodic background screening to help provide a SafeSport environment in clubs. In addition, non-certified coaches are required to take an online education program on important coaching guidelines. 
 		The USSA also provides coaches with an in-depth sport education program, helping them achieve various certification levels in their sport.<br> 
