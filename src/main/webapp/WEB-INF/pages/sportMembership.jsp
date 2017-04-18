@@ -260,7 +260,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	</fieldset>
 	<fieldset>
 		<legend>Contribution <i>(optional)</i></legend>
-		<p>Your generous contribution will help support U.S. Ski Team, U.S. Freeride and U.S. Snowboarding athletes in their quest for victory. Thank you!</p>
+		<p>Your generous contribution will help support U.S. Ski Team, U.S. Freeski and U.S. Snowboard athletes in their quest for victory. Thank you!</p>
 		<label for="">Sport:</label>
 		<form:select path="contributionSportId">
 			<form:option value="">Select a Sport</form:option>
