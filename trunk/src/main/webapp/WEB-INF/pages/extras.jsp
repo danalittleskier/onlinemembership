@@ -21,7 +21,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 <%@ include file="/includes/messages.jsp"%>
 
 <p>Bonus Packs include a high quality 100% cotton shirt. The U.S. Ski Team packs include a decal strip 
-	 and a 2017 collectors pin. The U.S. Snowboarding pack includes a decal strip and two die cut logo decals. 
+	 and a 2018 collectors pin. The U.S. Snowboarding pack includes a decal strip and two die cut logo decals. 
 	 The U.S. Freeskiing pack includes a U.S. Ski Team decal strip and Freeskiing die cut logo decal.
 	T-shirts available in <strong>adult</strong> sizes only: S, M, L and XL. Packs are $25 each (includes shipping). Each pack is shipped separately.</p>
 <p>Choose from 7 styles: U.S. Ski Team, Alpine, Freestyle, Freeskiing, Cross Country, Jumping/Nordic Combined and Snowboarding. 
