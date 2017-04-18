@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface MemberDao extends GenericDao<Member, Long>
 {
-    List<Member> getDuplicateCandidates(String lastName, Date birthDate);
+    List<Member> getDuplicateCandidates(String firstName, String lastName, Date birthDate);
     public Member getMaxNensaId();
 }

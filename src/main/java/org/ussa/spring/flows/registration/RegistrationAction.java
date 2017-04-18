@@ -523,7 +523,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	
 	// for new registrations check for dups
 	if (member.getId() == null) {
-	    List<Member> dups = memberDao.getDuplicateCandidates(member.getLastName(), member.getBirthDate());
+	    List<Member> dups = memberDao.getDuplicateCandidates(member.getFirstName(), member.getLastName(), member.getBirthDate());
 	    if (dups != null && !dups.isEmpty()) {
 		accountBean.setDuplicateUsers(dups);
 		return result("duplicateAccount");
