@@ -11,14 +11,14 @@ END ProvideSupport.com Graphics Chat Button Code -->
 
 </div>
 <!-- End: Live Chat Support -->
-<div id="stg-pagetitle">United States Ski and Snowboard Child Protection Guidelines  </div>
+<div id="stg-pagetitle">United States Ski SafeSport </div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
 
 <%@ include file="/includes/messages.jsp"%>
 
-This is a waiver of certain legal rights. Please read carefully. You must agree to its terms to complete the registration process.
+Please read carefully. You must agree to its terms to complete the registration process.
 <br>
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
@@ -37,14 +37,14 @@ All USSA members are required to review and accept the Code found here:
 <p>
 Finally, any USSA member who has reason to suspect that minors are being sexually or physically abused must report their suspicions to 
 local child protection authorities/police and to the US Center for Safesport at www.safesport.org.  
-Please err on the side of caution.  It is not your job to investigate your suspicions.  When in doubt, you must report.
+Please err on the side of caution.  It is not your job to investigate your suspicions.  If in doubt, you must report.
  
 </p>
 <form:hidden id="safeSportWaiver" path="memberLegal.safeSportWaiver"/>
 <table width="100%">
 	<tr>
 		<td width="30px"><input id="safeSportWaiverControl" type="checkbox" onclick="updateCheckboxHidden('safeSportWaiver', this)"/></td>
-		<td>* I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND IT TO BE A LEGALLY BINDING RELEASE AND INDEMNITY AGREEMENT AND AGREE TO ITS TERMS</td>
+		<td>* I HAVE CAREFULLY READ THE FOREGOING AND UNDERSTAND AND AGREE TO ITS TERMS</td>
 	</tr>
 </table>
 <script type="text/javascript" defer="defer">
@@ -74,9 +74,8 @@ Please err on the side of caution.  It is not your job to investigate your suspi
 		updateCheckboxControl('releaseWaiverParentalConsent');
 	</script>
 </c:if>
-<br><b>
-THIS DOCUMENT DEPRIVES YOU OF ANY LEGAL RIGHT TO SUE USSA, EVEN FOR ITS OWN NEGLIGENCE.  DO NOT SIGN AND INITIAL IT UNLESS YOU HAVE READ IT IN ITS ENTIRETY.  SEEK THE ADVICE OF LEGAL COUNSEL IF YOU ARE UNSURE OF ITS EFFECT.
-</b>
+<br>
+
 </div></div></div></div>
 <!-- BOX (END) -->
 
