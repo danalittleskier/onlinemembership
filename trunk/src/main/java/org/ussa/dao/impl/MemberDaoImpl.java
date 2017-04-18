@@ -53,10 +53,10 @@ public class MemberDaoImpl extends GenericDaoHibernate<Member, Long> implements 
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Member> getDuplicateCandidates(String lastName, Date birthDate)
+	public List<Member> getDuplicateCandidates(String firstName, String lastName, Date birthDate)
 	{
 		return getHibernateTemplate().findByNamedQueryAndNamedParam(Member.QUERY_DUPLICATES,
-				new String[]{"lastName", "birthDate"}, new Object[]{lastName, birthDate});
+				new String[]{"firstName", "lastName", "birthDate"}, new Object[]{firstName, lastName, birthDate});
 	}
 	
 	public Member getMaxNensaId()

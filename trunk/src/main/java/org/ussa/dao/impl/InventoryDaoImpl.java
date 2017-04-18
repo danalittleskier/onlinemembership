@@ -36,7 +36,7 @@ public class InventoryDaoImpl extends GenericDaoHibernate<Inventory, String> imp
 
 	public List<Inventory> getAllMembershipsByCriteria(Integer age, String sportCode)
 	{
-		StringBuilder query = new StringBuilder("select distinct i from Inventory i where inventoryType='MEMBERSHIP' and i.active='Y' ");
+		StringBuilder query = new StringBuilder("select distinct i from Inventory i where inventoryType='MEMBERSHIP' and i.active='Y' and i.id<>'SX' ");
 		if (age != null)
 		{
 			query.append(" and (i.ageFrom <= '").append(age).append("' or i.ageFrom is null)");

@@ -24,7 +24,7 @@ import java.util.Date;
 @NamedQueries({
     @NamedQuery(
             name=Member.QUERY_DUPLICATES, 
-            query="select m from Member m where lower(m.lastName) = :lastName and m.birthDate = :birthDate"),
+            query="select m from Member m where lower(m.firstName) = :firstName and lower(m.lastName) = :lastName and m.birthDate = :birthDate"),
     @NamedQuery(
     		name=Member.QUERY_MAX_NENSA_ID,
     		query="select m from Member m where m.nensaId is not null and m.nensaId = (select max(m1.nensaId) from Member m1) ")
