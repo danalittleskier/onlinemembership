@@ -35,7 +35,7 @@ public class RegistrationJpaTest {
         Member member1 = createMember("joe", "nobody", "joe@nobody.com", birthDate);
         Member member2 = createMember("joe", "nobody", "joe2@nobody.com", birthDate);
         Member member3 = createMember("joe", "nobody", "joe3@nobody.com", birthDate);
-        List<Member> list = memberDao.getDuplicateCandidates("nobody", birthDate);
+        List<Member> list = memberDao.getDuplicateCandidates("joe", "nobody", birthDate);
         //assertNotNull(list);
         //assertTrue(list.size() >= 3);
     }
