@@ -204,6 +204,10 @@ public class Inventory implements Serializable
 	public static final String INV_ID_BONUS_ALPINE_MEDIUM = "BPAM";
 	public static final String INV_ID_BONUS_ALPINE_SMALL = "BPAS";
 	public static final String INV_ID_BONUS_ALPINE_EXTRA_LARGE = "BPAX";
+	public static final String INV_ID_BONUS_ALPINE_WOMEN_LARGE = "BPWAL";
+	public static final String INV_ID_BONUS_ALPINE_WOMEN_MEDIUM = "BPWAM";
+	public static final String INV_ID_BONUS_ALPINE_WOMEN_SMALL = "BPWAS";
+	public static final String INV_ID_BONUS_ALPINE_WOMEN_EXTRA_LARGE = "BPWAX";
 	public static final String INV_ID_BONUS_SNOWBOARD_LARGE = "BPBL";
 	public static final String INV_ID_BONUS_SNOWBOARD_MEDIUM = "BPBM";
 	public static final String INV_ID_BONUS_SNOWBOARD_SMALL = "BPBS";
@@ -220,19 +224,46 @@ public class Inventory implements Serializable
 	public static final String INV_ID_BONUS_CROSS_COUNTRY_MEDIUM = "BPXM";
 	public static final String INV_ID_BONUS_CROSS_COUNTRY_SMALL = "BPXS";
 	public static final String INV_ID_BONUS_CROSS_COUNTRY_EXTRA_LARGE = "BPXX";
-	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_LARGE = "BPYL";
-	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_MEDIUM = "BPYM";
-	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_SMALL = "BPYS";
-	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_EXTRA_LARGE = "BPYX";
 	public static final String INV_ID_BONUS_DECALS_SNOWBOARD = "DECSB";
 	public static final String INV_ID_BONUS_DECALS_SKI_TEAM = "DECSKI";
+	public static final String INV_ID_BONUS_DECALS_FREESKI = "DECF";
 	public static final String INV_ID_BONUS_PACK_NOMAG = "BPNM";
 	public static final String INV_ID_BONUS_FREESKIING_LARGE = "BPRL";
 	public static final String INV_ID_BONUS_FREESKIING_MEDIUM = "BPRM";
 	public static final String INV_ID_BONUS_FREESKIING_SMALL = "BPRS";
 	public static final String INV_ID_BONUS_FREESKIING_EXTRA_LARGE = "BPRX";
+	public static final String INV_ID_BONUS_NORDIC_LARGE = "BPNCL";
+	public static final String INV_ID_BONUS_NORDIC_MEDIUM = "BPNCM";
+	public static final String INV_ID_BONUS_NORDIC_SMALL = "BPNCS";
+	public static final String INV_ID_BONUS_NORDIC_EXTRA_LARGE = "BPNXC";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_LARGE = "BPYL";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_MEDIUM = "BPYM";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_SMALL = "BPYS";
+	public static final String INV_ID_BONUS_SKI_TEAM_LOGO_EXTRA_LARGE = "BPYX";
 	
-	// Global Rescueo
+	//New bonus packs with the new logos
+	public static final String INV_ID_BONUS_US_LOGO_MEN_LARGE = "BPYLM";
+	public static final String INV_ID_BONUS_US_LOGO_MEN_MEDIUM = "BPYMM";
+	public static final String INV_ID_BONUS_US_LOGO_MEN_SMALL = "BPYSM";
+	public static final String INV_ID_BONUS_US_LOGO_MEN_EXTRA_LARGE = "BPYXM";
+	public static final String INV_ID_BONUS_US_LOGO_WOMEN_LARGE = "BPYLW";
+	public static final String INV_ID_BONUS_US_LOGO_WOMEN_MEDIUM = "BPYMW";
+	public static final String INV_ID_BONUS_US_LOGO_WOMEN_SMALL = "BPYSW";
+	public static final String INV_ID_BONUS_US_LOGO_WOMEN_EXTRA_LARGE = "BPYXW";
+	public static final String INV_ID_BONUS_US_LOGO_WOMEN_XSMALL = "BPYXSW";
+	
+	public static final String INV_ID_BONUS_SKI_TEAM_MEN_LARGE = "BPSLM";
+	public static final String INV_ID_BONUS_SKI_TEAM_MEN_MEDIUM = "BPSMM";
+	public static final String INV_ID_BONUS_SKI_TEAM_MEN_SMALL = "BPSSM";
+	public static final String INV_ID_BONUS_SKI_TEAM_MEN_EXTRA_LARGE = "BPSXM";
+	public static final String INV_ID_BONUS_SKI_TEAM_WOMEN_LARGE = "BPSLW";
+	public static final String INV_ID_BONUS_SKI_TEAM_WOMEN_MEDIUM = "BPSMW";
+	public static final String INV_ID_BONUS_SKI_TEAM_WOMEN_SMALL = "BPSSW";
+	public static final String INV_ID_BONUS_SKI_TEAM_WOMEN_EXTRA_LARGE = "BPSXW";
+	public static final String INV_ID_BONUS_SKI_TEAM_WOMEN_XSMALL = "BPSXSW";
+	
+	
+	// Global Rescue
 	public static final String INV_ID_SPONSORS_FAMILY="GRF";
 	public static final String INV_ID_SPONSORS_INDIVIDUAL="GRI";
 	public static final String INV_ID_SPONSORS_STUDENT="GRS";

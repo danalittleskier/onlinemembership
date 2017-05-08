@@ -296,7 +296,7 @@ public class RulesBLImpl implements RulesBL {
 	    if (items.size() > 0) {
 		 if(hasOnlyNonCompetingMemberships(accountBean))
 		 {
-		 magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+		 //magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
 		 }
 		 else
 		 {
@@ -310,13 +310,13 @@ public class RulesBLImpl implements RulesBL {
 	    	//List<LineItemBean> freestyleMembership = cart.getLineItems(Inventory.SPORT_CODE_FRE);
 			if(freMembership) {
 			
-			magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+			//magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
 			magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
 			magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
 			magazineInvIds.add(Inventory.INV_ID_FREESKIING_MAGAZINE);
 		}
 		else{
-			magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
+			//magazineInvIds.add(Inventory.INV_ID_SKI_RACING_MAGAZINE);
 			magazineInvIds.add(Inventory.INV_ID_SNOWBOARD_MAGAZINE);
 			magazineInvIds.add(Inventory.INV_ID_SKI_TRAX_MAGAZINE);
 		}

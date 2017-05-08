@@ -132,7 +132,8 @@ END ProvideSupport.com Graphics Chat Button Code -->
 		<b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b><br/>
 		</br>
 		<p>Global Rescue is the USST Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
-		<br/>
+		You may upgrade to a Global Rescue Family membership by contacting Global Rescue directly by calling 800.381.9754 and using the code US99870.
+		<br/><br/>
 		View more <a href="https://www.globalrescue.com/plans.cfm" target="_blank">Global Rescue Membership Information</a>.
 		</p>
     </td>
@@ -177,16 +178,16 @@ END ProvideSupport.com Graphics Chat Button Code -->
 			<td>Individual Medical Evacuation Membership</td>
 			<td><strong>$309.00</strong></td>
 		  </tr>
+		  <!-- 
 		  <tr class="odd">
 			<td align="center">
 		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="GRF" onclick="javascript:productRadioClicked(true)"/>
-		  	<!--
-			<input type="radio" name="globalrescueradiobutton" id="globalrescueradiobutton3" value="GRF" onclick="javascript:productRadioClicked(true)" />
-		  	 -->
+
 		  	 </td>
 			<td>Family Medical Evacuation Membership</td>
 			<td><strong>$539.00</strong></td>
 		  </tr>
+		  -->
 		  <tr class="even">
 		    <td>
 		  	<form:radiobutton path="globalRescueBean.selectedProduct" value="none" onclick="javascript:productRadioNone()"/>
