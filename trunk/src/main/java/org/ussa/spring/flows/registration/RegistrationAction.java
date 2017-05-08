@@ -833,6 +833,7 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    CartBean cartBean = accountBean.getCartBean();
 
 	    handleOption(cartBean, extrasBean.getAlpineOption(), extrasBean.getAlpineQty());
+	    handleOption(cartBean, extrasBean.getAlpineWomenOption(), extrasBean.getAlpineWomenQty());
 	    handleOption(cartBean, extrasBean.getFreestyleOption(), extrasBean.getFreestyleQty());
 	    handleOption(cartBean, extrasBean.getFreeskiingOption(), extrasBean.getFreeskiingQty());
 	    handleOption(cartBean, extrasBean.getCrossCountryOption(), extrasBean.getCrossCountryQty());
@@ -841,6 +842,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    handleOption(cartBean, extrasBean.getGeneralOption(), extrasBean.getGeneralQty());
 	    handleOption(cartBean, extrasBean.getDecalSkiOption(), extrasBean.getDecalSkiQty());
 	    handleOption(cartBean, extrasBean.getDecalBoardOption(), extrasBean.getDecalBoardQty());
+	    handleOption(cartBean, extrasBean.getDecalFreeskiOption(), extrasBean.getDecalFreeskiQty());
+	    handleOption(cartBean, extrasBean.getNordicOption(), extrasBean.getNordicQty());
+	    handleOption(cartBean, extrasBean.getLogoMenOption(), extrasBean.getLogoMenQty());
+	    handleOption(cartBean, extrasBean.getLogoWomenOption(), extrasBean.getLogoWomenQty());
+	    handleOption(cartBean, extrasBean.getUsSkiTeamMenOption(), extrasBean.getUsSkiTeamMenQty());
+	    handleOption(cartBean, extrasBean.getUsSkiTeamWomenOption(), extrasBean.getUsSkiTeamWomenQty());
 	    
 	    List<LineItemBean> extras = cartBean.getLineItems(Inventory.INVENTORY_TYPE_BONUS_PACK);
 	    if(extras.size() > 0 || StringUtils.isNotBlank(extrasBean.getAlpineQty()) || StringUtils.isNotBlank(extrasBean.getFreestyleQty()) || StringUtils.isNotBlank(extrasBean.getCrossCountryQty()) || StringUtils.isNotBlank(extrasBean.getJumpingQty()) || StringUtils.isNotBlank(extrasBean.getBoardingQty()) || StringUtils.isNotBlank(extrasBean.getGeneralQty()) || StringUtils.isNotBlank(extrasBean.getDecalSkiQty()) || StringUtils.isNotBlank(extrasBean.getDecalBoardQty())){

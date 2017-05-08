@@ -6,6 +6,12 @@ public class ExtrasBean implements Serializable
 {
 	private String alpineOption;
 	private String alpineQty;
+	
+	private String alpineWomenOption;
+	private String alpineWomenQty;
+	
+	private String nordicOption;
+	private String nordicQty;
 
 	private String freestyleOption;
 	private String freestyleQty;
@@ -28,12 +34,26 @@ public class ExtrasBean implements Serializable
 	private String decalBoardOption;
 	private String decalBoardQty;
 	
+	private String decalFreeskiOption;
+	private String decalFreeskiQty;
+	
 	private String noBonusPackMag;
 	private String noBonusPackMagQty;
 	
 	private String freeskiingOption;
 	private String freeskiingQty;
 
+	private String usSkiTeamMenOption;
+	private String usSkiTeamMenQty;
+	
+	private String usSkiTeamWomenOption;
+	private String usSkiTeamWomenQty;
+	
+	private String logoMenOption;
+	private String logoMenQty;
+	
+	private String logoWomenOption;
+	private String logoWomenQty;
 
 	public String getAlpineOption()
 	{
@@ -53,6 +73,38 @@ public class ExtrasBean implements Serializable
 	public void setAlpineQty(String alpineQty)
 	{
 		this.alpineQty = alpineQty;
+	}
+
+	public String getAlpineWomenOption() {
+		return alpineWomenOption;
+	}
+
+	public void setAlpineWomenOption(String alpineWomenOption) {
+		this.alpineWomenOption = alpineWomenOption;
+	}
+
+	public String getAlpineWomenQty() {
+		return alpineWomenQty;
+	}
+
+	public void setAlpineWomenQty(String alpineWomenQty) {
+		this.alpineWomenQty = alpineWomenQty;
+	}
+
+	public String getNordicOption() {
+		return nordicOption;
+	}
+
+	public void setNordicOption(String nordicOption) {
+		this.nordicOption = nordicOption;
+	}
+
+	public String getNordicQty() {
+		return nordicQty;
+	}
+
+	public void setNordicQty(String nordicQty) {
+		this.nordicQty = nordicQty;
 	}
 
 	public String getFreestyleOption()
@@ -195,6 +247,22 @@ public class ExtrasBean implements Serializable
 		this.decalBoardQty = decalBoardQty;
 	}
 
+	public String getDecalFreeskiOption() {
+		return decalFreeskiOption;
+	}
+
+	public void setDecalFreeskiOption(String decalFreeskiOption) {
+		this.decalFreeskiOption = decalFreeskiOption;
+	}
+
+	public String getDecalFreeskiQty() {
+		return decalFreeskiQty;
+	}
+
+	public void setDecalFreeskiQty(String decalFreeskiQty) {
+		this.decalFreeskiQty = decalFreeskiQty;
+	}
+
 	public String getNoBonusPackMag() {
 		return noBonusPackMag;
 	}
@@ -225,6 +293,70 @@ public class ExtrasBean implements Serializable
 
 	public void setFreeskiingQty(String freeskiingQty) {
 		this.freeskiingQty = freeskiingQty;
+	}
+
+	public String getUsSkiTeamMenOption() {
+		return usSkiTeamMenOption;
+	}
+
+	public void setUsSkiTeamMenOption(String usSkiTeamMenOption) {
+		this.usSkiTeamMenOption = usSkiTeamMenOption;
+	}
+
+	public String getUsSkiTeamMenQty() {
+		return usSkiTeamMenQty;
+	}
+
+	public void setUsSkiTeamMenQty(String usSkiTeamMenQty) {
+		this.usSkiTeamMenQty = usSkiTeamMenQty;
+	}
+
+	public String getUsSkiTeamWomenOption() {
+		return usSkiTeamWomenOption;
+	}
+
+	public void setUsSkiTeamWomenOption(String usSkiTeamWomenOption) {
+		this.usSkiTeamWomenOption = usSkiTeamWomenOption;
+	}
+
+	public String getUsSkiTeamWomenQty() {
+		return usSkiTeamWomenQty;
+	}
+
+	public void setUsSkiTeamWomenQty(String usSkiTeamWomenQty) {
+		this.usSkiTeamWomenQty = usSkiTeamWomenQty;
+	}
+
+	public String getLogoMenOption() {
+		return logoMenOption;
+	}
+
+	public void setLogoMenOption(String logoMenOption) {
+		this.logoMenOption = logoMenOption;
+	}
+
+	public String getLogoMenQty() {
+		return logoMenQty;
+	}
+
+	public void setLogoMenQty(String logoMenQty) {
+		this.logoMenQty = logoMenQty;
+	}
+
+	public String getLogoWomenOption() {
+		return logoWomenOption;
+	}
+
+	public void setLogoWomenOption(String logoWomenOption) {
+		this.logoWomenOption = logoWomenOption;
+	}
+
+	public String getLogoWomenQty() {
+		return logoWomenQty;
+	}
+
+	public void setLogoWomenQty(String logoWomenQty) {
+		this.logoWomenQty = logoWomenQty;
 	}
 	
 	

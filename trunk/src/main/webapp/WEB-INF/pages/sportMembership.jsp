@@ -222,7 +222,6 @@ END ProvideSupport.com Graphics Chat Button Code -->
 					</tr>
 					
 			</table>
-			*By opting in to Ski Racing, you agree to receive notices by email.
 		</fieldset>
 	</c:if>
 	<fieldset>

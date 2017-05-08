@@ -143,7 +143,7 @@
 		Competitor memberships include scoring on national ranking lists as well as International Ski Federation ranking lists where appropriate (with additional FIS license). 
 		This membership is required for FIS registration and FIS level competitions. 		
 		<br>
-		<strong>Cross Country Competitor U10 and under - $25</strong><br>
+		<strong>Cross Country Competitor U10 and under - $15</strong><br>
 		<strong>Cross Country Competitor U12 - $25</strong><br>
 		<strong>Cross Country Competitor U14 - $25</strong><br>
 		<strong>Cross Country Competitor U16 and over - $95 (Required for FIS registration)</strong><br>
