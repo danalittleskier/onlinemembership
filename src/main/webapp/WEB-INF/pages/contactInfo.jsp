@@ -69,7 +69,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 <li style="padding-bottom:4px;"><strong>Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
 			Contact your coach, club and/or USSA Member Services before continuing if you are unsure. 
 			Absolutely no refunds or downgrades of memberships will be issued for any reason. </strong></li>
-<li style="padding-bottom:4px;">If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at education@ussa.org or 435.647.2050 before completing your USSA member registration.</li>
+<li style="padding-bottom:4px;">If you believe you are a Level 100 or higher certified coach, and incur the $10 Fast Start Coaching Course or Fast Start Coaching Course Refresher fee during registration, please stop registration and contact Sports Education at 435.647.2050 or by email education@ussa.org. </li>
 <li style="padding-bottom:4px;">The USSA does not transfer memberships from person to person, season to season or one sport to another. 
 			Members must hold a membership in the sport(s) in which they'll participate.</li>
 <li style="padding-bottom:4px;"> An authorized cardholder must submit registration. 
