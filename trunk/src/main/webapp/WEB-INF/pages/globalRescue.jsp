@@ -131,7 +131,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	<td><br />
 		<b>THE US SKI TEAM IS PROTECTED BY GLOBAL RESCUE. ARE YOU?</b><br/>
 		</br>
-		<p>Global Rescue is the USST Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
+		<p>Global Rescue is U.S. Ski & Snowboard's Official Supplier of aeromedical evacuation services, and the worldwide leader in travel and medical assistance. Services include 24 hour access to a Johns Hopkins Medicine supported medical hotline, as well as medical evacuations in the event of injury or illness requiring hospitalization. <br/>
 		You may upgrade to a Global Rescue Family membership by contacting Global Rescue directly by calling 800.381.9754 and using the code US99870.
 		<br/><br/>
 		View more <a href="https://www.globalrescue.com/plans.cfm" target="_blank">Global Rescue Membership Information</a>.
@@ -339,7 +339,7 @@ Extended Global Rescue Membership pricing is for travelers 75 or older. Traveler
   <td>&nbsp;</td>
   <td>
 	  <br />	  
-		<i>Note: This special pricing is offered as part of USSA registration only. Please be aware that the Annual Global Rescue Evacuation Memberships do not provide any form of medical insurance. </i>
+		<i>Note: This special pricing is offered as part of U.S. Ski & Snowboard registration only. Please be aware that the Annual Global Rescue Evacuation Memberships do not provide any form of medical insurance. </i>
 		<br />
 		<br/>
 	</td>

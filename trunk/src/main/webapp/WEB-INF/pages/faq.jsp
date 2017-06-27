@@ -1,6 +1,6 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
-	<title>USSA Registration FAQ</title>
+	<title>U.S. Ski & Snowboard Registration FAQ</title>
 
 	<link type="text/css" href="<c:url value='/styles/certificate.css'/>" rel="stylesheet"/>
 </head>
@@ -33,7 +33,7 @@
 
 <h4>What if I am a member of multiple clubs?</h4>
 <p>
-	If you have two or more club affiliations, please contact USSA offices and we'll be happy to add additional clubs to your record.
+	If you have two or more club affiliations, please contact U.S. Ski & Snowboard offices and we'll be happy to add additional clubs to your record.
 </p>
 
 <h4>Do I have to be affiliated with a club?</h4>
@@ -48,20 +48,20 @@
 
 <h4>Do I need primary medical insurance?</h4>
 <p>
-	USSA provides secondary accident insurance at USSA sanctioned events to those who provide their primary medical insurance
+	U.S. Ski & Snowboard provides secondary accident insurance at U.S. Ski & Snowboard sanctioned events to those who provide their primary medical insurance
 	information.  If you do not hold primary medical insurance, you will need to complete a Medical Exception Agreement.
-	This agreement removes a member from coverage under USSA's secondary accident insurance and leaves the member solely
-	responsible for all medical expenses incurred in connection with any USSA event or activity.
+	This agreement removes a member from coverage under U.S. Ski & Snowboard's secondary accident insurance and leaves the member solely
+	responsible for all medical expenses incurred in connection with any U.S. Ski & Snowboard event or activity.
 </p>
 
-<h4>Does USSA keep my payment information on file?</h4>
+<h4>Does U.S. Ski & Snowboard keep my payment information on file?</h4>
 <p>
-	No, USSA's system does not maintain any payment information.  Payment information will be required for each transaction.
+	No, U.S. Ski & Snowboard's system does not maintain any payment information.  Payment information will be required for each transaction.
 </p>
 
 <h4>How do I get a new membership card?</h4>
 <p>
-	USSA charges $10 for a replacement card.  Please contact USSA Member Services at (435) 647-2666 or email
+	U.S. Ski & Snowboard charges $10 for a replacement card.  Please contact U.S. Ski & Snowboard Member Services at (435) 647-2666 or email
 	membership@ussa.org with a Visa or MasterCard for payment.  Cards take 1-2 weeks to arrive, but you may print a
 	membership verification from our website to use in the meantime.
 </p>

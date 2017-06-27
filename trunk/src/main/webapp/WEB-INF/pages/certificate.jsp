@@ -1,6 +1,6 @@
 <%@ include file="/includes/taglibs.jsp"%>
 <head>
-	<title>USSA Membership Confirmation</title>
+	<title>U.S. Ski & Snowboard Membership Confirmation</title>
 
 	<link type="text/css" href="<c:url value='/styles/certificate.css'/>" rel="stylesheet"/>
 </head>
@@ -20,14 +20,14 @@
 		<div class="header"><img src="<c:url value='images/ussa_lh_top.jpg'/>"/> </div>
 		<p><strong>To Whom It May Concern:</strong></p>
 
-		<p>This letter is to verify that the USSA membership dues have been paid for the <c:out value="${lastSeason}"/>/<c:out value="${currentSeason}"/> season for:</p>
+		<p>This letter is to verify that U.S. Ski & Snowboard membership dues have been paid for the <c:out value="${lastSeason}"/>/<c:out value="${currentSeason}"/> season for:</p>
 		<table id="member-data">
 			<tr>
 				<td class="data-label">Name:</td>
 				<td><c:out value="${member.lastName}"/>, <c:out value="${member.firstName}"/> <c:out value="${member.middleName}"/></td>
 			</tr>
 			<tr>
-				<td class="data-label">USSA Member Number:</td>
+				<td class="data-label">U.S. Ski & Snowboard Member Number:</td>
 				<td><c:out value="${member.id}"/></td>
 			</tr>
 			<tr>
@@ -70,10 +70,10 @@
 			</tr>
 		</table>
 
-		<p>Please accept this letter as proof of membership and allow this member to participate in USSA events.</p>
+		<p>Please accept this letter as proof of membership and allow this member to participate in U.S. Ski & Snowboard events.</p>
 		<p>Thank you for consideration in this matter.</p>
 		<p>Sincerely,</p>
-		<p>USSA Member Services</p>
+		<p>U.S. Ski & Snowboard Member Services</p>
 		<div class="footer"><img src="<c:url value='images/ussa_lh_bottom.jpg'/>"/></div>
 
 		<script type="text/javascript" defer="defer">

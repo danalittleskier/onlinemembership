@@ -20,9 +20,8 @@ END ProvideSupport.com Graphics Chat Button Code -->
 
 <%@ include file="/includes/messages.jsp"%>
 
-<p>Bonus Packs include a high quality 100% cotton shirt. The U.S. Ski Team packs include a decal strip 
-	 and a 2018 collectors pin. The U.S. Snowboard pack includes a decal strip and a die cut logo decals. 
-	 The U.S. Freeski pack includes a decal strip and Freeski die cut logo decal.
+<p>Bonus Packs include a high quality 100% cotton shirt for men or cotton/poly blend for women. The U.S. Ski Team packs include a decal strip 
+	 and a 2018 collectors pin. The U.S. Snowboard and U.S. Freeski packs include a sport decal strip and US die-cut decal.
 	T-shirts available in adult sizes only. Men's sizes available in S, M, L and XL and women's sizes available in XS, S, M, L and XL Each pack is shipped separately.</p>
 <p>Choose from 6 styles: U.S. Logo Men's or Women's, U.S. Ski Team Men's or Women's, U.S. Freeski and U.S. Snowboard.
 <strong>Bonus Packs available to U.S. residents only.</strong> </p>

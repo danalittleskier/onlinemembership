@@ -65,17 +65,17 @@ END ProvideSupport.com Graphics Chat Button Code -->
 <li style="padding-bottom:4px;">You are registering for the 2017-18 competition season, which runs from July 1, 2017 through June 30, 2018. 
 			Memberships expire annually on June 30, regardless of the date of registration. </li>
 <li style="padding-bottom:4px;">We recommend using a pc, laptop or tablet. This tool is not a mobile application.  Recommended browsers - Internet Explorer, Mozilla Firefox, Safari</li>
-<li style="padding-bottom:4px;"><strong>USSA and FIS registrations are non-refundable or transferable.</strong></li>
-<li style="padding-bottom:4px;"><strong>Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (USSA). 
-			Contact your coach, club and/or USSA Member Services before continuing if you are unsure. 
+<li style="padding-bottom:4px;"><strong>U.S. Ski & Snowboard and FIS registrations are non-refundable or transferable.</strong></li>
+<li style="padding-bottom:4px;"><strong>Prior to registering, please ensure that you are registering for the correct sport and membership type and the correct organization (U.S. Ski & Snowboard). 
+			Contact your coach, club and/or U.S. Ski & Snowboard Member Services before continuing if you are unsure. 
 			Absolutely no refunds or downgrades of memberships will be issued for any reason. </strong></li>
 <li style="padding-bottom:4px;">If you believe you are a Level 100 or higher certified coach, and incur the $10 Fast Start Coaching Course or Fast Start Coaching Course Refresher fee during registration, please stop registration and contact Sports Education at 435.647.2050 or by email education@ussa.org. </li>
-<li style="padding-bottom:4px;">The USSA does not transfer memberships from person to person, season to season or one sport to another. 
+<li style="padding-bottom:4px;">U.S. Ski & Snowboard does not transfer memberships from person to person, season to season or one sport to another. 
 			Members must hold a membership in the sport(s) in which they'll participate.</li>
 <li style="padding-bottom:4px;"> An authorized cardholder must submit registration. 
 			If registering a minor, the parent or legal guardian must complete the registration using the minor's name and date of birth as the member.</li>
 
-<li>Code of Conduct:<br>I understand that by virtue of my membership in USSA, I must comply with USSA's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.<br><br></li>
+<li>Code of Conduct:<br>I understand that by virtue of my membership in U.S. Ski & Snowboard, I must comply with U.S. Ski & Snowboard's Code of Conduct. I also understand that I may be required to participate in competition drug testing. By executing this form, I agree to abide by and/or participate in such programs. I understand that failure to participate in competition drug testing will result in a sanction.<br><br></li>
 </ul><br>
 		<div class="ussa-button-blue"><span><a href="javascript:$('membership-application-hidden-link').colorbox.close()">Close Window</a></span></div>
 		</div>

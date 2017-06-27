@@ -307,10 +307,10 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	<p>COACHES, OFFICIALS, and VOLUNTEER MEMBERS</p>
 		<ul>
 		<li>All Coaches, Officials, Volunteer Members are required to undergo background screening.</li>
-		<li>Coaches, Officials, and Volunteer Members memberships are not valid until positive background screening results are received by USSA.</li>
-		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
+		<li>Coaches, Officials, and Volunteer Members memberships are not valid until positive background screening results are received by U.S. Ski & Snowboard.</li>
+		<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by U.S. Ski & Snowboard.</li>
 		<li>Background screening registration must be complete within 10 days of membership registration.</li>
-		<li>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your screening.</li>
+		<li>Failure to register within 10 days will result in inactivation of membership until U.S. Ski & Snowboard receives a green light determination on your screening.</li>
 		<li>Please allow several weeks for screening process to be completed. Individual screening times will vary. Foreign screening may take a month or more.</li>
 		<li>Coaches, officials, and volunteer members under age 18, click <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here</a> for requirements in lieu of background screening</li>
 		<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
@@ -320,13 +320,13 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	<p>COACHES </p>
 		<ul>
 		<li>The Fast Start coaching course has been added to your cart.</li>
-		<li>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></li>
-		<li><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></li>
+		<li>All coach members who have not completed their first level of U.S. Ski & Snowboard certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">U.S. Ski & Snowboard Fast Start on-line coaching course.</a></li>
+		<li><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact U.S. Ski & Snowboard Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your U.S. Ski & Snowboard member registration.</strong></li>
 		<li>Your coach membership is not valid until the Fast Start coaching course has been completed.</li>
 		<li> A link to the Fast Start coaching course will be provided on the confirmation page.</li>
 		<li>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</li>
-		<li>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</li>
-		<li> Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop</li>
+		<li>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by U.S. Ski & Snowboard.</li>
+		<li> Upon completion, coaches will receive a $20 credit to be used in the same season toward a U.S. Ski & Snowboard coaching clinic or many of the educational DVDs and CDs offered by U.S. Ski & Snowboard Sport Education at the Education Shop</li>
 		</ul>
 		<br>
 		<div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
@@ -342,10 +342,10 @@ END ProvideSupport.com Graphics Chat Button Code -->
   <p>COACHES, OFFICIALS, and VOLUNTEER MEMBERS</p>
 	<ul>
 	<li>All Coaches, Officials, Volunteer Members are required to undergo background screening.</li>
-	<li>Coaches, Officials, and Volunteer Members memberships are not valid until positive background screening results are received by USSA.</li>
-	<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by USSA.</li>
+	<li>Coaches, Officials, and Volunteer Members memberships are not valid until positive background screening results are received by U.S. Ski & Snowboard.</li>
+	<li>Your digital membership card will only display those memberships which do not require screening until positive results are received by U.S. Ski & Snowboard.</li>
 	<li>Background screening registration must be complete within 10 days of membership registration.</li>
-	<li>Failure to register within 10 days will result in inactivation of membership until the USSA receives a green light determination on your screening.</li>
+	<li>Failure to register within 10 days will result in inactivation of membership until U.S. Ski & Snowboard receives a green light determination on your screening.</li>
 	<li>Please allow several weeks for screening process to be completed. Individual screening times will vary. Foreign screening may take a month or more.</li>
 	<li>Coaches, officials, and volunteer members under age 18, click <a href="http://my.ussa.org/ussa/ussa-member-services-background-screening" target="_blank">here</a> for requirements in lieu of background screening</li>
 	<li>A link to register for background screening will be provided on the final registration page <b>if screening is required.</b></li>
@@ -363,13 +363,13 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	<p>COACHES </p>
 		<ul>
 			<li>The Fast Start coaching course has been added to your cart.</li>
-			<li>All coach members who have not completed their first level of USSA certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">USSA Fast Start on-line coaching course.</a></li>
-			<li><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact USSA Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your USSA member registration.</strong></li>
+			<li>All coach members who have not completed their first level of U.S. Ski & Snowboard certification must take the <a href="http://my.ussa.org/news/fast-start-coaching-course-faqs" target="_blank">U.S. Ski & Snowboard Fast Start on-line coaching course.</a></li>
+			<li><strong>If you believe you are a Level 100 or higher certified coach, stop now and contact U.S. Ski & Snowboard Sport Education at <a href="mailto:education@ussa.org">education@ussa.org</a> or call 435.647.2050 before completing your U.S. Ski & Snowboard member registration.</strong></li>
 			<li>Your coach membership is not valid until the Fast Start coaching course has been completed.</li>
 			<li> A link to the Fast Start coaching course will be provided on the confirmation page.</li>
 			<li>You must complete the Fast Start coaching course within 14 days. The course takes approximately one hour.</li>
-			<li>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by USSA.</li>
-			<li> Upon completion, coaches will receive a $20 credit to be used in the same season toward a USSA coaching clinic or many of the educational DVDs and CDs offered by USSA Sport Education at the Education Shop</li>
+			<li>Your digital membership card will only display those memberships which do not require screening or the Fast Start course until positive results are received by U.S. Ski & Snowboard.</li>
+			<li> Upon completion, coaches will receive a $20 credit to be used in the same season toward a U.S. Ski & Snowboard coaching clinic or many of the educational DVDs and CDs offered by U.S. Ski & Snowboard Sport Education at the Education Shop</li>
 		</ul>
 		<br><div class="ussa-button-blue"><span><a href="javascript:$('CoachInfo').colorbox.close()">Close Window</a></span></div>
 		

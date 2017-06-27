@@ -27,7 +27,7 @@ If you would like to make any changes, click "Edit" in the appropriate section. 
 		<th scope="col" class="edit"><input style="float:right;" type="submit" class="link-submit" name="_eventId_editContactInfo" value="Edit"></th>
 	</tr>
 	<tr>
-		<td class="data-label" scope="row">USSA Member #:</td>
+		<td class="data-label" scope="row">U.S. Ski & Snowboard Member #:</td>
 		<td class="data-text" scope="row">
 			<c:out value="${accountBean.member.id}"/>
 		</td>

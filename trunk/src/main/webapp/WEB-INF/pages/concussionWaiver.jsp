@@ -11,7 +11,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 
 </div>
 <!-- End: Live Chat Support -->
-<div id="stg-pagetitle">United States Ski and Snowboard Concussion Policy </div>
+<div id="stg-pagetitle">U.S. Ski & Snowboard Concussion Policy </div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
@@ -25,9 +25,9 @@ This is a waiver of certain legal rights. Please read carefully. You must agree 
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 <p>
 
-Any USSA athlete suspected of having sustained a concussion or traumatic brain injury must be removed immediately from participation in USSA sporting event (e.g. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or USSA member coach overseeing such sporting event.  The athlete will be prohibited from further participation until evaluated and cleared 
-in writing to resume participation in USSA sporting events by a qualified health care provider trained in the evaluation and management of concussive head injuries.  The health care professional must certify to USSA in the clearance letter that he/she has successfully completed a continuing education course in the evaluation and management of concussive head injuries within three years of the day on which the written statement is made.
-<br><br>Upon removal of an athlete from participation for a suspected concussion or traumatic brain injury, the USSA TD or member coach making the removal must inform USSA Competition Services.  Athletes who have subsequently been medically cleared to resume participation must provide such medical clearance (as described above) to USSA Competition Services in order to be permitted to participate in USSA sporting events.
+Any U.S. Ski & Snowboard athlete suspected of having sustained a concussion or traumatic brain injury must be removed immediately from participation in U.S. Ski & Snowboard sporting event (e.g. sanctioned training, practice, camps, competitions or tryouts), by the Technical Delegate or U.S. Ski & Snowboard member coach overseeing such sporting event.  The athlete will be prohibited from further participation until evaluated and cleared 
+in writing to resume participation in U.S. Ski & Snowboard sporting events by a qualified health care provider trained in the evaluation and management of concussive head injuries.  The health care professional must certify to U.S. Ski & Snowboard in the clearance letter that he/she has successfully completed a continuing education course in the evaluation and management of concussive head injuries within three years of the day on which the written statement is made.
+<br><br>Upon removal of an athlete from participation for a suspected concussion or traumatic brain injury, U.S. Ski & Snowboard TD or member coach making the removal must inform U.S. Ski & Snowboard Competition Services.  Athletes who have subsequently been medically cleared to resume participation must provide such medical clearance (as described above) to U.S. Ski & Snowboard Competition Services in order to be permitted to participate in U.S. Ski & Snowboard sporting events.
 <br><br>
 <b>About Concussion </b>
 <br>
@@ -37,7 +37,7 @@ A concussion is a type of traumatic brain injury (TBI) caused by a bump, blow, o
 <br>
 A repeat concussion that occurs before the brain recovers from the first-usually within a short period of time (hours, days, or weeks)-can slow recovery or increase the likelihood of having long-term problems. In rare cases, repeat concussions can result in edema (brain swelling), permanent brain damage, and even death.
 <br><br>
-The USSA recommends that Members review the Center for Disease Control's resources on concussion awareness at the following link:
+U.S. Ski & Snowboard recommends that Members review the Center for Disease Control's resources on concussion awareness at the following link:
 <br>
 <a href="http://www.cdc.gov/concussion/HeadsUp/online_training.html" target="new">http://www.cdc.gov/concussion/HeadsUp/online_training.html</a>
 
@@ -63,9 +63,9 @@ The USSA recommends that Members review the Center for Disease Control's resourc
 		representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
 		Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns. 
 		By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
-		any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
-		Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
-		from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+		any other parent or guardian to maintain any claim or suit against U.S. Ski & Snowboard arising out of the Member's participation in any
+		Activities involving U.S. Ski & Snowboard in any way. I further agree to hold harmless, defend, and indemnify U.S. Ski & Snowboard of and from any claims
+		from third parties arising from the minor child Members' participation in any activities affiliated with U.S. Ski & Snowboard.
 	</p>
 	<form:hidden id="releaseWaiverParentalConsent" path="releaseWaiverParentalConsent"/>
 	<table width="100%">

@@ -10,7 +10,7 @@
 			<div id="center-notice">
 				<p><strong>One or more accounts with a similar name and birth date is/are already on record.</strong></p>
 				<p>Select your account below and click "Continue" to renew your membership.</p>
-				<p><strong>ATTENTION</strong>: Please read before continuing the registration process. Members found falsifying registration information will be immediately placed on inactive for the remainder of the competition season with no refund provided.  If you have any question as to your membership history with USSA please contact Member Services before continuing the registration process.</p> 
+				<p><strong>ATTENTION</strong>: Please read before continuing the registration process. Members found falsifying registration information will be immediately placed on inactive for the remainder of the competition season with no refund provided.  If you have any question as to your membership history with U.S. Ski & Snowboard please contact Member Services before continuing the registration process.</p> 
 				<table>
 					<tr>
 						<th></th>
@@ -30,7 +30,7 @@
                 <input type="hidden" name="_flowExecutionKey" value="${flowExecutionKey}">
 				<div class="ussa-button gray"><span><input type="button" class="btn-submit" name="_eventId_back" value="Back" onclick="submitFormWithInputButton(this);"></span></div>
 				<div class="ussa-button green"><span><input type="submit" name="_eventId_next" value="Continue" class="btn-submit"/></span></div>
-				<em><p>If you believe your account is not shown, please call USSA Member Services at <br />
+				<em><p>If you believe your account is not shown, please call U.S. Ski & Snowboard Member Services at <br />
 				(435) 647-2666 to complete your registration.</p></em>
 				<div class="clear"></div>
 			</div>

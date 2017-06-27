@@ -53,7 +53,7 @@
 	<div class=topmenu>
 		<div class=left>
 			<ul id="nav">
-				<li style="float:left;"><a href="http://www.ussa.org" title="USSA home" accesskey="1">USSA home</a></li>
+				<li style="float:left;"><a href="http://www.ussa.org" title="U.S. Ski & Snowboard home" accesskey="1">U.S. Ski & Snowboard home</a></li>
 				<li style="float:left;"><a href="<c:url value="/faq.html"/>" title="Registration FAQ" target="_BLANK">registration FAQ</a></li>
 				<li style="float:left;"><a href="/accounts/j_acegi_logout" title="Log out">logout</a></li>
 			</ul>
