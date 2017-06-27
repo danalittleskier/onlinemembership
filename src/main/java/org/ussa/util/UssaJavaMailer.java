@@ -36,24 +36,24 @@ public class UssaJavaMailer extends JavaMailSenderImpl {
 	
 	public String getBasicAccountChangeEmailText(String accountProperty) {
 		StringBuffer emailBody = new StringBuffer("PLEASE DO NOT REPLY TO THIS EMAIL. This is an automated message. If you need assistance, please call 435-647-2666\n\n");
-		emailBody.append("Recent changes have been made to your ").append(accountProperty).append(" thru USSA's Online Account Service.\n\n");
-		emailBody.append("If these changes were not made by you, then please contact USSA Member Services at 435-647-2666.");
+		emailBody.append("Recent changes have been made to your ").append(accountProperty).append(" thru U.S. Ski & Snowboard's Online Account Service.\n\n");
+		emailBody.append("If these changes were not made by you, then please contact U.S. Ski & Snowboard Member Services at 435-647-2666.");
 		
 		return emailBody.toString();
 	}
 	
 	public String getBasicAccountCreatedEmailText() {
 		StringBuffer emailBody = new StringBuffer("PLEASE DO NOT REPLY TO THIS EMAIL. This is an automated message. If you need assistance, please call 435-647-2666\n\n");
-		emailBody.append("An account has been created for you thru USSA's Online Account Service.\n\n");
-		emailBody.append("If you did not create this account, then please contact USSA Member Services at 435-647-2666.");
+		emailBody.append("An account has been created for you thru U.S. Ski & Snowboard's Online Account Service.\n\n");
+		emailBody.append("If you did not create this account, then please contact U.S. Ski & Snowboard Member Services at 435-647-2666.");
 		
 		return emailBody.toString();
 	}
 	
 	public String getBasicPasswordResetEmailText(String password) {
 		StringBuffer emailBody = new StringBuffer("PLEASE DO NOT REPLY TO THIS EMAIL. This is an automated message. If you need assistance, please call 435-647-2666\n\n");
-		emailBody.append("Your password has been reset to " + password + " thru USSA's Online Account Service.\n\n");
-		emailBody.append("If you did not request your password to be changed, then please contact USSA Member Services at 435-647-2666.");
+		emailBody.append("Your password has been reset to " + password + " thru U.S. Ski & Snowboard's Online Account Service.\n\n");
+		emailBody.append("If you did not request your password to be changed, then please contact U.S. Ski & Snowboard Member Services at 435-647-2666.");
 		
 		return emailBody.toString();
 	}

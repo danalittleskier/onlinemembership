@@ -8,7 +8,7 @@
 		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/contact.html">contact us</a>
 		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/jobs.html">jobs</a>
 		<a href="http://www.ussa.org/magnoliaPublic/ussa/en/about/media.html">press/media center</a>
-		| &copy 2007 USSA - All rights reserved.
+		| &copy 2007 U.S. Ski & Snowboard - All rights reserved.
 		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/termsofuse.html">terms of use</a>
 		<a href="http://www.ussa.org/magnoliaPublic/other/globalfooter/privacypolicy.html">privacy policy</a>
 		<a href="http://www.olyparks.com" target="_blank">utah olympic parks</a>

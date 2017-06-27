@@ -26,7 +26,7 @@ This is a waiver of certain legal rights.  Please read carefully before signing.
 <!-- BOX (START) -->
 <div class="stg-bl"><div class="stg-br"><div class="stg-tl"><div class="stg-tr"><div></div>
 <p>
-	Your USSA and FIS (or IPC) registrations must be received one week
+	Your U.S. Ski & Snowboard and FIS (or IPC) registrations must be received one week
 	prior to list deadlines to guarantee inclusion on the FIS or IPC list.
 	For specific list dates for your sport, please call Member Services at
 	435.647.2666.
@@ -100,9 +100,9 @@ This is to certify that ,as parent/guardian of this participant, I do consent to
 			representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
 			Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns.
 			By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
-			any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
-			Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
-			from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+			any other parent or guardian to maintain any claim or suit against U.S. Ski & Snowboard arising out of the Member's participation in any
+			Activities involving U.S. Ski & Snowboard in any way. I further agree to hold harmless, defend, and indemnify U.S. Ski & Snowboard of and from any claims
+			from third parties arising from the minor child Members' participation in any activities affiliated with U.S. Ski & Snowboard.
 		</p>
 		<form:hidden id="fisWaiverDisabledParentalConsent" path="fisWaiverDisabledParentalConsent"/>
 		<table width="100%">

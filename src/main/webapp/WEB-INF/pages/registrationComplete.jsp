@@ -17,11 +17,11 @@ END ProvideSupport.com Graphics Chat Button Code -->
 <%@ include file="/includes/messages.jsp"%>
 
 <div id="stg-twocol-primary">
-	<p>Your USSA registration is complete.</p>
+	<p>Your U.S. Ski & Snowboard registration is complete.</p>
 	<fieldset>
 		<legend>Your Registration Information</legend>
 		<p>
-			Your USSA ID is:
+			Your U.S. Ski & Snowboard ID is:
 			<strong><c:out value="${accountBean.member.id}"/></strong>
 		</p>
 		<p>
@@ -48,7 +48,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 			<p>Please print your digital membership card.</p>
 			<div class="button green"><span><input class="btn-submit" type="button" onclick="window.open('<c:url value="http://services.ussa.org/MembershipCard/home.htm?ussaId=${accountBean.member.id}"></c:url>');" value="Print Verification" name="button"/></span></div>
 			<c:if test="${not empty accountBean.membershipsBean.restrictedMemberships}">]
-				<p>Your digital membership card will only display memberships not requiring screening until positive results are received by USSA.</p>
+				<p>Your digital membership card will only display memberships not requiring screening until positive results are received by U.S. Ski & Snowboard.</p>
 			</c:if>
 		</fieldset>
 	</c:if>
@@ -126,9 +126,9 @@ END ProvideSupport.com Graphics Chat Button Code -->
 		
 		</c:url>
 		<br>
-		Click <a href="http://my.ussa.org/portal" target="blank">Here</a> to go to your My USSA account home to do the following: 
+		Click <a href="http://my.ussa.org/portal" target="blank">Here</a> to go to your My U.S. Ski & Snowboard account home to do the following: 
 		<br>
-		1. Print your USSA membership card.
+		1. Print your U.S. Ski & Snowboard membership card.
 		<br>
 		2. Link additional members to your account.
 		<br>
@@ -137,11 +137,11 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	</p>
 	</div></div></div></div>
 	<p>
-	<b>USSA Rewards. It's easy!</b><br>
+	<b>U.S. Ski & Snowboard Rewards. It's easy!</b><br>
 
-	<u>USSA Rewards</u> is your one-stop shop to discounts and cash back on thousands of products, services, retailers and restaurants. Get discounts on everything from lodging and movies to insurance! USSA Rewards saves you money and a portion of your purchase goes to support the athletes and programs that make us Best in the World!
-	<li>Access USSA Rewards today at <a href="http://www.simplyrewards.com/d-899.aspx" target="blank" >www.ussarewards.com </a> or through the USSA Rewards button in your My USSA account</li>
-	<li>Create your USSA Rewards account</li>
+	<u>U.S. Ski & Snowboard Rewards</u> is your one-stop shop to discounts and cash back on thousands of products, services, retailers and restaurants. Get discounts on everything from lodging and movies to insurance! U.S. Ski & Snowboard Rewards saves you money and a portion of your purchase goes to support the athletes and programs that make us Best in the World!
+	<li>Access U.S. Ski & Snowboard Rewards today at <a href="http://www.simplyrewards.com/d-899.aspx" target="blank" >www.ussarewards.com </a> or through the U.S. Ski & Snowboard Rewards button in your My U.S. Ski & Snowboard account</li>
+	<li>Create your U.S. Ski & Snowboard Rewards account</li>
     <li>Start shopping! Enjoy  special Weekly Deals featuring deep discounts on great products and new offers that come on the site virtually every day.  </li>
 	</p>
 </div>

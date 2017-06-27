@@ -32,7 +32,7 @@ public class EmailUtilityImpl implements EmailUtility  {
 	try {
 	    
 	    StringBuffer message = new StringBuffer();
-	    message.append("US Ski and Snowboard Customer Ð Notification of Voided Transaction");
+	    message.append("U.S. Ski & Snowboard Customer ï¿½ Notification of Voided Transaction");
 	    message.append("<br/><br/>");
 	    message.append("An error has occurred while processing your membership. The following transaction has been voided:");
 	    message.append("<br/><br/>");
@@ -43,12 +43,12 @@ public class EmailUtilityImpl implements EmailUtility  {
 	    message.append("We apologize for any inconvenience. Please retry your transaction or contact us.");
 	    message.append("email us <a href=\"mailto:membership@ussa.org\">here</a>");
 	    message.append("<br/><br/>");
-	    message.append("USSA Membership Staff");
+	    message.append("U.S. Ski & Snowboard Membership Staff");
 	    message.append("<br/>");
 	    message.append("<a href=\"mailto:membership@ussa.org\">membership@ussa.org</a>");
 	    message.append("<br/>");
 	    message.append("435.647.2666");
-	    return sendEmail(accountBean.getConfirmationEmail(), "US Ski and Snowboard Customer Refund Notification", message.toString());
+	    return sendEmail(accountBean.getConfirmationEmail(), "U.S. Ski & Snowboard Customer Refund Notification", message.toString());
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	    return false;

@@ -1,11 +1,11 @@
 <%@ include file="/includes/taglibs.jsp" %>
 
 <head>
-	<title>USSA Membership Login Page</title>
+	<title>U.S. Ski & Snowboard Membership Login Page</title>
 </head>
 
 <body>
-<div id="stg-pagetitle">USSA Membership Login</div>
+<div id="stg-pagetitle">U.S. Ski & Snowboard Membership Login</div>
 <div id="stg-onecol-primary">
 <form method="post" action="<c:url value='/j_security_check'/>">
 	<fieldset style="padding-bottom: 0">

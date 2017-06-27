@@ -11,7 +11,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 
 </div>
 <!-- End: Live Chat Support -->
-<div id="stg-pagetitle">United States Ski SafeSport </div>
+<div id="stg-pagetitle">U.S. Ski & Snowboard SafeSport </div>
 <!-- Content -->
 <div id="stg-onecol-wide">
 <form:form commandName="accountBean" name="accountBean">
@@ -27,15 +27,15 @@ Please read carefully. You must agree to its terms to complete the registration 
 <p>
 <br>
 
-As of March 13, 2017, United States Ski and Snowboard has adopted the SafeSport Code ("The Code") promulgated by the U.S. Center for SafeSport.  
-The Code replaces any previous policies adopted by USSA and can be located at the below weblink.  
-All USSA members are required to review and accept the Code found here:
+As of March 13, 2017, U.S. Ski and Snowboard has adopted the SafeSport Code ("The Code") promulgated by the U.S. Center for SafeSport.  
+The Code replaces any previous policies adopted by U.S. Ski & Snowboard and can be located at the below weblink.  
+All U.S. Ski & Snowboard members are required to review and accept the Code found here:
 </p>
 <br>
 <a href="https://77media.blob.core.windows.net/uscss/1488581091937.2017-03-03---safesport-code---final.pdf" target="blank">https://77media.blob.core.windows.net/uscss/1488581091937.2017-03-03---safesport-code---final.pdf</a>
 <br>
 <p>
-Finally, any USSA member who has reason to suspect that minors are being sexually or physically abused must report their suspicions to 
+Finally, any U.S. Ski & Snowboard member who has reason to suspect that minors are being sexually or physically abused must report their suspicions to 
 local child protection authorities/police and to the US Center for Safesport at www.safesport.org.  
 Please err on the side of caution.  It is not your job to investigate your suspicions.  If in doubt, you must report.
  
@@ -59,9 +59,9 @@ Please err on the side of caution.  It is not your job to investigate your suspi
 		representation, waiver and release described here on behalf of myself, the Member, and any other parent or guardian of the
 		Member, intending that they be binding on me, the Member, and our respective heirs, executors, administrators and assigns. 
 		By entering my signature below I represent that I intend to give up my right, the right of the Member, and the right of
-		any other parent or guardian to maintain any claim or suit against USSA arising out of the Member's participation in any
-		Activities involving USSA in any way. I further agree to hold harmless, defend, and indemnify USSA of and from any claims
-		from third parties arising from the minor child Members' participation in any activities affiliated with USSA.
+		any other parent or guardian to maintain any claim or suit against U.S. Ski & Snowboard arising out of the Member's participation in any
+		Activities involving U.S. Ski & Snowboard in any way. I further agree to hold harmless, defend, and indemnify U.S. Ski & Snowboard of and from any claims
+		from third parties arising from the minor child Members' participation in any activities affiliated with U.S. Ski & Snowboard.
 	</p>
 	<form:hidden id="releaseWaiverParentalConsent" path="releaseWaiverParentalConsent"/>
 	<table width="100%">

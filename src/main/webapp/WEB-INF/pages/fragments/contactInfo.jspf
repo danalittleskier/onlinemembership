@@ -5,12 +5,12 @@
 
 	<c:choose>
 		<c:when test="${!empty accountBean.member.id }"> 
-			<label>USSA Member #</label>
+			<label>U.S. Ski & Snowboard Member #</label>
 			<span class="data-input"><c:out value="${accountBean.member.id}" /></span>
 			<div class="clear"></div>
 		</c:when>
 		<c:otherwise>
-			<label for="">* Do you have a USSA number?</label>
+			<label for="">* Do you have a U.S. Ski & Snowboard number?</label>
 			<div class="radios">
 				<form:radiobutton id="member1" path="alreadyAMember" value="${true}"/>
 				<label class="radio" for="member1">Yes</label>

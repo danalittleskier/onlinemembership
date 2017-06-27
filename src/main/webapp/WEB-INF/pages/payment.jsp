@@ -42,7 +42,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 
 	<fieldset>
 		<legend>Payment Information</legend>
-		<label for="">USSA Registration Fees:</label>
+		<label for="">U.S. Ski & Snowboard Registration Fees:</label>
 		<span class="data-input" style="float:none;"><strong><c:out value="${accountBean.cartBean.total}" /></strong></span>
 		<label for="">* Credit Card Type:</label>
 		<span class="multiselect-margin">
@@ -140,7 +140,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 <p>DO NOT press Continue multiple times.<br>
 <p>Doing so may result in your bank placing a hold on these funds.  Your bank may take a few 
 		days to clear these holds on your account.<br>
-		If you receive a decline message please call USSA Member Services for assistance at 435.647.2666
+		If you receive a decline message please call U.S. Ski & Snowboard Member Services for assistance at 435.647.2666
 		</p>
 		
 </div></div></div></div>
