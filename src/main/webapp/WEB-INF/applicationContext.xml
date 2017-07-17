@@ -144,7 +144,8 @@
 	<bean id="creditCardProcessingService" class="org.ussa.service.impl.AuthorizeNetCreditCardProcessingServiceImpl">
 		<property name="testMode" ref="testMode"/>
 		<property name="login" value="3M7s8eKK6"/>
-		<property name="tranKey" value="57wHJDb4865yc935"/>
+		<!-- <property name="tranKey" value="57wHJDb4865yc935"/> -->
+		<property name="tranKey" value="62tE74AJjP98uK6p"/>
 	</bean>
 
 	<bean id="memberRegistrationService" class="org.ussa.service.impl.MemberRegistrationServiceImpl">
