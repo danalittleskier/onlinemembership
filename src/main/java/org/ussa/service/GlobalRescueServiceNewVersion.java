@@ -59,11 +59,18 @@ public class GlobalRescueServiceNewVersion {
 	        String resultString = result.toString();
 	        return resultString.length() > 0 ? resultString.substring(0, resultString.length() - 1) : resultString;
 	    }
+	
 
-	public static void sendingPostRequest(AccountBean accountBean) throws Exception{
-		URL url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW);
+	public static void sendingPostRequestMembership(AccountBean accountBean) throws Exception{
+		URL url = new URL("");
+		if(accountBean.getMemberSeason().getGlobalRescueGUID().isEmpty()){
+			url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW);
+		}
+		else{
+			url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_RENEW);
+		}
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();	
-		StringBuffer response = new StringBuffer();
+
 		Date date = new Date();
 		String gender = accountBean.getMember().getGender();
 		if (gender.equalsIgnoreCase("M")){
@@ -72,7 +79,7 @@ public class GlobalRescueServiceNewVersion {
 		else{
 			gender = "Female";
 		}
-
+		
 		JSONObject obj = new JSONObject();
         obj.put("firstName", accountBean.getMember().getFirstName());
         obj.put("lastName", accountBean.getMember().getLastName());
@@ -84,7 +91,9 @@ public class GlobalRescueServiceNewVersion {
         obj.put("gender", gender);
         obj.put("packageCode", "1110299");
         obj.put("referralCode", "USSAAPI20");
-        
+        if(!accountBean.getMemberSeason().getGlobalRescueGUID().isEmpty()){
+        	obj.put("memberId", accountBean.getMemberSeason().getGlobalRescueGUID());
+        }
         //Add address as another object
         JSONObject obj2 = new JSONObject();
         obj2.put("lineOne", accountBean.getAddress().getDeliveryAddress());
@@ -140,32 +149,46 @@ public class GlobalRescueServiceNewVersion {
 		  log.warn("Response code : "+ responseCode);
 		  
 		// Reading response from input Stream
-		 try{	
-			BufferedReader in = new BufferedReader(
-					new InputStreamReader(con.getInputStream()));
+		  	InputStreamReader inputStr;
+		  	if(responseCode >= 400){
+		  		inputStr = new InputStreamReader(con.getErrorStream());
+		  	}
+		  	else{
+		  		inputStr = new InputStreamReader(con.getInputStream());
+		  	}
+			BufferedReader in = new BufferedReader(inputStr);
+		
 			String output;
-
+			StringBuffer response = new StringBuffer();
 			while ((output = in.readLine()) != null) {
 				response.append(output);
 			}
 			in.close();
-			
-			//printing result from response
-			log.warn("response to string" +response.toString());
-			
-		   } catch (IOException e) {
-	            e.printStackTrace();
-	       }
+
 			
 			JSONParser parser = new JSONParser();
 			Object obj5 = (JSONObject) parser.parse(response.toString());
 
+			//printing result from response
+			log.warn("response to string" +response.toString());
+			
 	        JSONObject jsonDetail = (JSONObject) obj5;
 	        //log.warn(jsonObject);
-	        JSONObject detail = (JSONObject) jsonDetail.get("detail");
-	        String memberID = (String) detail.get("memberId");
-	        
-	        log.warn("Member Id" + memberID);
+	        if(responseCode == 200){
+	        	JSONObject detail = (JSONObject) jsonDetail.get("detail");
+	        	String memberID = (String) detail.get("memberId");
+
+	        	log.warn("Member Id" + memberID);
+	        }
+	        else{
+	        	 JSONArray errors = (JSONArray) jsonDetail.get("errors");
+	             
+	             for (int i = 0; i < errors.size(); i++) {
+	             	log.warn(((JSONObject) errors.get(i)).get("code").toString() +" "+ ((JSONObject) errors.get(i)).get("message").toString());
+
+
+	                 }
+	        }
 	        
 	        con.disconnect();
 		  
