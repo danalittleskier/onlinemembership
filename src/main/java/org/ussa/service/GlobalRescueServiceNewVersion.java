@@ -61,18 +61,20 @@ public class GlobalRescueServiceNewVersion {
 	    }
 	
 
-	public static void sendingPostRequestMembership(AccountBean accountBean) throws Exception{
-		URL url = new URL("");
-		if(accountBean.getMemberSeason().getGlobalRescueGUID().isEmpty()){
-			url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW);
-		}
-		else{
+	public void sendingPostRequestMembership(AccountBean accountBean, String globalRescueID, String globalRescueInventory) throws Exception{
+		URL url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW);
+		if(!globalRescueID.equals("NA")){
 			url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_RENEW);
 		}
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();	
 
+		log.warn("The url : "+ url);
+		log.warn("the global rescue inventory : "+ globalRescueInventory);
+		  
 		Date date = new Date();
 		String gender = accountBean.getMember().getGender();
+		int age = accountBean.getGlobalRescueBean().getAge();
+		String packageCode = "1110299";
 		if (gender.equalsIgnoreCase("M")){
 			gender = "Male";
 		}
@@ -89,10 +91,11 @@ public class GlobalRescueServiceNewVersion {
         obj.put("primaryPhone", accountBean.getAddress().getPhoneHome());
         obj.put("satellitePhone", "");
         obj.put("gender", gender);
-        obj.put("packageCode", "1110299");
+        String programId = mapProductToProgramId(globalRescueInventory);
+        obj.put("packageCode", programId);
         obj.put("referralCode", "USSAAPI20");
-        if(!accountBean.getMemberSeason().getGlobalRescueGUID().isEmpty()){
-        	obj.put("memberId", accountBean.getMemberSeason().getGlobalRescueGUID());
+        if(!globalRescueID.equals("NA")){
+        	obj.put("memberId", globalRescueID);
         }
         //Add address as another object
         JSONObject obj2 = new JSONObject();
@@ -195,7 +198,7 @@ public class GlobalRescueServiceNewVersion {
 	}
 	
 	// HTTP GET request
-	public static void sendingGetRequest() throws Exception {
+	public void sendingGetRequest() throws Exception {
 		URL url = new URL(HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_VALIDATE);
 		HttpURLConnection con = (HttpURLConnection) url.openConnection();
 		con.setRequestMethod("GET");
@@ -251,12 +254,26 @@ public class GlobalRescueServiceNewVersion {
 		con.disconnect();
 	 }
 	
-	public void createPrepaidAccount(AccountBean accountBean) throws GlobalRescueException{
-		
+	protected String mapProductToProgramId(String inv){
+
+		if(Inventory.INV_ID_SPONSORS_INDIVIDUAL.equals(inv)){
+			return "1110299";
+		} else if (Inventory.INV_ID_SPONSORS_STUDENT.equals(inv)){
+			return "1110385";
+		} else if (Inventory.INV_ID_SPONSORS_FAMILY.equals(inv)){
+			return "1110345";
+		}
+		return null;
 	}
-		   
-		 public static void main(String args[]) throws Exception {
-		 }
+	
+	public void createPrepaidAccount(AccountBean accountBean) throws GlobalRescueException{
+
+	}
+
+	public static void main(String args[]) throws Exception {
+	}
+
+
 	
 	
 	}
