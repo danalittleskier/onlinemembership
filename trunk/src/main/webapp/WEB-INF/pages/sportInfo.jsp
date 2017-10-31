@@ -61,7 +61,7 @@
 		<p><strong>U.S. Ski & Snowboard Club Volunteer</strong> with background screening ($45): The U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. 
 		Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
 		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. 
-		<strong>Applicable for those in a position of authority over minors. </strong>
+		<strong> Applicable for those in a position of authority over athletes. </strong>
 				
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
@@ -111,7 +111,7 @@
 		
 		<p><strong>U.S. Ski & Snowboard Club Volunteer </strong>with background screening ($45): The new U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. 
 		Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. This membership is a good stepping-stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. 
-		<strong>Applicable for those in a position of authority over minors. </strong>
+		<strong>Applicable for those in a position of authority over athletes. </strong>
 		
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
@@ -165,7 +165,7 @@
 		Officials are also able to achieve various levels of certification through educational programs offered by U.S. Ski & Snowboard. </p>
 		
 		<p><strong>U.S. Ski & Snowboard Club Volunteer </strong>with background screening ($45): The new U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over athletes.</strong></p> 
 		
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
@@ -213,7 +213,7 @@
 		Officials are also able to achieve various levels of certification through educational programs offered by U.S. Ski & Snowboard.</p>
 		
 		<p><strong>U.S. Ski & Snowboard Club Volunteer </strong>with background screening ($45): The new U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over athletes. </strong></p> 
 		
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
@@ -257,7 +257,7 @@
 		Officials are also able to achieve various levels of certification through educational programs offered by the USSA.</p> 
 		
 		<p><strong>U.S. Ski & Snowboard Club Volunteer </strong>with background screening ($45): The new U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. 
-		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over minors. </strong></p> 
+		This membership is a good stepping stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. <strong>Applicable for those in a position of authority over athletes. </strong></p> 
 		
 	
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
@@ -309,7 +309,7 @@
 		
 		<p><strong>U.S. Ski & Snowboard Club Volunteer </strong>with background screening ($45): The new U.S. Ski & Snowboard Club Volunteer membership is designed for parents and club volunteers who undertake a leadership role in U.S. Ski & Snowboard clubs, divisions, regions, competitions and club training sessions. 
 		Each U.S. Ski & Snowboard Club Volunteer undergoes periodic background screening to help provide a SafeSport environment in clubs. This membership is a good stepping-stone to becoming a U.S. Ski & Snowboard Coach or Official, and is fully upgradeable during the season. Not eligible for official's certifications. 
-		<strong>Applicable for those in a position of authority over minors. </strong>
+		<strong>Applicable for those in a position of authority over athletes. </strong>
 		
 		<h3>Attention Coaches, Officials, and Volunteer Members</h3>
 		<p>All coaches, officials, and volunteer members are required to undergo periodic background screening.</p>
