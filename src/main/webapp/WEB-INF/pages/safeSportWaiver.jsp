@@ -25,7 +25,8 @@ Please read carefully. You must agree to its terms to complete the registration 
 
 
 <p>
-<br>
+The SafeSport policy applies to U.S. Ski & Snowboard employees, coaches, officials, volunteers and individuals who are in a position of authority over or have frequent contact with athletes.
+<br><br>
 
 As of March 13, 2017, U.S. Ski and Snowboard has adopted the SafeSport Code ("The Code") promulgated by the U.S. Center for SafeSport.  
 The Code replaces any previous policies adopted by U.S. Ski & Snowboard and can be located at the below weblink.  
