@@ -32,9 +32,11 @@ public class GlobalRescueService {
     private static Log log = LogFactory.getLog(GlobalRescueBean.class);
 
 	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71F"; // bad guid to cause errors
-	//private static final String PARTNERGUID = "E872C58A-15C5-AD6F-99DC-3C81565EA71E";
+	//private static final String PARTNERGUID = "0fde1d01-1806-e211-9be9-000c2972e8b4";
+    private static final String USERNAME = "ussa@globalrescue.com";
+    private static final String PASSWORD = "ussaapi2017";
 	private static final String PARTNERGUID = "23969682-15C5-AD6F-9917-11D300B64954";
-	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "http://staging.globalrescue.com/api/index.cfm";
+	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_CFM = "https://apitest.globalrescue.com/grapi/v2/";
 	private static final String HTTP_PRODUCTION_GLOBALRESCUE_COM_API_INDEX_CFM = "https://ss.globalrescue.com/partnerapi/api";
 	private static final String [] familyKeys = {"parent1","parent2","dependent1","dependent2","dependent3","dependent4"};
 	

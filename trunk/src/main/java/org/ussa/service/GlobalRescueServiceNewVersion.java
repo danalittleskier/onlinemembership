@@ -42,10 +42,13 @@ public class GlobalRescueServiceNewVersion {
 	private static final String PARTNERGUID = "0fde1d01-1806-e211-9be9-000c2972e8b4";
     private static final String USERNAME = "ussa@globalrescue.com";
     private static final String PASSWORD = "ussaapi2017";
-	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_VALIDATE= "https://apitest.globalrescue.com/grapi/api/v2/packages/";
-	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_RENEW="https://apitest.globalrescue.com/grapi/api/v2/membership/postpaid/renew";
-	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW="https://apitest.globalrescue.com/grapi/api/v2/membership/postpaid/new";
-
+	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_VALIDATE= "https://apitest.globalrescue.com/grapi/api/v2/packages/";
+	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_RENEW="https://apitest.globalrescue.com/grapi/api/v2/membership/postpaid/renew";
+	//private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW="https://apitest.globalrescue.com/grapi/api/v2/membership/postpaid/new";
+    private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_VALIDATE= "https://ss.globalrescue.com/grapi/api/v2/packages/";
+	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_RENEW="https://ss.globalrescue.com/grapi/api/v2/membership/postpaid/renew";
+	private static final String HTTP_STAGING_GLOBALRESCUE_COM_API_INDEX_NEW="https://ss.globalrescue.com/grapi/api/v2/membership/postpaid/new";
+    
 	public static String getParamsString(Map<String, String> params) throws UnsupportedEncodingException {
 	        StringBuilder result = new StringBuilder();
 	
@@ -181,16 +184,20 @@ public class GlobalRescueServiceNewVersion {
 	        	JSONObject detail = (JSONObject) jsonDetail.get("detail");
 	        	String memberID = (String) detail.get("memberId");
 
-	        	log.warn("Member Id" + memberID);
+	        	log.warn("GlobalRescue added guid:" + memberID + " to ussaid " + accountBean.getMember().getId());
+				MemberSeason mseas = accountBean.getMemberSeason();
+				mseas.setGlobalRescueGUID(memberID);
 	        }
 	        else{
 	        	 JSONArray errors = (JSONArray) jsonDetail.get("errors");
-	             
+	 			List<String> details =new ArrayList<String>();
+	 			
 	             for (int i = 0; i < errors.size(); i++) {
 	             	log.warn(((JSONObject) errors.get(i)).get("code").toString() +" "+ ((JSONObject) errors.get(i)).get("message").toString());
-
+	             	details.add(((JSONObject) errors.get(i)).get("message").toString());
 
 	                 }
+	             accountBean.getGlobalRescueBean().setMessages(details);
 	        }
 	        
 	        con.disconnect();
