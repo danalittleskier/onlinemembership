@@ -7,6 +7,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
+import javax.net.ssl.*;
+import java.net.*;
 
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
@@ -61,6 +63,16 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		}
 		
 	}
+	
+	private static javax.net.ssl.SSLSocketFactory getFactorySimple() 
+	        throws Exception {
+	    SSLContext context = SSLContext.getInstance("TLSv1.2");
+
+	    context.init(null, null, null);
+
+	    return context.getSocketFactory();
+
+	}
 
 	public void voidTransaction(String transactionId) throws Exception {
 		StringBuffer params = new StringBuffer();
@@ -80,9 +92,18 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		params.append("x_trans_id=").append(transactionId).append("&");
 
 		// open secure connection
+		HttpsURLConnection connection = null;
 		URL url = new URL("https://secure.authorize.net/gateway/transact.dll");
+		//Use if need be with proxy - take 'dev' out for prod
+		//URL url = new URL("https://authorize.dev.ussa.org/gateway/transact.dll");
+		
+		//URLConnection connection = url.openConnection();
+		///
+		connection = (HttpsURLConnection) url.openConnection();
+		javax.net.ssl.SSLSocketFactory sslSocketFactory =getFactorySimple();
 
-		URLConnection connection = url.openConnection();
+		connection.setSSLSocketFactory(sslSocketFactory);
+		////
 		connection.setDoOutput(true);
 		connection.setUseCaches(false);
 
@@ -166,10 +187,20 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 		if (log.isDebugEnabled())
 			log.debug("Gateway Request: " + params.toString());
 
-		// open secure connection
-		URL url = new URL("https://secure.authorize.net/gateway/transact.dll");
+			// open secure connection
+			HttpsURLConnection connection = null;
+			URL url = new URL("https://secure.authorize.net/gateway/transact.dll");
+			//Use this for proxy workaround - take 'dev' out for production server
+			//URL url = new URL("https://authorize.dev.ussa.org/gateway/transact.dll");
+			
+			//URLConnection connection = url.openConnection();
+			///
+			connection = (HttpsURLConnection) url.openConnection();
+			javax.net.ssl.SSLSocketFactory sslSocketFactory =getFactorySimple();
 
-		URLConnection connection = url.openConnection();
+			connection.setSSLSocketFactory(sslSocketFactory);
+			////
+				
 		connection.setDoOutput(true);
 		connection.setUseCaches(false);
 
@@ -350,4 +381,5 @@ public class AuthorizeNetCreditCardProcessingServiceImpl implements CreditCardPr
 	public void setTestMode(boolean testMode) {
 		this.testMode = testMode;
 	}
+
 }
