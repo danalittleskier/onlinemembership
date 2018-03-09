@@ -85,11 +85,12 @@ END ProvideSupport.com Graphics Chat Button Code -->
 				<c:when test="${empty accountBean.globalRescueBean.messages }">
 					<p>You will receive a confirmation email with the details of your annual medical evacuation membership and your Global Rescue login information.  For Global Rescue help call 1-617-459-4200 or visit <a href="http://www.globalrescue.com" target="new">www.globalrescue.com</a>	</p>
 					<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }<br/>
+					Global Rescue GUID: ${accountBean.memberSeason.globalRescueGUID }<br>
 					Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
 					</p>
 				</c:when>
 				<c:when test="${not empty accountBean.globalRescueBean.messages }">
-					There has been a problem while creating your account with Global Rescue.  Please call XXX-XXX-XXXX.<br/>
+					<font color=red>There has been a problem while creating your account with Global Rescue. </font> Please call Membership Services at 435-647-2666.<br/>
 			<br/>
 					When you call please report the following notes:<br/>
 					<ul>
@@ -98,6 +99,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 					</c:forEach>
 					</ul>
 					<p>Your Annual Global Rescue Membership: ${accountBean.globalRescueBean.purchasedProduct.inventory.description }</br>
+					Global Rescue GUID: ${accountBean.memberSeason.globalRescueGUID }<br>
 					Your amount paid is: \$${accountBean.globalRescueBean.purchasedProduct.inventory.amount }
 					</p>
 				</c:when>
@@ -140,7 +142,7 @@ END ProvideSupport.com Graphics Chat Button Code -->
 	<b>U.S. Ski & Snowboard Rewards. It's easy!</b><br>
 
 	<u>U.S. Ski & Snowboard Rewards</u> is your one-stop shop to discounts and cash back on thousands of products, services, retailers and restaurants. Get discounts on everything from lodging and movies to insurance! U.S. Ski & Snowboard Rewards saves you money and a portion of your purchase goes to support the athletes and programs that make us Best in the World!
-	<li>Access U.S. Ski & Snowboard Rewards today at <a href="http://www.simplyrewards.com/d-899.aspx" target="blank" >www.ussarewards.com </a> or through the U.S. Ski & Snowboard Rewards button in your My U.S. Ski & Snowboard account</li>
+	<li>Access U.S. Ski & Snowboard Rewards today at <a href="http://www.experticity.com" target="blank" >www.experticity.com </a> or through the U.S. Ski & Snowboard Rewards button in your My U.S. Ski & Snowboard account</li>
 	<li>Create your U.S. Ski & Snowboard Rewards account</li>
     <li>Start shopping! Enjoy  special Weekly Deals featuring deep discounts on great products and new offers that come on the site virtually every day.  </li>
 	</p>
