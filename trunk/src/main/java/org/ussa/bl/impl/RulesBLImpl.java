@@ -544,8 +544,9 @@ public class RulesBLImpl implements RulesBL {
 	for (LineItemBean membership : memberships) {
 	    String invId = membership.getInventory().getId();
 	    
-	    if (RuleAssociations.nonCompetingMemberships.contains(invId) || RuleAssociations.shortTermMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    	
-		// This is your full price membership. The rest are discounted.
+	    //if (RuleAssociations.nonCompetingMemberships.contains(invId) || RuleAssociations.shortTermMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    	
+	    if (RuleAssociations.shortTermMemberships.contains(invId) || fullPriceMembership.getInventory().getId().equals(invId)){	    		    		
+	    	// This is your full price membership. The rest are discounted.
 	    	membership.setDiscount(null);
 	    } else {	    
 		// If you are adding or have a membership from the 25 dollar group then the discount is 25 otherwise 35.
