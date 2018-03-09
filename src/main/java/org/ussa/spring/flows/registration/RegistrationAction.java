@@ -70,6 +70,8 @@ import org.ussa.service.GlobalRescueService;
 import org.ussa.service.MemberRegistrationService;
 import org.ussa.util.DateTimeUtils;
 import org.ussa.util.StringUtils;
+//Testing new GlobalRescue API -test
+import org.ussa.service.GlobalRescueServiceNewVersion;
 
 public class RegistrationAction extends FormAction implements Serializable {
  
@@ -716,6 +718,18 @@ public class RegistrationAction extends FormAction implements Serializable {
     public Event addGlobalRescue(RequestContext context) throws Exception {
     	AccountBean accountBean = (AccountBean) context.getFlowScope().get("accountBean");
     	GlobalRescueBean grb = accountBean.getGlobalRescueBean();
+    	//MemberSeason memSeason = memberSeasonDao.getMemberGlobalRescueGUID(accountBean.getMember().getId());
+    	//String globalRescueID = "NA";
+    	//String globalRescueInventory = grb.getSelectedProduct();
+    	//if(memSeason != null){
+    	//	globalRescueID = memSeason.getGlobalRescueGUID();
+    	//	log.warn("global rescue GUID " +globalRescueID);
+    	//}
+
+    	//Testing new GlobalRescue API -test
+    	//GlobalRescueServiceNewVersion gnv = new GlobalRescueServiceNewVersion();
+    	//gnv.sendingGetRequest();   	
+    	//gnv.sendingPostRequestMembership(accountBean, globalRescueID,globalRescueInventory);
     	
     	String addModeParameter = context.getRequestParameters().get("_eventId_add");
     	boolean addMode = (addModeParameter != null);
@@ -964,9 +978,21 @@ public class RegistrationAction extends FormAction implements Serializable {
 	    memberRegistrationService.processRegistration(accountBean);
 	    
 	    if(accountBean.getGlobalRescueBean().getIsInCart()){
-		    GlobalRescueService grs = new GlobalRescueService();
-		    grs.createPrepaidAccount(accountBean);
-		    universalDao.save(accountBean.getMemberSeason());
+		    //GlobalRescueService grs = new GlobalRescueService();
+		    //grs.createPrepaidAccount(accountBean);
+		    //universalDao.save(accountBean.getMemberSeason());
+		    //Testing new global rescue API
+		    MemberSeason memSeason = memberSeasonDao.getMemberGlobalRescueGUID(accountBean.getMember().getId());
+		    String globalRescueID = "NA";
+	    	GlobalRescueServiceNewVersion gnv = new GlobalRescueServiceNewVersion();
+	    	//String globalRescueInventory = grb.getSelectedProduct();
+	    	if(memSeason != null){
+	    		globalRescueID = memSeason.getGlobalRescueGUID();
+	    		log.warn("global rescue GUID " +globalRescueID);
+	    	}
+	
+	    	gnv.sendingPostRequestMembership(accountBean, globalRescueID,accountBean.getGlobalRescueBean().getSelectedProduct());
+	    	universalDao.save(accountBean.getMemberSeason());
 	    }
 
 	    
@@ -974,12 +1000,12 @@ public class RegistrationAction extends FormAction implements Serializable {
 		List<String> details = new ArrayList<String>();
 		details.add(gre.getMessage());
 		accountBean.getGlobalRescueBean().setMessages(details);
-		/*
+		
 	    BindException errors = new BindException(accountBean, "accountBean");
 	    errors.reject("errors.globalrescue.createaccount");
 	    getFormObjectAccessor(context).putFormErrors(errors, getFormErrorsScope());
 	    return error();
-	    */
+	    
 		
 	}catch (CreditCardDeclinedException e) {
 	    BindException errors = new BindException(accountBean, "accountBean");
