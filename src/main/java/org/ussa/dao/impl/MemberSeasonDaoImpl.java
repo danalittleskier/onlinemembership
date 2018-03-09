@@ -77,4 +77,15 @@ public class MemberSeasonDaoImpl extends GenericDaoHibernate<MemberSeason, Membe
 			return null;
 		}
 	}
+	public MemberSeason getMemberGlobalRescueGUID(Long ussaId){
+		List<MemberSeason> seasons = (List<MemberSeason>) getHibernateTemplate()
+		     	.find("from MemberSeason s where s.currentFlag='Y' and s.memberSeasonPk.member.id = ? and s.globalRescueGUID is not null and s.memberSeasonPk.season > 2015",
+		     	new Object[]{ussaId});
+		
+		if(seasons != null && seasons.size() > 0){
+			return seasons.get(0);
+		}else{
+			return null;
+		}
+	}
 }

@@ -8,6 +8,7 @@ public interface MemberSeasonDao extends GenericDao<MemberSeason, MemberSeasonPk
 {
 	public MemberSeason getMostRecentFastStartCheck(Long ussaId);
 	public MemberSeason getMostRecentBackgroundCheck(Long ussaId);
+	public MemberSeason getMemberGlobalRescueGUID(Long ussaId);
 	public MemberSeason hasMemberSeasonForCurrentSeason(MemberSeasonPk memberSeasonPk);
 	public MemberSeason getOnlyRenewalNeededBackgroundFlag(Long ussaId,String season);
 
